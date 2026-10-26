@@ -616,3 +616,36 @@ def test_cli_rejects_an_unknown_source_name():
 
 
 
+
+
+def test_list_youtube_wraps_a_single_video_url_as_one_entry(monkeypatch):
+    """A designated single-video asset has no playlist entries but is still collectable."""
+
+    class FakeYDL:
+        def __init__(self, options):
+            self.options = options
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc_info):
+            return False
+
+        def extract_info(self, url, download=False):
+            return {"id": "9aPyO1jfDGM", "title": "LIVE: President Trump rallies", "url": url}
+
+    import types
+
+    fake_module = types.ModuleType("yt_dlp")
+    fake_module.YoutubeDL = FakeYDL
+    monkeypatch.setitem(sys.modules, "yt_dlp", fake_module)
+
+    spec = acquisition.SourceSpec(
+        name="single-video",
+        kind="youtube",
+        url="https://www.youtube.com/watch?v=9aPyO1jfDGM",
+    )
+
+    entries = acquisition.list_youtube(spec, 1)
+
+    assert [entry["id"] for entry in entries] == ["9aPyO1jfDGM"]

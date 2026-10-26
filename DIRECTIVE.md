@@ -1,6 +1,6 @@
 # 最高指示
 
-> 文号：GS-DIRECTIVE-001　版本：1.3　生效日期：2026-10-23　修订权：总控
+> 文号：GS-DIRECTIVE-001　版本：1.4　生效日期：2026-10-26　修订权：总控
 >
 > 本文件是本仓库及其派生巡检体系的最高效力文件。与 `README.md`、脚本注释、
 > 工作流配置、计划任务定义或任何 harness 的默认行为冲突时，以本文件为准。
@@ -14,6 +14,7 @@
 | 1.1 | 2026-10-23 | 增设资源获取分析司；钦定 White House 视频与直播频道 | 新增 `resources/registry.json`；巡检司按资源映射 MIU |
 | 1.2 | 2026-10-23 | 增设模块2视频处理部及五个职责单元 | 新增 `organization/` 架构档案；明确字幕精度与刻录验收边界 |
 | 1.3 | 2026-10-23 | 明确最高指示与组织规章的宪制关系 | 最高指示规定根本原则；`organization/` 规定授权范围内的具体组织制度 |
+| 1.4 | 2026-10-26 | 总控钦定新增单条素材来源 | 新增 `yt:9aPyO1jfDGM` 资源记录与 `wwmt-trump-rally-michigan` 采集器 |
 
 
 ## 第一条 目的与效力
@@ -71,6 +72,7 @@
 |---|---|---|
 | White House 直播 | `https://www.youtube.com/@WhiteHouse/streams` | YouTube 频道 |
 | White House 视频 | `https://www.youtube.com/@WhiteHouse/videos` | YouTube 频道 |
+| WWMT 密歇根集会回放 | `https://www.youtube.com/watch?v=9aPyO1jfDGM` | YouTube 单条素材 |
 
 钦定资源的移除、替换或降级，须经总控书面批准，并保留旧 ID 的 `successor`
 关系；两条频道分别登记，不得合并为一条"White House YouTube"。
@@ -236,7 +238,7 @@ observed_at   单元 ID   机制   观察值   判定(ok/fail/unknown)   证据(
 
 已登记 3 个 GitHub 工作流巡检单元；Cline 计划任务、PC 持久化与各 harness 尚无
 可核验清单，已在 `inspection/registry.json` 的 `gaps` 中逐项声明为
-`pending-inventory`。资源侧已登记 2 条钦定 YouTube 频道与 4 条支撑来源，
+`pending-inventory`。资源侧已登记 3 条钦定资源（2 条 White House 频道 + 1 条 WWMT 单条素材）与 5 条支撑来源，
 均映射到 `scripts/monitoring/acquisition.py` 的采集器。
 在缺口关闭前，覆盖率不得对外声称 100%。
 

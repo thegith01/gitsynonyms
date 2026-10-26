@@ -1,6 +1,6 @@
 {
   "schema": "gitsynonyms.resources.registry/1",
-  "updated_at": "2026-10-23T04:04:00Z",
+  "updated_at": "2026-10-26T02:22:23Z",
   "owner": "资源获取分析司",
   "designated_by": "总控",
   "principle": "one-url-one-record",
@@ -139,6 +139,25 @@
       },
       "status": "active",
       "note": "信息差公示处：基于 last30days-skill 的多源信息差分析与公示，每 6 小时运行。"
+    },
+    {
+      "id": "yt:9aPyO1jfDGM",
+      "kind": "asset",
+      "url": "https://www.youtube.com/watch?v=9aPyO1jfDGM",
+      "designated": true,
+      "trust": "press",
+      "cadence": "1h",
+      "analysis": [
+        "single-asset-archival",
+        "bilingual-material",
+        "burn-in-verification"
+      ],
+      "collector": {
+        "script": "scripts/monitoring/acquisition.py",
+        "source": "wwmt-trump-rally-michigan"
+      },
+      "status": "active",
+      "note": "总控 2026-10-26 钦定的单条素材：WWMT-TV 密歇根集会直播回放（3h16m）。无字幕轨，字幕阶段必须显式失败；媒体下载需 cookies。巡检单元待巡检司在 24h 内决定，当前采集中枢无独立调度。"
     }
   ]
 }

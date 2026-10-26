@@ -143,6 +143,17 @@ SOURCES: tuple[SourceSpec, ...] = (
         note="Live and past streams of the same channel.",
     ),
     SourceSpec(
+        name="wwmt-trump-rally-michigan",
+        kind="youtube",
+        url="https://www.youtube.com/watch?v=9aPyO1jfDGM",
+        trust="press",
+        note=(
+            "Single press asset designated by 总控: WWMT-TV live replay of the "
+            "Michigan rally. Has no caption track, so caption stages must fail "
+            "loudly instead of substituting one."
+        ),
+    ),
+    SourceSpec(
         name="factbase-calendar",
         kind="html",
         url="https://rollcall.com/factbase/trump/calendar/",
@@ -1705,7 +1716,12 @@ def list_youtube(spec: SourceSpec, limit: int) -> list[dict]:
         except Exception as error:  # noqa: BLE001
             raise SourceUnavailable(f"yt-dlp failed: {error}") from error
     entries = (info or {}).get("entries") or []
-    return [entry for entry in entries if isinstance(entry, dict)]
+    listed = [entry for entry in entries if isinstance(entry, dict)]
+    if not listed and isinstance(info, dict) and info.get("id"):
+        # A single-video URL has no playlist entries; treat the video itself as
+        # the one entry so a designated asset is actually collectable.
+        listed = [info]
+    return listed
 
 
 # ---------------------------------------------------------------------------

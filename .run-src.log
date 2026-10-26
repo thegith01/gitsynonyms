@@ -1,0 +1,9 @@
+[youtube] Extracting URL: https://www.youtube.com/watch?v=a4ESC9LmHB0
+[youtube] a4ESC9LmHB0: Downloading webpage
+[youtube] a4ESC9LmHB0: Downloading tv samsung player API JSON
+[youtube] a4ESC9LmHB0: Downloading visionos player API JSON
+[youtube] a4ESC9LmHB0: Downloading player cbcfbf2f-main
+[youtube] [jsc:node] Solving JS challenges using node
+[youtube] a4ESC9LmHB0: Downloading m3u8 information
+[info] a4ESC9LmHB0: Downloading 1 format(s): 137+140
+ERROR: unable to download video data: HTTP Error 403: Forbidden
