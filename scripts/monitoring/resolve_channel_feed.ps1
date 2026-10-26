@@ -13,6 +13,17 @@ $channels = @(
       "https://www.youtube.com/@WhiteHouse/videos",
       "https://www.youtube.com/@WhiteHouse/streams"
 )
+$forcedVideoId = $env:FORCE_VIDEO_ID
+if (-not [string]::IsNullOrWhiteSpace($forcedVideoId)) {
+    if ($forcedVideoId -notmatch "^[A-Za-z0-9_-]{11}$") {
+        throw "FORCE_VIDEO_ID must be an 11-character YouTube video ID: $forcedVideoId"
+    }
+    $videoId = $forcedVideoId
+    $videoTitle = $forcedVideoId
+    $channels = @()
+    Write-Host "Processing the operator-selected video $videoId instead of the channel listing."
+}
+
 $proxyArguments = @()
 if (-not [string]::IsNullOrWhiteSpace($env:YTDLP_PROXY)) {
     $proxyArguments = @("--proxy", $env:YTDLP_PROXY)
@@ -36,7 +47,7 @@ foreach ($channel in $channels) {
       }
       if ($videoId) { break }
 }
-if ($foundItems -eq 0) {
+if (-not $videoId -and $foundItems -eq 0) {
       throw "No video IDs were returned by either White House channel listing."
 }
 

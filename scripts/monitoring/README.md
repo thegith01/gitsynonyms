@@ -26,7 +26,7 @@ monitor falls back to the fastest working public proxy from the proxy index
 (the validated pool or every discovered proxy list), instead of failing on the
 first blocked direct egress.
 
-`workflow_dispatch` can reprocess the latest upload with `force_check`. Manual
+`workflow_dispatch` can reprocess the latest upload with `force_check`, or process a specific video with `video_id` (the resolver then skips the channel listing). The designated single-asset source `yt:9aPyO1jfDGM` is processed this way; it has no caption track, so the subtitle stage fails loudly instead of substituting one. Manual
 runs must target `main` to publish. The workflow requires repository permissions
 to write contents and deploy GitHub Pages.
 

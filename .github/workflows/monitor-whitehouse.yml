@@ -11,6 +11,10 @@ on:
         required: false
         type: boolean
         default: false
+      video_id:
+        description: Process this specific video ID instead of resolving the channel
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -50,6 +54,7 @@ jobs:
         id: resolve
         env:
           FORCE_CHECK: ${{ inputs.force_check }}
+          FORCE_VIDEO_ID: ${{ inputs.video_id }}
           YTDLP_PROXY: ${{ secrets.YTDLP_PROXY }}
         shell: pwsh
         run: ./scripts/monitoring/resolve_channel_feed.ps1
