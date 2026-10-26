@@ -15,6 +15,8 @@ work/
 output/**/*.mp4
 output/**/*.webm
 output/**/*.m4a
+output/**/*.part
+output/**/*.ytdl
 
 # Local scratch directory for download tooling and logs.
 .work/
