@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:02.800" end="00:00:06.680" style="s2">All right. So, this is a friend of mine</p>
+<p begin="00:00:05.240" end="00:00:08.600" style="s2">from Florida.</p>
+<p begin="00:00:06.680" end="00:00:10.680" style="s2">So, it&#39;s it&#39;s a nice coin like whatever,</p>
+<p begin="00:00:08.600" end="00:00:12.840" style="s2">but then on the other side it&#39;s got a</p>
+<p begin="00:00:10.680" end="00:00:14.960" style="s2">nice little</p>
+<p begin="00:00:12.840" end="00:00:17.720" style="s2">You guys can see that, right?</p>
+<p begin="00:00:14.960" end="00:00:19.640" style="s2">&gt;&gt; All right. And so, I told him I said I</p>
+<p begin="00:00:17.720" end="00:00:21.960" style="s2">need to get this to the president. Can I</p>
+<p begin="00:00:19.640" end="00:00:24.240" style="s2">please have one to give to him? And so,</p>
+<p begin="00:00:21.960" end="00:00:26.000" style="s2">I was able to do it. And um but I just</p>
+<p begin="00:00:24.240" end="00:00:27.920" style="s2">want to welcome the president back to</p>
+<p begin="00:00:26.000" end="00:00:29.640" style="s2">his home state. Uh they&#39;ve got a big</p>
+<p begin="00:00:27.920" end="00:00:31.720" style="s2">crowd in Fort Myers. I know a lot of</p>
+<p begin="00:00:29.640" end="00:00:33.680" style="s2">people are excited. Um we&#39;ve got a lot</p>
+<p begin="00:00:31.720" end="00:00:35.280" style="s2">of races going on. And uh and I think</p>
+<p begin="00:00:33.680" end="00:00:38.200" style="s2">we&#39;re going to do very well in Florida</p>
+<p begin="00:00:35.280" end="00:00:39.440" style="s2">as we have in recent years.</p>
+<p begin="00:00:38.200" end="00:00:41.320" style="s2">Great guy.</p>
+<p begin="00:00:39.440" end="00:00:42.440" style="s2">&gt;&gt; What&#39;s your message to voters tonight</p>
+<p begin="00:00:41.320" end="00:00:44.160" style="s2">&gt;&gt; Uh</p>
+<p begin="00:00:42.440" end="00:00:45.320" style="s2">just get out and vote. If they vote,</p>
+<p begin="00:00:44.160" end="00:00:48.680" style="s2">we&#39;re going to win big.</p>
+<p begin="00:00:45.320" end="00:00:50.440" style="s2">&gt;&gt; Any thoughts on the Alaska loss?</p>
+<p begin="00:00:48.680" end="00:00:53.160" style="s2">&gt;&gt; Well, I&#39;m the I&#39;m the one that said do</p>
+<p begin="00:00:50.440" end="00:00:55.520" style="s2">it. They have two guys running named Dan</p>
+<p begin="00:00:53.160" end="00:00:57.600" style="s2">Sullivan running. So, the Democrats put</p>
+<p begin="00:00:55.520" end="00:00:59.880" style="s2">up a guy never pa- I don&#39;t think he ever</p>
+<p begin="00:00:57.600" end="00:01:02.360" style="s2">voted before. All of a sudden he decides</p>
+<p begin="00:00:59.880" end="00:01:03.760" style="s2">to run for the Senate. And his name is</p>
+<p begin="00:01:02.360" end="00:01:06.040" style="s2">Dan Sullivan.</p>
+<p begin="00:01:03.760" end="00:01:08.920" style="s2">One is Daniel S. One is Daniel J. The</p>
+<p begin="00:01:06.040" end="00:01:11.520" style="s2">Daniel J. is the fake. And he wants to</p>
+<p begin="00:01:08.920" end="00:01:13.160" style="s2">change his middle initial to Daniel S.</p>
+<p begin="00:01:11.520" end="00:01:13.360" style="s2">But, he said this has nothing to do with</p>
+<p begin="00:01:13.160" end="00:01:16.240" style="s2">politics.</p>
+<p begin="00:01:13.360" end="00:01:19.160" style="s2">&gt;&gt; And and Daniel J. just so happens to be</p>
+<p begin="00:01:16.240" end="00:01:20.280" style="s2">funded by liberal donors. Imagine that.</p>
+<p begin="00:01:19.160" end="00:01:22.800" style="s2">What a coincidence that is.</p>
+<p begin="00:01:20.280" end="00:01:24.160" style="s2">&gt;&gt; By By ActBlue. Okay. But, he has nothing</p>
+<p begin="00:01:22.800" end="00:01:24.880" style="s2">to do with politics. No, it&#39;s a</p>
+<p begin="00:01:24.160" end="00:01:26.240" style="s2">disgrace.</p>
+<p begin="00:01:24.880" end="00:01:27.960" style="s2">&gt;&gt; Governor, how do you think the Florida</p>
+<p begin="00:01:26.240" end="00:01:29.200" style="s2">turnout will be tonight? Why did Why did</p>
+<p begin="00:01:27.960" end="00:01:30.880" style="s2">so much go down?</p>
+<p begin="00:01:29.200" end="00:01:32.920" style="s2">&gt;&gt; Well, look. I mean, I I think anytime</p>
+<p begin="00:01:30.880" end="00:01:34.960" style="s2">you run as a first-time candidate, it&#39;s</p>
+<p begin="00:01:32.920" end="00:01:37.200" style="s2">a big state. You got to get known. That</p>
+<p begin="00:01:34.960" end="00:01:40.240" style="s2">just takes time. But, if you look when I</p>
+<p begin="00:01:37.200" end="00:01:42.080" style="s2">ran uh 8 years ago, we had 300,000 more</p>
+<p begin="00:01:40.240" end="00:01:45.480" style="s2">registered Democrats in this state than</p>
+<p begin="00:01:42.080" end="00:01:47.280" style="s2">Republicans. Today, we have 1.5 million</p>
+<p begin="00:01:45.480" end="00:01:48.920" style="s2">more registered Republicans. So, I think</p>
+<p begin="00:01:47.280" end="00:01:51.600" style="s2">what the president said is right. If</p>
+<p begin="00:01:48.920" end="00:01:53.280" style="s2">people come out, if our people vote, I</p>
+<p begin="00:01:51.600" end="00:01:54.840" style="s2">think we&#39;ll win not just in Florida, but</p>
+<p begin="00:01:53.280" end="00:01:57.080" style="s2">some of these other Senate races that</p>
+<p begin="00:01:54.840" end="00:01:59.120" style="s2">are close, if our people show up, we&#39;ll</p>
+<p begin="00:01:57.080" end="00:02:00.760" style="s2">win those Senate races. Uh so, it&#39;s all</p>
+<p begin="00:01:59.120" end="00:02:02.120" style="s2">about the turnout, and no one does it</p>
+<p begin="00:02:00.760" end="00:02:02.680" style="s2">better than the president of the United</p>
+<p begin="00:02:02.120" end="00:02:03.960" style="s2">States.</p>
+<p begin="00:02:02.680" end="00:02:05.440" style="s2">&gt;&gt; Mr. President, you&#39;re in fast</p>
+<p begin="00:02:03.960" end="00:02:06.560" style="s2">&gt;&gt; He&#39;s He&#39;s going to be in great shape.</p>
+<p begin="00:02:05.440" end="00:02:08.240" style="s2">He&#39;s going to be in great shape.</p>
+<p begin="00:02:06.560" end="00:02:11.040" style="s2">&gt;&gt; Your ambassador to Turkey, sir, just</p>
+<p begin="00:02:08.240" end="00:02:12.720" style="s2">said in an interview that, absolutely,</p>
+<p begin="00:02:11.040" end="00:02:15.240" style="s2">{quote} {unquote}, there could be a</p>
+<p begin="00:02:12.720" end="00:02:17.560" style="s2">strike on Iran this weekend. Have you</p>
+<p begin="00:02:15.240" end="00:02:19.800" style="s2">gone back on holding off on relaunching</p>
+<p begin="00:02:17.560" end="00:02:22.520" style="s2">&gt;&gt; my ambassador to Turkey. He&#39;s a pretty</p>
+<p begin="00:02:19.800" end="00:02:24.040" style="s2">powerful man, I guess. Well, if if</p>
+<p begin="00:02:22.520" end="00:02:25.600" style="s2">that&#39;s the case, I don&#39;t know anything</p>
+<p begin="00:02:24.040" end="00:02:26.800" style="s2">about it. Thank you very much,</p>
+<p begin="00:02:25.600" end="00:02:28.959" style="s2">everybody. Run, thank you.</p>
+<p begin="00:02:26.800" end="00:02:31.520" style="s2">&gt;&gt; Thank you, sir.</p>
+<p begin="00:02:28.959" end="00:02:31.520" style="s2">Say hello to your</p>
+</div>
+</body>
+</tt>
