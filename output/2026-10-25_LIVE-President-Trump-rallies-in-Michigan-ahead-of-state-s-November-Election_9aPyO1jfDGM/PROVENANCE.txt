@@ -1,0 +1,25 @@
+Video: 9aPyO1jfDGM
+Title: LIVE: President Trump rallies in Michigan ahead of state's November Election
+URL: https://www.youtube.com/watch?v=9aPyO1jfDGM
+Channel: WWMT-TV (@wwmtnews) - press, not the White House channel
+Duration: 11771 s (3h16m), live replay
+
+English captions
+  Source: YouTube automatic track "en-orig" (authentic, appeared after the
+  live replay finished processing)
+  Formats: vtt, srt, ttml, srv3, srv2, srv1, json3, kept byte-for-byte
+
+Chinese captions
+  NOT obtained. zh-Hans and zh-Hant both returned HTTP 429 from this egress,
+  and the video has no manual subtitles. No machine translation was written
+  into the Chinese line; the bilingual outputs are therefore absent by design.
+
+Burn-in
+  NOT produced. Every media request returned HTTP 403 (m3u8 and DASH https,
+  several player clients, six public proxies). YouTube requires authenticated
+  cookies (YOUTUBE_COOKIES_B64) for media from this egress. A 3h16m libx264
+  encode at CRF 18 is also far beyond the runner budget.
+
+Deployment
+  NOT performed. Pages deploys run from the repository workflow on main; the
+  GitHub token available in this sandbox is invalid (gh auth status fails).
