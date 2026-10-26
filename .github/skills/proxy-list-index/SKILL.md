@@ -84,6 +84,10 @@ The same egress must carry both the API request and the media request, because
 YouTube signs media URLs against the IP it observed on the API call. A proxy
 that is only used for the download therefore still fails with HTTP 403.
 
+YouTube also fingerprints the HTTP client. Pass `--impersonate chrome`
+(needs `curl-cffi`) on the metadata and the media request alike; otherwise a
+working public proxy still gets HTTP 403 for the media stream.
+
 ```bash
 yt-dlp --proxy "http://195.154.191.26:1092" -f "137+140" --merge-output-format mp4 URL
 ```
