@@ -2,113 +2,86 @@
 set -euo pipefail
 
 # =============================================================================
-# FULL PIPELINE: Video Download → Subtitle Generation → Burning → Deployment
-# Target: https://www.youtube.com/watch?v=9aPyO1jfDGM
+# FULL PIPELINE: Proxy -> Download YouTube video + subtitles -> Translate
+# -> Burn bilingual subtitles -> Publish to Release + GitHub Pages
+# Runs on GitHub Actions runner (ubuntu-latest) or locally.
+# Uses repository proxy code: scripts/select_public_ytdlp_proxy.py
 # =============================================================================
 
-YOUTUBE_URL="https://www.youtube.com/watch?v=9aPyO1jfDGM"
-VIDEO_DIR="/workspace/videos"
-OUTPUT_DIR="/workspace/processed_videos"
-DEPLOY_DIR="/workspace/deployed"
-SCRIPT_DIR="/workspace/scripts"
+VIDEO_ID="${1:-9aPyO1jfDGM}"
+YOUTUBE_URL="https://www.youtube.com/watch?v=${VIDEO_ID}"
+OUTPUT_DIR="output"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-# Export PATH for ffmpeg and yt-dlp
-export PATH="/workspace/bin:$PATH"
+export PATH="${REPO_ROOT}/bin:${PATH}"
 
-echo "=========================================="
-echo "  VIDEO SUBTITLE PROCESSING PIPELINE"
-echo "=========================================="
-echo "YouTube URL: $YOUTUBE_URL"
-echo "Video directory: $VIDEO_DIR"
-echo "Output directory: $OUTPUT_DIR"
-echo "Deploy directory: $DEPLOY_DIR"
+echo "============================================================"
+echo "  FULL PIPELINE: ${VIDEO_ID}"
+echo "============================================================"
+echo "Video URL: ${YOUTUBE_URL}"
+echo "Output dir: ${OUTPUT_DIR}"
 echo ""
 
-# Step 1: Create directories
-echo "Step 1: Creating directories..."
-mkdir -p "$VIDEO_DIR" "$OUTPUT_DIR" "$DEPLOY_DIR"
-echo "✓ Directories created"
-
-# Step 2: Download video and English subtitles
-echo ""
-echo "Step 2: Downloading video and English subtitles..."
-echo "Running: yt-dlp --write-auto-sub --sub-langs en -f 'bestvideo[height<=480]+bestaudio' \"$YOUTUBE_URL\""
-echo ""
-echo "NOTE: Due to YouTube bot protection, video download may require:"
-echo "  --cookies-from-browser <browser> or --cookies <cookies.txt>"
-echo ""
-
-VIDEO_FILE=$(ls "$VIDEO_DIR"/*.mp4 2>/dev/null | head -1 || echo "")
-EN_VTT=$(ls "$VIDEO_DIR"/*.en.vtt 2>/dev/null | head -1 || echo "")
-
-if [[ -z "$VIDEO_FILE" ]]; then
-    echo "⚠ Video file not found in $VIDEO_DIR"
-    echo "  Please run: yt-dlp --write-auto-sub --sub-langs en \"$YOUTUBE_URL\" -o \"$VIDEO_DIR/%(title)s.%(ext)s\""
-    echo "  With cookies: --cookies-from-browser chrome"
-    echo ""
-    read -p "Press Enter to continue with subtitle processing only, or Ctrl+C to abort..."
+# ---- Step 0: Select fastest public proxy (repo code) ----
+echo "Step 0: Selecting public proxy..."
+export YTDLP_PROXY=""
+if python scripts/select_public_ytdlp_proxy.py; then
+  echo "Proxy selected: ${YTDLP_PROXY:-<none>}"
 else
-    echo "✓ Video found: $VIDEO_FILE"
+  echo "No public proxy available; will try direct connection."
 fi
 
-if [[ -z "$EN_VTT" ]]; then
-    echo "⚠ English VTT subtitles not found"
-    echo "  Found: $(ls "$VIDEO_DIR"/*.vtt 2>/dev/null || echo 'none')"
+# ---- Step 1: Download video + bilingual subtitles and burn-in ----
+echo ""
+echo "Step 1: Downloading video + subtitles and burning-in..."
+python scripts/download_youtube_bilingual_srt.py \
+  "${YOUTUBE_URL}" \
+  --languages "zh-Hans,en-orig" \
+  --output-dir "${OUTPUT_DIR}" \
+  --burn-in
+
+BURNED_MP4="$(find "${OUTPUT_DIR}" -type f -name "Burned_Bilingual_${VIDEO_ID}.mp4" -print -quit)"
+if [[ -z "${BURNED_MP4}" || ! -f "${BURNED_MP4}" ]]; then
+  echo "::error::Burned MP4 not found: ${BURNED_MP4}"
+  exit 1
+fi
+echo "Burned video: ${BURNED_MP4}"
+
+# ---- Step 2: Publish MP4 to GitHub Release ----
+echo ""
+echo "Step 2: Publishing MP4 to GitHub Release..."
+if gh release view "${VIDEO_ID}" >/dev/null 2>&1; then
+  gh release upload "${VIDEO_ID}" "${BURNED_MP4}" --clobber
 else
-    echo "✓ English subtitles found: $EN_VTT"
+  gh release create "${VIDEO_ID}" "${BURNED_MP4}" \
+    --title "Bilingual Video ${VIDEO_ID}" \
+    --notes "Automatically archived from YouTube with Chinese and English subtitles burned in."
 fi
 
-# Step 3: Convert WebVTT to SRT
+# ---- Step 3: Generate video pages (GitHub Pages site) ----
 echo ""
-echo "Step 3: Converting WebVTT to SRT..."
-if [[ -n "$EN_VTT" ]]; then
-    python3 "$SCRIPT_DIR/subtitle_processor.py" "$EN_VTT" \
-        "$OUTPUT_DIR/english_subtitles.srt" \
-        "$OUTPUT_DIR/chinese_subtitles.srt"
-    echo "✓ SRT subtitles generated"
-else
-    echo "⚠ Skipping - no English VTT file found"
-fi
+echo "Step 3: Generating Pages site..."
+python scripts/generate_video_pages.py
 
-# Step 4: Burn subtitles into video
+# ---- Step 4: Commit and push site/ + output/ to repo ----
 echo ""
-echo "Step 4: Burning subtitles into video..."
-EN_SRT="$OUTPUT_DIR/english_subtitles.srt"
-CN_SRT="$OUTPUT_DIR/chinese_subtitles.srt"
-BURNED_VIDEO="$OUTPUT_DIR/final_with_subtitles.mp4"
-
-if [[ -n "$VIDEO_FILE" && -f "$EN_SRT" && -f "$CN_SRT" ]]; then
-    bash "$SCRIPT_DIR/burn_subtitles.sh" "$VIDEO_FILE" "$EN_SRT" "$CN_SRT" "$BURNED_VIDEO"
-    echo "✓ Video with burned subtitles created"
+echo "Step 4: Committing and pushing site + output..."
+git config user.name "github-actions[bot]"
+git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+git add output/ site/
+if ! git diff --cached --quiet; then
+  git commit -m "Publish bilingual video ${VIDEO_ID}"
+  git push origin HEAD:main
 else
-    echo "⚠ Skipping subtitle burning - missing required files"
-    echo "  Video: ${VIDEO_FILE:-not found}"
-    echo "  English SRT: $(test -f "$EN_SRT" && echo 'found' || echo 'not found')"
-    echo "  Chinese SRT: $(test -f "$CN_SRT" && echo 'found' || echo 'not found')"
-fi
-
-# Step 5: Deploy
-echo ""
-echo "Step 5: Deploying..."
-BURNED_VIDEO="$OUTPUT_DIR/final_with_subtitles.mp4"
-if [[ -f "$BURNED_VIDEO" ]]; then
-    bash "$SCRIPT_DIR/deploy.sh" "$VIDEO_FILE" "$EN_SRT" "$CN_SRT" "$BURNED_VIDEO" "$DEPLOY_DIR"
-    echo "✓ Deployment complete"
-else
-    echo "⚠ No burned video to deploy"
+  echo "No changes to commit."
 fi
 
 echo ""
-echo "=========================================="
-echo "  PIPELINE SUMMARY"
-echo "=========================================="
-echo "Processed files:"
-ls -la "$OUTPUT_DIR/" 2>/dev/null || echo "No output files"
-echo ""
-echo "Deployed files:"
-ls -la "$DEPLOY_DIR/" 2>/dev/null || echo "No deployed files"
-echo ""
-echo "To complete the video download, run:"
-echo "  yt-dlp --write-auto-sub --sub-langs en --cookies-from-browser chrome \\"
-echo "    \"$YOUTUBE_URL\" -o \"$VIDEO_DIR/%(title)s.%(ext)s\""
-echo "=========================================="
+echo "============================================================"
+echo "  PIPELINE COMPLETE: ${VIDEO_ID}"
+echo "============================================================"
+echo "Burned MP4: ${BURNED_MP4}"
+echo "Release: https://github.com/gitsynonyms01/gitsynonyms/releases/tag/${VIDEO_ID}"
+echo "Pages:    https://gitsynonyms01.github.io/gitsynonyms/videos/${VIDEO_ID}.html"
+echo "============================================================"
