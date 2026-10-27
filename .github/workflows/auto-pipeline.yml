@@ -158,6 +158,21 @@ jobs:
           echo "file=$file" >> "$GITHUB_OUTPUT"
           ls -lh "$file"
 
+      - name: Score the footage on the five material criteria
+        id: footage
+        if: inputs.mode != 'probe'
+        continue-on-error: true
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+          SOURCE: ${{ steps.source.outputs.file }}
+        run: |
+          mkdir -p work
+          python scripts/footage_quality.py \
+            --video "$SOURCE" --sources work/SOURCES.json \
+            --report work/FOOTAGE.json \
+            --samples 6 --sample-seconds 20
+          echo "footage score recorded in work/FOOTAGE.json"
+
       - name: Take the seven YouTube caption formats
         id: captions
         if: ${{ !inputs.force_asr }}
@@ -269,6 +284,7 @@ jobs:
           cp output/TIMING.json "dist/${VIDEO_ID}.TIMING.json" 2>/dev/null || true
           cp work/EVENT.json "dist/${VIDEO_ID}.EVENT.json" 2>/dev/null || true
           cp work/SOURCES.json "dist/${VIDEO_ID}.SOURCES.json" 2>/dev/null || true
+          cp work/FOOTAGE.json "dist/${VIDEO_ID}.FOOTAGE.json" 2>/dev/null || true
           (cd dist && zip -q -r "bilingual_bundle_${VIDEO_ID}.zip" .)
           cp "output/Burned_Bilingual_${VIDEO_ID}.mp4" dist/
           for file in dist/*; do
