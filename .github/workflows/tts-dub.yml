@@ -1,0 +1,101 @@
+name: TTS dub a burned video
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: Release tag / video id that holds Burned_Bilingual_<id>.mp4
+        required: true
+        default: "9aPyO1jfDGM"
+      voice:
+        description: edge-tts catalogue voice (not a cloned voice)
+        required: false
+        default: "zh-CN-XiaoxiaoNeural"
+      original_gain:
+        description: Original audio gain 0..1 (0 = dub only)
+        required: false
+        default: "0.25"
+      rate:
+        description: Speech rate, e.g. +0% or -10%
+        required: false
+        default: "+0%"
+
+permissions:
+  contents: write
+
+jobs:
+  dub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg and edge-tts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install --upgrade edge-tts
+          ffmpeg -version | head -1
+
+      - name: Fetch burned video from release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VIDEO_ID: ${{ inputs.video_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          gh release download "$VIDEO_ID" --pattern "Burned_Bilingual_${VIDEO_ID}.mp4" --dir work --clobber
+          ls -lh work
+
+      - name: Pick Chinese subtitle
+        id: sub
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          srt="$(find output -type f -name "*Bilingual*.srt" -path "*${VIDEO_ID}*" -print -quit || true)"
+          if [ -z "$srt" ]; then
+            srt="$(find output -type f -name "*.srt" -path "*${VIDEO_ID}*" -print -quit || true)"
+          fi
+          if [ -z "$srt" ]; then
+            echo "::error::no subtitle found in output/ for $VIDEO_ID"
+            exit 1
+          fi
+          echo "subtitle=$srt" >> "$GITHUB_OUTPUT"
+          echo "using $srt"
+
+      - name: Synthesise dub track and mux
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+          VOICE: ${{ inputs.voice }}
+          GAIN: ${{ inputs.original_gain }}
+          RATE: ${{ inputs.rate }}
+          SUBTITLE: ${{ steps.sub.outputs.subtitle }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/tts_dub.py \
+            --video "work/Burned_Bilingual_${VIDEO_ID}.mp4" \
+            --subtitle "$SUBTITLE" \
+            --output "work/Dubbed_${VIDEO_ID}.mp4" \
+            --voice "$VOICE" \
+            --original-gain "$GAIN" \
+            --rate "$RATE"
+          ls -lh work
+
+      - name: Upload dubbed video to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VIDEO_ID: ${{ inputs.video_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release upload "$VIDEO_ID" "work/Dubbed_${VIDEO_ID}.mp4" --clobber
