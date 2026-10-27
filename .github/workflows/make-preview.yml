@@ -1,0 +1,105 @@
+name: Make web preview
+
+# A 1.8 GB Release asset is served as an attachment without reliable Range
+# support, so it cannot back a <video> element. This job samples the burned
+# film on a cloud runner and commits a short 720p preview plus a poster frame,
+# then regenerates the site so the player points at the preview.
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: Video id whose Release asset should be sampled
+        required: true
+        default: "9aPyO1jfDGM"
+      segments:
+        description: Number of excerpts to join
+        required: false
+        default: "3"
+      seconds:
+        description: Seconds per excerpt
+        required: false
+        default: "30"
+      commit:
+        description: Commit the preview and regenerated site
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: make-preview
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      VIDEO_ID: ${{ inputs.video_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version | head -1
+
+      - name: Download the burned film from the Release
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          gh release download "$VIDEO_ID" \
+            --pattern "Burned_Bilingual_${VIDEO_ID}.mp4" \
+            --dir work
+          ls -lh "work/Burned_Bilingual_${VIDEO_ID}.mp4"
+
+      - name: Cut the preview and poster
+        run: |
+          set -euo pipefail
+          python scripts/make_web_preview.py \
+            --video "work/Burned_Bilingual_${VIDEO_ID}.mp4" \
+            --video-id "$VIDEO_ID" \
+            --output-dir site/media \
+            --segments "${{ inputs.segments }}" \
+            --seconds "${{ inputs.seconds }}"
+
+      - name: Verify the preview is playable and small
+        run: |
+          set -euo pipefail
+          ffprobe -v error -select_streams v:0 \
+            -show_entries stream=codec_name,width,height,duration \
+            -of default=nw=1 "site/media/${VIDEO_ID}-preview.mp4"
+          bytes=$(stat -c%s "site/media/${VIDEO_ID}-preview.mp4")
+          echo "preview bytes: $bytes"
+          if [ "$bytes" -gt 41943040 ]; then
+            echo "::error::preview exceeds 40 MB; lower --seconds or --crf"
+            exit 1
+          fi
+
+      - name: Regenerate the site
+        run: python scripts/generate_video_pages.py
+
+      - name: Commit the preview and site
+        if: inputs.commit
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "feat(site): add ${VIDEO_ID} web preview and poster"
+            git push origin HEAD:main
+          fi

@@ -950,6 +950,18 @@ footer {
   background: #05070f;
 }
 
+.video-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #05070f;
+}
+
+.video-frame--fallback {
+  position: relative;
+}
+
 .meta-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

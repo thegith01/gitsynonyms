@@ -270,6 +270,17 @@ jobs:
             exit 1
           fi
 
+      - name: Cut the web preview and poster
+        if: inputs.mode == 'full'
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+        run: |
+          set -euo pipefail
+          python scripts/make_web_preview.py \
+            --video "output/Burned_Bilingual_${VIDEO_ID}.mp4" \
+            --video-id "$VIDEO_ID" \
+            --output-dir site/media
+
       - name: Back up subtitles and deliverables to the bin
         if: inputs.mode == 'full'
         env:

@@ -135,6 +135,38 @@ def nav(prefix: str = "", active: str = "") -> list[str]:
     return lines
 
 
+def player_block(video_id: str, prefix: str, release: str, title: str) -> list[str]:
+    """Embed a small preview; never point a <video> at the multi-GB release.
+
+    The release download is sent as an attachment and does not stream, so a
+    browser either downloads 1.8 GB or shows an empty player. ``make_web_preview.py``
+    writes a short 720p montage next to the poster; when it is not there yet the
+    block degrades to the source thumbnail plus the download link instead of a
+    broken player.
+    """
+    preview = SITE / "media" / f"{video_id}-preview.mp4"
+    poster = SITE / "media" / f"{video_id}-poster.jpg"
+    if preview.exists():
+        poster_attr = f' poster="{prefix}media/{poster.name}"' if poster.exists() else ""
+        return [
+            '        <div class="video-frame">',
+            f'          <video controls preload="metadata" playsinline{poster_attr} src="{prefix}media/{preview.name}">',
+            f'            <a href="{release}">下载 1080p 成片</a>',
+            '          </video>',
+            '        </div>',
+            '        <p class="hint">网页播放的是 720p 节选预览；完整 1080p 成片见下方下载。</p>',
+        ]
+    thumbnail = f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
+    fallback = f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg"
+    return [
+        '        <div class="video-frame video-frame--fallback">',
+        f'          <img src="{thumbnail}" alt="{title}" loading="lazy"'
+        f" onerror=\"this.onerror=null;this.src='{fallback}'\">",
+        '        </div>',
+        '        <p class="hint">该成片尚未生成网页预览；下方可下载完整成片或打开原始视频。</p>',
+    ]
+
+
 def detail_page(video: dict, previous_video: dict | None, next_video: dict | None) -> str:
     video_id = video["Video ID"]
     title = html.escape(video.get("Title", video_id))
@@ -175,12 +207,7 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
         '',
         '      <section class="panel video-panel" aria-labelledby="video-title">',
         f'        <h2 id="video-title">{title}</h2>',
-        '        <div class="video-frame">',
-        '          <video controls preload="metadata" playsinline poster="../media/roundtable-2026-10-21-poster.jpg">',
-        f'            <source src="{release}" type="video/mp4">',
-        '            Your browser cannot play this MP4 preview. Use the download links below.',
-        '          </video>',
-        '        </div>',
+        *player_block(video_id, "../", release, title),
         '        <p class="hint">1080p 硬字幕成片；金色中文在上、白色英文在下，英文逐词高亮，磨砂玻璃钻石背景框从片头持续到片尾。</p>',
         '        <dl class="meta-grid">',
         f'          <div><dt>视频 ID</dt><dd>{html.escape(video_id)}</dd></div>',
@@ -337,12 +364,7 @@ def latest_page(videos: list[dict]) -> str:
         '',
         '      <section class="panel video-panel" aria-labelledby="video-title">',
         f'        <h2 id="video-title">{title}</h2>',
-        '        <div class="video-frame">',
-        '          <video controls preload="metadata" playsinline poster="media/roundtable-2026-10-21-poster.jpg">',
-        f'            <source src="{release}" type="video/mp4">',
-        '            Your browser cannot play this MP4 preview. Use the download links below.',
-        '          </video>',
-        '        </div>',
+        *player_block(video_id, "", release, title),
         '        <p class="hint">1080p 硬字幕成片；金色中文在上、白色英文在下，英文逐词高亮，磨砂玻璃钻石背景框从片头持续到片尾。</p>',
         '        <dl class="meta-grid">',
         f'          <div><dt>视频 ID</dt><dd>{html.escape(video_id)}</dd></div>',
@@ -459,12 +481,7 @@ def home_page(videos: list[dict]) -> str:
         '        <p class="eyebrow">最新一场</p>',
         f'        <h2 id="latest-title">{title}</h2>',
         f'        <p class="hint">📅 {html.escape(newest.get("Event date", ""))} · {html.escape(newest.get("Duration", ""))} · 1080p · 中英双语</p>',
-        '        <div class="video-frame">',
-        '          <video controls preload="metadata" playsinline poster="media/roundtable-2026-10-21-poster.jpg">',
-        f'            <source src="{release}" type="video/mp4">',
-        '            Your browser cannot play this MP4 preview. Use the detail page to download it.',
-        '          </video>',
-        '        </div>',
+        *player_block(video_id, "", release, title),
         '        <div class="actions">',
         f'          <a class="secondary-button" href="videos/{video_id}.html">观看与下载</a>',
         '          <a class="secondary-button" href="latest.html">成片详情与字幕</a>',

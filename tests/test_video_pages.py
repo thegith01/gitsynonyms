@@ -60,3 +60,35 @@ def test_latest_page_points_at_the_newest_video():
     assert "Burned_Bilingual_abc123.mp4" in text
     assert "videos/abc123.html" in text
     assert "videos/def456.html" in text
+
+
+def test_player_never_points_at_the_multi_gigabyte_release():
+    block = "\n".join(
+        pages.player_block(
+            "abc123", "", "https://example.test/Burned_Bilingual_abc123.mp4", "Title"
+        )
+    )
+
+    assert "<video" not in block
+    assert 'src="https://example.test/Burned_Bilingual_abc123.mp4"' not in block
+    assert "i.ytimg.com/vi/abc123/maxresdefault.jpg" in block
+    assert "hqdefault.jpg" in block
+
+
+def test_player_uses_the_committed_preview_when_present(tmp_path, monkeypatch):
+    media = tmp_path / "media"
+    media.mkdir()
+    (media / "abc123-preview.mp4").write_bytes(b"preview")
+    (media / "abc123-poster.jpg").write_bytes(b"poster")
+    monkeypatch.setattr(pages, "SITE", tmp_path)
+
+    block = "\n".join(
+        pages.player_block(
+            "abc123", "../", "https://example.test/Burned_Bilingual_abc123.mp4", "Title"
+        )
+    )
+
+    assert 'src="../media/abc123-preview.mp4"' in block
+    assert 'poster="../media/abc123-poster.jpg"' in block
+    assert "720p 节选预览" in block
+
