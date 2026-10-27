@@ -104,6 +104,7 @@ jobs:
               echo "cookies lines: $(wc -l < "$RUNNER_TEMP/cookies.txt")"
             fi
           fi
+          set +e
           python scripts/download_source_video.py \
             --video-id "$VIDEO_ID" \
             --output-dir work \
@@ -112,8 +113,12 @@ jobs:
             --proxy-tries 120 \
             --timeout 900 \
             --report work/download-report.json \
-            ${cookie_args[@]+"${cookie_args[@]}"}
-          ls -lh work/
+            ${cookie_args[@]+"${cookie_args[@]}"} > work/download.log 2>&1
+          status=$?
+          cat work/download.log
+          echo "download exit=$status"
+          ls -lh work/ || true
+          exit $status
 
       - name: Persist download diagnostics
         if: always()
@@ -125,6 +130,9 @@ jobs:
             cp work/download-report.json diag/download-report.json
           else
             echo '{"missing": true}' > diag/download-report.json
+          fi
+          if [ -f work/download.log ]; then
+            tail -c 200000 work/download.log > diag/download.log
           fi
           ls -lh diag/ || true
           git config user.name "github-actions[bot]"
