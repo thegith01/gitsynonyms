@@ -35,8 +35,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: module2-burn
@@ -206,19 +204,3 @@ jobs:
             git commit -m "Publish bilingual video $VIDEO_ID"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
-
-      - uses: actions/upload-pages-artifact@v3
-        if: inputs.stage == 'full'
-        with:
-          path: site
-
-  deploy:
-    needs: burn
-    if: inputs.stage == 'full'
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
