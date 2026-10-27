@@ -29,6 +29,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import select_public_ytdlp_proxy as selector  # noqa: E402
 
+CLIENT_CHAIN = ["tv_embedded", "android_vr", "default"]
+
 FORMAT_CHAIN = [
     "bv*[height>=1080]+ba/b[height>=1080]",
     "bv*[height>=720]+ba/b[height>=720]",
@@ -78,15 +80,17 @@ def probe(candidates: list[str], workers: int = 32) -> list[tuple[str, float]]:
 
 
 def try_download(url: str, target: Path, fmt: str, proxy: str | None, timeout: int,
-                 cookies: Path | None) -> tuple[bool, str]:
+                 cookies: Path | None, client: str = "default") -> tuple[bool, str]:
     command = ["yt-dlp", "--no-warnings", "--retries", "2", "--fragment-retries", "2",
                "--merge-output-format", "mp4", "-f", fmt, "-o", str(target)]
+    if client != "default":
+        command += ["--extractor-args", f"youtube:player_client={client}"]
     if proxy:
         command += ["--proxy", proxy]
     if cookies:
         command += ["--cookies", str(cookies)]
     command.append(url)
-    label = proxy or "direct"
+    label = f"{proxy or 'direct'} [{client}]"
     log(f"  trying {label} @ {fmt}")
     started = time.monotonic()
     try:
@@ -128,22 +132,27 @@ def main() -> int:
 
     attempts: list[dict] = []
     finished = False
-    for fmt in formats:
-        ok, note = try_download(url, target, fmt, None, args.timeout, cookies)
-        attempts.append({"mode": "direct", "format": fmt, "ok": ok, "note": note})
-        log(f"  {note}")
-        if ok:
-            finished = True
+    for client in CLIENT_CHAIN:
+        for fmt in formats:
+            ok, note = try_download(url, target, fmt, None, args.timeout, cookies, client)
+            attempts.append({"mode": "direct", "client": client, "format": fmt,
+                             "ok": ok, "note": note})
+            log(f"  {note}")
+            if ok:
+                finished = True
+                break
+        if finished:
             break
 
     if not finished:
         candidates = candidate_proxies(args.proxy_limit)
         alive = probe(candidates) if candidates else []
         for proxy, latency in alive[:args.proxy_tries]:
-            for fmt in formats[:1]:
-                ok, note = try_download(url, target, fmt, proxy, args.timeout, cookies)
-                attempts.append({"mode": "proxy", "proxy": proxy, "latency": round(latency, 3),
-                                 "format": fmt, "ok": ok, "note": note})
+            for client in ("tv_embedded", "default"):
+                ok, note = try_download(url, target, formats[0], proxy, args.timeout, cookies, client)
+                attempts.append({"mode": "proxy", "proxy": proxy, "client": client,
+                                 "latency": round(latency, 3), "format": formats[0],
+                                 "ok": ok, "note": note})
                 log(f"  {note}")
                 if ok:
                     finished = True
