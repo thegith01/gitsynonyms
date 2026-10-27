@@ -152,7 +152,6 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p dist
-          cp "output/Burned_Bilingual_${VIDEO_ID}.mp4" "dist/"
           cp "$CAPS"/"${VIDEO_ID}".* "dist/" || true
           cp "$CAPS"/SUBTITLE_SOURCES.json "dist/" || true
           if [ -f output/BURN.json ]; then cp output/BURN.json "dist/${VIDEO_ID}.BURN.json"; fi
@@ -161,6 +160,7 @@ jobs:
             if [ -f "$report" ]; then cp "$report" "dist/${VIDEO_ID}.$(basename "$report")"; fi
           done
           (cd dist && zip -q -r "bilingual_bundle_${VIDEO_ID}.zip" .)
+          cp "output/Burned_Bilingual_${VIDEO_ID}.mp4" "dist/"
           ls -lh dist/
           for file in dist/*; do
             name="$(basename "$file")"
