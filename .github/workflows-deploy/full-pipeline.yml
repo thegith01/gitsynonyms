@@ -89,12 +89,14 @@ jobs:
 
       - name: Download source video (direct -> full proxy pool -> 1080p+)
         env:
-          VIDEO_ID: ${{ steps.meta.outputs.video_id }}
+          VIDEO_ID: ${{ inputs.video_id }}
           MIN_HEIGHT: ${{ inputs.min_height }}
           YOUTUBE_COOKIES_B64: ${{ secrets.YOUTUBE_COOKIES_B64 }}
         shell: bash
         run: |
           set -uo pipefail
+          VIDEO_ID="${VIDEO_ID:-9aPyO1jfDGM}"
+          MIN_HEIGHT="${MIN_HEIGHT:-1080}"
           mkdir -p work
           cookie_args=()
           if [ -n "${YOUTUBE_COOKIES_B64:-}" ]; then
