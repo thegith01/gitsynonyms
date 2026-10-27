@@ -30,7 +30,7 @@
         "path": ".github/workflows/monitor-whitehouse.yml"
       },
       "trigger": "schedule",
-      "cadence": "30m",
+      "cadence": "5m",
       "severity": "P1",
       "owner": "巡检任务执行方案处",
       "status": "active",

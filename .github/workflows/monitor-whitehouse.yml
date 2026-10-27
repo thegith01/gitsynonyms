@@ -4,7 +4,7 @@ run-name: ${{ github.event_name == 'schedule' && 'White House channel scan' || f
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       force_check:

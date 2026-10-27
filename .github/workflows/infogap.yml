@@ -41,6 +41,8 @@ jobs:
         run: |
           python scripts/resources/check.py check
           python scripts/inspection/plan.py check --github
+          python scripts/org_chart.py check
+          python scripts/publishing_registry.py check
   generate:
     needs: validate
     if: ${{ !inputs.tests_only }}

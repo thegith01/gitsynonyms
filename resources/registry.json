@@ -15,7 +15,7 @@
       "url": "https://www.youtube.com/@WhiteHouse/streams",
       "designated": true,
       "trust": "official",
-      "cadence": "30m",
+      "cadence": "5m",
       "analysis": [
         "live-event-detection",
         "caption-acquisition",
@@ -34,7 +34,7 @@
       "url": "https://www.youtube.com/@WhiteHouse/videos",
       "designated": true,
       "trust": "official",
-      "cadence": "30m",
+      "cadence": "5m",
       "analysis": [
         "upload-detection",
         "caption-acquisition",
@@ -53,7 +53,7 @@
       "url": "https://www.whitehouse.gov/news/feed/",
       "designated": false,
       "trust": "official",
-      "cadence": "30m",
+      "cadence": "5m",
       "analysis": [
         "official-statements",
         "policy-text",
@@ -72,7 +72,7 @@
       "url": "https://www.whitehouse.gov/presidential-actions/feed/",
       "designated": false,
       "trust": "official",
-      "cadence": "30m",
+      "cadence": "5m",
       "analysis": [
         "proclamation-text",
         "executive-action-index",

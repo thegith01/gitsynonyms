@@ -7,29 +7,59 @@
 
 ## 职责单元
 
-### 核心作业单元
+### 层级
 
-| 子部门 | 职责 | 实现 |
-|---|---|---|
-| 素材接收组 | 读取上游选择清单；校验视频与字幕目录、语言对、文件完整性和输出路径 | `scripts/video_processing.py` |
-| 字幕时间精确刻录司 | 发现并保留 YouTube 七种字幕格式；以 JSON3 逐词时间为主，结合其余格式交叉校验、对齐与回退；融合时间轴并生成 ASS | `scripts/subtitle_timing.py`；格式解析复用 `scripts/download_youtube_bilingual_srt.py` |
-| 字幕区判定组 | 检测片源字幕区是否被横幅遮挡；有遮挡时启用半透明总统蓝背景，无横幅的干净片源则直接显示字幕、不画背景框 | `scripts/video_processing.py` |
-| 刻录渲染组 | 单遍 libass 硬字幕；按需生成 540p 预览和封面；成功后原子替换最终输出，避免留下半成品 | `scripts/video_processing.py` |
-| 质检交接组 | 使用 ffprobe 校验输入/输出；检查字体与缺字；输出 `BURN.json`、`TIMING.json` 及可复核的处理结果 | `scripts/video_processing.py`、`scripts/subtitle_timing.py` |
+```text
+模块2：视频处理部（部级）
+├── 字幕制作司
+│   ├── ASR处（语音转写）
+│   │   ├── 引擎评测科
+│   │   └── 转写执行科
+│   └── 翻译处（英译中字幕）
+│       ├── 引擎评测科
+│       └── 翻译执行科
+├── 语音制作司
+│   ├── 语音刻录处（TTS 配音与音轨刻录）
+│   │   ├── 音色科
+│   │   └── 混音科
+│   └── 语音克隆处（零样本声音克隆，须书面授权）
+│       ├── 授权科
+│       └── 克隆科
+├── 字幕时间精确刻录司
+│   ├── 字幕区判定处
+│   │   └── 判定科
+│   └── 刻录渲染处
+│       ├── 渲染科
+│       └── 输出科
+└── 质检交接司
+    ├── 素材接收处
+    │   └── 接收科
+    └── 质检交接处
+        ├── 质检科
+        └── 交接科
+```
 
-### 研究处与语音司（2026-10-27 增设）
+### 司处职责
 
-| 子部门 | 隶属 | 职责 | 制度 |
+| 司 | 处 | 职责 | 实现 |
 |---|---|---|---|
-| ASR处 | 模块2直属 | 七格式确实缺失时，全网研究、打分并执行语音转写，产出逐词时间戳 | [`module-2-asr-office.md`](module-2-asr-office.md) |
-| 翻译处 | 模块2直属 | 研究、打分并执行英译中字幕翻译，保证逐条对应 | [`module-2-translation-office.md`](module-2-translation-office.md) |
-| 语音制作司 | 模块2 | 把文字变成声音并按时间轴刻入视频；下辖两处 | [`module-2-voice-production.md`](module-2-voice-production.md) |
-| └ 语音刻录处 | 语音制作司 | 用音色库合成配音，按 cue 对齐后混入原声 | 同上 |
-| └ 语音克隆处 | 语音制作司 | 零样本声音克隆；仅限本人或书面授权的配音员 | 同上 |
+| 字幕制作司 | ASR处 | 七格式确实缺失时，全网研究、打分并执行语音转写，产出逐词时间戳 | [`module-2-asr-office.md`](module-2-asr-office.md) |
+| 字幕制作司 | 翻译处 | 研究、打分并执行英译中字幕翻译，保证逐条对应 | [`module-2-translation-office.md`](module-2-translation-office.md) |
+| 语音制作司 | 语音刻录处 | 用音色库合成配音，按 cue 对齐后混入原声 | [`module-2-voice-production.md`](module-2-voice-production.md) |
+| 语音制作司 | 语音克隆处 | 零样本声音克隆；仅限本人或书面授权的配音员 | 同上 |
+| 字幕时间精确刻录司 | 字幕区判定处 | 检测片源字幕区是否被横幅遮挡；有遮挡时启用半透明总统蓝背景，干净片源直接显示字幕、不画背景框 | `scripts/video_processing.py` |
+| 字幕时间精确刻录司 | 刻录渲染处 | 发现并保留 YouTube 七种字幕格式；以 JSON3 逐词时间为主融合时间轴并生成 ASS；单遍 libass 硬字幕；按需生成 540p 预览与封面；成功后原子替换最终输出 | `scripts/subtitle_timing.py`、`scripts/video_processing.py` |
+| 质检交接司 | 素材接收处 | 读取上游选择清单；校验视频与字幕目录、语言对、文件完整性和输出路径 | `scripts/video_processing.py` |
+| 质检交接司 | 质检交接处 | 用 ffprobe 校验输入/输出；检查字体与缺字；输出 `BURN.json`、`TIMING.json` 及可复核的处理结果 | `scripts/video_processing.py`、`scripts/subtitle_timing.py` |
 
-四个研究处的评分口径、候选排名与选型结论统一存放在 `docs/engines/`：
-`asr.md`、`translation.md`、`voice-burn.md`、`voice-clone.md` 由
-`scripts/engine_registry.py` 从 `docs/engines/data/*.json` 生成，总分按评分表重算。
+科级分工：ASR处、翻译处各设引擎评测科与执行科；语音刻录处设音色科与混音科；
+语音克隆处设授权科与克隆科；字幕区判定处设判定科；刻录渲染处设渲染科与输出科；
+素材接收处设接收科；质检交接处设质检科与交接科。
+
+四个研究单元（ASR处、翻译处、语音刻录处、语音克隆处）的评分口径、候选排名与选型
+结论统一存放在 `docs/engines/`：`asr.md`、`translation.md`、`voice-burn.md`、
+`voice-clone.md` 由 `scripts/engine_registry.py` 从 `docs/engines/data/*.json` 生成，
+总分按评分表重算。
 
 第三方字幕比较、ASR 模型研究和字幕人体工学由
 `scripts/third_party_captions.py`、`scripts/speech_model_research.py`、

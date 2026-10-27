@@ -8,8 +8,10 @@ Every agent, account, machine and harness must read it before doing any work.
 - Record authorized internal unit/process changes in `organization/`; revise
   `DIRECTIVE.md` only when a constitutional principle, authority, or root-level
   hierarchy changes.
-- 总控下辖资源获取分析司、定期巡检司与模块2视频处理部；巡检任务执行方案处
-  隶属定期巡检司。模块2只处理上游已选定的视频与字幕。
+- 职能层级 部→司→处→科→组，区域层级 省→市→县→乡→村；模块1/2/3 为部级单位，
+  各司归部管辖（`DIRECTIVE.md` 2.1）。总控下辖资源与巡检部、模块1情报与素材部、
+  模块2视频处理部、模块3发布与治理部。模块1负责监测、事件归纳与素材获取，模块2
+  只处理上游已选定的视频与字幕，模块3负责上传、发布后整改、PDCA 与全流程监察。
 - Inspection granularity: one record per smallest independently observable unit
   (MIU); aggregation is allowed in reports only.
 - Registries: `inspection/registry.json` (MIU) and `resources/registry.json`
