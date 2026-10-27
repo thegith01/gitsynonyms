@@ -4,8 +4,8 @@ if ($env:GITHUB_REF -ne "refs/heads/main") {
     throw "The White House monitor must run from main to publish the site."
 }
 
-$repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..\..")
-$stateFile = Join-Path $repoRoot ".github\state\whitehouse-processed-videos.txt"
+$repoRoot = Resolve-Path (Join-Path $PSScriptRoot "../..")
+$stateFile = Join-Path $repoRoot ".github/state/whitehouse-processed-videos.txt"
 $processed = if (Test-Path $stateFile) { Get-Content $stateFile } else { @() }
 $videoId = ""
 $videoTitle = ""
@@ -30,7 +30,7 @@ if (-not [string]::IsNullOrWhiteSpace($env:YTDLP_PROXY)) {
 }
 $foundItems = 0
 foreach ($channel in $channels) {
-      $listing = & yt-dlp @proxyArguments --js-runtimes deno --no-warnings --ignore-errors --flat-playlist --playlist-end 10 --print "%(id)s|%(title)s" $channel
+      $listing = & yt-dlp @proxyArguments --no-warnings --ignore-errors --flat-playlist --playlist-end 10 --print "%(id)s|%(title)s" $channel
       if ($LASTEXITCODE -ne 0 -and $listing.Count -eq 0) {
           throw "Could not inspect White House channel: $channel"
       }

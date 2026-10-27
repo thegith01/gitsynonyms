@@ -1,0 +1,284 @@
+name: Auto pipeline - detect, verify, select, caption, burn, publish
+
+# End-to-end chain for one monitored upload (DIRECTIVE 3.6 / 3.7):
+#   verify the event on the web -> rank candidate sources -> download the best
+#   (direct, then the full proxy pool) -> take the seven YouTube caption
+#   formats -> ASR fallback -> machine-translation fallback -> word-timed ASS
+#   -> burn 1080p -> Release + Pages + filebin backup.
+#
+# Called by monitor-whitehouse.yml, or run manually for one video id.
+
+on:
+  workflow_call:
+    inputs:
+      video_id:
+        required: true
+        type: string
+      mode:
+        required: false
+        type: string
+        default: "full"
+      title:
+        required: false
+        type: string
+        default: ""
+      event_date:
+        required: false
+        type: string
+        default: ""
+      crf:
+        required: false
+        type: string
+        default: "30"
+      preset:
+        required: false
+        type: string
+        default: "veryfast"
+      asr_model:
+        required: false
+        type: string
+        default: "base"
+  workflow_dispatch:
+    inputs:
+      video_id:
+        required: true
+        default: "9aPyO1jfDGM"
+      mode:
+        description: "probe = verify, rank and caption discovery only"
+        required: false
+        default: "full"
+        type: choice
+        options: ["full", "probe"]
+      title:
+        required: false
+        default: "LIVE: President Trump rallies in Michigan ahead of state's November Election"
+      event_date:
+        required: false
+        default: "2026-10-25"
+      crf:
+        required: false
+        default: "30"
+      preset:
+        required: false
+        default: "veryfast"
+      asr_model:
+        required: false
+        default: "base"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-pipeline
+  cancel-in-progress: false
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install media, caption and translation tools
+        run: |
+          set -x
+          sudo DEBIAN_FRONTEND=noninteractive timeout 300 apt-get update -qq || true
+          sudo DEBIAN_FRONTEND=noninteractive timeout 420 apt-get install -y -qq \
+            -o Acquire::Retries=2 -o Acquire::http::Timeout=20 ffmpeg fonts-wqy-zenhei || true
+          python -m pip install --upgrade pip
+          python -m pip install "yt-dlp[default]" argostranslate faster-whisper
+          ffmpeg -version | head -1
+
+      - name: Verify the event on the web
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+          TITLE: ${{ inputs.title }}
+          EVENT_DATE: ${{ inputs.event_date }}
+        run: |
+          python scripts/verify_event.py \
+            --video-id "$VIDEO_ID" --title "$TITLE" --event-date "$EVENT_DATE" \
+            --report work/EVENT.json || true
+          cat work/EVENT.json 2>/dev/null || true
+
+      - name: Rank candidate sources
+        id: sources
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+          TITLE: ${{ inputs.title }}
+          PROXY: ${{ secrets.YTDLP_PROXY }}
+        run: |
+          set +e
+          python scripts/rank_video_sources.py \
+            --title "$TITLE" --video-id "$VIDEO_ID" --proxy "$PROXY" \
+            --report work/SOURCES.json
+          status=$?
+          chosen="$VIDEO_ID"
+          if [ -f work/SOURCES.json ]; then
+            candidate="$(python -c "import json;d=json.load(open('work/SOURCES.json'));print(d.get('selected') or '')")"
+            if [ -n "$candidate" ] && [ "$status" -eq 0 ]; then
+              chosen="$candidate"
+            fi
+          fi
+          echo "chosen=$chosen" >> "$GITHUB_OUTPUT"
+          echo "chosen source: $chosen"
+
+      - name: Download the selected source (direct, then the proxy pool)
+        if: inputs.mode != 'probe'
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          python scripts/download_source_video.py \
+            --video-id "$VIDEO_ID" --output-dir work --min-height 1080 \
+            --proxy-limit 0 --proxy-tries 40 --timeout 1500 \
+            --report work/download-report.json
+          ls -lh work/
+
+      - name: Take the seven YouTube caption formats
+        id: captions
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+        run: |
+          set +e
+          caps="output/auto_${VIDEO_ID}"
+          mkdir -p "$caps"
+          echo "dir=$caps" >> "$GITHUB_OUTPUT"
+          python scripts/fetch_youtube_captions.py \
+            --video-id "$VIDEO_ID" --output-dir "$caps" \
+            --groups "en,zh" --wait 0 --report "$caps/CAPTION_FORMATS.json"
+          echo "caption probe exit: $?"
+          python - "$caps/CAPTION_FORMATS.json" <<'PY' || true
+          import json, sys
+          data = json.load(open(sys.argv[1]))
+          for code, track in data.get("tracks", {}).items():
+              print(code, "present" if track.get("present") else "missing",
+                    ",".join(track.get("formats") or []))
+          PY
+          ls -1 "$caps" | sed -n '1,40p'
+
+      - name: ASR fallback when the English track is missing
+        if: inputs.mode != 'probe'
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+          CAPS: ${{ steps.captions.outputs.dir }}
+          MODEL: ${{ inputs.asr_model }}
+        run: |
+          set -euo pipefail
+          if [ -z "$CAPS" ] || [ ! -d "$CAPS" ]; then
+            CAPS="output/auto_${VIDEO_ID}"
+            mkdir -p "$CAPS"
+          fi
+          if find "$CAPS" -name "${VIDEO_ID}.en-orig.*" | grep -q .; then
+            echo "YouTube English captions present; skipping ASR"
+          else
+            python scripts/asr_captions.py \
+              --video "work/${VIDEO_ID}.source.mp4" --video-id "$VIDEO_ID" \
+              --track en-orig --model "$MODEL" --output-dir "$CAPS"
+          fi
+          echo "CAPS=$CAPS" >> "$GITHUB_ENV"
+
+      - name: Machine-translation fallback for the Chinese track
+        if: inputs.mode != 'probe'
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+        run: |
+          set -euo pipefail
+          caps="${CAPS:-${{ steps.captions.outputs.dir }}}"
+          if find "$caps" -name "${VIDEO_ID}.zh-Hans.*" | grep -q .; then
+            echo "YouTube Chinese captions present; skipping translation"
+          else
+            python scripts/machine_translate_captions.py \
+              --caption-dir "$caps" --video-id "$VIDEO_ID" \
+              --source-language en-orig --target-language zh-Hans \
+              --engine argos --output-dir "$caps" --report "$caps/SUBTITLE_SOURCES.json"
+          fi
+
+      - name: Burn word-timed bilingual 1080p
+        if: inputs.mode != 'probe'
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+          CRF: ${{ inputs.crf }}
+          PRESET: ${{ inputs.preset }}
+          TITLE: ${{ inputs.title }}
+          EVENT_DATE: ${{ inputs.event_date }}
+        run: |
+          set -euo pipefail
+          caps="${CAPS:-${{ steps.captions.outputs.dir }}}"
+          python scripts/video_processing.py \
+            --video "work/${VIDEO_ID}.source.mp4" \
+            --caption-dir "$caps" --languages "zh-Hans,en-orig" \
+            --video-id "$VIDEO_ID" --title "$TITLE" --event-date "$EVENT_DATE" \
+            --output-dir output --encoder libx264 --crf "$CRF" --preset "$PRESET" \
+            --caption-box auto --force
+          size=$(stat -c%s "output/Burned_Bilingual_${VIDEO_ID}.mp4")
+          echo "final bytes: $size"
+          if [ "$size" -gt 2000000000 ]; then
+            echo "::error::final MP4 exceeds the 2 GB release asset limit"
+            exit 1
+          fi
+
+      - name: Publish MP4 to the release
+        if: inputs.mode != 'probe'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+          TITLE: ${{ inputs.title }}
+        run: |
+          set -euo pipefail
+          mp4="output/Burned_Bilingual_${VIDEO_ID}.mp4"
+          if gh release view "$VIDEO_ID" >/dev/null 2>&1; then
+            gh release upload "$VIDEO_ID" "$mp4" --clobber
+          else
+            gh release create "$VIDEO_ID" "$mp4" \
+              --title "${TITLE:-Bilingual video $VIDEO_ID}" \
+              --notes "Chinese and English captions burned into the source."
+          fi
+
+      - name: Back up subtitles and deliverables to the bin
+        if: inputs.mode != 'probe'
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+        run: |
+          set -euo pipefail
+          caps="${CAPS:-${{ steps.captions.outputs.dir }}}"
+          mkdir -p dist
+          cp "$caps"/"${VIDEO_ID}".* dist/ 2>/dev/null || true
+          cp "$caps"/SUBTITLE_SOURCES.json dist/ 2>/dev/null || true
+          cp output/BURN.json "dist/${VIDEO_ID}.BURN.json" 2>/dev/null || true
+          cp output/TIMING.json "dist/${VIDEO_ID}.TIMING.json" 2>/dev/null || true
+          cp work/EVENT.json "dist/${VIDEO_ID}.EVENT.json" 2>/dev/null || true
+          cp work/SOURCES.json "dist/${VIDEO_ID}.SOURCES.json" 2>/dev/null || true
+          (cd dist && zip -q -r "bilingual_bundle_${VIDEO_ID}.zip" .)
+          cp "output/Burned_Bilingual_${VIDEO_ID}.mp4" dist/
+          for file in dist/*; do
+            curl -f --retry 3 --retry-delay 5 -X POST --data-binary "@$file" \
+              "https://filebin.net/${FILEBIN_BIN:-f8l40pcd28jo8bl0}/$(basename "$file")"
+          done
+
+      - name: Generate Pages site
+        if: inputs.mode != 'probe'
+        run: python scripts/generate_video_pages.py
+
+      - name: Commit archive and site
+        if: inputs.mode != 'probe'
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          git add output/ site/
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "Publish bilingual video $VIDEO_ID"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

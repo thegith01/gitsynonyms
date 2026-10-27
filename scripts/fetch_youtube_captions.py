@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Fetch every YouTube caption serialization for the wanted languages.
+
+DIRECTIVE 3.7 says the seven YouTube formats are tried first.  ``yt-dlp``
+accepts one ``--sub-format`` preference list and keeps a single file per
+language, so this wrapper drives ``download_track`` once per language and
+records exactly which of ``json3/srv3/srv2/srv1/ttml/vtt/srt`` YouTube served.
+
+The downloaded files are renamed to the canonical language codes the burner
+expects (``en-orig`` and ``zh-Hans``) while the report keeps the real YouTube
+code and whether the track was manual, auto-generated or auto-translated.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import download_youtube_bilingual_srt as captions  # noqa: E402
+
+ENGLISH_PREFERENCES = ("en-orig", "en", "en-US", "en-GB", "en-CA", "en-AU")
+CHINESE_PREFERENCES = ("zh-Hans", "zh-CN", "zh", "zh-SG", "zh-Hant", "zh-TW", "zh-HK")
+
+CANONICAL = {"en": "en-orig", "zh": "zh-Hans"}
+
+
+def log(message: str) -> None:
+    print(message, flush=True)
+
+
+def first_match(tracks: dict, preferences: tuple[str, ...]) -> str | None:
+    found = captions.pick_language(tracks, preferences)
+    if found:
+        return found
+    prefix = preferences[0].split("-")[0].lower()
+    for code in sorted(tracks):
+        if code.lower().split("-")[0] == prefix:
+            return code
+    return None
+
+
+def resolve(metadata: dict, group: str) -> tuple[str, str] | None:
+    """Return (youtube_code, track_kind) for one language group, or None."""
+    preferences = ENGLISH_PREFERENCES if group == "en" else CHINESE_PREFERENCES
+    manual = metadata.get("subtitles") or {}
+    auto = metadata.get("automatic_captions") or {}
+    code = first_match(manual, preferences)
+    if code:
+        return code, "manual"
+    code = first_match(auto, preferences)
+    if code:
+        return code, "auto-generated"
+    return None
+
+
+def rename_to_canonical(files: list[Path], video_id: str, code: str, canonical: str) -> list[Path]:
+    renamed: list[Path] = []
+    for path in files:
+        suffix = path.name[len(video_id) + 1 :]
+        if not suffix.lower().startswith(code.lower() + "."):
+            renamed.append(path)
+            continue
+        extension = suffix[len(code) + 1 :]
+        target = path.with_name(f"{video_id}.{canonical}.{extension}")
+        if target != path:
+            path.replace(target)
+        renamed.append(target)
+    return renamed
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Download all published YouTube caption formats")
+    parser.add_argument("--video-id", required=True)
+    parser.add_argument("--output-dir", default="output")
+    parser.add_argument("--groups", default="en,zh")
+    parser.add_argument("--wait", type=int, default=0, help="Seconds between subtitle requests")
+    parser.add_argument("--report", default="")
+    parser.add_argument("--require", default="", help="Comma separated canonical codes that must exist")
+    args = parser.parse_args()
+
+    url = f"https://www.youtube.com/watch?v={args.video_id}"
+    directory = Path(args.output_dir)
+    directory.mkdir(parents=True, exist_ok=True)
+
+    listing = captions.run_ytdlp(["-J", "--skip-download", url], show_progress=False)
+    metadata = json.loads(listing.stdout)
+    log(f"listing: {len(metadata.get('subtitles') or {})} manual, "
+        f"{len(metadata.get('automatic_captions') or {})} automatic tracks")
+
+    report: dict = {
+        "video_id": args.video_id,
+        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        "source": "youtube",
+        "tracks": {},
+        "available_languages": sorted(
+            set(metadata.get("subtitles") or {}) | set(metadata.get("automatic_captions") or {})
+        ),
+    }
+
+    for group in [item.strip() for item in args.groups.split(",") if item.strip()]:
+        canonical = CANONICAL[group]
+        resolved = resolve(metadata, group)
+        if not resolved:
+            log(f"{group}: YouTube publishes no caption track")
+            report["tracks"][canonical] = {"present": False, "formats": []}
+            continue
+        code, kind = resolved
+        formats = sorted(set(
+            captions.track_formats(metadata.get("subtitles") or {}, code)
+            + captions.track_formats(metadata.get("automatic_captions") or {}, code)
+        ))
+        log(f"{group}: using {code} ({kind}) with {', '.join(formats) or 'no formats'}")
+        try:
+            files, _cues, _source = captions.download_track(
+                url, args.video_id, code, kind, directory, args.wait, formats
+            )
+        except Exception as error:  # noqa: BLE001 - a missing track is a normal outcome
+            log(f"{group}: download failed: {error}")
+            report["tracks"][canonical] = {"present": False, "formats": [], "error": str(error)}
+            continue
+        files = rename_to_canonical(files, args.video_id, code, canonical)
+        written = sorted({path.suffix.lstrip(".") for path in files})
+        log(f"{group}: wrote {', '.join(written)}")
+        report["tracks"][canonical] = {
+            "present": True,
+            "youtube_code": code,
+            "kind": kind,
+            "source_formats": formats,
+            "formats": written,
+            "files": [path.name for path in files],
+            "missing_formats": [
+                extension
+                for extension in captions.CAPTION_FORMATS
+                if extension not in written
+            ],
+        }
+
+    required = [item.strip() for item in args.require.split(",") if item.strip()]
+    missing = [code for code in required if not report["tracks"].get(code, {}).get("present")]
+    report["required"] = required
+    report["missing"] = missing
+
+    target = Path(args.report) if args.report else directory / "CAPTION_FORMATS.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+    log(f"report: {target}")
+    if missing:
+        log(f"missing required tracks: {', '.join(missing)}")
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
