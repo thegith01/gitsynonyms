@@ -68,13 +68,34 @@ def try_meta(url: str, proxy: str | None, client: str, timeout: int) -> tuple[bo
     return False, f"{label}: {detail}"
 
 
-def try_translate(timeout: int = 20) -> tuple[bool, str]:
+def list_subs(url: str, proxy: str | None, client: str, timeout: int) -> list[str]:
+    """Return the caption languages visible through this route."""
+    command = ["yt-dlp", "--no-warnings", "--skip-download", "--list-subs"]
+    if client != "default":
+        command += ["--extractor-args", f"youtube:player_client={client}"]
+    if proxy:
+        command += ["--proxy", proxy]
+    command.append(url)
+    try:
+        result = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        return ["timeout"]
+    text = (result.stdout or "") + (result.stderr or "")
+    return [line.strip() for line in text.splitlines() if line.strip()][-25:]
+
+
+def try_translate(timeout: int = 20, proxy: str | None = None) -> tuple[bool, str]:
     request = urllib.request.Request(
         TRANSLATE_URL.format(text=urllib.parse.quote("The President is speaking now.")),
         headers={"User-Agent": "Mozilla/5.0"},
     )
+    opener = (
+        urllib.request.build_opener(urllib.request.ProxyHandler({"http": proxy, "https": proxy}))
+        if proxy
+        else urllib.request.build_opener()
+    )
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with opener.open(request, timeout=timeout) as response:
             payload = json.loads(response.read().decode("utf-8", errors="replace"))
         text = "".join(part[0] for part in payload[0] if part and part[0])
         return True, text.strip()
@@ -133,6 +154,22 @@ def main() -> int:
     translate_ok, translate_note = try_translate()
     log(f"translate ok={translate_ok} {translate_note}")
 
+    winning = next((item for item in proxy_results if item["ok"]), None)
+    translate_proxy_ok, translate_proxy_note = (False, "no proxy")
+    if winning and not translate_ok:
+        translate_proxy_ok, translate_proxy_note = try_translate(proxy=winning["proxy"])
+        log(f"translate via proxy ok={translate_proxy_ok} {translate_proxy_note}")
+    if winning:
+        subs = list_subs(url, winning["proxy"], winning["client"], args.timeout)
+    elif direct_ok:
+        good_client = next(item["client"] for item in direct if item["ok"])
+        subs = list_subs(url, None, good_client, args.timeout)
+    else:
+        subs = ["no working route"]
+    log("caption list:")
+    for line in subs:
+        log(f"  {line}")
+
     report = {
         "video_id": args.video_id,
         "direct": direct,
@@ -141,11 +178,14 @@ def main() -> int:
         "proxy_ok": any(item["ok"] for item in proxy_results),
         "translate_ok": translate_ok,
         "translate_sample": translate_note,
+        "translate_proxy_ok": translate_proxy_ok,
+        "translate_proxy_sample": translate_proxy_note,
+        "captions": subs,
     }
     Path("work").mkdir(exist_ok=True)
     Path("work/access-probe.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     log("summary: " + json.dumps({k: report[k] for k in
-                                  ("direct_ok", "proxy_ok", "translate_ok")}))
+                                  ("direct_ok", "proxy_ok", "translate_ok", "translate_proxy_ok")}))
     return 0
 
 
