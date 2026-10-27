@@ -1,6 +1,6 @@
 {
   "schema": "gitsynonyms.inspection.registry/1",
-  "updated_at": "2026-10-27T13:30:00Z",
+  "updated_at": "2026-10-27T12:45:00Z",
   "directive": "DIRECTIVE.md",
   "principle": "minimum-granularity",
   "cadence_policy": {
@@ -20,93 +20,157 @@
   ],
   "units": [
     {
-      "id": "gh:gitsynonyms/monitor-whitehouse",
+      "id": "gh:gitsynonyms01/monitor-whitehouse",
       "mechanism": "github-workflow",
       "title": "Monitor White House Videos",
       "target": {
-        "repo": "gitsynonyms/gitsynonyms",
+        "repo": "gitsynonyms01/gitsynonyms",
         "workflow": "Monitor White House Videos",
-        "workflow_id": "393550408",
+        "workflow_id": "397852739",
         "path": ".github/workflows/monitor-whitehouse.yml"
       },
       "trigger": "schedule",
-      "cadence": "5m",
+      "cadence": "30m",
       "severity": "P1",
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 393550408 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms/gitsynonyms/actions/workflows/393550408"
+        "gh run list --workflow 397852739 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/397852739"
       ],
-      "note": "每 5 分钟调度；连续失败会阻断新视频发布，按 P1 处置。"
+      "note": "每 30 分钟扫描 @WhiteHouse 的 videos 与 streams 列表；发现未登记的新上传即触发 auto-pipeline。"
     },
     {
-      "id": "gh:gitsynonyms/deploy-subtitle-page",
+      "id": "gh:gitsynonyms01/auto-pipeline",
       "mechanism": "github-workflow",
-      "title": "Deploy subtitle page",
+      "title": "Auto pipeline - detect to publish",
       "target": {
-        "repo": "gitsynonyms/gitsynonyms",
-        "workflow": "Deploy subtitle page",
-        "workflow_id": "388160593",
-        "path": ".github/workflows/deploy-pages.yml"
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "Auto pipeline - detect to publish",
+        "path": ".github/workflows/auto-pipeline.yml"
       },
-      "trigger": "push",
+      "trigger": "manual",
       "cadence": "1h",
-      "severity": "P2",
+      "severity": "P1",
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 388160593 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms/gitsynonyms/actions/workflows/388160593"
+        "gh run list --workflow auto-pipeline.yml --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/auto-pipeline.yml"
       ],
-      "note": "main 分支推送触发；巡检关注失败部署与 Pages 发布结果。"
+      "note": "单条视频的全链路：核实事件、挑选信源、直连后代理池下载、取 YouTube 七格式、ASR 与机器翻译兜底、逐字 ASS 刻录、发布。执行单位为模块2视频处理部。"
     },
     {
-      "id": "gh:gitsynonyms/infogap-schedule",
+      "id": "gh:gitsynonyms01/module2-burn",
       "mechanism": "github-workflow",
-      "title": "Generate Information Gap Report (schedule)",
+      "title": "Module 2 burn - bilingual 1080p",
       "target": {
-        "repo": "gitsynonyms/gitsynonyms",
-        "workflow": "Generate Information Gap Report",
-        "path": ".github/workflows/infogap.yml"
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "Module 2 burn - bilingual 1080p",
+        "workflow_id": "398173054",
+        "path": ".github/workflows/module2-burn.yml"
       },
-      "trigger": "schedule",
+      "trigger": "workflow_dispatch",
       "cadence": "6h",
       "severity": "P2",
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow \"Generate Information Gap Report\" --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms/gitsynonyms/actions/workflows/infogap.yml"
+        "gh run list --workflow 398173054 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398173054"
       ],
-      "note": "每 6 小时运行；质量门禁通过后发布多源信息差报告至 GitHub Pages。"
+      "note": "手工重跑单条视频的双语刻录；执行单位为模块2视频处理部。"
     },
     {
-      "id": "gh:gitsynonyms/infogap-dispatch",
+      "id": "gh:gitsynonyms01/full-pipeline",
       "mechanism": "github-workflow",
-      "title": "Generate Information Gap Report (manual)",
+      "title": "Full Pipeline - captions to ASS to burn-in to Pages",
       "target": {
-        "repo": "gitsynonyms/gitsynonyms",
-        "workflow": "Generate Information Gap Report",
-        "path": ".github/workflows/infogap.yml"
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "Full Pipeline - captions to ASS to burn-in to Pages",
+        "workflow_id": "398052574",
+        "path": ".github/workflows/full-pipeline.yml"
+      },
+      "trigger": "workflow_dispatch",
+      "cadence": "12h",
+      "severity": "P2",
+      "owner": "巡检任务执行方案处",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow 398052574 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398052574"
+      ],
+      "note": "历史全流程入口；执行单位为模块2视频处理部。"
+    },
+    {
+      "id": "gh:gitsynonyms01/access-probe",
+      "mechanism": "github-workflow",
+      "title": "Access probe",
+      "target": {
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "Access probe",
+        "workflow_id": "398160327",
+        "path": ".github/workflows/access-probe.yml"
+      },
+      "trigger": "workflow_dispatch",
+      "cadence": "12h",
+      "severity": "P2",
+      "owner": "资源获取分析司",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow 398160327 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398160327"
+      ],
+      "note": "探测直连与代理池对目标站点的可达性。"
+    },
+    {
+      "id": "gh:gitsynonyms01/caption-probe",
+      "mechanism": "github-workflow",
+      "title": "Caption probe",
+      "target": {
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "Caption probe",
+        "workflow_id": "398155220",
+        "path": ".github/workflows/caption-probe.yml"
+      },
+      "trigger": "workflow_dispatch",
+      "cadence": "12h",
+      "severity": "P2",
+      "owner": "资源获取分析司",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow 398155220 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398155220"
+      ],
+      "note": "枚举单条视频实际可用的字幕语言与序列化格式。"
+    },
+    {
+      "id": "gh:gitsynonyms01/tts-dub",
+      "mechanism": "github-workflow",
+      "title": "TTS dub a burned video",
+      "target": {
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "TTS dub a burned video",
+        "workflow_id": "398057661",
+        "path": ".github/workflows/tts-dub.yml"
       },
       "trigger": "workflow_dispatch",
       "cadence": "1d",
       "severity": "P3",
-      "owner": "巡检任务执行方案处",
+      "owner": "模块2视频处理部",
       "status": "active",
       "evidence": [
-        "gh run list --workflow \"Generate Information Gap Report\" --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms/gitsynonyms/actions/workflows/infogap.yml"
+        "gh run list --workflow 398057661 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398057661"
       ],
-      "note": "按需手动运行；巡检关注研究结果、质量门禁及 Pages 发布结论。"
+      "note": "粤语等配音实验线，不属于双语刻录主链。"
     },
     {
-      "id": "gh:gitsynonyms/jekyll-gh-pages",
+      "id": "gh:gitsynonyms01/jekyll-gh-pages",
       "mechanism": "github-workflow",
       "title": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
       "target": {
-        "repo": "gitsynonyms/gitsynonyms",
+        "repo": "gitsynonyms01/gitsynonyms",
         "workflow": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
         "workflow_id": "397810431",
         "path": ".github/workflows/jekyll-gh-pages.yml"
@@ -118,9 +182,71 @@
       "status": "active",
       "evidence": [
         "gh run list --workflow 397810431 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms/gitsynonyms/actions/workflows/397810431"
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/397810431"
       ],
-      "note": "main 分支推送触发；Jekyll 站点构建与 Pages 部署，巡检关注构建与部署结论。"
+      "note": "main 推送触发；以 site/ 为源构建并部署 Pages，是所有发布页的唯一发布者。"
+    },
+    {
+      "id": "gh:gitsynonyms01/pages-build-deployment",
+      "mechanism": "github-workflow",
+      "title": "pages-build-deployment",
+      "target": {
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "pages-build-deployment",
+        "workflow_id": "397861502",
+        "path": "dynamic/pages/pages-build-deployment"
+      },
+      "trigger": "push",
+      "cadence": "1h",
+      "severity": "P3",
+      "owner": "巡检任务执行方案处",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow 397861502 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/397861502"
+      ],
+      "note": "GitHub 托管的 Pages 构建工作流（动态注册，无仓库内文件）。"
+    },
+    {
+      "id": "gh:gitsynonyms01/republish-site",
+      "mechanism": "github-workflow",
+      "title": "Republish Pages site",
+      "target": {
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "Republish Pages site",
+        "path": ".github/workflows/republish-site.yml"
+      },
+      "trigger": "workflow_dispatch",
+      "cadence": "1d",
+      "severity": "P3",
+      "owner": "巡检任务执行方案处",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow republish-site.yml --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/republish-site.yml"
+      ],
+      "note": "只从已提交的 output/ 归档重生成 site/，不下载、不转码、不刻录。"
+    },
+    {
+      "id": "gh:gitsynonyms01/infogap",
+      "mechanism": "github-workflow",
+      "title": "Generate Information Gap Report",
+      "target": {
+        "repo": "gitsynonyms01/gitsynonyms",
+        "workflow": "Generate Information Gap Report",
+        "workflow_id": "397841147",
+        "path": ".github/workflows/infogap.yml"
+      },
+      "trigger": "schedule",
+      "cadence": "6h",
+      "severity": "P3",
+      "owner": "巡检任务执行方案处",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow 397841147 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/397841147"
+      ],
+      "note": "同一个工作流同时支持定时与手动触发，按最小可观测单元只登记一条记录。"
     }
   ],
   "gaps": [
@@ -157,7 +283,7 @@
     {
       "mechanism": "pc-startup",
       "status": "pending-inventory",
-      "reason": "尚未登记开机/登录启动项。",
+      "reason": "尚未登记开机与登录启动项。",
       "action": "按主机盘点启动项与登录项；每个启动项登记为一个 MIU。"
     },
     {

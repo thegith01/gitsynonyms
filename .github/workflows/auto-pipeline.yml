@@ -1,4 +1,4 @@
-name: Auto pipeline - detect, verify, select, caption, burn, publish
+name: Auto pipeline - detect to publish
 
 # End-to-end chain for one monitored upload (DIRECTIVE 3.6 / 3.7):
 #   verify the event on the web -> rank candidate sources -> download the best

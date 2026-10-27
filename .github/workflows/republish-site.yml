@@ -1,0 +1,45 @@
+name: Republish Pages site
+
+# Regenerate site/ from the committed output/ archive without touching media.
+# Used when the archive is already present but the Pages files are stale or
+# were never written because an earlier publishing step failed.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: republish-site
+  cancel-in-progress: false
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate the site from the committed archive
+        run: python scripts/generate_video_pages.py
+
+      - name: Commit the regenerated site
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "Regenerate the Pages site from the archive"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main

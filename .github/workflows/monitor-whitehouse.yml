@@ -1,4 +1,4 @@
-name: Monitor White House channel
+name: Monitor White House Videos
 
 run-name: ${{ github.event_name == 'schedule' && 'White House channel scan' || format('White House video {0}', github.run_id) }}
 
