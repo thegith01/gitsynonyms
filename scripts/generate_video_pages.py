@@ -112,6 +112,29 @@ def copy_bilingual(video_id: str, folder: Path) -> list[tuple[str, str]]:
     return copied
 
 
+NAV_ITEMS = (
+    ("index", "./", "首页"),
+    ("latest", "latest.html", "最新成片"),
+    ("videos", "videos.html", "全部成片"),
+    ("generator", "generator.html", "字幕生成"),
+    ("about", "about.html", "说明"),
+)
+
+
+def nav(prefix: str = "", active: str = "") -> list[str]:
+    """The one navigation used by every page, so links cannot drift apart."""
+    lines = ['        <nav class="page-nav" aria-label="主导航">']
+    for key, href, label in NAV_ITEMS:
+        if key == "index":
+            target = prefix or "./"
+        else:
+            target = f"{prefix}{href}"
+        current = ' class="active"' if key == active else ""
+        lines.append(f'          <a{current} href="{target}">{label}</a>')
+    lines.append("        </nav>")
+    return lines
+
+
 def detail_page(video: dict, previous_video: dict | None, next_video: dict | None) -> str:
     video_id = video["Video ID"]
     title = html.escape(video.get("Title", video_id))
@@ -130,12 +153,7 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
         "https://github.com/gitsynonyms01/gitsynonyms/releases/download/"
         f"{video_id}/Burned_Bilingual_{video_id}.mp4"
     )
-    navigation = ['        <nav class="page-nav" aria-label="主导航">',
-                  '          <a href="../">字幕生成</a>',
-                  '          <a href="../settings.html">字幕设置</a>',
-                  '          <a href="../latest.html">最新成片</a>',
-                  '          <a class="active" href="../videos.html">视频列表</a>',
-                  '        </nav>']
+    navigation = nav("../", "videos")
     lines = [
         '<!doctype html>',
         '<html lang="zh-CN">',
@@ -257,12 +275,7 @@ def index_page(videos: list[dict]) -> str:
         '        <p class="eyebrow">GITSYNONYMS · BURNED CAPTIONS</p>',
         '        <h1>视频列表</h1>',
         '        <p class="intro">所有已生成的双语成片，按事件时间从新到旧排列。点击标题进入详情页。</p>',
-        '        <nav class="page-nav" aria-label="主导航">',
-        '          <a href="./">字幕生成</a>',
-        '          <a href="settings.html">字幕设置</a>',
-        '          <a href="latest.html">最新成片</a>',
-        '          <a class="active" href="videos.html">视频列表</a>',
-        '        </nav>',
+        *nav("", "videos"),
         '      </header>',
         '',
         '      <section class="panel" aria-labelledby="videos-title">',
@@ -319,12 +332,7 @@ def latest_page(videos: list[dict]) -> str:
         '        <p class="eyebrow">GITSYNONYMS · BURNED CAPTIONS</p>',
         '        <h1>最新成片</h1>',
         '        <p class="intro">最新生成的双语成片。点击进入详情页可查看全部七种字幕格式与下载链接。</p>',
-        '        <nav class="page-nav" aria-label="主导航">',
-        '          <a href="./">字幕生成</a>',
-        '          <a href="settings.html">字幕设置</a>',
-        '          <a class="active" href="latest.html">最新成片</a>',
-        '          <a href="videos.html">视频列表</a>',
-        '        </nav>',
+        *nav("", "latest"),
         '      </header>',
         '',
         '      <section class="panel video-panel" aria-labelledby="video-title">',
@@ -414,6 +422,92 @@ def latest_page(videos: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def home_page(videos: list[dict]) -> str:
+    """The public landing page: what this is, the newest film, and recent ones.
+
+    Long explanations live on ``about.html``; the landing page only answers
+    "what is this" and "where do I watch the newest one".
+    """
+    newest = videos[0]
+    video_id = newest["Video ID"]
+    title = html.escape(newest.get("Title", video_id))
+    release = (
+        "https://github.com/gitsynonyms01/gitsynonyms/releases/download/"
+        f"{video_id}/Burned_Bilingual_{video_id}.mp4"
+    )
+    lines = [
+        '<!doctype html>',
+        '<html lang="zh-CN">',
+        '  <head>',
+        '    <meta charset="utf-8">',
+        '    <meta name="viewport" content="width=device-width, initial-scale=1">',
+        '    <meta name="theme-color" content="#0b1020">',
+        '    <meta name="description" content="白宫现场的中英双语 1080p 成片，附七种字幕格式。">',
+        '    <title>白宫现场 · 中英双语成片 · GitSynonyms</title>',
+        '    <link rel="stylesheet" href="styles.css?v=home-v1">',
+        '  </head>',
+        '  <body>',
+        '    <main class="shell">',
+        '      <header>',
+        '        <p class="eyebrow">GITSYNONYMS · WHITE HOUSE / BILINGUAL</p>',
+        '        <h1>白宫现场，中英双语</h1>',
+        '        <p class="intro">把白宫发布会、集会与讲话做成 1080p 中英双语成片，字幕逐词对齐，成片与七种字幕格式一并公开。</p>',
+        *nav("", "index"),
+        '      </header>',
+        '',
+        '      <section class="panel video-panel" aria-labelledby="latest-title">',
+        '        <p class="eyebrow">最新一场</p>',
+        f'        <h2 id="latest-title">{title}</h2>',
+        f'        <p class="hint">📅 {html.escape(newest.get("Event date", ""))} · {html.escape(newest.get("Duration", ""))} · 1080p · 中英双语</p>',
+        '        <div class="video-frame">',
+        '          <video controls preload="metadata" playsinline poster="media/roundtable-2026-10-21-poster.jpg">',
+        f'            <source src="{release}" type="video/mp4">',
+        '            Your browser cannot play this MP4 preview. Use the detail page to download it.',
+        '          </video>',
+        '        </div>',
+        '        <div class="actions">',
+        f'          <a class="secondary-button" href="videos/{video_id}.html">观看与下载</a>',
+        '          <a class="secondary-button" href="latest.html">成片详情与字幕</a>',
+        '        </div>',
+        '      </section>',
+        '',
+        '      <section class="panel" aria-labelledby="recent-title">',
+        '        <h2 id="recent-title">近期成片</h2>',
+        '        <ul class="download-list">',
+    ]
+    for video in videos[:5]:
+        other_id = video["Video ID"]
+        lines += [
+            '          <li>',
+            f'            <a class="secondary-button" href="videos/{other_id}.html">{html.escape(video.get("Title", other_id))}</a>',
+            f'            <span>📅 {html.escape(video.get("Event date", ""))} · ID: {other_id}</span>',
+            '          </li>',
+        ]
+    lines += [
+        '        </ul>',
+        '        <p class="hint"><a href="videos.html">查看全部成片 →</a></p>',
+        '      </section>',
+        '',
+        '      <section class="panel" aria-labelledby="how-title">',
+        '        <h2 id="how-title">这条流水线在做什么</h2>',
+        '        <p class="hint">监测白宫发布 → 获取干净素材 → 七种字幕格式与 ASR／翻译 → 1080p 双语刻录 → 备份后发布。每一步的规则与限制写在说明页。</p>',
+        '        <div class="actions">',
+        '          <a class="secondary-button" href="about.html">完整说明</a>',
+        '          <a class="secondary-button" href="generator.html">字幕生成器</a>',
+        '        </div>',
+        '      </section>',
+        '',
+        '      <footer>',
+        '        公开页面，不保存任何令牌。成片取自 YouTube 公开视频；机器翻译字幕已标注引擎与生成时间。',
+        '      </footer>',
+        '    </main>',
+        '  </body>',
+        '</html>',
+        '',
+    ]
+    return "\n".join(lines)
+
+
 def main() -> int:
     videos = collect()
     print(f"videos found: {len(videos)}")
@@ -428,6 +522,9 @@ def main() -> int:
     index.write_text(index_page(videos), encoding="utf-8")
     print(f"  wrote {index.relative_to(SITE)}")
     if videos:
+        home = SITE / "index.html"
+        home.write_text(home_page(videos), encoding="utf-8")
+        print(f"  wrote {home.relative_to(SITE)}")
         latest = SITE / "latest.html"
         latest.write_text(latest_page(videos), encoding="utf-8")
         print(f"  wrote {latest.relative_to(SITE)}")

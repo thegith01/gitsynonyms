@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1020">
+    <meta name="description" content="GitSynonyms 的工作方式：监测、取材、字幕、刻录、备份与发布规则。">
+    <title>说明 · GitSynonyms</title>
+    <link rel="stylesheet" href="styles.css?v=about-v1">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">GITSYNONYMS · HOW IT WORKS</p>
+        <h1>说明</h1>
+        <p class="intro">这个站点把白宫的公开视频做成 1080p 中英双语成片，并把字幕与成片一并公开。本页说明它怎么运转、依据什么规则，以及哪些地方仍有限制。</p>
+        <nav class="page-nav" aria-label="主导航">
+          <a href="./">首页</a>
+          <a href="latest.html">最新成片</a>
+          <a href="videos.html">全部成片</a>
+          <a href="generator.html">字幕生成</a>
+          <a class="active" href="about.html">说明</a>
+        </nav>
+      </header>
+
+      <section class="panel" aria-labelledby="what-title">
+        <h2 id="what-title">这是什么</h2>
+        <p class="hint">一个自动化的公开视频处理流水线：监测白宫发布，选取干净的原始画面，补齐中英双语字幕，刻成 1080p 硬字幕成片，备份后发布。</p>
+        <ul class="download-list">
+          <li><span>成片</span><span>1080p MP4，中文在上、英文在下，英文逐词高亮</span></li>
+          <li><span>字幕</span><span>YouTube 原始格式尽量取全，另提供 VTT/SRT/ASS</span></li>
+          <li><span>来源</span><span>YouTube 公开视频，详情页保留原始链接</span></li>
+        </ul>
+      </section>
+
+      <section class="panel" aria-labelledby="flow-title">
+        <h2 id="flow-title">一条成片怎么来</h2>
+        <ol class="download-list">
+          <li><span>1 · 监测</span><span>按平台可用的最小间隔检查白宫频道与消息源，新素材进入处理队列。</span></li>
+          <li><span>2 · 取材</span><span>对候选源排序，抽检冻结、黑场与场景切换，优先干净、可信、多角度、足够长的画面。</span></li>
+          <li><span>3 · 字幕</span><span>先取 YouTube 原始七种字幕格式；确实缺失时才做语音转写与机器翻译，并标注引擎。</span></li>
+          <li><span>4 · 刻录</span><span>按逐词时间轴生成 ASS，单遍硬字幕渲染为 1080p，输出前做 ffprobe 校验。</span></li>
+          <li><span>5 · 备份</span><span>成片与字幕先进入 Release 资产与外部备份，确认双份存在后才允许发布。</span></li>
+          <li><span>6 · 发布</span><span>由 Jekyll 生成站点；多平台分发登记在案，未接入的平台不会宣称已覆盖。</span></li>
+        </ol>
+      </section>
+
+      <section class="panel" aria-labelledby="caption-title">
+        <h2 id="caption-title">字幕规则</h2>
+        <p class="hint">YouTube 原始格式优先，顺序为 <code>json3</code>、<code>srv3</code>、<code>srv2</code>、<code>srv1</code>、<code>ttml</code>、<code>vtt</code>、<code>srt</code>。逐词时间以 <code>json3</code> 为主，其余格式交叉校验。</p>
+        <p class="hint">只有全部缺失时才外扩：官方文字稿、新闻转写、第三方字幕站与语音转写服务按语言覆盖、时间轴精度、来源权威性、覆盖率与可复核性打分，及格后才进入刻录。机器翻译与语音转写都会在详情页标注来源类型、引擎与生成时间。</p>
+      </section>
+
+      <section class="panel" aria-labelledby="quality-title">
+        <h2 id="quality-title">画质与来源</h2>
+        <p class="hint">视频源分辨率不低于 1080p，优先最高可用分辨率。下载先直连，直连不可用时启用代理池回退；任何降级都会在交付信息中说明，不静默降级。</p>
+        <p class="hint">页面不要求、不保存任何访问令牌；成片与字幕只引用公开来源。</p>
+      </section>
+
+      <section class="panel" aria-labelledby="publish-title">
+        <h2 id="publish-title">发布与更正</h2>
+        <p class="hint">成片托管在 GitHub Release，字幕随站点提供。站点只由 Jekyll 发布；刻录与自动流水线不会直接部署页面。</p>
+        <p class="hint">发现字幕错译、时间轴错位或事实错误时，会先更正或下架，再重新发布，并在详情页说明改了什么。需要指出问题时，可在仓库的 Issues 中提出，附上视频 ID 与时间点。</p>
+      </section>
+
+      <section class="panel" aria-labelledby="limits-title">
+        <h2 id="limits-title">已知限制</h2>
+        <ul class="download-list">
+          <li><span>机器翻译</span><span>中文可能有个别错译，专名与口语尤其明显；详情页会标注是否为机器翻译。</span></li>
+          <li><span>平台限制</span><span>YouTube 可能限制下载或字幕访问，成片可能延迟或缺失。</span></li>
+          <li><span>版权</span><span>素材版权归原权利人；本站只做公开信息的双语整理与引用，不主张原始素材版权。</span></li>
+          <li><span>覆盖范围</span><span>当前只覆盖已处理的视频；未处理的素材不会出现在列表中。</span></li>
+        </ul>
+      </section>
+
+      <section class="panel" aria-labelledby="license-title">
+        <h2 id="license-title">代码与许可</h2>
+        <p class="hint">流水线代码以 MIT 许可开源，仓库地址：<a href="https://github.com/gitsynonyms01/gitsynonyms" target="_blank" rel="noreferrer">github.com/gitsynonyms01/gitsynonyms</a>。原始视频与字幕的权利归各自权利人。</p>
+        <div class="actions">
+          <a class="secondary-button" href="./">返回首页</a>
+          <a class="secondary-button" href="generator.html">打开字幕生成器</a>
+        </div>
+      </section>
+
+      <footer>
+        本页只作说明，不构成对任何原始素材的授权。成片与字幕的生成时间、引擎与降级情况以详情页记录为准。
+      </footer>
+    </main>
+  </body>
+</html>
