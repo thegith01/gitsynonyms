@@ -1,0 +1,223 @@
+name: Module 2 burn - bilingual 1080p
+
+# Downloads the original material from the filebin backup (YouTube blocks the
+# runner IP and this video has no caption track left), machine-translates the
+# missing language, burns it with Module 2 and uploads the deliverables back to
+# the same bin.  See DIRECTIVE 3.6 / 3.7.
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: Video id
+        required: true
+        default: "9aPyO1jfDGM"
+      source_url:
+        description: Direct URL of the source video (filebin backup)
+        required: false
+        default: "https://filebin.net/f8l40pcd28jo8bl0/LIVE_%20President%20Trump%20rallies%20in%20Michigan%20ahead%20of%20state_s%20November%20Election%20%5B9aPyO1jfDGM%5D.mp4"
+      crf:
+        description: libx264 CRF (lower = better/larger)
+        required: false
+        default: "30"
+      preset:
+        description: libx264 preset
+        required: false
+        default: "veryfast"
+      translate_limit:
+        description: Translate only the first N cues (0 = all, for smoke tests)
+        required: false
+        default: "0"
+      stage:
+        description: translate-test (no video) or full
+        required: false
+        default: "full"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: module2-burn
+  cancel-in-progress: false
+
+env:
+  FILEBIN_BIN: "f8l40pcd28jo8bl0"
+
+jobs:
+  burn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg, CJK font and translation engine
+        run: |
+          set -x
+          sudo DEBIAN_FRONTEND=noninteractive timeout 300 apt-get update -qq || true
+          sudo DEBIAN_FRONTEND=noninteractive timeout 420 apt-get install -y -qq \
+            -o Acquire::Retries=2 -o Acquire::http::Timeout=20 ffmpeg fonts-wqy-zenhei || true
+          python -m pip install --upgrade pip
+          python -m pip install argostranslate
+          ffmpeg -version | head -1
+          fc-list | grep -i -E 'wqy|noto.*cjk' | head -2 || true
+
+      - name: Resolve caption directory
+        id: caps
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+        run: |
+          set -euo pipefail
+          caps="$(dirname "$(find output -type f -name "${VIDEO_ID}.en-orig.json3" -print -quit)")"
+          if [ -z "$caps" ] || [ ! -d "$caps" ]; then
+            echo "::error::archived English caption directory not found"
+            exit 1
+          fi
+          echo "dir=$caps" >> "$GITHUB_OUTPUT"
+          ls -1 "$caps" | sed -n '1,30p'
+
+      - name: Download original video from the bin backup
+        if: inputs.stage == 'full'
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+          SOURCE_URL: ${{ inputs.source_url }}
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          curl -fL --retry 5 --retry-delay 5 --retry-all-errors \
+            -o "work/${VIDEO_ID}.source.mp4" "$SOURCE_URL"
+          ls -lh work/
+          ffprobe -v error -select_streams v:0 \
+            -show_entries stream=width,height,codec_name,r_frame_rate,duration \
+            -of default=noprint_wrappers=1 "work/${VIDEO_ID}.source.mp4"
+
+      - name: Machine-translate the missing Chinese track
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+          LIMIT: ${{ inputs.translate_limit }}
+          CAPS: ${{ steps.caps.outputs.dir }}
+        run: |
+          set -euo pipefail
+          python scripts/machine_translate_captions.py \
+            --caption-dir "$CAPS" \
+            --video-id "$VIDEO_ID" \
+            --source-language en-orig \
+            --target-language zh-Hans \
+            --engine argos \
+            --limit "$LIMIT" \
+            --output-dir "$CAPS" \
+            --report "$CAPS/SUBTITLE_SOURCES.json"
+
+      - name: Burn bilingual 1080p with Module 2
+        if: inputs.stage == 'full'
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+          CRF: ${{ inputs.crf }}
+          PRESET: ${{ inputs.preset }}
+          CAPS: ${{ steps.caps.outputs.dir }}
+        run: |
+          set -euo pipefail
+          python scripts/video_processing.py \
+            --video "work/${VIDEO_ID}.source.mp4" \
+            --caption-dir "$CAPS" \
+            --languages "zh-Hans,en-orig" \
+            --video-id "$VIDEO_ID" \
+            --title "LIVE: President Trump rallies in Michigan ahead of state's November Election" \
+            --event-date "2026-10-25" \
+            --output-dir output \
+            --encoder libx264 \
+            --crf "$CRF" \
+            --preset "$PRESET" \
+            --caption-box auto \
+            --force
+          ls -lh output/Burned_Bilingual_${VIDEO_ID}.mp4
+          size=$(stat -c%s "output/Burned_Bilingual_${VIDEO_ID}.mp4")
+          echo "final bytes: $size"
+          if [ "$size" -gt 2000000000 ]; then
+            echo "::error::final MP4 exceeds the 2 GB release asset limit"
+            exit 1
+          fi
+
+      - name: Back up subtitles and deliverables to the bin
+        if: inputs.stage == 'full'
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+          CAPS: ${{ steps.caps.outputs.dir }}
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cp "output/Burned_Bilingual_${VIDEO_ID}.mp4" "dist/"
+          cp "$CAPS"/"${VIDEO_ID}".* "dist/" || true
+          cp "$CAPS"/SUBTITLE_SOURCES.json "dist/" || true
+          if [ -f output/BURN.json ]; then cp output/BURN.json "dist/${VIDEO_ID}.BURN.json"; fi
+          if [ -f output/TIMING.json ]; then cp output/TIMING.json "dist/${VIDEO_ID}.TIMING.json"; fi
+          for report in "output/bilingual_precise_Chinese-English.ass" "output/bilingual_precise_Chinese-English.precision.vtt"; do
+            if [ -f "$report" ]; then cp "$report" "dist/${VIDEO_ID}.$(basename "$report")"; fi
+          done
+          (cd dist && zip -q -r "bilingual_bundle_${VIDEO_ID}.zip" .)
+          ls -lh dist/
+          for file in dist/*; do
+            name="$(basename "$file")"
+            echo "uploading $name"
+            curl -f --retry 3 --retry-delay 5 -X POST --data-binary "@$file" \
+              "https://filebin.net/${FILEBIN_BIN}/${name}"
+          done
+
+      - name: Publish MP4 to the release
+        if: inputs.stage == 'full'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VIDEO_ID: ${{ inputs.video_id }}
+        run: |
+          set -euo pipefail
+          mp4="output/Burned_Bilingual_${VIDEO_ID}.mp4"
+          if gh release view "$VIDEO_ID" >/dev/null 2>&1; then
+            gh release upload "$VIDEO_ID" "$mp4" --clobber
+          else
+            gh release create "$VIDEO_ID" "$mp4" \
+              --title "Bilingual video $VIDEO_ID" \
+              --notes "Chinese and English captions burned into the 1080p source."
+          fi
+
+      - name: Generate Pages site
+        if: inputs.stage == 'full'
+        run: python scripts/generate_video_pages.py
+
+      - name: Commit archive and site
+        if: inputs.stage == 'full'
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/ site/
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "Publish bilingual video $VIDEO_ID"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        if: inputs.stage == 'full'
+        with:
+          path: site
+
+  deploy:
+    needs: burn
+    if: inputs.stage == 'full'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

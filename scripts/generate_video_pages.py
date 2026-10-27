@@ -127,13 +127,13 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
     )
     bilingual = copy_bilingual(video_id, folder)
     release = (
-        "https://github.com/gitsynonyms/gitsynonyms/releases/download/"
+        "https://github.com/gitsynonyms01/gitsynonyms/releases/download/"
         f"{video_id}/Burned_Bilingual_{video_id}.mp4"
     )
-    navigation = ['        <nav class="page-nav" aria-label="主导航">',
+    navigation = ['        <nav class="page-nav" aria-label="主导�?>',
                   '          <a href="../">字幕生成</a>',
                   '          <a href="../settings.html">字幕设置</a>',
-                  '          <a href="../latest.html">最新成片</a>',
+                  '          <a href="../latest.html">最新成�?/a>',
                   '          <a class="active" href="../videos.html">视频列表</a>',
                   '        </nav>']
     lines = [
@@ -163,13 +163,13 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
         '            Your browser cannot play this MP4 preview. Use the download links below.',
         '          </video>',
         '        </div>',
-        '        <p class="hint">1080p 硬字幕成片；金色中文在上、白色英文在下，英文逐词高亮，磨砂玻璃钻石背景框从片头持续到片尾。</p>',
+        '        <p class="hint">1080p 硬字幕成片；金色中文在上、白色英文在下，英文逐词高亮，磨砂玻璃钻石背景框从片头持续到片尾�?/p>',
         '        <dl class="meta-grid">',
         f'          <div><dt>视频 ID</dt><dd>{html.escape(video_id)}</dd></div>',
         f'          <div><dt>事件日期</dt><dd>{html.escape(event_date)}</dd></div>',
         f'          <div><dt>时长</dt><dd>{html.escape(duration)}</dd></div>',
-        f'          <div><dt>上传者</dt><dd>{html.escape(uploader)}</dd></div>',
-        '          <div><dt>样式</dt><dd>classic · 玻璃钻石框</dd></div>',
+        f'          <div><dt>上传�?/dt><dd>{html.escape(uploader)}</dd></div>',
+        '          <div><dt>样式</dt><dd>classic · 玻璃钻石�?/dd></div>',
         '          <div><dt>刻录编码</dt><dd>libx264 · CRF 18 · 音频原样复制</dd></div>',
         '          <div><dt>字幕来源</dt><dd>YouTube en-orig + zh-Hans（json3 逐词时间戳）</dd></div>',
         '        </dl>',
@@ -177,10 +177,10 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
         '',
         '      <section class="panel" aria-labelledby="download-title">',
         '        <h2 id="download-title">下载</h2>',
-        '        <p class="hint">1080p 成片托管在 GitHub Release；字幕文件随站点提供，含全部七种格式。</p>',
+        '        <p class="hint">1080p 成片托管�?GitHub Release；字幕文件随站点提供，含全部七种格式�?/p>',
         '        <ul class="download-list">',
         '          <li>',
-        f'            <a class="secondary-button" href="{release}">1080p 硬字幕 MP4</a>',
+        f'            <a class="secondary-button" href="{release}">1080p 硬字�?MP4</a>',
         '            <span>全高清成片，GitHub Release 资源</span>',
         '          </li>',
     ]
@@ -189,7 +189,7 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
         lines += [
             '          <li>',
             f'            <a class="secondary-button" href="{path}">{label}</a>',
-            f'            <span>{label}，中英对照</span>',
+            f'            <span>{label}，中英对�?/span>',
             '          </li>',
         ]
     for extension, path in english:
@@ -208,7 +208,7 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
         ]
     lines += [
         '        </ul>',
-        f'        <p class="hint">原始视频：<a href="https://www.youtube.com/watch?v={video_id}" target="_blank" rel="noreferrer">youtube.com/watch?v={video_id}</a>。</p>',
+        f'        <p class="hint">原始视频�?a href="https://www.youtube.com/watch?v={video_id}" target="_blank" rel="noreferrer">youtube.com/watch?v={video_id}</a>�?/p>',
         '      </section>',
     ]
     if previous_video or next_video:
@@ -230,7 +230,7 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
     lines += [
         '',
         '      <footer>',
-        '        页面只展示已生成的成片与文件，不保存任何令牌。字幕时间取自源轨道，词级高亮来自 json3 逐词时间戳。',
+        '        页面只展示已生成的成片与文件，不保存任何令牌。字幕时间取自源轨道，词级高亮来�?json3 逐词时间戳�?,
         '      </footer>',
         '    </main>',
         '  </body>',
@@ -256,11 +256,11 @@ def index_page(videos: list[dict]) -> str:
         '      <header>',
         '        <p class="eyebrow">GITSYNONYMS · BURNED CAPTIONS</p>',
         '        <h1>视频列表</h1>',
-        '        <p class="intro">所有已生成的双语成片，按事件时间从新到旧排列。点击标题进入详情页。</p>',
-        '        <nav class="page-nav" aria-label="主导航">',
+        '        <p class="intro">所有已生成的双语成片，按事件时间从新到旧排列。点击标题进入详情页�?/p>',
+        '        <nav class="page-nav" aria-label="主导�?>',
         '          <a href="./">字幕生成</a>',
         '          <a href="settings.html">字幕设置</a>',
-        '          <a href="latest.html">最新成片</a>',
+        '          <a href="latest.html">最新成�?/a>',
         '          <a class="active" href="videos.html">视频列表</a>',
         '        </nav>',
         '      </header>',
@@ -272,11 +272,11 @@ def index_page(videos: list[dict]) -> str:
     for index, video in enumerate(videos):
         video_id = video["Video ID"]
         title = html.escape(video.get("Title", video_id))
-        badge = ' <span class="badge">最新</span>' if index == 0 else ''
+        badge = ' <span class="badge">最�?/span>' if index == 0 else ''
         lines += [
             '          <li>',
             f'            <a class="secondary-button" href="videos/{video_id}.html">{title}{badge}</a>',
-            f'            <span>📅 {html.escape(video.get("Event date", ""))} · ⏱ {html.escape(video.get("Duration", ""))} · ID: {video_id}</span>',
+            f'            <span>📅 {html.escape(video.get("Event date", ""))} · �?{html.escape(video.get("Duration", ""))} · ID: {video_id}</span>',
             '          </li>',
         ]
     lines += [
@@ -284,7 +284,7 @@ def index_page(videos: list[dict]) -> str:
         '      </section>',
         '',
         '      <footer>',
-        '        页面只展示已生成的成片与文件，不保存任何令牌。',
+        '        页面只展示已生成的成片与文件，不保存任何令牌�?,
         '      </footer>',
         '    </main>',
         '  </body>',
@@ -300,7 +300,7 @@ def latest_page(videos: list[dict]) -> str:
     video_id = newest["Video ID"]
     title = html.escape(newest.get("Title", video_id))
     release = (
-        "https://github.com/gitsynonyms/gitsynonyms/releases/download/"
+        "https://github.com/gitsynonyms01/gitsynonyms/releases/download/"
         f"{video_id}/Burned_Bilingual_{video_id}.mp4"
     )
     lines = [
@@ -310,19 +310,19 @@ def latest_page(videos: list[dict]) -> str:
         '    <meta charset="utf-8">',
         '    <meta name="viewport" content="width=device-width, initial-scale=1">',
         '    <meta name="theme-color" content="#0b1020">',
-        '    <title>最新成片 · GitSynonyms</title>',
+        '    <title>最新成�?· GitSynonyms</title>',
         '    <link rel="stylesheet" href="styles.css?v=latest-video-v5">',
         '  </head>',
         '  <body>',
         '    <main class="shell">',
         '      <header>',
         '        <p class="eyebrow">GITSYNONYMS · BURNED CAPTIONS</p>',
-        '        <h1>最新成片</h1>',
-        '        <p class="intro">最新生成的双语成片。点击进入详情页可查看全部七种字幕格式与下载链接。</p>',
-        '        <nav class="page-nav" aria-label="主导航">',
+        '        <h1>最新成�?/h1>',
+        '        <p class="intro">最新生成的双语成片。点击进入详情页可查看全部七种字幕格式与下载链接�?/p>',
+        '        <nav class="page-nav" aria-label="主导�?>',
         '          <a href="./">字幕生成</a>',
         '          <a href="settings.html">字幕设置</a>',
-        '          <a class="active" href="latest.html">最新成片</a>',
+        '          <a class="active" href="latest.html">最新成�?/a>',
         '          <a href="videos.html">视频列表</a>',
         '        </nav>',
         '      </header>',
@@ -335,12 +335,12 @@ def latest_page(videos: list[dict]) -> str:
         '            Your browser cannot play this MP4 preview. Use the download links below.',
         '          </video>',
         '        </div>',
-        '        <p class="hint">1080p 硬字幕成片；金色中文在上、白色英文在下，英文逐词高亮，磨砂玻璃钻石背景框从片头持续到片尾。</p>',
+        '        <p class="hint">1080p 硬字幕成片；金色中文在上、白色英文在下，英文逐词高亮，磨砂玻璃钻石背景框从片头持续到片尾�?/p>',
         '        <dl class="meta-grid">',
         f'          <div><dt>视频 ID</dt><dd>{html.escape(video_id)}</dd></div>',
         f'          <div><dt>事件日期</dt><dd>{html.escape(newest.get("Event date", ""))}</dd></div>',
         f'          <div><dt>时长</dt><dd>{html.escape(newest.get("Duration", ""))}</dd></div>',
-        '          <div><dt>样式</dt><dd>classic · 玻璃钻石框</dd></div>',
+        '          <div><dt>样式</dt><dd>classic · 玻璃钻石�?/dd></div>',
         '          <div><dt>刻录编码</dt><dd>libx264 · CRF 18 · 音频原样复制</dd></div>',
         '          <div><dt>字幕来源</dt><dd>YouTube en-orig + zh-Hans（json3 逐词时间戳）</dd></div>',
         '        </dl>',
@@ -348,10 +348,10 @@ def latest_page(videos: list[dict]) -> str:
         '',
         '      <section class="panel" aria-labelledby="download-title">',
         '        <h2 id="download-title">下载（最新成片）</h2>',
-        '        <p class="hint">1080p 成片托管在 GitHub Release；字幕文件随站点提供。</p>',
+        '        <p class="hint">1080p 成片托管�?GitHub Release；字幕文件随站点提供�?/p>',
         '        <ul class="download-list">',
         '          <li>',
-        f'            <a class="secondary-button" href="{release}">1080p 硬字幕 MP4</a>',
+        f'            <a class="secondary-button" href="{release}">1080p 硬字�?MP4</a>',
         '            <span>全高清成片，GitHub Release 资源</span>',
         '          </li>',
     ]
@@ -360,7 +360,7 @@ def latest_page(videos: list[dict]) -> str:
         lines += [
             '          <li>',
             f'            <a class="secondary-button" href="{path}">{label}</a>',
-            f'            <span>{label}，中英对照</span>',
+            f'            <span>{label}，中英对�?/span>',
             '          </li>',
         ]
     for language, extension, path in [
@@ -384,7 +384,7 @@ def latest_page(videos: list[dict]) -> str:
         ]
     lines += [
         '        </ul>',
-        f'        <p class="hint">原始视频：<a href="https://www.youtube.com/watch?v={video_id}" target="_blank" rel="noreferrer">youtube.com/watch?v={video_id}</a>。</p>',
+        f'        <p class="hint">原始视频�?a href="https://www.youtube.com/watch?v={video_id}" target="_blank" rel="noreferrer">youtube.com/watch?v={video_id}</a>�?/p>',
         '      </section>',
         '',
         '      <section class="panel" aria-labelledby="archive-title">',
@@ -404,7 +404,7 @@ def latest_page(videos: list[dict]) -> str:
         '      </section>',
         '',
         '      <footer>',
-        '        页面只展示已生成的成片与文件，不保存任何令牌。字幕时间取自源轨道，词级高亮来自 json3 逐词时间戳。',
+        '        页面只展示已生成的成片与文件，不保存任何令牌。字幕时间取自源轨道，词级高亮来�?json3 逐词时间戳�?,
         '      </footer>',
         '    </main>',
         '  </body>',
