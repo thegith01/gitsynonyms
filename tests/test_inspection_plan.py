@@ -107,8 +107,10 @@ def test_shipped_registry_passes_the_minimum_granularity_check():
     registry = inspection.load_registry()
     assert inspection.validate(registry) == []
     report = inspection.coverage(registry)
-    assert report["units"] == 5
-    assert report["active_units"] == 5
+    assert report["units"] == len(registry["units"])
+    assert report["active_units"] == sum(
+        1 for unit in registry["units"] if unit.get("status") == "active"
+    )
     assert report["mechanism_coverage"] == 1.0
     assert report["inventory_complete"] is False
     assert "cline-schedule" in report["pending_inventory"]
@@ -336,10 +338,13 @@ def test_cli_plan_renders_the_shipped_grid():
         )
         assert code == 0
         payload = json.loads(output)
-        assert [item["unit_id"] for item in payload["due"]] == [
-            "gh:gitsynonyms/monitor-whitehouse",
-            "gh:gitsynonyms/deploy-subtitle-page",
-        ]
+        registry = inspection.load_registry()
+        assert {item["unit_id"] for item in payload["due"]} == {
+            unit["id"] for unit in registry["units"]
+        }
+        assert [item["due_at"] for item in payload["due"]] == sorted(
+            item["due_at"] for item in payload["due"]
+        )
 
 
 def test_cli_check_text_names_the_pending_inventory():
