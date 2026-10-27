@@ -16,10 +16,10 @@ on:
         description: Optional HTTP proxy host:port (blank = auto-select public proxy)
         required: false
         default: ""
-      max_height:
-        description: Source video height cap for download
+      min_height:
+        description: Prefer this height or higher, then degrade
         required: false
-        default: "720"
+        default: "1080"
       global_quality:
         description: libx264 CRF (lower = better/slower)
         required: false
@@ -87,10 +87,10 @@ jobs:
               || echo "no public proxy selected; downloader will try direct then fall back"
           fi
 
-      - name: Download source video
+      - name: Download source video (direct, then full proxy pool, 1080p+ preferred)
         env:
           VIDEO_ID: ${{ steps.meta.outputs.video_id }}
-          MAX_HEIGHT: ${{ inputs.max_height }}
+          MIN_HEIGHT: ${{ inputs.min_height }}
           YOUTUBE_COOKIES_B64: ${{ secrets.YOUTUBE_COOKIES_B64 }}
         shell: bash
         run: |
@@ -98,33 +98,17 @@ jobs:
           mkdir -p work
           cookie_args=()
           if [ -n "${YOUTUBE_COOKIES_B64:-}" ]; then
-            printf '%s' "$YOUTUBE_COOKIES_B64" | base64 -d > "$RUNNER_TEMP/cookies.txt"
+            printf '%s' "$YOUTUBE_COOKIES_B64" | base64 -d > "$RUNNER_TEMP/cookies.txt" || true
             if [ -s "$RUNNER_TEMP/cookies.txt" ]; then
               cookie_args=(--cookies "$RUNNER_TEMP/cookies.txt")
-              echo "cookies: $(wc -l < "$RUNNER_TEMP/cookies.txt") lines"
+              echo "cookies lines: $(wc -l < "$RUNNER_TEMP/cookies.txt")"
             else
-              echo "::warning::YOUTUBE_COOKIES_B64 decoded empty; continuing without cookies"
+              echo "::warning::YOUTUBE_COOKIES_B64 decoded empty"
             fi
           else
-            echo "::warning::YOUTUBE_COOKIES_B64 not set; YouTube usually answers 403 for this media"
+            echo "::warning::YOUTUBE_COOKIES_B64 not set; YouTube answers 403 / bot-check for this media"
           fi
-          fmt="bv*[height<=${MAX_HEIGHT}]+ba/b[height<=${MAX_HEIGHT}]"
-          url="https://www.youtube.com/watch?v=${VIDEO_ID}"
-          attempt() {
-            echo "--> attempt: $*"
-            yt-dlp --no-warnings --retries 3 --fragment-retries 3 \
-              --merge-output-format mp4 -f "$fmt" "${cookie_args[@]}" \
-              -o "work/${VIDEO_ID}.source.%(ext)s" "$@" "$url"
-          }
-          ok=0
-          if [ -n "${YTDLP_PROXY:-}" ]; then attempt --proxy "$YTDLP_PROXY" && ok=1; fi
-          [ "$ok" -eq 0 ] && { attempt && ok=1; }
-          [ "$ok" -eq 0 ] && { attempt --extractor-args "youtube:player_client=android" && ok=1; }
-          [ "$ok" -eq 0 ] && { attempt --extractor-args "youtube:player_client=web_safari" && ok=1; }
-          if [ "$ok" -ne 1 ]; then
-            echo "::error::YouTube refused the media stream (HTTP 403). Set the YOUTUBE_COOKIES_B64 secret (base64 of a Netscape cookies.txt) and re-run."
-            exit 1
-          fi
+          python scripts/download_source_video.py             --video-id "$VIDEO_ID"             --output-dir work             --min-height "$MIN_HEIGHT"             --proxy-limit 150             --proxy-tries 30             --timeout 900             --report work/download-report.json             "${cookie_args[@]}"
           ls -lh work/
 
       - name: Build bilingual ASS and burn into video
