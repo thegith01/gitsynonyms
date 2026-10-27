@@ -87,7 +87,7 @@ jobs:
               || echo "no public proxy selected; downloader will try direct then fall back"
           fi
 
-      - name: Download source video (direct, then full proxy pool, 1080p+ preferred)
+      - name: Download source video (direct -> full proxy pool -> 1080p+)
         env:
           VIDEO_ID: ${{ steps.meta.outputs.video_id }}
           MIN_HEIGHT: ${{ inputs.min_height }}
@@ -98,18 +98,42 @@ jobs:
           mkdir -p work
           cookie_args=()
           if [ -n "${YOUTUBE_COOKIES_B64:-}" ]; then
-            printf '%s' "$YOUTUBE_COOKIES_B64" | base64 -d > "$RUNNER_TEMP/cookies.txt" || true
+            printf '%s' "$YOUTUBE_COOKIES_B64" | base64 -d > "$RUNNER_TEMP/cookies.txt" 2>/dev/null || true
             if [ -s "$RUNNER_TEMP/cookies.txt" ]; then
               cookie_args=(--cookies "$RUNNER_TEMP/cookies.txt")
               echo "cookies lines: $(wc -l < "$RUNNER_TEMP/cookies.txt")"
-            else
-              echo "::warning::YOUTUBE_COOKIES_B64 decoded empty"
             fi
-          else
-            echo "::warning::YOUTUBE_COOKIES_B64 not set; YouTube answers 403 / bot-check for this media"
           fi
-          python scripts/download_source_video.py             --video-id "$VIDEO_ID"             --output-dir work             --min-height "$MIN_HEIGHT"             --proxy-limit 150             --proxy-tries 120             --timeout 900             --report work/download-report.json             "${cookie_args[@]}"
+          python scripts/download_source_video.py \
+            --video-id "$VIDEO_ID" \
+            --output-dir work \
+            --min-height "$MIN_HEIGHT" \
+            --proxy-limit 0 \
+            --proxy-tries 120 \
+            --timeout 900 \
+            --report work/download-report.json \
+            ${cookie_args[@]+"${cookie_args[@]}"}
           ls -lh work/
+
+      - name: Persist download diagnostics
+        if: always()
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p diag
+          if [ -f work/download-report.json ]; then
+            cp work/download-report.json diag/download-report.json
+          else
+            echo '{"missing": true}' > diag/download-report.json
+          fi
+          ls -lh diag/ || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add diag/ || true
+          if ! git diff --cached --quiet; then
+            git commit -m "diag: download attempt report"
+            git push origin "HEAD:${GITHUB_REF_NAME}" || true
+          fi
 
       - name: Build bilingual ASS and burn into video
         env:

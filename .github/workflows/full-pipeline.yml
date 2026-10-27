@@ -115,6 +115,26 @@ jobs:
             ${cookie_args[@]+"${cookie_args[@]}"}
           ls -lh work/
 
+      - name: Persist download diagnostics
+        if: always()
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p diag
+          if [ -f work/download-report.json ]; then
+            cp work/download-report.json diag/download-report.json
+          else
+            echo '{"missing": true}' > diag/download-report.json
+          fi
+          ls -lh diag/ || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add diag/ || true
+          if ! git diff --cached --quiet; then
+            git commit -m "diag: download attempt report"
+            git push origin "HEAD:${GITHUB_REF_NAME}" || true
+          fi
+
       - name: Build bilingual ASS and burn into video
         env:
           VIDEO_ID: ${{ steps.meta.outputs.video_id }}
