@@ -138,6 +138,7 @@ jobs:
           echo "chosen source: $chosen"
 
       - name: Download the selected source (direct, then the proxy pool)
+        id: source
         if: inputs.mode != 'probe'
         env:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
@@ -148,7 +149,14 @@ jobs:
             --video-id "$VIDEO_ID" --output-dir work --min-height 1080 \
             --proxy-limit 0 --proxy-tries 40 --timeout 1500 \
             --report work/download-report.json
-          ls -lh work/
+          file="$(find work -maxdepth 1 -type f -name "${VIDEO_ID}.source.*" \
+            ! -name "*.part" ! -name "*.ytdl" | head -1)"
+          if [ -z "$file" ]; then
+            echo "::error::downloaded source file not found"
+            exit 1
+          fi
+          echo "file=$file" >> "$GITHUB_OUTPUT"
+          ls -lh "$file"
 
       - name: Take the seven YouTube caption formats
         id: captions
@@ -180,6 +188,7 @@ jobs:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
           CAPS: ${{ steps.captions.outputs.dir }}
           MODEL: ${{ inputs.asr_model }}
+          SOURCE: ${{ steps.source.outputs.file }}
         run: |
           set -euo pipefail
           if [ -z "$CAPS" ] || [ ! -d "$CAPS" ]; then
@@ -191,12 +200,12 @@ jobs:
           elif [ -n "${ASSEMBLYAI:-}" ]; then
             echo "no YouTube English track; transcribing with AssemblyAI"
             python scripts/assemblyai_captions.py \
-              --video "work/${VIDEO_ID}.source.mp4" --video-id "$VIDEO_ID" \
+              --video "$SOURCE" --video-id "$VIDEO_ID" \
               --track en-orig --output-dir "$CAPS" --work-dir work
           else
             echo "no YouTube English track and no ASSEMBLYAI secret; using local faster-whisper"
             python scripts/asr_captions.py \
-              --video "work/${VIDEO_ID}.source.mp4" --video-id "$VIDEO_ID" \
+              --video "$SOURCE" --video-id "$VIDEO_ID" \
               --track en-orig --model "$MODEL" --output-dir "$CAPS"
           fi
           echo "CAPS=$CAPS" >> "$GITHUB_ENV"
@@ -229,11 +238,12 @@ jobs:
           PRESET: ${{ inputs.preset }}
           TITLE: ${{ inputs.title }}
           EVENT_DATE: ${{ inputs.event_date }}
+          SOURCE: ${{ steps.source.outputs.file }}
         run: |
           set -euo pipefail
           caps="${CAPS:-${{ steps.captions.outputs.dir }}}"
           python scripts/video_processing.py \
-            --video "work/${VIDEO_ID}.source.mp4" \
+            --video "$SOURCE" \
             --caption-dir "$caps" --languages "zh-Hans,en-orig" \
             --video-id "$VIDEO_ID" --title "$TITLE" --event-date "$EVENT_DATE" \
             --output-dir output --encoder libx264 --crf "$CRF" --preset "$PRESET" \

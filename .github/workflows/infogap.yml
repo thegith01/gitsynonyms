@@ -8,6 +8,11 @@ on:
         description: "Comma-separated research topics (optional)"
         required: false
         type: string
+      tests_only:
+        description: "Only run the validate job (pytest + registry checks)"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -38,6 +43,7 @@ jobs:
           python scripts/inspection/plan.py check --github
   generate:
     needs: validate
+    if: ${{ !inputs.tests_only }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     outputs:

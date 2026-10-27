@@ -1,0 +1,323 @@
+{
+  "schema": "module2-engine-registry/1",
+  "office": "asr",
+  "title": "ASR处：语音转写引擎研究与排名",
+  "updated_at": "2026-10-27",
+  "threshold": 60,
+  "rubric": {
+    "version": "1.0",
+    "dimensions": [
+      {
+        "id": "accuracy",
+        "label": "转写准确率",
+        "weight": 30,
+        "rule": "以公开独立基准的 WER/CER 为准；干净语音与难音频分别看，不采信单一营销数字"
+      },
+      {
+        "id": "languages",
+        "label": "中英语言覆盖",
+        "weight": 15,
+        "rule": "同时支持英语与简体中文为满分；仅英语或需二次翻译按比例扣分"
+      },
+      {
+        "id": "word_timing",
+        "label": "逐词时间戳",
+        "weight": 15,
+        "rule": "原生逐词起止时间为满分；句级时间戳减半；无时间戳不得分"
+      },
+      {
+        "id": "cost",
+        "label": "成本",
+        "weight": 15,
+        "rule": "按每音频小时公开价折算；自托管只计算力，不计许可证费"
+      },
+      {
+        "id": "latency",
+        "label": "延迟与吞吐",
+        "weight": 10,
+        "rule": "批量转写 3 小时素材的端到端等待时间与并发能力"
+      },
+      {
+        "id": "availability",
+        "label": "可获得性",
+        "weight": 10,
+        "rule": "仓库已有密钥/可直接调用为满分；需新开户或审批按缺口扣分"
+      },
+      {
+        "id": "reproducibility",
+        "label": "可复核性",
+        "weight": 5,
+        "rule": "有版本化模型、公开文档与可重跑命令；仅云端黑盒且条款禁止基准测试的扣分"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": "assemblyai-universal-3-5-pro",
+      "name": "AssemblyAI Universal-3.5 Pro",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "$0.21/音频小时",
+      "scores": {
+        "accuracy": 28,
+        "languages": 12,
+        "word_timing": 15,
+        "cost": 14,
+        "latency": 8,
+        "availability": 10,
+        "reproducibility": 4
+      },
+      "notes": "仓库已配置 ASSEMBLYAI 密钥，是当前唯一能直接跑通的主用引擎。独立基准：干净语音 WER 1.55%，难音频 WER 10.43%；结构化实体基准 WER 3.9% 但任务成功率中游，说明标点与实体格式仍需后处理。Universal-3.5 Pro 官方覆盖 18 种语言，中文可用但不如 99 语言的 Universal-2 宽。",
+      "evidence": [
+        {
+          "url": "https://github.com/verliapp/stt-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "LibriSpeech 干净 1.55% / Earnings-22 难音频 10.43%"
+        },
+        {
+          "url": "https://openbenchmarks.com/structured-speech-to-text-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "17 家系统中 WER 3.9%，任务成功率 50.3%"
+        },
+        {
+          "url": "https://www.assemblyai.com/pricing/",
+          "observed_at": "2026-10-27",
+          "note": "预录 $0.21/hr；逐词时间戳与置信度随转写返回"
+        }
+      ]
+    },
+    {
+      "id": "elevenlabs-scribe-v2",
+      "name": "ElevenLabs Scribe v2",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "$0.22/音频小时",
+      "scores": {
+        "accuracy": 27,
+        "languages": 15,
+        "word_timing": 15,
+        "cost": 13,
+        "latency": 8,
+        "availability": 4,
+        "reproducibility": 4
+      },
+      "notes": "语言覆盖与逐词时间戳都强，结构化实体任务成功率 68.0%，明显高于 AssemblyAI 的 50.3%。仓库尚无 ELEVENLABS 密钥，接入前需要新增凭据。",
+      "evidence": [
+        {
+          "url": "https://github.com/verliapp/stt-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "干净 1.99% / 难音频 15.44%"
+        },
+        {
+          "url": "https://openbenchmarks.com/structured-speech-to-text-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "任务成功率 68.0%，WER 6.8%"
+        },
+        {
+          "url": "https://infro.io/blog/speech-apis-compared-2026",
+          "observed_at": "2026-10-27",
+          "note": "Scribe v2 预录 $0.22/hr，含逐词时间戳"
+        }
+      ]
+    },
+    {
+      "id": "whisper-large-v3-selfhost",
+      "name": "OpenAI Whisper large-v3（faster-whisper 自托管）",
+      "kind": "self-hosted",
+      "status": "measured",
+      "cost": "免费权重，按算力计",
+      "scores": {
+        "accuracy": 23,
+        "languages": 15,
+        "word_timing": 13,
+        "cost": 15,
+        "latency": 4,
+        "availability": 6,
+        "reproducibility": 5
+      },
+      "notes": "99 种语言、权重公开、可离线，是没有任何密钥时的唯一可靠兜底；中文质量低于商业引擎，CPU 上 3 小时素材会非常慢，需要 GPU。",
+      "evidence": [
+        {
+          "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+          "observed_at": "2026-10-27",
+          "note": "开放 ASR 榜，Whisper large-v3 为对照基线"
+        },
+        {
+          "url": "https://openbenchmarks.com/structured-speech-to-text-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "任务成功率 53.3%，WER 5.9%"
+        }
+      ]
+    },
+    {
+      "id": "google-chirp-3",
+      "name": "Google Cloud Speech-to-Text V2（Chirp 3）",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "$0.48/音频小时（标准识别）",
+      "scores": {
+        "accuracy": 24,
+        "languages": 15,
+        "word_timing": 13,
+        "cost": 9,
+        "latency": 8,
+        "availability": 3,
+        "reproducibility": 4
+      },
+      "notes": "125 种语言，结构化实体任务成功率 58.0%。成本是 AssemblyAI 的两倍多，需要 GCP 服务账号。",
+      "evidence": [
+        {
+          "url": "https://openbenchmarks.com/structured-speech-to-text-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "任务成功率 58.0%，WER 5.8%"
+        },
+        {
+          "url": "https://www.assemblyai.com/blog/speech-to-text-api-pricing",
+          "observed_at": "2026-10-27",
+          "note": "Google Cloud 约 $0.48/hr 批量价"
+        }
+      ]
+    },
+    {
+      "id": "deepgram-nova-3",
+      "name": "Deepgram Nova-3",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "$0.26–0.31/音频小时",
+      "scores": {
+        "accuracy": 22,
+        "languages": 13,
+        "word_timing": 15,
+        "cost": 12,
+        "latency": 10,
+        "availability": 3,
+        "reproducibility": 4
+      },
+      "notes": "流式延迟最低、结构化实体任务成功率最高（71.0%），但公开 WER 分歧极大：干净语音 2.50%，部分独立测试给出 25% 级别的难音频结果。只适合作为实时场景备选，不适合作为 3 小时成片转写的主用。",
+      "evidence": [
+        {
+          "url": "https://openbenchmarks.com/structured-speech-to-text-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "任务成功率 71.0%，WER 8.2%"
+        },
+        {
+          "url": "https://gradium.ai/content/stt-api-benchmark-2026-latency-accuracy",
+          "observed_at": "2026-10-27",
+          "note": "Nova-3 平均 WER 25.3%，延迟最低"
+        }
+      ]
+    },
+    {
+      "id": "openai-gpt-4o-transcribe",
+      "name": "OpenAI gpt-4o-transcribe",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "$0.36/音频小时",
+      "scores": {
+        "accuracy": 25,
+        "languages": 13,
+        "word_timing": 6,
+        "cost": 11,
+        "latency": 8,
+        "availability": 3,
+        "reproducibility": 3
+      },
+      "notes": "干净语音最低 WER（1.47%），但难音频 18.55% 是前列引擎里最差的；逐词时间戳只在 whisper-1 上有文档，做逐词 ASS 会被这一条卡住。",
+      "evidence": [
+        {
+          "url": "https://github.com/verliapp/stt-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "干净 1.47% / 难音频 18.55%"
+        },
+        {
+          "url": "https://www.cometapi.com/best-speech-to-text-apis/",
+          "observed_at": "2026-10-27",
+          "note": "逐词时间戳仅 whisper-1 有文档；$0.36/hr"
+        }
+      ]
+    },
+    {
+      "id": "speechmatics-linden-1",
+      "name": "Speechmatics Linden-1",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "按合同",
+      "scores": {
+        "accuracy": 26,
+        "languages": 14,
+        "word_timing": 14,
+        "cost": 9,
+        "latency": 8,
+        "availability": 3,
+        "reproducibility": 4
+      },
+      "notes": "Pipecat 独立测试中语义 WER 0.96%，55+ 语言，逐词时间戳齐全；公开价不透明，接入需要商务流程。",
+      "evidence": [
+        {
+          "url": "https://github.com/pipecat-ai/stt-benchmark/",
+          "observed_at": "2026-10-27",
+          "note": "linden-1 池化语义 WER 0.96%，TTFS 中位 369ms"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-parakeet-tdt-0-6b-v3",
+      "name": "NVIDIA Parakeet TDT 0.6B v3",
+      "kind": "self-hosted",
+      "status": "measured",
+      "cost": "免费权重，按算力计",
+      "scores": {
+        "accuracy": 20,
+        "languages": 6,
+        "word_timing": 14,
+        "cost": 15,
+        "latency": 10,
+        "availability": 6,
+        "reproducibility": 5
+      },
+      "notes": "RTFx 极高、显存需求小，但以英语为主，中文和多语场景不合格；适合做英语初稿的快速批处理。",
+      "evidence": [
+        {
+          "url": "https://openbenchmarks.com/structured-speech-to-text-benchmark",
+          "observed_at": "2026-10-27",
+          "note": "结构化实体任务成功率 39.3%，WER 11.4%"
+        },
+        {
+          "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+          "observed_at": "2026-10-27",
+          "note": "开放 ASR 榜 RTFx 与 WER 对照"
+        }
+      ]
+    },
+    {
+      "id": "groq-whisper-large-v3-turbo",
+      "name": "Groq Whisper large-v3-turbo",
+      "kind": "hosted-api",
+      "status": "estimated",
+      "cost": "低",
+      "scores": {
+        "accuracy": 22,
+        "languages": 15,
+        "word_timing": 11,
+        "cost": 13,
+        "latency": 10,
+        "availability": 2,
+        "reproducibility": 4
+      },
+      "notes": "把 Whisper 权重跑在 LPU 上，速度极快、价格低，但仍是 Whisper 家族的中文上限，且需要 Groq 密钥。",
+      "evidence": [
+        {
+          "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+          "observed_at": "2026-10-27",
+          "note": "以 Whisper large-v3 的 WER 作为质量上限参考"
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "primary": "assemblyai-universal-3-5-pro",
+    "fallback": ["whisper-large-v3-selfhost"],
+    "upgrade": ["elevenlabs-scribe-v2"],
+    "reason": "主用 AssemblyAI：仓库已有密钥、$0.21/hr、原生逐词时间戳，能直接喂给字幕时间轴。没有任何密钥时回退到 faster-whisper（99 语言、可离线），接受更慢的中文质量。Scribe v2 在结构化实体任务上更稳，等 ELEVENLABS 密钥到位后作为升级项；Deepgram 的公开 WER 分歧过大，只保留为实时场景备选。"
+  }
+}

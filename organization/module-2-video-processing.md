@@ -5,7 +5,9 @@
 模块2处理**已经由上游选定**的视频和字幕。输入至少要能定位源视频、字幕目录、
 目标语言和输出目录；模块2不负责频道扫描、视频选择、资源登记或上游巡检。
 
-## 五个职责单元
+## 职责单元
+
+### 核心作业单元
 
 | 子部门 | 职责 | 实现 |
 |---|---|---|
@@ -15,11 +17,25 @@
 | 刻录渲染组 | 单遍 libass 硬字幕；按需生成 540p 预览和封面；成功后原子替换最终输出，避免留下半成品 | `scripts/video_processing.py` |
 | 质检交接组 | 使用 ffprobe 校验输入/输出；检查字体与缺字；输出 `BURN.json`、`TIMING.json` 及可复核的处理结果 | `scripts/video_processing.py`、`scripts/subtitle_timing.py` |
 
+### 研究处与语音司（2026-10-27 增设）
+
+| 子部门 | 隶属 | 职责 | 制度 |
+|---|---|---|---|
+| ASR处 | 模块2直属 | 七格式确实缺失时，全网研究、打分并执行语音转写，产出逐词时间戳 | [`module-2-asr-office.md`](module-2-asr-office.md) |
+| 翻译处 | 模块2直属 | 研究、打分并执行英译中字幕翻译，保证逐条对应 | [`module-2-translation-office.md`](module-2-translation-office.md) |
+| 语音制作司 | 模块2 | 把文字变成声音并按时间轴刻入视频；下辖两处 | [`module-2-voice-production.md`](module-2-voice-production.md) |
+| └ 语音刻录处 | 语音制作司 | 用音色库合成配音，按 cue 对齐后混入原声 | 同上 |
+| └ 语音克隆处 | 语音制作司 | 零样本声音克隆；仅限本人或书面授权的配音员 | 同上 |
+
+四个研究处的评分口径、候选排名与选型结论统一存放在 `docs/engines/`：
+`asr.md`、`translation.md`、`voice-burn.md`、`voice-clone.md` 由
+`scripts/engine_registry.py` 从 `docs/engines/data/*.json` 生成，总分按评分表重算。
+
 第三方字幕比较、ASR 模型研究和字幕人体工学由
 `scripts/third_party_captions.py`、`scripts/speech_model_research.py`、
-`scripts/subtitle_ergonomics.py` 提供支撑能力，归入上述五个职责单元协作，不另增
-正式子部门。根目录旧档案 [`../MODULE2_ORG.md`](../MODULE2_ORG.md) 仅保留为本页入口，
-本页是当前五单元架构的唯一详细说明。
+`scripts/subtitle_ergonomics.py` 提供支撑能力，归入上述职责单元协作。
+根目录旧档案 [`../MODULE2_ORG.md`](../MODULE2_ORG.md) 仅保留为本页入口，
+本页是当前模块2架构的唯一详细说明。
 
 ## 时间轴精度规则
 

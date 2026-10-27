@@ -1,0 +1,293 @@
+{
+  "schema": "module2-engine-registry/1",
+  "office": "voice-burn",
+  "title": "语音刻录处：TTS 配音与音轨刻录引擎研究与排名",
+  "updated_at": "2026-10-27",
+  "threshold": 60,
+  "rubric": {
+    "version": "1.0",
+    "dimensions": [
+      {
+        "id": "zh_naturalness",
+        "label": "中文自然度",
+        "weight": 25,
+        "rule": "普通话韵律、多音字、数字与专名读法；以盲听与母语审听为准"
+      },
+      {
+        "id": "timing_fit",
+        "label": "时间轴贴合",
+        "weight": 20,
+        "rule": "能否按 cue 起止压缩/拉伸、提供词边界或 SSML 语速控制；只能整段合成减半"
+      },
+      {
+        "id": "voice_control",
+        "label": "音色与一致性",
+        "weight": 15,
+        "rule": "音色库规模、跨段落一致性、情感与语速标签"
+      },
+      {
+        "id": "cost",
+        "label": "成本",
+        "weight": 15,
+        "rule": "按每百万字符公开价；自托管只计算力"
+      },
+      {
+        "id": "latency",
+        "label": "延迟与吞吐",
+        "weight": 10,
+        "rule": "3 小时视频、数千条 cue 的批量合成耗时"
+      },
+      {
+        "id": "reproducibility",
+        "label": "可复核性",
+        "weight": 10,
+        "rule": "接口稳定、版本可固定、可离线复跑；非官方接口扣分"
+      },
+      {
+        "id": "compliance",
+        "label": "授权合规",
+        "weight": 5,
+        "rule": "服务条款允许批量合成与商用；catalogue voice 不涉及真人克隆"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": "azure-ai-speech-neural",
+      "name": "Azure AI Speech（Neural TTS）",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "约 $15/M 字符（标准神经网络音色）",
+      "scores": {
+        "zh_naturalness": 23,
+        "timing_fit": 20,
+        "voice_control": 14,
+        "cost": 8,
+        "latency": 8,
+        "reproducibility": 6,
+        "compliance": 5
+      },
+      "notes": "官方接口，SSML 可控制语速/停顿/音高，并提供 word boundary 事件，可按 cue 做时长对齐；中文神经音色数量与稳定性是商业方案里最好的。与 edge-tts 同源音色，但从非官方接口换成有 SLA 的正规授权。",
+      "evidence": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/text-to-speech",
+          "observed_at": "2026-10-27",
+          "note": "SSML 语速/停顿控制与 word boundary 事件"
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/",
+          "observed_at": "2026-10-27",
+          "note": "神经网络语音按字符计费"
+        }
+      ]
+    },
+    {
+      "id": "edge-tts",
+      "name": "edge-tts（Microsoft Edge 朗读接口）",
+      "kind": "free-endpoint",
+      "status": "measured",
+      "cost": "免费",
+      "scores": {
+        "zh_naturalness": 22,
+        "timing_fit": 18,
+        "voice_control": 13,
+        "cost": 15,
+        "latency": 8,
+        "reproducibility": 3,
+        "compliance": 3
+      },
+      "notes": "仓库现有 `tts_dub.py` 与 `tts-dub.yml` 就是这条路径：免费、零密钥、中文音色自然，SSML 的 rate 能对 cue 做粗对齐。风险是它并非公开商用 API，接口随时可能变，条款也不保证批量合成，因此只作为默认可跑方案而不是长期主用。",
+      "evidence": [
+        {
+          "url": "https://github.com/rany2/edge-tts",
+          "observed_at": "2026-10-27",
+          "note": "非官方客户端，音色清单随 Edge 服务变化"
+        },
+        {
+          "url": "https://github.com/rany2/edge-tts",
+          "observed_at": "2026-10-27",
+          "note": "仓库自述仅供学习交流，不保证商用授权"
+        }
+      ]
+    },
+    {
+      "id": "cosyvoice-3-dub",
+      "name": "Fun-CosyVoice 3.0（自托管配音）",
+      "kind": "self-hosted",
+      "status": "measured",
+      "cost": "免费权重，单卡可跑",
+      "scores": {
+        "zh_naturalness": 23,
+        "timing_fit": 16,
+        "voice_control": 13,
+        "cost": 10,
+        "latency": 5,
+        "reproducibility": 10,
+        "compliance": 5
+      },
+      "notes": "与语音克隆处共用一套权重：既能用内置音色，也能用已授权音色；Apache-2.0、可离线、发音可用拼音修补。时长控制要靠外部按 cue 重排，不如 SSML 直接。",
+      "evidence": [
+        {
+          "url": "https://github.com/FunAudioLLM/CosyVoice",
+          "observed_at": "2026-10-27",
+          "note": "拼音/CMU 音素修补发音，150ms 双流式"
+        }
+      ]
+    },
+    {
+      "id": "minimax-speech-2-6",
+      "name": "MiniMax Speech 2.6",
+      "kind": "hosted-api",
+      "status": "vendor-claimed",
+      "cost": "低",
+      "scores": {
+        "zh_naturalness": 24,
+        "timing_fit": 15,
+        "voice_control": 13,
+        "cost": 8,
+        "latency": 7,
+        "reproducibility": 4,
+        "compliance": 4
+      },
+      "notes": "普通话与粤语保真度是主要卖点，价格低、有免费额度；时间轴控制以语速参数为主，缺逐词边界，长片对齐全靠后处理。",
+      "evidence": [
+        {
+          "url": "https://www.veed.io/learn/best-voice-cloning-apis",
+          "observed_at": "2026-10-27",
+          "note": "亚洲语言保真度与低价定位"
+        }
+      ]
+    },
+    {
+      "id": "elevenlabs-flash-v2-5",
+      "name": "ElevenLabs Flash v2.5 / Eleven v3",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "按 credit，单价高",
+      "scores": {
+        "zh_naturalness": 24,
+        "timing_fit": 14,
+        "voice_control": 14,
+        "cost": 4,
+        "latency": 9,
+        "reproducibility": 4,
+        "compliance": 4
+      },
+      "notes": "自然度与情感标签最强，70+ 语言；但按字符计费在 3 小时成片上成本高，且中文长句的断句需要额外提示。",
+      "evidence": [
+        {
+          "url": "https://elevenlabs.io/pricing",
+          "observed_at": "2026-10-27",
+          "note": "按 credit 计费，商用需相应套餐"
+        },
+        {
+          "url": "https://haass.io/blog/best-tts-for-voice-agents",
+          "observed_at": "2026-10-27",
+          "note": "Eleven v4 Turbo 盲听 Elo 1335，第一"
+        }
+      ]
+    },
+    {
+      "id": "google-chirp-3-hd",
+      "name": "Google Cloud TTS（Chirp 3 HD）",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "中高",
+      "scores": {
+        "zh_naturalness": 22,
+        "timing_fit": 14,
+        "voice_control": 13,
+        "cost": 5,
+        "latency": 7,
+        "reproducibility": 5,
+        "compliance": 5
+      },
+      "notes": "多语言覆盖广、音质稳定，SSML 支持完整；中文音色的口语感略逊于 Azure/MiniMax，价格偏高。",
+      "evidence": [
+        {
+          "url": "https://cloud.google.com/text-to-speech/pricing",
+          "observed_at": "2026-10-27",
+          "note": "Chirp 3 HD 按字符计价，高于标准音色"
+        }
+      ]
+    },
+    {
+      "id": "openai-gpt-4o-mini-tts",
+      "name": "OpenAI gpt-4o-mini-tts",
+      "kind": "hosted-api",
+      "status": "vendor-claimed",
+      "cost": "低",
+      "scores": {
+        "zh_naturalness": 18,
+        "timing_fit": 10,
+        "voice_control": 12,
+        "cost": 10,
+        "latency": 7,
+        "reproducibility": 4,
+        "compliance": 4
+      },
+      "notes": "可以用自然语言指令控制语气，英文表现好；中文音色与韵律不是强项，且不提供逐词边界，字幕对齐要自己做。",
+      "evidence": [
+        {
+          "url": "https://platform.openai.com/docs/guides/text-to-speech",
+          "observed_at": "2026-10-27",
+          "note": "指令式语气控制；无公开词边界接口"
+        }
+      ]
+    },
+    {
+      "id": "kokoro-82m",
+      "name": "Kokoro-82M",
+      "kind": "self-hosted",
+      "status": "measured",
+      "cost": "免费权重，CPU 可跑",
+      "scores": {
+        "zh_naturalness": 14,
+        "timing_fit": 8,
+        "voice_control": 10,
+        "cost": 15,
+        "latency": 9,
+        "reproducibility": 6,
+        "compliance": 5
+      },
+      "notes": "82M 参数、极低算力、英语质量接近商业档；中文支持弱，只适合英语旁白或草稿试听。",
+      "evidence": [
+        {
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M",
+          "observed_at": "2026-10-27",
+          "note": "82M 参数，Apache-2.0"
+        }
+      ]
+    },
+    {
+      "id": "playht-play-3-0",
+      "name": "PlayHT Play 3.0",
+      "kind": "hosted-api",
+      "status": "vendor-claimed",
+      "cost": "订阅制",
+      "scores": {
+        "zh_naturalness": 20,
+        "timing_fit": 12,
+        "voice_control": 12,
+        "cost": 6,
+        "latency": 6,
+        "reproducibility": 4,
+        "compliance": 4
+      },
+      "notes": "长文旁白与双人对白见长，Creator 套餐可包月不限量；中文不是其主战场。",
+      "evidence": [
+        {
+          "url": "https://www.veed.io/learn/best-voice-cloning-apis",
+          "observed_at": "2026-10-27",
+          "note": "Creator 套餐包月不限量，长文旁白定位"
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "primary": "edge-tts",
+    "upgrade": ["azure-ai-speech-neural"],
+    "offline": ["cosyvoice-3-dub"],
+    "reason": "当前主用 edge-tts，因为它是仓库里已经跑通的零密钥路径（`scripts/tts_dub.py` + `tts-dub.yml`），中文音色自然、按 cue 的 rate 控制够用。长期应升级到 Azure AI Speech：音色同源、有 SLA、SSML 与 word boundary 能直接做时长对齐，只差一把密钥。CosyVoice 作为离线兜底，与克隆处共用权重。OpenAI 与 Kokoro 缺中文能力，PlayHT 价格结构不适合按条计费的成片流程。"
+  }
+}

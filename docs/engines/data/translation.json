@@ -1,0 +1,337 @@
+{
+  "schema": "module2-engine-registry/1",
+  "office": "translation",
+  "title": "翻译处：英译中字幕翻译引擎研究与排名",
+  "updated_at": "2026-10-27",
+  "threshold": 60,
+  "rubric": {
+    "version": "1.0",
+    "dimensions": [
+      {
+        "id": "quality",
+        "label": "译文质量",
+        "weight": 35,
+        "rule": "FLORES/WMT 的 COMET、spBLEU 与 Intento 错误计数优先；厂商自评按八成折算"
+      },
+      {
+        "id": "zh_direction",
+        "label": "英译中方向强度",
+        "weight": 15,
+        "rule": "中文为母语级目标语言、无需中转英语为满分；中文只是长尾语言减半"
+      },
+      {
+        "id": "subtitle_fit",
+        "label": "字幕适配",
+        "weight": 15,
+        "rule": "能保持逐条对应、控制行长、按批返回 JSON 为满分；整段自由改写扣分"
+      },
+      {
+        "id": "cost",
+        "label": "成本",
+        "weight": 15,
+        "rule": "按每百万源字符公开价折算；本地模型只计算力"
+      },
+      {
+        "id": "latency",
+        "label": "延迟与吞吐",
+        "weight": 10,
+        "rule": "3000+ 条 cue 的批量翻译耗时与限流风险"
+      },
+      {
+        "id": "availability",
+        "label": "可获得性",
+        "weight": 5,
+        "rule": "仓库已有密钥为满分；需新开户或商务流程按缺口扣分"
+      },
+      {
+        "id": "reproducibility",
+        "label": "可复核性",
+        "weight": 5,
+        "rule": "模型版本可固定、输出可重跑；云端模型随时换版扣分"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": "assemblyai-gateway-gemini-2-5-flash-lite",
+      "name": "AssemblyAI LLM Gateway（gemini-2.5-flash-lite）",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "按 token 计，字幕量级为美元分位",
+      "scores": {
+        "quality": 26,
+        "zh_direction": 13,
+        "subtitle_fit": 15,
+        "cost": 14,
+        "latency": 8,
+        "availability": 5,
+        "reproducibility": 4
+      },
+      "notes": "当前唯一已在 runner 上跑通 3285 条 cue 的路径：同一把 ASSEMBLYAI 密钥既能转写也能翻译，按 JSON 数组整批返回，逐条对齐不合并。短板是 flash-lite 属轻量模型，成语与长定语的处理不如旗舰模型；模型名可换，版本不锁定。",
+      "evidence": [
+        {
+          "url": "https://www.assemblyai.com/docs/speech-understanding/translation",
+          "observed_at": "2026-10-27",
+          "note": "LLM Gateway 支持 86 种目标语言，可批处理"
+        },
+        {
+          "url": "https://www.sota2.com/research/sota/machine-translation-xx-zh-on-flores-plus-latest-test",
+          "observed_at": "2026-10-27",
+          "note": "Gemini 2.5 Pro 英中 COMET 88.01；flash-lite 低于该上限"
+        }
+      ]
+    },
+    {
+      "id": "google-translation-llm",
+      "name": "Google Cloud Translation LLM",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "$10/M 输入 + $10/M 输出",
+      "scores": {
+        "quality": 32,
+        "zh_direction": 14,
+        "subtitle_fit": 12,
+        "cost": 12,
+        "latency": 8,
+        "availability": 2,
+        "reproducibility": 4
+      },
+      "notes": "FLORES 英中方向的头部选手（Gemini 3 Pro COMET 88.13、spBLEU 33.81），中文是核心语言而非长尾。需要 GCP 服务账号；字幕逐条对应要靠提示词约束。",
+      "evidence": [
+        {
+          "url": "https://www.sota2.com/research/sota/machine-translation-xx-zh-on-flores-plus-latest-test",
+          "observed_at": "2026-10-27",
+          "note": "Gemini 3 Pro spBLEU 33.81 / COMET 88.13"
+        },
+        {
+          "url": "https://cloud.google.com/translate/pricing",
+          "observed_at": "2026-10-27",
+          "note": "Translation LLM $10/M 输入 + $10/M 输出"
+        }
+      ]
+    },
+    {
+      "id": "google-cloud-translation-nmt",
+      "name": "Google Cloud Translation（NMT）",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "$20/M 字符",
+      "scores": {
+        "quality": 31,
+        "zh_direction": 15,
+        "subtitle_fit": 11,
+        "cost": 11,
+        "latency": 9,
+        "availability": 2,
+        "reproducibility": 5
+      },
+      "notes": "FLORES 英中方向 spBLEU 36.08、COMET 88.24，是传统 NMT 里最强的一档；模型版本稳定、可复核性最好。整段 API 不保证逐条对应，需要按 cue 单发或做后对齐，吞吐成本会上升。",
+      "evidence": [
+        {
+          "url": "https://www.sota2.com/research/sota/machine-translation-xx-zh-on-flores-plus-latest-test",
+          "observed_at": "2026-10-27",
+          "note": "Google Translate spBLEU 36.08 / COMET 88.24，榜首"
+        },
+        {
+          "url": "https://cloud.google.com/translate/pricing",
+          "observed_at": "2026-10-27",
+          "note": "NMT $20/M 字符，每月 50 万字符免费"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-terra",
+      "name": "OpenAI GPT-5.6 Terra（提示翻译）",
+      "kind": "hosted-llm",
+      "status": "measured",
+      "cost": "约 $4.54/M 字符",
+      "scores": {
+        "quality": 34,
+        "zh_direction": 14,
+        "subtitle_fit": 14,
+        "cost": 8,
+        "latency": 7,
+        "availability": 2,
+        "reproducibility": 3
+      },
+      "notes": "Intento 2026 在 80 种语言里，最佳 LLM 的错误数中位数只有最佳 MT 引擎的约 1/2.3；英中方向 GPT-4 系在编辑评分上领先 DeepL。字幕场景要靠提示词锁定逐条输出，且模型版本会滚动。",
+      "evidence": [
+        {
+          "url": "https://inten.to/state-of-translation-automation/models/",
+          "observed_at": "2026-10-27",
+          "note": "最佳 LLM 错误数中位数约为最佳 MT 引擎的 1/2.3"
+        },
+        {
+          "url": "https://nllb.com/translation-accuracy-leaderboard/",
+          "observed_at": "2026-10-27",
+          "note": "EN→ZH 编辑评分 GPT-4 8.1，DeepL 7.5"
+        },
+        {
+          "url": "https://inten.to/state-of-translation-automation/costs/list-price-on-measured-volume/",
+          "observed_at": "2026-10-27",
+          "note": "GPT-5.6 Terra 实测约 $4.54/M 字符"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-1-pro",
+      "name": "Google Gemini 3.1 Pro（提示翻译）",
+      "kind": "hosted-llm",
+      "status": "measured",
+      "cost": "约 $4.79/M 字符",
+      "scores": {
+        "quality": 34,
+        "zh_direction": 14,
+        "subtitle_fit": 13,
+        "cost": 9,
+        "latency": 7,
+        "availability": 2,
+        "reproducibility": 3
+      },
+      "notes": "与 GPT-5.6 Terra 同档；Intento 在多种语言上把它列为错误最少，FLORES 英中 COMET 88.13。需要 Google AI Studio 或 Vertex 密钥，字幕逐条对应同样依赖提示词。",
+      "evidence": [
+        {
+          "url": "https://www.sota2.com/research/sota/machine-translation-xx-zh-on-flores-plus-latest-test",
+          "observed_at": "2026-10-27",
+          "note": "Gemini 3 Pro COMET 88.13，英中第一梯队"
+        },
+        {
+          "url": "https://inten.to/state-of-translation-automation/models/",
+          "observed_at": "2026-10-27",
+          "note": "多语言错误计数第一梯队"
+        }
+      ]
+    },
+    {
+      "id": "deepl-next-gen",
+      "name": "DeepL Next Gen",
+      "kind": "hosted-api",
+      "status": "measured",
+      "cost": "$27.50/M 字符",
+      "scores": {
+        "quality": 33,
+        "zh_direction": 13,
+        "subtitle_fit": 12,
+        "cost": 6,
+        "latency": 8,
+        "availability": 2,
+        "reproducibility": 4
+      },
+      "notes": "Intento 2026 里在 49 种语言上是最佳 MT 引擎，欧洲语言优势最大；英中方向不如 LLM，价格是全场最高档。适合作为术语一致性要求高的备选。",
+      "evidence": [
+        {
+          "url": "https://inten.to/state-of-translation-automation/models/",
+          "observed_at": "2026-10-27",
+          "note": "DeepL Next Gen 在 49 种语言上为最佳 MT 引擎"
+        },
+        {
+          "url": "https://inten.to/state-of-translation-automation/costs/list-price-on-measured-volume/",
+          "observed_at": "2026-10-27",
+          "note": "$27.50/M 字符，85 种语言"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-translator",
+      "name": "Azure AI Translator",
+      "kind": "hosted-api",
+      "status": "estimated",
+      "cost": "$10/M 字符",
+      "scores": {
+        "quality": 28,
+        "zh_direction": 13,
+        "subtitle_fit": 11,
+        "cost": 12,
+        "latency": 9,
+        "availability": 2,
+        "reproducibility": 5
+      },
+      "notes": "价格低、90 种语言、版本稳定；质量处于第二梯队，适合与 LLM 做交叉校验而不是单独定稿。",
+      "evidence": [
+        {
+          "url": "https://inten.to/state-of-translation-automation/costs/list-price-on-measured-volume/",
+          "observed_at": "2026-10-27",
+          "note": "Microsoft Translator $10/M 字符，90 种语言"
+        }
+      ]
+    },
+    {
+      "id": "qwen-mt-open",
+      "name": "Qwen-MT / Hunyuan-MT（开源权重）",
+      "kind": "self-hosted",
+      "status": "measured",
+      "cost": "免费权重，按算力计",
+      "scores": {
+        "quality": 25,
+        "zh_direction": 14,
+        "subtitle_fit": 12,
+        "cost": 14,
+        "latency": 7,
+        "availability": 3,
+        "reproducibility": 4
+      },
+      "notes": "中文团队训练、中文方向强，权重可固定；FLORES 上低于商用头部（HY-MT1.5-7B spBLEU 23.59），需要 GPU 与自建服务。",
+      "evidence": [
+        {
+          "url": "https://www.sota2.com/research/sota/machine-translation-xx-zh-on-flores-plus-latest-test",
+          "observed_at": "2026-10-27",
+          "note": "HY-MT1.5-7B 英中 spBLEU 23.59 / COMET 86.85"
+        }
+      ]
+    },
+    {
+      "id": "nllb-200-54b",
+      "name": "NLLB-200 54.5B（开源权重）",
+      "kind": "self-hosted",
+      "status": "measured",
+      "cost": "免费权重，按算力计",
+      "scores": {
+        "quality": 22,
+        "zh_direction": 11,
+        "subtitle_fit": 12,
+        "cost": 13,
+        "latency": 4,
+        "availability": 4,
+        "reproducibility": 5
+      },
+      "notes": "200 种语言覆盖最广、完全可离线，但英中质量明显落后（COMET 80.64），且 54B 权重在 runner 上跑不动，只适合做低资源语言的兜底。",
+      "evidence": [
+        {
+          "url": "https://www.sota2.com/research/sota/machine-translation-xx-zh-on-flores-plus-latest-test",
+          "observed_at": "2026-10-27",
+          "note": "NLLB-54.5B spBLEU 20.72 / COMET 80.64"
+        }
+      ]
+    },
+    {
+      "id": "argos-translate-local",
+      "name": "Argos Translate（本地 CTranslate2）",
+      "kind": "self-hosted",
+      "status": "measured",
+      "cost": "免费",
+      "scores": {
+        "quality": 12,
+        "zh_direction": 9,
+        "subtitle_fit": 14,
+        "cost": 15,
+        "latency": 6,
+        "availability": 5,
+        "reproducibility": 5
+      },
+      "notes": "零密钥、零费用、逐条对应，3285 条 cue 在 runner 上能跑完；质量是全场最低档，只作为无网络/无密钥时的及格线兜底。此前一次流水线记录里的 84/100 是“可跑通性”评分，口径与本表不同，不具可比性。",
+      "evidence": [
+        {
+          "url": "https://github.com/argosopentech/argos-translate",
+          "observed_at": "2026-10-27",
+          "note": "本地离线翻译，模型按语言对下载"
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "primary": "assemblyai-gateway-gemini-2-5-flash-lite",
+    "fallback": ["argos-translate-local"],
+    "upgrade": ["google-translation-llm", "gpt-5-6-terra"],
+    "reason": "主用 AssemblyAI LLM Gateway：同一把已配置的密钥、按 JSON 批返回、逐条对齐，是当前唯一在 3285 条 cue 上验证过的路径。Google Translation LLM 与 GPT-5.6 Terra 质量更高，但都需要新凭据，列为升级项；Google NMT 质量稳定、可复核性最好，适合作为对照基线。Argos 只做无密钥兜底，及格但不达标于质量目标。"
+  }
+}

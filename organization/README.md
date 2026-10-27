@@ -19,6 +19,11 @@
 │       └── 巡检登记与台账：inspection/registry.json、inspection/ledger/
 └── 模块2：视频处理部
     ├── 素材接收组
+    ├── ASR处（语音转写）
+    ├── 翻译处（英译中字幕）
+    ├── 语音制作司
+    │   ├── 语音刻录处（TTS 配音与音轨刻录）
+    │   └── 语音克隆处（零样本声音克隆，须书面授权）
     ├── 字幕时间精确刻录司
     ├── 字幕区判定组
     ├── 刻录渲染组
@@ -33,7 +38,14 @@
 - **定期巡检司**负责巡检制度、最小可巡检单元、证据与异常闭环。
 - **模块2：视频处理部**只接收上游已经选定的视频和字幕任务；不得自行替代上游
   选择来源、判定资源重要性或更改巡检结论。
-- 模块2的五个职责单元及精度、画面处理要求，见
+- **ASR处**与**翻译处**直属模块2，分别负责“语音→英文逐词文本”和“英文→简体中文”
+  的研究、打分与执行；两处的排名数据在 `docs/engines/data/asr.json` 与
+  `translation.json`，制度见 [`module-2-asr-office.md`](module-2-asr-office.md)、
+  [`module-2-translation-office.md`](module-2-translation-office.md)。
+- **语音制作司**下辖语音刻录处与语音克隆处：前者用音色库配音并按字幕时间轴混音，
+  后者只在书面授权下复刻特定人音色。制度见
+  [`module-2-voice-production.md`](module-2-voice-production.md)。
+- 模块2其余职责单元及精度、画面处理要求，见
   [`module-2-video-processing.md`](module-2-video-processing.md)。
 
 ## 规章与实现状态
