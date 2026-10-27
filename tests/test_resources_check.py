@@ -93,11 +93,12 @@ def test_shipped_registry_passes_and_covers_designated_resources():
     registry = resources.load_registry()
     assert resources.validate(registry) == []
     report = resources.coverage(registry)
-    assert report["resources"] == 7
-    assert report["designated"] == 2
-    assert report["trackable_designated"] == 2
+    assert report["resources"] == 8
+    assert report["designated"] == 3
+    assert report["trackable_designated"] == 3
     assert report["designated_coverage"] == 1.0
     assert report["designated_ids"] == [
+        "yt:9aPyO1jfDGM",
         "yt:@WhiteHouse/streams",
         "yt:@WhiteHouse/videos",
     ]
@@ -242,8 +243,8 @@ def test_cli_check_json_and_list():
         code, output = run_main(["list", "--registry", str(path), "--json"])
         assert code == 0
         listed = json.loads(output)["resources"]
-        assert len(listed) == 7
-        assert sum(1 for item in listed if item["designated"]) == 2
+        assert len(listed) == 8
+        assert sum(1 for item in listed if item["designated"]) == 3
 
 
 def test_cli_reports_violations_with_exit_one():
