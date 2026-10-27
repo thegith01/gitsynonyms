@@ -84,6 +84,39 @@ def list_subs(url: str, proxy: str | None, client: str, timeout: int) -> list[st
     return [line.strip() for line in text.splitlines() if line.strip()][-25:]
 
 
+def try_mymemory(text: str, timeout: int = 25) -> tuple[bool, str]:
+    url = (
+        "https://api.mymemory.translated.net/get?q="
+        + urllib.parse.quote(text)
+        + "&langpair=en%7Czh-CN"
+    )
+    try:
+        with urllib.request.urlopen(
+            urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=timeout
+        ) as response:
+            payload = json.loads(response.read().decode("utf-8", errors="replace"))
+        rendered = (payload.get("responseData") or {}).get("translatedText") or ""
+        return bool(rendered), str(rendered)[:80]
+    except Exception as error:  # noqa: BLE001
+        return False, str(error)[:180]
+
+
+def try_libretranslate(text: str, endpoint: str, timeout: int = 25) -> tuple[bool, str]:
+    body = json.dumps({"q": text, "source": "en", "target": "zh", "format": "text"}).encode()
+    request = urllib.request.Request(
+        endpoint,
+        data=body,
+        headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            payload = json.loads(response.read().decode("utf-8", errors="replace"))
+        rendered = payload.get("translatedText") or ""
+        return bool(rendered), str(rendered)[:80]
+    except Exception as error:  # noqa: BLE001
+        return False, str(error)[:180]
+
+
 def try_translate(timeout: int = 20, proxy: str | None = None) -> tuple[bool, str]:
     request = urllib.request.Request(
         TRANSLATE_URL.format(text=urllib.parse.quote("The President is speaking now.")),
@@ -159,6 +192,18 @@ def main() -> int:
     if winning and not translate_ok:
         translate_proxy_ok, translate_proxy_note = try_translate(proxy=winning["proxy"])
         log(f"translate via proxy ok={translate_proxy_ok} {translate_proxy_note}")
+
+    backends: dict[str, dict] = {}
+    sample = "The President is speaking now."
+    for name, runner_call in (
+        ("mymemory", lambda: try_mymemory(sample)),
+        ("libretranslate.de", lambda: try_libretranslate(sample, "https://libretranslate.de/translate")),
+        ("translate.terraprint.co", lambda: try_libretranslate(sample, "https://translate.terraprint.co/translate")),
+        ("lt.vern.cc", lambda: try_libretranslate(sample, "https://lt.vern.cc/translate")),
+    ):
+        ok, note = runner_call()
+        backends[name] = {"ok": ok, "sample": note}
+        log(f"backend {name} ok={ok} {note}")
     if winning:
         subs = list_subs(url, winning["proxy"], winning["client"], args.timeout)
     elif direct_ok:
@@ -180,6 +225,7 @@ def main() -> int:
         "translate_sample": translate_note,
         "translate_proxy_ok": translate_proxy_ok,
         "translate_proxy_sample": translate_proxy_note,
+        "backends": backends,
         "captions": subs,
     }
     Path("work").mkdir(exist_ok=True)
