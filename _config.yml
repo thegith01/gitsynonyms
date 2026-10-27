@@ -1,0 +1,32 @@
+title: gitsynonyms
+description: 视频字幕获取、中英双语生成、ASS 烧录、GitHub Pages 发布流水线
+baseurl: "/gitsynonyms"
+url: "https://gitsynonyms01.github.io"
+timezone: Asia/Shanghai
+markdown: kramdown
+theme: null
+exclude:
+  - ".git/"
+  - ".github/"
+  - "bin/"
+  - "output/"
+  - "videos/"
+  - "processed_videos/"
+  - "proxyindex/"
+  - "docs/"
+  - "scripts/"
+  - "src/"
+  - "tests/"
+  - "wflowfrombot/"
+  - ".config/"
+  - "deployed/"
+  - "fonts/"
+  - "inspection/"
+  - "organization/"
+  - "resources/"
+  - ".gitignore"
+  - "AGENTS.md"
+  - "DIRECTIVE.md"
+  - "MODULE2_ORG.md"
+  - "pyproject.toml"
+permalink: pretty
