@@ -34,8 +34,15 @@ def test_a_black_clip_fails_the_clean_criterion():
 def test_a_short_single_angle_clip_cannot_reach_the_pass_mark():
     result = footage.score_footage(120, 0.0, 0.0, 12, 1)
 
-    assert result["total"] < footage.PASS_MARK
+    assert result["total"] < 100
+    assert result["long_enough"] is False
     assert result["passes_threshold"] is False
+
+
+def test_a_clip_of_a_quarter_target_length_is_long_enough():
+    result = footage.score_footage(1350, 0.0, 0.0, 20, 3)
+
+    assert result["long_enough"] is True
 
 
 def test_angle_points_are_graduated():

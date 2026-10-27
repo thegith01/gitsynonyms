@@ -85,7 +85,9 @@ def validate(data: dict) -> list[str]:
         else:
             expected = PARENT_LEVEL[level]
             parent_unit = index.get(str(parent)) if parent is not None else None
-            if parent_unit is None:
+            if parent is None:
+                problems.append(f"{uid}: {level} must belong to a {expected}, parent is null")
+            elif parent_unit is None:
                 problems.append(f"{uid}: {level} needs an existing parent")
             elif parent_unit.get("level") != expected:
                 problems.append(
@@ -222,6 +224,7 @@ def main(argv: list[str] | None = None) -> int:
         while unit is not None:
             chain.append(f"{unit.get('name')} [{unit.get('level')}]")
             unit = index.get(str(unit.get("parent"))) if unit.get("parent") else None
+        chain.append("总控")
         print(" -> ".join(reversed(chain)))
         return 0
 

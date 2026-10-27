@@ -31,6 +31,7 @@ FREEZE_LIMIT = 0.35
 BLACK_LIMIT = 0.20
 PASS_MARK = 60
 TARGET_SECONDS = 90 * 60
+MIN_DURATION_RATIO = 0.25
 
 
 def log(message: str) -> None:
@@ -52,10 +53,12 @@ def score_footage(
     """Return a 100-point breakdown for the five material criteria.
 
     Weights: duration 20, motion 25, clean 20, trust 20, angles 15.
-    The pass mark is 60 **and** both freeze and black ratios must be inside
-    their limits; a static or black clip must never pass on length alone.
+    The pass mark is 60 **and** the clip must be at least a quarter of the target
+    length, with freeze and black ratios inside their limits; a static, black or
+    very short clip must never pass on picture cleanliness alone.
     """
     duration_points = round(clamp(duration / target_seconds, 0, 1) * 20)
+    long_enough = duration >= target_seconds * MIN_DURATION_RATIO
     if freeze_ratio > FREEZE_LIMIT:
         motion_points = 0
     else:
@@ -84,8 +87,12 @@ def score_footage(
         "angles": angle_points,
         "freeze_ratio": round(freeze_ratio, 4),
         "black_ratio": round(black_ratio, 4),
+        "long_enough": long_enough,
         "passes_threshold": bool(
-            total >= PASS_MARK and freeze_ratio <= FREEZE_LIMIT and black_ratio <= BLACK_LIMIT
+            total >= PASS_MARK
+            and long_enough
+            and freeze_ratio <= FREEZE_LIMIT
+            and black_ratio <= BLACK_LIMIT
         ),
     }
 
