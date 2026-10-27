@@ -48,7 +48,7 @@ on:
         required: false
         default: "full"
         type: choice
-        options: ["full", "probe"]
+        options: ["full", "probe", "test"]
       title:
         required: false
         default: "LIVE: President Trump rallies in Michigan ahead of state's November Election"
@@ -225,7 +225,7 @@ jobs:
           fi
 
       - name: Publish MP4 to the release
-        if: inputs.mode != 'probe'
+        if: inputs.mode == 'full'
         env:
           GH_TOKEN: ${{ github.token }}
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
@@ -242,7 +242,7 @@ jobs:
           fi
 
       - name: Back up subtitles and deliverables to the bin
-        if: inputs.mode != 'probe'
+        if: inputs.mode == 'full'
         env:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
         run: |
@@ -263,11 +263,11 @@ jobs:
           done
 
       - name: Generate Pages site
-        if: inputs.mode != 'probe'
+        if: inputs.mode == 'full'
         run: python scripts/generate_video_pages.py
 
       - name: Commit archive and site
-        if: inputs.mode != 'probe'
+        if: inputs.mode == 'full'
         env:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
         run: |
