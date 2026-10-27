@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 import urllib.parse
@@ -125,6 +126,67 @@ def translate_mymemory(texts: list[str], source: str, target: str, email: str) -
     return translated
 
 
+def translate_assemblyai(texts: list[str], source: str, target: str) -> list[str]:
+    """Translate cue lines through the AssemblyAI LLM gateway, in JSON batches."""
+    key = ""
+    for name in ("ASSEMBLYAI", "ASSEMBLYAI_API_KEY"):
+        key = os.environ.get(name, "").strip() or key
+    if not key:
+        raise RuntimeError("ASSEMBLYAI is not set")
+
+    endpoint = "https://llm-gateway.assemblyai.com/v1/chat/completions"
+    translated: list[str] = []
+    batch_size = 40
+    for start in range(0, len(texts), batch_size):
+        batch = texts[start : start + batch_size]
+        payload = {
+            "model": "gemini-2.5-flash-lite",
+            "temperature": 0,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": (
+                        "You translate subtitle lines. Reply with a JSON object "
+                        '{"lines": ["...", ...]} that has exactly one Simplified Chinese '
+                        "string per input line, in the same order. Do not merge, split or "
+                        "renumber lines. Do not add commentary."
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": json.dumps({"lines": batch}, ensure_ascii=False),
+                },
+            ],
+        }
+        request = urllib.request.Request(
+            endpoint,
+            data=json.dumps(payload).encode("utf-8"),
+            method="POST",
+            headers={"authorization": key, "content-type": "application/json"},
+        )
+        with urllib.request.urlopen(request, timeout=180) as response:
+            body = json.loads(response.read().decode("utf-8", errors="replace"))
+        content = (body.get("choices") or [{}])[0].get("message", {}).get("content", "")
+        content = (
+            content.strip()
+            .removeprefix("```json")
+            .removeprefix("```")
+            .removesuffix("```")
+            .strip()
+        )
+        try:
+            rendered = json.loads(content).get("lines") or []
+        except json.JSONDecodeError as error:
+            raise RuntimeError(f"AssemblyAI returned non-JSON at batch {start}: {error}") from error
+        if len(rendered) != len(batch):
+            raise RuntimeError(
+                f"AssemblyAI returned {len(rendered)} lines for {len(batch)} inputs at {start}"
+            )
+        translated.extend(str(line).strip() for line in rendered)
+        log(f"  translated {min(start + batch_size, len(texts))}/{len(texts)}")
+    return translated
+
+
 def translate_argos(texts: list[str], source: str, target: str) -> list[str]:
     import argostranslate.package as package
     import argostranslate.translate as translate
@@ -183,7 +245,7 @@ def main() -> int:
     parser.add_argument("--video-id", required=True)
     parser.add_argument("--source-language", default="en-orig")
     parser.add_argument("--target-language", default="zh-Hans")
-    parser.add_argument("--engine", choices=("argos", "mymemory"), default="argos")
+    parser.add_argument("--engine", choices=("argos", "mymemory", "assemblyai"), default="argos")
     parser.add_argument("--output-dir", help="Where the translated formats are written")
     parser.add_argument("--report", help="SUBTITLE_SOURCES.json path")
     parser.add_argument("--email", default="", help="MyMemory contact email (raises quota)")
@@ -208,7 +270,13 @@ def main() -> int:
     unique = list(dict.fromkeys(texts))
     log(f"unique lines: {len(unique)}")
 
-    if args.engine == "argos":
+    if args.engine == "assemblyai":
+        try:
+            rendered_unique = translate_assemblyai(unique, "en", "zh")
+        except Exception as error:  # noqa: BLE001 - keep the local engine as a floor
+            log(f"AssemblyAI translation failed ({error}); falling back to Argos")
+            rendered_unique = translate_argos(unique, "en", "zh")
+    elif args.engine == "argos":
         rendered_unique = translate_argos(unique, "en", "zh")
     else:
         rendered_unique = translate_mymemory(unique, "en", "zh", args.email)
