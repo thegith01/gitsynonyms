@@ -1,6 +1,11 @@
 name: Full Pipeline - captions to ASS to burn-in to Pages
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "pipeline-trigger.json"
+      - ".github/workflows/full-pipeline.yml"
   workflow_dispatch:
     inputs:
       video_id:
@@ -27,7 +32,7 @@ permissions:
 
 concurrency:
   group: full-pipeline
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   process:
@@ -44,17 +49,26 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install yt-dlp, ffmpeg and CJK fonts
+      - name: Install yt-dlp, ffmpeg and CJK font
         run: |
+          set -x
           python -m pip install --upgrade "yt-dlp[default]"
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk fonts-dejavu-core
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo DEBIAN_FRONTEND=noninteractive timeout 300 apt-get update -qq \
+              -o Acquire::Retries=2 -o Acquire::http::Timeout=20 || true
+            sudo DEBIAN_FRONTEND=noninteractive timeout 420 apt-get install -y -qq \
+              -o Acquire::Retries=2 -o Acquire::http::Timeout=20 ffmpeg || true
+          fi
+          # small CJK font (15 MB) instead of fonts-noto-cjk (200 MB+)
+          sudo DEBIAN_FRONTEND=noninteractive timeout 240 apt-get install -y -qq \
+            -o Acquire::Retries=2 -o Acquire::http::Timeout=20 fonts-wqy-zenhei || true
+          fc-list 2>/dev/null | grep -i -E 'wqy|noto.*cjk' | head -3 || true
           ffmpeg -version | head -1
 
       - name: Resolve inputs
         id: meta
         run: |
-          echo "video_id=${{ inputs.video_id }}" >> "$GITHUB_OUTPUT"
+          echo "video_id=${{ inputs.video_id || '9aPyO1jfDGM' }}" >> "$GITHUB_OUTPUT"
 
       - name: Select proxy
         env:
