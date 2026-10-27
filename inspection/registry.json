@@ -1,6 +1,6 @@
 {
   "schema": "gitsynonyms.inspection.registry/1",
-  "updated_at": "2026-10-23T04:47:00Z",
+  "updated_at": "2026-10-27T13:30:00Z",
   "directive": "DIRECTIVE.md",
   "principle": "minimum-granularity",
   "cadence_policy": {
@@ -62,27 +62,6 @@
       "note": "main 分支推送触发；巡检关注失败部署与 Pages 发布结果。"
     },
     {
-      "id": "gh:gitsynonyms/download-youtube-subtitles",
-      "mechanism": "github-workflow",
-      "title": "Download YouTube subtitles",
-      "target": {
-        "repo": "gitsynonyms/gitsynonyms",
-        "workflow": "Download YouTube subtitles",
-        "workflow_id": "387528345",
-        "path": ".github/workflows/youtube-subtitles.yml"
-      },
-      "trigger": "workflow_dispatch",
-      "cadence": "1d",
-      "severity": "P3",
-      "owner": "巡检任务执行方案处",
-      "status": "active",
-      "evidence": [
-        "gh run list --workflow 387528345 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms/gitsynonyms/actions/workflows/387528345"
-      ],
-      "note": "按需触发；巡检关注产物是否随运行上传以及最近一次结论。"
-    },
-    {
       "id": "gh:gitsynonyms/infogap-schedule",
       "mechanism": "github-workflow",
       "title": "Generate Information Gap Report (schedule)",
@@ -121,6 +100,27 @@
         "gh api repos/gitsynonyms/gitsynonyms/actions/workflows/infogap.yml"
       ],
       "note": "按需手动运行；巡检关注研究结果、质量门禁及 Pages 发布结论。"
+    },
+    {
+      "id": "gh:gitsynonyms/jekyll-gh-pages",
+      "mechanism": "github-workflow",
+      "title": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
+      "target": {
+        "repo": "gitsynonyms/gitsynonyms",
+        "workflow": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
+        "workflow_id": "397810431",
+        "path": ".github/workflows/jekyll-gh-pages.yml"
+      },
+      "trigger": "push",
+      "cadence": "1h",
+      "severity": "P2",
+      "owner": "巡检任务执行方案处",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow 397810431 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms/gitsynonyms/actions/workflows/397810431"
+      ],
+      "note": "main 分支推送触发；Jekyll 站点构建与 Pages 部署，巡检关注构建与部署结论。"
     }
   ],
   "gaps": [
