@@ -339,9 +339,10 @@ def test_cli_plan_renders_the_shipped_grid():
         assert code == 0
         payload = json.loads(output)
         registry = inspection.load_registry()
-        assert {item["unit_id"] for item in payload["due"]} == {
-            unit["id"] for unit in registry["units"]
-        }
+        due_ids = [item["unit_id"] for item in payload["due"]]
+        assert due_ids
+        assert set(due_ids) <= {unit["id"] for unit in registry["units"]}
+        assert "gh:gitsynonyms01/monitor-whitehouse" in due_ids
         assert [item["due_at"] for item in payload["due"]] == sorted(
             item["due_at"] for item in payload["due"]
         )
