@@ -1,0 +1,45 @@
+name: Access probe
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: YouTube video ID
+        required: true
+        default: "9aPyO1jfDGM"
+      proxy_tries:
+        description: How many alive proxies to try
+        required: false
+        default: "20"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install yt-dlp
+        run: python -m pip install --upgrade "yt-dlp[default]"
+
+      - name: Probe YouTube formats and Google Translate
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+          PROXY_TRIES: ${{ inputs.proxy_tries }}
+        run: |
+          set -uo pipefail
+          python scripts/probe_runner_access.py \
+            --video-id "$VIDEO_ID" \
+            --proxy-tries "$PROXY_TRIES" || true
+
+      - name: Show report
+        if: always()
+        run: |
+          cat work/access-probe.json 2>/dev/null || echo "no report"
