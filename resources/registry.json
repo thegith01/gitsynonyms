@@ -1,6 +1,6 @@
 {
   "schema": "gitsynonyms.resources.registry/1",
-  "updated_at": "2026-10-26T02:22:23Z",
+  "updated_at": "2026-10-27T13:10:00Z",
   "owner": "资源获取分析司",
   "designated_by": "总控",
   "principle": "one-url-one-record",
@@ -15,7 +15,7 @@
       "url": "https://www.youtube.com/@WhiteHouse/streams",
       "designated": true,
       "trust": "official",
-      "cadence": "5m",
+      "cadence": "30m",
       "analysis": [
         "live-event-detection",
         "caption-acquisition",
@@ -34,7 +34,7 @@
       "url": "https://www.youtube.com/@WhiteHouse/videos",
       "designated": true,
       "trust": "official",
-      "cadence": "5m",
+      "cadence": "30m",
       "analysis": [
         "upload-detection",
         "caption-acquisition",
@@ -53,7 +53,7 @@
       "url": "https://www.whitehouse.gov/news/feed/",
       "designated": false,
       "trust": "official",
-      "cadence": "5m",
+      "cadence": "30m",
       "analysis": [
         "official-statements",
         "policy-text",
@@ -72,7 +72,7 @@
       "url": "https://www.whitehouse.gov/presidential-actions/feed/",
       "designated": false,
       "trust": "official",
-      "cadence": "5m",
+      "cadence": "30m",
       "analysis": [
         "proclamation-text",
         "executive-action-index",
@@ -157,7 +157,7 @@
         "source": "wwmt-trump-rally-michigan"
       },
       "status": "active",
-      "note": "总控 2026-10-26 钦定的单条素材：WWMT-TV 密歇根集会直播回放（3h16m）。无字幕轨，字幕阶段必须显式失败；媒体下载需 cookies。巡检单元待巡检司在 24h 内决定，当前采集中枢无独立调度。"
+      "note": "总控 2026-10-26 钦定的单条素材：WWMT-TV 密歇根集会直播回放（3h16m）。YouTube 侧中英字幕轨均为零；英文取自 10-25 存档的七格式，中文由 runner 上的 Argos 机器翻译补齐（评分 84/100）。原始 1080p 由 filebin 备份供应，不需要 cookies。巡检单元待巡检司在 24h 内决定。"
     }
   ]
 }
