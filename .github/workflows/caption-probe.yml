@@ -1,0 +1,46 @@
+name: Caption probe
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: YouTube video ID
+        required: true
+        default: "9aPyO1jfDGM"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install yt-dlp
+        run: python -m pip install --upgrade "yt-dlp[default]"
+
+      - name: List subtitle tracks
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+        run: |
+          set -uo pipefail
+          yt-dlp --no-warnings --skip-download --list-subs \
+            "https://www.youtube.com/watch?v=${VIDEO_ID}" || true
+
+      - name: Try downloading zh-Hans + en-orig in seven formats
+        env:
+          VIDEO_ID: ${{ inputs.video_id }}
+        run: |
+          set -uo pipefail
+          python scripts/download_youtube_bilingual_srt.py \
+            "https://www.youtube.com/watch?v=${VIDEO_ID}" \
+            --languages "zh-Hans,en-orig" \
+            --output-dir output \
+            --sleep-subtitles 0 || true
+          find output -maxdepth 3 -type f | sort | tail -60
