@@ -54,7 +54,7 @@ def candidate_proxies(limit: int) -> list[str]:
         pool = [proxy for proxies in lists.values() for proxy in proxies]
         log(f"public list candidates: {len(pool)}")
     pool = list(dict.fromkeys(pool))
-    if len(pool) > limit:
+    if limit > 0 and len(pool) > limit:
         pool = pool[:limit]
     return pool
 

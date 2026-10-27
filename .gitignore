@@ -29,7 +29,6 @@ output/**/*.ytdl
 proxyindex/raw.txt
 proxyindex/proxies.txt
 proxyindex/alive_tcp.txt
-proxyindex/alive_http.txt
 proxyindex/*.log
 
 # Monitor state and verification scratch.

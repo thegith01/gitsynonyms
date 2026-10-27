@@ -108,7 +108,7 @@ jobs:
           else
             echo "::warning::YOUTUBE_COOKIES_B64 not set; YouTube answers 403 / bot-check for this media"
           fi
-          python scripts/download_source_video.py             --video-id "$VIDEO_ID"             --output-dir work             --min-height "$MIN_HEIGHT"             --proxy-limit 150             --proxy-tries 30             --timeout 900             --report work/download-report.json             "${cookie_args[@]}"
+          python scripts/download_source_video.py             --video-id "$VIDEO_ID"             --output-dir work             --min-height "$MIN_HEIGHT"             --proxy-limit 150             --proxy-tries 120             --timeout 900             --report work/download-report.json             "${cookie_args[@]}"
           ls -lh work/
 
       - name: Build bilingual ASS and burn into video
