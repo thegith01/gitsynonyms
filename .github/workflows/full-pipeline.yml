@@ -1,0 +1,173 @@
+name: Full Pipeline - captions to ASS to burn-in to Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "pipeline-trigger.json"
+      - ".github/workflows/full-pipeline.yml"
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: YouTube video ID
+        required: true
+        default: "9aPyO1jfDGM"
+      proxy:
+        description: Optional HTTP proxy host:port (blank = auto-select public proxy)
+        required: false
+        default: ""
+      max_height:
+        description: Source video height cap for download
+        required: false
+        default: "720"
+      global_quality:
+        description: libx264 CRF (lower = better/slower)
+        required: false
+        default: "23"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: full-pipeline
+  cancel-in-progress: false
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    outputs:
+      video_id: ${{ steps.meta.outputs.video_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install yt-dlp, ffmpeg and CJK fonts
+        run: |
+          python -m pip install --upgrade "yt-dlp[default]"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk fonts-dejavu-core
+          ffmpeg -version | head -1
+
+      - name: Resolve inputs
+        id: meta
+        run: |
+          echo "video_id=${{ inputs.video_id || '9aPyO1jfDGM' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Select proxy
+        env:
+          REQUESTED_PROXY: ${{ inputs.proxy }}
+          SECRET_PROXY: ${{ secrets.YTDLP_PROXY }}
+        run: |
+          set -euo pipefail
+          if [ -n "$REQUESTED_PROXY" ]; then
+            echo "YTDLP_PROXY=http://$REQUESTED_PROXY" >> "$GITHUB_ENV"
+            echo "using requested proxy http://$REQUESTED_PROXY"
+          elif [ -n "$SECRET_PROXY" ]; then
+            echo "YTDLP_PROXY=$SECRET_PROXY" >> "$GITHUB_ENV"
+            echo "using secret proxy"
+          else
+            GITHUB_ENV="$GITHUB_ENV" python scripts/select_public_ytdlp_proxy.py \
+              || echo "no public proxy selected; downloader will try direct then fall back"
+          fi
+
+      - name: Download source video
+        env:
+          VIDEO_ID: ${{ steps.meta.outputs.video_id }}
+          MAX_HEIGHT: ${{ inputs.max_height }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          proxy_args=()
+          if [ -n "${YTDLP_PROXY:-}" ]; then proxy_args=(--proxy "$YTDLP_PROXY"); fi
+          yt-dlp "${proxy_args[@]}" --no-warnings --retries 5 \
+            --merge-output-format mp4 \
+            -f "bv*[height<=${MAX_HEIGHT}]+ba/b[height<=${MAX_HEIGHT}]" \
+            -o "work/${VIDEO_ID}.source.%(ext)s" \
+            "https://www.youtube.com/watch?v=${VIDEO_ID}"
+          ls -lh work/
+
+      - name: Build bilingual ASS and burn into video
+        env:
+          VIDEO_ID: ${{ steps.meta.outputs.video_id }}
+          GQ: ${{ inputs.global_quality }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="$(find work -type f -name "${VIDEO_ID}.source.*" ! -name '*.part' ! -name '*.ytdl' -print -quit)"
+          if [ -z "$src" ] || [ ! -f "$src" ]; then
+            echo "::error::source video not found"
+            exit 1
+          fi
+          python scripts/download_youtube_bilingual_srt.py \
+            "https://www.youtube.com/watch?v=${VIDEO_ID}" \
+            --languages "zh-Hans,en-orig" \
+            --output-dir output \
+            --source-video "$src" \
+            --burn-in \
+            --video-encoder libx264 \
+            --global-quality "$GQ"
+          mp4="$(find output -type f -name "Burned_Bilingual_${VIDEO_ID}.mp4" -print -quit)"
+          if [ -z "$mp4" ] || [ ! -f "$mp4" ]; then
+            echo "::error::burned MP4 not found"
+            exit 1
+          fi
+          ls -lh "$mp4"
+          echo "burned=$mp4" >> "$GITHUB_OUTPUT"
+
+      - name: Publish MP4 to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VIDEO_ID: ${{ steps.meta.outputs.video_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mp4="$(find output -type f -name "Burned_Bilingual_${VIDEO_ID}.mp4" -print -quit)"
+          if gh release view "$VIDEO_ID" >/dev/null 2>&1; then
+            gh release upload "$VIDEO_ID" "$mp4" --clobber
+          else
+            gh release create "$VIDEO_ID" "$mp4" \
+              --title "Bilingual video $VIDEO_ID" \
+              --notes "Chinese and English ASS subtitles burned into the video."
+          fi
+
+      - name: Generate Pages site
+        run: python scripts/generate_video_pages.py
+
+      - name: Commit archive and site
+        env:
+          VIDEO_ID: ${{ steps.meta.outputs.video_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/ site/
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "Publish bilingual video $VIDEO_ID"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: process
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
