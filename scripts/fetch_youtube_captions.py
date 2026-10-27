@@ -66,7 +66,9 @@ def rename_to_canonical(files: list[Path], video_id: str, code: str, canonical: 
         if not suffix.lower().startswith(code.lower() + "."):
             renamed.append(path)
             continue
-        extension = suffix[len(code) + 1 :]
+        # yt-dlp expands %(language)s to "en.en" or "en.zh-Hans"; keep only the
+        # extension and write the canonical code the burner discovers.
+        extension = suffix.rsplit(".", 1)[-1]
         target = path.with_name(f"{video_id}.{canonical}.{extension}")
         if target != path:
             path.replace(target)

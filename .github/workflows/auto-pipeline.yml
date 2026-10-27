@@ -152,7 +152,7 @@ jobs:
           echo "dir=$caps" >> "$GITHUB_OUTPUT"
           python scripts/fetch_youtube_captions.py \
             --video-id "$VIDEO_ID" --output-dir "$caps" \
-            --groups "en,zh" --wait 0 --report "$caps/CAPTION_FORMATS.json"
+            --groups "en,zh" --wait 2 --report "$caps/CAPTION_FORMATS.json"
           echo "caption probe exit: $?"
           python - "$caps/CAPTION_FORMATS.json" <<'PY' || true
           import json, sys
@@ -224,23 +224,6 @@ jobs:
             exit 1
           fi
 
-      - name: Publish MP4 to the release
-        if: inputs.mode == 'full'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
-          TITLE: ${{ inputs.title }}
-        run: |
-          set -euo pipefail
-          mp4="output/Burned_Bilingual_${VIDEO_ID}.mp4"
-          if gh release view "$VIDEO_ID" >/dev/null 2>&1; then
-            gh release upload "$VIDEO_ID" "$mp4" --clobber
-          else
-            gh release create "$VIDEO_ID" "$mp4" \
-              --title "${TITLE:-Bilingual video $VIDEO_ID}" \
-              --notes "Chinese and English captions burned into the source."
-          fi
-
       - name: Back up subtitles and deliverables to the bin
         if: inputs.mode == 'full'
         env:
@@ -261,6 +244,23 @@ jobs:
             curl -f --retry 3 --retry-delay 5 -X POST --data-binary "@$file" \
               "https://filebin.net/${FILEBIN_BIN:-f8l40pcd28jo8bl0}/$(basename "$file")"
           done
+
+      - name: Publish MP4 to the release
+        if: inputs.mode == 'full'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+          TITLE: ${{ inputs.title }}
+        run: |
+          set -euo pipefail
+          mp4="output/Burned_Bilingual_${VIDEO_ID}.mp4"
+          if gh release view "$VIDEO_ID" >/dev/null 2>&1; then
+            gh release upload "$VIDEO_ID" "$mp4" --clobber
+          else
+            gh release create "$VIDEO_ID" "$mp4" \
+              --title "${TITLE:-Bilingual video $VIDEO_ID}" \
+              --notes "Chinese and English captions burned into the source."
+          fi
 
       - name: Generate Pages site
         if: inputs.mode == 'full'
