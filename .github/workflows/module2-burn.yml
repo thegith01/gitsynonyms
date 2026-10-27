@@ -75,11 +75,12 @@ jobs:
           VIDEO_ID: ${{ inputs.video_id }}
         run: |
           set -euo pipefail
-          caps="$(dirname "$(find output -type f -name "${VIDEO_ID}.en-orig.json3" -print -quit)")"
-          if [ -z "$caps" ] || [ ! -d "$caps" ]; then
+          source_file="$(find output -type f -name "${VIDEO_ID}.*.en-orig.json3" -print -quit)"
+          if [ -z "$source_file" ]; then
             echo "::error::archived English caption directory not found"
             exit 1
           fi
+          caps="$(dirname "$source_file")"
           echo "dir=$caps" >> "$GITHUB_OUTPUT"
           ls -1 "$caps" | sed -n '1,30p'
 
