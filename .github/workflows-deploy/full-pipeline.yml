@@ -91,17 +91,40 @@ jobs:
         env:
           VIDEO_ID: ${{ steps.meta.outputs.video_id }}
           MAX_HEIGHT: ${{ inputs.max_height }}
+          YOUTUBE_COOKIES_B64: ${{ secrets.YOUTUBE_COOKIES_B64 }}
         shell: bash
         run: |
-          set -euo pipefail
+          set -uo pipefail
           mkdir -p work
-          proxy_args=()
-          if [ -n "${YTDLP_PROXY:-}" ]; then proxy_args=(--proxy "$YTDLP_PROXY"); fi
-          yt-dlp "${proxy_args[@]}" --no-warnings --retries 5 \
-            --merge-output-format mp4 \
-            -f "bv*[height<=${MAX_HEIGHT}]+ba/b[height<=${MAX_HEIGHT}]" \
-            -o "work/${VIDEO_ID}.source.%(ext)s" \
-            "https://www.youtube.com/watch?v=${VIDEO_ID}"
+          cookie_args=()
+          if [ -n "${YOUTUBE_COOKIES_B64:-}" ]; then
+            printf '%s' "$YOUTUBE_COOKIES_B64" | base64 -d > "$RUNNER_TEMP/cookies.txt"
+            if [ -s "$RUNNER_TEMP/cookies.txt" ]; then
+              cookie_args=(--cookies "$RUNNER_TEMP/cookies.txt")
+              echo "cookies: $(wc -l < "$RUNNER_TEMP/cookies.txt") lines"
+            else
+              echo "::warning::YOUTUBE_COOKIES_B64 decoded empty; continuing without cookies"
+            fi
+          else
+            echo "::warning::YOUTUBE_COOKIES_B64 not set; YouTube usually answers 403 for this media"
+          fi
+          fmt="bv*[height<=${MAX_HEIGHT}]+ba/b[height<=${MAX_HEIGHT}]"
+          url="https://www.youtube.com/watch?v=${VIDEO_ID}"
+          attempt() {
+            echo "--> attempt: $*"
+            yt-dlp --no-warnings --retries 3 --fragment-retries 3 \
+              --merge-output-format mp4 -f "$fmt" "${cookie_args[@]}" \
+              -o "work/${VIDEO_ID}.source.%(ext)s" "$@" "$url"
+          }
+          ok=0
+          if [ -n "${YTDLP_PROXY:-}" ]; then attempt --proxy "$YTDLP_PROXY" && ok=1; fi
+          [ "$ok" -eq 0 ] && { attempt && ok=1; }
+          [ "$ok" -eq 0 ] && { attempt --extractor-args "youtube:player_client=android" && ok=1; }
+          [ "$ok" -eq 0 ] && { attempt --extractor-args "youtube:player_client=web_safari" && ok=1; }
+          if [ "$ok" -ne 1 ]; then
+            echo "::error::YouTube refused the media stream (HTTP 403). Set the YOUTUBE_COOKIES_B64 secret (base64 of a Netscape cookies.txt) and re-run."
+            exit 1
+          fi
           ls -lh work/
 
       - name: Build bilingual ASS and burn into video
