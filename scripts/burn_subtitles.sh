@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Script to burn Chinese and English subtitles into video using ffmpeg
-# Usage: ./burn_subtitles.sh <video_file> <english_srt> <chinese_srt> <output_file>
+# Usage: ./burn_subtitles.sh <video_file> [english_srt] [chinese_srt] [output_file]
 
 VIDEO_FILE="${1:-}"
 EN_SUB="${2:-/workspace/videos/english_subtitles.srt}"
@@ -19,23 +19,23 @@ if [[ ! -f "$VIDEO_FILE" ]]; then
     exit 1
 fi
 
-mkdir -p "$(dirname "$OUTPUT")"
-
-# Export PATH for ffmpeg
+# Export PATH and fontconfig for ffmpeg/libass
 export PATH="/workspace/bin:$PATH"
+export FONTCONFIG_FILE="/workspace/.config/fontconfig/fonts.conf"
+
+mkdir -p "$(dirname "$OUTPUT")"
 
 echo "=== Burning Subtitles into Video ==="
 echo "Video: $VIDEO_FILE"
 echo "English subtitles: $EN_SUB"
 echo "Chinese subtitles: $CN_SUB"
 echo "Output: $OUTPUT"
+echo "Fontconfig: $FONTCONFIG_FILE"
 
 # Create combined subtitle file (burn both English and Chinese)
-# ffmpeg can only burn one subtitle track at a time with subtitles filter
-# We'll create a combined SRT with both languages
 COMBINED_SUB="/workspace/videos/combined_subtitles.srt"
 
-python3 -c "
+python3 << PYEOF
 import sys
 
 def parse_srt(filepath):
@@ -67,16 +67,15 @@ with open('$COMBINED_SUB', 'w', encoding='utf-8') as f:
     f.write('\n'.join(combined))
 
 print(f'Created combined subtitle file: {len(combined)} entries')
-"
+PYEOF
 
 echo "Created combined subtitle file: $COMBINED_SUB"
 
-# Burn subtitles into video
-# Using ass filter for better styling control
+# Burn subtitles into video using libass subtitles filter
 echo "Burning subtitles into video (this may take several minutes)..."
 
 ffmpeg -y -i "$VIDEO_FILE" \
-    -vf "subtitles=${COMBINED_SUB}:force_style='FontName=Arial,FontSize=20,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BackColour=&H80000000,Bold=1,BorderStyle=1,Outline=2,Shadow=1,MarginV=30,Alignment=2'" \
+    -vf "subtitles=${COMBINED_SUB}:fontsdir=/workspace/fonts:force_style='FontName=DejaVuSans,FontSize=20,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BackColour=&H80000000,Bold=1,BorderStyle=1,Outline=2,Shadow=1,MarginV=30,Alignment=2'" \
     -c:a copy \
     -c:v libx264 \
     -preset medium \
@@ -90,7 +89,7 @@ echo "========================================="
 # Verify output
 if [[ -f "$OUTPUT" ]]; then
     echo "Output file size: $(du -h "$OUTPUT" | cut -f1)"
-    ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 "$OUTPUT"
+    /workspace/bin/ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 "$OUTPUT"
 else
     echo "ERROR: Output file was not created!"
     exit 1

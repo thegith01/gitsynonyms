@@ -1,0 +1,20 @@
+Video: LIVE: President Trump rallies in Michigan ahead of state's November Election
+Video ID: 9aPyO1jfDGM
+Event date: 2026-10-25
+Source: https://www.youtube.com/watch?v=9aPyO1jfDGM
+Uploader: WWMT-TV (@wwmtnews)
+Duration: 03:16:11 (11771 s), live replay
+
+Caption formats (kept byte-for-byte as yt-dlp wrote them):
+9aPyO1jfDGM.en.en-orig.<ext>   English, YouTube auto-generated captions (en-orig)
+9aPyO1jfDGM.en.en.<ext>        English, YouTube auto captions (en)
+<ext> is one of vtt, srt, ttml, srv3, srv2, srv1, json3.
+Present for English: vtt, srt, ttml, srv3, srv2, srv1, json3.
+
+Merged subtitles and ASS:
+auto-generated+auto-generated_Bilingual_en-orig-en.srt   Bilingual SRT (English + English)
+auto-generated+auto-generated_Bilingual_en-orig-en.vtt   Bilingual WebVTT
+auto-generated+auto-generated_Bilingual_en-orig-en.ass   Bilingual ASS with styles
+
+Burn-in:
+Burned_Bilingual_9aPyO1jfDGM.mp4   Video with burned-in bilingual subtitles
