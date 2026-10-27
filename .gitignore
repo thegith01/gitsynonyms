@@ -1,0 +1,42 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+# Local toolchain, downloads and render intermediates (not deliverables).
+tools/
+work/
+
+# Large media artifacts from the YouTube downloader stay on disk; only the
+# subtitle files and the folder metadata are tracked in the repository.
+output/**/*.mp4
+output/**/*.webm
+output/**/*.m4a
+output/**/*.part
+output/**/*.ytdl
+
+# Local scratch directory for download tooling and logs.
+.work/
+
+# Ad-hoc run logs and the local ffmpeg toolchain must never be committed.
+.run-*.log
+.tools/
+
+# Proxy index: keep the tooling and the source list, not the multi-million-line pools.
+proxyindex/raw.txt
+proxyindex/proxies.txt
+proxyindex/alive_tcp.txt
+proxyindex/alive_http.txt
+proxyindex/*.log
+
+# Monitor state and verification scratch.
+output/.monitor-state.json
+output/unknown_*/
+
+# Module 1 acquisition state: the ledger and manifest are deliverables, the
+# conditional-request cache and observation clock are local state.
+output/materials/.http-cache.json
+output/materials/.seen.json
