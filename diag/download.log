@@ -1,0 +1,8 @@
+usage: download_source_video.py [-h] --video-id VIDEO_ID
+                                [--output-dir OUTPUT_DIR]
+                                [--min-height MIN_HEIGHT]
+                                [--proxy-limit PROXY_LIMIT]
+                                [--proxy-tries PROXY_TRIES]
+                                [--timeout TIMEOUT] [--cookies COOKIES]
+                                [--report REPORT]
+download_source_video.py: error: argument --min-height: invalid int value: ''
