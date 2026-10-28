@@ -52,10 +52,10 @@ def test_ass_uses_chinese_above_english_with_chinese_1_2x_size():
     assert "Dialogue: 0,0:00:00.00,0:00:02.00,CaptionFacet" in result
     assert (
         "Dialogue: 0,0:00:00.00,0:00:02.00,CaptionBox,,0,0,0,,"
-        r"{\an7\pos(66,883)\p1}m 0 0 l 1786 0 1786 139 0 139 0 0{\p0}"
+        r"{\an7\pos(96,883)\p1}m 0 0 l 1728 0 1728 125 0 125 0 0{\p0}"
     ) in result
     assert (
-        r"{\an5\pos(959,952.5)}{\fs57.6}你好\N{\fs10}\h\N"
+        r"{\an2\pos(960,1000)}{\fs57.6}你好\N{\fs10}\h\N"
         r"{\rEnglish\fs48}{\kt0\k100}Hello"
     ) in result
     assert "Style: English,Arial,48,&H00FFD700,&H00FFFFFF," in result
@@ -86,7 +86,7 @@ def test_ass_caption_area_can_be_scaled_by_the_renderer_on_larger_playres():
 
     assert "PlayResX: 3840" in result
     assert "PlayResY: 2160" in result
-    assert r"\pos(1918,1905)" in result
+    assert r"\pos(1918,2036)" in result
 
 
 def test_ass_caption_box_covers_video_from_zero_through_duration():
@@ -176,7 +176,7 @@ def test_cinema_preset_places_english_above_chinese_and_supports_custom_box():
         r"{\an7\pos(100,800)\p1}m 0 0 l 1700 0 1700 200 0 200 0 0{\p0}"
     ) in result
     assert (
-        r"{\an5\pos(950,900)}{\rEnglish\fs48}{\kt0\k50}Primary "
+        r"{\an2\pos(950,992)}{\rEnglish\fs48}{\kt0\k50}Primary "
         r"{\kt50\k50}school"
         r"\N{\fs10}\h\N{\rChinese\fs57.6}小学生"
     ) in result

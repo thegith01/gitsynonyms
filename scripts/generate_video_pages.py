@@ -136,13 +136,12 @@ def nav(prefix: str = "", active: str = "") -> list[str]:
 
 
 def player_block(video_id: str, prefix: str, release: str, title: str) -> list[str]:
-    """Embed a small preview; never point a <video> at the multi-GB release.
+    """Embed the small preview; never point a <video> at the multi-GB release.
 
     The release download is sent as an attachment and does not stream, so a
-    browser either downloads 1.8 GB or shows an empty player. ``make_web_preview.py``
-    writes a short 720p montage next to the poster; when it is not there yet the
-    block degrades to the source thumbnail plus the download link instead of a
-    broken player.
+    browser either downloads 1.8 GB or shows an empty player. The preview is
+    cut on a cloud runner and committed to ``site/media/``; when it is not there
+    yet the block shows the source thumbnail instead of a broken player.
     """
     preview = SITE / "media" / f"{video_id}-preview.mp4"
     poster = SITE / "media" / f"{video_id}-poster.jpg"

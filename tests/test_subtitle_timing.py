@@ -176,7 +176,7 @@ def test_precise_ass_uses_the_semi_transparent_presidential_blue_box(tmp_path):
     # #0F1647 at 85% opacity -> ASS alpha 0x26, BGR 47160F.
     assert "Style: CaptionBox,Arial,1,&H2647160F," in content
     assert content.count("CaptionBox") >= 2
-    assert r"{\an7\pos(66,883)\p1}" in content
+    assert r"{\an7\pos(96,883)\p1}" in content
 
 
 def test_timing_report_keeps_nanoseconds_and_quantization_statistics(tmp_path):

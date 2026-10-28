@@ -20,14 +20,23 @@ from pathlib import Path
 from typing import Sequence
 from urllib.parse import parse_qs, urlparse
 
+SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+import subtitle_layout
+import subtitle_timeline
+from subtitle_layout import CJK_EM, LATIN_EM
+
 CJK = re.compile(
     r"[\u2e80-\u2fff\u3000-\u30ff\u3100-\u312f\u3130-\u318f"
     r"\u31a0-\u31bf\u31f0-\u31ff\u3400-\u4dbf\u4e00-\u9fff"
     r"\ua960-\ua97f\uac00-\ud7ff\uf900-\ufaff\ufe30-\ufe4f\uff00-\uffef]"
 )
-CJK_EM, LATIN_EM = 0.85, 0.45
 PLAY_RESOLUTION = (1920, 1080)
-CAPTION_AREA = (66, 883, 1852, 1022)
+# 5% side margins and a 72 px bottom margin keep text out of the overscan area
+# of TVs and phones with rounded corners.
+CAPTION_AREA = (96, 883, 1824, 1008)
 STYLE_PRESETS = {
     "classic": {
         "first_font": "Microsoft YaHei",
@@ -918,6 +927,49 @@ def ass_karaoke_text(
     return "".join(result)
 
 
+def ass_karaoke_tokens(
+    tokens: Sequence[subtitle_timeline.Token],
+    *,
+    start: float,
+    end: float,
+) -> str:
+    """Render exact per-word karaoke for one display event.
+
+    ``\\kt`` is an absolute start offset inside the line; ``\\k`` is the word's
+    duration. Both are centiseconds because ASS has no finer unit, but the
+    values come from the millisecond ``json3`` offsets rather than being spread
+    evenly across the cue.
+    """
+    parts = []
+    for token in tokens:
+        word_start = round(max(0.0, token.start - start) * 100)
+        word_end = round(max(0.0, min(token.end, end) - start) * 100)
+        duration = max(0, word_end - word_start)
+        parts.append(f"{{\\kt{word_start}\\k{duration}}}{ass_escape_text(token.text)}")
+    return " ".join(parts)
+
+
+def _karaoke_lines(
+    tokens: Sequence[subtitle_timeline.Token],
+    lines: Sequence[str],
+    *,
+    start: float,
+    end: float,
+) -> str:
+    """Place ``\\N`` on the wrapped lines without breaking word karaoke."""
+    counts = [len(re.findall(r"\S+", line)) for line in lines]
+    groups = []
+    cursor = 0
+    for count in counts:
+        groups.append(list(tokens[cursor : cursor + count]))
+        cursor += count
+    if cursor < len(tokens) and groups:
+        groups[-1].extend(tokens[cursor:])
+    return r"\N".join(
+        ass_karaoke_tokens(group, start=start, end=end) for group in groups if group
+    )
+
+
 def ass_timestamp(seconds: float) -> str:
     total_centiseconds = round(seconds * 100)
     hours, remainder = divmod(total_centiseconds, 360_000)
@@ -1020,12 +1072,16 @@ def _combine_caption_entries(
 
 def _rolling_word_spans(text: str) -> list[re.Match[str]]:
     plain_text = html.unescape(re.sub(r"<[^>]*>", "", text))
-    if CJK.search(plain_text):
-        return list(re.finditer(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]", plain_text))
+    # A hard line break is two characters (backslash + N). Blank it without
+    # shifting offsets so a wrapped line does not add a spurious "N" word and
+    # pull karaoke timings out of sync.
+    searchable = plain_text.replace("\\N", "  ")
+    if CJK.search(searchable):
+        return list(re.finditer(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]", searchable))
     return list(
         re.finditer(
             r"(?:[A-Z]\.){2,}|[\w]+(?:[’'-][\w]+)*(?:\s+[A-Z]\.)*",
-            plain_text,
+            searchable,
         )
     )
 
@@ -1554,28 +1610,14 @@ def build_ass(
             f"Style: CaptionFacet,Arial,1,{facet_color},&H000000FF,"
             f"&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1",
         ]
-    first_group_signatures = {
-        _cue_group_signature(group) for group in _rolling_cue_groups(first)
-    }
-    second_group_signatures = {
-        _cue_group_signature(group) for group in _rolling_cue_groups(second)
-    }
-    paired_group_signatures = first_group_signatures & second_group_signatures
-    first = _serialize_same_end_cues(
-        first,
-        paired_group_signatures=paired_group_signatures,
-    )
-    second = _serialize_same_end_cues(
-        second,
-        paired_group_signatures=paired_group_signatures,
-    )
     cues = [*first, *second]
     if any(cue["end"] <= cue["start"] or not cue["text"].strip() for cue in cues):
         raise ValueError("Cannot serialize empty or invalid subtitle cues.")
 
-    boundaries = sorted({cue[key] for cue in cues for key in ("start", "end")})
-    last_caption_time = max(cue["end"] for cue in cues)
-    box_end = max(last_caption_time, video_duration or 0)
+    box_end = max(max(cue["end"] for cue in cues), video_duration or 0)
+    display_events = subtitle_timeline.build_display_events(second, other_cues=first)
+    if not display_events:
+        raise ValueError("Caption cues contain no timed words.")
     events = []
 
     def append_box_events(start: float, end: float) -> None:
@@ -1610,29 +1652,70 @@ def build_ass(
 
     if box_style != "none":
         append_box_events(0, box_end)
-    for start, end in zip(boundaries, boundaries[1:]):
-        if end <= start:
+    previous_end = 0.0
+    for event_index, (english_tokens, chinese_tokens) in enumerate(display_events):
+        if not english_tokens and not chinese_tokens:
             continue
-        active = sorted(
-            (cue for cue in cues if cue["start"] < end and cue["end"] > start),
-            key=lambda cue: cue["start"],
+        all_tokens = [*english_tokens, *chinese_tokens]
+        # English is the master clock, so its first word starts the event; a
+        # Chinese character assigned here may start slightly earlier but is
+        # still rendered once, inside this event.
+        event_start = english_tokens[0].start if english_tokens else chinese_tokens[0].start
+        event_end = max(token.end for token in all_tokens)
+        event_start = max(event_start, previous_end)
+        # The next event's earliest word is a hard ceiling: two layer-1
+        # dialogues must never overlap, even by the few centiseconds that a
+        # long Chinese group assigned here would otherwise add.
+        ceiling = None
+        if event_index + 1 < len(display_events):
+            next_english, next_chinese = display_events[event_index + 1]
+            next_tokens = [*next_english, *next_chinese]
+            if next_tokens:
+                next_start = min(token.start for token in next_tokens)
+                if next_start > event_start + 0.04:
+                    ceiling = next_start - 0.04
+        if ceiling is not None:
+            event_end = min(max(event_end, event_start + 0.04), ceiling)
+        event_end = max(event_end, event_start + 0.04)
+        previous_end = event_end
+
+        english_text = subtitle_layout.normalize(
+            " ".join(token.text for token in english_tokens)
         )
-        chinese, english = classify_caption_lines(active)
-        if not chinese and not english:
-            continue
-        cn_size = fit_font_size(chinese, first_font_size, available_width) if chinese else 0
-        en_size = fit_font_size(english, second_font_size, available_width) if english else 0
+        chinese_text = subtitle_layout.normalize(
+            "".join(token.text for token in chinese_tokens)
+        )
+        chinese_lines = (
+            subtitle_layout.wrap_caption(chinese_text, "zh-Hans", hard_limit=True)
+            if chinese_text
+            else []
+        )
+        english_lines = (
+            subtitle_layout.wrap_caption(english_text, "en", hard_limit=True)
+            if english_text
+            else []
+        )
+        cn_size = (
+            subtitle_layout.fit_font_size(chinese_lines, first_font_size, available_width)
+            if chinese_lines
+            else 0
+        )
+        en_size = (
+            subtitle_layout.fit_font_size(english_lines, second_font_size, available_width)
+            if english_lines
+            else 0
+        )
         order = (
-            (("english", english, en_size), ("chinese", chinese, cn_size))
+            (("english", english_lines, en_size), ("chinese", chinese_lines, cn_size))
             if caption_order == "english-first"
-            else (("chinese", chinese, cn_size), ("english", english, en_size))
+            else (("chinese", chinese_lines, cn_size), ("english", english_lines, en_size))
         )
         visible_lines = [line for line in order if line[1]]
+        if not visible_lines:
+            continue
         style = "English" if visible_lines[0][0] == "english" else "Chinese"
-        event_start = start
-        english_word_timings = _word_timings_for_text(english, active)
         body = ""
-        for line_index, (language, text, size) in enumerate(visible_lines):
+        for line_index, (language, lines, size) in enumerate(visible_lines):
             if line_index:
                 if line_gap:
                     body += r"\N{\fs" + str(line_gap) + r"}\h"
@@ -1644,34 +1727,25 @@ def build_ass(
             else:
                 body += "{"
             body += f"\\fs{size:g}" + "}"
-            body += (
-                ass_karaoke_text(
-                    text,
-                    end - event_start,
+            if language == "english":
+                body += _karaoke_lines(
+                    english_tokens,
+                    lines,
                     start=event_start,
-                    fallback_start=start,
-                    word_timings=english_word_timings,
+                    end=event_end,
                 )
-                if language == "english"
-                else ass_escape_text(text)
-            )
-        body = f"{{\\an5\\pos({area_center_x:g},{area_center_y:g})}}" + body
-        event = {
-            "start": event_start,
-            "end": end,
-            "layer": 1,
-            "style": style,
-            "body": body,
-        }
-        if (
-            events
-            and events[-1]["end"] == start
-            and events[-1]["style"] == style
-            and events[-1]["body"] == body
-        ):
-            events[-1]["end"] = end
-        else:
-            events.append(event)
+            else:
+                body += ass_escape_text("\n".join(lines))
+        body = f"{{\\an2\\pos({area_center_x:g},{area_bottom - 8})}}" + body
+        events.append(
+            {
+                "start": event_start,
+                "end": event_end,
+                "layer": 1,
+                "style": style,
+                "body": body,
+            }
+        )
 
     events.sort(key=lambda event: (event["start"], event["layer"]))
     return "\n".join(
@@ -1681,7 +1755,7 @@ def build_ass(
             f"PlayResX: {play_res_x}",
             f"PlayResY: {play_res_y}",
             "ScaledBorderAndShadow: yes",
-            "WrapStyle: 2",
+            "WrapStyle: 0",
             "",
             "[V4+ Styles]",
             f"Format: {style_format}",
