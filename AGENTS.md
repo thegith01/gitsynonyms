@@ -84,6 +84,10 @@ from the repository root. `scripts/` is not an installed package —
   exist.
 - Collapse only immediate ASR stutters from closed-class words (`I I`, `the the`);
   never drop repetition that carries meaning.
+- Translate rolling YouTube cues only after de-duplicating their source words
+  into readable time-aligned display units. Keep the Immersive Translate
+  v1.34.4 release as an independent behavioral comparison baseline; do not copy
+  its proprietary implementation or claim an unmeasured quality win.
 
 ## Cloud operations
 

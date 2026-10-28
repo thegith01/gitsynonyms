@@ -3,8 +3,9 @@
 
 Used when YouTube genuinely has no caption track for the requested language
 (DIRECTIVE 3.7).  The source track is the fused YouTube original; the output
-keeps the source cue boundaries and only replaces the text, then writes the
-standard interchange formats so Module 2 can fuse it like any other track.
+keeps deduplicated display-unit timing derived from the source word boundaries,
+then writes the standard interchange formats so Module 2 can fuse it like any
+other track.
 
 Provenance and the candidate score are written to ``SUBTITLE_SOURCES.json``.
 """
@@ -14,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import time
 import urllib.parse
@@ -25,6 +27,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import download_youtube_bilingual_srt as captions  # noqa: E402
 import subtitle_timing  # noqa: E402
+import subtitle_timeline  # noqa: E402
 
 MYMEMORY_URL = "https://api.mymemory.translated.net/get?q={text}&langpair={pair}"
 
@@ -96,6 +99,29 @@ def escape(text: str) -> str:
     )
 
 
+def build_translation_units(cues: list[dict]) -> list[dict]:
+    """Translate deduplicated display phrases instead of isolated rolling cues.
+
+    YouTube rolling captions repeat the previous words in each new event.
+    ``build_display_events`` removes those repeats using the original word
+    timings, then groups the remaining words into readable, time-bounded units.
+    The source cue list is not mutated.
+    """
+    events = subtitle_timeline.build_display_events(cues)
+    units = []
+    for english, _ in events:
+        if not english:
+            continue
+        text = " ".join(token.text for token in english)
+        text = re.sub(r"\s+([,.;:!?，。、；：！？…])", r"\1", text)
+        text = re.sub(r"([(“‘])\s+", r"\1", text).strip()
+        start = english[0].start
+        end = max(token.end for token in english)
+        if text and end > start:
+            units.append({"start": start, "end": end, "text": text})
+    return units
+
+
 def translate_mymemory(texts: list[str], source: str, target: str, email: str) -> list[str]:
     pair = f"{source}|{target}"
     translated: list[str] = []
@@ -120,14 +146,14 @@ def translate_mymemory(texts: list[str], source: str, target: str, email: str) -
                 last_error = str(error)
             time.sleep(1.5 * (attempt + 1))
         else:
-            raise SystemExit(f"MyMemory failed at cue {index}: {last_error}")
+            raise SystemExit(f"MyMemory failed at translation unit {index}: {last_error}")
         if index % 100 == 0:
             log(f"  translated {index}/{len(texts)}")
     return translated
 
 
 def translate_assemblyai(texts: list[str], source: str, target: str) -> list[str]:
-    """Translate cue lines through the AssemblyAI LLM gateway, in JSON batches."""
+    """Translate display units through the AssemblyAI LLM gateway in JSON batches."""
     key = ""
     for name in ("ASSEMBLYAI", "ASSEMBLYAI_API_KEY"):
         key = os.environ.get(name, "").strip() or key
@@ -146,10 +172,11 @@ def translate_assemblyai(texts: list[str], source: str, target: str) -> list[str
                 {
                     "role": "system",
                     "content": (
-                        "You translate subtitle lines. Reply with a JSON object "
+                        "Translate each complete subtitle display unit using its full "
+                        "sentence context. Reply with a JSON object "
                         '{"lines": ["...", ...]} that has exactly one Simplified Chinese '
-                        "string per input line, in the same order. Do not merge, split or "
-                        "renumber lines. Do not add commentary."
+                        "string per input unit, in the same order. Keep each unit intact; "
+                        "do not merge, split or renumber units. Do not add commentary."
                     ),
                 },
                 {
@@ -266,9 +293,13 @@ def main() -> int:
         cues = cues[: args.limit]
     log(f"source cues: {len(cues)} from {track['primary_format']}")
 
-    texts = [cue["text"].strip() for cue in cues]
+    units = build_translation_units(cues)
+    if not units:
+        raise ValueError(f"No translatable subtitle units found for {args.video_id}")
+    texts = [unit["text"] for unit in units]
     unique = list(dict.fromkeys(texts))
-    log(f"unique lines: {len(unique)}")
+    log(f"deduplicated rolling captions into {len(texts)} display units")
+    log(f"unique translation units: {len(unique)}")
 
     if args.engine == "assemblyai":
         try:
@@ -280,12 +311,16 @@ def main() -> int:
         rendered_unique = translate_argos(unique, "en", "zh")
     else:
         rendered_unique = translate_mymemory(unique, "en", "zh", args.email)
+    if len(rendered_unique) != len(unique):
+        raise RuntimeError(
+            f"Translation returned {len(rendered_unique)} results for {len(unique)} units"
+        )
     mapping = dict(zip(unique, rendered_unique))
     translated = [mapping[text] for text in texts]
 
     out_cues = [
-        {"start": cue["start"], "end": cue["end"], "text": text}
-        for cue, text in zip(cues, translated)
+        {"start": unit["start"], "end": unit["end"], "text": text}
+        for unit, text in zip(units, translated)
     ]
 
     write_srt(out_cues, output_dir / f"{args.video_id}.{args.target_language}.srt")
@@ -317,6 +352,7 @@ def main() -> int:
             "format": track["primary_format"],
             "formats_used": track["formats_used"],
             "cues": len(cues),
+            "translation_units": len(units),
         },
         "candidates": [
             {
