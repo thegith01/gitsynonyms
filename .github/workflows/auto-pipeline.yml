@@ -185,6 +185,19 @@ jobs:
           echo "file=$file" >> "$GITHUB_OUTPUT"
           ls -lh "$file"
 
+      - name: Back up the downloaded source to the bin
+        if: inputs.mode != 'probe'
+        continue-on-error: true
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+          SOURCE: ${{ steps.source.outputs.file }}
+        run: |
+          set -euo pipefail
+          name="$(basename "$SOURCE")"
+          echo "backing up $name"
+          curl -f --retry 3 --retry-delay 5 -X POST --data-binary "@$SOURCE" \
+            "https://filebin.net/${FILEBIN_BIN}/${name}"
+
       - name: Score the footage on the five material criteria
         id: footage
         if: inputs.mode != 'probe'
@@ -226,13 +239,15 @@ jobs:
               fi
             fi
           fi
-          python - "$caps/CAPTION_FORMATS.json" <<'PY' || true
+          if [ -f "$caps/CAPTION_FORMATS.json" ]; then
+            python - "$caps/CAPTION_FORMATS.json" <<'PY' || true
           import json, sys
           data = json.load(open(sys.argv[1]))
           for code, track in data.get("tracks", {}).items():
               print(code, "present" if track.get("present") else "missing",
                     ",".join(track.get("formats") or []))
           PY
+          fi
           ls -1 "$caps" | sed -n '1,40p'
 
       - name: ASR fallback when the English track is missing
@@ -249,7 +264,7 @@ jobs:
             CAPS="output/auto_${VIDEO_ID}"
             mkdir -p "$CAPS"
           fi
-          if find "$CAPS" -name "${VIDEO_ID}.en-orig.*" | grep -q .; then
+          if find "$CAPS" -name "${VIDEO_ID}.*.en-orig.*" | grep -q .; then
             echo "YouTube English captions present; skipping ASR"
           elif [ -n "${ASSEMBLYAI:-}" ]; then
             echo "no YouTube English track; transcribing with AssemblyAI"
@@ -272,7 +287,7 @@ jobs:
         run: |
           set -euo pipefail
           caps="${CAPS:-${{ steps.captions.outputs.dir }}}"
-          if find "$caps" -name "${VIDEO_ID}.zh-Hans.*" | grep -q .; then
+          if find "$caps" -name "${VIDEO_ID}.*.zh-Hans.*" | grep -q .; then
             echo "YouTube Chinese captions present; skipping translation"
           else
             engine=argos
