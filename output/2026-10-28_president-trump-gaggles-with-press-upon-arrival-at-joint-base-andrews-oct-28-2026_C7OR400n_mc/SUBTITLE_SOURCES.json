@@ -1,0 +1,79 @@
+{
+  "video_id": "C7OR400n_mc",
+  "generated_at": "2026-10-29T05:30:00+00:00",
+  "source": "youtube",
+  "tracks": {
+    "en-orig": {
+      "present": true,
+      "youtube_code": "en-orig",
+      "kind": "auto-generated",
+      "source_formats": [
+        "json3",
+        "srt",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "vtt"
+      ],
+      "formats": [
+        "json3",
+        "srt",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "vtt"
+      ],
+      "files": [
+        "C7OR400n_mc.en.en-orig.json3",
+        "C7OR400n_mc.en.en-orig.srt",
+        "C7OR400n_mc.en.en-orig.srv1",
+        "C7OR400n_mc.en.en-orig.srv2",
+        "C7OR400n_mc.en.en-orig.srv3",
+        "C7OR400n_mc.en.en-orig.ttml",
+        "C7OR400n_mc.en.en-orig.vtt"
+      ],
+      "missing_formats": []
+    },
+    "zh-Hans": {
+      "present": true,
+      "youtube_code": "zh-Hans",
+      "kind": "auto-translated",
+      "source_formats": [
+        "json3",
+        "srt",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "vtt"
+      ],
+      "formats": [
+        "json3",
+        "srt",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "vtt"
+      ],
+      "files": [
+        "C7OR400n_mc.zh-Hans.json3",
+        "C7OR400n_mc.zh-Hans.srt",
+        "C7OR400n_mc.zh-Hans.srv1",
+        "C7OR400n_mc.zh-Hans.srv2",
+        "C7OR400n_mc.zh-Hans.srv3",
+        "C7OR400n_mc.zh-Hans.ttml",
+        "C7OR400n_mc.zh-Hans.vtt"
+      ],
+      "missing_formats": [],
+      "note": "Fetched after the 2026-10-28T14:28:56Z probe; the probe report is kept as SUBTITLE_SOURCES.probe.json."
+    }
+  },
+  "required": [
+    "en-orig",
+    "zh-Hans"
+  ],
+  "missing": []
+}

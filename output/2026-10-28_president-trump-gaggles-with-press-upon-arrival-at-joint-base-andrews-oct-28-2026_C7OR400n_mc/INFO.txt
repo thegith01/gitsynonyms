@@ -1,0 +1,28 @@
+Video: President Trump Gaggles with Press Upon Arrival at Joint Base Andrews, Oct. 28, 2026
+Video ID: C7OR400n_mc
+Event date: 2026-10-28
+Source: https://www.youtube.com/watch?v=C7OR400n_mc
+Uploader: The White House
+Duration: 00:08:50 (530.621 s)
+
+Caption formats (kept byte-for-byte as YouTube served them):
+C7OR400n_mc.en.en-orig.<ext>   English, YouTube auto-generated captions (en-orig)
+C7OR400n_mc.zh-Hans.<ext>      Chinese, YouTube auto-translated captions (zh-Hans)
+<ext> is one of vtt, srt, ttml, srv3, srv2, srv1, json3.
+
+Present for English: vtt, srt, ttml, srv3, srv2, srv1, json3.
+Present for Chinese: vtt, srt, ttml, srv3, srv2, srv1, json3.
+
+Provenance:
+The English track is YouTube's auto-generated en-orig track; it is not
+independently proofread. The Chinese track is YouTube's zh-Hans auto-translation
+of that track. The first caption probe at 2026-10-28T14:28:56Z reported zh-Hans
+as missing (HTTP 429 / bot check); the track was fetched afterwards and all
+seven formats are present. The stale probe report is retained as
+SUBTITLE_SOURCES.probe.json. No caption text was substituted or invented.
+
+Burn note:
+The filebin file Burned_Bilingual_C7OR400n_mc.mp4 uploaded on 2026-10-28 was
+encoded with an ASS whose English clock was displaced by Latin fragments in the
+Chinese translation; sampled frames carry no visible captions. This archive is
+the caption source for the corrected Module 2 burn.

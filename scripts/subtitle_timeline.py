@@ -614,16 +614,32 @@ def build_display_events(
         return []
 
     # The master (`cues`) supplies the English clock; the other track is the
-    # Chinese line. When a track mixes scripts, preserve the build_ass(first,
-    # second) display order: other-track words before master-track words.
-    english = _merge_unique(
-        [token for token in second_tokens if token.language == "en"],
-        [token for token in first_tokens if token.language == "en"],
-    )
-    chinese = _merge_unique(
-        [token for token in second_tokens if token.language == "zh"],
-        [token for token in first_tokens if token.language == "zh"],
-    )
+    # Chinese line. Latin fragments in a translated cue stay on that line
+    # instead of competing for the English clock.
+    # The master track owns the English clock. A translated track often keeps
+    # Latin names and acronyms ("Mcronone", "2019") that tokenize as English;
+    # merging them into the master list lets _monotonic() push every real
+    # English word behind the last translation fragment, so the English
+    # captions disappear until the end of the film. Prefer the master track,
+    # and fall back to the other track only when the master has no English.
+    master_english = [token for token in first_tokens if token.language == "en"]
+    other_english = [token for token in second_tokens if token.language == "en"]
+    if master_english and (
+        not other_english or len(master_english) >= len(other_english)
+    ):
+        english = master_english
+    else:
+        english = other_english
+    # If the second track contains CJK it is the translated line, so keep all
+    # of its tokens there -- including the Latin fragments -- instead of
+    # letting those fragments masquerade as the English clock.
+    if any(token.language == "zh" for token in second_tokens):
+        chinese = _merge_unique(
+            second_tokens,
+            [token for token in first_tokens if token.language == "zh"],
+        )
+    else:
+        chinese = [token for token in first_tokens if token.language == "zh"]
     english = _monotonic(english)
 
     if english:

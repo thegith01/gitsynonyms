@@ -16,6 +16,19 @@ on:
         description: Direct URL of the source video (filebin backup)
         required: false
         default: "https://filebin.net/f8l40pcd28jo8bl0/LIVE_%20President%20Trump%20rallies%20in%20Michigan%20ahead%20of%20state_s%20November%20Election%20%5B9aPyO1jfDGM%5D.mp4"
+      title:
+        description: Event title recorded in BURN.json and the Pages page
+        required: false
+        default: ""
+      event_date:
+        description: Event date in YYYY-MM-DD
+        required: false
+        default: ""
+      publish:
+        description: Publish to the GitHub Release and Pages after the filebin backup
+        required: false
+        type: boolean
+        default: true
       crf:
         description: libx264 CRF (lower = better/larger)
         required: false
@@ -120,6 +133,10 @@ jobs:
           CAPS: ${{ steps.caps.outputs.dir }}
         run: |
           set -euo pipefail
+          if find "$CAPS" -type f -name "${VIDEO_ID}.zh-Hans.*" | grep -q .; then
+            echo "Chinese captions already archived; keeping the YouTube track"
+            exit 0
+          fi
           python scripts/machine_translate_captions.py \
             --caption-dir "$CAPS" \
             --video-id "$VIDEO_ID" \
@@ -136,6 +153,8 @@ jobs:
           VIDEO_ID: ${{ inputs.video_id }}
           CRF: ${{ inputs.crf }}
           PRESET: ${{ inputs.preset }}
+          TITLE: ${{ inputs.title }}
+          EVENT_DATE: ${{ inputs.event_date }}
           CAPS: ${{ steps.caps.outputs.dir }}
         run: |
           set -euo pipefail
@@ -144,8 +163,8 @@ jobs:
             --caption-dir "$CAPS" \
             --languages "zh-Hans,en-orig" \
             --video-id "$VIDEO_ID" \
-            --title "LIVE: President Trump rallies in Michigan ahead of state's November Election" \
-            --event-date "2026-10-25" \
+            --title "${TITLE:-Bilingual video $VIDEO_ID}" \
+            --event-date "$EVENT_DATE" \
             --output-dir output \
             --encoder libx264 \
             --crf "$CRF" \
@@ -161,7 +180,7 @@ jobs:
           fi
 
       - name: Cut the web preview and poster
-        if: inputs.stage == 'full'
+        if: inputs.stage == 'full' && inputs.publish
         env:
           VIDEO_ID: ${{ inputs.video_id }}
         run: |
@@ -197,7 +216,7 @@ jobs:
           done
 
       - name: Publish MP4 to the release
-        if: inputs.stage == 'full'
+        if: inputs.stage == 'full' && inputs.publish
         env:
           GH_TOKEN: ${{ github.token }}
           VIDEO_ID: ${{ inputs.video_id }}
@@ -213,11 +232,11 @@ jobs:
           fi
 
       - name: Generate Pages site
-        if: inputs.stage == 'full'
+        if: inputs.stage == 'full' && inputs.publish
         run: python scripts/generate_video_pages.py
 
       - name: Commit archive and site
-        if: inputs.stage == 'full'
+        if: inputs.stage == 'full' && inputs.publish
         env:
           VIDEO_ID: ${{ inputs.video_id }}
         run: |

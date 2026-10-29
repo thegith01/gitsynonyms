@@ -163,6 +163,51 @@ def test_asr_stutter_is_collapsed_but_real_repetition_survives():
     assert rendered_words(events) == words("I came in no no we will not")
 
 
+def test_latin_fragments_in_translation_stay_on_the_chinese_line():
+    english = [
+        {"start": 1.0, "end": 2.0, "text": "one two"},
+        {"start": 2.0, "end": 3.0, "text": "three four"},
+    ]
+    translations = [
+        {"start": 1.0, "end": 2.0, "text": "一 二"},
+        {"start": 2.0, "end": 3.0, "text": "Mcronone 2019 三 四"},
+    ]
+
+    events = subtitle_timeline.build_display_events(
+        english, other_cues=translations
+    )
+
+    # The translation's Latin fragments must not become the English clock and
+    # push the real English words to the end of the timeline.
+    assert rendered_words(events) == words("one two three four")
+    assert events[0][0][0].start == 1.0
+    assert events[-1][0][-1].end <= 3.0
+    chinese_text = "".join(
+        token.text for _, chinese in events for token in chinese
+    )
+    assert "Mcronone" in chinese_text
+    assert "2019" in chinese_text
+
+
+def test_chinese_master_falls_back_to_the_english_translation_clock():
+    chinese = [
+        {"start": 1.0, "end": 2.0, "text": "一 二"},
+        {"start": 2.0, "end": 3.0, "text": "三 四"},
+    ]
+    english = [
+        {"start": 1.0, "end": 2.0, "text": "one two"},
+        {"start": 2.0, "end": 3.0, "text": "three four"},
+    ]
+
+    events = subtitle_timeline.build_display_events(
+        chinese, other_cues=english
+    )
+
+    assert rendered_words(events) == words("one two three four")
+    assert events[0][0][0].start == 1.0
+    assert "".join(token.text for _, chinese in events for token in chinese) == "一二三四"
+
+
 def test_chinese_source_group_is_never_split_across_events():
     translations = [
         {
