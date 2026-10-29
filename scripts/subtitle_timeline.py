@@ -422,14 +422,16 @@ def build_timeline(cues: Sequence[dict]) -> list[Token]:
         normalized.append(Token(token.text, start, end, token.language, token.exact, token.group))
     for index in range(len(normalized) - 1):
         token = normalized[index]
-        if not token.exact:
-            continue
         next_start = normalized[index + 1].start
-        if token.end > next_start:
+        # Every token, spread or exact, stops when the next word starts. A
+        # value interpolated across a cue ("1,000%") otherwise kept the whole
+        # cue span and overlapped the following sentences, which surfaced as
+        # two subtitles on screen at once.
+        if token.end > next_start > token.start:
             normalized[index] = Token(
                 token.text,
                 token.start,
-                max(token.start + 0.04, next_start),
+                next_start,
                 token.language,
                 token.exact,
                 token.group,
@@ -579,6 +581,20 @@ def _monotonic(tokens: Sequence[Token]) -> list[Token]:
                 token.group,
             )
         )
+    # Re-inflating a token to its source end can cross the next word's start,
+    # which produced two overlapping subtitles. The next word always wins.
+    for index in range(len(result) - 1):
+        current = result[index]
+        next_start = result[index + 1].start
+        if current.end > next_start > current.start:
+            result[index] = Token(
+                current.text,
+                current.start,
+                next_start,
+                current.language,
+                current.exact,
+                current.group,
+            )
     return result
 
 

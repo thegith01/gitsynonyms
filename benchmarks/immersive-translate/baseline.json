@@ -1,0 +1,138 @@
+{
+  "schema": "gitsynonyms.subtitle-baseline/1",
+  "id": "immersive-translate",
+  "role": "minimum",
+  "name": "Immersive Translate",
+  "version": "1.34.4",
+  "declared_by": "Module 2 (视频处理部) subtitle quality floor",
+  "artifact": {
+    "source": "chrome-web-store-update-service",
+    "extension_id": "bpoadfkcbjbfhfodiogcnhhhpibjhbnh",
+    "crx_url": "https://clients2.google.com/service/update2/crx?response=redirect&os=win&arch=x64&os_ver=10.0.0&nacl_arch=x86-64&prod=chromiumcrx&prodchannel=unknown&prodversion=120.0.0.0&acceptformat=crx2,crx3&x=id%3Dbpoadfkcbjbfhfodiogcnhhhpibjhbnh%26uc",
+    "fetched": "2026-10-29",
+    "crx_sha256": "72c0dc8ad563db812df9385b3207b0f85a8d2f071738f13a31a6377e39c0cf5f",
+    "crx_bytes": 13744647,
+    "manifest_version": 3,
+    "unpacked_files": 91,
+    "file_sha256": {
+      "manifest.json": "68cabce5c7765244042f2de80347251a63cd650ee223ab5326ce67b7349320db",
+      "content_main.js": "18c1956a1037dc48ea990d9ce751ea0249dca62c1f6ec5ef57c061e07c5abe5e",
+      "video-subtitle/inject.js": "2eda16d6290c4ebce44967222c49029605f540b5ba9b94afcaad6095d84e1695",
+      "default_config.json": "f8f1452d56ab2d035072e2158f14faa88ab83eafa4f21e052ac5c950d86a2cc8",
+      "styles/inject.css": "4e780d07b84c61755c3d4c9e2364fadf0b1b4cdc02d9d58e74fe94dec8639ff2"
+    },
+    "binary_in_repo": false,
+    "why_not_committed": "CRX 是二进制第三方产物，仓库只保留可复现抓取脚本与哈希锚点；运行 scripts/benchmarks/fetch_immersive_translate.py 即可重建字节级一致的解包目录。"
+  },
+  "evidence": {
+    "operation": "analyze_javascript_application",
+    "tool": "rea-agents@6.8.0",
+    "evidence_id": "ev_8afad77784dc3350625bc01599d2ddd910cc811cc08b8f6054508c3d7a25855f",
+    "parent_evidence_id": "ev_64cfd7aec0e0713dc5b37f083aef8d44e97ecb8f8be6d15fe6a30f3d98016415",
+    "source_paths": ["content_main.js", "video-subtitle/inject.js"],
+    "visited_ast_nodes": 832612,
+    "coverage": "partial (partial: 53 inventoried files, 1 analyzed source; semantic graph truncated at the 20000-node per-file ceiling)",
+    "note": "REA 的 Windows 原生自检拒绝 junction 化的用户目录（C:\\Users\\a2023 是重解析点）。本次分析以 USERPROFILE=D:\\rea-home 运行，绕开自检但没有改变分析对象。"
+  },
+  "observed": {
+    "acquisition": {
+      "mechanism": "劫持页面自身字幕请求与 TextTrack，而不是重新下载字幕",
+      "hook_type": "xhr",
+      "also_hooks": ["fetch"],
+      "inject_entry": "video-subtitle/inject.js",
+      "pre_translation": true,
+      "video_player_selector": "video",
+      "default_fallback_services": ["bing", "google"],
+      "evidence": "default_config.json: generalRule.subtitleRule.{hookType,isInject,preTranslation,videoPlayerSelector,defaultFallbackServices}; video-subtitle/inject.js: XMLHttpRequest.prototype.open/send 与 globalThis.fetch 包装"
+    },
+    "cue_model": {
+      "unit": "源 cue",
+      "trigger": "TextTrack 的 cuechange 事件",
+      "active_set": "每次 cuechange 取当前 activeCues 全量快照，转换为 {text,start:startTime,end:endTime}",
+      "native_track": "接管后设置 mode=\"hidden\"，由扩展自绘 overlay",
+      "evidence": "content_main.js: onCueChange → formatToSubtitleItem(activeCues) → attachSubtitle(...) + o.mode=\"hidden\""
+    },
+    "translation_batching": {
+      "translate_group_count": 5,
+      "velocity_group": [4, 4, 4],
+      "max_text_group_length_per_request_for_subtitle": 4,
+      "ai_batch_items_per_request_for_subtitle": 8,
+      "ai_subtitle_max_text_length": 500,
+      "evidence": "default_config.json: generalRule.subtitleRule.{translateGroupCount,velocityGroup,aiSubtitleMaxTextLength}; translationServices.ai.{maxTextGroupLengthPerRequestForSubtitle,aiBatch.itemsPerRequestForSubtitle}"
+    },
+    "presentation_defaults": {
+      "translation_mode": "dual",
+      "translation_position": "bottom",
+      "font_size_percent": {"source": 100, "translation": 100},
+      "text_color": {"source": "#FFFFFF", "translation": "#FFFFFF"},
+      "background": {"color": "#080808", "opacity_percent": 75},
+      "text_shadow": "shadow",
+      "caption_window": "绝对定位 100% 覆盖、pointer-events:none 的 #<prefix>-caption-window",
+      "layout_source": "每站点 attachRule.injectedCSS（远程规则），扩展本体不含固定排版预算",
+      "evidence": "default_config.json: generalRule.subtitleRule.*; content_main.js: wu() 挂载 React overlay 并追加 attachRule.injectedCSS; Odt 常量定义 caption-window"
+    },
+    "ambient_sound_filter": {
+      "enabled_by_default": true,
+      "regex": "\\([^)]*\\)|\\[[^\\]]*\\]",
+      "normal_subtitle_regex": "\\s*\\[music\\]\\s*",
+      "evidence": "default_config.json: generalRule.subtitleRule.{filterAmbientSounds,filterAmbientSoundsRegex,filterAmbientSoundsRegexForNormalSubtitle}"
+    }
+  },
+  "baseline_limits": {
+    "word_level_karaoke": false,
+    "cross_cue_dedupe": false,
+    "every_word_rendered_once": false,
+    "fixed_typographic_budget": false,
+    "overflow_shrink_to_fit": false,
+    "offline_burn": false,
+    "note": "以上为“未实现/未观察到”的断言，依据是上述源码与默认配置中不存在对应步骤；不等于产品在浏览器里视觉上一定出错。它只定义烧录字幕必须超过的最低线。"
+  },
+  "requirements": [
+    {
+      "id": "dual-language",
+      "statement": "每个显示事件同时给出原文与译文，不允许只有一种语言占屏。",
+      "baseline_v1_34_4": "subtitleRule.translationMode = \"dual\"，原文与译文同屏上下排列。",
+      "ours": "同一事件的英文与中文 token 同批渲染，任一侧缺失即视为回归。",
+      "test": "test_baseline_dual_language"
+    },
+    {
+      "id": "cue-aligned-timing",
+      "statement": "字幕的出现与消失必须锚定源字幕时间轴，不得凭空提前或拖后。",
+      "baseline_v1_34_4": "事件区间直接取源 cue 的 startTime/endTime。",
+      "ours": "事件起点取源词的真实起点（json3 tStartMs + tOffsetMs），精度高于 cue 边界。",
+      "test": "test_baseline_cue_aligned_timing"
+    },
+    {
+      "id": "no-source-loss",
+      "statement": "源字幕中的口语内容不得静默丢失。",
+      "baseline_v1_34_4": "对每个 active cue 的文本原样翻译渲染，不丢弃。",
+      "ours": "输出 token 流必须是源词流的子序列；只允许两类删除：闭合类 ASR 口吃与滚动窗口已上屏的重复前缀。",
+      "test": "test_baseline_no_source_loss"
+    },
+    {
+      "id": "single-render",
+      "statement": "同一个词在一次播放中只能渲染一次，不得因滚动字幕重复上屏。",
+      "baseline_v1_34_4": "无跨 cue 去重：重叠的滚动 cue 会被原样逐次渲染。",
+      "ours": "全局不变量：每个源词恰好出现在一个事件里，相邻事件文本不得相同。",
+      "test": "test_baseline_single_render"
+    },
+    {
+      "id": "typographic-budget",
+      "statement": "每语种至多两行，且每行有硬字符预算；超长时缩字号而不是溢出画面。",
+      "baseline_v1_34_4": "无固定预算：排版由站点 injectedCSS 决定，扩展本体不做换行测量或缩放。",
+      "ours": "英文 60 字符/行、中文 28 全角字符/行、MAX_LINES=2，5% 安全边距，先缩字号后溢出。",
+      "test": "test_baseline_typographic_budget"
+    },
+    {
+      "id": "word-karaoke",
+      "statement": "英文高亮必须跟随源词的真实发音时间。",
+      "baseline_v1_34_4": "无词级时间：每个 cue 只有 start/end，整块替换。",
+      "ours": "卡拉 OK 起点来自 json3 的 tStartMs + tOffsetMs；ASS 量化到厘秒，TIMING.json 保留纳秒侧车。",
+      "test": "test_baseline_word_karaoke"
+    }
+  ],
+  "maintenance": {
+    "refresh": "python scripts/benchmarks/fetch_immersive_translate.py --refresh-hashes",
+    "rule": "基线只允许单向收紧：requirements 的 statement 可以提高，不得为了通过测试而放宽。"
+  }
+}
