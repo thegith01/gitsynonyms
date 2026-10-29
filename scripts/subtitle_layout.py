@@ -6,15 +6,17 @@ generator measured the whole cue with optimistic per-character widths and never
 inserted line breaks. ``WrapStyle: 2`` told libass not to wrap either, so long
 sentences ran off both edges.
 
-Rules implemented here come from Module 2 ergonomics (see
-``organization/module-2-ergonomics.md``):
+Rules implemented here come from Module 2 ergonomics: broadcast-safe character
+budgets widened for a bilingual burn where each language gets *one* line.
 
-* Simplified Chinese: at most 16 full-width characters per line, 9 CPS.
-* English: at most 42 characters per line, 20 CPS.
-* At most two lines per language; balanced lines read better than a full line
-  followed by an orphan.
+* Simplified Chinese: at most 28 full-width characters per line, 9 CPS.
+* English: at most 60 characters per line, 20 CPS.
+* One line per language is the norm. The two-line budget is only an overflow
+  guard for a single-language fallback; a cue-aligned bilingual event is built
+  to fit one line in each language.
 * Latin width is measured at 0.56 em per character and CJK at 1.0 em, so the
-  font shrinks *before* text can leave the safe area.
+  font shrinks *before* text can leave the safe area. At 48 px English and
+  57.6 px Chinese both limits stay inside the 1728 px safe width.
 
 The functions are pure and shared by the ASS writer and the QC analyser.
 """
@@ -35,8 +37,8 @@ CJK = re.compile(
 CJK_EM = 1.0
 LATIN_EM = 0.56
 
-ZH_MAX_CHARS = 16
-EN_MAX_CHARS = 42
+ZH_MAX_CHARS = 28
+EN_MAX_CHARS = 60
 MAX_LINES = 2
 
 # A line may not start with these; they belong to the previous clause.

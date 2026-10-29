@@ -56,11 +56,16 @@ DEDUPE_STOPWORDS = {
 MAX_EVENT_SECONDS = 6.5
 MIN_EVENT_SECONDS = 1.2
 MAX_EVENT_GAP = 0.65
-# Two lines of the renderer's 42-character English line is 84 characters; a
-# smaller budget used to split a caption that the layout would have wrapped
-# cleanly, leaving "First Lady Melania Trump." on two unrelated events.
-EN_EVENT_CHARS = 84
-ZH_EVENT_CHARS = 32
+# One display line per language: 60 English characters, 28 Chinese characters.
+# A cue-aligned event only merges adjacent translation cues while both lines
+# still fit these budgets, so the ASS writer never has to wrap a bilingual cue
+# onto a second line.
+EN_EVENT_CHARS = 60
+ZH_EVENT_CHARS = 28
+# YouTube marks a change of speaker with ">>" inside the caption text. It is a
+# navigation aid in the transcript, not spoken content, and looked like noise
+# on the burned frame.
+SPEAKER_MARKER = re.compile(r"(?:^|\s)>{2,3}\s*")
 # A period inside an initial or a title is not the end of a sentence.
 ABBREVIATION = re.compile(
     r"^(?:[A-Za-z]|Mr|Mrs|Ms|Dr|Prof|Sen|Rep|Gov|Gen|Col|Lt|Sgt|St|Jr|Sr|"
@@ -97,6 +102,7 @@ def _is_cjk_token(value: str) -> bool:
 
 def _clean(text: str) -> str:
     text = STYLE_TAG.sub("", text)
+    text = SPEAKER_MARKER.sub(" ", text)
     return re.sub(r"\s+", " ", text.replace("\r", " ").replace("\n", " ")).strip()
 
 
@@ -434,15 +440,18 @@ def build_timeline(cues: Sequence[dict]) -> list[Token]:
 def _char_count(tokens: Iterable[Token]) -> int:
     total = 0.0
     for token in tokens:
+        if token.language == "zh":
+            # Count the visible Chinese line exactly: layout wraps at 28
+            # characters, punctuation included, so the segmenter must too.
+            total += len(token.text)
+            continue
         if is_punctuation(token.text):
             continue
-        if token.language == "zh":
-            total += 1
-        else:
-            # Count real characters (plus the joining space): the layout wraps
-            # at 42 characters per line, so an event must stay near 84, not
-            # 84 em units, or the renderer receives a four-line paragraph.
-            total += len(token.text) + 1
+        # Count real characters (plus the joining space): the layout wraps
+        # at 60 characters per line, so an event must stay at or below 60,
+        # not 60 em units, or the renderer receives an unexpected line
+        # break.
+        total += len(token.text) + 1
     return int(round(total))
 
 
@@ -597,6 +606,183 @@ def _merge_unique(*groups: Sequence[Token]) -> list[Token]:
     return merged
 
 
+def _cue_starts(cues: Sequence[dict]) -> list[float]:
+    """Distinct caption start times, rounded to the millisecond."""
+    starts: set[float] = set()
+    for cue in cues:
+        if not _clean(str(cue.get("text", ""))):
+            continue
+        try:
+            start = float(cue.get("start", 0.0))
+        except (TypeError, ValueError):
+            continue
+        if math.isfinite(start):
+            starts.add(round(max(0.0, start), 3))
+    return sorted(starts)
+
+
+def _cue_windows(starts: Sequence[float]) -> list[tuple[float, float]]:
+    windows: list[tuple[float, float]] = []
+    for index, start in enumerate(starts):
+        low = -math.inf if index == 0 else start
+        high = starts[index + 1] if index + 1 < len(starts) else math.inf
+        if high > low:
+            windows.append((low, high))
+    return windows
+
+
+def _midpoint(token: Token) -> float:
+    return (token.start + token.end) / 2
+
+
+def _english_text(tokens: Sequence[Token]) -> str:
+    return re.sub(r"\s+", " ", " ".join(token.text for token in tokens)).strip()
+
+
+def _chinese_text(tokens: Sequence[Token]) -> str:
+    return re.sub(r"\s+", " ", "".join(token.text for token in tokens)).strip()
+
+
+def _coalesce_one_sided(
+    units: Sequence[tuple[list[Token], list[Token]]],
+) -> list[tuple[list[Token], list[Token]]]:
+    """Attach a unit that only got one language to its neighbour.
+
+    A translation cue can start a few milliseconds before the first English
+    word and produce a Chinese-only sliver. Pairing it with the next unit keeps
+    both languages on screen together; if no neighbour carries the missing
+    language the caller rejects the cue-aligned path.
+    """
+    merged: list[tuple[list[Token], list[Token]]] = []
+    for english, chinese in units:
+        if merged and (not english or not chinese):
+            previous_english, previous_chinese = merged[-1]
+            merged[-1] = (
+                [*previous_english, *english],
+                [*previous_chinese, *chinese],
+            )
+        else:
+            merged.append((english, chinese))
+    if len(merged) > 1 and (not merged[-1][0] or not merged[-1][1]):
+        last_english, last_chinese = merged.pop()
+        previous_english, previous_chinese = merged[-1]
+        merged[-1] = (
+            [*previous_english, *last_english],
+            [*previous_chinese, *last_chinese],
+        )
+    return merged
+
+
+def _can_merge_units(
+    left: tuple[list[Token], list[Token]],
+    right: tuple[list[Token], list[Token]],
+) -> bool:
+    left_english, left_chinese = left
+    right_english, right_chinese = right
+    if len(_english_text([*left_english, *right_english])) > EN_EVENT_CHARS:
+        return False
+    if len(_chinese_text([*left_chinese, *right_chinese])) > ZH_EVENT_CHARS:
+        return False
+    start = min(left_english[0].start, left_chinese[0].start)
+    end = max(
+        max(token.end for token in left_english),
+        max(token.end for token in left_chinese),
+    )
+    next_start = min(right_english[0].start, right_chinese[0].start)
+    next_end = max(
+        max(token.end for token in right_english),
+        max(token.end for token in right_chinese),
+    )
+    if next_end - start > MAX_EVENT_SECONDS:
+        return False
+    # Only join cues that touch. A deliberate pause is a caption boundary and
+    # must survive as a gap, even when the combined text would still fit.
+    return next_start - end <= 0.001
+
+
+def _merge_units(
+    units: Sequence[tuple[list[Token], list[Token]]],
+) -> list[tuple[list[Token], list[Token]]]:
+    """Greedily join touching translation cues while both lines still fit."""
+    merged: list[tuple[list[Token], list[Token]]] = []
+    for english, chinese in units:
+        if merged and _can_merge_units(merged[-1], (english, chinese)):
+            previous_english, previous_chinese = merged[-1]
+            merged[-1] = (
+                [*previous_english, *english],
+                [*previous_chinese, *chinese],
+            )
+        else:
+            merged.append((english, chinese))
+    return merged
+
+
+def _cue_aligned_events(
+    english: Sequence[Token],
+    chinese: Sequence[Token],
+    *,
+    chinese_cues: Sequence[dict],
+    english_cue_count: int,
+) -> list[tuple[list[Token], list[Token]]] | None:
+    """Pair each translated cue with the English words it translates.
+
+    YouTube's translated cue i covers exactly the words of English cue i, but
+    the English cue itself can span several translation cues. Using the
+    translation starts as display boundaries gives one coherent unit per
+    translated phrase instead of assigning whole Chinese groups to long English
+    segments (which produced English-only and four-line events).
+
+    Returns ``None`` when this alignment cannot produce a clean one-line
+    bilingual event for every unit; the caller then keeps the legacy segmenter.
+    """
+    starts = _cue_starts(chinese_cues)
+    if len(starts) < 2:
+        return None
+    # A two-cue translation paired with a three-hour English track is not a
+    # real parallel transcript; using its starts would make hour-long events.
+    if english_cue_count and len(starts) * 2 < english_cue_count:
+        return None
+    # Overlapping translation cues are rolling windows, not one cue per
+    # spoken phrase. Splitting them by start time would cut a cue's own text
+    # in half, so those tracks keep the legacy rolling-caption segmenter.
+    intervals = sorted(
+        (
+            (float(cue.get("start", 0.0)), float(cue.get("end", 0.0)))
+            for cue in chinese_cues
+            if _clean(str(cue.get("text", "")))
+        ),
+        key=lambda interval: interval[0],
+    )
+    for (_, end), (next_start, _) in zip(intervals, intervals[1:]):
+        if end > next_start + 0.001:
+            return None
+
+    units: list[tuple[list[Token], list[Token]]] = []
+    for low, high in _cue_windows(starts):
+        english_window = [
+            token for token in english if low - 1e-9 <= _midpoint(token) < high - 1e-9
+        ]
+        chinese_window = [
+            token for token in chinese if low - 1e-9 <= _midpoint(token) < high - 1e-9
+        ]
+        if english_window or chinese_window:
+            units.append((english_window, chinese_window))
+    if not units:
+        return None
+
+    units = _coalesce_one_sided(units)
+    if any(not unit_english or not unit_chinese for unit_english, unit_chinese in units):
+        return None
+    # Every translation unit must fit one line in both languages. If one does
+    # not, fall back rather than silently splitting the phrase or wrapping.
+    for unit_english, unit_chinese in units:
+        if len(_english_text(unit_english)) > EN_EVENT_CHARS:
+            return None
+        if len(_chinese_text(unit_chinese)) > ZH_EVENT_CHARS:
+            return None
+    return _merge_units(units)
+
+
 def build_display_events(
     cues: Sequence[dict],
     *,
@@ -624,12 +810,15 @@ def build_display_events(
     # and fall back to the other track only when the master has no English.
     master_english = [token for token in first_tokens if token.language == "en"]
     other_english = [token for token in second_tokens if token.language == "en"]
-    if master_english and (
+    use_master_english = master_english and (
         not other_english or len(master_english) >= len(other_english)
-    ):
+    )
+    if use_master_english:
         english = master_english
+        english_cues = cues
     else:
         english = other_english
+        english_cues = other_cues or cues
     # If the second track contains CJK it is the translated line, so keep all
     # of its tokens there -- including the Latin fragments -- instead of
     # letting those fragments masquerade as the English clock.
@@ -638,9 +827,21 @@ def build_display_events(
             second_tokens,
             [token for token in first_tokens if token.language == "zh"],
         )
+        chinese_cues = other_cues or cues
     else:
         chinese = [token for token in first_tokens if token.language == "zh"]
+        chinese_cues = cues
     english = _monotonic(english)
+
+    if english and chinese:
+        aligned = _cue_aligned_events(
+            english,
+            chinese,
+            chinese_cues=chinese_cues,
+            english_cue_count=len(_cue_starts(english_cues)),
+        )
+        if aligned is not None:
+            return aligned
 
     if english:
         events = segment_timeline(english, max_chars=EN_EVENT_CHARS)

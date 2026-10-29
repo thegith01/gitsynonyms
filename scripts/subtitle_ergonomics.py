@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """Module 2c - subtitle ergonomics office.
 
-The rules follow published broadcast/streaming guidance rather than taste:
+The rules follow published broadcast/streaming guidance adjusted for a
+bilingual burn where Chinese and English are stacked as one line each:
 
 * Netflix English timed text: 20 CPS adult, 17 CPS children, 42 characters
   per line, two lines, minimum 20 frames, maximum 7 seconds, 2-frame gap.
+  This pipeline widens the line to 60 characters so a translated segment can
+  stay on one line at 48 px inside the 5% safe area.
 * Netflix Simplified Chinese: 9 CPS adult, 7 CPS children, 16 characters per
-  line for Originals (23 for automated QC), two lines.
+  line for Originals (23 for automated QC), two lines. Widened to 28
+  characters for the same one-line pairing at 57.6 px.
 * BBC/Ofcom: 160-180 words per minute is the guideline ceiling; above 200 WPM
   is hard to follow.
 * Netflix counts spaces and punctuation toward reading speed; for
@@ -68,11 +72,11 @@ def rules_for(language: str, *, fps: float = 24.0, children: bool = False) -> Er
     chinese = code.startswith("zh") or code in {"cn", "chinese"}
     if chinese:
         max_cps = 7.0 if children else 9.0
-        max_chars = 16
+        max_chars = 28
         label = "zh-Hans"
     else:
         max_cps = 17.0 if children else 20.0
-        max_chars = 42
+        max_chars = 60
         label = "en"
     return ErgonomicsRules(
         language=label,

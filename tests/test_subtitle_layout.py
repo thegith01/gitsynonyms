@@ -4,9 +4,10 @@ The burn regressed repeatedly because the ASS writer measured a whole cue with
 optimistic widths and never inserted hard line breaks. These tests pin the
 layout rules that keep every rendered line inside the 5% safe area:
 
-* Chinese: at most 16 full-width characters per line.
-* English: at most 42 characters per line.
-* Two lines are balanced, and closing punctuation never starts a line.
+* Chinese: at most 28 full-width characters per line.
+* English: at most 60 characters per line.
+* One line per language is the target; the two-line path is only an overflow
+  guard. Closing punctuation never starts a line.
 * The font shrinks before text can leave the frame, but never below the floor.
 """
 
@@ -33,7 +34,7 @@ def _load_youtube_script():
     return module
 
 
-def test_chinese_lines_never_exceed_sixteen_characters():
+def test_chinese_lines_never_exceed_twenty_eight_characters():
     text = "总统在密歇根州的集会上谈到了经济、移民和即将到来的选举"
 
     lines = subtitle_layout.wrap_caption(text, "zh-Hans")
@@ -56,7 +57,7 @@ def test_short_chinese_stays_on_one_line():
 
 
 def test_two_line_chinese_is_balanced_without_dropping_text():
-    text = "这是一句刚好需要分成两行显示的中文字幕内容"
+    text = "我们今晚要说的事情很多，包括经济、边境和能源价格，以及接下来几周的安排。"
 
     lines = subtitle_layout.wrap_caption(text, "zh-Hans")
 
@@ -65,7 +66,7 @@ def test_two_line_chinese_is_balanced_without_dropping_text():
     assert abs(len(lines[0]) - len(lines[1])) <= 6
 
 
-def test_english_wraps_at_word_boundaries_within_42_characters():
+def test_english_wraps_at_word_boundaries_within_sixty_characters():
     text = (
         "The President is speaking tonight about the economy, the border, "
         "and the election that is only a few weeks away."
@@ -88,10 +89,10 @@ def test_english_two_line_split_prefers_balanced_lines():
 
 
 def test_overlong_single_word_is_split_instead_of_overflowing():
-    lines = subtitle_layout.wrap_caption("A" * 50, "en")
+    lines = subtitle_layout.wrap_caption("A" * 70, "en")
 
     assert all(len(line) <= subtitle_layout.EN_MAX_CHARS for line in lines)
-    assert "".join(lines) == "A" * 50
+    assert "".join(lines) == "A" * 70
 
 
 def test_long_text_returns_extra_lines_instead_of_silently_dropping_words():
@@ -123,19 +124,23 @@ def test_fit_font_size_never_goes_below_the_legibility_floor():
     assert size == 28.0
 
 
-def test_generated_ass_wraps_long_chinese_and_uses_automatic_wrap_style():
+def test_generated_ass_keeps_long_chinese_on_one_line_per_event():
     youtube_srt = _load_youtube_script()
-    text = "总统在密歇根州的集会上谈到了经济、移民和即将到来的选举"
+    text = "我们今晚要说的事情很多，包括经济、边境和能源价格，以及接下来几周的安排。"
     cues = youtube_srt.parse_srt(f"1\n00:00:01,000 --> 00:00:04,000\n{text}\n\n")
 
     result = youtube_srt.build_ass(cues, cues)
 
     assert "WrapStyle: 0" in result
-    dialogue = next(line for line in result.splitlines() if ",Chinese," in line)
-    body = re.sub(r"\{[^}]*\}", "", dialogue.split(",,0,0,0,,", 1)[1])
-    rendered = [line for line in body.split(r"\N") if line]
-    assert len(rendered) == 2
-    assert all(len(line) <= subtitle_layout.ZH_MAX_CHARS for line in rendered)
+    dialogues = [line for line in result.splitlines() if ",Chinese," in line]
+    assert dialogues
+    rendered: list[str] = []
+    for dialogue in dialogues:
+        body = re.sub(r"\{[^}]*\}", "", dialogue.split(",,0,0,0,,", 1)[1])
+        lines = [line for line in body.split(r"\N") if line]
+        assert len(lines) == 1
+        assert len(lines[0]) <= subtitle_layout.ZH_MAX_CHARS
+        rendered.append(lines[0])
     assert "".join(rendered) == text
 
 

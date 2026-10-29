@@ -71,13 +71,18 @@ from the repository root. `scripts/` is not an installed package —
 - `CAPTION_AREA = (96, 883, 1824, 1008)` (5% side margins), text anchored with
   `\an2` at `area_bottom - 8`, `WrapStyle: 0`. Do not restore `WrapStyle: 2`;
   that is what let long lines run off the frame.
-- `scripts/subtitle_layout.py` wraps: zh ≤16 full-width chars/line, en ≤42
-  chars/line, ≤2 lines/language, balanced lines, closing punctuation never
-  starts a line, font shrinks before overflow.
+- `scripts/subtitle_layout.py` wraps: zh ≤28 full-width chars/line, en ≤60
+  chars/line. Cue-aligned bilingual events are built to fit exactly one line per
+  language; the two-line budget is only an overflow guard for single-language
+  fallbacks. Closing punctuation never starts a line, and the font shrinks
+  before overflow.
 - `scripts/subtitle_timeline.py` builds one monotonic token timeline and
-  disjoint display events. **Do not re-emit all cues active at each boundary** —
-  that is what duplicated the previous sentence. Every word must render once,
-  and every spoken word must render.
+  disjoint display events. When both tracks are full parallel transcripts,
+  translation cue starts define the display units and each unit carries the
+  English words whose midpoints fall inside it, so every event has both
+  languages and neither line needs wrapping. **Do not re-emit all cues active
+  at each boundary** — that is what duplicated the previous sentence. Every
+  word must render once, and every spoken word must render.
 - English karaoke starts come from `json3` `tStartMs + tOffsetMs` (millisecond
   source). ASS karaoke is centisecond-quantized by the format; `TIMING.json`
   keeps the nanosecond sidecar. Do not evenly distribute when real word timings

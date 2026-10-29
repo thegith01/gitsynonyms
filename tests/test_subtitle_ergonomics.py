@@ -37,9 +37,9 @@ def test_published_limits_are_used():
     children = subtitle_ergonomics.rules_for("en", fps=25, children=True)
 
     assert english.max_cps == 20
-    assert english.max_chars_line == 42
+    assert english.max_chars_line == 60
     assert chinese.max_cps == 9
-    assert chinese.max_chars_line == 16
+    assert chinese.max_chars_line == 28
     assert children.max_cps == 17
     assert english.min_gap == 2 / 25
     assert english.min_duration == 20 / 24
@@ -88,12 +88,12 @@ def test_fast_chinese_text_uses_the_nine_cps_limit():
 
 def test_long_line_reports_the_character_limit():
     result = subtitle_ergonomics.analyze_cues(
-        [cue(1, 5, "a" * 43)], subtitle_ergonomics.rules_for("en")
+        [cue(1, 5, "a" * 61)], subtitle_ergonomics.rules_for("en")
     )
 
     issue = next(item for item in result["issues"] if item["code"] == "line_length")
-    assert issue["measured"] == 43
-    assert issue["limit"] == 42
+    assert issue["measured"] == 61
+    assert issue["limit"] == 60
 
 
 def test_short_duration_gap_overlap_and_line_count_are_reported():

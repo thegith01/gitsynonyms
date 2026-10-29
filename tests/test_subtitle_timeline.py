@@ -349,3 +349,53 @@ def test_karaoke_absolute_starts_follow_vtt_inline_timestamps():
 def _ass_seconds(value: str) -> float:
     hours, minutes, seconds = value.split(":")
     return int(hours) * 3600 + int(minutes) * 60 + float(seconds)
+
+
+C7_ARCHIVE = (
+    ROOT
+    / "output"
+    / "2026-10-28_president-trump-gaggles-with-press-upon-arrival-at-joint-base-andrews-oct-28-2026_C7OR400n_mc"
+)
+
+
+@pytest.fixture(scope="module")
+def c7_events():
+    if not C7_ARCHIVE.exists():
+        pytest.skip("archived C7 bilingual caption pair is not available")
+    english = youtube_srt.parse_json3(
+        (C7_ARCHIVE / "C7OR400n_mc.en.en-orig.json3").read_text(encoding="utf-8")
+    )
+    chinese = youtube_srt.parse_srt(
+        (C7_ARCHIVE / "C7OR400n_mc.zh-Hans.srt").read_text(encoding="utf-8")
+    )
+    return subtitle_timeline.build_display_events(english, other_cues=chinese)
+
+
+def test_cue_alignment_keeps_one_line_in_each_language(c7_events):
+    assert len(c7_events) > 190
+    for english, chinese in c7_events:
+        assert english and chinese
+        english_text = " ".join(token.text for token in english)
+        chinese_text = "".join(token.text for token in chinese)
+        assert ">>" not in english_text and ">>" not in chinese_text
+        assert len(subtitle_layout.wrap_caption(english_text, "en")) == 1
+        assert len(subtitle_layout.wrap_caption(chinese_text, "zh-Hans")) == 1
+        assert len(english_text) <= subtitle_layout.EN_MAX_CHARS
+        assert len(chinese_text) <= subtitle_layout.ZH_MAX_CHARS
+
+
+def test_the_31_second_mark_has_both_languages(c7_events):
+    active = [
+        (english, chinese)
+        for english, chinese in c7_events
+        if min(token.start for token in [*english, *chinese])
+        <= 31.0
+        <= max(token.end for token in [*english, *chinese])
+    ]
+
+    assert active
+    assert all(english and chinese for english, chinese in active)
+    assert any(
+        "exciting" in " ".join(token.text for token in english)
+        for english, _ in active
+    )
