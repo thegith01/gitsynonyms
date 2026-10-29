@@ -14,6 +14,11 @@ on:
       video_id:
         required: true
         type: string
+      source_video_id:
+        description: Force this video id as the source and skip candidate ranking
+        required: false
+        type: string
+        default: ""
       mode:
         required: false
         type: string
@@ -34,6 +39,11 @@ on:
         required: false
         type: string
         default: "veryfast"
+      publish:
+        description: Publish to the GitHub Release and Pages after the filebin backup
+        required: false
+        type: boolean
+        default: true
       asr_model:
         required: false
         type: string
@@ -47,6 +57,10 @@ on:
       video_id:
         required: true
         default: "9aPyO1jfDGM"
+      source_video_id:
+        description: "Force this video id as the source (empty = rank candidates)"
+        required: false
+        default: ""
       mode:
         description: "probe = verify, rank and caption discovery only"
         required: false
@@ -65,6 +79,11 @@ on:
       preset:
         required: false
         default: "veryfast"
+      publish:
+        description: "Publish to the GitHub Release and Pages after the filebin backup"
+        required: false
+        type: boolean
+        default: true
       asr_model:
         required: false
         default: "base"
@@ -85,6 +104,8 @@ jobs:
   pipeline:
     runs-on: ubuntu-latest
     timeout-minutes: 350
+    env:
+      FILEBIN_BIN: "f8l40pcd28jo8bl0"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -121,8 +142,14 @@ jobs:
           VIDEO_ID: ${{ inputs.video_id }}
           TITLE: ${{ inputs.title }}
           PROXY: ${{ secrets.YTDLP_PROXY }}
+          FORCE_SOURCE: ${{ inputs.source_video_id }}
         run: |
           set +e
+          if [ -n "${FORCE_SOURCE:-}" ]; then
+            echo "forced source: $FORCE_SOURCE"
+            echo "chosen=$FORCE_SOURCE" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           python scripts/rank_video_sources.py \
             --title "$TITLE" --video-id "$VIDEO_ID" --proxy "$PROXY" \
             --report work/SOURCES.json
@@ -187,6 +214,18 @@ jobs:
             --video-id "$VIDEO_ID" --output-dir "$caps" \
             --groups "en,zh" --wait 2 --report "$caps/CAPTION_FORMATS.json"
           echo "caption probe exit: $?"
+          if ! find "$caps" -type f -name "${VIDEO_ID}.*.en-orig.json3" | grep -q . || \
+             ! find "$caps" -type f -name "${VIDEO_ID}.zh-Hans.*" | grep -q .; then
+            archived="$(find output -type f -name "${VIDEO_ID}.*.en-orig.json3" \
+              -not -path "$caps/*" -print -quit)"
+            if [ -n "$archived" ]; then
+              archive_dir="$(dirname "$archived")"
+              if find "$archive_dir" -type f -name "${VIDEO_ID}.zh-Hans.*" | grep -q .; then
+                echo "caption fetch incomplete; using archived $archive_dir"
+                echo "dir=$archive_dir" >> "$GITHUB_OUTPUT"
+              fi
+            fi
+          fi
           python - "$caps/CAPTION_FORMATS.json" <<'PY' || true
           import json, sys
           data = json.load(open(sys.argv[1]))
@@ -271,7 +310,7 @@ jobs:
           fi
 
       - name: Cut the web preview and poster
-        if: inputs.mode == 'full'
+        if: inputs.mode == 'full' && inputs.publish
         env:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
         run: |
@@ -304,7 +343,7 @@ jobs:
           done
 
       - name: Publish MP4 to the release
-        if: inputs.mode == 'full'
+        if: inputs.mode == 'full' && inputs.publish
         env:
           GH_TOKEN: ${{ github.token }}
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
@@ -321,11 +360,11 @@ jobs:
           fi
 
       - name: Generate Pages site
-        if: inputs.mode == 'full'
+        if: inputs.mode == 'full' && inputs.publish
         run: python scripts/generate_video_pages.py
 
       - name: Commit archive and site
-        if: inputs.mode == 'full'
+        if: inputs.mode == 'full' && inputs.publish
         env:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
         run: |
