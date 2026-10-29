@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "gitTerm",
+      "type": "promptString",
+      "description": "Git command or alias to look up",
+      "default": "checkout"
+    }
+  ],
+  "tasks": [
+    {
+      "label": "Install gitsynonyms dependencies",
+      "type": "process",
+      "command": "conda",
+      "args": [
+        "run",
+        "-n",
+        "a",
+        "python",
+        "-m",
+        "pip",
+        "install",
+        "-e",
+        "."
+      ],
+      "inAgents": true,
+      "runOptions": {
+        "runOn": "worktreeCreated"
+      }
+    },
+    {
+      "label": "Look up a Git synonym",
+      "type": "process",
+      "command": "conda",
+      "args": [
+        "run",
+        "-n",
+        "a",
+        "python",
+        "-m",
+        "gitsynonyms",
+        "${input:gitTerm}"
+      ],
+      "options": {
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}\\src"
+        }
+      },
+      "inAgents": true
+    },
+    {
+      "label": "List Git command synonyms",
+      "type": "process",
+      "command": "conda",
+      "args": [
+        "run",
+        "-n",
+        "a",
+        "python",
+        "-m",
+        "gitsynonyms",
+        "--list"
+      ],
+      "options": {
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}\\src"
+        }
+      },
+      "inAgents": true
+    }
+  ]
+}
