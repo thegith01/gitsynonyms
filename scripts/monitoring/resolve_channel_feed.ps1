@@ -7,6 +7,20 @@ if ($env:GITHUB_REF -ne "refs/heads/main") {
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "../..")
 $stateFile = Join-Path $repoRoot ".github/state/whitehouse-processed-videos.txt"
 $processed = if (Test-Path $stateFile) { Get-Content $stateFile } else { @() }
+$failureFile = Join-Path $repoRoot ".github/state/whitehouse-failed-videos.txt"
+$failureLimit = 3
+$failures = @{}
+if (Test-Path $failureFile) {
+    foreach ($line in Get-Content $failureFile) {
+        if ([string]::IsNullOrWhiteSpace($line) -or $line -match "^\s*#") { continue }
+        $fields = $line.Trim() -split "\s+", 2
+        if ($fields[0] -notmatch "^[A-Za-z0-9_-]{11}$" -or $fields.Count -lt 2) { continue }
+        $count = 0
+        if ([int]::TryParse($fields[1], [ref]$count)) {
+            $failures[$fields[0]] = $count
+        }
+    }
+}
 $videoId = ""
 $videoTitle = ""
 $channels = @(
@@ -40,6 +54,10 @@ foreach ($channel in $channels) {
           if ($candidate -notmatch "^[A-Za-z0-9_-]{11}$") { continue }
           $foundItems++
           if ($env:FORCE_CHECK -ne "true" -and $processed -contains $candidate) { continue }
+          if ($env:FORCE_CHECK -ne "true" -and $failures.ContainsKey($candidate) -and $failures[$candidate] -ge $failureLimit) {
+              Write-Host "Skipping $candidate after $($failures[$candidate]) failed attempts so newer uploads can proceed."
+              continue
+          }
 
           $videoId = $candidate
           $videoTitle = if ($parts.Count -gt 1 -and $parts[1]) { $parts[1] } else { $videoId }

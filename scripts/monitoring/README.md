@@ -8,18 +8,24 @@ It reads flat channel listings and ignores individual metadata failures during
 discovery, then downloads the selected video's captions and media.
 
 The workflow handles one unprocessed upload per run. It downloads both
-`zh-Hans` and `en-orig` captions, burns the bilingual ASS into an MP4 on the
-GitHub-hosted Windows runner, uploads the MP4 to a GitHub Release named for the
-video ID, generates the archive pages, and deploys the Pages artifact. It
-records an ID only after the deployment succeeds, so failed runs can retry.
+`zh-Hans` and `en-orig` captions, burns the bilingual ASS into a 1080p MP4 on
+the cloud runner, backs the source and deliverables up to filebin, publishes the
+MP4 to a GitHub Release, and lets the Jekyll workflow regenerate the Pages site.
+It records an ID only after the pipeline succeeds, so failed runs can retry.
 The processed ID list is `.github/state/whitehouse-processed-videos.txt`.
 
-YouTube may require authentication from hosted runners. To enable processing,
-add a repository Actions secret named `YOUTUBE_COOKIES_B64` containing the
-Base64-encoded contents of an authorized yt-dlp Netscape cookies file. Without
-the secret, the five-minute scan continues but skips download, burn-in, and
-publishing. When configured, cookies are written only to the runner's temporary
-directory and removed after the processing job.
+Each scan picks the newest unprocessed upload, so one broken video would block
+every later one. The monitor therefore increments
+`.github/state/whitehouse-failed-videos.txt` when the pipeline fails, and the
+resolver skips an ID after three failures so newer uploads can proceed.
+`force_check` and a manual `video_id` run ignore both lists.
+
+YouTube may require authentication from hosted runners. The pipeline uses the
+configured proxy pool (`YTDLP_PROXY` or the discovered public pool) and in
+accordance with `DIRECTIVE.md` never stores YouTube cookies. Captions come from
+YouTube's seven public formats (`json3`, `srv3`, `srv2`, `srv1`, `ttml`, `vtt`,
+`srt`); the ASR path only runs when the caption report proves YouTube publishes
+no English track, not when the caption probe itself failed.
 
 When no `YTDLP_PROXY` secret is set and a direct download cannot complete, the
 monitor falls back to the fastest working public proxy from the proxy index
@@ -27,8 +33,8 @@ monitor falls back to the fastest working public proxy from the proxy index
 first blocked direct egress.
 
 `workflow_dispatch` can reprocess the latest upload with `force_check`, or process a specific video with `video_id` (the resolver then skips the channel listing). The designated single-asset source `yt:9aPyO1jfDGM` is processed this way; it has no caption track, so the subtitle stage fails loudly instead of substituting one. Manual
-runs must target `main` to publish. The workflow requires repository permissions
-to write contents and deploy GitHub Pages.
+runs must target `main` to publish. The workflow requires permissions to write
+contents and to start the reusable pipeline workflow.
 
 `install_workflow.py` copies the tracked workflow template into
 `.github/workflows/`; the template and installed workflow should be kept in sync.
