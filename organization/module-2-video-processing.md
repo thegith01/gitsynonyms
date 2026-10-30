@@ -125,6 +125,31 @@
 - 机器翻译或 ASR 产物必须标注 `machine-translated` / `asr`、引擎名与生成时间。
 - 同一语种存在多个候选时，取分数最高者；分数相同取时间轴精度更高者。
 
+## 案例记录：钦定素材的 720p 例外与字幕取用（2026-10-29）
+
+**素材**：`yt:lJYmGObStag`（FOX 10 Phoenix，President Trump delivers remarks at rally in
+Chillicothe, OH，事件日期 2026-10-28）。
+
+**720p 例外**
+
+- 该条在 YouTube 侧最高只发布 720p，无法满足 `DIRECTIVE.md` 3.6 的 1080p 下限。
+- 总控于 2026-10-29 批准本次按 720p 刻录，属**一次性例外、下不为例**。
+- 例外只作用于本条素材：`download_source_video.py` 的默认 `--min-height` 仍为 1080，
+  验收线不放宽；降级须在交付声明（`SOURCE_DECLARATION.json`）与提交说明中显式记录，
+  隐瞒降级仍按 P0 处置。
+- 本例同时暴露并修复了下载器缺陷：代理分支原先只请求 `formats[0]`（1080p），
+  遇到 `Requested format is not available` 就丢弃仍可用的代理；修复后代理同样走
+  `1080p → 720p → 任意` 的格式链。
+
+**字幕取用顺序（本例实走路径）**
+
+1. `en-orig` 取 YouTube 原始轨七格式：`json3`、`srv3`、`srv2`、`srv1`、`ttml`、`vtt`、`srt`；
+   逐词时间以 `json3` 为准，其余格式交叉校验。
+2. `zh-Hans` 取 YouTube 官方默认自动翻译轨，与英文轨一起交给
+   `subtitle_timing.build_precise_ass` 生成精确 ASS。
+3. 仅当第 1、2 步确实缺失时，才按 3.7 外扩到官方文字稿 / ASR / 机器翻译，并标注
+   来源类型、引擎与生成时间。
+
 ## 交接验收
 
 处理任务完成时，至少应交付最终 MP4、ASS、`BURN.json`、`TIMING.json` 和质检结果；
