@@ -180,6 +180,13 @@ jobs:
           echo "chosen=$chosen" >> "$GITHUB_OUTPUT"
           echo "chosen source: $chosen"
 
+      - name: Restore the tiered proxy pool
+        uses: actions/cache/restore@v4
+        with:
+          path: proxyindex/pool
+          key: proxy-tier3-${{ github.run_id }}
+          restore-keys: proxy-tier3-
+
       - name: Download the selected source (direct, then the proxy pool)
         id: source
         if: inputs.mode != 'probe'
@@ -202,23 +209,15 @@ jobs:
           echo "file=$file" >> "$GITHUB_OUTPUT"
           ls -lh "$file"
 
-      - name: Reuse the working proxy for caption requests
+      - name: Validate a working proxy for caption requests
         if: inputs.mode != 'probe'
+        continue-on-error: true
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
         run: |
-          python - <<'PY' >> "$GITHUB_ENV"
-          import json
-          from pathlib import Path
-          report = Path("work/download-report.json")
-          proxy = ""
-          if report.is_file():
-              data = json.loads(report.read_text(encoding="utf-8"))
-              for attempt in data.get("attempts", []):
-                  if attempt.get("ok") and attempt.get("proxy"):
-                      proxy = attempt["proxy"]
-                      break
-          if proxy:
-              print(f"YTDLP_PROXY={proxy}")
-          PY
+          python scripts/select_working_proxy.py \
+            --video-id "$VIDEO_ID" --report work/download-report.json \
+            --candidates 60 --verify 8 || true
 
       - name: Back up the downloaded source to the bin
         if: inputs.mode != 'probe'

@@ -1,0 +1,189 @@
+name: Proxy pool tiers
+
+# Three independent cadences, matching the three pool tiers:
+#   tier 1  every 6 hours   collect up to 1,000,000 proxies and keep TCP-open
+#   tier 2  every 30 minutes probe tier 1 through YouTube and keep 10,000
+#   tier 3  every 15 minutes run a real yt-dlp download and keep 1,000
+#
+# The pool lives in the Actions cache, not in git: only the small committed
+# ``proxyindex/alive_http.txt`` remains as the bootstrap fallback.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+    - cron: "*/30 * * * *"
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      tier:
+        description: "Which tier to rebuild"
+        required: true
+        type: choice
+        options: ["3", "2", "1", "all"]
+        default: "3"
+
+permissions:
+  contents: read
+
+jobs:
+  tier1:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && (inputs.tier == '1' || inputs.tier == 'all')) ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 */6 * * *')
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    concurrency:
+      group: proxy-pool-tier1
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Raise socket limits for the wide scan
+        run: |
+          sudo sysctl -w net.ipv4.ip_local_port_range="10240 65535"
+          sudo sysctl -w net.ipv4.tcp_tw_reuse=1
+
+      - name: Collect the wide pool
+        run: |
+          ulimit -n 65535
+          python proxyindex/tiered_pool.py collect \
+            --limit 1000000 --workers 96 --timeout 12
+
+      - name: Keep the TCP-reachable candidates
+        run: |
+          ulimit -n 65535
+          python proxyindex/tiered_pool.py screen \
+            --limit 250000 --concurrency 800 --timeout 2.5
+
+      - name: Report the tier
+        run: python proxyindex/tiered_pool.py status
+
+      - uses: actions/cache/save@v4
+        if: success()
+        with:
+          path: proxyindex/pool/tier1
+          key: proxy-tier1-${{ github.run_id }}
+
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: proxy-tier1-${{ github.run_id }}
+          path: |
+            proxyindex/pool/tier1/tier1_stats.json
+            proxyindex/pool/tier1/tier1_screen.json
+          retention-days: 14
+
+  tier2:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && (inputs.tier == '2' || inputs.tier == 'all')) ||
+      (github.event_name == 'schedule' && github.event.schedule == '*/30 * * * *')
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency:
+      group: proxy-pool-tier2
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore tier 1
+        uses: actions/cache/restore@v4
+        with:
+          path: proxyindex/pool/tier1
+          key: proxy-tier1-${{ github.run_id }}
+          restore-keys: proxy-tier1-
+
+      - name: Restore tier 2
+        uses: actions/cache/restore@v4
+        with:
+          path: proxyindex/pool/tier2
+          key: proxy-tier2-${{ github.run_id }}
+          restore-keys: proxy-tier2-
+
+      - name: Screen the fastest HTTPS proxies
+        run: |
+          python proxyindex/tiered_pool.py speed \
+            --batch 4000 --target 10000 --max-age 10800 \
+            --concurrency 128 --timeout 5
+
+      - name: Report the tier
+        run: python proxyindex/tiered_pool.py status
+
+      - uses: actions/cache/save@v4
+        if: success()
+        with:
+          path: proxyindex/pool/tier2
+          key: proxy-tier2-${{ github.run_id }}
+
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: proxy-tier2-${{ github.run_id }}
+          path: |
+            proxyindex/pool/tier2/tier2_fast.txt
+            proxyindex/pool/tier2/tier2_stats.json
+          retention-days: 14
+
+  tier3:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && (inputs.tier == '3' || inputs.tier == 'all')) ||
+      (github.event_name == 'schedule' && github.event.schedule == '*/15 * * * *')
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency:
+      group: proxy-pool-tier3
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install yt-dlp
+        run: python -m pip install --disable-pip-version-check yt-dlp
+
+      - name: Restore tier 2
+        uses: actions/cache/restore@v4
+        with:
+          path: proxyindex/pool/tier2
+          key: proxy-tier2-${{ github.run_id }}
+          restore-keys: proxy-tier2-
+
+      - name: Restore tier 3
+        uses: actions/cache/restore@v4
+        with:
+          path: proxyindex/pool/tier3
+          key: proxy-tier3-${{ github.run_id }}
+          restore-keys: proxy-tier3-
+
+      - name: Run the real download test
+        run: |
+          python proxyindex/tiered_pool.py ready \
+            --batch 900 --target 1000 --max-age 7200 \
+            --concurrency 64 --timeout 30
+
+      - name: Report the tier
+        run: python proxyindex/tiered_pool.py status
+
+      - uses: actions/cache/save@v4
+        if: success()
+        with:
+          path: proxyindex/pool/tier3
+          key: proxy-tier3-${{ github.run_id }}
+
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: proxy-tier3-${{ github.run_id }}
+          path: |
+            proxyindex/pool/tier3/tier3_ready.txt
+            proxyindex/pool/tier3/tier3_stats.json
+          retention-days: 14

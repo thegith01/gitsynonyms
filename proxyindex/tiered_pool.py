@@ -226,6 +226,7 @@ def collect_sources(limit: int, workers: int, timeout: float) -> dict:
                 )
 
     unique = dedupe(raw, TIER1_RAW, limit)
+    raw.unlink(missing_ok=True)
     stats = {
         "generated_at": int(time.time()),
         "sources": len(urls),

@@ -91,6 +91,35 @@ def test_load_pool_returns_empty_list_when_pool_is_missing(tmp_path):
     assert proxy_selector.load_pool(tmp_path / "missing.txt") == []
 
 
+def test_load_pool_prefers_tier3_then_tier2(tmp_path, monkeypatch):
+    tier2 = tmp_path / "tier2_fast.txt"
+    tier3 = tmp_path / "tier3_ready.txt"
+    fallback = tmp_path / "alive_http.txt"
+    tier2.write_text("203.0.113.2:8080\n", encoding="utf-8")
+    tier3.write_text("203.0.113.3:8080\n", encoding="utf-8")
+    fallback.write_text("203.0.113.9:8080\n", encoding="utf-8")
+    monkeypatch.setattr(
+        proxy_selector, "POOL_CANDIDATES", (tier3, tier2, fallback)
+    )
+    monkeypatch.delenv("PROXY_POOL_FILE", raising=False)
+
+    assert proxy_selector.load_pool() == ["http://203.0.113.3:8080"]
+
+    tier3.unlink()
+    assert proxy_selector.load_pool() == ["http://203.0.113.2:8080"]
+
+    tier2.unlink()
+    assert proxy_selector.load_pool() == ["http://203.0.113.9:8080"]
+
+
+def test_load_pool_honours_the_explicit_override(tmp_path, monkeypatch):
+    explicit = tmp_path / "explicit.txt"
+    explicit.write_text("203.0.113.7:8080\n", encoding="utf-8")
+    monkeypatch.setenv("PROXY_POOL_FILE", str(explicit))
+
+    assert proxy_selector.load_pool() == ["http://203.0.113.7:8080"]
+
+
 def test_select_fastest_working_returns_the_fastest_candidate():
     candidates = [
         "http://203.0.113.1:80",

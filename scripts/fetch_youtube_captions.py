@@ -120,6 +120,82 @@ def rename_to_canonical(files: list[Path], video_id: str, code: str, canonical: 
     return renamed
 
 
+def write_report(
+    path: Path,
+    video_id: str,
+    tracks: dict,
+    *,
+    error: str = "",
+    required: list[str] | None = None,
+) -> None:
+    report: dict = {
+        "video_id": video_id,
+        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        "source": "youtube",
+        "tracks": tracks,
+        "available_languages": [],
+    }
+    if error:
+        report["error"] = error
+    if required:
+        report["required"] = required
+        report["missing"] = [
+            code for code in required if not tracks.get(code, {}).get("present")
+        ]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def fetch_listing(url: str, video_id: str, report_path: Path) -> dict:
+    """Fetch the player metadata, re-selecting the proxy when the first one dies.
+
+    A free proxy that carried the source download can be gone minutes later;
+    the caption stage must not inherit that failure.  The fallback uses the
+    same yt-dlp request, so a proxy is only accepted when YouTube actually
+    serves this video through it.
+    """
+    errors: list[str] = []
+    try:
+        listing = captions.run_ytdlp(["-J", "--skip-download", url], show_progress=False)
+        return json.loads(listing.stdout)
+    except Exception as error:  # noqa: BLE001 - retry with another proxy
+        errors.append(str(error))
+
+    try:
+        import select_working_proxy as picker  # noqa: E402 - sibling helper
+
+        selected = picker.pick(
+            video_id,
+            Path("work/download-report.json"),
+            candidates=40,
+            verify=6,
+            timeout=45.0,
+        )
+    except Exception as error:  # noqa: BLE001 - the retry must never mask the cause
+        errors.append(f"proxy re-selection failed: {error}")
+        selected = None
+    if selected:
+        os.environ["YTDLP_PROXY"] = selected[0]
+        log(f"listing retry through {selected[0]} ({selected[1]})")
+        try:
+            listing = captions.run_ytdlp(["-J", "--skip-download", url], show_progress=False)
+            return json.loads(listing.stdout)
+        except Exception as error:  # noqa: BLE001 - report the combined failure
+            errors.append(str(error))
+
+    message = " | ".join(errors) or "no listing"
+    write_report(
+        report_path,
+        video_id,
+        {
+            "en-orig": {"present": False, "formats": [], "error": message},
+            "zh-Hans": {"present": False, "formats": [], "error": message},
+        },
+        error=message,
+    )
+    raise RuntimeError(f"could not read the YouTube caption listing: {message}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Download all published YouTube caption formats")
     parser.add_argument("--video-id", required=True)
@@ -133,9 +209,9 @@ def main() -> int:
     url = f"https://www.youtube.com/watch?v={args.video_id}"
     directory = Path(args.output_dir)
     directory.mkdir(parents=True, exist_ok=True)
+    target = Path(args.report) if args.report else directory / "CAPTION_FORMATS.json"
 
-    listing = captions.run_ytdlp(["-J", "--skip-download", url], show_progress=False)
-    metadata = json.loads(listing.stdout)
+    metadata = fetch_listing(url, args.video_id, target)
     log(f"listing: {len(metadata.get('subtitles') or {})} manual, "
         f"{len(metadata.get('automatic_captions') or {})} automatic tracks")
 

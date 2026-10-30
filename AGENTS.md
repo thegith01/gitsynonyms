@@ -119,6 +119,15 @@ gh workflow run republish-site.yml
 gh run view <run-id> --log
 ```
 
+- `proxy-pool.yml` keeps the three-tier public proxy pool: tier 1 collects up
+  to 1,000,000 proxies every 6 hours, tier 2 keeps the 10,000 fastest
+  HTTPS-capable proxies every 30 minutes, tier 3 keeps the 1,000 proxies that
+  passed a real `yt-dlp` extraction plus ranged download every 15 minutes.
+  `auto-pipeline.yml` restores the tier-3 cache before downloading, so a
+  blocked run starts from verified proxies instead of the stale committed
+  `proxyindex/alive_http.txt`. Run one tier manually with
+  `gh workflow run proxy-pool.yml -f tier=3`.
+
 - `monitor-whitehouse.yml` runs every 5 minutes. Use
   `gh workflow disable monitor-whitehouse.yml` / `enable` around manual runs.
 - `auto-pipeline.yml` is the full chain (probe/test/full); it is also callable

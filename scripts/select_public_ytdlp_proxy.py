@@ -170,8 +170,22 @@ def public_proxy_candidates() -> list[str]:
     return [proxy for proxies in proxy_lists.values() for proxy in proxies]
 
 
-def load_pool(path: Path = PROXY_INDEX_POOL) -> list[str]:
-    """Read the deduplicated proxy pool written by the proxyindex validator."""
+def load_pool(path: Path | None = None) -> list[str]:
+    """Read the freshest available proxy pool.
+
+    ``path`` wins when given (tests and explicit callers).  Otherwise the
+    ``PROXY_POOL_FILE`` override, then the tier-3 pool, the tier-2 pool and
+    finally the committed ``alive_http.txt`` fallback.
+    """
+    if path is None:
+        override = os.environ.get("PROXY_POOL_FILE")
+        if override:
+            path = Path(override)
+        else:
+            path = next(
+                (candidate for candidate in POOL_CANDIDATES if candidate.is_file()),
+                PROXY_INDEX_POOL,
+            )
     if not path.exists():
         return []
     proxies: list[str] = []
