@@ -29,7 +29,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import select_public_ytdlp_proxy as selector  # noqa: E402
 
-CLIENT_CHAIN = ["tv_embedded", "android_vr", "default"]
+CLIENT_CHAIN = ["tv_embedded", "android_vr", "web_safari", "mweb", "default"]
+
+# Live replays are often capped per client: tv_embedded may expose only 720p
+# while web_safari/android_vr expose 1080p.  The proxy phase must therefore
+# try every client and every quality tier, not just the first 1080p selector.
+PROXY_CLIENTS = ["tv_embedded", "android_vr", "web_safari", "default"]
 
 FORMAT_CHAIN = [
     "bv*[height>=1080]+ba/b[height>=1080]",
@@ -147,15 +152,21 @@ def main() -> int:
     if not finished:
         candidates = candidate_proxies(args.proxy_limit)
         alive = probe(candidates) if candidates else []
-        for proxy, latency in alive[:args.proxy_tries]:
-            for client in ("tv_embedded", "default"):
-                ok, note = try_download(url, target, formats[0], proxy, args.timeout, cookies, client)
-                attempts.append({"mode": "proxy", "proxy": proxy, "client": client,
-                                 "latency": round(latency, 3), "format": formats[0],
-                                 "ok": ok, "note": note})
-                log(f"  {note}")
-                if ok:
-                    finished = True
+        # Quality first, then transport: keep the highest tier across every
+        # proxy/client before degrading, so a single 720p-only client cannot
+        # mask a 1080p-capable proxy.
+        for fmt in formats:
+            for proxy, latency in alive[:args.proxy_tries]:
+                for client in PROXY_CLIENTS:
+                    ok, note = try_download(url, target, fmt, proxy, args.timeout, cookies, client)
+                    attempts.append({"mode": "proxy", "proxy": proxy, "client": client,
+                                     "latency": round(latency, 3), "format": fmt,
+                                     "ok": ok, "note": note})
+                    log(f"  {note}")
+                    if ok:
+                        finished = True
+                        break
+                if finished:
                     break
             if finished:
                 break

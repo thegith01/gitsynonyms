@@ -245,13 +245,13 @@ jobs:
             --video-id "$VIDEO_ID" --output-dir "$caps" \
             --groups "en,zh" --wait 2 --report "$caps/CAPTION_FORMATS.json"
           echo "caption probe exit: $?"
-          if ! find "$caps" -type f -name "${VIDEO_ID}.*.en-orig.json3" | grep -q . || \
-             ! find "$caps" -type f -name "${VIDEO_ID}.zh-Hans.*" | grep -q .; then
-            archived="$(find output -type f -name "${VIDEO_ID}.*.en-orig.json3" \
+          if ! find "$caps" -type f -name "${VIDEO_ID}*.en-orig.json3" | grep -q . || \
+             ! find "$caps" -type f -name "${VIDEO_ID}*.zh-Hans.*" | grep -q .; then
+            archived="$(find output -type f -name "${VIDEO_ID}*.en-orig.json3" \
               -not -path "$caps/*" -print -quit)"
             if [ -n "$archived" ]; then
               archive_dir="$(dirname "$archived")"
-              if find "$archive_dir" -type f -name "${VIDEO_ID}.zh-Hans.*" | grep -q .; then
+              if find "$archive_dir" -type f -name "${VIDEO_ID}*.zh-Hans.*" | grep -q .; then
                 echo "caption fetch incomplete; using archived $archive_dir"
                 echo "dir=$archive_dir" >> "$GITHUB_OUTPUT"
               fi
@@ -282,7 +282,7 @@ jobs:
             CAPS="output/auto_${VIDEO_ID}"
             mkdir -p "$CAPS"
           fi
-          if find "$CAPS" -name "${VIDEO_ID}.*.en-orig.*" | grep -q .; then
+          if find "$CAPS" -name "${VIDEO_ID}*.en-orig.*" | grep -q .; then
             echo "YouTube English captions present; skipping ASR"
           elif [ -n "${ASSEMBLYAI:-}" ]; then
             echo "no YouTube English track; transcribing with AssemblyAI"
@@ -305,7 +305,7 @@ jobs:
         run: |
           set -euo pipefail
           caps="${CAPS:-${{ steps.captions.outputs.dir }}}"
-          if find "$caps" -name "${VIDEO_ID}.*.zh-Hans.*" | grep -q .; then
+          if find "$caps" -name "${VIDEO_ID}*.zh-Hans.*" | grep -q .; then
             echo "YouTube Chinese captions present; skipping translation"
           else
             engine=argos

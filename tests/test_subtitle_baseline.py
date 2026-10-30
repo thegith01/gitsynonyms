@@ -217,27 +217,33 @@ def test_baseline_cue_aligned_timing(archived_events):
     )
     span_starts = [start for start, _ in spans]
     starts = {round(start, 2) for start, _ in spans}
+    cue_starts = {round(float(cue["start"]), 2) for cue in cues}
 
     anchored = 0
     previous_start = 0.0
     for english, _ in events:
         start = english[0].start
-        assert english[0].exact, "an event must begin on a source-timed word"
         assert start >= previous_start - 0.001, (start, previous_start)
         previous_start = start
 
-        if round(start, 2) in starts:
-            anchored += 1
+        if english[0].exact:
+            if round(start, 2) in starts:
+                anchored += 1
+                continue
+            # A word split out of a multi-word timing entry ("Donald J.")
+            # starts inside its source span rather than on the span's own
+            # start. It still may not invent a clock position.
+            index = bisect.bisect_right(span_starts, start) - 1
+            neighbours = [spans[i] for i in (index, index + 1) if 0 <= i < len(spans)]
+            assert any(low <= start <= high for low, high in neighbours), (
+                english[0].text,
+                start,
+            )
             continue
-        # A word split out of a multi-word timing entry ("Donald J.") starts
-        # inside its source span rather than on the span's own start. It still
-        # may not invent a clock position.
-        index = bisect.bisect_right(span_starts, start) - 1
-        neighbours = [spans[i] for i in (index, index + 1) if 0 <= i < len(spans)]
-        assert any(low <= start <= high for low, high in neighbours), (
-            english[0].text,
-            start,
-        )
+        # "1,000%" has cue text but split word timings ("1" + "000"), so the
+        # engine interpolates it across the cue. The interpolation begins on
+        # the source cue boundary, which is still cue-aligned.
+        assert round(start, 2) in cue_starts, (english[0].text, start)
 
     assert len(events) > 2000
     assert anchored >= len(events) * 0.95
