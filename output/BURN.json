@@ -1,0 +1,353 @@
+{
+  "module": "module2-video-processing",
+  "version": "1.0",
+  "status": "burned",
+  "created_at": "2026-10-30T06:21:57Z",
+  "selection": {
+    "video_id": "jikmROaDmLU",
+    "title": "President Trump Gaggles with Press Upon Arrival at Joint Base Andrews, Oct. 29, 2026",
+    "event_date": "",
+    "manifest": null
+  },
+  "inputs": {
+    "video": {
+      "path": "/home/runner/work/gitsynonyms/gitsynonyms/work/jikmROaDmLU.source.mp4",
+      "size_bytes": 53460313,
+      "sha256": "f505b13720abc4bc9f3843b52cfcd2f4c4126cca76781f6356a1d2b1a351ad11",
+      "modified_at": "2026-10-30T06:19:53Z"
+    },
+    "subtitle": {
+      "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",
+      "size_bytes": 17053,
+      "sha256": "0162796ebb6eac044d28a9b4c3eb8c6505a7dd701365d2c62b45b6043e16009a",
+      "modified_at": "2026-10-30T06:22:14Z"
+    },
+    "captions": [
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.json3",
+        "size_bytes": 49664,
+        "sha256": "e229425f8e870a32fec574cb0c03a864e6e3f0572b476a0816b178974b72cb23",
+        "modified_at": "2026-10-30T06:21:42Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.srt",
+        "size_bytes": 4779,
+        "sha256": "fb9cf352984c5a0c4857f5a34fa2d09de5771aa760043257dd2bdc7b682eaba7",
+        "modified_at": "2026-10-30T06:21:14Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.srv1",
+        "size_bytes": 5642,
+        "sha256": "988f2cffa3765ae0b8c17b74f34edf6bdcd47dcfc2d18a9a958b470888da76a2",
+        "modified_at": "2026-10-30T06:21:36Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.srv2",
+        "size_bytes": 28920,
+        "sha256": "433c2fde76798ece0c337c9f33fbca55c6fba27fef38f471de16580c9c20ac97",
+        "modified_at": "2026-10-30T06:21:31Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.srv3",
+        "size_bytes": 17531,
+        "sha256": "825ad79f68f67ca6b06e824762c1baa60f9568e3708d2f7dd7a2edc70c008fba",
+        "modified_at": "2026-10-30T06:21:25Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.ttml",
+        "size_bytes": 7339,
+        "sha256": "bb51a488f07dcc4ccbdc4c6cdeaf4eecf9287aa0971fcd4bcb4d1d858188555c",
+        "modified_at": "2026-10-30T06:21:20Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.vtt",
+        "size_bytes": 23300,
+        "sha256": "b921dae5c44856019e8ceec08586ff39a34016829351d643b4a701c59e4d5e99",
+        "modified_at": "2026-10-30T06:21:08Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.zh-Hans.vtt",
+        "size_bytes": 24706,
+        "sha256": "b03b2a759f7a9e024ac64708e4ef1d82586ad1107bf5b6df550b9dff4413ee37",
+        "modified_at": "2026-10-30T06:21:57Z"
+      }
+    ]
+  },
+  "video": {
+    "duration_seconds": 140.601,
+    "size_bytes": 53460313,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "video": {
+      "codec": "vp9",
+      "width": 1920,
+      "height": 1080,
+      "frame_rate": "4213000/140573",
+      "pixel_format": "yuv420p"
+    },
+    "audio": {
+      "codec": "opus",
+      "channels": 2,
+      "sample_rate": 48000
+    }
+  },
+  "subtitles": {
+    "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",
+    "format": "ass",
+    "size_bytes": 17053,
+    "sha256": "0162796ebb6eac044d28a9b4c3eb8c6505a7dd701365d2c62b45b6043e16009a",
+    "cues": 59,
+    "drawing_cues": 0,
+    "first_cue_seconds": 1.36,
+    "last_cue_seconds": 142.52,
+    "caption_coverage_seconds": 136.921,
+    "caption_coverage_percent": 97.4,
+    "overrun_seconds": 1.919,
+    "fonts": [
+      "Microsoft YaHei",
+      "Arial"
+    ]
+  },
+  "fonts": {
+    "checked": true,
+    "fonts": [
+      {
+        "requested": "Microsoft YaHei",
+        "resolved": "DejaVu Sans",
+        "exact": false
+      },
+      {
+        "requested": "Arial",
+        "resolved": "Liberation Sans",
+        "exact": false
+      }
+    ]
+  },
+  "captions": {
+    "mode": "fused",
+    "languages": [
+      "zh-Hans",
+      "en-orig"
+    ],
+    "box": {
+      "mode": "none",
+      "detected": false,
+      "source": "auto",
+      "metrics": {
+        "detected": false,
+        "score": 0.0,
+        "samples": 120,
+        "caption": {
+          "static_edge_ratio": 0.0,
+          "edge_density": 0.0,
+          "static_ratio": 0.260114
+        },
+        "control": {
+          "static_edge_ratio": 0.0,
+          "edge_density": 0.0,
+          "static_ratio": 0.211217
+        },
+        "thresholds": {
+          "static_std": 18,
+          "edge_gradient": 44,
+          "min_static_edge_ratio": 0.012,
+          "control_factor": 1.5
+        },
+        "sampled_region": {
+          "width": 448,
+          "height": 64,
+          "caption_rows": [
+            32,
+            64
+          ],
+          "control_rows": [
+            0,
+            32
+          ]
+        },
+        "caption_area": {
+          "left": 96,
+          "top": 882,
+          "width": 1728,
+          "height": 126
+        }
+      }
+    },
+    "ass": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",
+    "timing_report": "/home/runner/work/gitsynonyms/gitsynonyms/output/TIMING.json",
+    "precision_vtt": {
+      "zh-Hans": {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.zh-Hans.precision.vtt",
+        "language": "zh-Hans",
+        "format": "WebVTT",
+        "resolution": "1 ms",
+        "cues": 137,
+        "size_bytes": 11482,
+        "sha256": "d8382e3773a6b142ee2bc86569580b186b557c1c626f815d5ffebbda8fff3d07",
+        "modified_at": "2026-10-30T06:22:14Z"
+      },
+      "en-orig": {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.en-orig.precision.vtt",
+        "language": "en-orig",
+        "format": "WebVTT",
+        "resolution": "1 ms",
+        "cues": 70,
+        "size_bytes": 4585,
+        "sha256": "26037235d51284b8b9106d75e6346777a8c11166b894e76d257c5ae5fe14097b",
+        "modified_at": "2026-10-30T06:22:14Z"
+      }
+    },
+    "statistics": {
+      "timebase": "nanosecond",
+      "ass_resolution": "centisecond",
+      "ass_max_quantization_error_ms": 5.0,
+      "measured_max_quantization_error_ms": 5.0,
+      "measured_mean_quantization_error_ms": 0.815351,
+      "timestamps": 2141,
+      "word_timings": 1727,
+      "source_resolution": [
+        "1 ms",
+        "10 ms"
+      ]
+    },
+    "tracks": {
+      "zh-Hans": {
+        "formats_used": [
+          "vtt"
+        ],
+        "primary_format": "vtt",
+        "cue_count": 137,
+        "conflicts": 0,
+        "source_files": {
+          "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.zh-Hans.vtt"
+        }
+      },
+      "en-orig": {
+        "formats_used": [
+          "json3",
+          "srv3",
+          "srv2",
+          "srv1",
+          "vtt",
+          "ttml",
+          "srt"
+        ],
+        "primary_format": "json3",
+        "cue_count": 70,
+        "conflicts": 50,
+        "source_files": {
+          "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.json3",
+          "srv3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.srv3",
+          "srv2": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.srv2",
+          "srv1": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.srv1",
+          "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.vtt",
+          "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.ttml",
+          "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_jikmROaDmLU/jikmROaDmLU.en.en-orig.srt"
+        }
+      }
+    }
+  },
+  "timing": {
+    "timebase": "nanosecond",
+    "ass_resolution": "centisecond",
+    "ass_max_quantization_error_ms": 5.0,
+    "measured_max_quantization_error_ms": 5.0,
+    "measured_mean_quantization_error_ms": 0.815351,
+    "timestamps": 2141,
+    "word_timings": 1727,
+    "source_resolution": [
+      "1 ms",
+      "10 ms"
+    ]
+  },
+  "ergonomics": {
+    "report": "/home/runner/work/gitsynonyms/gitsynonyms/output/ERGONOMICS.json",
+    "mode": "warn",
+    "fps": 29.97,
+    "children": false,
+    "summary": {
+      "cues": 59,
+      "max_cps": 28.0,
+      "p95_cps": 23.78,
+      "mean_cps": 11.98,
+      "violations": 82,
+      "errors": 5,
+      "warnings": 77,
+      "by_code": {
+        "reading_speed": 24,
+        "gap_short": 58
+      }
+    },
+    "rules": {
+      "language": "en",
+      "max_cps": 20.0,
+      "max_chars_line": 60,
+      "max_lines": 2,
+      "min_duration": 0.833,
+      "max_duration": 7.0,
+      "min_gap": 0.067,
+      "children": false,
+      "fps": 29.9701934226345
+    }
+  },
+  "render": {
+    "missing_glyphs": 1
+  },
+  "burn": {
+    "tool": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "encoder": "libx264",
+    "quality": 30,
+    "preset": "veryfast",
+    "audio": "aac",
+    "command": [
+      "/usr/bin/ffmpeg",
+      "-hide_banner",
+      "-y",
+      "-i",
+      "/home/runner/work/gitsynonyms/gitsynonyms/work/jikmROaDmLU.source.mp4",
+      "-vf",
+      "subtitles=filename='/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass'",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "veryfast",
+      "-crf",
+      "30",
+      "-pix_fmt",
+      "yuv420p",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "192k",
+      "-movflags",
+      "+faststart",
+      "/home/runner/work/gitsynonyms/gitsynonyms/output/.Burned_Bilingual_jikmROaDmLU.part.mp4"
+    ],
+    "output": "/home/runner/work/gitsynonyms/gitsynonyms/output/Burned_Bilingual_jikmROaDmLU.mp4"
+  },
+  "outputs": {
+    "video": {
+      "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/Burned_Bilingual_jikmROaDmLU.mp4",
+      "size_bytes": 15779595,
+      "sha256": "76dacf2855dc80f56fcc669c52e0c3b83b3c12fcb4cc307598feb67c520f238a",
+      "modified_at": "2026-10-30T06:23:53Z",
+      "duration_seconds": 140.601,
+      "width": 1920,
+      "height": 1080,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "rendered": true
+    }
+  },
+  "warnings": [
+    "Subtitle ergonomics: 5 errors and 77 warnings; see ERGONOMICS.json.",
+    "The subtitle runs 1.919 s past the end of the 140.601 s video.",
+    "Font 'Microsoft YaHei' resolves to 'DejaVu Sans'; the render uses the substituted family.",
+    "Font 'Arial' resolves to 'Liberation Sans'; the render uses the substituted family.",
+    "Using font provider fontconfig",
+    "fontselect: (Microsoft YaHei, 700, 0) -> /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf, 0, DejaVuSans-Bold",
+    "fontselect: (Arial, 400, 0) -> /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf, 0, LiberationSans",
+    "fontselect: (Microsoft YaHei, 700, 0) -> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc, 0, WenQuanYiZenHei",
+    "Rendering could not find glyphs for 1 characters; the fonts named by the ASS file are missing on this machine, so that text is not drawn."
+  ],
+  "finished_at": "2026-10-30T06:23:53Z"
+}

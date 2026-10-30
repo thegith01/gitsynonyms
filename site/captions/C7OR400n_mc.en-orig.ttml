@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:02.000" end="00:00:05.120" style="s2">Mr. President,</p>
+<p begin="00:00:03.040" end="00:00:07.680" style="s2">&gt;&gt; hello everybody. So,</p>
+<p begin="00:00:05.120" end="00:00:11.360" style="s2">&gt;&gt; we had a tremendous day in Texas. We had</p>
+<p begin="00:00:07.680" end="00:00:13.440" style="s2">two big rallies. They were packed. They</p>
+<p begin="00:00:11.360" end="00:00:15.040" style="s2">had people watching outside the screens.</p>
+<p begin="00:00:13.440" end="00:00:17.760" style="s2">We put up the big screens, the</p>
+<p begin="00:00:15.040" end="00:00:20.480" style="s2">jumbotrons or whatever they call, but</p>
+<p begin="00:00:17.760" end="00:00:22.800" style="s2">they were big packed rallies and people</p>
+<p begin="00:00:20.480" end="00:00:24.800" style="s2">haven&#39;t really seen anything like it.</p>
+<p begin="00:00:22.800" end="00:00:27.039" style="s2">And it&#39;s very exciting. I think we&#39;ve</p>
+<p begin="00:00:24.800" end="00:00:28.720" style="s2">made a big impact. We&#39;ll see what</p>
+<p begin="00:00:27.039" end="00:00:31.279" style="s2">happens on Tuesday. But I think we&#39;ve</p>
+<p begin="00:00:28.720" end="00:00:32.880" style="s2">made a big impact. It&#39;s very exciting</p>
+<p begin="00:00:31.279" end="00:00:35.360" style="s2">what&#39;s going on. I&#39;m going to be going</p>
+<p begin="00:00:32.880" end="00:00:38.079" style="s2">to Ohio. I&#39;ll be going to South</p>
+<p begin="00:00:35.360" end="00:00:42.480" style="s2">Carolina. She&#39;s doing well. She&#39;s at a</p>
+<p begin="00:00:38.079" end="00:00:46.160" style="s2">poll where she&#39;s up. And it&#39;s Darlene.</p>
+<p begin="00:00:42.480" end="00:00:48.079" style="s2">And uh I think in Ohio they are up too.</p>
+<p begin="00:00:46.160" end="00:00:51.440" style="s2">So we&#39;re doing very well. We&#39;re having a</p>
+<p begin="00:00:48.079" end="00:00:53.760" style="s2">very big impact. See you from Lavio</p>
+<p begin="00:00:51.440" end="00:00:55.920" style="s2">Baltimore coming to the United States.</p>
+<p begin="00:00:53.760" end="00:00:59.199" style="s2">What is that about? Well, I would</p>
+<p begin="00:00:55.920" end="00:01:02.239" style="s2">approve. I think they&#39;re fine people.</p>
+<p begin="00:00:59.199" end="00:01:04.239" style="s2">The election was very strange</p>
+<p begin="00:01:02.239" end="00:01:05.840" style="s2">and I thought it was terrible. It&#39;s</p>
+<p begin="00:01:04.239" end="00:01:08.320" style="s2">gotten bad reviews. You look at what</p>
+<p begin="00:01:05.840" end="00:01:10.080" style="s2">happened to their market. Would I</p>
+<p begin="00:01:08.320" end="00:01:12.560" style="s2">approve of it? Yeah, I would approve it.</p>
+<p begin="00:01:10.080" end="00:01:14.720" style="s2">I would think it would be okay with me.</p>
+<p begin="00:01:12.560" end="00:01:16.799" style="s2">I think it&#39;s so terrible to see it. I</p>
+<p begin="00:01:14.720" end="00:01:18.960" style="s2">didn&#39;t take sides. You know, I know him</p>
+<p begin="00:01:16.799" end="00:01:22.000" style="s2">both. I know</p>
+<p begin="00:01:18.960" end="00:01:24.400" style="s2">Lula. I know Lavio a little bit. I know</p>
+<p begin="00:01:22.000" end="00:01:27.360" style="s2">the father very well. The father was</p>
+<p begin="00:01:24.400" end="00:01:29.280" style="s2">treated really badly, I thought. Uh, but</p>
+<p begin="00:01:27.360" end="00:01:30.880" style="s2">I wasn&#39;t involved. That&#39;s Brazil. It&#39;s a</p>
+<p begin="00:01:29.280" end="00:01:33.200" style="s2">different country. I do get involved in</p>
+<p begin="00:01:30.880" end="00:01:36.159" style="s2">some. I was involved in Colombia. I</p>
+<p begin="00:01:33.200" end="00:01:38.400" style="s2">endorsed Elte and he won. He was in 10th</p>
+<p begin="00:01:36.159" end="00:01:41.680" style="s2">place and he won and he&#39;s turning out to</p>
+<p begin="00:01:38.400" end="00:01:43.360" style="s2">be a very strong, very good president.</p>
+<p begin="00:01:41.680" end="00:01:45.439" style="s2">Uh, as you know, in Argentina, I</p>
+<p begin="00:01:43.360" end="00:01:46.799" style="s2">endorsed in numerous countries I</p>
+<p begin="00:01:45.439" end="00:01:49.600" style="s2">endorsed. They always won. I didn&#39;t</p>
+<p begin="00:01:46.799" end="00:01:52.399" style="s2">endorse in Brazil. I thought I&#39;d stay</p>
+<p begin="00:01:49.600" end="00:01:54.399" style="s2">out of that one. And I thought the uh</p>
+<p begin="00:01:52.399" end="00:01:56.560" style="s2">end result, you know, it&#39;s fine the end</p>
+<p begin="00:01:54.399" end="00:01:57.600" style="s2">result, but the way they got to the end</p>
+<p begin="00:01:56.560" end="00:02:00.320" style="s2">result was terrible.</p>
+<p begin="00:01:57.600" end="00:02:02.960" style="s2">&gt;&gt; Where is he in Miami or I</p>
+<p begin="00:02:00.320" end="00:02:04.320" style="s2">&gt;&gt; I heard he was in Argentina. I don&#39;t</p>
+<p begin="00:02:02.960" end="00:02:05.360" style="s2">know where he is. I mean, I heard he was</p>
+<p begin="00:02:04.320" end="00:02:06.640" style="s2">in Argentina.</p>
+<p begin="00:02:05.360" end="00:02:09.200" style="s2">&gt;&gt; The United States,</p>
+<p begin="00:02:06.640" end="00:02:11.120" style="s2">&gt;&gt; but I I don&#39;t I don&#39;t know. I heard he</p>
+<p begin="00:02:09.200" end="00:02:12.959" style="s2">was in Argentina,</p>
+<p begin="00:02:11.120" end="00:02:15.599" style="s2">but yeah, I would certainly approve of</p>
+<p begin="00:02:12.959" end="00:02:19.680" style="s2">him being here.</p>
+<p begin="00:02:15.599" end="00:02:22.239" style="s2">people out of Israel right now that</p>
+<p begin="00:02:19.680" end="00:02:23.680" style="s2">coalition is losing peace and unlikely</p>
+<p begin="00:02:22.239" end="00:02:25.840" style="s2">that he would continue.</p>
+<p begin="00:02:23.680" end="00:02:28.640" style="s2">&gt;&gt; Well, that&#39;s not what I heard. I heard</p>
+<p begin="00:02:25.840" end="00:02:30.879" style="s2">that I heard the opposite. I actually</p>
+<p begin="00:02:28.640" end="00:02:33.599" style="s2">heard that the poll numbers were wrong.</p>
+<p begin="00:02:30.879" end="00:02:35.280" style="s2">They had exit polls that I&#39;m hearing</p>
+<p begin="00:02:33.599" end="00:02:39.280" style="s2">that he did very well. It&#39;s, you know,</p>
+<p begin="00:02:35.280" end="00:02:40.879" style="s2">it&#39;s pretty close, which was very well.</p>
+<p begin="00:02:39.280" end="00:02:43.200" style="s2">I think when the endorsement went out,</p>
+<p begin="00:02:40.879" end="00:02:44.720" style="s2">it it helped him a lot. But I actually</p>
+<p begin="00:02:43.200" end="00:02:47.360" style="s2">heard he did pretty well. It might be</p>
+<p begin="00:02:44.720" end="00:02:49.360" style="s2">winning or tied. The tie is sort of</p>
+<p begin="00:02:47.360" end="00:02:53.200" style="s2">considered a win in that case because</p>
+<p begin="00:02:49.360" end="00:02:55.280" style="s2">it&#39;s a big chess match. And but I I</p>
+<p begin="00:02:53.200" end="00:02:57.760" style="s2">heard he&#39;s doing pretty well. It&#39;s a</p>
+<p begin="00:02:55.280" end="00:03:00.239" style="s2">little bit early. No, I haven&#39;t. It&#39;s a</p>
+<p begin="00:02:57.760" end="00:03:03.360" style="s2">little bit early yet. But I&#39;m hearing</p>
+<p begin="00:03:00.239" end="00:03:05.519" style="s2">that in Israel that he I mean the top</p>
+<p begin="00:03:03.360" end="00:03:07.680" style="s2">people are saying, &quot;Wow, he did a lot</p>
+<p begin="00:03:05.519" end="00:03:11.519" style="s2">better than people thought.&quot; Sort of</p>
+<p begin="00:03:07.680" end="00:03:15.480" style="s2">like maybe a stalemate or a win. But</p>
+<p begin="00:03:11.519" end="00:03:15.480" style="s2">we&#39;ll find out pretty soon.</p>
+<p begin="00:03:21.360" end="00:03:26.800" style="s2">&gt;&gt; Well, uh, Ambassador Kushner, you</p>
+<p begin="00:03:23.680" end="00:03:30.159" style="s2">talking France. He&#39;s a great guy. He&#39;s a</p>
+<p begin="00:03:26.800" end="00:03:33.120" style="s2">rich man and he took over the French</p>
+<p begin="00:03:30.159" end="00:03:35.040" style="s2">embassy and he spends a lot of his time</p>
+<p begin="00:03:33.120" end="00:03:37.120" style="s2">making it beautiful. Was in rough shape.</p>
+<p begin="00:03:35.040" end="00:03:39.360" style="s2">beautiful building, but you know, it&#39;s</p>
+<p begin="00:03:37.120" end="00:03:41.599" style="s2">been lived in for</p>
+<p begin="00:03:39.360" end="00:03:44.640" style="s2">a hundred years by various ambassadors</p>
+<p begin="00:03:41.599" end="00:03:46.720" style="s2">and nobody does anything. He&#39;s somebody</p>
+<p begin="00:03:44.640" end="00:03:49.440" style="s2">like me, I guess. He likes to fix things</p>
+<p begin="00:03:46.720" end="00:03:52.159" style="s2">up and uh he&#39;s done an incredible job.</p>
+<p begin="00:03:49.440" end="00:03:54.799" style="s2">He&#39;s painstakingly brought it back to</p>
+<p begin="00:03:52.159" end="00:03:57.599" style="s2">life. It&#39;s a beautiful, beautiful place,</p>
+<p begin="00:03:54.799" end="00:04:01.120" style="s2">beautiful embassy, beautiful home. Uh,</p>
+<p begin="00:03:57.599" end="00:04:02.879" style="s2">and we talked about France and obviously</p>
+<p begin="00:04:01.120" end="00:04:05.120" style="s2">it would be a predominant. He was</p>
+<p begin="00:04:02.879" end="00:04:07.680" style="s2">showing me what he did, but then we</p>
+<p begin="00:04:05.120" end="00:04:09.760" style="s2">talked about France and it&#39;s an</p>
+<p begin="00:04:07.680" end="00:04:11.360" style="s2">immigration problem. I mean, it&#39;s not a</p>
+<p begin="00:04:09.760" end="00:04:13.519" style="s2">school problem. It&#39;s an immigration</p>
+<p begin="00:04:11.360" end="00:04:15.599" style="s2">problem. It&#39;s a very sad thing to watch.</p>
+<p begin="00:04:13.519" end="00:04:17.440" style="s2">I&#39;ve been saying that to President</p>
+<p begin="00:04:15.599" end="00:04:19.680" style="s2">Mcronone for a long time, who I like a</p>
+<p begin="00:04:17.440" end="00:04:21.120" style="s2">lot, by the way. But I said, you&#39;re</p>
+<p begin="00:04:19.680" end="00:04:23.440" style="s2">going to end up losing your country if</p>
+<p begin="00:04:21.120" end="00:04:26.320" style="s2">you don&#39;t do something. But it&#39;s an</p>
+<p begin="00:04:23.440" end="00:04:28.639" style="s2">immigration. You have people that hate</p>
+<p begin="00:04:26.320" end="00:04:32.080" style="s2">France. They hate the buildings, hate</p>
+<p begin="00:04:28.639" end="00:04:34.479" style="s2">the art, hate the they hate the people.</p>
+<p begin="00:04:32.080" end="00:04:35.840" style="s2">And they&#39;re in there and</p>
+<p begin="00:04:34.479" end="00:04:38.320" style="s2">you&#39;d have to get them out. Something</p>
+<p begin="00:04:35.840" end="00:04:40.639" style="s2">has to happen and they better do</p>
+<p begin="00:04:38.320" end="00:04:42.960" style="s2">something. I&#39;ve been saying it for 10</p>
+<p begin="00:04:40.639" end="00:04:46.960" style="s2">years to the president. I&#39;ve known him</p>
+<p begin="00:04:42.960" end="00:04:48.880" style="s2">for a long time and it&#39;s</p>
+<p begin="00:04:46.960" end="00:04:53.919" style="s2">I think what&#39;s happened in France and</p>
+<p begin="00:04:48.880" end="00:04:55.840" style="s2">other countries in Europe is very sad.</p>
+<p begin="00:04:53.919" end="00:04:57.600" style="s2">with Steve Whit on the plane with you</p>
+<p begin="00:04:55.840" end="00:04:59.520" style="s2">today. Can you tell us what you</p>
+<p begin="00:04:57.600" end="00:05:00.400" style="s2">discussed? Is it related to Iran or</p>
+<p begin="00:04:59.520" end="00:05:02.240" style="s2">Russia?</p>
+<p begin="00:05:00.400" end="00:05:04.880" style="s2">&gt;&gt; We talked about Iran, talked about</p>
+<p begin="00:05:02.240" end="00:05:08.000" style="s2">Russia and I think with Russia, we&#39;re</p>
+<p begin="00:05:04.880" end="00:05:09.520" style="s2">making a lot of progress with Russia</p>
+<p begin="00:05:08.000" end="00:05:11.199" style="s2">Ukraine.</p>
+<p begin="00:05:09.520" end="00:05:12.960" style="s2">There&#39;ll be a meeting set up very soon.</p>
+<p begin="00:05:11.199" end="00:05:16.720" style="s2">And I think a lot of progress is being</p>
+<p begin="00:05:12.960" end="00:05:19.120" style="s2">made to stop with President Putin and</p>
+<p begin="00:05:16.720" end="00:05:21.199" style="s2">President Zullinski.</p>
+<p begin="00:05:19.120" end="00:05:23.680" style="s2">And I think a lot of progress is made. I</p>
+<p begin="00:05:21.199" end="00:05:25.360" style="s2">think uh with Iran, we&#39;re in a very good</p>
+<p begin="00:05:23.680" end="00:05:27.199" style="s2">position.</p>
+<p begin="00:05:25.360" end="00:05:30.160" style="s2">It&#39;s a question when do I want to end</p>
+<p begin="00:05:27.199" end="00:05:33.680" style="s2">it. Simply a question of when do I want</p>
+<p begin="00:05:30.160" end="00:05:35.039" style="s2">to end it and uh they want I they want</p>
+<p begin="00:05:33.680" end="00:05:37.199" style="s2">to make a deal, but they&#39;ve wanted to</p>
+<p begin="00:05:35.039" end="00:05:39.280" style="s2">make a deal, but they like tapping it</p>
+<p begin="00:05:37.199" end="00:05:41.039" style="s2">along. Maybe they&#39;re waiting for the</p>
+<p begin="00:05:39.280" end="00:05:43.199" style="s2">election or something, but that&#39;s not</p>
+<p begin="00:05:41.039" end="00:05:46.000" style="s2">going to help them. The election&#39;s not</p>
+<p begin="00:05:43.199" end="00:05:48.160" style="s2">going to help them. But I I think we&#39;ve</p>
+<p begin="00:05:46.000" end="00:05:50.720" style="s2">uh look, we&#39;ve decimated their military.</p>
+<p begin="00:05:48.160" end="00:05:53.280" style="s2">We&#39;ve decimated their finances. They</p>
+<p begin="00:05:50.720" end="00:05:56.639" style="s2">have no money. They have inflation, the</p>
+<p begin="00:05:53.280" end="00:05:59.199" style="s2">highest in the world, 301% as of a</p>
+<p begin="00:05:56.639" end="00:06:00.880" style="s2">couple of days ago, but we&#39;ll see what</p>
+<p begin="00:05:59.199" end="00:06:02.720" style="s2">happens. We&#39;re in good position</p>
+<p begin="00:06:00.880" end="00:06:04.720" style="s2">regardless.</p>
+<p begin="00:06:02.720" end="00:06:06.479" style="s2">&gt;&gt; Strikes against Iran after the election.</p>
+<p begin="00:06:04.720" end="00:06:08.720" style="s2">&gt;&gt; I can&#39;t tell you that. I mean, I can&#39;t</p>
+<p begin="00:06:06.479" end="00:06:10.400" style="s2">tell you that certainly, but</p>
+<p begin="00:06:08.720" end="00:06:13.680" style="s2">&gt;&gt; anything&#39;s possible, but I can&#39;t tell</p>
+<p begin="00:06:10.400" end="00:06:16.880" style="s2">you. vice president said recently that</p>
+<p begin="00:06:13.680" end="00:06:20.080" style="s2">he expects your support if he runs for</p>
+<p begin="00:06:16.880" end="00:06:21.840" style="s2">president. Uh would you endorse him?</p>
+<p begin="00:06:20.080" end="00:06:24.000" style="s2">&gt;&gt; Well, no, he hasn&#39;t even talked to me</p>
+<p begin="00:06:21.840" end="00:06:26.240" style="s2">about that and it&#39;s too early to think</p>
+<p begin="00:06:24.000" end="00:06:28.639" style="s2">about it. But I can tell you I like him</p>
+<p begin="00:06:26.240" end="00:06:29.919" style="s2">a lot. He&#39;s a very capable guy. He&#39;s</p>
+<p begin="00:06:28.639" end="00:06:33.199" style="s2">doing a good job. He&#39;s out there</p>
+<p begin="00:06:29.919" end="00:06:37.360" style="s2">rallying also and I do like him a lot</p>
+<p begin="00:06:33.199" end="00:06:40.000" style="s2">and I like a lot of people. You saw the</p>
+<p begin="00:06:37.360" end="00:06:42.720" style="s2">hand that Marco got tonight. Marco Rubio</p>
+<p begin="00:06:40.000" end="00:06:44.639" style="s2">got a big hand and they like him. They</p>
+<p begin="00:06:42.720" end="00:06:47.120" style="s2">like my people. We have a a great group</p>
+<p begin="00:06:44.639" end="00:06:49.919" style="s2">of people. Very talented. It&#39;s a</p>
+<p begin="00:06:47.120" end="00:06:51.440" style="s2">tremendous cabinet. I think maybe the</p>
+<p begin="00:06:49.919" end="00:06:53.120" style="s2">best ever.</p>
+<p begin="00:06:51.440" end="00:06:55.280" style="s2">&gt;&gt; When would you meet with Putin and</p>
+<p begin="00:06:53.120" end="00:06:58.720" style="s2">Zelinski? When when are you thinking</p>
+<p begin="00:06:55.280" end="00:07:00.080" style="s2">about it soon, you know,</p>
+<p begin="00:06:58.720" end="00:07:01.440" style="s2">&gt;&gt; and I would say it would be a meeting.</p>
+<p begin="00:07:00.080" end="00:07:03.199" style="s2">They&#39;d like to have a meeting. So, we&#39;ll</p>
+<p begin="00:07:01.440" end="00:07:05.280" style="s2">see. We&#39;ll probably make it could be</p>
+<p begin="00:07:03.199" end="00:07:07.599" style="s2">done not necessarily through a meeting</p>
+<p begin="00:07:05.280" end="00:07:09.360" style="s2">otherwise too but I would say it&#39;ll</p>
+<p begin="00:07:07.599" end="00:07:12.319" style="s2">happen over the next not too long a</p>
+<p begin="00:07:09.360" end="00:07:14.240" style="s2">period.</p>
+<p begin="00:07:12.319" end="00:07:15.759" style="s2">&gt;&gt; That does not include Zilinski when you</p>
+<p begin="00:07:14.240" end="00:07:17.919" style="s2">go to Asia.</p>
+<p begin="00:07:15.759" end="00:07:20.000" style="s2">&gt;&gt; Well, I would if it didn&#39;t include</p>
+<p begin="00:07:17.919" end="00:07:23.039" style="s2">Ukraine. You know, Russia is a big</p>
+<p begin="00:07:20.000" end="00:07:25.840" style="s2">country. uh we&#39;re meeting with uh</p>
+<p begin="00:07:23.039" end="00:07:30.080" style="s2">scheduled already with President Xi of</p>
+<p begin="00:07:25.840" end="00:07:31.919" style="s2">China and we have a meeting on nuclear</p>
+<p begin="00:07:30.080" end="00:07:34.000" style="s2">disarmament which is a very great</p>
+<p begin="00:07:31.919" end="00:07:36.720" style="s2">meeting as far as I&#39;m concerned maybe</p>
+<p begin="00:07:34.000" end="00:07:38.720" style="s2">the single most important meeting so we</p>
+<p begin="00:07:36.720" end="00:07:42.319" style="s2">do have we talk about the</p>
+<p begin="00:07:38.720" end="00:07:44.639" style="s2">denuclearization of uh the various</p>
+<p begin="00:07:42.319" end="00:07:47.440" style="s2">countries so certainly Russia would fit</p>
+<p begin="00:07:44.639" end="00:07:50.240" style="s2">into we have the most nuclear weapons</p>
+<p begin="00:07:47.440" end="00:07:52.720" style="s2">Russia second pretty close pretty close</p>
+<p begin="00:07:50.240" end="00:07:55.520" style="s2">behind behind and China&#39;s much further</p>
+<p begin="00:07:52.720" end="00:07:59.199" style="s2">behind, but they&#39;ll catch us within 5</p>
+<p begin="00:07:55.520" end="00:08:00.960" style="s2">years and it all doesn&#39;t make sense. So,</p>
+<p begin="00:07:59.199" end="00:08:02.319" style="s2">we talk about that. We actually talk</p>
+<p begin="00:08:00.960" end="00:08:04.240" style="s2">about it a lot.</p>
+<p begin="00:08:02.319" end="00:08:06.879" style="s2">&gt;&gt; I guess they don&#39;t have a meeting on</p>
+<p begin="00:08:04.240" end="00:08:09.599" style="s2">nuclear disarmament with President Xi</p>
+<p begin="00:08:06.879" end="00:08:14.400" style="s2">and President Putin. we would have one</p>
+<p begin="00:08:09.599" end="00:08:19.199" style="s2">of the topics but the denuclearization</p>
+<p begin="00:08:14.400" end="00:08:22.879" style="s2">I mean when you look at 17800</p>
+<p begin="00:08:19.199" end="00:08:27.440" style="s2">of these unbelievably deadly</p>
+<p begin="00:08:22.879" end="00:08:30.319" style="s2">missiles it&#39;s uh very dangerous stuff</p>
+<p begin="00:08:27.440" end="00:08:33.200" style="s2">very very dangerous stuff if something</p>
+<p begin="00:08:30.319" end="00:08:35.440" style="s2">could be done in that regard it would be</p>
+<p begin="00:08:33.200" end="00:08:37.360" style="s2">great it&#39;s not an easy thing to do</p>
+<p begin="00:08:35.440" end="00:08:39.360" style="s2">because nobody wants to sort of just say</p>
+<p begin="00:08:37.360" end="00:08:42.240" style="s2">Well, because you do have other</p>
+<p begin="00:08:39.360" end="00:08:44.560" style="s2">countries having much lesser numbers,</p>
+<p begin="00:08:42.240" end="00:08:46.480" style="s2">but they also have nuclear weapons. So,</p>
+<p begin="00:08:44.560" end="00:08:49.480" style="s2">it gets to be difficult. Thank you very</p>
+<p begin="00:08:46.480" end="00:08:49.480" style="s2">much.</p>
+</div>
+</body>
+</tt>

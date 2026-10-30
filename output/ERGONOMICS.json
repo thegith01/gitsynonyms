@@ -1,0 +1,2470 @@
+{
+  "module": "module2c-subtitle-ergonomics",
+  "rules": {
+    "language": "en",
+    "max_cps": 20.0,
+    "max_chars_line": 60,
+    "max_lines": 2,
+    "min_duration": 0.833,
+    "max_duration": 7.0,
+    "min_gap": 0.067,
+    "children": false,
+    "fps": 29.9701934226345
+  },
+  "summary": {
+    "cues": 59,
+    "max_cps": 28.0,
+    "p95_cps": 23.78,
+    "mean_cps": 11.98,
+    "violations": 82,
+    "errors": 5,
+    "warnings": 77,
+    "by_code": {
+      "reading_speed": 24,
+      "gap_short": 58
+    }
+  },
+  "issues": [
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 1,
+      "start": 6.8,
+      "end": 8.52,
+      "message": "en line 2 reads at 22.1 CPS (limit 20)",
+      "measured": 22.09,
+      "limit": 20.0,
+      "text": "I think Air Force One is going to do a"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 8,
+      "start": 23.76,
+      "end": 25.4,
+      "message": "en line 2 reads at 23.8 CPS (limit 20)",
+      "measured": 23.78,
+      "limit": 20.0,
+      "text": "beautiful plane's going to make a quick"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 12,
+      "start": 35.76,
+      "end": 37.16,
+      "message": "zh-Hans line 1 reads at 11.4 CPS (limit 9)",
+      "measured": 11.43,
+      "limit": 9.0,
+      "text": "因为我觉得他做得很好。我们将改为"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 12,
+      "start": 35.76,
+      "end": 37.16,
+      "message": "en line 2 reads at 27.1 CPS (limit 20)",
+      "measured": 27.14,
+      "limit": 20.0,
+      "text": "Because I think he's doing well. We're"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 18,
+      "start": 51.44,
+      "end": 53.08,
+      "message": "zh-Hans line 1 reads at 12.2 CPS (limit 9)",
+      "measured": 12.2,
+      "limit": 9.0,
+      "text": "很多人。因为那些洞也很危险，所以非常危险"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 18,
+      "start": 51.44,
+      "end": 53.08,
+      "message": "en line 2 reads at 24.4 CPS (limit 20)",
+      "measured": 24.39,
+      "limit": 20.0,
+      "text": "Many people. It's very dangerous because"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 24,
+      "start": 65.2,
+      "end": 67.0,
+      "message": "en line 2 reads at 20.0 CPS (limit 20)",
+      "measured": 20.0,
+      "limit": 20.0,
+      "text": "of travel. We've been doing a lot of"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 25,
+      "start": 67.04,
+      "end": 69.64,
+      "message": "zh-Hans line 1 reads at 9.6 CPS (limit 9)",
+      "measured": 9.62,
+      "limit": 9.0,
+      "text": "你一起旅行了很多地方。你感觉怎么样？你身体怎么样？"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 25,
+      "start": 67.04,
+      "end": 69.64,
+      "message": "en line 2 reads at 21.5 CPS (limit 20)",
+      "measured": 21.54,
+      "limit": 20.0,
+      "text": "travel with you. How are you feeling? How's your health?"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 26,
+      "start": 69.68,
+      "end": 71.48,
+      "message": "zh-Hans line 1 reads at 10.6 CPS (limit 9)",
+      "measured": 10.56,
+      "limit": 9.0,
+      "text": "好的。我觉得非常好。我想大家都看到了，"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 26,
+      "start": 69.68,
+      "end": 71.48,
+      "message": "en line 2 reads at 22.2 CPS (limit 20)",
+      "measured": 22.22,
+      "limit": 20.0,
+      "text": "Good. I think very good. I think you see"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 30,
+      "start": 79.6,
+      "end": 81.32,
+      "message": "en line 2 reads at 22.1 CPS (limit 20)",
+      "measured": 22.09,
+      "limit": 20.0,
+      "text": "we're all going to do very well. Think"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 31,
+      "start": 81.36,
+      "end": 83.08,
+      "message": "en line 2 reads at 20.9 CPS (limit 20)",
+      "measured": 20.93,
+      "limit": 20.0,
+      "text": "think you're going to have some very"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 32,
+      "start": 83.12,
+      "end": 84.44,
+      "message": "en line 2 reads at 27.3 CPS (limit 20)",
+      "measured": 27.27,
+      "limit": 20.0,
+      "text": "We're going to have a strong Tuesday"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 34,
+      "start": 86.64,
+      "end": 88.36,
+      "message": "en line 2 reads at 22.1 CPS (limit 20)",
+      "measured": 22.09,
+      "limit": 20.0,
+      "text": "going to Kansas has nothing to do with"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 35,
+      "start": 88.4,
+      "end": 89.4,
+      "message": "en line 2 reads at 28.0 CPS (limit 20)",
+      "measured": 28.0,
+      "limit": 20.0,
+      "text": "you being sick of traveling?"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 38,
+      "start": 94.32,
+      "end": 96.28,
+      "message": "zh-Hans line 1 reads at 9.7 CPS (limit 9)",
+      "measured": 9.69,
+      "limit": 9.0,
+      "text": "你真是个变态。顺便说一句，路透社糟透了"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 38,
+      "start": 94.32,
+      "end": 96.28,
+      "message": "en line 2 reads at 20.4 CPS (limit 20)",
+      "measured": 20.41,
+      "limit": 20.0,
+      "text": "You are a sick guy. Reuters is terrible,"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 39,
+      "start": 96.32,
+      "end": 97.88,
+      "message": "en line 2 reads at 23.1 CPS (limit 20)",
+      "measured": 23.08,
+      "limit": 20.0,
+      "text": "by the way. Can you imagine? Look at"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 40,
+      "start": 97.92,
+      "end": 99.56,
+      "message": "en line 2 reads at 23.8 CPS (limit 20)",
+      "measured": 23.78,
+      "limit": 20.0,
+      "text": "this. Look at this guy. He's way out of"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 43,
+      "start": 104.32,
+      "end": 105.96,
+      "message": "en line 2 reads at 23.8 CPS (limit 20)",
+      "measured": 23.78,
+      "limit": 20.0,
+      "text": "Kansas. I'm not going to Kansas because"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 44,
+      "start": 106.0,
+      "end": 107.56,
+      "message": "zh-Hans line 1 reads at 10.9 CPS (limit 9)",
+      "measured": 10.9,
+      "limit": 9.0,
+      "text": "他在那里过得很好。我明天要举行一场"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 44,
+      "start": 106.0,
+      "end": 107.56,
+      "message": "en line 2 reads at 25.0 CPS (limit 20)",
+      "measured": 25.0,
+      "limit": 20.0,
+      "text": "he's doing very well. I'm going to do a"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 49,
+      "start": 116.88,
+      "end": 118.44,
+      "message": "en line 2 reads at 24.4 CPS (limit 20)",
+      "measured": 24.36,
+      "limit": 20.0,
+      "text": "not going to Kansas? You know what the"
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 0,
+      "start": 1.36,
+      "end": 6.76,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 1,
+      "start": 6.8,
+      "end": 8.52,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 2,
+      "start": 8.56,
+      "end": 10.52,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 3,
+      "start": 10.56,
+      "end": 14.04,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 4,
+      "start": 14.08,
+      "end": 16.04,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 5,
+      "start": 16.08,
+      "end": 18.76,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 6,
+      "start": 18.8,
+      "end": 21.24,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 7,
+      "start": 21.28,
+      "end": 23.72,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 8,
+      "start": 23.76,
+      "end": 25.4,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 9,
+      "start": 25.44,
+      "end": 27.64,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 10,
+      "start": 27.68,
+      "end": 29.8,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 11,
+      "start": 29.84,
+      "end": 35.72,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 12,
+      "start": 35.76,
+      "end": 37.16,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 13,
+      "start": 37.2,
+      "end": 39.4,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 14,
+      "start": 39.44,
+      "end": 42.52,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 15,
+      "start": 42.56,
+      "end": 46.2,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 16,
+      "start": 46.24,
+      "end": 48.92,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 17,
+      "start": 48.96,
+      "end": 51.4,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 18,
+      "start": 51.44,
+      "end": 53.08,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 19,
+      "start": 53.12,
+      "end": 55.08,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 20,
+      "start": 55.12,
+      "end": 57.24,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 21,
+      "start": 57.28,
+      "end": 60.84,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 22,
+      "start": 60.88,
+      "end": 62.92,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 23,
+      "start": 62.96,
+      "end": 65.16,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 24,
+      "start": 65.2,
+      "end": 67.0,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 25,
+      "start": 67.04,
+      "end": 69.64,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 26,
+      "start": 69.68,
+      "end": 71.48,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 27,
+      "start": 71.52,
+      "end": 73.88,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 28,
+      "start": 73.92,
+      "end": 77.32,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 29,
+      "start": 77.36,
+      "end": 79.56,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 30,
+      "start": 79.6,
+      "end": 81.32,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 31,
+      "start": 81.36,
+      "end": 83.08,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 32,
+      "start": 83.12,
+      "end": 84.44,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 33,
+      "start": 84.48,
+      "end": 86.6,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 34,
+      "start": 86.64,
+      "end": 88.36,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 35,
+      "start": 88.4,
+      "end": 89.4,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 36,
+      "start": 89.44,
+      "end": 91.32,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 37,
+      "start": 91.36,
+      "end": 94.28,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 38,
+      "start": 94.32,
+      "end": 96.28,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 39,
+      "start": 96.32,
+      "end": 97.88,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 40,
+      "start": 97.92,
+      "end": 99.56,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 41,
+      "start": 99.6,
+      "end": 102.28,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 42,
+      "start": 102.32,
+      "end": 104.28,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 43,
+      "start": 104.32,
+      "end": 105.96,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 44,
+      "start": 106.0,
+      "end": 107.56,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 45,
+      "start": 107.6,
+      "end": 109.4,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 46,
+      "start": 109.44,
+      "end": 111.8,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 47,
+      "start": 111.84,
+      "end": 114.84,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 48,
+      "start": 114.88,
+      "end": 116.84,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 49,
+      "start": 116.88,
+      "end": 118.44,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 50,
+      "start": 118.48,
+      "end": 120.52,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 51,
+      "start": 120.56,
+      "end": 123.32,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 52,
+      "start": 123.36,
+      "end": 125.88,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 53,
+      "start": 125.92,
+      "end": 128.2,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 54,
+      "start": 128.24,
+      "end": 130.84,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 55,
+      "start": 130.88,
+      "end": 133.08,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 56,
+      "start": 133.12,
+      "end": 136.2,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 57,
+      "start": 136.24,
+      "end": 138.2,
+      "message": "Gap to the next cue is 40 ms (minimum 67 ms)",
+      "measured": 0.04,
+      "limit": 0.067
+    }
+  ],
+  "cues": [
+    {
+      "index": 0,
+      "start": 1.36,
+      "end": 6.76,
+      "duration": 5.4,
+      "lines": [
+        {
+          "index": 0,
+          "text": "白宫马上就要举办万圣节活动了，",
+          "language": "zh-Hans",
+          "characters": 15.0,
+          "cps": 2.78,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "We have Halloween at the White House in a little while and",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 10.74,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.74
+    },
+    {
+      "index": 1,
+      "start": 6.8,
+      "end": 8.52,
+      "duration": 1.72,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我想空军一号会进行",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 5.23,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "I think Air Force One is going to do a",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 22.09,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 22.09
+    },
+    {
+      "index": 2,
+      "start": 8.56,
+      "end": 10.52,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "飞行表演，",
+          "language": "zh-Hans",
+          "characters": 5.0,
+          "cps": 2.55,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "flyover which will be exciting for the",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 19.39,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.39
+    },
+    {
+      "index": 3,
+      "start": 10.56,
+      "end": 14.04,
+      "duration": 3.48,
+      "lines": [
+        {
+          "index": 0,
+          "text": "孩子们一定会很兴奋。",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 2.87,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "kids. We have a tremendous number of",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 10.34,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.34
+    },
+    {
+      "index": 4,
+      "start": 14.08,
+      "end": 16.04,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "那里有很多小孩，所以应该会很不错。",
+          "language": "zh-Hans",
+          "characters": 17.0,
+          "cps": 8.67,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "young children there so it'll be nice.",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 19.39,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.39
+    },
+    {
+      "index": 5,
+      "start": 16.08,
+      "end": 18.76,
+      "duration": 2.68,
+      "lines": [
+        {
+          "index": 0,
+          "text": "第一夫人和我。我们分发糖果",
+          "language": "zh-Hans",
+          "characters": 13.0,
+          "cps": 4.85,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "First lady and myself. We give out candy",
+          "language": "en",
+          "characters": 40.0,
+          "cps": 14.93,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 14.93
+    },
+    {
+      "index": 6,
+      "start": 18.8,
+      "end": 21.24,
+      "duration": 2.44,
+      "lines": [
+        {
+          "index": 0,
+          "text": "和其他小礼物。但我们今年的",
+          "language": "zh-Hans",
+          "characters": 13.0,
+          "cps": 5.33,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "and things. But we have a beautiful",
+          "language": "en",
+          "characters": 35.0,
+          "cps": 14.34,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 14.34
+    },
+    {
+      "index": 7,
+      "start": 21.28,
+      "end": 23.72,
+      "duration": 2.44,
+      "lines": [
+        {
+          "index": 0,
+          "text": "万圣节很美好，我相信这架",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 4.92,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Halloween and I believe this big",
+          "language": "en",
+          "characters": 32.0,
+          "cps": 13.11,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.11
+    },
+    {
+      "index": 8,
+      "start": 23.76,
+      "end": 25.4,
+      "duration": 1.64,
+      "lines": [
+        {
+          "index": 0,
+          "text": "漂亮的大飞机将会在",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 5.49,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "beautiful plane's going to make a quick",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 23.78,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 23.78
+    },
+    {
+      "index": 9,
+      "start": 25.44,
+      "end": 27.64,
+      "duration": 2.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "市中心上空进行一次短暂的飞行，为",
+          "language": "zh-Hans",
+          "characters": 16.0,
+          "cps": 7.27,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "little flight right over the center and",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 17.73,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.73
+    },
+    {
+      "index": 10,
+      "start": 27.68,
+      "end": 29.8,
+      "duration": 2.12,
+      "lines": [
+        {
+          "index": 0,
+          "text": "孩子们带来欢乐。这会",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 4.72,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "entertain the children. and it'll be a",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 17.92,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.92
+    },
+    {
+      "index": 11,
+      "start": 29.84,
+      "end": 35.72,
+      "duration": 5.88,
+      "lines": [
+        {
+          "index": 0,
+          "text": "非常有趣。希望你也能到场。说出来。",
+          "language": "zh-Hans",
+          "characters": 17.0,
+          "cps": 2.89,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "lot of fun. So hopefully you'll be there. Say it.",
+          "language": "en",
+          "characters": 49.0,
+          "cps": 8.33,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 8.33
+    },
+    {
+      "index": 12,
+      "start": 35.76,
+      "end": 37.16,
+      "duration": 1.4,
+      "lines": [
+        {
+          "index": 0,
+          "text": "因为我觉得他做得很好。我们将改为",
+          "language": "zh-Hans",
+          "characters": 16.0,
+          "cps": 11.43,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Because I think he's doing well. We're",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 27.14,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 27.14
+    },
+    {
+      "index": 13,
+      "start": 37.2,
+      "end": 39.4,
+      "duration": 2.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "为他举行一场募捐活动。。",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 5.45,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "going to do a teller rally for him instead.",
+          "language": "en",
+          "characters": 43.0,
+          "cps": 19.55,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.55
+    },
+    {
+      "index": 14,
+      "start": 39.44,
+      "end": 42.52,
+      "duration": 3.08,
+      "lines": [
+        {
+          "index": 0,
+          "text": "。他做得很好，实际上，他做得非常好。。",
+          "language": "zh-Hans",
+          "characters": 19.0,
+          "cps": 6.17,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "He's doing He's doing very well actually.",
+          "language": "en",
+          "characters": 41.0,
+          "cps": 13.31,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.31
+    },
+    {
+      "index": 15,
+      "start": 42.56,
+      "end": 46.2,
+      "duration": 3.64,
+      "lines": [
+        {
+          "index": 0,
+          "text": "。在高尔夫球场。谁是谁？谁在打高尔夫球？",
+          "language": "zh-Hans",
+          "characters": 20.0,
+          "cps": 5.49,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "At the golf course. Who is what? Who was at the golf course?",
+          "language": "en",
+          "characters": 60.0,
+          "cps": 16.48,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.48
+    },
+    {
+      "index": 16,
+      "start": 46.24,
+      "end": 48.92,
+      "duration": 2.68,
+      "lines": [
+        {
+          "index": 0,
+          "text": "哦，很多人。你是说……呃，你指的是",
+          "language": "zh-Hans",
+          "characters": 16.0,
+          "cps": 5.97,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Oh, many people. You mean uh are you",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 13.43,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.43
+    },
+    {
+      "index": 17,
+      "start": 48.96,
+      "end": 51.4,
+      "duration": 2.44,
+      "lines": [
+        {
+          "index": 0,
+          "text": "这边那个吗？是的。",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 3.69,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "talking about the one over here? Yeah.",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 15.57,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 15.57
+    },
+    {
+      "index": 18,
+      "start": 51.44,
+      "end": 53.08,
+      "duration": 1.64,
+      "lines": [
+        {
+          "index": 0,
+          "text": "很多人。因为那些洞也很危险，所以非常危险",
+          "language": "zh-Hans",
+          "characters": 20.0,
+          "cps": 12.2,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Many people. It's very dangerous because",
+          "language": "en",
+          "characters": 40.0,
+          "cps": 24.39,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 24.39
+    },
+    {
+      "index": 19,
+      "start": 53.12,
+      "end": 55.08,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "。这是一门非常过时的",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 5.1,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "the holes are too. It's a very obsolete",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 19.9,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.9
+    },
+    {
+      "index": 20,
+      "start": 55.12,
+      "end": 57.24,
+      "duration": 2.12,
+      "lines": [
+        {
+          "index": 0,
+          "text": "课程，但我们做得非常好。我们",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 6.6,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "course and we're doing very well. We're",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 18.4,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.4
+    },
+    {
+      "index": 21,
+      "start": 57.28,
+      "end": 60.84,
+      "duration": 3.56,
+      "lines": [
+        {
+          "index": 0,
+          "text": "将为国家带来一件伟大的事情。",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 3.93,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "going to have something great for the country.",
+          "language": "en",
+          "characters": 46.0,
+          "cps": 12.92,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 12.92
+    },
+    {
+      "index": 22,
+      "start": 60.88,
+      "end": 62.92,
+      "duration": 2.04,
+      "lines": [
+        {
+          "index": 0,
+          "text": "这里将举办顶级赛事。是的。",
+          "language": "zh-Hans",
+          "characters": 13.0,
+          "cps": 6.37,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "We'll have top tournaments here. Yeah.",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 18.63,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.63
+    },
+    {
+      "index": 23,
+      "start": 62.96,
+      "end": 65.16,
+      "duration": 2.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "总统先生，您最近经常",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 4.55,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Mr. President, you've been doing a lot",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 17.27,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.27
+    },
+    {
+      "index": 24,
+      "start": 65.2,
+      "end": 67.0,
+      "duration": 1.8,
+      "lines": [
+        {
+          "index": 0,
+          "text": "出差。我们和",
+          "language": "zh-Hans",
+          "characters": 6.0,
+          "cps": 3.33,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "of travel. We've been doing a lot of",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 20.0,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.0
+    },
+    {
+      "index": 25,
+      "start": 67.04,
+      "end": 69.64,
+      "duration": 2.6,
+      "lines": [
+        {
+          "index": 0,
+          "text": "你一起旅行了很多地方。你感觉怎么样？你身体怎么样？",
+          "language": "zh-Hans",
+          "characters": 25.0,
+          "cps": 9.62,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "travel with you. How are you feeling? How's your health?",
+          "language": "en",
+          "characters": 56.0,
+          "cps": 21.54,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 21.54
+    },
+    {
+      "index": 26,
+      "start": 69.68,
+      "end": 71.48,
+      "duration": 1.8,
+      "lines": [
+        {
+          "index": 0,
+          "text": "好的。我觉得非常好。我想大家都看到了，",
+          "language": "zh-Hans",
+          "characters": 19.0,
+          "cps": 10.56,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Good. I think very good. I think you see",
+          "language": "en",
+          "characters": 40.0,
+          "cps": 22.22,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 22.22
+    },
+    {
+      "index": 27,
+      "start": 71.52,
+      "end": 73.88,
+      "duration": 2.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们举行了一场非常成功的集会。那是一场",
+          "language": "zh-Hans",
+          "characters": 19.0,
+          "cps": 8.05,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "that we had a great rally. That was a",
+          "language": "en",
+          "characters": 37.0,
+          "cps": 15.68,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 15.68
+    },
+    {
+      "index": 28,
+      "start": 73.92,
+      "end": 77.32,
+      "duration": 3.4,
+      "lines": [
+        {
+          "index": 0,
+          "text": "精彩的集会。我认为达",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 2.94,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "great rally. And I think that uh",
+          "language": "en",
+          "characters": 32.0,
+          "cps": 9.41,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 9.41
+    },
+    {
+      "index": 29,
+      "start": 77.36,
+      "end": 79.56,
+      "duration": 2.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "琳会做得很好。我认为",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 4.55,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Darlene's going to do very well. I think",
+          "language": "en",
+          "characters": 40.0,
+          "cps": 18.18,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.18
+    },
+    {
+      "index": 30,
+      "start": 79.6,
+      "end": 81.32,
+      "duration": 1.72,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们都会做得很好。我觉得",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 6.98,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "we're all going to do very well. Think",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 22.09,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 22.09
+    },
+    {
+      "index": 31,
+      "start": 81.36,
+      "end": 83.08,
+      "duration": 1.72,
+      "lines": [
+        {
+          "index": 0,
+          "text": "你们会有一些非常棒的事情发生。",
+          "language": "zh-Hans",
+          "characters": 15.0,
+          "cps": 8.72,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "think you're going to have some very",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 20.93,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.93
+    },
+    {
+      "index": 32,
+      "start": 83.12,
+      "end": 84.44,
+      "duration": 1.32,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们周二",
+          "language": "zh-Hans",
+          "characters": 4.0,
+          "cps": 3.03,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "We're going to have a strong Tuesday",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 27.27,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 27.27
+    },
+    {
+      "index": 33,
+      "start": 84.48,
+      "end": 86.6,
+      "duration": 2.12,
+      "lines": [
+        {
+          "index": 0,
+          "text": "晚上会很精彩。这是我的看法。所以你",
+          "language": "zh-Hans",
+          "characters": 17.0,
+          "cps": 8.02,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "night. That's my opinion. So you not",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 16.98,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.98
+    },
+    {
+      "index": 34,
+      "start": 86.64,
+      "end": 88.36,
+      "duration": 1.72,
+      "lines": [
+        {
+          "index": 0,
+          "text": "不去堪萨斯州跟",
+          "language": "zh-Hans",
+          "characters": 7.0,
+          "cps": 4.07,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "going to Kansas has nothing to do with",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 22.09,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 22.09
+    },
+    {
+      "index": 35,
+      "start": 88.4,
+      "end": 89.4,
+      "duration": 1.0,
+      "lines": [
+        {
+          "index": 0,
+          "text": "你厌倦旅行无关？",
+          "language": "zh-Hans",
+          "characters": 8.0,
+          "cps": 8.0,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "you being sick of traveling?",
+          "language": "en",
+          "characters": 28.0,
+          "cps": 28.0,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 28.0
+    },
+    {
+      "index": 36,
+      "start": 89.44,
+      "end": 91.32,
+      "duration": 1.88,
+      "lines": [
+        {
+          "index": 0,
+          "text": "哦，你问这个问题真是病态。",
+          "language": "zh-Hans",
+          "characters": 13.0,
+          "cps": 6.91,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Oh, you're sick to ask that question.",
+          "language": "en",
+          "characters": 37.0,
+          "cps": 19.68,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.68
+    },
+    {
+      "index": 37,
+      "start": 91.36,
+      "end": 94.28,
+      "duration": 2.92,
+      "lines": [
+        {
+          "index": 0,
+          "text": "你生病了。你和谁在一起？先生，我是路透社的。",
+          "language": "zh-Hans",
+          "characters": 22.0,
+          "cps": 7.53,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "You are sick. Who you with? I'm with Reuters, sir.",
+          "language": "en",
+          "characters": 50.0,
+          "cps": 17.12,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.12
+    },
+    {
+      "index": 38,
+      "start": 94.32,
+      "end": 96.28,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "你真是个变态。顺便说一句，路透社糟透了",
+          "language": "zh-Hans",
+          "characters": 19.0,
+          "cps": 9.69,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "You are a sick guy. Reuters is terrible,",
+          "language": "en",
+          "characters": 40.0,
+          "cps": 20.41,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.41
+    },
+    {
+      "index": 39,
+      "start": 96.32,
+      "end": 97.88,
+      "duration": 1.56,
+      "lines": [
+        {
+          "index": 0,
+          "text": "。你能想象吗？看看",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 5.77,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "by the way. Can you imagine? Look at",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 23.08,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 23.08
+    },
+    {
+      "index": 40,
+      "start": 97.92,
+      "end": 99.56,
+      "duration": 1.64,
+      "lines": [
+        {
+          "index": 0,
+          "text": "这个。看看这个人。他",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 6.1,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "this. Look at this guy. He's way out of",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 23.78,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 23.78
+    },
+    {
+      "index": 41,
+      "start": 99.6,
+      "end": 102.28,
+      "duration": 2.68,
+      "lines": [
+        {
+          "index": 0,
+          "text": "身材走样得很厉害。看看情况有多糟糕。他来找",
+          "language": "zh-Hans",
+          "characters": 21.0,
+          "cps": 7.84,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "shape. Look at how badly. He comes to",
+          "language": "en",
+          "characters": 37.0,
+          "cps": 13.81,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.81
+    },
+    {
+      "index": 42,
+      "start": 102.32,
+      "end": 104.28,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我。先生，您不能去",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 4.59,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "me. Sir, you're not going to go to",
+          "language": "en",
+          "characters": 34.0,
+          "cps": 17.35,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.35
+    },
+    {
+      "index": 43,
+      "start": 104.32,
+      "end": 105.96,
+      "duration": 1.64,
+      "lines": [
+        {
+          "index": 0,
+          "text": "堪萨斯州。我不去堪萨斯，因为",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 8.54,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Kansas. I'm not going to Kansas because",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 23.78,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 23.78
+    },
+    {
+      "index": 44,
+      "start": 106.0,
+      "end": 107.56,
+      "duration": 1.56,
+      "lines": [
+        {
+          "index": 0,
+          "text": "他在那里过得很好。我明天要举行一场",
+          "language": "zh-Hans",
+          "characters": 17.0,
+          "cps": 10.9,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "he's doing very well. I'm going to do a",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 25.0,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 25.0
+    },
+    {
+      "index": 45,
+      "start": 107.6,
+      "end": 109.4,
+      "duration": 1.8,
+      "lines": [
+        {
+          "index": 0,
+          "text": "柜员动员会。我要去",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 5.0,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "teller rally tomorrow. I'm doing",
+          "language": "en",
+          "characters": 32.0,
+          "cps": 17.78,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.78
+    },
+    {
+      "index": 46,
+      "start": 109.44,
+      "end": 111.8,
+      "duration": 2.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "佛罗里达。他说：“是什么原因？”",
+          "language": "zh-Hans",
+          "characters": 15.0,
+          "cps": 6.36,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Florida. He said, \"What's the reason?\"",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 16.1,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.1
+    },
+    {
+      "index": 47,
+      "start": 111.84,
+      "end": 114.84,
+      "duration": 3.0,
+      "lines": [
+        {
+          "index": 0,
+          "text": "做了什么之后？28.他说：“",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 4.0,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "After doing what? 28. He says, \"What's",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 12.67,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 12.67
+    },
+    {
+      "index": 48,
+      "start": 114.88,
+      "end": 116.84,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "先生，您为什么",
+          "language": "zh-Hans",
+          "characters": 7.0,
+          "cps": 3.57,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "the reason for this, sir, that you're",
+          "language": "en",
+          "characters": 37.0,
+          "cps": 18.88,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.88
+    },
+    {
+      "index": 49,
+      "start": 116.88,
+      "end": 118.44,
+      "duration": 1.56,
+      "lines": [
+        {
+          "index": 0,
+          "text": "不去堪萨斯？您知道",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 5.77,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "not going to Kansas? You know what the",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 24.36,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 24.36
+    },
+    {
+      "index": 50,
+      "start": 118.48,
+      "end": 120.52,
+      "duration": 2.04,
+      "lines": [
+        {
+          "index": 0,
+          "text": "原因吗？我觉得我没必要去",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 5.88,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "reason is? I don't feel I have to go to",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 19.12,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.12
+    },
+    {
+      "index": 51,
+      "start": 120.56,
+      "end": 123.32,
+      "duration": 2.76,
+      "lines": [
+        {
+          "index": 0,
+          "text": "堪萨斯。我明天要去佛罗里达，",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 5.07,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Kansas. I'm going to Florida tomorrow",
+          "language": "en",
+          "characters": 37.0,
+          "cps": 13.41,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.41
+    },
+    {
+      "index": 52,
+      "start": 123.36,
+      "end": 125.88,
+      "duration": 2.52,
+      "lines": [
+        {
+          "index": 0,
+          "text": "如果还有其他事，我再说吧。”",
+          "language": "zh-Hans",
+          "characters": 13.5,
+          "cps": 5.36,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "and I'll do if something else comes up.\"",
+          "language": "en",
+          "characters": 40.0,
+          "cps": 15.87,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 15.87
+    },
+    {
+      "index": 53,
+      "start": 125.92,
+      "end": 128.2,
+      "duration": 2.28,
+      "lines": [
+        {
+          "index": 0,
+          "text": "但他却说：“先生，您不能去",
+          "language": "zh-Hans",
+          "characters": 12.5,
+          "cps": 5.48,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "But he said, \"You're not going to",
+          "language": "en",
+          "characters": 33.0,
+          "cps": 14.47,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 14.47
+    },
+    {
+      "index": 54,
+      "start": 128.24,
+      "end": 130.84,
+      "duration": 2.6,
+      "lines": [
+        {
+          "index": 0,
+          "text": "堪萨斯。您感觉怎么样？",
+          "language": "zh-Hans",
+          "characters": 11.0,
+          "cps": 4.23,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Kansas, sir. Are you feeling well?",
+          "language": "en",
+          "characters": 34.0,
+          "cps": 13.08,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.08
+    },
+    {
+      "index": 55,
+      "start": 130.88,
+      "end": 133.08,
+      "duration": 2.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "您跟踪我两周了。",
+          "language": "zh-Hans",
+          "characters": 8.0,
+          "cps": 3.64,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "You've been following me for two weeks.",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 17.73,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.73
+    },
+    {
+      "index": 56,
+      "start": 133.12,
+      "end": 136.2,
+      "duration": 3.08,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我感觉很好。你真令人作呕。好好锻炼一下吧",
+          "language": "zh-Hans",
+          "characters": 20.0,
+          "cps": 6.49,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "I feel perfect. You are disgusting. Put",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 12.66,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 12.66
+    },
+    {
+      "index": 57,
+      "start": 136.24,
+      "end": 138.2,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "。你看上去糟透了。”",
+          "language": "zh-Hans",
+          "characters": 9.5,
+          "cps": 4.85,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "yourself in shape. You look like hell.\"",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 19.9,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.9
+    },
+    {
+      "index": 58,
+      "start": 138.24,
+      "end": 142.52,
+      "duration": 4.28,
+      "lines": [
+        {
+          "index": 0,
+          "text": "谢谢您，总统先生。昨天还在呼吸。",
+          "language": "zh-Hans",
+          "characters": 16.0,
+          "cps": 3.74,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Thank you, Mr. President. to breathe yesterday.",
+          "language": "en",
+          "characters": 47.0,
+          "cps": 10.98,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.98
+    }
+  ],
+  "source": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",
+  "format": "ass"
+}
