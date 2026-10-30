@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?><timedtext format="3">
+<head>
+<ws id="0"/>
+<ws id="1" mh="2" ju="0" sd="3"/>
+<wp id="0"/>
+<wp id="1" ap="6" ah="20" av="100" rc="2" cc="40"/>
+</head>
+<body>
+<w t="0" id="1" wp="1" ws="1"/>
+<p t="0" d="3760" w="1"><s ac="0">My</s><s t="240" ac="0"> name</s><s t="320" ac="0"> is</s><s t="400" ac="0"> Jared</s><s t="719" ac="0"> Isaacman.</s><s t="1280" ac="0"> I</s><s t="1439" ac="0"> am</s><s t="1600" ac="0"> the</s></p>
+<p t="1750" d="2010" w="1" a="1">
+</p>
+<p t="1760" d="3599" w="1"><s ac="0">administrator</s><s t="800" ac="0"> of</s><s t="1040" ac="0"> NASA.</s><s t="1520" ac="0"> I</s><s t="1679" ac="0"> get</s><s t="1840" ac="0"> the</s></p>
+<p t="3750" d="1609" w="1" a="1">
+</p>
+<p t="3760" d="3440" w="1"><s ac="0">privilege</s><s t="320" ac="0"> of</s><s t="480" ac="0"> leading</s><s t="800" ac="0"> the</s><s t="960" ac="0"> world&#39;s</s><s t="1280" ac="0"> most</s></p>
+<p t="5349" d="1851" w="1" a="1">
+</p>
+<p t="5359" d="4001" w="1"><s ac="0">accomplished</s><s t="561" ac="0"> space</s><s t="881" ac="0"> agency</s><s t="1361" ac="0"> during</s><s t="1601" ac="0"> the</s></p>
+<p t="7190" d="2170" w="1" a="1">
+</p>
+<p t="7200" d="3680" w="1"><s ac="0">golden</s><s t="400" ac="0"> age</s><s t="639" ac="0"> of</s><s t="880" ac="0"> science</s><s t="1200" ac="0"> and</s><s t="1359" ac="0"> discovery.</s><s t="1920" ac="0"> We</s></p>
+<p t="9350" d="1530" w="1" a="1">
+</p>
+<p t="9360" d="4399" w="1"><s ac="0">are</s><s t="159" ac="0"> going</s><s t="400" ac="0"> back</s><s t="640" ac="0"> to</s><s t="800" ac="0"> the</s><s t="880" ac="0"> moon.</s><s t="1120" ac="0"> We&#39;re</s><s t="1359" ac="0"> here</s></p>
+<p t="10870" d="2889" w="1" a="1">
+</p>
+<p t="10880" d="4560" w="1"><s ac="0">with</s><s t="160" ac="0"> Artemis</s><s t="719" ac="0"> 3.</s><s t="1200" ac="0"> They</s><s t="1440" ac="0"> launch</s><s t="1679" ac="0"> in</s><s t="1920" ac="0"> 2027.</s></p>
+<p t="13749" d="1691" w="1" a="1">
+</p>
+<p t="13759" d="2801" w="1"><s ac="0">&gt;&gt; We</s><s t="161" ac="0"> are</s><s t="321" ac="0"> so</s><s t="481" ac="0"> excited</s><s t="721" ac="0"> to</s><s t="880" ac="0"> represent</s><s t="1361" ac="0"> America</s></p>
+<p t="15430" d="1130" w="1" a="1">
+</p>
+<p t="15440" d="3440" w="1"><s ac="0">and</s><s t="159" ac="0"> the</s><s t="319" ac="0"> American</s><s t="640" ac="0"> people.</s></p>
+<p t="16550" d="2330" w="1" a="1">
+</p>
+<p t="16560" d="4000" w="1"><s ac="0">&gt;&gt; Europe</s><s t="400" ac="0"> wants</s><s t="719" ac="0"> to</s><s t="880" ac="0"> be</s><s t="1520" ac="0"> the</s><s t="1760" ac="0"> strongest</s><s t="2160" ac="0"> and</s></p>
+<p t="18870" d="1690" w="1" a="1">
+</p>
+<p t="18880" d="2800" w="1"><s ac="0">most</s><s t="239" ac="0"> reliable</s><s t="800" ac="0"> partner</s><s t="1280" ac="0"> for</s><s t="1600" ac="0"> the</s></p>
+<p t="20550" d="1130" w="1" a="1">
+</p>
+<p t="20560" d="2160" w="1"><s ac="0">exploration</s><s t="479" ac="0"> of</s><s t="639" ac="0"> the</s><s t="719" ac="0"> moon.</s></p>
+<p t="21670" d="1050" w="1" a="1">
+</p>
+<p t="21680" d="3920" w="1"><s ac="0">&gt;&gt; We&#39;re</s><s t="160" ac="0"> launching</s><s t="400" ac="0"> a</s><s t="560" ac="0"> bunch</s><s t="720" ac="0"> of</s><s t="800" ac="0"> different</s></p>
+<p t="22710" d="2890" w="1" a="1">
+</p>
+<p t="22720" d="4639" w="1"><s ac="0">rockets</s><s t="639" ac="0"> from</s><s t="880" ac="0"> the</s><s t="1040" ac="0"> SLS</s><s t="1600" ac="0"> to</s><s t="1840" ac="0"> the</s><s t="2000" ac="0"> Starship</s><s t="2719" ac="0"> and</s></p>
+<p t="25590" d="1769" w="1" a="1">
+</p>
+<p t="25600" d="3999" w="1"><s ac="0">to</s><s t="160" ac="0"> the</s><s t="400" ac="0"> Blue</s><s t="640" ac="0"> Origin</s><s t="1040" ac="0"> rocket.</s><s t="1439" ac="0"> It&#39;s</s><s t="1599" ac="0"> going</s><s t="1679" ac="0"> to</s></p>
+<p t="27349" d="2250" w="1" a="1">
+</p>
+<p t="27359" d="4641" w="1"><s ac="0">be</s><s t="160" ac="0"> fantastic.</s><s t="1041" ac="0"> laying</s><s t="1201" ac="0"> the</s><s t="1441" ac="0"> groundwork</s><s t="1840" ac="0"> for</s></p>
+<p t="29589" d="2411" w="1" a="1">
+</p>
+<p t="29599" d="4640" w="1"><s ac="0">the</s><s t="241" ac="0"> next</s><s t="481" ac="0"> phase</s><s t="881" ac="0"> of</s><s t="1281" ac="0"> human</s><s t="1600" ac="0"> exploration.</s></p>
+<p t="31990" d="2249" w="1" a="1">
+</p>
+<p t="32000" d="4000" w="1"><s ac="0">&gt;&gt; Our</s><s t="239" ac="0"> mission</s><s t="559" ac="0"> to</s><s t="800" ac="0"> launch</s><s t="1120" ac="0"> next</s><s t="1360" ac="0"> year</s><s t="1920" ac="0"> shows</s></p>
+<p t="34229" d="1771" w="1" a="1">
+</p>
+<p t="34239" d="3361" w="1"><s ac="0">American</s><s t="401" ac="0"> leadership</s><s t="721" ac="0"> in</s><s t="961" ac="0"> space</s><s t="1361" ac="0"> and</s><s t="1601" ac="0"> the</s></p>
+<p t="35990" d="1610" w="1" a="1">
+</p>
+<p t="36000" d="5200" w="1"><s ac="0">Artemis</s><s t="480" ac="0"> program</s><s t="719" ac="0"> leading</s><s t="1040" ac="0"> humans</s><s t="1360" ac="0"> back</s><s t="1520" ac="0"> to</s></p>
+<p t="37590" d="3610" w="1" a="1">
+</p>
+<p t="37600" d="8200" w="1"><s ac="0">the</s><s t="160" ac="0"> moon</s><s t="560" ac="0"> and</s><s t="799" ac="0"> onto</s><s t="1119" ac="0"> Mars</s><s t="1760" ac="0"> to</s><s t="2000" ac="0"> lead</s><s t="2720" ac="0"> humanity</s></p>
+<p t="41190" d="4610" w="1" a="1">
+</p>
+<p t="41200" d="4600" w="1"><s ac="0">and</s><s t="640" ac="0"> America</s><s t="1280" ac="0"> in</s><s t="1600" ac="0"> space.</s></p>
+</body>
+</timedtext>

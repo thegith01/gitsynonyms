@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:00.000" end="00:00:03.760" style="s2">My name is Jared Isaacman. I am the</p>
+<p begin="00:00:01.760" end="00:00:05.359" style="s2">administrator of NASA. I get the</p>
+<p begin="00:00:03.760" end="00:00:07.200" style="s2">privilege of leading the world&#39;s most</p>
+<p begin="00:00:05.359" end="00:00:09.360" style="s2">accomplished space agency during the</p>
+<p begin="00:00:07.200" end="00:00:10.880" style="s2">golden age of science and discovery. We</p>
+<p begin="00:00:09.360" end="00:00:13.759" style="s2">are going back to the moon. We&#39;re here</p>
+<p begin="00:00:10.880" end="00:00:15.440" style="s2">with Artemis 3. They launch in 2027.</p>
+<p begin="00:00:13.759" end="00:00:16.560" style="s2">&gt;&gt; We are so excited to represent America</p>
+<p begin="00:00:15.440" end="00:00:18.880" style="s2">and the American people.</p>
+<p begin="00:00:16.560" end="00:00:20.560" style="s2">&gt;&gt; Europe wants to be the strongest and</p>
+<p begin="00:00:18.880" end="00:00:21.680" style="s2">most reliable partner for the</p>
+<p begin="00:00:20.560" end="00:00:22.720" style="s2">exploration of the moon.</p>
+<p begin="00:00:21.680" end="00:00:25.600" style="s2">&gt;&gt; We&#39;re launching a bunch of different</p>
+<p begin="00:00:22.720" end="00:00:27.359" style="s2">rockets from the SLS to the Starship and</p>
+<p begin="00:00:25.600" end="00:00:29.599" style="s2">to the Blue Origin rocket. It&#39;s going to</p>
+<p begin="00:00:27.359" end="00:00:32.000" style="s2">be fantastic. laying the groundwork for</p>
+<p begin="00:00:29.599" end="00:00:34.239" style="s2">the next phase of human exploration.</p>
+<p begin="00:00:32.000" end="00:00:36.000" style="s2">&gt;&gt; Our mission to launch next year shows</p>
+<p begin="00:00:34.239" end="00:00:37.600" style="s2">American leadership in space and the</p>
+<p begin="00:00:36.000" end="00:00:41.200" style="s2">Artemis program leading humans back to</p>
+<p begin="00:00:37.600" end="00:00:45.800" style="s2">the moon and onto Mars to lead humanity</p>
+<p begin="00:00:41.200" end="00:00:45.800" style="s2">and America in space.</p>
+</div>
+</body>
+</tt>
