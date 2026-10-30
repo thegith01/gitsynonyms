@@ -15,7 +15,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -57,6 +59,48 @@ def resolve(metadata: dict, group: str) -> tuple[str, str] | None:
     if code:
         return code, "auto-generated"
     return None
+
+
+def proxy_from_env() -> str | None:
+    for name in (
+        "YTDLP_PROXY",
+        "HTTPS_PROXY",
+        "https_proxy",
+        "HTTP_PROXY",
+        "http_proxy",
+        "ALL_PROXY",
+        "all_proxy",
+    ):
+        value = os.environ.get(name)
+        if value:
+            return value
+    return None
+
+
+def download_caption_url(url: str, target: Path) -> None:
+    """Download one timedtext serialization directly.
+
+    yt-dlp's subtitle downloader occasionally loses the bot-check race even
+    when the metadata listing (which carries these signed URLs) succeeded.
+    The timedtext endpoint itself is usually still reachable, so this is a
+    format-level fallback, not a substitute for the seven-format attempt.
+    """
+    proxy = proxy_from_env()
+    handlers = (
+        [urllib.request.ProxyHandler({"http": proxy, "https": proxy})]
+        if proxy
+        else []
+    )
+    opener = urllib.request.build_opener(*handlers)
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "Mozilla/5.0", "Accept": "*/*"},
+    )
+    with opener.open(request, timeout=90) as response:
+        data = response.read()
+    if not data:
+        raise RuntimeError("empty timedtext response")
+    target.write_bytes(data)
 
 
 def rename_to_canonical(files: list[Path], video_id: str, code: str, canonical: str) -> list[Path]:
@@ -118,13 +162,65 @@ def main() -> int:
             + captions.track_formats(metadata.get("automatic_captions") or {}, code)
         ))
         log(f"{group}: using {code} ({kind}) with {', '.join(formats) or 'no formats'}")
+        files: list[Path] = []
+        download_error = ""
         try:
             files, _cues, _source = captions.download_track(
                 url, args.video_id, code, kind, directory, args.wait, formats
             )
         except Exception as error:  # noqa: BLE001 - a missing track is a normal outcome
+            download_error = str(error)
             log(f"{group}: download failed: {error}")
-            report["tracks"][canonical] = {"present": False, "formats": [], "error": str(error)}
+
+        # The listing above already carries signed timedtext URLs.  When
+        # yt-dlp loses the subtitle request to a bot check, fetch the missing
+        # serializations directly so all seven formats can still be kept.
+        entries: list[dict] = []
+        for table in (
+            metadata.get("subtitles") or {},
+            metadata.get("automatic_captions") or {},
+        ):
+            entries.extend(
+                entry
+                for entry in (table.get(code) or [])
+                if isinstance(entry, dict)
+            )
+        by_extension = {
+            str(entry["ext"]): str(entry["url"])
+            for entry in entries
+            if entry.get("ext") and entry.get("url")
+        }
+        existing = {
+            path.suffix.lstrip(".").lower(): path
+            for path in directory.glob(f"{args.video_id}.*")
+            if path.is_file() and code.lower() in path.name.lower()
+        }
+        for extension in formats:
+            if extension.lower() in existing:
+                continue
+            url_for_format = by_extension.get(extension)
+            if not url_for_format:
+                continue
+            target = directory / f"{args.video_id}.{code}.{extension}"
+            try:
+                log(f"{group}: direct timedtext fallback for {extension}")
+                download_caption_url(url_for_format, target)
+                files.append(target)
+                existing[extension.lower()] = target
+            except Exception as error:  # noqa: BLE001 - keep trying other formats
+                log(f"{group}: direct {extension} failed: {error}")
+        files = [path for path in files if path.is_file()]
+        files.extend(
+            path
+            for path in existing.values()
+            if path.is_file() and path not in files
+        )
+        if not files:
+            report["tracks"][canonical] = {
+                "present": False,
+                "formats": [],
+                "error": download_error or "no caption serialization downloaded",
+            }
             continue
         files = rename_to_canonical(files, args.video_id, code, canonical)
         written = sorted({path.suffix.lstrip(".") for path in files})

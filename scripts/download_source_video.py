@@ -34,7 +34,10 @@ CLIENT_CHAIN = ["tv_embedded", "android_vr", "web_safari", "mweb", "default"]
 # Live replays are often capped per client: tv_embedded may expose only 720p
 # while web_safari/android_vr expose 1080p.  The proxy phase must therefore
 # try every client and every quality tier, not just the first 1080p selector.
-PROXY_CLIENTS = ["tv_embedded", "android_vr", "web_safari", "default"]
+# ``default`` is the client that exposed the 720p tiers of the lJYmGObStag
+# live replay; the specialized clients either timed out or returned only
+# storyboards.  Keep it first so a 720p run does not spend minutes on them.
+PROXY_CLIENTS = ["default", "tv_embedded", "android_vr", "web_safari"]
 
 FORMAT_CHAIN = [
     "bv*[height>=1080]+ba/b[height>=1080]",
@@ -86,8 +89,9 @@ def probe(candidates: list[str], workers: int = 32) -> list[tuple[str, float]]:
 
 def try_download(url: str, target: Path, fmt: str, proxy: str | None, timeout: int,
                  cookies: Path | None, client: str = "default") -> tuple[bool, str]:
-    command = ["yt-dlp", "--no-warnings", "--retries", "2", "--fragment-retries", "2",
-               "--merge-output-format", "mp4", "-f", fmt, "-o", str(target)]
+    command = ["yt-dlp", "--no-warnings", "--retries", "3", "--fragment-retries", "3",
+               "--socket-timeout", "20", "--merge-output-format", "mp4",
+               "-f", fmt, "-o", str(target)]
     if client != "default":
         command += ["--extractor-args", f"youtube:player_client={client}"]
     if proxy:
@@ -131,9 +135,14 @@ def main() -> int:
         log(f"cookies file missing: {cookies}")
         cookies = None
 
-    preferred = "bv*[height>=%d]+ba/b[height>=%d]" % (args.min_height, args.min_height)
-    formats = [preferred] + FORMAT_CHAIN
-    formats = list(dict.fromkeys(formats))
+    # Never try a tier above the requested floor: a 720p-only live replay
+    # would otherwise spend an hour probing 1080p selectors that cannot exist.
+    tiers = [args.min_height]
+    tiers.extend(height for height in (1080, 720, 0) if height == 0 or height < args.min_height)
+    formats = [
+        "bv*+ba/b" if height == 0 else f"bv*[height>={height}]+ba/b[height>={height}]"
+        for height in dict.fromkeys(tiers)
+    ]
 
     attempts: list[dict] = []
     finished = False

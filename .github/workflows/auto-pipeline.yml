@@ -35,6 +35,11 @@ on:
         required: false
         type: string
         default: "30"
+      min_height:
+        description: Minimum source height; lower only with a declared degradation
+        required: false
+        type: string
+        default: "1080"
       preset:
         required: false
         type: string
@@ -76,6 +81,10 @@ on:
       crf:
         required: false
         default: "30"
+      min_height:
+        description: "Minimum source height; lower only with a declared degradation"
+        required: false
+        default: "1080"
       preset:
         required: false
         default: "veryfast"
@@ -122,7 +131,11 @@ jobs:
           sudo DEBIAN_FRONTEND=noninteractive timeout 420 apt-get install -y -qq \
             -o Acquire::Retries=2 -o Acquire::http::Timeout=20 ffmpeg fonts-wqy-zenhei || true
           python -m pip install --upgrade pip
-          python -m pip install "yt-dlp[default]" argostranslate faster-whisper
+          # faster-whisper 1.2.1 declares only `av>=11` but passes
+          # `metadata_errors=` to av.open(), which older av releases reject
+          # (TypeError: open() got an unexpected keyword argument).  Pin a
+          # release that actually has the keyword so the ASR fallback runs.
+          python -m pip install "yt-dlp[default]" argostranslate faster-whisper "av>=14"
           ffmpeg -version | head -1
 
       - name: Verify the event on the web
@@ -169,12 +182,13 @@ jobs:
         if: inputs.mode != 'probe'
         env:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+          MIN_HEIGHT: ${{ inputs.min_height }}
         run: |
           set -euo pipefail
           mkdir -p work
           python scripts/download_source_video.py \
-            --video-id "$VIDEO_ID" --output-dir work --min-height 1080 \
-            --proxy-limit 0 --proxy-tries 40 --timeout 1500 \
+            --video-id "$VIDEO_ID" --output-dir work --min-height "$MIN_HEIGHT" \
+            --proxy-limit 0 --proxy-tries 30 --timeout 1200 \
             --report work/download-report.json
           file="$(find work -maxdepth 1 -type f -name "${VIDEO_ID}.source.*" \
             ! -name "*.part" ! -name "*.ytdl" | head -1)"
@@ -276,6 +290,7 @@ jobs:
           CAPS: ${{ steps.captions.outputs.dir }}
           MODEL: ${{ inputs.asr_model }}
           SOURCE: ${{ steps.source.outputs.file }}
+          FORCE_ASR: ${{ inputs.force_asr }}
         run: |
           set -euo pipefail
           if [ -z "$CAPS" ] || [ ! -d "$CAPS" ]; then
@@ -284,13 +299,60 @@ jobs:
           fi
           if find "$CAPS" -name "${VIDEO_ID}*.en-orig.*" | grep -q .; then
             echo "YouTube English captions present; skipping ASR"
-          elif [ -n "${ASSEMBLYAI:-}" ]; then
-            echo "no YouTube English track; transcribing with AssemblyAI"
+            echo "CAPS=$CAPS" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          if [ "${FORCE_ASR:-false}" = "true" ]; then
+            echo "force_asr requested; skipping the YouTube probe and using ASR"
+          else
+            # A failed caption probe is not proof that YouTube has no English
+            # track.  Only a report that says the track is absent (no download
+            # error) may fall back to ASR; a missing report or a failed
+            # download is transient and must fail fast so the monitor retries
+            # instead of burning an hour on local transcription.
+            if [ ! -f "$CAPS/CAPTION_FORMATS.json" ]; then
+              echo "::error::caption probe produced no report at $CAPS/CAPTION_FORMATS.json (YouTube or proxy failure); refusing to guess with ASR"
+              exit 1
+            fi
+            verdict="$(python - "$CAPS/CAPTION_FORMATS.json" <<'PY'
+          import json
+          import sys
+
+          data = json.load(open(sys.argv[1], encoding="utf-8"))
+          track = (data.get("tracks") or {}).get("en-orig") or {}
+          if track.get("present"):
+              print("present")
+          elif track.get("error"):
+              print("probe-error")
+          else:
+              print("absent")
+          PY
+          )"
+            case "$verdict" in
+              present)
+                echo "::error::the caption report says English is present but no en-orig file was written; caption download failed"
+                exit 1
+                ;;
+              probe-error)
+                echo "::error::the English caption download failed (see $CAPS/CAPTION_FORMATS.json); treating it as transient"
+                exit 1
+                ;;
+              absent)
+                echo "YouTube publishes no English track; falling back to ASR"
+                ;;
+              *)
+                echo "::error::unexpected caption report verdict: $verdict"
+                exit 1
+                ;;
+            esac
+          fi
+          if [ -n "${ASSEMBLYAI:-}" ]; then
+            echo "transcribing with AssemblyAI"
             python scripts/assemblyai_captions.py \
               --video "$SOURCE" --video-id "$VIDEO_ID" \
               --track en-orig --output-dir "$CAPS" --work-dir work
           else
-            echo "no YouTube English track and no ASSEMBLYAI secret; using local faster-whisper"
+            echo "no ASSEMBLYAI secret; using local faster-whisper"
             python scripts/asr_captions.py \
               --video "$SOURCE" --video-id "$VIDEO_ID" \
               --track en-orig --model "$MODEL" --output-dir "$CAPS"
