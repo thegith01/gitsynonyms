@@ -14,11 +14,10 @@ MP4 to a GitHub Release, and lets the Jekyll workflow regenerate the Pages site.
 It records an ID only after the pipeline succeeds, so failed runs can retry.
 The processed ID list is `.github/state/whitehouse-processed-videos.txt`.
 
-Each scan picks the newest unprocessed upload, so one broken video would block
-every later one. The monitor therefore increments
-`.github/state/whitehouse-failed-videos.txt` when the pipeline fails, and the
-resolver skips an ID after three failures so newer uploads can proceed.
-`force_check` and a manual `video_id` run ignore both lists.
+Each scan retries the newest unprocessed upload until it succeeds or a newer
+upload replaces it at the top of the channel listing; a failure never marks the
+video as processed. `force_check` reprocesses the newest upload even when it is
+already recorded, and a manual `video_id` run skips the channel listing.
 
 YouTube may require authentication from hosted runners. The pipeline uses the
 configured proxy pool (`YTDLP_PROXY` or the discovered public pool) and in

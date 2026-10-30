@@ -1,5 +1,0 @@
-# White House video IDs that failed the auto pipeline, with the number of
-# consecutive failed attempts. scripts/monitoring/resolve_channel_feed.ps1
-# skips an ID once it reaches three failures, so one broken video cannot block
-# newer uploads. A manual run with video_id=... or force_check=true still
-# processes it.

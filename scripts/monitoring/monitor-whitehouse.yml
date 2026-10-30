@@ -88,7 +88,7 @@ jobs:
 
   mark-processed:
     needs: [resolve, pipeline]
-    if: needs.resolve.outputs.video_id != '' && needs.pipeline.result == 'success'
+    if: needs.resolve.outputs.video_id != ''
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -112,47 +112,3 @@ jobs:
             git push origin main
           fi
 
-  record-failure:
-    # A video that keeps failing must not block every later upload: count the
-    # attempt, and let resolve_channel_feed.ps1 skip it after three failures.
-    needs: [resolve, pipeline]
-    if: needs.resolve.outputs.video_id != '' && needs.pipeline.result == 'failure'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-      - name: Count the failed attempt
-        env:
-          VIDEO_ID: ${{ needs.resolve.outputs.video_id }}
-        run: |
-          set -euo pipefail
-          state_file=".github/state/whitehouse-failed-videos.txt"
-          mkdir -p "$(dirname "$state_file")"
-          touch "$state_file"
-          tmp="$(mktemp)"
-          awk -v id="$VIDEO_ID" '
-            /^[[:space:]]*#/ { print; next }
-            NF == 0 { next }
-            $1 == id { print $1, $2 + 1; found = 1; next }
-            { print }
-            END { if (!found) print id, 1 }
-          ' "$state_file" > "$tmp"
-          mv "$tmp" "$state_file"
-          if git diff --quiet -- "$state_file"; then
-            echo "failure count unchanged"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "$state_file"
-          git commit -m "Record failed White House video $VIDEO_ID"
-          for attempt in 1 2 3; do
-            if git push origin main; then
-              exit 0
-            fi
-            git pull --rebase --autostash origin main
-          done
-          echo "::error::could not push the failure counter"
-          exit 1
