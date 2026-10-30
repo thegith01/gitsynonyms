@@ -9,10 +9,13 @@ $stateFile = Join-Path $repoRoot ".github/state/whitehouse-processed-videos.txt"
 $processed = if (Test-Path $stateFile) { Get-Content $stateFile } else { @() }
 $videoId = ""
 $videoTitle = ""
-$channels = @(
-      "https://www.youtube.com/@WhiteHouse/videos",
-      "https://www.youtube.com/@WhiteHouse/streams"
-)
+# The uploads tab is the default scan target. Live replays move to /streams
+# only after they end, so scanning /streams first spends the five-minute slot
+# on stale livestream entries; it stays an explicit opt-in.
+$channels = @("https://www.youtube.com/@WhiteHouse/videos")
+if ($env:INCLUDE_STREAMS -eq "true") {
+    $channels += "https://www.youtube.com/@WhiteHouse/streams"
+}
 $forcedVideoId = $env:FORCE_VIDEO_ID
 if (-not [string]::IsNullOrWhiteSpace($forcedVideoId)) {
     if ($forcedVideoId -notmatch "^[A-Za-z0-9_-]{11}$") {
@@ -48,13 +51,13 @@ foreach ($channel in $channels) {
       if ($videoId) { break }
 }
 if (-not $videoId -and $foundItems -eq 0) {
-      throw "No video IDs were returned by either White House channel listing."
+      throw "No video IDs were returned by the White House channel listing(s): $($channels -join ', ')"
 }
 
 if ($videoId) {
     Write-Host "Discovered ${videoId}: $videoTitle"
 } else {
-      Write-Host "No unprocessed uploads found in the latest channel entries."
+      Write-Host "No unprocessed uploads found in the latest entries of: $($channels -join ', ')"
 }
 
 $videoTitle = $videoTitle.Replace("%", "%25").Replace("`r", "%0D").Replace("`n", "%0A")

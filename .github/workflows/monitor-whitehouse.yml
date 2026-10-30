@@ -16,6 +16,11 @@ on:
         description: Process this specific video ID instead of resolving the channel
         required: false
         type: string
+      include_streams:
+        description: Also scan the /streams tab when /videos has no new upload
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -52,6 +57,7 @@ jobs:
         env:
           FORCE_CHECK: ${{ inputs.force_check }}
           FORCE_VIDEO_ID: ${{ inputs.video_id }}
+          INCLUDE_STREAMS: ${{ inputs.include_streams }}
         shell: pwsh
         run: ./scripts/monitoring/resolve_channel_feed.ps1
 

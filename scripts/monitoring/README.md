@@ -1,9 +1,12 @@
 # White House video monitor
 
 `.github/workflows/monitor-whitehouse.yml` checks the latest entries in
-`@WhiteHouse/videos` and `@WhiteHouse/streams` every five minutes, GitHub
-Actions' shortest supported schedule interval. GitHub may delay scheduled jobs
-during periods of high load.
+`@WhiteHouse/videos` every five minutes, GitHub Actions' shortest supported
+schedule interval. GitHub may delay scheduled jobs during periods of high load.
+The `/streams` tab is not scanned by default: it fills with livestream entries
+that only become usable replays after they end, so the uploads tab keeps the
+scan focused. A manual run with `include_streams=true` adds `/streams` after
+`/videos` has been exhausted.
 It reads flat channel listings and ignores individual metadata failures during
 discovery, then downloads the selected video's captions and media.
 

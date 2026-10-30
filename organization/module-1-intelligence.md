@@ -69,6 +69,11 @@
 3. 采集失败记为 `unknown`，不得记为 `ok`（第七条）；
 4. 同一素材不得重复触发；重复触发按 P2 处理。
 
+扫描顺序（2026-10-30 授权调整）：定时扫描先查 `@WhiteHouse/videos`；该处没有未处理
+上传时，才由手动运行以 `include_streams=true` 追加 `@WhiteHouse/streams`。直播条目在
+结束前不能成片，先扫 `streams` 会占掉 5 分钟调度窗口。两个钦定频道仍由
+`scripts/monitoring/acquisition.py` 按最小间隔登记，钦定来源不因该调整断开。
+
 ### 实现
 
 | 环节 | 实现 |
