@@ -30,6 +30,16 @@ MAX_CANDIDATES_PER_SOURCE = 30
 MAX_WORKERS = 32
 IP_PORT_PATTERN = re.compile(r"^(?:https?://)?(\d{1,3}(?:\.\d{1,3}){3}):(\d{1,5})/?$")
 PROXY_INDEX_POOL = Path(__file__).resolve().parent.parent / "proxyindex" / "alive_http.txt"
+# The tiered pool is refreshed by ``proxy-pool.yml``: tier 3 holds proxies that
+# completed a real yt-dlp extraction plus a ranged download, tier 2 holds the
+# fastest HTTPS-capable proxies, and ``alive_http.txt`` is the committed
+# fallback for a checkout that never restored the pool cache.
+POOL_DIR = Path(__file__).resolve().parent.parent / "proxyindex" / "pool"
+POOL_CANDIDATES = (
+    POOL_DIR / "tier3" / "tier3_ready.txt",
+    POOL_DIR / "tier2" / "tier2_fast.txt",
+    PROXY_INDEX_POOL,
+)
 
 
 def normalize_candidate(line: str) -> str | None:
