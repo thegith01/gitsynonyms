@@ -106,7 +106,10 @@ permissions:
   contents: write
 
 concurrency:
-  group: auto-pipeline
+  # Different videos may run in parallel; only a duplicate dispatch of the
+  # same video waits.  The filebin backup uses per-video filenames, so the
+  # jobs do not collide.
+  group: auto-pipeline-${{ inputs.video_id || 'default' }}
   cancel-in-progress: false
 
 jobs:
