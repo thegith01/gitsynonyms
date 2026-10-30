@@ -66,6 +66,21 @@ Tests import `scripts/*.py` directly and add `scripts/` to `sys.path`; run them
 from the repository root. `scripts/` is not an installed package —
 `pyproject.toml` packages only `src/gitsynonyms`.
 
+### Local environment on this machine
+
+- **Python:** conda env `a`, not `base`:
+  `C:\Users\a2023\anaconda3\envs\a\python.exe -X utf8 -m pytest -q`.
+  Install once with
+  `C:\Users\a2023\anaconda3\envs\a\python.exe -m pip install -e . pytest`.
+  `base` (Anaconda) is missing the editable `gitsynonyms` package and will fail
+  collection on `tests/test_gitsynonyms.py`, `test_youtube*.py`.
+- **GitHub:** the live remote is `gitsynonyms02/gitsynonyms`, so `gh` must be
+  authenticated as `gitsynonyms02`
+  (`gh auth switch --user gitsynonyms02`, then `gh auth status`). The old
+  `gitsynonyms01` account is suspended; `codespaces02` has no access and makes
+  every Actions call return 404. If `gh` reports 404 for a repo that exists,
+  check the active account before assuming the repo is gone.
+
 ## Subtitle rendering rules
 
 - `CAPTION_AREA = (96, 883, 1824, 1008)` (5% side margins), text anchored with
