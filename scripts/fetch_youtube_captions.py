@@ -17,6 +17,7 @@ import argparse
 import json
 import os
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -30,6 +31,13 @@ ENGLISH_PREFERENCES = ("en-orig", "en", "en-US", "en-GB", "en-CA", "en-AU")
 CHINESE_PREFERENCES = ("zh-Hans", "zh-CN", "zh", "zh-SG", "zh-Hant", "zh-TW", "zh-HK")
 
 CANONICAL = {"en": "en-orig", "zh": "zh-Hans"}
+
+# YouTube rate-limits the timedtext endpoint per address.  Seven serializations
+# for English followed immediately by Chinese produced HTTP 429 on every
+# Chinese request, so leave a cooling gap between languages and retry a
+# rate-limited language once.
+GROUP_GAP_SECONDS = 20
+RATE_LIMIT_BACKOFF = 20
 
 
 def log(message: str) -> None:
@@ -261,7 +269,12 @@ def main() -> int:
         ),
     }
 
+    first_group = True
     for group in [item.strip() for item in args.groups.split(",") if item.strip()]:
+        if not first_group:
+            log(f"waiting {GROUP_GAP_SECONDS}s before the next language")
+            time.sleep(GROUP_GAP_SECONDS)
+        first_group = False
         canonical = CANONICAL[group]
         resolved = resolve(metadata, group)
         if not resolved:
@@ -283,6 +296,17 @@ def main() -> int:
         except Exception as error:  # noqa: BLE001 - a missing track is a normal outcome
             download_error = str(error)
             log(f"{group}: download failed: {error}")
+            if "429" in download_error:
+                log(f"{group}: rate limited; retrying once after {RATE_LIMIT_BACKOFF}s")
+                time.sleep(RATE_LIMIT_BACKOFF)
+                try:
+                    files, _cues, _source = captions.download_track(
+                        url, args.video_id, code, kind, directory, args.wait, formats
+                    )
+                    download_error = ""
+                except Exception as retry_error:  # noqa: BLE001 - keep the first cause
+                    download_error = str(retry_error)
+                    log(f"{group}: retry failed: {retry_error}")
 
         # The listing above already carries signed timedtext URLs.  When
         # yt-dlp loses the subtitle request to a bot check, fetch the missing
