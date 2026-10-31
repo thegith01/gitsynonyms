@@ -68,7 +68,9 @@ def canary_probe(proxy: str) -> float | None:
     return selector.probe_proxy(proxy)
 
 
-def ytdlp_metadata_ok(proxy: str, video_id: str, timeout: float) -> bool:
+def ytdlp_metadata_ok(
+    proxy: str, video_id: str, timeout: float, client: str = ""
+) -> bool:
     command = [
         "yt-dlp",
         "--proxy",
@@ -78,6 +80,10 @@ def ytdlp_metadata_ok(proxy: str, video_id: str, timeout: float) -> bool:
         "10",
         "--retries",
         "0",
+    ]
+    if client:
+        command += ["--extractor-args", f"youtube:player_client={client}"]
+    command += [
         "-J",
         "--skip-download",
         f"https://www.youtube.com/watch?v={video_id}",
@@ -117,9 +123,11 @@ def pick(
         return None
 
     for latency, proxy in working[:verify]:
-        if ytdlp_metadata_ok(proxy, video_id, timeout):
-            return proxy, f"yt-dlp metadata ok ({latency * 1000:.0f} ms canary)"
-        log(f"  {proxy}: canary ok but yt-dlp failed")
+        for client in ("", "tv", "mweb"):
+            if ytdlp_metadata_ok(proxy, video_id, timeout, client):
+                label = client or "default"
+                return proxy, f"yt-dlp metadata ok ({latency * 1000:.0f} ms canary, {label} client)"
+        log(f"  {proxy}: canary ok but yt-dlp failed on every client")
     return None
 
 

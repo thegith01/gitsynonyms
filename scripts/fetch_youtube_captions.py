@@ -146,6 +146,44 @@ def write_report(
     path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+LISTING_CLIENTS = ("", "tv", "web_safari", "mweb", "android", "ios")
+
+
+def listing_arguments(url: str, client: str) -> list[str]:
+    arguments = ["-J", "--skip-download"]
+    if client:
+        arguments += ["--extractor-args", f"youtube:player_client={client}"]
+    arguments.append(url)
+    return arguments
+
+
+def try_listing(url: str) -> dict:
+    """Ask every player client for the metadata, newest fallback last.
+
+    YouTube's bot check is client-specific: the web client can demand a
+    sign-in while ``tv`` or ``mweb`` still returns the caption tracks from the
+    same IP.  The first client that returns a listing with caption tracks wins;
+    a listing without tracks is not accepted because the caption stage needs
+    the signed timedtext URLs it carries.
+    """
+    errors: list[str] = []
+    for client in LISTING_CLIENTS:
+        label = client or "default"
+        try:
+            listing = captions.run_ytdlp(
+                listing_arguments(url, client), show_progress=False
+            )
+            data = json.loads(listing.stdout)
+        except Exception as error:  # noqa: BLE001 - try the next client
+            errors.append(f"{label}: {error}")
+            continue
+        if data.get("subtitles") or data.get("automatic_captions"):
+            log(f"listing via {label} client")
+            return data
+        errors.append(f"{label}: no caption tracks in the listing")
+    raise RuntimeError(" | ".join(errors))
+
+
 def fetch_listing(url: str, video_id: str, report_path: Path) -> dict:
     """Fetch the player metadata, re-selecting the proxy when the first one dies.
 
@@ -156,8 +194,7 @@ def fetch_listing(url: str, video_id: str, report_path: Path) -> dict:
     """
     errors: list[str] = []
     try:
-        listing = captions.run_ytdlp(["-J", "--skip-download", url], show_progress=False)
-        return json.loads(listing.stdout)
+        return try_listing(url)
     except Exception as error:  # noqa: BLE001 - retry with another proxy
         errors.append(str(error))
 
@@ -178,8 +215,7 @@ def fetch_listing(url: str, video_id: str, report_path: Path) -> dict:
         os.environ["YTDLP_PROXY"] = selected[0]
         log(f"listing retry through {selected[0]} ({selected[1]})")
         try:
-            listing = captions.run_ytdlp(["-J", "--skip-download", url], show_progress=False)
-            return json.loads(listing.stdout)
+            return try_listing(url)
         except Exception as error:  # noqa: BLE001 - report the combined failure
             errors.append(str(error))
 
