@@ -136,6 +136,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Set up the JavaScript runtime yt-dlp needs
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
       - name: Install media, caption and translation tools
         run: |
           set -x
@@ -148,6 +153,7 @@ jobs:
           # (TypeError: open() got an unexpected keyword argument).  Pin a
           # release that actually has the keyword so the ASR fallback runs.
           python -m pip install "yt-dlp[default]" argostranslate faster-whisper "av>=14"
+          deno --version | head -1
           ffmpeg -version | head -1
 
       - name: Verify the event on the web
