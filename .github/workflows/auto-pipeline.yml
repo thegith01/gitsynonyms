@@ -141,6 +141,12 @@ jobs:
         with:
           deno-version: v2.x
 
+      - name: Free disk space for the media toolchain
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          sudo apt-get clean
+          df -h /
+
       - name: Install media, caption and translation tools
         run: |
           set -x
@@ -148,13 +154,19 @@ jobs:
           sudo DEBIAN_FRONTEND=noninteractive timeout 420 apt-get install -y -qq \
             -o Acquire::Retries=2 -o Acquire::http::Timeout=20 ffmpeg fonts-wqy-zenhei || true
           python -m pip install --upgrade pip
+          # argostranslate pulls stanza, which pulls torch.  The default wheel
+          # drags several gigabytes of CUDA libraries onto a runner that only
+          # has a CPU, and that is what filled the disk.  Install the CPU wheel
+          # first so the later resolve keeps it.
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
           # faster-whisper 1.2.1 declares only `av>=11` but passes
           # `metadata_errors=` to av.open(), which older av releases reject
           # (TypeError: open() got an unexpected keyword argument).  Pin a
           # release that actually has the keyword so the ASR fallback runs.
           python -m pip install "yt-dlp[default]" argostranslate faster-whisper "av>=14"
-          deno --version | head -1
+          deno --version
           ffmpeg -version | head -1
+          df -h /
 
       - name: Verify the event on the web
         env:

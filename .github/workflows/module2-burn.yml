@@ -92,6 +92,7 @@ jobs:
           sudo DEBIAN_FRONTEND=noninteractive timeout 420 apt-get install -y -qq \
             -o Acquire::Retries=2 -o Acquire::http::Timeout=20 ffmpeg fonts-wqy-zenhei || true
           python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
           python -m pip install argostranslate
           ffmpeg -version | head -1
           fc-list | grep -i -E 'wqy|noto.*cjk' | head -2 || true
