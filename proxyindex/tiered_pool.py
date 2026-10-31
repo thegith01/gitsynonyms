@@ -606,7 +606,11 @@ def ready(
     video: str,
 ) -> dict:
     if not TIER2_RECORDS.is_file():
-        raise SystemExit(f"{TIER2_RECORDS} is missing; run the speed stage first")
+        print(
+            f"{TIER2_RECORDS} is missing; tier 2 has not produced candidates yet",
+            flush=True,
+        )
+        return {"kept": 0, "reason": "tier2-missing"}
     candidates = load_jsonl(TIER2_RECORDS)
     existing = load_jsonl(TIER3_RECORDS)
     now = time.time()

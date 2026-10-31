@@ -99,9 +99,14 @@ python3 proxyindex/tiered_pool.py status
 
 Each stage only tests candidates whose record is missing or older than its
 `--max-age`, so a 15-minute tier-3 run touches roughly 900 proxies instead of
-all 10,000. A proxy that fails is recorded in `tier3_failed.json` and skipped
-until the freshness window expires; a proxy that succeeds is re-verified before
-it can expire, so the ready pool never contains an entry older than two hours.
+all 10,000. A proxy that fails is recorded in `tier2_failed.json` or
+`tier3_failed.json` and skipped until the freshness window expires; without that
+memory a rolling batch would retest the same failures every run and never reach
+the rest of the pool. Tier 2 samples the pool in a stable hash order rather than
+by TCP latency: the fastest TCP handshakes are often services that accept a
+socket but are not HTTP proxies, and ordering by them tested 4,000 entries with
+zero HTTPS passes. A proxy that succeeds is re-verified before it can expire, so
+the ready pool never contains an entry older than two hours.
 
 The pool lives in the Actions cache, not in git. `.github/workflows/proxy-pool.yml`
 runs the three cadences; `auto-pipeline.yml` restores the tier-3 cache before
