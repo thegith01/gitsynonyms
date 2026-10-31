@@ -239,7 +239,7 @@ jobs:
           else
             python scripts/download_source_video.py \
               --video-id "$VIDEO_ID" --output-dir work --min-height "$MIN_HEIGHT" \
-              --proxy-limit 0 --proxy-tries 30 --timeout 1200 \
+              --proxy-limit 0 --proxy-tries 200 --probe-timeout 60 --timeout 900 \
               --report work/download-report.json
           fi
           file="$(find work -maxdepth 1 -type f -name "${VIDEO_ID}.source.*" \
@@ -452,17 +452,6 @@ jobs:
             echo "::warning::final MP4 exceeds 2 GB; it is backed up to the bin but cannot be a Release asset"
           fi
 
-      - name: Cut the web preview and poster
-        if: inputs.mode == 'full' && inputs.publish
-        env:
-          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
-        run: |
-          set -euo pipefail
-          python scripts/make_web_preview.py \
-            --video "output/Burned_Bilingual_${VIDEO_ID}.mp4" \
-            --video-id "$VIDEO_ID" \
-            --output-dir site/media
-
       - name: Back up subtitles and deliverables to the bin
         if: inputs.mode == 'full'
         env:
@@ -501,6 +490,21 @@ jobs:
               --title "${TITLE:-Bilingual video $VIDEO_ID}" \
               --notes "Chinese and English captions burned into the source."
           fi
+
+      # Burn -> back up -> publish -> preview (DIRECTIVE 3.6): the deliverable
+      # and the Release asset must exist before the cheap, killable ffmpeg
+      # preview runs, so a runner shutdown in the preview cannot destroy a
+      # two-hour burn.
+      - name: Cut the web preview and poster
+        if: inputs.mode == 'full' && inputs.publish
+        env:
+          VIDEO_ID: ${{ steps.sources.outputs.chosen }}
+        run: |
+          set -euo pipefail
+          python scripts/make_web_preview.py \
+            --video "output/Burned_Bilingual_${VIDEO_ID}.mp4" \
+            --video-id "$VIDEO_ID" \
+            --output-dir site/media
 
       - name: Generate Pages site
         if: inputs.mode == 'full' && inputs.publish
