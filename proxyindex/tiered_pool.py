@@ -566,8 +566,16 @@ def ready(
         flush=True,
     )
 
+    def work(candidate: dict) -> dict:
+        proxy = candidate["proxy"]
+        try:
+            return ready_test(proxy, video, timeout)
+        except Exception as error:  # noqa: BLE001 - one proxy must not kill the run
+            print(f"  {proxy}: download test error {error}", flush=True)
+            return {"proxy": proxy, "ok": False, "reason": "error"}
+
     with ThreadPoolExecutor(max_workers=concurrency) as pool:
-        tested = list(pool.map(lambda candidate: ready_test(candidate["proxy"], video, timeout), selected))
+        tested = list(pool.map(work, selected))
 
     for record in tested:
         if record.get("ok"):

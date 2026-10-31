@@ -19,6 +19,11 @@ on:
         required: false
         type: string
         default: ""
+      source_url:
+        description: Reuse an already backed-up source file instead of downloading again
+        required: false
+        type: string
+        default: ""
       mode:
         required: false
         type: string
@@ -64,6 +69,10 @@ on:
         default: "9aPyO1jfDGM"
       source_video_id:
         description: "Force this video id as the source (empty = rank candidates)"
+        required: false
+        default: ""
+      source_url:
+        description: "Reuse an already backed-up source file instead of downloading again"
         required: false
         default: ""
       mode:
@@ -193,13 +202,28 @@ jobs:
         env:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
           MIN_HEIGHT: ${{ inputs.min_height }}
+          SOURCE_URL: ${{ inputs.source_url }}
         run: |
           set -euo pipefail
           mkdir -p work
-          python scripts/download_source_video.py \
-            --video-id "$VIDEO_ID" --output-dir work --min-height "$MIN_HEIGHT" \
-            --proxy-limit 0 --proxy-tries 30 --timeout 1200 \
-            --report work/download-report.json
+          if [ -n "${SOURCE_URL:-}" ]; then
+            echo "reusing the backed-up source: $SOURCE_URL"
+            curl -fL --retry 5 --retry-delay 5 --retry-all-errors \
+              -o "work/${VIDEO_ID}.source.mp4" "$SOURCE_URL"
+            python -c "import json,pathlib,sys; pathlib.Path('work/download-report.json').write_text(json.dumps({'video_id': sys.argv[1], 'source': 'filebin', 'attempts': [{'ok': True, 'proxy': '', 'method': 'filebin'}]}, indent=2) + '\n', encoding='utf-8')" "$VIDEO_ID"
+            height="$(ffprobe -v error -select_streams v:0 \
+              -show_entries stream=height -of csv=p=0 "work/${VIDEO_ID}.source.mp4")"
+            echo "source height: ${height}p (minimum ${MIN_HEIGHT}p)"
+            if [ -n "$height" ] && [ "$height" -lt "$MIN_HEIGHT" ]; then
+              echo "::error::backed-up source is ${height}p, below the required ${MIN_HEIGHT}p"
+              exit 1
+            fi
+          else
+            python scripts/download_source_video.py \
+              --video-id "$VIDEO_ID" --output-dir work --min-height "$MIN_HEIGHT" \
+              --proxy-limit 0 --proxy-tries 30 --timeout 1200 \
+              --report work/download-report.json
+          fi
           file="$(find work -maxdepth 1 -type f -name "${VIDEO_ID}.source.*" \
             ! -name "*.part" ! -name "*.ytdl" | head -1)"
           if [ -z "$file" ]; then
@@ -220,7 +244,7 @@ jobs:
             --candidates 60 --verify 8 || true
 
       - name: Back up the downloaded source to the bin
-        if: inputs.mode != 'probe'
+        if: inputs.mode != 'probe' && inputs.source_url == ''
         continue-on-error: true
         env:
           VIDEO_ID: ${{ steps.sources.outputs.chosen }}
