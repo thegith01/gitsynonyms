@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import http.client
 import json
 import os
 import re
@@ -378,7 +379,7 @@ def https_probe(proxy: str, timeout: float) -> float | None:
         with opener.open(request, timeout=timeout) as response:
             if response.status != 204:
                 return None
-    except (OSError, urllib.error.URLError, TimeoutError):
+    except (OSError, urllib.error.URLError, http.client.HTTPException, TimeoutError):
         return None
     return (time.monotonic() - started) * 1000
 
@@ -417,11 +418,16 @@ def speed(batch: int, target: int, max_age: float, concurrency: int, timeout: fl
     )
 
     def work(candidate: dict) -> dict:
-        latency = https_probe(candidate["proxy"], timeout)
+        proxy = candidate["proxy"]
+        try:
+            latency = https_probe(proxy, timeout)
+        except Exception as error:  # noqa: BLE001 - one proxy must not kill the run
+            print(f"  {proxy}: probe error {error}", flush=True)
+            latency = None
         if latency is None:
-            return {"proxy": candidate["proxy"], "ok": False, "verified_at": int(now)}
+            return {"proxy": proxy, "ok": False, "verified_at": int(now)}
         return {
-            "proxy": candidate["proxy"],
+            "proxy": proxy,
             "ok": True,
             "latency_ms": round(latency, 1),
             "verified_at": int(now),
@@ -500,7 +506,7 @@ def ranged_download(proxy: str, url: str, timeout: float) -> tuple[int, float] |
     try:
         with opener.open(request, timeout=timeout) as response:
             payload = response.read(RANGE_BYTES)
-    except (OSError, urllib.error.URLError, TimeoutError):
+    except (OSError, urllib.error.URLError, http.client.HTTPException, TimeoutError):
         return None
     elapsed = max(time.monotonic() - started, 0.001)
     if len(payload) < 16 * 1024:
