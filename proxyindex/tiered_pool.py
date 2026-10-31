@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import hashlib
 import http.client
 import json
 import os
@@ -385,6 +386,20 @@ def https_probe(proxy: str, timeout: float) -> float | None:
     return (time.monotonic() - started) * 1000
 
 
+def stale_candidates(
+    candidates: list[dict],
+    fresh: dict[str, dict],
+    max_age: float,
+    now: float,
+) -> list[dict]:
+    return [
+        candidate
+        for candidate in candidates
+        if candidate["proxy"] not in fresh
+        or now - float(fresh[candidate["proxy"]].get("verified_at", 0)) > max_age
+    ]
+
+
 def rolling_batch(
     candidates: list[dict],
     fresh: dict[str, dict],
@@ -394,13 +409,30 @@ def rolling_batch(
     key: str,
 ) -> list[dict]:
     """Oldest/most promising candidates that are not fresh in the next tier."""
-    stale = [
-        candidate
-        for candidate in candidates
-        if candidate["proxy"] not in fresh
-        or now - float(fresh[candidate["proxy"]].get("verified_at", 0)) > max_age
-    ]
+    stale = stale_candidates(candidates, fresh, max_age, now)
     stale.sort(key=lambda candidate: (candidate.get(key, 0), candidate["proxy"]))
+    return stale[:batch]
+
+
+def rolling_sample(
+    candidates: list[dict],
+    fresh: dict[str, dict],
+    batch: int,
+    max_age: float,
+    now: float,
+    exclude: set[str] | None = None,
+) -> list[dict]:
+    """A stable pseudo-random slice, so one bad head cannot starve the sweep.
+
+    The fastest TCP handshakes are often services that accept a socket but are
+    not HTTP proxies; ordering tier 2 by TCP latency tested 4,000 such entries
+    and found none that passed the HTTPS canary.  Hashing the address spreads
+    every run across the whole pool while keeping the order reproducible.
+    """
+    stale = stale_candidates(candidates, fresh, max_age, now)
+    if exclude:
+        stale = [candidate for candidate in stale if candidate["proxy"] not in exclude]
+    stale.sort(key=lambda candidate: hashlib.sha1(candidate["proxy"].encode()).hexdigest())
     return stale[:batch]
 
 
@@ -436,8 +468,7 @@ def speed(batch: int, target: int, max_age: float, concurrency: int, timeout: fl
     now = time.time()
     fresh = {record["proxy"]: record for record in existing}
     failed = load_failed(TIER2_FAILED, max_age, now)
-    selected = rolling_batch(candidates, fresh, batch, max_age, now, "latency_ms")
-    selected = [candidate for candidate in selected if candidate["proxy"] not in failed][:batch]
+    selected = rolling_sample(candidates, fresh, batch, max_age, now, exclude=set(failed))
     print(
         f"tier2: {len(candidates)} candidates, {len(existing)} stored, "
         f"{len(failed)} recent failures, testing {len(selected)}",

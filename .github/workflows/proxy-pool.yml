@@ -110,8 +110,8 @@ jobs:
       - name: Screen the fastest HTTPS proxies
         run: |
           python proxyindex/tiered_pool.py speed \
-            --batch 4000 --target 10000 --max-age 10800 \
-            --concurrency 128 --timeout 5
+            --batch 16000 --target 10000 --max-age 10800 \
+            --concurrency 256 --timeout 4
 
       - name: Report the tier
         run: python proxyindex/tiered_pool.py status

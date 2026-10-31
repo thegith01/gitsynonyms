@@ -99,6 +99,23 @@ def test_write_plain_keeps_the_record_order(tmp_path):
     assert target.read_text(encoding="utf-8").splitlines() == ["9.9.9.9:80", "8.8.8.8:80"]
 
 
+def test_rolling_sample_is_stable_and_skips_failures():
+    now = 1_000_000.0
+    candidates = [{"proxy": f"10.0.0.{index}:80", "latency_ms": index} for index in range(1, 20)]
+
+    first = tiers.rolling_sample(candidates, {}, batch=5, max_age=100, now=now)
+    second = tiers.rolling_sample(candidates, {}, batch=5, max_age=100, now=now)
+
+    assert [candidate["proxy"] for candidate in first] == [
+        candidate["proxy"] for candidate in second
+    ]
+    excluded = {first[0]["proxy"]}
+    third = tiers.rolling_sample(
+        candidates, {}, batch=5, max_age=100, now=now, exclude=excluded
+    )
+    assert excluded.isdisjoint(candidate["proxy"] for candidate in third)
+
+
 def test_load_failed_keeps_only_recent_failures(tmp_path):
     path = tmp_path / "tier2_failed.json"
     path.write_text(
