@@ -5,7 +5,15 @@ Order of attempts
 -----------------
 1. direct connection (no proxy)
 2. every candidate from the repository proxy code, probed in parallel and
-   sorted by latency, tried one by one until a download completes
+   sorted by latency
+3. a short *screening* pass per proxy (``--probe-timeout``): a real yt-dlp
+   extraction that proves the proxy can reach the player API at all
+4. only the proxies that pass screening get the full ``--timeout`` to move
+   bytes, so a dead address costs seconds instead of twenty minutes
+
+A proxy that hits the full timeout without writing a single byte is dropped
+immediately; retrying it with the remaining clients and formats is what used
+to turn one dead address into hours of wall clock.
 
 Quality: prefer 1080p or higher, then degrade step by step.
 
@@ -87,8 +95,50 @@ def probe(candidates: list[str], workers: int = 32) -> list[tuple[str, float]]:
     return results
 
 
+def _progress_size(target: Path) -> int:
+    """Bytes already written for ``target`` (the ``%(ext)s`` template)."""
+    pattern = target.name.replace("%(ext)s", "*")
+    total = 0
+    for path in target.parent.glob(pattern):
+        try:
+            total += path.stat().st_size
+        except OSError:
+            continue
+    return total
+
+
+def smoke_test(url: str, proxy: str, timeout: int,
+               cookies: Path | None) -> tuple[bool, str]:
+    """Cheap two-stage check: can this proxy resolve the media at all?
+
+    The format is deliberately permissive (``bv*+ba/b``): this asks only
+    whether the proxy can reach the player API and hand back stream URLs.  The
+    quality floor is enforced by the download formats that follow, so a
+    live replay whose 1080p tier only exists on one client is not rejected
+    here for the wrong reason.
+    """
+    command = [
+        "yt-dlp", "--simulate", "--no-warnings",
+        "--retries", "0", "--fragment-retries", "0", "--socket-timeout", "15",
+        "-f", "bv*+ba/b", "--print", "%(id)s",
+        "--proxy", proxy,
+    ]
+    if cookies:
+        command += ["--cookies", str(cookies)]
+    command.append(url)
+    try:
+        result = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        return False, f"{proxy}: screen timeout after {timeout}s"
+    if result.returncode == 0:
+        return True, f"{proxy}: screen ok"
+    detail = (result.stderr or result.stdout).strip().splitlines()
+    tail = detail[-1] if detail else f"exit {result.returncode}"
+    return False, f"{proxy}: screen {tail[:160]}"
+
+
 def try_download(url: str, target: Path, fmt: str, proxy: str | None, timeout: int,
-                 cookies: Path | None, client: str = "default") -> tuple[bool, str]:
+                 cookies: Path | None, client: str = "default") -> tuple[bool, str, int]:
     command = ["yt-dlp", "--no-warnings", "--retries", "3", "--fragment-retries", "3",
                "--socket-timeout", "20", "--merge-output-format", "mp4",
                "-f", fmt, "-o", str(target)]
@@ -102,16 +152,17 @@ def try_download(url: str, target: Path, fmt: str, proxy: str | None, timeout: i
     label = f"{proxy or 'direct'} [{client}]"
     log(f"  trying {label} @ {fmt}")
     started = time.monotonic()
+    before = _progress_size(target)
     try:
         result = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:
-        return False, f"{label}: timeout after {timeout}s"
+        return False, f"{label}: timeout after {timeout}s", _progress_size(target) - before
     elapsed = time.monotonic() - started
     if result.returncode == 0:
-        return True, f"{label}: ok in {elapsed:.0f}s"
+        return True, f"{label}: ok in {elapsed:.0f}s", _progress_size(target) - before
     detail = (result.stderr or result.stdout).strip().splitlines()
     tail = detail[-1] if detail else f"exit {result.returncode}"
-    return False, f"{label}: {tail[:180]}"
+    return False, f"{label}: {tail[:180]}", _progress_size(target) - before
 
 
 def main() -> int:
@@ -120,8 +171,13 @@ def main() -> int:
     parser.add_argument("--output-dir", default="work")
     parser.add_argument("--min-height", type=int, default=1080)
     parser.add_argument("--proxy-limit", type=int, default=120)
-    parser.add_argument("--proxy-tries", type=int, default=25)
-    parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument("--proxy-tries", type=int, default=60,
+                        help="How many probed proxies to screen, best latency first")
+    parser.add_argument("--probe-timeout", type=int, default=60,
+                        help="Seconds a proxy gets to pass the screening extraction")
+    parser.add_argument("--probe-workers", type=int, default=12)
+    parser.add_argument("--timeout", type=int, default=900,
+                        help="Seconds a screened proxy gets to finish the real download")
     parser.add_argument("--cookies", default="")
     parser.add_argument("--report", default="")
     args = parser.parse_args()
@@ -148,7 +204,7 @@ def main() -> int:
     finished = False
     for client in CLIENT_CHAIN:
         for fmt in formats:
-            ok, note = try_download(url, target, fmt, None, args.timeout, cookies, client)
+            ok, note, _ = try_download(url, target, fmt, None, args.timeout, cookies, client)
             attempts.append({"mode": "direct", "client": client, "format": fmt,
                              "ok": ok, "note": note})
             log(f"  {note}")
@@ -161,24 +217,58 @@ def main() -> int:
     if not finished:
         candidates = candidate_proxies(args.proxy_limit)
         alive = probe(candidates) if candidates else []
-        # Quality first, then transport: keep the highest tier across every
-        # proxy/client before degrading, so a single 720p-only client cannot
-        # mask a 1080p-capable proxy.
-        for fmt in formats:
-            for proxy, latency in alive[:args.proxy_tries]:
-                for client in PROXY_CLIENTS:
-                    ok, note = try_download(url, target, fmt, proxy, args.timeout, cookies, client)
-                    attempts.append({"mode": "proxy", "proxy": proxy, "client": client,
-                                     "latency": round(latency, 3), "format": fmt,
-                                     "ok": ok, "note": note})
-                    log(f"  {note}")
-                    if ok:
-                        finished = True
+        shortlist = alive[:args.proxy_tries]
+        # Screen every shortlisted proxy concurrently, then consume the
+        # survivors in latency order: the fastest one starts downloading while
+        # the remaining screens are still running in the pool.
+        if shortlist:
+            log(f"screening {len(shortlist)} proxies (<= {args.probe_timeout}s each)...")
+            with ThreadPoolExecutor(max_workers=args.probe_workers) as pool:
+                screens = {
+                    pool.submit(smoke_test, url, proxy, args.probe_timeout, cookies):
+                        (proxy, latency)
+                    for proxy, latency in shortlist
+                }
+                for future, (proxy, latency) in screens.items():
+                    try:
+                        passed, screen_note = future.result()
+                    except Exception as error:  # noqa: BLE001
+                        passed, screen_note = False, f"{proxy}: screen error {error}"
+                    attempts.append({"mode": "probe", "proxy": proxy,
+                                     "latency": round(latency, 3),
+                                     "ok": passed, "note": screen_note})
+                    log(f"  {screen_note}")
+                    if not passed:
+                        continue
+                    # Quality first, then transport: keep the highest tier
+                    # across every proxy/client before degrading, so a single
+                    # 720p-only client cannot mask a 1080p-capable proxy.
+                    unusable = False
+                    for fmt in formats:
+                        for client in PROXY_CLIENTS:
+                            ok, note, moved = try_download(
+                                url, target, fmt, proxy, args.timeout, cookies, client
+                            )
+                            attempts.append({"mode": "proxy", "proxy": proxy,
+                                             "client": client,
+                                             "latency": round(latency, 3),
+                                             "format": fmt, "ok": ok,
+                                             "moved_bytes": moved, "note": note})
+                            log(f"  {note}")
+                            if ok:
+                                finished = True
+                                break
+                            # A screened proxy that times out with zero bytes
+                            # written cannot transfer media; the remaining
+                            # clients and formats would only burn more timeouts.
+                            if moved <= 0 and "timeout after" in note:
+                                log(f"  dropping {proxy}: no bytes before the deadline")
+                                unusable = True
+                                break
+                        if finished or unusable:
+                            break
+                    if finished:
                         break
-                if finished:
-                    break
-            if finished:
-                break
 
     report = {"video_id": args.video_id, "succeeded": finished, "attempts": attempts}
     if args.report:
