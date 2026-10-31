@@ -112,6 +112,12 @@ The pool lives in the Actions cache, not in git. `.github/workflows/proxy-pool.y
 runs the three cadences; `auto-pipeline.yml` restores the tier-3 cache before
 the source download and before the caption stage.
 
+Measured on 2026-10-31: the 20,607 sources publish 618,574 unique addresses,
+114,270 of them TCP-open, and 16,000 tier-1 candidates produced 101 HTTPS
+passes (0.63%). The 1,000,000 / 10,000 / 1,000 sizes are caps, not guarantees:
+with these sources the realistic survivor counts are roughly 600k / 700 / a few
+hundred. Raising them requires more sources, not a different schedule.
+
 ## Consuming the pool for a blocked download
 
 When a direct connection cannot complete a download, the downloader iterates
