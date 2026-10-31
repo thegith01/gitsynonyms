@@ -54,7 +54,10 @@ TAB_PRIORITY = {"streams": 0, "videos": 1}
 
 VIDEO_ID = re.compile(r"^[A-Za-z0-9_-]{11}$")
 PLAYER_CLIENTS = ("default", "tv", "mweb", "web_safari")
-LIVE_STATUSES = {"is_live", "is_upcoming"}
+# ``post_live`` means the stream just ended and YouTube is still processing the
+# replay; downloading it now yields a truncated or unplayable file.  Wait until
+# it becomes ``was_live`` and the next scheduled scan picks it up.
+LIVE_STATUSES = {"is_live", "is_upcoming", "post_live"}
 
 MONTHS = {
     "jan": 1,
@@ -408,7 +411,7 @@ def list_tab(
     *,
     limit: int = 10,
     proxy: str = "",
-    timeout: float = 120.0,
+    timeout: float = 60.0,
     runner=subprocess.run,
 ) -> list[Candidate]:
     """Read one tab, trying each player client until one returns entries."""
@@ -452,7 +455,7 @@ def scan(
     include_streams: bool = True,
     limit: int = 10,
     proxy: str = "",
-    timeout: float = 120.0,
+    timeout: float = 60.0,
     runner=subprocess.run,
 ) -> list[Candidate]:
     tabs = ("videos", "streams") if include_streams else ("videos",)
@@ -571,7 +574,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         include_streams=include_streams,
         limit=limit,
         proxy=os.environ.get("YTDLP_PROXY", "").strip(),
-        timeout=_float_env("SCAN_TIMEOUT_SECONDS", 120.0),
+        timeout=_float_env("SCAN_TIMEOUT_SECONDS", 60.0),
     )
     attempts = load_attempts(args.attempts_file).get("videos", {})
     selected = choose_candidate(

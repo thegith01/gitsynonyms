@@ -40,6 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -59,6 +60,7 @@ jobs:
           FORCE_VIDEO_ID: ${{ inputs.video_id }}
           INCLUDE_STREAMS: ${{ inputs.include_streams }}
           SCAN_LIMIT: "10"
+          SCAN_TIMEOUT_SECONDS: "60"
           MAX_ATTEMPTS: "3"
           RETRY_COOLDOWN_HOURS: "6"
         run: python scripts/monitoring/resolve_channel_feed.py
@@ -67,6 +69,7 @@ jobs:
         id: ready
         env:
           VIDEO_ID: ${{ steps.resolve.outputs.video_id }}
+          FORCE_CHECK: ${{ inputs.force_check }}
         run: |
           set -euo pipefail
           state_file=".github/state/whitehouse-processed-videos.txt"
@@ -75,7 +78,7 @@ jobs:
             echo "video_id=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          if [ -f "$state_file" ] && grep -Fxq "$VIDEO_ID" "$state_file"; then
+          if [ "$FORCE_CHECK" != "true" ] && [ -f "$state_file" ] && grep -Fxq "$VIDEO_ID" "$state_file"; then
             echo "already processed: $VIDEO_ID"
             echo "video_id=" >> "$GITHUB_OUTPUT"
             exit 0
@@ -115,7 +118,7 @@ jobs:
           if ! grep -Fxq "$VIDEO_ID" "$state_file"; then
             printf '%s\n' "$VIDEO_ID" >> "$state_file"
           fi
-          python scripts/monitoring/resolve_channel_feed.py --clear-failure "$VIDEO_ID"
+          python3 scripts/monitoring/resolve_channel_feed.py --clear-failure "$VIDEO_ID"
           git add "$state_file" .github/state/whitehouse-attempts.json
           if git diff --cached --quiet; then
             echo "state already up to date"
@@ -142,7 +145,7 @@ jobs:
         run: |
           set -euo pipefail
           git pull --rebase --autostash origin main
-          python scripts/monitoring/resolve_channel_feed.py --record-failure "$VIDEO_ID"
+          python3 scripts/monitoring/resolve_channel_feed.py --record-failure "$VIDEO_ID"
           git add .github/state/whitehouse-attempts.json
           if git diff --cached --quiet; then
             echo "attempt state unchanged"

@@ -17,10 +17,10 @@ on:
         required: false
         type: string
       include_streams:
-        description: Also scan the /streams tab when /videos has no new upload
+        description: Scan the /streams tab as well as /videos (default true)
         required: false
         type: boolean
-        default: false
+        default: true
 
 permissions:
   contents: write
@@ -40,6 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -58,13 +59,17 @@ jobs:
           FORCE_CHECK: ${{ inputs.force_check }}
           FORCE_VIDEO_ID: ${{ inputs.video_id }}
           INCLUDE_STREAMS: ${{ inputs.include_streams }}
-        shell: pwsh
-        run: ./scripts/monitoring/resolve_channel_feed.ps1
+          SCAN_LIMIT: "10"
+          SCAN_TIMEOUT_SECONDS: "60"
+          MAX_ATTEMPTS: "3"
+          RETRY_COOLDOWN_HOURS: "6"
+        run: python scripts/monitoring/resolve_channel_feed.py
 
       - name: Skip uploads that were already published
         id: ready
         env:
           VIDEO_ID: ${{ steps.resolve.outputs.video_id }}
+          FORCE_CHECK: ${{ inputs.force_check }}
         run: |
           set -euo pipefail
           state_file=".github/state/whitehouse-processed-videos.txt"
@@ -73,7 +78,7 @@ jobs:
             echo "video_id=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          if [ -f "$state_file" ] && grep -Fxq "$VIDEO_ID" "$state_file"; then
+          if [ "$FORCE_CHECK" != "true" ] && [ -f "$state_file" ] && grep -Fxq "$VIDEO_ID" "$state_file"; then
             echo "already processed: $VIDEO_ID"
             echo "video_id=" >> "$GITHUB_OUTPUT"
             exit 0
@@ -94,7 +99,7 @@ jobs:
 
   mark-processed:
     needs: [resolve, pipeline]
-    if: needs.resolve.outputs.video_id != ''
+    if: ${{ needs.pipeline.result == 'success' && needs.resolve.outputs.video_id != '' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -106,15 +111,48 @@ jobs:
           VIDEO_ID: ${{ needs.resolve.outputs.video_id }}
         run: |
           set -euo pipefail
+          git pull --rebase --autostash origin main
           state_file=".github/state/whitehouse-processed-videos.txt"
           mkdir -p "$(dirname "$state_file")"
           touch "$state_file"
           if ! grep -Fxq "$VIDEO_ID" "$state_file"; then
             printf '%s\n' "$VIDEO_ID" >> "$state_file"
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add "$state_file"
-            git commit -m "Record published White House video $VIDEO_ID"
-            git push origin main
           fi
+          python3 scripts/monitoring/resolve_channel_feed.py --clear-failure "$VIDEO_ID"
+          git add "$state_file" .github/state/whitehouse-attempts.json
+          if git diff --cached --quiet; then
+            echo "state already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Record published White House video $VIDEO_ID"
+          git push origin main
+
+  mark-failed:
+    needs: [resolve, pipeline]
+    if: ${{ needs.pipeline.result == 'failure' && needs.resolve.outputs.video_id != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Record the failed attempt
+        env:
+          VIDEO_ID: ${{ needs.resolve.outputs.video_id }}
+          FAILURE_REASON: ${{ needs.pipeline.result }}
+        run: |
+          set -euo pipefail
+          git pull --rebase --autostash origin main
+          python3 scripts/monitoring/resolve_channel_feed.py --record-failure "$VIDEO_ID"
+          git add .github/state/whitehouse-attempts.json
+          if git diff --cached --quiet; then
+            echo "attempt state unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Record failed White House video $VIDEO_ID"
+          git push origin main
 

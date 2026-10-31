@@ -1,12 +1,11 @@
 # White House video monitor
 
-`.github/workflows/monitor-whitehouse.yml` checks the latest entries in
-`@WhiteHouse/videos` every five minutes, GitHub Actions' shortest supported
-schedule interval. GitHub may delay scheduled jobs during periods of high load.
-The `/streams` tab is not scanned by default: it fills with livestream entries
-that only become usable replays after they end, so the uploads tab keeps the
-scan focused. A manual run with `include_streams=true` adds `/streams` after
-`/videos` has been exhausted.
+`.github/workflows/monitor-whitehouse.yml` checks the latest entries in both
+`@WhiteHouse/videos` and `@WhiteHouse/streams` every five minutes, GitHub
+Actions' shortest supported schedule interval. GitHub may delay scheduled jobs
+during periods of high load. Both tabs are designated resources: an ended live
+event can exist only on `/streams`, so the default scan merges both newest-first
+listings. Set `include_streams=false` only for a deliberately uploads-only run.
 It reads flat channel listings and ignores individual metadata failures during
 discovery, then downloads the selected video's captions and media.
 
@@ -17,10 +16,13 @@ MP4 to a GitHub Release, and lets the Jekyll workflow regenerate the Pages site.
 It records an ID only after the pipeline succeeds, so failed runs can retry.
 The processed ID list is `.github/state/whitehouse-processed-videos.txt`.
 
-Each scan retries the newest unprocessed upload until it succeeds or a newer
-upload replaces it at the top of the channel listing; a failure never marks the
-video as processed. `force_check` reprocesses the newest upload even when it is
-already recorded, and a manual `video_id` run skips the channel listing.
+A candidate that fails three times is quarantined for six hours in
+`.github/state/whitehouse-attempts.json`; after the cooldown it is retried. This
+keeps one broken upload from blocking every newer video on the channel. The
+resolver never selects an entry whose `live_status` is `is_live` or
+`is_upcoming`. `force_check` reprocesses the newest upload even when it is
+already recorded, and a manual `video_id` run skips the channel listing and the
+quarantine.
 
 YouTube may require authentication from hosted runners. The pipeline uses the
 configured proxy pool (`YTDLP_PROXY` or the discovered public pool) and in
