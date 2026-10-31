@@ -52,6 +52,7 @@ TIER1_OPEN = TIER1 / "tier1_open.jsonl"
 TIER1_STATS = TIER1 / "tier1_stats.json"
 TIER2_RECORDS = TIER2 / "tier2_fast.jsonl"
 TIER2_PLAIN = TIER2 / "tier2_fast.txt"
+TIER2_FAILED = TIER2 / "tier2_failed.json"
 TIER3_RECORDS = TIER3 / "tier3_ready.jsonl"
 TIER3_PLAIN = TIER3 / "tier3_ready.txt"
 TIER3_FAILED = TIER3 / "tier3_failed.json"
@@ -403,6 +404,30 @@ def rolling_batch(
     return stale[:batch]
 
 
+def load_failed(path: Path, max_age: float, now: float) -> dict[str, int]:
+    """Recent failures, so a rolling batch advances instead of retesting them.
+
+    Without this memory a batch always starts from the fastest candidates; if
+    those fail, the same failures are picked again every run and the pool never
+    reaches the rest of the candidates.
+    """
+    if not path.is_file():
+        return {}
+    try:
+        return {
+            proxy: int(stamp)
+            for proxy, stamp in json.loads(path.read_text(encoding="utf-8")).items()
+            if now - int(stamp) <= max_age
+        }
+    except (json.JSONDecodeError, ValueError, AttributeError):
+        return {}
+
+
+def save_failed(path: Path, failed: dict[str, int]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(failed, sort_keys=True) + "\n", encoding="utf-8")
+
+
 def speed(batch: int, target: int, max_age: float, concurrency: int, timeout: float) -> dict:
     if not TIER1_OPEN.is_file():
         raise SystemExit(f"{TIER1_OPEN} is missing; run the screen stage first")
@@ -410,10 +435,12 @@ def speed(batch: int, target: int, max_age: float, concurrency: int, timeout: fl
     existing = load_jsonl(TIER2_RECORDS)
     now = time.time()
     fresh = {record["proxy"]: record for record in existing}
+    failed = load_failed(TIER2_FAILED, max_age, now)
     selected = rolling_batch(candidates, fresh, batch, max_age, now, "latency_ms")
+    selected = [candidate for candidate in selected if candidate["proxy"] not in failed][:batch]
     print(
         f"tier2: {len(candidates)} candidates, {len(existing)} stored, "
-        f"testing {len(selected)}",
+        f"{len(failed)} recent failures, testing {len(selected)}",
         flush=True,
     )
 
@@ -436,6 +463,13 @@ def speed(batch: int, target: int, max_age: float, concurrency: int, timeout: fl
     with ThreadPoolExecutor(max_workers=concurrency) as pool:
         tested = list(pool.map(work, selected))
 
+    for record in tested:
+        if record.get("ok"):
+            failed.pop(record["proxy"], None)
+        else:
+            failed[record["proxy"]] = int(now)
+    save_failed(TIER2_FAILED, failed)
+
     merged = merge_records(
         existing, tested, limit=target, max_age=max_age, now=now, sort_key="latency_ms"
     )
@@ -447,6 +481,7 @@ def speed(batch: int, target: int, max_age: float, concurrency: int, timeout: fl
         "tested": len(selected),
         "passed": sum(1 for record in tested if record.get("ok")),
         "kept": len(merged),
+        "failed_recent": len(failed),
         **freshness(merged, now),
     }
     (TIER2 / "tier2_stats.json").write_text(
@@ -547,18 +582,7 @@ def ready(
     fresh = {record["proxy"]: record for record in existing}
     selected = rolling_batch(candidates, fresh, batch, max_age, now, "latency_ms")
 
-    failed: dict[str, int] = {}
-    if TIER3_FAILED.is_file():
-        try:
-            failed = {
-                proxy: int(stamp)
-                for proxy, stamp in json.loads(
-                    TIER3_FAILED.read_text(encoding="utf-8")
-                ).items()
-                if now - int(stamp) <= max_age
-            }
-        except (json.JSONDecodeError, ValueError):
-            failed = {}
+    failed = load_failed(TIER3_FAILED, max_age, now)
     selected = [candidate for candidate in selected if candidate["proxy"] not in failed][:batch]
     print(
         f"tier3: {len(candidates)} candidates, {len(existing)} stored, "
@@ -582,7 +606,7 @@ def ready(
             failed.pop(record["proxy"], None)
         else:
             failed[record["proxy"]] = int(now)
-    TIER3_FAILED.write_text(json.dumps(failed, sort_keys=True) + "\n", encoding="utf-8")
+    save_failed(TIER3_FAILED, failed)
 
     merged = merge_records(
         existing,

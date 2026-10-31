@@ -99,6 +99,30 @@ def test_write_plain_keeps_the_record_order(tmp_path):
     assert target.read_text(encoding="utf-8").splitlines() == ["9.9.9.9:80", "8.8.8.8:80"]
 
 
+def test_load_failed_keeps_only_recent_failures(tmp_path):
+    path = tmp_path / "tier2_failed.json"
+    path.write_text(
+        json.dumps({"1.1.1.1:80": 900, "2.2.2.2:80": 100}), encoding="utf-8"
+    )
+
+    assert tiers.load_failed(path, max_age=200, now=1_000) == {"1.1.1.1:80": 900}
+
+
+def test_load_failed_treats_a_broken_file_as_empty(tmp_path):
+    path = tmp_path / "tier2_failed.json"
+    path.write_text("{not json", encoding="utf-8")
+
+    assert tiers.load_failed(path, max_age=200, now=1_000) == {}
+
+
+def test_save_failed_round_trips(tmp_path):
+    path = tmp_path / "tier2_failed.json"
+
+    tiers.save_failed(path, {"1.1.1.1:80": 123})
+
+    assert json.loads(path.read_text(encoding="utf-8")) == {"1.1.1.1:80": 123}
+
+
 def test_load_jsonl_ignores_broken_and_invalid_records(tmp_path):
     path = tmp_path / "tier.jsonl"
     path.write_text(
