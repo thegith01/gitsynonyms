@@ -181,7 +181,7 @@ def detail_page(video: dict, previous_video: dict | None, next_video: dict | Non
     )
     bilingual = copy_bilingual(video_id, folder)
     release = (
-        "https://github.com/gitsynonyms01/gitsynonyms/releases/download/"
+        "https://github.com/gitsynonyms02/gitsynonyms/releases/download/"
         f"{video_id}/Burned_Bilingual_{video_id}.mp4"
     )
     navigation = nav("../", "videos")
@@ -339,7 +339,7 @@ def latest_page(videos: list[dict]) -> str:
     video_id = newest["Video ID"]
     title = html.escape(newest.get("Title", video_id))
     release = (
-        "https://github.com/gitsynonyms01/gitsynonyms/releases/download/"
+        "https://github.com/gitsynonyms02/gitsynonyms/releases/download/"
         f"{video_id}/Burned_Bilingual_{video_id}.mp4"
     )
     lines = [
@@ -453,7 +453,7 @@ def home_page(videos: list[dict]) -> str:
     video_id = newest["Video ID"]
     title = html.escape(newest.get("Title", video_id))
     release = (
-        "https://github.com/gitsynonyms01/gitsynonyms/releases/download/"
+        "https://github.com/gitsynonyms02/gitsynonyms/releases/download/"
         f"{video_id}/Burned_Bilingual_{video_id}.mp4"
     )
     lines = [
