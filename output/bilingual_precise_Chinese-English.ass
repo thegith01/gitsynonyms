@@ -1,0 +1,35 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 0
+
+; Module 2 precision timing (subtitle timing office)
+; timebase=nanosecond ass-resolution=centisecond
+; ass-max-quantization-error-ms=5.0
+; sources=zh-Hans:json3+vtt+ttml+srt,en-orig:json3+srv3+srv2+srv1+vtt+ttml+srt
+; cues=38
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Chinese,Microsoft YaHei,57.6,&H0028C9FF,&H000000FF,&H80000000,&HA6000000,-1,0,0,0,100,100,0,0,1,2,1,5,0,0,0,1
+Style: English,Arial,48,&H00FFD700,&H00FFFFFF,&H80000000,&HA6000000,0,0,0,0,100,100,0,0,1,2,1,5,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:03.24,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}我叫贾里德·艾萨克曼我是NASA的管理员\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k24}My {\kt24\k8}name {\kt32\k8}is {\kt40\k32}Jared {\kt72\k56}Isaacman. {\kt128\k16}I {\kt144\k16}am {\kt160\k16}the {\kt176\k80}administrator {\kt256\k24}of {\kt280\k44}NASA.
+Dialogue: 1,0:00:03.28,0:00:05.32,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}我有幸领导世界最\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k16}I {\kt16\k16}get {\kt32\k16}the {\kt48\k32}privilege {\kt80\k16}of {\kt96\k32}leading {\kt128\k16}the {\kt144\k32}world's {\kt176\k28}most
+Dialogue: 1,0:00:05.36,0:00:08.36,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}科学黄金时代完成的空间机构\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k56}accomplished {\kt56\k32}space {\kt88\k48}agency {\kt136\k24}during {\kt160\k24}the {\kt184\k40}golden {\kt224\k24}age {\kt248\k24}of {\kt272\k28}science
+Dialogue: 1,0:00:08.40,0:00:10.44,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}和发现。我们要回月球了\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k16}and {\kt16\k56}discovery. {\kt72\k24}We {\kt96\k16}are {\kt112\k24}going {\kt136\k24}back {\kt160\k16}to {\kt176\k8}the {\kt184\k20}moon.
+Dialogue: 1,0:00:10.48,0:00:13.72,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}我们在这里与阿耳忒弥斯3。2027年发射.\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k24}We're {\kt24\k16}here {\kt40\k16}with {\kt56\k56}Artemis {\kt112\k48}3. {\kt160\k24}They {\kt184\k24}launch {\kt208\k24}in {\kt232\k92}2027.
+Dialogue: 1,0:00:13.76,0:00:16.04,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}我们很高兴代表美国和美国\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k16}We {\kt16\k16}are {\kt32\k16}so {\kt48\k24}excited {\kt72\k16}to {\kt88\k48}represent {\kt136\k32}America {\kt168\k16}and {\kt184\k16}the {\kt200\k28}American
+Dialogue: 1,0:00:16.08,0:00:19.64,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}人类欧洲希望成为最强大最可靠的国家\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k48}people. {\kt48\k40}Europe {\kt88\k32}wants {\kt120\k16}to {\kt136\k64}be {\kt200\k24}the {\kt224\k40}strongest {\kt264\k16}and {\kt280\k24}most {\kt304\k52}reliable
+Dialogue: 1,0:00:19.68,0:00:21.64,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}探索月球的合作伙伴\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k48}partner {\kt48\k32}for {\kt80\k8}the {\kt88\k48}exploration {\kt136\k16}of {\kt152\k8}the {\kt160\k36}moon.
+Dialogue: 1,0:00:21.68,0:00:24.28,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}我们发射的火箭与SLS不同\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k16}We're {\kt16\k24}launching {\kt40\k16}a {\kt56\k16}bunch {\kt72\k8}of {\kt80\k24}different {\kt104\k64}rockets {\kt168\k24}from {\kt192\k16}the {\kt208\k52}SLS
+Dialogue: 1,0:00:24.32,0:00:27.00,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}前往"星舰"和"蓝色起源"火箭\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k24}to {\kt24\k16}the {\kt40\k72}Starship {\kt112\k16}and {\kt128\k16}to {\kt144\k24}the {\kt168\k24}Blue {\kt192\k40}Origin {\kt232\k36}rocket.
+Dialogue: 1,0:00:27.04,0:00:29.80,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}一定会很棒的为《公约》缔约方会议\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k16}It's {\kt16\k8}going {\kt24\k8}to {\kt32\k16}be {\kt48\k88}fantastic. {\kt136\k16}laying {\kt152\k24}the {\kt176\k40}groundwork {\kt216\k40}for {\kt256\k20}the
+Dialogue: 1,0:00:29.84,0:00:31.96,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}下一个人类探索阶段\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k24}next {\kt24\k40}phase {\kt64\k40}of {\kt104\k32}human {\kt136\k50}exploration.
+Dialogue: 1,0:00:32.00,0:00:34.92,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}我们明年启动的任务显示了美国的领导地位\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k24}Our {\kt24\k32}mission {\kt56\k24}to {\kt80\k32}launch {\kt112\k24}next {\kt136\k56}year {\kt192\k32}shows {\kt224\k40}American {\kt264\k28}leadership
+Dialogue: 1,0:00:34.96,0:00:37.72,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}和阿尔特米斯计划带领人类回到太空\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k24}in {\kt24\k40}space {\kt64\k24}and {\kt88\k16}the {\kt104\k48}Artemis {\kt152\k24}program {\kt176\k32}leading {\kt208\k32}humans {\kt240\k16}back {\kt256\k8}to {\kt264\k12}the
+Dialogue: 1,0:00:37.76,0:00:45.80,Chinese,,0,0,0,,{\an2\pos(960,1000)}{\fs57.6}月亮和火星带领人类和美国在太空。\N{\fs10}\h\N{\rEnglish\fs48}{\kt0\k40}moon {\kt40\k24}and {\kt64\k32}onto {\kt96\k64}Mars {\kt160\k24}to {\kt184\k72}lead {\kt256\k50}humanity {\kt344\k64}and {\kt408\k64}America {\kt472\k32}in {\kt504\k300}space.

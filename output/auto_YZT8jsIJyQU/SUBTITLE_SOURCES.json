@@ -1,0 +1,45 @@
+{
+  "video_id": "YZT8jsIJyQU",
+  "generated_at": "2026-10-30T21:10:48Z",
+  "target_language": "zh-Hans",
+  "engine": "argos",
+  "source_track": {
+    "language": "en-orig",
+    "format": "json3",
+    "formats_used": [
+      "json3",
+      "srv3",
+      "srv2",
+      "srv1",
+      "vtt",
+      "ttml",
+      "srt"
+    ],
+    "cues": 22,
+    "translation_units": 16
+  },
+  "candidates": [
+    {
+      "id": "zh-Hans-argos",
+      "kind": "machine-translated",
+      "engine": "argos",
+      "formats": [
+        "srt",
+        "vtt",
+        "ttml",
+        "json3"
+      ],
+      "notes": "srv1/srv2/srv3 are YouTube-internal serializations and are not synthesized",
+      "score": {
+        "language_coverage": 40,
+        "timing_precision": 18,
+        "authority": 6,
+        "coverage": 15,
+        "reproducibility": 5,
+        "total": 84,
+        "passes_threshold": true
+      }
+    }
+  ],
+  "selected": "zh-Hans-argos"
+}

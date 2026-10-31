@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8" ?><timedtext format="3">
+<head>
+<ws id="0"/>
+<ws id="1" mh="2" ju="0" sd="3"/>
+<wp id="0"/>
+<wp id="1" ap="6" ah="20" av="100" rc="2" cc="40"/>
+</head>
+<body>
+<w t="0" id="1" wp="1" ws="1"/>
+<p t="2000" d="3120" w="1"><s ac="0">Mr.</s><s t="399" ac="0"> President,</s></p>
+<p t="3030" d="2090" w="1" a="1">
+</p>
+<p t="3040" d="4640" w="1"><s ac="0">&gt;&gt; hello</s><s t="320" ac="0"> everybody.</s><s t="879" ac="0"> So,</s></p>
+<p t="5110" d="2570" w="1" a="1">
+</p>
+<p t="5120" d="6240" w="1"><s ac="0">&gt;&gt; we</s><s t="239" ac="0"> had</s><s t="400" ac="0"> a</s><s t="560" ac="0"> tremendous</s><s t="1120" ac="0"> day</s><s t="1360" ac="0"> in</s><s t="1600" ac="0"> Texas.</s><s t="2159" ac="0"> We</s><s t="2400" ac="0"> had</s></p>
+<p t="7670" d="3690" w="1" a="1">
+</p>
+<p t="7680" d="5760" w="1"><s ac="0">two</s><s t="239" ac="0"> big</s><s t="400" ac="0"> rallies.</s><s t="1520" ac="0"> They</s><s t="1760" ac="0"> were</s><s t="1919" ac="0"> packed.</s><s t="2640" ac="0"> They</s></p>
+<p t="11350" d="2090" w="1" a="1">
+</p>
+<p t="11360" d="3680" w="1"><s ac="0">had</s><s t="319" ac="0"> people</s><s t="640" ac="0"> watching</s><s t="1040" ac="0"> outside</s><s t="1440" ac="0"> the</s><s t="1760" ac="0"> screens.</s></p>
+<p t="13430" d="1610" w="1" a="1">
+</p>
+<p t="13440" d="4320" w="1"><s ac="0">We</s><s t="239" ac="0"> put</s><s t="400" ac="0"> up</s><s t="480" ac="0"> the</s><s t="720" ac="0"> big</s><s t="880" ac="0"> screens,</s><s t="1279" ac="0"> the</s></p>
+<p t="15030" d="2730" w="1" a="1">
+</p>
+<p t="15040" d="5440" w="1"><s ac="0">jumbotrons</s><s t="799" ac="0"> or</s><s t="1040" ac="0"> whatever</s><s t="1280" ac="0"> they</s><s t="1440" ac="0"> call,</s><s t="2480" ac="0"> but</s></p>
+<p t="17750" d="2730" w="1" a="1">
+</p>
+<p t="17760" d="5040" w="1"><s ac="0">they</s><s t="240" ac="0"> were</s><s t="400" ac="0"> big</s><s t="640" ac="0"> packed</s><s t="1040" ac="0"> rallies</s><s t="1519" ac="0"> and</s><s t="2320" ac="0"> people</s></p>
+<p t="20470" d="2330" w="1" a="1">
+</p>
+<p t="20480" d="4320" w="1"><s ac="0">haven&#39;t</s><s t="320" ac="0"> really</s><s t="799" ac="0"> seen</s><s t="1040" ac="0"> anything</s><s t="1360" ac="0"> like</s><s t="1600" ac="0"> it.</s></p>
+<p t="22790" d="2010" w="1" a="1">
+</p>
+<p t="22800" d="4239" w="1"><s ac="0">And</s><s t="160" ac="0"> it&#39;s</s><s t="399" ac="0"> very</s><s t="719" ac="0"> exciting.</s><s t="1440" ac="0"> I</s><s t="1680" ac="0"> think</s><s t="1760" ac="0"> we&#39;ve</s></p>
+<p t="24790" d="2249" w="1" a="1">
+</p>
+<p t="24800" d="3920" w="1"><s ac="0">made</s><s t="160" ac="0"> a</s><s t="399" ac="0"> big</s><s t="559" ac="0"> impact.</s><s t="1600" ac="0"> We&#39;ll</s><s t="1920" ac="0"> see</s><s t="2000" ac="0"> what</s></p>
+<p t="27029" d="1691" w="1" a="1">
+</p>
+<p t="27039" d="4240" w="1"><s ac="0">happens</s><s t="400" ac="0"> on</s><s t="641" ac="0"> Tuesday.</s><s t="1121" ac="0"> But</s><s t="1201" ac="0"> I</s><s t="1361" ac="0"> think</s><s t="1441" ac="0"> we&#39;ve</s></p>
+<p t="28710" d="2569" w="1" a="1">
+</p>
+<p t="28720" d="4160" w="1"><s ac="0">made</s><s t="80" ac="0"> a</s><s t="319" ac="0"> big</s><s t="479" ac="0"> impact.</s><s t="1760" ac="0"> It&#39;s</s><s t="2000" ac="0"> very</s><s t="2240" ac="0"> exciting</s></p>
+<p t="31269" d="1611" w="1" a="1">
+</p>
+<p t="31279" d="4081" w="1"><s ac="0">what&#39;s</s><s t="320" ac="0"> going</s><s t="481" ac="0"> on.</s><s t="721" ac="0"> I&#39;m</s><s t="960" ac="0"> going</s><s t="1041" ac="0"> to</s><s t="1201" ac="0"> be</s><s t="1361" ac="0"> going</s></p>
+<p t="32870" d="2490" w="1" a="1">
+</p>
+<p t="32880" d="5199" w="1"><s ac="0">to</s><s t="960" ac="0"> Ohio.</s><s t="1519" ac="0"> I&#39;ll</s><s t="1760" ac="0"> be</s><s t="1839" ac="0"> going</s><s t="2000" ac="0"> to</s><s t="2240" ac="0"> South</s></p>
+<p t="35350" d="2729" w="1" a="1">
+</p>
+<p t="35360" d="7120" w="1"><s ac="0">Carolina.</s><s t="719" ac="0"> She&#39;s</s><s t="960" ac="0"> doing</s><s t="1280" ac="0"> well.</s><s t="2000" ac="0"> She&#39;s</s><s t="2320" ac="0"> at</s><s t="2480" ac="0"> a</s></p>
+<p t="38069" d="4411" w="1" a="1">
+</p>
+<p t="38079" d="8081" w="1"><s ac="0">poll</s><s t="160" ac="0"> where</s><s t="401" ac="0"> she&#39;s</s><s t="721" ac="0"> up.</s><s t="2000" ac="0"> And</s><s t="2480" ac="0"> it&#39;s</s><s t="2721" ac="0"> Darlene.</s></p>
+<p t="42470" d="3690" w="1" a="1">
+</p>
+<p t="42480" d="5599" w="1"><s ac="0">And</s><s t="480" ac="0"> uh</s><s t="640" ac="0"> I</s><s t="800" ac="0"> think</s><s t="960" ac="0"> in</s><s t="1200" ac="0"> Ohio</s><s t="1680" ac="0"> they</s><s t="2239" ac="0"> are</s><s t="2480" ac="0"> up</s><s t="2720" ac="0"> too.</s></p>
+<p t="46150" d="1929" w="1" a="1">
+</p>
+<p t="46160" d="5280" w="1"><s ac="0">So</s><s t="239" ac="0"> we&#39;re</s><s t="480" ac="0"> doing</s><s t="640" ac="0"> very</s><s t="879" ac="0"> well.</s><s t="1200" ac="0"> We&#39;re</s><s t="1440" ac="0"> having</s><s t="1600" ac="0"> a</s></p>
+<p t="48069" d="3371" w="1" a="1">
+</p>
+<p t="48079" d="5681" w="1"><s ac="0">very</s><s t="320" ac="0"> big</s><s t="480" ac="0"> impact.</s><s t="960" ac="0"> See</s><s t="1761" ac="0"> you</s><s t="2480" ac="0"> from</s><s t="2800" ac="0"> Lavio</s></p>
+<p t="51430" d="2330" w="1" a="1">
+</p>
+<p t="51440" d="4480" w="1"><s ac="0">Baltimore</s><s t="880" ac="0"> coming</s><s t="1119" ac="0"> to</s><s t="1360" ac="0"> the</s><s t="1520" ac="0"> United</s><s t="1759" ac="0"> States.</s></p>
+<p t="53750" d="2170" w="1" a="1">
+</p>
+<p t="53760" d="5439" w="1"><s ac="0">What</s><s t="160" ac="0"> is</s><s t="319" ac="0"> that</s><s t="479" ac="0"> about?</s><s t="1600" ac="0"> Well,</s><s t="1760" ac="0"> I</s><s t="2000" ac="0"> would</s></p>
+<p t="55910" d="3289" w="1" a="1">
+</p>
+<p t="55920" d="6319" w="1"><s ac="0">approve.</s><s t="400" ac="0"> I</s><s t="560" ac="0"> think</s><s t="720" ac="0"> they&#39;re</s><s t="1760" ac="0"> fine</s><s t="2159" ac="0"> people.</s></p>
+<p t="59189" d="3050" w="1" a="1">
+</p>
+<p t="59199" d="5040" w="1"><s ac="0">The</s><s t="401" ac="0"> election</s><s t="801" ac="0"> was</s><s t="1040" ac="0"> very</s><s t="1360" ac="0"> strange</s></p>
+<p t="62229" d="2010" w="1" a="1">
+</p>
+<p t="62239" d="3601" w="1"><s ac="0">and</s><s t="320" ac="0"> I</s><s t="640" ac="0"> thought</s><s t="800" ac="0"> it</s><s t="960" ac="0"> was</s><s t="1361" ac="0"> terrible.</s><s t="1841" ac="0"> It&#39;s</s></p>
+<p t="64229" d="1611" w="1" a="1">
+</p>
+<p t="64239" d="4081" w="1"><s ac="0">gotten</s><s t="320" ac="0"> bad</s><s t="640" ac="0"> reviews.</s><s t="960" ac="0"> You</s><s t="1121" ac="0"> look</s><s t="1280" ac="0"> at</s><s t="1361" ac="0"> what</s></p>
+<p t="65830" d="2490" w="1" a="1">
+</p>
+<p t="65840" d="4240" w="1"><s ac="0">happened</s><s t="160" ac="0"> to</s><s t="400" ac="0"> their</s><s t="639" ac="0"> market.</s><s t="2080" ac="0"> Would</s><s t="2319" ac="0"> I</s></p>
+<p t="68310" d="1770" w="1" a="1">
+</p>
+<p t="68320" d="4240" w="1"><s ac="0">approve</s><s t="240" ac="0"> of</s><s t="400" ac="0"> it?</s><s t="640" ac="0"> Yeah,</s><s t="799" ac="0"> I</s><s t="1040" ac="0"> would</s><s t="1200" ac="0"> approve</s><s t="1440" ac="0"> it.</s></p>
+<p t="70070" d="2490" w="1" a="1">
+</p>
+<p t="70080" d="4640" w="1"><s ac="0">I</s><s t="160" ac="0"> would</s><s t="560" ac="0"> think</s><s t="719" ac="0"> it</s><s t="880" ac="0"> would</s><s t="1039" ac="0"> be</s><s t="1200" ac="0"> okay</s><s t="1359" ac="0"> with</s><s t="1680" ac="0"> me.</s></p>
+<p t="72550" d="2170" w="1" a="1">
+</p>
+<p t="72560" d="4239" w="1"><s ac="0">I</s><s t="80" ac="0"> think</s><s t="320" ac="0"> it&#39;s</s><s t="559" ac="0"> so</s><s t="720" ac="0"> terrible</s><s t="1040" ac="0"> to</s><s t="1280" ac="0"> see</s><s t="1440" ac="0"> it.</s><s t="1919" ac="0"> I</s></p>
+<p t="74710" d="2089" w="1" a="1">
+</p>
+<p t="74720" d="4240" w="1"><s ac="0">didn&#39;t</s><s t="240" ac="0"> take</s><s t="399" ac="0"> sides.</s><s t="1040" ac="0"> You</s><s t="1200" ac="0"> know,</s><s t="1280" ac="0"> I</s><s t="1680" ac="0"> know</s><s t="1920" ac="0"> him</s></p>
+<p t="76789" d="2171" w="1" a="1">
+</p>
+<p t="76799" d="5201" w="1"><s ac="0">both.</s><s t="320" ac="0"> I</s><s t="561" ac="0"> know</s></p>
+<p t="78950" d="3050" w="1" a="1">
+</p>
+<p t="78960" d="5440" w="1"><s ac="0">Lula.</s><s t="479" ac="0"> I</s><s t="640" ac="0"> know</s><s t="1839" ac="0"> Lavio</s><s t="2320" ac="0"> a</s><s t="2479" ac="0"> little</s><s t="2560" ac="0"> bit.</s><s t="2720" ac="0"> I</s><s t="2960" ac="0"> know</s></p>
+<p t="81990" d="2410" w="1" a="1">
+</p>
+<p t="82000" d="5360" w="1"><s ac="0">the</s><s t="240" ac="0"> father</s><s t="479" ac="0"> very</s><s t="799" ac="0"> well.</s><s t="1759" ac="0"> The</s><s t="2000" ac="0"> father</s><s t="2240" ac="0"> was</s></p>
+<p t="84390" d="2970" w="1" a="1">
+</p>
+<p t="84400" d="4880" w="1"><s ac="0">treated</s><s t="320" ac="0"> really</s><s t="560" ac="0"> badly,</s><s t="960" ac="0"> I</s><s t="1200" ac="0"> thought.</s><s t="1759" ac="0"> Uh,</s><s t="2719" ac="0"> but</s></p>
+<p t="87350" d="1930" w="1" a="1">
+</p>
+<p t="87360" d="3520" w="1"><s ac="0">I</s><s t="240" ac="0"> wasn&#39;t</s><s t="480" ac="0"> involved.</s><s t="880" ac="0"> That&#39;s</s><s t="1119" ac="0"> Brazil.</s><s t="1520" ac="0"> It&#39;s</s><s t="1759" ac="0"> a</s></p>
+<p t="89270" d="1610" w="1" a="1">
+</p>
+<p t="89280" d="3920" w="1"><s ac="0">different</s><s t="240" ac="0"> country.</s><s t="479" ac="0"> I</s><s t="720" ac="0"> do</s><s t="879" ac="0"> get</s><s t="1040" ac="0"> involved</s><s t="1440" ac="0"> in</s></p>
+<p t="90870" d="2330" w="1" a="1">
+</p>
+<p t="90880" d="5279" w="1"><s ac="0">some.</s><s t="239" ac="0"> I</s><s t="480" ac="0"> was</s><s t="960" ac="0"> involved</s><s t="1360" ac="0"> in</s><s t="1599" ac="0"> Colombia.</s><s t="2080" ac="0"> I</s></p>
+<p t="93190" d="2969" w="1" a="1">
+</p>
+<p t="93200" d="5200" w="1"><s ac="0">endorsed</s><s t="400" ac="0"> Elte</s><s t="1360" ac="0"> and</s><s t="1599" ac="0"> he</s><s t="1840" ac="0"> won.</s><s t="2160" ac="0"> He</s><s t="2400" ac="0"> was</s><s t="2480" ac="0"> in</s><s t="2640" ac="0"> 10th</s></p>
+<p t="96149" d="2251" w="1" a="1">
+</p>
+<p t="96159" d="5521" w="1"><s ac="0">place</s><s t="241" ac="0"> and</s><s t="481" ac="0"> he</s><s t="640" ac="0"> won</s><s t="1201" ac="0"> and</s><s t="1441" ac="0"> he&#39;s</s><s t="1681" ac="0"> turning</s><s t="1920" ac="0"> out</s><s t="2081" ac="0"> to</s></p>
+<p t="98390" d="3290" w="1" a="1">
+</p>
+<p t="98400" d="4960" w="1"><s ac="0">be</s><s t="160" ac="0"> a</s><s t="719" ac="0"> very</s><s t="1120" ac="0"> strong,</s><s t="1520" ac="0"> very</s><s t="1759" ac="0"> good</s><s t="2000" ac="0"> president.</s></p>
+<p t="101670" d="1690" w="1" a="1">
+</p>
+<p t="101680" d="3759" w="1"><s ac="0">Uh,</s><s t="320" ac="0"> as</s><s t="479" ac="0"> you</s><s t="560" ac="0"> know,</s><s t="720" ac="0"> in</s><s t="960" ac="0"> Argentina,</s><s t="1520" ac="0"> I</s></p>
+<p t="103350" d="2089" w="1" a="1">
+</p>
+<p t="103360" d="3439" w="1"><s ac="0">endorsed</s><s t="480" ac="0"> in</s><s t="640" ac="0"> numerous</s><s t="1600" ac="0"> countries</s><s t="1920" ac="0"> I</s></p>
+<p t="105429" d="1370" w="1" a="1">
+</p>
+<p t="105439" d="4161" w="1"><s ac="0">endorsed.</s><s t="401" ac="0"> They</s><s t="640" ac="0"> always</s><s t="801" ac="0"> won.</s><s t="1040" ac="0"> I</s><s t="1201" ac="0"> didn&#39;t</s></p>
+<p t="106789" d="2811" w="1" a="1">
+</p>
+<p t="106799" d="5600" w="1"><s ac="0">endorse</s><s t="481" ac="0"> in</s><s t="640" ac="0"> Brazil.</s><s t="1921" ac="0"> I</s><s t="2161" ac="0"> thought</s><s t="2320" ac="0"> I&#39;d</s><s t="2561" ac="0"> stay</s></p>
+<p t="109590" d="2809" w="1" a="1">
+</p>
+<p t="109600" d="4799" w="1"><s ac="0">out</s><s t="159" ac="0"> of</s><s t="320" ac="0"> that</s><s t="479" ac="0"> one.</s><s t="799" ac="0"> And</s><s t="1760" ac="0"> I</s><s t="2000" ac="0"> thought</s><s t="2159" ac="0"> the</s><s t="2559" ac="0"> uh</s></p>
+<p t="112389" d="2010" w="1" a="1">
+</p>
+<p t="112399" d="4161" w="1"><s ac="0">end</s><s t="241" ac="0"> result,</s><s t="881" ac="0"> you</s><s t="961" ac="0"> know,</s><s t="1121" ac="0"> it&#39;s</s><s t="1281" ac="0"> fine</s><s t="1601" ac="0"> the</s><s t="1841" ac="0"> end</s></p>
+<p t="114389" d="2171" w="1" a="1">
+</p>
+<p t="114399" d="3201" w="1"><s ac="0">result,</s><s t="400" ac="0"> but</s><s t="961" ac="0"> the</s><s t="1201" ac="0"> way</s><s t="1281" ac="0"> they</s><s t="1521" ac="0"> got</s><s t="1680" ac="0"> to</s><s t="1841" ac="0"> the</s><s t="2000" ac="0"> end</s></p>
+<p t="116550" d="1050" w="1" a="1">
+</p>
+<p t="116560" d="3760" w="1"><s ac="0">result</s><s t="320" ac="0"> was</s><s t="480" ac="0"> terrible.</s></p>
+<p t="117590" d="2730" w="1" a="1">
+</p>
+<p t="117600" d="5360" w="1"><s ac="0">&gt;&gt; Where</s><s t="240" ac="0"> is</s><s t="1519" ac="0"> he</s><s t="1760" ac="0"> in</s><s t="1920" ac="0"> Miami</s><s t="2320" ac="0"> or</s><s t="2640" ac="0"> I</s></p>
+<p t="120310" d="2650" w="1" a="1">
+</p>
+<p t="120320" d="4000" w="1"><s ac="0">&gt;&gt; I</s><s t="240" ac="0"> heard</s><s t="399" ac="0"> he</s><s t="560" ac="0"> was</s><s t="720" ac="0"> in</s><s t="880" ac="0"> Argentina.</s><s t="2320" ac="0"> I</s><s t="2560" ac="0"> don&#39;t</s></p>
+<p t="122950" d="1370" w="1" a="1">
+</p>
+<p t="122960" d="2400" w="1"><s ac="0">know</s><s t="159" ac="0"> where</s><s t="320" ac="0"> he</s><s t="400" ac="0"> is.</s><s t="560" ac="0"> I</s><s t="720" ac="0"> mean,</s><s t="880" ac="0"> I</s><s t="960" ac="0"> heard</s><s t="1119" ac="0"> he</s><s t="1280" ac="0"> was</s></p>
+<p t="124310" d="1050" w="1" a="1">
+</p>
+<p t="124320" d="2320" w="1"><s ac="0">in</s><s t="240" ac="0"> Argentina.</s></p>
+<p t="125350" d="1290" w="1" a="1">
+</p>
+<p t="125360" d="3840" w="1"><s ac="0">&gt;&gt; The</s><s t="160" ac="0"> United</s><s t="480" ac="0"> States,</s></p>
+<p t="126630" d="2570" w="1" a="1">
+</p>
+<p t="126640" d="4480" w="1"><s ac="0">&gt;&gt; but</s><s t="159" ac="0"> I</s><s t="240" ac="0"> I</s><s t="560" ac="0"> don&#39;t</s><s t="1360" ac="0"> I</s><s t="1520" ac="0"> don&#39;t</s><s t="1679" ac="0"> know.</s><s t="2000" ac="0"> I</s><s t="2160" ac="0"> heard</s><s t="2399" ac="0"> he</s></p>
+<p t="129190" d="1930" w="1" a="1">
+</p>
+<p t="129200" d="3759" w="1"><s ac="0">was</s><s t="80" ac="0"> in</s><s t="320" ac="0"> Argentina,</s></p>
+<p t="131110" d="1849" w="1" a="1">
+</p>
+<p t="131120" d="4479" w="1"><s ac="0">but</s><s t="320" ac="0"> yeah,</s><s t="479" ac="0"> I</s><s t="640" ac="0"> would</s><s t="960" ac="0"> certainly</s><s t="1360" ac="0"> approve</s><s t="1680" ac="0"> of</s></p>
+<p t="132949" d="2650" w="1" a="1">
+</p>
+<p t="132959" d="6721" w="1"><s ac="0">him</s><s t="241" ac="0"> being</s><s t="481" ac="0"> here.</s></p>
+<p t="135589" d="4091" w="1" a="1">
+</p>
+<p t="135599" d="6640" w="1"><s ac="0">people</s><s t="720" ac="0"> out</s><s t="881" ac="0"> of</s><s t="1041" ac="0"> Israel</s><s t="1761" ac="0"> right</s><s t="1921" ac="0"> now</s><s t="3360" ac="0"> that</s></p>
+<p t="139670" d="2569" w="1" a="1">
+</p>
+<p t="139680" d="4000" w="1"><s ac="0">coalition</s><s t="559" ac="0"> is</s><s t="720" ac="0"> losing</s><s t="1199" ac="0"> peace</s><s t="1680" ac="0"> and</s><s t="1919" ac="0"> unlikely</s></p>
+<p t="142229" d="1451" w="1" a="1">
+</p>
+<p t="142239" d="3601" w="1"><s ac="0">that</s><s t="241" ac="0"> he</s><s t="401" ac="0"> would</s><s t="640" ac="0"> continue.</s></p>
+<p t="143670" d="2170" w="1" a="1">
+</p>
+<p t="143680" d="4960" w="1"><s ac="0">&gt;&gt; Well,</s><s t="240" ac="0"> that&#39;s</s><s t="400" ac="0"> not</s><s t="559" ac="0"> what</s><s t="720" ac="0"> I</s><s t="880" ac="0"> heard.</s><s t="1680" ac="0"> I</s><s t="1840" ac="0"> heard</s></p>
+<p t="145830" d="2810" w="1" a="1">
+</p>
+<p t="145840" d="5039" w="1"><s ac="0">that</s><s t="160" ac="0"> I</s><s t="399" ac="0"> heard</s><s t="560" ac="0"> the</s><s t="800" ac="0"> opposite.</s><s t="1280" ac="0"> I</s><s t="1520" ac="0"> actually</s></p>
+<p t="148630" d="2249" w="1" a="1">
+</p>
+<p t="148640" d="4959" w="1"><s ac="0">heard</s><s t="319" ac="0"> that</s><s t="800" ac="0"> the</s><s t="1120" ac="0"> poll</s><s t="1440" ac="0"> numbers</s><s t="1760" ac="0"> were</s><s t="1920" ac="0"> wrong.</s></p>
+<p t="150869" d="2730" w="1" a="1">
+</p>
+<p t="150879" d="4401" w="1"><s ac="0">They</s><s t="241" ac="0"> had</s><s t="720" ac="0"> exit</s><s t="1121" ac="0"> polls</s><s t="1521" ac="0"> that</s><s t="2161" ac="0"> I&#39;m</s><s t="2481" ac="0"> hearing</s></p>
+<p t="153589" d="1691" w="1" a="1">
+</p>
+<p t="153599" d="5681" w="1"><s ac="0">that</s><s t="161" ac="0"> he</s><s t="401" ac="0"> did</s><s t="561" ac="0"> very</s><s t="801" ac="0"> well.</s><s t="1041" ac="0"> It&#39;s,</s><s t="1360" ac="0"> you</s><s t="1521" ac="0"> know,</s></p>
+<p t="155270" d="4010" w="1" a="1">
+</p>
+<p t="155280" d="5599" w="1"><s ac="0">it&#39;s</s><s t="880" ac="0"> pretty</s><s t="1280" ac="0"> close,</s><s t="1599" ac="0"> which</s><s t="1920" ac="0"> was</s><s t="2239" ac="0"> very</s><s t="2480" ac="0"> well.</s></p>
+<p t="159270" d="1609" w="1" a="1">
+</p>
+<p t="159280" d="3920" w="1"><s ac="0">I</s><s t="239" ac="0"> think</s><s t="319" ac="0"> when</s><s t="560" ac="0"> the</s><s t="720" ac="0"> endorsement</s><s t="1200" ac="0"> went</s><s t="1360" ac="0"> out,</s></p>
+<p t="160869" d="2331" w="1" a="1">
+</p>
+<p t="160879" d="3841" w="1"><s ac="0">it</s><s t="241" ac="0"> it</s><s t="481" ac="0"> helped</s><s t="720" ac="0"> him</s><s t="881" ac="0"> a</s><s t="1041" ac="0"> lot.</s><s t="1761" ac="0"> But</s><s t="1921" ac="0"> I</s><s t="2161" ac="0"> actually</s></p>
+<p t="163190" d="1530" w="1" a="1">
+</p>
+<p t="163200" d="4160" w="1"><s ac="0">heard</s><s t="240" ac="0"> he</s><s t="480" ac="0"> did</s><s t="640" ac="0"> pretty</s><s t="800" ac="0"> well.</s><s t="1039" ac="0"> It</s><s t="1200" ac="0"> might</s><s t="1360" ac="0"> be</s></p>
+<p t="164710" d="2650" w="1" a="1">
+</p>
+<p t="164720" d="4640" w="1"><s ac="0">winning</s><s t="1200" ac="0"> or</s><s t="1360" ac="0"> tied.</s><s t="1680" ac="0"> The</s><s t="1920" ac="0"> tie</s><s t="2159" ac="0"> is</s><s t="2320" ac="0"> sort</s><s t="2480" ac="0"> of</s></p>
+<p t="167350" d="2010" w="1" a="1">
+</p>
+<p t="167360" d="5840" w="1"><s ac="0">considered</s><s t="400" ac="0"> a</s><s t="560" ac="0"> win</s><s t="720" ac="0"> in</s><s t="959" ac="0"> that</s><s t="1120" ac="0"> case</s><s t="1760" ac="0"> because</s></p>
+<p t="169350" d="3850" w="1" a="1">
+</p>
+<p t="169360" d="5920" w="1"><s ac="0">it&#39;s</s><s t="239" ac="0"> a</s><s t="480" ac="0"> big</s><s t="959" ac="0"> chess</s><s t="1360" ac="0"> match.</s><s t="2560" ac="0"> And</s><s t="3040" ac="0"> but</s><s t="3200" ac="0"> I</s><s t="3519" ac="0"> I</s></p>
+<p t="173190" d="2090" w="1" a="1">
+</p>
+<p t="173200" d="4560" w="1"><s ac="0">heard</s><s t="240" ac="0"> he&#39;s</s><s t="480" ac="0"> doing</s><s t="640" ac="0"> pretty</s><s t="880" ac="0"> well.</s><s t="1679" ac="0"> It&#39;s</s><s t="1920" ac="0"> a</s></p>
+<p t="175270" d="2490" w="1" a="1">
+</p>
+<p t="175280" d="4959" w="1"><s ac="0">little</s><s t="160" ac="0"> bit</s><s t="319" ac="0"> early.</s><s t="640" ac="0"> No,</s><s t="800" ac="0"> I</s><s t="880" ac="0"> haven&#39;t.</s><s t="2000" ac="0"> It&#39;s</s><s t="2239" ac="0"> a</s></p>
+<p t="177750" d="2489" w="1" a="1">
+</p>
+<p t="177760" d="5600" w="1"><s ac="0">little</s><s t="80" ac="0"> bit</s><s t="240" ac="0"> early</s><s t="479" ac="0"> yet.</s><s t="880" ac="0"> But</s><s t="1920" ac="0"> I&#39;m</s><s t="2160" ac="0"> hearing</s></p>
+<p t="180229" d="3131" w="1" a="1">
+</p>
+<p t="180239" d="5280" w="1"><s ac="0">that</s><s t="881" ac="0"> in</s><s t="1201" ac="0"> Israel</s><s t="1601" ac="0"> that</s><s t="1841" ac="0"> he</s><s t="2241" ac="0"> I</s><s t="2561" ac="0"> mean</s><s t="2640" ac="0"> the</s><s t="2881" ac="0"> top</s></p>
+<p t="183350" d="2169" w="1" a="1">
+</p>
+<p t="183360" d="4320" w="1"><s ac="0">people</s><s t="239" ac="0"> are</s><s t="400" ac="0"> saying,</s><s t="560" ac="0"> &quot;Wow,</s><s t="1519" ac="0"> he</s><s t="1760" ac="0"> did</s><s t="1920" ac="0"> a</s><s t="2080" ac="0"> lot</s></p>
+<p t="185509" d="2171" w="1" a="1">
+</p>
+<p t="185519" d="6000" w="1"><s ac="0">better</s><s t="241" ac="0"> than</s><s t="481" ac="0"> people</s><s t="720" ac="0"> thought.&quot;</s><s t="1841" ac="0"> Sort</s><s t="2080" ac="0"> of</s></p>
+<p t="187670" d="3849" w="1" a="1">
+</p>
+<p t="187680" d="7800" w="1"><s ac="0">like</s><s t="479" ac="0"> maybe</s><s t="880" ac="0"> a</s><s t="1040" ac="0"> stalemate</s><s t="1680" ac="0"> or</s><s t="2080" ac="0"> a</s><s t="2320" ac="0"> win.</s><s t="3680" ac="0"> But</s></p>
+<p t="191509" d="3971" w="1" a="1">
+</p>
+<p t="191519" d="3961" w="1"><s ac="0">we&#39;ll</s><s t="241" ac="0"> find</s><s t="401" ac="0"> out</s><s t="640" ac="0"> pretty</s><s t="961" ac="0"> soon.</s></p>
+<p t="201350" w="1" a="1">
+</p>
+<p t="201360" d="5440" w="1"><s ac="0">&gt;&gt; Well,</s><s t="560" ac="0"> uh,</s><s t="799" ac="0"> Ambassador</s><s t="1599" ac="0"> Kushner,</s><s t="2080" ac="0"> you</s></p>
+<p t="203670" d="3130" w="1" a="1">
+</p>
+<p t="203680" d="6479" w="1"><s ac="0">talking</s><s t="400" ac="0"> France.</s><s t="1520" ac="0"> He&#39;s</s><s t="1760" ac="0"> a</s><s t="1919" ac="0"> great</s><s t="2160" ac="0"> guy.</s><s t="2479" ac="0"> He&#39;s</s><s t="2639" ac="0"> a</s></p>
+<p t="206790" d="3369" w="1" a="1">
+</p>
+<p t="206800" d="6320" w="1"><s ac="0">rich</s><s t="320" ac="0"> man</s><s t="1359" ac="0"> and</s><s t="1840" ac="0"> he</s><s t="2159" ac="0"> took</s><s t="2480" ac="0"> over</s><s t="2719" ac="0"> the</s><s t="2960" ac="0"> French</s></p>
+<p t="210149" d="2971" w="1" a="1">
+</p>
+<p t="210159" d="4881" w="1"><s ac="0">embassy</s><s t="640" ac="0"> and</s><s t="1601" ac="0"> he</s><s t="1841" ac="0"> spends</s><s t="2160" ac="0"> a</s><s t="2321" ac="0"> lot</s><s t="2401" ac="0"> of</s><s t="2481" ac="0"> his</s><s t="2720" ac="0"> time</s></p>
+<p t="213110" d="1930" w="1" a="1">
+</p>
+<p t="213120" d="4000" w="1"><s ac="0">making</s><s t="240" ac="0"> it</s><s t="479" ac="0"> beautiful.</s><s t="880" ac="0"> Was</s><s t="1119" ac="0"> in</s><s t="1280" ac="0"> rough</s><s t="1520" ac="0"> shape.</s></p>
+<p t="215030" d="2090" w="1" a="1">
+</p>
+<p t="215040" d="4320" w="1"><s ac="0">beautiful</s><s t="960" ac="0"> building,</s><s t="1360" ac="0"> but</s><s t="1600" ac="0"> you</s><s t="1759" ac="0"> know,</s><s t="1839" ac="0"> it&#39;s</s></p>
+<p t="217110" d="2250" w="1" a="1">
+</p>
+<p t="217120" d="4479" w="1"><s ac="0">been</s><s t="160" ac="0"> lived</s><s t="399" ac="0"> in</s><s t="720" ac="0"> for</s></p>
+<p t="219350" d="2249" w="1" a="1">
+</p>
+<p t="219360" d="5280" w="1"><s ac="0">a</s><s t="80" ac="0"> hundred</s><s t="480" ac="0"> years</s><s t="799" ac="0"> by</s><s t="1120" ac="0"> various</s><s t="1599" ac="0"> ambassadors</s></p>
+<p t="221589" d="3051" w="1" a="1">
+</p>
+<p t="221599" d="5121" w="1"><s ac="0">and</s><s t="241" ac="0"> nobody</s><s t="560" ac="0"> does</s><s t="881" ac="0"> anything.</s><s t="2000" ac="0"> He&#39;s</s><s t="2241" ac="0"> somebody</s></p>
+<p t="224630" d="2090" w="1" a="1">
+</p>
+<p t="224640" d="4800" w="1"><s ac="0">like</s><s t="239" ac="0"> me,</s><s t="480" ac="0"> I</s><s t="720" ac="0"> guess.</s><s t="879" ac="0"> He</s><s t="1120" ac="0"> likes</s><s t="1440" ac="0"> to</s><s t="1599" ac="0"> fix</s><s t="1840" ac="0"> things</s></p>
+<p t="226710" d="2730" w="1" a="1">
+</p>
+<p t="226720" d="5439" w="1"><s ac="0">up</s><s t="239" ac="0"> and</s><s t="1120" ac="0"> uh</s><s t="1280" ac="0"> he&#39;s</s><s t="1519" ac="0"> done</s><s t="1680" ac="0"> an</s><s t="1920" ac="0"> incredible</s><s t="2400" ac="0"> job.</s></p>
+<p t="229430" d="2729" w="1" a="1">
+</p>
+<p t="229440" d="5359" w="1"><s ac="0">He&#39;s</s><s t="1040" ac="0"> painstakingly</s><s t="2000" ac="0"> brought</s><s t="2159" ac="0"> it</s><s t="2400" ac="0"> back</s><s t="2560" ac="0"> to</s></p>
+<p t="232149" d="2650" w="1" a="1">
+</p>
+<p t="232159" d="5440" w="1"><s ac="0">life.</s><s t="241" ac="0"> It&#39;s</s><s t="481" ac="0"> a</s><s t="640" ac="0"> beautiful,</s><s t="1841" ac="0"> beautiful</s><s t="2241" ac="0"> place,</s></p>
+<p t="234789" d="2810" w="1" a="1">
+</p>
+<p t="234799" d="6321" w="1"><s ac="0">beautiful</s><s t="321" ac="0"> embassy,</s><s t="881" ac="0"> beautiful</s><s t="1201" ac="0"> home.</s><s t="2481" ac="0"> Uh,</s></p>
+<p t="237589" d="3531" w="1" a="1">
+</p>
+<p t="237599" d="5280" w="1"><s ac="0">and</s><s t="161" ac="0"> we</s><s t="321" ac="0"> talked</s><s t="640" ac="0"> about</s><s t="881" ac="0"> France</s><s t="2161" ac="0"> and</s><s t="2560" ac="0"> obviously</s></p>
+<p t="241110" d="1769" w="1" a="1">
+</p>
+<p t="241120" d="4000" w="1"><s ac="0">it</s><s t="160" ac="0"> would</s><s t="319" ac="0"> be</s><s t="479" ac="0"> a</s><s t="640" ac="0"> predominant.</s><s t="1520" ac="0"> He</s><s t="1679" ac="0"> was</s></p>
+<p t="242869" d="2251" w="1" a="1">
+</p>
+<p t="242879" d="4801" w="1"><s ac="0">showing</s><s t="241" ac="0"> me</s><s t="401" ac="0"> what</s><s t="560" ac="0"> he</s><s t="720" ac="0"> did,</s><s t="1360" ac="0"> but</s><s t="1761" ac="0"> then</s><s t="2000" ac="0"> we</s></p>
+<p t="245110" d="2570" w="1" a="1">
+</p>
+<p t="245120" d="4640" w="1"><s ac="0">talked</s><s t="319" ac="0"> about</s><s t="560" ac="0"> France</s><s t="880" ac="0"> and</s><s t="2080" ac="0"> it&#39;s</s><s t="2319" ac="0"> an</s></p>
+<p t="247670" d="2090" w="1" a="1">
+</p>
+<p t="247680" d="3680" w="1"><s ac="0">immigration</s><s t="639" ac="0"> problem.</s><s t="1040" ac="0"> I</s><s t="1279" ac="0"> mean,</s><s t="1360" ac="0"> it&#39;s</s><s t="1680" ac="0"> not</s><s t="1839" ac="0"> a</s></p>
+<p t="249750" d="1610" w="1" a="1">
+</p>
+<p t="249760" d="3759" w="1"><s ac="0">school</s><s t="240" ac="0"> problem.</s><s t="720" ac="0"> It&#39;s</s><s t="880" ac="0"> an</s><s t="1039" ac="0"> immigration</s></p>
+<p t="251350" d="2169" w="1" a="1">
+</p>
+<p t="251360" d="4239" w="1"><s ac="0">problem.</s><s t="720" ac="0"> It&#39;s</s><s t="879" ac="0"> a</s><s t="1120" ac="0"> very</s><s t="1280" ac="0"> sad</s><s t="1599" ac="0"> thing</s><s t="1680" ac="0"> to</s><s t="1920" ac="0"> watch.</s></p>
+<p t="253509" d="2090" w="1" a="1">
+</p>
+<p t="253519" d="3921" w="1"><s ac="0">I&#39;ve</s><s t="241" ac="0"> been</s><s t="401" ac="0"> saying</s><s t="561" ac="0"> that</s><s t="800" ac="0"> to</s><s t="1601" ac="0"> President</s></p>
+<p t="255589" d="1851" w="1" a="1">
+</p>
+<p t="255599" d="4081" w="1"><s ac="0">Mcronone</s><s t="480" ac="0"> for</s><s t="640" ac="0"> a</s><s t="801" ac="0"> long</s><s t="880" ac="0"> time,</s><s t="1121" ac="0"> who</s><s t="1281" ac="0"> I</s><s t="1521" ac="0"> like</s><s t="1681" ac="0"> a</s></p>
+<p t="257430" d="2250" w="1" a="1">
+</p>
+<p t="257440" d="3680" w="1"><s ac="0">lot,</s><s t="319" ac="0"> by</s><s t="560" ac="0"> the</s><s t="639" ac="0"> way.</s><s t="1680" ac="0"> But</s><s t="1759" ac="0"> I</s><s t="1919" ac="0"> said,</s><s t="2079" ac="0"> you&#39;re</s></p>
+<p t="259670" d="1450" w="1" a="1">
+</p>
+<p t="259680" d="3760" w="1"><s ac="0">going</s><s t="79" ac="0"> to</s><s t="160" ac="0"> end</s><s t="320" ac="0"> up</s><s t="480" ac="0"> losing</s><s t="799" ac="0"> your</s><s t="1040" ac="0"> country</s><s t="1279" ac="0"> if</s></p>
+<p t="261110" d="2330" w="1" a="1">
+</p>
+<p t="261120" d="5200" w="1"><s ac="0">you</s><s t="160" ac="0"> don&#39;t</s><s t="320" ac="0"> do</s><s t="560" ac="0"> something.</s><s t="1760" ac="0"> But</s><s t="1920" ac="0"> it&#39;s</s><s t="2079" ac="0"> an</s></p>
+<p t="263430" d="2890" w="1" a="1">
+</p>
+<p t="263440" d="5199" w="1"><s ac="0">immigration.</s><s t="1039" ac="0"> You</s><s t="1360" ac="0"> have</s><s t="2080" ac="0"> people</s><s t="2319" ac="0"> that</s><s t="2560" ac="0"> hate</s></p>
+<p t="266310" d="2329" w="1" a="1">
+</p>
+<p t="266320" d="5760" w="1"><s ac="0">France.</s><s t="1120" ac="0"> They</s><s t="1360" ac="0"> hate</s><s t="1520" ac="0"> the</s><s t="1760" ac="0"> buildings,</s><s t="2159" ac="0"> hate</s></p>
+<p t="268629" d="3451" w="1" a="1">
+</p>
+<p t="268639" d="5840" w="1"><s ac="0">the</s><s t="161" ac="0"> art,</s><s t="481" ac="0"> hate</s><s t="801" ac="0"> the</s><s t="1521" ac="0"> they</s><s t="1681" ac="0"> hate</s><s t="1921" ac="0"> the</s><s t="2161" ac="0"> people.</s></p>
+<p t="272070" d="2409" w="1" a="1">
+</p>
+<p t="272080" d="3760" w="1"><s ac="0">And</s><s t="240" ac="0"> they&#39;re</s><s t="399" ac="0"> in</s><s t="640" ac="0"> there</s><s t="800" ac="0"> and</s></p>
+<p t="274469" d="1371" w="1" a="1">
+</p>
+<p t="274479" d="3841" w="1"><s ac="0">you&#39;d</s><s t="241" ac="0"> have</s><s t="401" ac="0"> to</s><s t="561" ac="0"> get</s><s t="641" ac="0"> them</s><s t="801" ac="0"> out.</s><s t="1041" ac="0"> Something</s></p>
+<p t="275830" d="2490" w="1" a="1">
+</p>
+<p t="275840" d="4799" w="1"><s ac="0">has</s><s t="240" ac="0"> to</s><s t="400" ac="0"> happen</s><s t="1520" ac="0"> and</s><s t="1760" ac="0"> they</s><s t="2000" ac="0"> better</s><s t="2320" ac="0"> do</s></p>
+<p t="278310" d="2329" w="1" a="1">
+</p>
+<p t="278320" d="4640" w="1"><s ac="0">something.</s><s t="319" ac="0"> I&#39;ve</s><s t="560" ac="0"> been</s><s t="640" ac="0"> saying</s><s t="879" ac="0"> it</s><s t="1120" ac="0"> for</s><s t="2080" ac="0"> 10</s></p>
+<p t="280629" d="2331" w="1" a="1">
+</p>
+<p t="280639" d="6321" w="1"><s ac="0">years</s><s t="401" ac="0"> to</s><s t="1041" ac="0"> the</s><s t="1361" ac="0"> president.</s><s t="1761" ac="0"> I&#39;ve</s><s t="1921" ac="0"> known</s><s t="2161" ac="0"> him</s></p>
+<p t="282950" d="4010" w="1" a="1">
+</p>
+<p t="282960" d="5920" w="1"><s ac="0">for</s><s t="160" ac="0"> a</s><s t="320" ac="0"> long</s><s t="560" ac="0"> time</s><s t="1840" ac="0"> and</s><s t="2160" ac="0"> it&#39;s</s></p>
+<p t="286950" d="1930" w="1" a="1">
+</p>
+<p t="286960" d="6959" w="1"><s ac="0">I</s><s t="320" ac="0"> think</s><s t="400" ac="0"> what&#39;s</s><s t="720" ac="0"> happened</s><s t="959" ac="0"> in</s><s t="1200" ac="0"> France</s><s t="1519" ac="0"> and</s></p>
+<p t="288870" d="5049" w="1" a="1">
+</p>
+<p t="288880" d="6960" w="1"><s ac="0">other</s><s t="319" ac="0"> countries</s><s t="640" ac="0"> in</s><s t="960" ac="0"> Europe</s><s t="1759" ac="0"> is</s><s t="2000" ac="0"> very</s><s t="2319" ac="0"> sad.</s></p>
+<p t="293909" d="1931" w="1" a="1">
+</p>
+<p t="293919" d="3681" w="1"><s ac="0">with</s><s t="161" ac="0"> Steve</s><s t="481" ac="0"> Whit</s><s t="1041" ac="0"> on</s><s t="1201" ac="0"> the</s><s t="1361" ac="0"> plane</s><s t="1601" ac="0"> with</s><s t="1761" ac="0"> you</s></p>
+<p t="295830" d="1770" w="1" a="1">
+</p>
+<p t="295840" d="3680" w="1"><s ac="0">today.</s><s t="720" ac="0"> Can</s><s t="960" ac="0"> you</s><s t="1040" ac="0"> tell</s><s t="1200" ac="0"> us</s><s t="1359" ac="0"> what</s><s t="1600" ac="0"> you</s></p>
+<p t="297590" d="1930" w="1" a="1">
+</p>
+<p t="297600" d="2800" w="1"><s ac="0">discussed?</s><s t="480" ac="0"> Is</s><s t="640" ac="0"> it</s><s t="800" ac="0"> related</s><s t="1120" ac="0"> to</s><s t="1280" ac="0"> Iran</s><s t="1680" ac="0"> or</s></p>
+<p t="299510" d="890" w="1" a="1">
+</p>
+<p t="299520" d="2720" w="1"><s ac="0">Russia?</s></p>
+<p t="300390" d="1850" w="1" a="1">
+</p>
+<p t="300400" d="4480" w="1"><s ac="0">&gt;&gt; We</s><s t="239" ac="0"> talked</s><s t="480" ac="0"> about</s><s t="720" ac="0"> Iran,</s><s t="1200" ac="0"> talked</s><s t="1600" ac="0"> about</s></p>
+<p t="302230" d="2650" w="1" a="1">
+</p>
+<p t="302240" d="5760" w="1"><s ac="0">Russia</s><s t="1200" ac="0"> and</s><s t="1440" ac="0"> I</s><s t="1600" ac="0"> think</s><s t="1760" ac="0"> with</s><s t="2000" ac="0"> Russia,</s><s t="2399" ac="0"> we&#39;re</s></p>
+<p t="304870" d="3130" w="1" a="1">
+</p>
+<p t="304880" d="4640" w="1"><s ac="0">making</s><s t="1280" ac="0"> a</s><s t="1520" ac="0"> lot</s><s t="1680" ac="0"> of</s><s t="1840" ac="0"> progress</s><s t="2400" ac="0"> with</s><s t="2720" ac="0"> Russia</s></p>
+<p t="307990" d="1530" w="1" a="1">
+</p>
+<p t="308000" d="3199" w="1"><s ac="0">Ukraine.</s></p>
+<p t="309510" d="1689" w="1" a="1">
+</p>
+<p t="309520" d="3440" w="1"><s ac="0">There&#39;ll</s><s t="239" ac="0"> be</s><s t="320" ac="0"> a</s><s t="480" ac="0"> meeting</s><s t="800" ac="0"> set</s><s t="959" ac="0"> up</s><s t="1119" ac="0"> very</s><s t="1440" ac="0"> soon.</s></p>
+<p t="311189" d="1771" w="1" a="1">
+</p>
+<p t="311199" d="5521" w="1"><s ac="0">And</s><s t="161" ac="0"> I</s><s t="401" ac="0"> think</s><s t="481" ac="0"> a</s><s t="641" ac="0"> lot</s><s t="801" ac="0"> of</s><s t="881" ac="0"> progress</s><s t="1280" ac="0"> is</s><s t="1521" ac="0"> being</s></p>
+<p t="312950" d="3770" w="1" a="1">
+</p>
+<p t="312960" d="6160" w="1"><s ac="0">made</s><s t="1040" ac="0"> to</s><s t="1200" ac="0"> stop</s><s t="2320" ac="0"> with</s><s t="2640" ac="0"> President</s><s t="3120" ac="0"> Putin</s><s t="3519" ac="0"> and</s></p>
+<p t="316710" d="2410" w="1" a="1">
+</p>
+<p t="316720" d="4479" w="1"><s ac="0">President</s><s t="479" ac="0"> Zullinski.</s></p>
+<p t="319110" d="2089" w="1" a="1">
+</p>
+<p t="319120" d="4560" w="1"><s ac="0">And</s><s t="240" ac="0"> I</s><s t="400" ac="0"> think</s><s t="480" ac="0"> a</s><s t="720" ac="0"> lot</s><s t="799" ac="0"> of</s><s t="960" ac="0"> progress</s><s t="1280" ac="0"> is</s><s t="1519" ac="0"> made.</s><s t="1840" ac="0"> I</s></p>
+<p t="321189" d="2491" w="1" a="1">
+</p>
+<p t="321199" d="4161" w="1"><s ac="0">think</s><s t="321" ac="0"> uh</s><s t="401" ac="0"> with</s><s t="1201" ac="0"> Iran,</s><s t="1601" ac="0"> we&#39;re</s><s t="1840" ac="0"> in</s><s t="1921" ac="0"> a</s><s t="2081" ac="0"> very</s><s t="2241" ac="0"> good</s></p>
+<p t="323670" d="1690" w="1" a="1">
+</p>
+<p t="323680" d="3519" w="1"><s ac="0">position.</s></p>
+<p t="325350" d="1849" w="1" a="1">
+</p>
+<p t="325360" d="4800" w="1"><s ac="0">It&#39;s</s><s t="240" ac="0"> a</s><s t="480" ac="0"> question</s><s t="800" ac="0"> when</s><s t="1040" ac="0"> do</s><s t="1200" ac="0"> I</s><s t="1360" ac="0"> want</s><s t="1520" ac="0"> to</s><s t="1679" ac="0"> end</s></p>
+<p t="327189" d="2971" w="1" a="1">
+</p>
+<p t="327199" d="6481" w="1"><s ac="0">it.</s><s t="1361" ac="0"> Simply</s><s t="1681" ac="0"> a</s><s t="1921" ac="0"> question</s><s t="2081" ac="0"> of</s><s t="2321" ac="0"> when</s><s t="2481" ac="0"> do</s><s t="2641" ac="0"> I</s><s t="2801" ac="0"> want</s></p>
+<p t="330150" d="3530" w="1" a="1">
+</p>
+<p t="330160" d="4879" w="1"><s ac="0">to</s><s t="80" ac="0"> end</s><s t="240" ac="0"> it</s><s t="1360" ac="0"> and</s><s t="1840" ac="0"> uh</s><s t="2000" ac="0"> they</s><s t="2240" ac="0"> want</s><s t="2560" ac="0"> I</s><s t="3120" ac="0"> they</s><s t="3360" ac="0"> want</s></p>
+<p t="333670" d="1369" w="1" a="1">
+</p>
+<p t="333680" d="3519" w="1"><s ac="0">to</s><s t="79" ac="0"> make</s><s t="160" ac="0"> a</s><s t="320" ac="0"> deal,</s><s t="480" ac="0"> but</s><s t="640" ac="0"> they&#39;ve</s><s t="959" ac="0"> wanted</s><s t="1200" ac="0"> to</s></p>
+<p t="335029" d="2170" w="1" a="1">
+</p>
+<p t="335039" d="4241" w="1"><s ac="0">make</s><s t="81" ac="0"> a</s><s t="321" ac="0"> deal,</s><s t="880" ac="0"> but</s><s t="1121" ac="0"> they</s><s t="1361" ac="0"> like</s><s t="1600" ac="0"> tapping</s><s t="2000" ac="0"> it</s></p>
+<p t="337189" d="2091" w="1" a="1">
+</p>
+<p t="337199" d="3840" w="1"><s ac="0">along.</s><s t="401" ac="0"> Maybe</s><s t="641" ac="0"> they&#39;re</s><s t="881" ac="0"> waiting</s><s t="1601" ac="0"> for</s><s t="1840" ac="0"> the</s></p>
+<p t="339270" d="1769" w="1" a="1">
+</p>
+<p t="339280" d="3919" w="1"><s ac="0">election</s><s t="400" ac="0"> or</s><s t="639" ac="0"> something,</s><s t="960" ac="0"> but</s><s t="1280" ac="0"> that&#39;s</s><s t="1600" ac="0"> not</s></p>
+<p t="341029" d="2170" w="1" a="1">
+</p>
+<p t="341039" d="4961" w="1"><s ac="0">going</s><s t="81" ac="0"> to</s><s t="241" ac="0"> help</s><s t="401" ac="0"> them.</s><s t="1281" ac="0"> The</s><s t="1521" ac="0"> election&#39;s</s><s t="2000" ac="0"> not</s></p>
+<p t="343189" d="2811" w="1" a="1">
+</p>
+<p t="343199" d="4961" w="1"><s ac="0">going</s><s t="81" ac="0"> to</s><s t="161" ac="0"> help</s><s t="401" ac="0"> them.</s><s t="1440" ac="0"> But</s><s t="1601" ac="0"> I</s><s t="1761" ac="0"> I</s><s t="2081" ac="0"> think</s><s t="2241" ac="0"> we&#39;ve</s></p>
+<p t="345990" d="2170" w="1" a="1">
+</p>
+<p t="346000" d="4720" w="1"><s ac="0">uh</s><s t="160" ac="0"> look,</s><s t="479" ac="0"> we&#39;ve</s><s t="720" ac="0"> decimated</s><s t="1280" ac="0"> their</s><s t="1600" ac="0"> military.</s></p>
+<p t="348150" d="2570" w="1" a="1">
+</p>
+<p t="348160" d="5120" w="1"><s ac="0">We&#39;ve</s><s t="240" ac="0"> decimated</s><s t="1440" ac="0"> their</s><s t="1759" ac="0"> finances.</s><s t="2319" ac="0"> They</s></p>
+<p t="350710" d="2570" w="1" a="1">
+</p>
+<p t="350720" d="5919" w="1"><s ac="0">have</s><s t="160" ac="0"> no</s><s t="400" ac="0"> money.</s><s t="720" ac="0"> They</s><s t="880" ac="0"> have</s><s t="1680" ac="0"> inflation,</s><s t="2319" ac="0"> the</s></p>
+<p t="353270" d="3369" w="1" a="1">
+</p>
+<p t="353280" d="5919" w="1"><s ac="0">highest</s><s t="320" ac="0"> in</s><s t="479" ac="0"> the</s><s t="639" ac="0"> world,</s><s t="1040" ac="0"> 301%</s><s t="2240" ac="0"> as</s><s t="2479" ac="0"> of</s><s t="3120" ac="0"> a</s></p>
+<p t="356629" d="2570" w="1" a="1">
+</p>
+<p t="356639" d="4241" w="1"><s ac="0">couple</s><s t="161" ac="0"> of</s><s t="321" ac="0"> days</s><s t="560" ac="0"> ago,</s><s t="1761" ac="0"> but</s><s t="2000" ac="0"> we&#39;ll</s><s t="2241" ac="0"> see</s><s t="2400" ac="0"> what</s></p>
+<p t="359189" d="1691" w="1" a="1">
+</p>
+<p t="359199" d="3521" w="1"><s ac="0">happens.</s><s t="560" ac="0"> We&#39;re</s><s t="801" ac="0"> in</s><s t="961" ac="0"> good</s><s t="1201" ac="0"> position</s></p>
+<p t="360870" d="1850" w="1" a="1">
+</p>
+<p t="360880" d="3840" w="1"><s ac="0">regardless.</s></p>
+<p t="362710" d="2010" w="1" a="1">
+</p>
+<p t="362720" d="3759" w="1"><s ac="0">&gt;&gt; Strikes</s><s t="400" ac="0"> against</s><s t="720" ac="0"> Iran</s><s t="1120" ac="0"> after</s><s t="1440" ac="0"> the</s><s t="1599" ac="0"> election.</s></p>
+<p t="364710" d="1769" w="1" a="1">
+</p>
+<p t="364720" d="4000" w="1"><s ac="0">&gt;&gt; I</s><s t="160" ac="0"> can&#39;t</s><s t="319" ac="0"> tell</s><s t="400" ac="0"> you</s><s t="640" ac="0"> that.</s><s t="1120" ac="0"> I</s><s t="1280" ac="0"> mean,</s><s t="1360" ac="0"> I</s><s t="1599" ac="0"> can&#39;t</s></p>
+<p t="366469" d="2251" w="1" a="1">
+</p>
+<p t="366479" d="3921" w="1"><s ac="0">tell</s><s t="81" ac="0"> you</s><s t="321" ac="0"> that</s><s t="560" ac="0"> certainly,</s><s t="961" ac="0"> but</s></p>
+<p t="368710" d="1690" w="1" a="1">
+</p>
+<p t="368720" d="4960" w="1"><s ac="0">&gt;&gt; anything&#39;s</s><s t="560" ac="0"> possible,</s><s t="960" ac="0"> but</s><s t="1199" ac="0"> I</s><s t="1360" ac="0"> can&#39;t</s><s t="1520" ac="0"> tell</s></p>
+<p t="370390" d="3290" w="1" a="1">
+</p>
+<p t="370400" d="6480" w="1"><s ac="0">you.</s><s t="560" ac="0"> vice</s><s t="799" ac="0"> president</s><s t="2239" ac="0"> said</s><s t="2480" ac="0"> recently</s><s t="3040" ac="0"> that</s></p>
+<p t="373670" d="3210" w="1" a="1">
+</p>
+<p t="373680" d="6400" w="1"><s ac="0">he</s><s t="239" ac="0"> expects</s><s t="1200" ac="0"> your</s><s t="1440" ac="0"> support</s><s t="1920" ac="0"> if</s><s t="2239" ac="0"> he</s><s t="2560" ac="0"> runs</s><s t="2880" ac="0"> for</s></p>
+<p t="376870" d="3210" w="1" a="1">
+</p>
+<p t="376880" d="4960" w="1"><s ac="0">president.</s><s t="800" ac="0"> Uh</s><s t="1039" ac="0"> would</s><s t="1280" ac="0"> you</s><s t="1439" ac="0"> endorse</s><s t="1840" ac="0"> him?</s></p>
+<p t="380070" d="1770" w="1" a="1">
+</p>
+<p t="380080" d="3920" w="1"><s ac="0">&gt;&gt; Well,</s><s t="239" ac="0"> no,</s><s t="559" ac="0"> he</s><s t="720" ac="0"> hasn&#39;t</s><s t="1040" ac="0"> even</s><s t="1200" ac="0"> talked</s><s t="1440" ac="0"> to</s><s t="1600" ac="0"> me</s></p>
+<p t="381830" d="2170" w="1" a="1">
+</p>
+<p t="381840" d="4400" w="1"><s ac="0">about</s><s t="240" ac="0"> that</s><s t="799" ac="0"> and</s><s t="1040" ac="0"> it&#39;s</s><s t="1280" ac="0"> too</s><s t="1520" ac="0"> early</s><s t="1760" ac="0"> to</s><s t="2000" ac="0"> think</s></p>
+<p t="383990" d="2250" w="1" a="1">
+</p>
+<p t="384000" d="4639" w="1"><s ac="0">about</s><s t="240" ac="0"> it.</s><s t="560" ac="0"> But</s><s t="960" ac="0"> I</s><s t="1199" ac="0"> can</s><s t="1360" ac="0"> tell</s><s t="1440" ac="0"> you</s><s t="1680" ac="0"> I</s><s t="1919" ac="0"> like</s><s t="2080" ac="0"> him</s></p>
+<p t="386230" d="2409" w="1" a="1">
+</p>
+<p t="386240" d="3679" w="1"><s ac="0">a</s><s t="160" ac="0"> lot.</s><s t="799" ac="0"> He&#39;s</s><s t="1040" ac="0"> a</s><s t="1280" ac="0"> very</s><s t="1440" ac="0"> capable</s><s t="1920" ac="0"> guy.</s><s t="2160" ac="0"> He&#39;s</s></p>
+<p t="388629" d="1290" w="1" a="1">
+</p>
+<p t="388639" d="4560" w="1"><s ac="0">doing</s><s t="161" ac="0"> a</s><s t="321" ac="0"> good</s><s t="481" ac="0"> job.</s><s t="721" ac="0"> He&#39;s</s><s t="961" ac="0"> out</s><s t="1041" ac="0"> there</s></p>
+<p t="389909" d="3290" w="1" a="1">
+</p>
+<p t="389919" d="7441" w="1"><s ac="0">rallying</s><s t="560" ac="0"> also</s><s t="1761" ac="0"> and</s><s t="2241" ac="0"> I</s><s t="2481" ac="0"> do</s><s t="2641" ac="0"> like</s><s t="2801" ac="0"> him</s><s t="2961" ac="0"> a</s><s t="3120" ac="0"> lot</s></p>
+<p t="393189" d="4171" w="1" a="1">
+</p>
+<p t="393199" d="6801" w="1"><s ac="0">and</s><s t="560" ac="0"> I</s><s t="801" ac="0"> like</s><s t="1761" ac="0"> a</s><s t="2081" ac="0"> lot</s><s t="2161" ac="0"> of</s><s t="2321" ac="0"> people.</s><s t="2881" ac="0"> You</s><s t="3120" ac="0"> saw</s><s t="3280" ac="0"> the</s></p>
+<p t="397350" d="2650" w="1" a="1">
+</p>
+<p t="397360" d="5360" w="1"><s ac="0">hand</s><s t="240" ac="0"> that</s><s t="399" ac="0"> Marco</s><s t="959" ac="0"> got</s><s t="1200" ac="0"> tonight.</s><s t="1760" ac="0"> Marco</s><s t="2160" ac="0"> Rubio</s></p>
+<p t="399990" d="2730" w="1" a="1">
+</p>
+<p t="400000" d="4639" w="1"><s ac="0">got</s><s t="80" ac="0"> a</s><s t="240" ac="0"> big</s><s t="400" ac="0"> hand</s><s t="1520" ac="0"> and</s><s t="1759" ac="0"> they</s><s t="2000" ac="0"> like</s><s t="2160" ac="0"> him.</s><s t="2479" ac="0"> They</s></p>
+<p t="402710" d="1929" w="1" a="1">
+</p>
+<p t="402720" d="4400" w="1"><s ac="0">like</s><s t="160" ac="0"> my</s><s t="400" ac="0"> people.</s><s t="720" ac="0"> We</s><s t="960" ac="0"> have</s><s t="1039" ac="0"> a</s><s t="1199" ac="0"> a</s><s t="1520" ac="0"> great</s><s t="1680" ac="0"> group</s></p>
+<p t="404629" d="2491" w="1" a="1">
+</p>
+<p t="404639" d="5280" w="1"><s ac="0">of</s><s t="161" ac="0"> people.</s><s t="560" ac="0"> Very</s><s t="801" ac="0"> talented.</s><s t="1761" ac="0"> It&#39;s</s><s t="2081" ac="0"> a</s></p>
+<p t="407110" d="2809" w="1" a="1">
+</p>
+<p t="407120" d="4320" w="1"><s ac="0">tremendous</s><s t="1199" ac="0"> cabinet.</s><s t="1760" ac="0"> I</s><s t="2000" ac="0"> think</s><s t="2240" ac="0"> maybe</s><s t="2560" ac="0"> the</s></p>
+<p t="409909" d="1531" w="1" a="1">
+</p>
+<p t="409919" d="3201" w="1"><s ac="0">best</s><s t="241" ac="0"> ever.</s></p>
+<p t="411430" d="1690" w="1" a="1">
+</p>
+<p t="411440" d="3840" w="1"><s ac="0">&gt;&gt; When</s><s t="240" ac="0"> would</s><s t="400" ac="0"> you</s><s t="640" ac="0"> meet</s><s t="879" ac="0"> with</s><s t="1120" ac="0"> Putin</s><s t="1520" ac="0"> and</s></p>
+<p t="413110" d="2170" w="1" a="1">
+</p>
+<p t="413120" d="5600" w="1"><s ac="0">Zelinski?</s><s t="880" ac="0"> When</s><s t="1359" ac="0"> when</s><s t="1600" ac="0"> are</s><s t="1680" ac="0"> you</s><s t="1919" ac="0"> thinking</s></p>
+<p t="415270" d="3450" w="1" a="1">
+</p>
+<p t="415280" d="4800" w="1"><s ac="0">about</s><s t="479" ac="0"> it</s><s t="800" ac="0"> soon,</s><s t="1600" ac="0"> you</s><s t="1680" ac="0"> know,</s></p>
+<p t="418710" d="1370" w="1" a="1">
+</p>
+<p t="418720" d="2720" w="1"><s ac="0">&gt;&gt; and</s><s t="160" ac="0"> I</s><s t="319" ac="0"> would</s><s t="400" ac="0"> say</s><s t="560" ac="0"> it</s><s t="720" ac="0"> would</s><s t="800" ac="0"> be</s><s t="879" ac="0"> a</s><s t="1039" ac="0"> meeting.</s></p>
+<p t="420070" d="1370" w="1" a="1">
+</p>
+<p t="420080" d="3119" w="1"><s ac="0">They&#39;d</s><s t="239" ac="0"> like</s><s t="320" ac="0"> to</s><s t="480" ac="0"> have</s><s t="559" ac="0"> a</s><s t="720" ac="0"> meeting.</s><s t="959" ac="0"> So,</s><s t="1119" ac="0"> we&#39;ll</s></p>
+<p t="421430" d="1769" w="1" a="1">
+</p>
+<p t="421440" d="3840" w="1"><s ac="0">see.</s><s t="240" ac="0"> We&#39;ll</s><s t="640" ac="0"> probably</s><s t="960" ac="0"> make</s><s t="1199" ac="0"> it</s><s t="1520" ac="0"> could</s><s t="1599" ac="0"> be</s></p>
+<p t="423189" d="2091" w="1" a="1">
+</p>
+<p t="423199" d="4400" w="1"><s ac="0">done</s><s t="560" ac="0"> not</s><s t="881" ac="0"> necessarily</s><s t="1440" ac="0"> through</s><s t="1681" ac="0"> a</s><s t="1840" ac="0"> meeting</s></p>
+<p t="425270" d="2329" w="1" a="1">
+</p>
+<p t="425280" d="4080" w="1"><s ac="0">otherwise</s><s t="560" ac="0"> too</s><s t="720" ac="0"> but</s><s t="1440" ac="0"> I</s><s t="1680" ac="0"> would</s><s t="1840" ac="0"> say</s><s t="1919" ac="0"> it&#39;ll</s></p>
+<p t="427589" d="1771" w="1" a="1">
+</p>
+<p t="427599" d="4720" w="1"><s ac="0">happen</s><s t="160" ac="0"> over</s><s t="401" ac="0"> the</s><s t="561" ac="0"> next</s><s t="880" ac="0"> not</s><s t="1121" ac="0"> too</s><s t="1361" ac="0"> long</s><s t="1521" ac="0"> a</s></p>
+<p t="429350" d="2969" w="1" a="1">
+</p>
+<p t="429360" d="4880" w="1"><s ac="0">period.</s></p>
+<p t="432309" d="1931" w="1" a="1">
+</p>
+<p t="432319" d="3440" w="1"><s ac="0">&gt;&gt; That</s><s t="241" ac="0"> does</s><s t="401" ac="0"> not</s><s t="641" ac="0"> include</s><s t="1041" ac="0"> Zilinski</s><s t="1681" ac="0"> when</s><s t="1841" ac="0"> you</s></p>
+<p t="434230" d="1529" w="1" a="1">
+</p>
+<p t="434240" d="3679" w="1"><s ac="0">go</s><s t="160" ac="0"> to</s><s t="320" ac="0"> Asia.</s></p>
+<p t="435749" d="2170" w="1" a="1">
+</p>
+<p t="435759" d="4241" w="1"><s ac="0">&gt;&gt; Well,</s><s t="160" ac="0"> I</s><s t="401" ac="0"> would</s><s t="481" ac="0"> if</s><s t="720" ac="0"> it</s><s t="880" ac="0"> didn&#39;t</s><s t="1121" ac="0"> include</s></p>
+<p t="437909" d="2091" w="1" a="1">
+</p>
+<p t="437919" d="5120" w="1"><s ac="0">Ukraine.</s><s t="560" ac="0"> You</s><s t="641" ac="0"> know,</s><s t="801" ac="0"> Russia</s><s t="1041" ac="0"> is</s><s t="1120" ac="0"> a</s><s t="1361" ac="0"> big</s></p>
+<p t="439990" d="3049" w="1" a="1">
+</p>
+<p t="440000" d="5840" w="1"><s ac="0">country.</s><s t="1120" ac="0"> uh</s><s t="1280" ac="0"> we&#39;re</s><s t="1520" ac="0"> meeting</s><s t="1840" ac="0"> with</s><s t="2479" ac="0"> uh</s></p>
+<p t="443029" d="2811" w="1" a="1">
+</p>
+<p t="443039" d="7041" w="1"><s ac="0">scheduled</s><s t="560" ac="0"> already</s><s t="1521" ac="0"> with</s><s t="1841" ac="0"> President</s><s t="2321" ac="0"> Xi</s><s t="2560" ac="0"> of</s></p>
+<p t="445830" d="4250" w="1" a="1">
+</p>
+<p t="445840" d="6079" w="1"><s ac="0">China</s><s t="1199" ac="0"> and</s><s t="1520" ac="0"> we</s><s t="1759" ac="0"> have</s><s t="1919" ac="0"> a</s><s t="2560" ac="0"> meeting</s><s t="2880" ac="0"> on</s><s t="3600" ac="0"> nuclear</s></p>
+<p t="450070" d="1849" w="1" a="1">
+</p>
+<p t="450080" d="3920" w="1"><s ac="0">disarmament</s><s t="800" ac="0"> which</s><s t="1040" ac="0"> is</s><s t="1200" ac="0"> a</s><s t="1360" ac="0"> very</s><s t="1600" ac="0"> great</s></p>
+<p t="451909" d="2091" w="1" a="1">
+</p>
+<p t="451919" d="4801" w="1"><s ac="0">meeting</s><s t="801" ac="0"> as</s><s t="961" ac="0"> far</s><s t="1041" ac="0"> as</s><s t="1201" ac="0"> I&#39;m</s><s t="1441" ac="0"> concerned</s><s t="1840" ac="0"> maybe</s></p>
+<p t="453990" d="2730" w="1" a="1">
+</p>
+<p t="454000" d="4720" w="1"><s ac="0">the</s><s t="240" ac="0"> single</s><s t="560" ac="0"> most</s><s t="1520" ac="0"> important</s><s t="1919" ac="0"> meeting</s><s t="2240" ac="0"> so</s><s t="2560" ac="0"> we</s></p>
+<p t="456710" d="2010" w="1" a="1">
+</p>
+<p t="456720" d="5599" w="1"><s ac="0">do</s><s t="160" ac="0"> have</s><s t="479" ac="0"> we</s><s t="1280" ac="0"> talk</s><s t="1520" ac="0"> about</s><s t="1680" ac="0"> the</s></p>
+<p t="458710" d="3609" w="1" a="1">
+</p>
+<p t="458720" d="5919" w="1"><s ac="0">denuclearization</s><s t="1280" ac="0"> of</s><s t="2400" ac="0"> uh</s><s t="2960" ac="0"> the</s><s t="3199" ac="0"> various</s></p>
+<p t="462309" d="2330" w="1" a="1">
+</p>
+<p t="462319" d="5121" w="1"><s ac="0">countries</s><s t="481" ac="0"> so</s><s t="1201" ac="0"> certainly</s><s t="1600" ac="0"> Russia</s><s t="2000" ac="0"> would</s><s t="2160" ac="0"> fit</s></p>
+<p t="464629" d="2811" w="1" a="1">
+</p>
+<p t="464639" d="5601" w="1"><s ac="0">into</s><s t="560" ac="0"> we</s><s t="721" ac="0"> have</s><s t="881" ac="0"> the</s><s t="1041" ac="0"> most</s><s t="1840" ac="0"> nuclear</s><s t="2321" ac="0"> weapons</s></p>
+<p t="467430" d="2810" w="1" a="1">
+</p>
+<p t="467440" d="5280" w="1"><s ac="0">Russia</s><s t="479" ac="0"> second</s><s t="960" ac="0"> pretty</s><s t="1280" ac="0"> close</s><s t="2240" ac="0"> pretty</s><s t="2560" ac="0"> close</s></p>
+<p t="470230" d="2490" w="1" a="1">
+</p>
+<p t="470240" d="5280" w="1"><s ac="0">behind</s><s t="239" ac="0"> behind</s><s t="640" ac="0"> and</s><s t="1359" ac="0"> China&#39;s</s><s t="1920" ac="0"> much</s><s t="2160" ac="0"> further</s></p>
+<p t="472710" d="2810" w="1" a="1">
+</p>
+<p t="472720" d="6479" w="1"><s ac="0">behind,</s><s t="319" ac="0"> but</s><s t="720" ac="0"> they&#39;ll</s><s t="1039" ac="0"> catch</s><s t="1360" ac="0"> us</s><s t="1680" ac="0"> within</s><s t="2479" ac="0"> 5</s></p>
+<p t="475510" d="3689" w="1" a="1">
+</p>
+<p t="475520" d="5440" w="1"><s ac="0">years</s><s t="959" ac="0"> and</s><s t="1200" ac="0"> it</s><s t="1440" ac="0"> all</s><s t="1679" ac="0"> doesn&#39;t</s><s t="2000" ac="0"> make</s><s t="2160" ac="0"> sense.</s><s t="2959" ac="0"> So,</s></p>
+<p t="479189" d="1771" w="1" a="1">
+</p>
+<p t="479199" d="3120" w="1"><s ac="0">we</s><s t="241" ac="0"> talk</s><s t="481" ac="0"> about</s><s t="720" ac="0"> that.</s><s t="1041" ac="0"> We</s><s t="1201" ac="0"> actually</s><s t="1521" ac="0"> talk</s></p>
+<p t="480950" d="1369" w="1" a="1">
+</p>
+<p t="480960" d="3280" w="1"><s ac="0">about</s><s t="239" ac="0"> it</s><s t="400" ac="0"> a</s><s t="639" ac="0"> lot.</s></p>
+<p t="482309" d="1931" w="1" a="1">
+</p>
+<p t="482319" d="4560" w="1"><s ac="0">&gt;&gt; I</s><s t="160" ac="0"> guess</s><s t="481" ac="0"> they</s><s t="641" ac="0"> don&#39;t</s><s t="801" ac="0"> have</s><s t="961" ac="0"> a</s><s t="1121" ac="0"> meeting</s><s t="1361" ac="0"> on</s></p>
+<p t="484230" d="2649" w="1" a="1">
+</p>
+<p t="484240" d="5359" w="1"><s ac="0">nuclear</s><s t="480" ac="0"> disarmament</s><s t="1359" ac="0"> with</s><s t="1679" ac="0"> President</s><s t="2160" ac="0"> Xi</s></p>
+<p t="486869" d="2730" w="1" a="1">
+</p>
+<p t="486879" d="7521" w="1"><s ac="0">and</s><s t="320" ac="0"> President</s><s t="801" ac="0"> Putin.</s><s t="1760" ac="0"> we</s><s t="2000" ac="0"> would</s><s t="2160" ac="0"> have</s><s t="2481" ac="0"> one</s></p>
+<p t="489589" d="4811" w="1" a="1">
+</p>
+<p t="489599" d="9600" w="1"><s ac="0">of</s><s t="81" ac="0"> the</s><s t="320" ac="0"> topics</s><s t="1521" ac="0"> but</s><s t="2160" ac="0"> the</s><s t="2481" ac="0"> denuclearization</s></p>
+<p t="494390" d="4809" w="1" a="1">
+</p>
+<p t="494400" d="8479" w="1"><s ac="0">I</s><s t="239" ac="0"> mean</s><s t="1040" ac="0"> when</s><s t="1280" ac="0"> you</s><s t="1440" ac="0"> look</s><s t="1600" ac="0"> at</s><s t="2639" ac="0"> 17800</s></p>
+<p t="499189" d="3690" w="1" a="1">
+</p>
+<p t="499199" d="8241" w="1"><s ac="0">of</s><s t="241" ac="0"> these</s><s t="801" ac="0"> unbelievably</s><s t="1761" ac="0"> deadly</s></p>
+<p t="502869" d="4571" w="1" a="1">
+</p>
+<p t="502879" d="7440" w="1"><s ac="0">missiles</s><s t="1281" ac="0"> it&#39;s</s><s t="1841" ac="0"> uh</s><s t="3201" ac="0"> very</s><s t="3600" ac="0"> dangerous</s><s t="4081" ac="0"> stuff</s></p>
+<p t="507430" d="2889" w="1" a="1">
+</p>
+<p t="507440" d="5760" w="1"><s ac="0">very</s><s t="240" ac="0"> very</s><s t="560" ac="0"> dangerous</s><s t="1039" ac="0"> stuff</s><s t="2319" ac="0"> if</s><s t="2560" ac="0"> something</s></p>
+<p t="510309" d="2891" w="1" a="1">
+</p>
+<p t="510319" d="5121" w="1"><s ac="0">could</s><s t="241" ac="0"> be</s><s t="320" ac="0"> done</s><s t="481" ac="0"> in</s><s t="801" ac="0"> that</s><s t="961" ac="0"> regard</s><s t="2321" ac="0"> it</s><s t="2561" ac="0"> would</s><s t="2720" ac="0"> be</s></p>
+<p t="513190" d="2250" w="1" a="1">
+</p>
+<p t="513200" d="4160" w="1"><s ac="0">great</s><s t="639" ac="0"> it&#39;s</s><s t="959" ac="0"> not</s><s t="1120" ac="0"> an</s><s t="1279" ac="0"> easy</s><s t="1600" ac="0"> thing</s><s t="1759" ac="0"> to</s><s t="1920" ac="0"> do</s></p>
+<p t="515430" d="1930" w="1" a="1">
+</p>
+<p t="515440" d="3920" w="1"><s ac="0">because</s><s t="320" ac="0"> nobody</s><s t="640" ac="0"> wants</s><s t="880" ac="0"> to</s><s t="1039" ac="0"> sort</s><s t="1279" ac="0"> of</s><s t="1360" ac="0"> just</s><s t="1599" ac="0"> say</s></p>
+<p t="517350" d="2010" w="1" a="1">
+</p>
+<p t="517360" d="4880" w="1"><s ac="0">Well,</s><s t="880" ac="0"> because</s><s t="1119" ac="0"> you</s><s t="1280" ac="0"> do</s><s t="1440" ac="0"> have</s><s t="1679" ac="0"> other</s></p>
+<p t="519350" d="2890" w="1" a="1">
+</p>
+<p t="519360" d="5200" w="1"><s ac="0">countries</s><s t="479" ac="0"> having</s><s t="1039" ac="0"> much</s><s t="1359" ac="0"> lesser</s><s t="1840" ac="0"> numbers,</s></p>
+<p t="522230" d="2330" w="1" a="1">
+</p>
+<p t="522240" d="4240" w="1"><s ac="0">but</s><s t="239" ac="0"> they</s><s t="479" ac="0"> also</s><s t="799" ac="0"> have</s><s t="1039" ac="0"> nuclear</s><s t="1440" ac="0"> weapons.</s><s t="2000" ac="0"> So,</s></p>
+<p t="524550" d="1930" w="1" a="1">
+</p>
+<p t="524560" d="4920" w="1"><s ac="0">it</s><s t="240" ac="0"> gets</s><s t="480" ac="0"> to</s><s t="640" ac="0"> be</s><s t="800" ac="0"> difficult.</s><s t="1440" ac="0"> Thank</s><s t="1600" ac="0"> you</s><s t="1680" ac="0"> very</s></p>
+<p t="526470" d="3010" w="1" a="1">
+</p>
+<p t="526480" d="3000" w="1"><s ac="0">much.</s></p>
+</body>
+</timedtext>

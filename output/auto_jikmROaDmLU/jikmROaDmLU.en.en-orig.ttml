@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:01.360" end="00:00:06.799" style="s2">We have Halloween</p>
+<p begin="00:00:03.760" end="00:00:08.559" style="s2">at the White House in a little while and</p>
+<p begin="00:00:06.799" end="00:00:10.559" style="s2">I think Air Force One is going to do a</p>
+<p begin="00:00:08.559" end="00:00:14.080" style="s2">flyover which will be exciting for the</p>
+<p begin="00:00:10.559" end="00:00:16.080" style="s2">kids. We have a tremendous number of</p>
+<p begin="00:00:14.080" end="00:00:18.800" style="s2">young children there so it&#39;ll be nice.</p>
+<p begin="00:00:16.080" end="00:00:21.279" style="s2">First lady and myself. We give out candy</p>
+<p begin="00:00:18.800" end="00:00:23.760" style="s2">and things. But we have a beautiful</p>
+<p begin="00:00:21.279" end="00:00:25.439" style="s2">Halloween and I believe this big</p>
+<p begin="00:00:23.760" end="00:00:27.680" style="s2">beautiful plane&#39;s going to make a quick</p>
+<p begin="00:00:25.439" end="00:00:29.840" style="s2">little flight right over the center and</p>
+<p begin="00:00:27.680" end="00:00:31.199" style="s2">entertain the children. and it&#39;ll be a</p>
+<p begin="00:00:29.840" end="00:00:34.000" style="s2">lot of fun. So hopefully you&#39;ll be</p>
+<p begin="00:00:31.199" end="00:00:35.760" style="s2">there.</p>
+<p begin="00:00:34.000" end="00:00:37.200" style="s2">&gt;&gt; Say it.</p>
+<p begin="00:00:35.760" end="00:00:38.480" style="s2">&gt;&gt; Because I think he&#39;s doing well. We&#39;re</p>
+<p begin="00:00:37.200" end="00:00:39.440" style="s2">going to do a teller rally for him</p>
+<p begin="00:00:38.480" end="00:00:41.040" style="s2">instead.</p>
+<p begin="00:00:39.440" end="00:00:42.559" style="s2">&gt;&gt; He&#39;s doing He&#39;s doing very well</p>
+<p begin="00:00:41.040" end="00:00:43.760" style="s2">actually.</p>
+<p begin="00:00:42.559" end="00:00:44.399" style="s2">&gt;&gt; At the golf course.</p>
+<p begin="00:00:43.760" end="00:00:46.239" style="s2">&gt;&gt; Who is what?</p>
+<p begin="00:00:44.399" end="00:00:48.960" style="s2">&gt;&gt; Who was at the golf course?</p>
+<p begin="00:00:46.239" end="00:00:51.440" style="s2">&gt;&gt; Oh, many people. You mean uh are you</p>
+<p begin="00:00:48.960" end="00:00:53.120" style="s2">talking about the one over here? Yeah.</p>
+<p begin="00:00:51.440" end="00:00:55.120" style="s2">Many people. It&#39;s very dangerous because</p>
+<p begin="00:00:53.120" end="00:00:57.280" style="s2">the holes are too. It&#39;s a very obsolete</p>
+<p begin="00:00:55.120" end="00:00:59.039" style="s2">course and we&#39;re doing very well. We&#39;re</p>
+<p begin="00:00:57.280" end="00:01:00.879" style="s2">going to have something great for the</p>
+<p begin="00:00:59.039" end="00:01:02.960" style="s2">country.</p>
+<p begin="00:01:00.879" end="00:01:05.199" style="s2">&gt;&gt; We&#39;ll have top tournaments here. Yeah.</p>
+<p begin="00:01:02.960" end="00:01:07.040" style="s2">&gt;&gt; Mr. President, you&#39;ve been doing a lot</p>
+<p begin="00:01:05.199" end="00:01:08.960" style="s2">of travel. We&#39;ve been doing a lot of</p>
+<p begin="00:01:07.040" end="00:01:09.680" style="s2">travel with you. How are you feeling?</p>
+<p begin="00:01:08.960" end="00:01:11.520" style="s2">How&#39;s your health?</p>
+<p begin="00:01:09.680" end="00:01:13.920" style="s2">&gt;&gt; Good. I think very good. I think you see</p>
+<p begin="00:01:11.520" end="00:01:17.360" style="s2">that we had a great rally. That was a</p>
+<p begin="00:01:13.920" end="00:01:19.600" style="s2">great rally. And I think that uh</p>
+<p begin="00:01:17.360" end="00:01:21.360" style="s2">Darlene&#39;s going to do very well. I think</p>
+<p begin="00:01:19.600" end="00:01:23.119" style="s2">we&#39;re all going to do very well. Think</p>
+<p begin="00:01:21.360" end="00:01:24.479" style="s2">think you&#39;re going to have some very</p>
+<p begin="00:01:23.119" end="00:01:26.640" style="s2">We&#39;re going to have a strong Tuesday</p>
+<p begin="00:01:24.479" end="00:01:28.400" style="s2">night. That&#39;s my opinion. So you not</p>
+<p begin="00:01:26.640" end="00:01:29.439" style="s2">going to Kansas has nothing to do with</p>
+<p begin="00:01:28.400" end="00:01:31.360" style="s2">you being sick of traveling?</p>
+<p begin="00:01:29.439" end="00:01:33.200" style="s2">&gt;&gt; Oh, you&#39;re sick to ask that question.</p>
+<p begin="00:01:31.360" end="00:01:34.320" style="s2">You are sick. Who you with?</p>
+<p begin="00:01:33.200" end="00:01:36.320" style="s2">&gt;&gt; I&#39;m with Reuters, sir.</p>
+<p begin="00:01:34.320" end="00:01:37.920" style="s2">&gt;&gt; You are a sick guy. Reuters is terrible,</p>
+<p begin="00:01:36.320" end="00:01:39.600" style="s2">by the way. Can you imagine? Look at</p>
+<p begin="00:01:37.920" end="00:01:42.320" style="s2">this. Look at this guy. He&#39;s way out of</p>
+<p begin="00:01:39.600" end="00:01:44.320" style="s2">shape. Look at how badly. He comes to</p>
+<p begin="00:01:42.320" end="00:01:46.000" style="s2">me. Sir, you&#39;re not going to go to</p>
+<p begin="00:01:44.320" end="00:01:47.600" style="s2">Kansas. I&#39;m not going to Kansas because</p>
+<p begin="00:01:46.000" end="00:01:49.439" style="s2">he&#39;s doing very well. I&#39;m going to do a</p>
+<p begin="00:01:47.600" end="00:01:51.840" style="s2">teller rally tomorrow. I&#39;m doing</p>
+<p begin="00:01:49.439" end="00:01:54.880" style="s2">Florida. He said, &quot;What&#39;s the reason?&quot;</p>
+<p begin="00:01:51.840" end="00:01:56.880" style="s2">After doing what? 28. He says, &quot;What&#39;s</p>
+<p begin="00:01:54.880" end="00:01:58.479" style="s2">the reason for this, sir, that you&#39;re</p>
+<p begin="00:01:56.880" end="00:02:00.560" style="s2">not going to Kansas? You know what the</p>
+<p begin="00:01:58.479" end="00:02:03.360" style="s2">reason is? I don&#39;t feel I have to go to</p>
+<p begin="00:02:00.560" end="00:02:05.920" style="s2">Kansas. I&#39;m going to Florida tomorrow</p>
+<p begin="00:02:03.360" end="00:02:08.239" style="s2">and I&#39;ll do if something else comes up.&quot;</p>
+<p begin="00:02:05.920" end="00:02:10.879" style="s2">But he said, &quot;You&#39;re not going to</p>
+<p begin="00:02:08.239" end="00:02:13.120" style="s2">Kansas, sir. Are you feeling well?</p>
+<p begin="00:02:10.879" end="00:02:16.239" style="s2">You&#39;ve been following me for two weeks.</p>
+<p begin="00:02:13.120" end="00:02:18.239" style="s2">I feel perfect. You are disgusting. Put</p>
+<p begin="00:02:16.239" end="00:02:19.920" style="s2">yourself in shape. You look like hell.&quot;</p>
+<p begin="00:02:18.239" end="00:02:22.480" style="s2">Thank you, Mr. President. to breathe</p>
+<p begin="00:02:19.920" end="00:02:22.480" style="s2">yesterday.</p>
+</div>
+</body>
+</tt>
