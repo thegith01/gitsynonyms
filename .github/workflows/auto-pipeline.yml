@@ -420,6 +420,7 @@ jobs:
           TITLE: ${{ inputs.title }}
           EVENT_DATE: ${{ inputs.event_date }}
           SOURCE: ${{ steps.source.outputs.file }}
+          PUBLISH: ${{ inputs.publish }}
         run: |
           set -euo pipefail
           caps="${CAPS:-${{ steps.captions.outputs.dir }}}"
@@ -431,9 +432,12 @@ jobs:
             --caption-box auto --force
           size=$(stat -c%s "output/Burned_Bilingual_${VIDEO_ID}.mp4")
           echo "final bytes: $size"
-          if [ "$size" -gt 2000000000 ]; then
+          if [ "$size" -gt 2000000000 ] && [ "${PUBLISH:-true}" = "true" ] ; then
             echo "::error::final MP4 exceeds the 2 GB release asset limit"
             exit 1
+          fi
+          if [ "$size" -gt 2000000000 ]; then
+            echo "::warning::final MP4 exceeds 2 GB; it is backed up to the bin but cannot be a Release asset"
           fi
 
       - name: Cut the web preview and poster
