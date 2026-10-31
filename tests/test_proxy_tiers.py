@@ -140,6 +140,19 @@ def test_save_failed_round_trips(tmp_path):
     assert json.loads(path.read_text(encoding="utf-8")) == {"1.1.1.1:80": 123}
 
 
+def test_freshness_clamps_a_future_verification_time():
+    now = 1_000_000.0
+    records = [
+        {"proxy": "1.1.1.1:80", "verified_at": int(now) - 30},
+        {"proxy": "2.2.2.2:80", "verified_at": int(now) + 49},
+    ]
+
+    stats = tiers.freshness(records, now)
+
+    assert stats["oldest_seconds"] == 30
+    assert stats["median_seconds"] in (0, 30)
+
+
 def test_load_jsonl_ignores_broken_and_invalid_records(tmp_path):
     path = tmp_path / "tier.jsonl"
     path.write_text(

@@ -166,7 +166,12 @@ def merge_records(
 def freshness(records: list[dict], now: float) -> dict:
     if not records:
         return {"count": 0, "oldest_seconds": None, "median_seconds": None}
-    ages = sorted(now - float(record.get("verified_at", 0)) for record in records)
+    # A record verified while this batch was running can carry a timestamp
+    # slightly ahead of the `now` captured before the batch; clamp so the
+    # report never claims a negative age.
+    ages = sorted(
+        max(0.0, now - float(record.get("verified_at", 0))) for record in records
+    )
     return {
         "count": len(records),
         "oldest_seconds": round(ages[-1]),
@@ -537,8 +542,11 @@ def ytdlp_direct_url(proxy: str, video: str, timeout: float) -> str | None:
         "0",
         "--proxy",
         as_url(proxy),
+        # One process, six clients: yt-dlp walks the list itself, so a proxy
+        # that trips the web client's bot check still gets a chance through
+        # mweb/tv without paying six process timeouts.
         "--extractor-args",
-        "youtube:player_client=default",
+        "youtube:player_client=default,tv,web_safari,mweb,android,ios",
         "-f",
         "bv*[height<=360]/b[height<=360]",
         "-g",
