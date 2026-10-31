@@ -107,15 +107,47 @@ def _progress_size(target: Path) -> int:
     return total
 
 
+# Screening classifies a proxy, it does not judge the video.  A proxy that
+# answers YouTube with "Sign in to confirm you're not a bot" still transports
+# bytes; another player client may hand it the media, and that failure costs
+# three seconds, not a timeout.  Only transport failures are worth dropping.
+SCREEN_GATE_MARKERS = (
+    "sign in to confirm", "not a bot", "confirm your age", "http error 429",
+    "video unavailable", "private video", "members-only", "requested format",
+    "unable to extract", "no video formats found",
+)
+SCREEN_DEAD_MARKERS = (
+    "timeout", "timed out", "connection refused", "connection reset",
+    "failed to connect", "unable to connect", "tunnel connection failed",
+    "ssl", "certificate", "name resolution", "network is unreachable",
+    "proxyerror", "unable to connect to proxy", "remote end closed",
+    "incompleteread", "eof occurred", "connection aborted",
+)
+
+
+def classify_screen(returncode: int, detail: str, timed_out: bool) -> str:
+    """``ok``, ``gate`` (cheap YouTube rejection, keep going) or ``dead``."""
+    if timed_out:
+        return "dead"
+    if returncode == 0:
+        return "ok"
+    text = detail.lower()
+    if any(marker in text for marker in SCREEN_GATE_MARKERS):
+        return "gate"
+    if any(marker in text for marker in SCREEN_DEAD_MARKERS):
+        return "dead"
+    # Unknown failure: it was fast, so let the real attempt decide.
+    return "gate"
+
+
 def smoke_test(url: str, proxy: str, timeout: int,
-               cookies: Path | None) -> tuple[bool, str]:
-    """Cheap two-stage check: can this proxy resolve the media at all?
+               cookies: Path | None) -> tuple[str, str]:
+    """Two-stage check: can this proxy transport YouTube traffic at all?
 
     The format is deliberately permissive (``bv*+ba/b``): this asks only
-    whether the proxy can reach the player API and hand back stream URLs.  The
-    quality floor is enforced by the download formats that follow, so a
-    live replay whose 1080p tier only exists on one client is not rejected
-    here for the wrong reason.
+    whether the proxy can reach the player API.  The quality floor is enforced
+    by the download formats that follow, so a live replay whose 1080p tier only
+    exists on one client is not rejected here for the wrong reason.
     """
     command = [
         "yt-dlp", "--simulate", "--no-warnings",
@@ -129,12 +161,11 @@ def smoke_test(url: str, proxy: str, timeout: int,
     try:
         result = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:
-        return False, f"{proxy}: screen timeout after {timeout}s"
-    if result.returncode == 0:
-        return True, f"{proxy}: screen ok"
+        return "dead", f"{proxy}: screen timeout after {timeout}s"
     detail = (result.stderr or result.stdout).strip().splitlines()
     tail = detail[-1] if detail else f"exit {result.returncode}"
-    return False, f"{proxy}: screen {tail[:160]}"
+    status = classify_screen(result.returncode, tail, timed_out=False)
+    return status, f"{proxy}: screen {status} ({tail[:120]})"
 
 
 def try_download(url: str, target: Path, fmt: str, proxy: str | None, timeout: int,
@@ -231,14 +262,15 @@ def main() -> int:
                 }
                 for future, (proxy, latency) in screens.items():
                     try:
-                        passed, screen_note = future.result()
+                        status, screen_note = future.result()
                     except Exception as error:  # noqa: BLE001
-                        passed, screen_note = False, f"{proxy}: screen error {error}"
+                        status, screen_note = "dead", f"{proxy}: screen error {error}"
                     attempts.append({"mode": "probe", "proxy": proxy,
                                      "latency": round(latency, 3),
-                                     "ok": passed, "note": screen_note})
+                                     "screen": status, "ok": status != "dead",
+                                     "note": screen_note})
                     log(f"  {screen_note}")
-                    if not passed:
+                    if status == "dead":
                         continue
                     # Quality first, then transport: keep the highest tier
                     # across every proxy/client before degrading, so a single

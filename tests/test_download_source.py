@@ -36,9 +36,9 @@ def test_smoke_test_simulates_through_the_proxy(monkeypatch):
 
     monkeypatch.setattr(download.subprocess, "run", fake_run)
 
-    ok, note = download.smoke_test("https://www.youtube.com/watch?v=abc", "1.2.3.4:80", 45, None)
+    status, note = download.smoke_test("https://www.youtube.com/watch?v=abc", "1.2.3.4:80", 45, None)
 
-    assert ok
+    assert status == "ok"
     assert "screen ok" in note
     assert "--simulate" in seen["command"]
     assert seen["timeout"] == 45
@@ -78,8 +78,8 @@ def _run_proxy_phase(monkeypatch, tmp_path, screen_results, download_results):
 def test_unreachable_proxy_costs_one_timeout_not_twelve(tmp_path, monkeypatch):
     code, calls = _run_proxy_phase(
         monkeypatch, tmp_path,
-        screen_results={"1.1.1.1:80": (True, "1.1.1.1:80: screen ok"),
-                        "2.2.2.2:80": (True, "2.2.2.2:80: screen ok")},
+        screen_results={"1.1.1.1:80": ("ok", "1.1.1.1:80: screen ok"),
+                        "2.2.2.2:80": ("ok", "2.2.2.2:80: screen ok")},
         download_results={},  # every attempt times out before writing a byte
     )
 
@@ -92,7 +92,7 @@ def test_unreachable_proxy_costs_one_timeout_not_twelve(tmp_path, monkeypatch):
 def test_proxy_that_fails_screening_is_never_downloaded(tmp_path, monkeypatch):
     code, calls = _run_proxy_phase(
         monkeypatch, tmp_path,
-        screen_results={"1.1.1.1:80": (False, "1.1.1.1:80: screen 403")},
+        screen_results={"1.1.1.1:80": ("dead", "1.1.1.1:80: screen dead (Connection refused)")},
         download_results={},
     )
 
@@ -115,7 +115,7 @@ def test_first_screened_proxy_that_moves_bytes_wins(tmp_path, monkeypatch):
     monkeypatch.setattr(
         download, "smoke_test",
         lambda url, proxy, timeout, cookies: (
-            (False, f"{proxy}: screen 502") if proxy == "9.9.9.9:80" else (True, f"{proxy}: screen ok")
+            ("dead", f"{proxy}: screen dead") if proxy == "9.9.9.9:80" else ("ok", f"{proxy}: screen ok")
         ),
     )
     monkeypatch.setattr(download, "try_download", fake_try)
@@ -148,3 +148,37 @@ def test_main_reports_success_only_with_a_produced_file(tmp_path, monkeypatch):
     )
 
     assert download.main() == 0
+
+
+def test_screen_drops_transport_failures_but_keeps_the_bot_wall(monkeypatch):
+    dead = [
+        ("ERROR: unable to download webpage: <urlopen error Tunnel connection failed: 502>", 1, False),
+        ("ERROR: [youtube] abc: Connection reset by peer", 1, False),
+        ("anything at all", 1, True),
+    ]
+    gate = [
+        ("ERROR: [youtube] abc: Sign in to confirm you\u2019re not a bot.", 1, False),
+        ("ERROR: [youtube] abc: Video unavailable", 1, False),
+        ("ERROR: HTTP Error 429: Too Many Requests", 1, False),
+        ("something we have never seen", 1, False),
+        ("abc", 0, False),
+    ]
+
+    for detail, code, timed_out in dead:
+        assert download.classify_screen(code, detail, timed_out) == "dead"
+    for detail, code, timed_out in gate:
+        # Both mean "keep going": the proxy still gets a real download attempt.
+        assert download.classify_screen(code, detail, timed_out) in {"ok", "gate"}
+
+
+def test_bot_wall_proxy_still_gets_a_real_attempt(tmp_path, monkeypatch):
+    code, calls = _run_proxy_phase(
+        monkeypatch, tmp_path,
+        screen_results={"1.1.1.1:80": ("gate", "1.1.1.1:80: screen gate")},
+        download_results={},
+    )
+
+    assert code == 1
+    # "Sign in to confirm you're not a bot" only proves the transport works;
+    # another player client may still hand over the media.
+    assert len(calls) == 1
