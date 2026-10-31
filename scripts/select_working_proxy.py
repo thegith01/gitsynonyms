@@ -59,7 +59,7 @@ def reported_proxies(report: Path) -> list[str]:
 
 def pool_proxies(limit: int) -> list[str]:
     try:
-        return selector.load_pool()[:limit]
+        return selector.load_pools()[:limit]
     except OSError:
         return []
 

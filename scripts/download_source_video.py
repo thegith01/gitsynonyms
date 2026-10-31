@@ -51,7 +51,7 @@ def log(message: str) -> None:
 
 
 def candidate_proxies(limit: int) -> list[str]:
-    pool = selector.load_pool()
+    pool = selector.load_pools()
     if pool:
         log(f"proxy pool from proxyindex: {len(pool)} entries")
     else:

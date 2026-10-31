@@ -120,6 +120,31 @@ def test_load_pool_honours_the_explicit_override(tmp_path, monkeypatch):
     assert proxy_selector.load_pool() == ["http://203.0.113.7:8080"]
 
 
+def test_load_pools_merges_tiers_without_duplicates(tmp_path, monkeypatch):
+    tier3 = tmp_path / "tier3_ready.txt"
+    tier2 = tmp_path / "tier2_fast.txt"
+    fallback = tmp_path / "alive_http.txt"
+    tier3.write_text("203.0.113.3:8080\n203.0.113.1:8080\n", encoding="utf-8")
+    tier2.write_text("203.0.113.2:8080\n203.0.113.1:8080\n", encoding="utf-8")
+    fallback.write_text("203.0.113.9:8080\n", encoding="utf-8")
+    monkeypatch.delenv("PROXY_POOL_FILE", raising=False)
+
+    assert proxy_selector.load_pools((tier3, tier2, fallback)) == [
+        "http://203.0.113.3:8080",
+        "http://203.0.113.1:8080",
+        "http://203.0.113.2:8080",
+        "http://203.0.113.9:8080",
+    ]
+
+
+def test_load_pools_honours_the_explicit_override(tmp_path, monkeypatch):
+    explicit = tmp_path / "explicit.txt"
+    explicit.write_text("203.0.113.7:8080\n", encoding="utf-8")
+    monkeypatch.setenv("PROXY_POOL_FILE", str(explicit))
+
+    assert proxy_selector.load_pools() == ["http://203.0.113.7:8080"]
+
+
 def test_select_fastest_working_returns_the_fastest_candidate():
     candidates = [
         "http://203.0.113.1:80",

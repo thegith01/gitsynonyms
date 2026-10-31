@@ -170,6 +170,25 @@ def public_proxy_candidates() -> list[str]:
     return [proxy for proxies in proxy_lists.values() for proxy in proxies]
 
 
+def load_pools(paths: tuple[Path, ...] | None = None) -> list[str]:
+    """Merge every available pool, freshest tier first, without duplicates.
+
+    ``load_pool`` stops at the first file so a caller that only wants the best
+    pool is not surprised.  A caller that needs reach (the caption stage) must
+    see tier 3 *and* tier 2 *and* the committed fallback: a small tier 3 must
+    not hide a larger tier 2.
+    """
+    merged: list[str] = []
+    seen: set[str] = set()
+    override = os.environ.get("PROXY_POOL_FILE")
+    for path in ((Path(override),) if override else (paths or POOL_CANDIDATES)):
+        for proxy in load_pool(path):
+            if proxy not in seen:
+                seen.add(proxy)
+                merged.append(proxy)
+    return merged
+
+
 def load_pool(path: Path | None = None) -> list[str]:
     """Read the freshest available proxy pool.
 
