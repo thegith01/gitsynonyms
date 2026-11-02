@@ -15,6 +15,8 @@ This module turns cues into one monotonic token timeline per language:
 * a rolling cue only contributes the tokens that are genuinely new;
 * immediate ASR stutters such as ``I I`` are collapsed, but intentional
   repetition in normal content is not touched;
+* bilingual ASS events pair complete, punctuation-terminated sentences and
+  never render a cue with only one language;
 * captions are segmented into disjoint display events, so a word is rendered
   exactly once.
 
@@ -26,7 +28,7 @@ from __future__ import annotations
 
 import math
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Iterable, Sequence
 
 CJK = re.compile(
@@ -57,9 +59,6 @@ MAX_EVENT_SECONDS = 6.5
 MIN_EVENT_SECONDS = 1.2
 MAX_EVENT_GAP = 0.65
 # One display line per language: 60 English characters, 28 Chinese characters.
-# A cue-aligned event only merges adjacent translation cues while both lines
-# still fit these budgets, so the ASS writer never has to wrap a bilingual cue
-# onto a second line.
 EN_EVENT_CHARS = 60
 ZH_EVENT_CHARS = 28
 # YouTube marks a change of speaker with ">>" inside the caption text. It is a
@@ -622,6 +621,195 @@ def _merge_unique(*groups: Sequence[Token]) -> list[Token]:
     return merged
 
 
+def _language_timelines(
+    cues: Sequence[dict],
+    other_cues: Sequence[dict] | None,
+) -> tuple[list[Token], list[Token], Sequence[dict], Sequence[dict]]:
+    first_tokens = build_timeline(cues)
+    second_tokens = build_timeline(other_cues or [])
+    master_english = [token for token in first_tokens if token.language == "en"]
+    other_english = [token for token in second_tokens if token.language == "en"]
+    use_master_english = master_english and (
+        not other_english or len(master_english) >= len(other_english)
+    )
+    if use_master_english:
+        english = master_english
+        english_cues = cues
+    else:
+        english = other_english
+        english_cues = other_cues or cues
+
+    if any(token.language == "zh" for token in second_tokens):
+        chinese = _merge_unique(
+            second_tokens,
+            [token for token in first_tokens if token.language == "zh"],
+        )
+        chinese_cues = other_cues or cues
+    else:
+        chinese = [token for token in first_tokens if token.language == "zh"]
+        chinese_cues = cues
+    return _monotonic(english), chinese, english_cues, chinese_cues
+
+
+def _sentence_groups(tokens: Sequence[Token]) -> list[list[Token]]:
+    groups: list[list[Token]] = []
+    current: list[Token] = []
+    for token in tokens:
+        current.append(token)
+        if _sentence_end(token.text):
+            groups.append(current)
+            current = []
+    if current:
+        groups.append(current)
+    return groups
+
+
+def _pair_sentence_groups(
+    english_groups: Sequence[list[Token]],
+    chinese_groups: Sequence[list[Token]],
+    *,
+    max_chars: int = EN_EVENT_CHARS,
+) -> list[tuple[list[Token], list[Token]]]:
+    """Monotonically pair sentence groups, merging adjacent groups as needed."""
+    pairs: list[tuple[list[Token], list[Token]]] = []
+    english_index = 0
+    chinese_index = 0
+    transitions = ((1, 1, 0.0), (1, 2, 1.3), (2, 1, 1.3))
+
+    while english_index < len(english_groups) and chinese_index < len(chinese_groups):
+        candidates: list[tuple[float, int, int]] = []
+        for english_count, chinese_count, merge_penalty in transitions:
+            if (
+                english_index + english_count > len(english_groups)
+                or chinese_index + chinese_count > len(chinese_groups)
+            ):
+                continue
+            english_part = english_groups[
+                english_index : english_index + english_count
+            ]
+            chinese_part = chinese_groups[
+                chinese_index : chinese_index + chinese_count
+            ]
+            start_delta = abs(
+                english_part[0][0].start - chinese_part[0][0].start
+            )
+            end_delta = abs(
+                english_part[-1][-1].end - chinese_part[-1][-1].end
+            )
+            english_text = " ".join(
+                token.text for group in english_part for token in group
+            )
+            chinese_text = "".join(
+                token.text for group in chinese_part for token in group
+            )
+            overflow = (
+                max(0, len(english_text) - max_chars) / max_chars
+                + max(0, len(chinese_text) - ZH_EVENT_CHARS) / ZH_EVENT_CHARS
+            )
+            candidates.append(
+                (
+                    end_delta
+                    + 0.25 * start_delta
+                    + merge_penalty
+                    + 0.1 * overflow,
+                    english_count,
+                    chinese_count,
+                )
+            )
+        _, english_count, chinese_count = min(candidates)
+        english = [
+            token
+            for group in english_groups[
+                english_index : english_index + english_count
+            ]
+            for token in group
+        ]
+        chinese = [
+            token
+            for group in chinese_groups[
+                chinese_index : chinese_index + chinese_count
+            ]
+            for token in group
+        ]
+        pairs.append((english, chinese))
+        english_index += english_count
+        chinese_index += chinese_count
+
+    if pairs:
+        if english_index < len(english_groups):
+            pairs[-1][0].extend(
+                token
+                for group in english_groups[english_index:]
+                for token in group
+            )
+        if chinese_index < len(chinese_groups):
+            pairs[-1][1].extend(
+                token
+                for group in chinese_groups[chinese_index:]
+                for token in group
+            )
+    return pairs
+
+
+def build_bilingual_sentence_events(
+    cues: Sequence[dict],
+    *,
+    other_cues: Sequence[dict] | None = None,
+    max_chars: int = EN_EVENT_CHARS,
+) -> list[tuple[list[Token], list[Token]]]:
+    """Pair complete English and Chinese sentence groups for ASS rendering."""
+    english, chinese, _, _ = _language_timelines(cues, other_cues)
+    if not english or not chinese:
+        raise ValueError(
+            "Bilingual ASS generation requires timed English and Chinese captions."
+        )
+    return _pair_sentence_groups(
+        _sentence_groups(english),
+        _sentence_groups(chinese),
+        max_chars=max_chars,
+    )
+
+
+def build_cue_aligned_events(
+    english_cues: Sequence[dict],
+    chinese_cues: Sequence[dict],
+) -> list[tuple[list[Token], list[Token]]]:
+    """Keep each pre-aligned bilingual SRT cue as one display event."""
+    if not english_cues or len(english_cues) != len(chinese_cues):
+        raise ValueError("Cue-aligned ASS requires equal, non-empty language tracks.")
+
+    events: list[tuple[list[Token], list[Token]]] = []
+    previous_end = -math.inf
+    for index, (english_cue, chinese_cue) in enumerate(
+        zip(english_cues, chinese_cues)
+    ):
+        english_start = float(english_cue["start"])
+        english_end = float(english_cue["end"])
+        chinese_start = float(chinese_cue["start"])
+        chinese_end = float(chinese_cue["end"])
+        if (
+            abs(english_start - chinese_start) > 0.001
+            or abs(english_end - chinese_end) > 0.001
+            or english_start < previous_end
+        ):
+            raise ValueError(
+                f"Cue-aligned English/Chinese timestamps differ at cue {index + 1}."
+            )
+
+        english_tokens = tokenize_cue(english_cue, group=index)
+        chinese_tokens = tokenize_cue(chinese_cue, group=index)
+        if not english_tokens or not chinese_tokens:
+            raise ValueError(f"Cue {index + 1} must contain both languages.")
+        events.append(
+            (
+                [replace(token, language="en") for token in english_tokens],
+                [replace(token, language="zh") for token in chinese_tokens],
+            )
+        )
+        previous_end = english_end
+    return events
+
+
 def _cue_starts(cues: Sequence[dict]) -> list[float]:
     """Distinct caption start times, rounded to the millisecond."""
     starts: set[float] = set()
@@ -816,44 +1004,14 @@ def build_display_events(
     timings); ``other_cues`` is the second language. Both are classified by
     script, so a mixed cue still lands on the right line.
     """
-    first_tokens = build_timeline(cues)
-    second_tokens = build_timeline(other_cues or [])
-    if not first_tokens and not second_tokens:
+    if not cues and not other_cues:
         return []
 
-    # The master (`cues`) supplies the English clock; the other track is the
-    # Chinese line. Latin fragments in a translated cue stay on that line
-    # instead of competing for the English clock.
-    # The master track owns the English clock. A translated track often keeps
-    # Latin names and acronyms ("Mcronone", "2019") that tokenize as English;
-    # merging them into the master list lets _monotonic() push every real
-    # English word behind the last translation fragment, so the English
-    # captions disappear until the end of the film. Prefer the master track,
-    # and fall back to the other track only when the master has no English.
-    master_english = [token for token in first_tokens if token.language == "en"]
-    other_english = [token for token in second_tokens if token.language == "en"]
-    use_master_english = master_english and (
-        not other_english or len(master_english) >= len(other_english)
+    english, chinese, english_cues, chinese_cues = _language_timelines(
+        cues, other_cues
     )
-    if use_master_english:
-        english = master_english
-        english_cues = cues
-    else:
-        english = other_english
-        english_cues = other_cues or cues
-    # If the second track contains CJK it is the translated line, so keep all
-    # of its tokens there -- including the Latin fragments -- instead of
-    # letting those fragments masquerade as the English clock.
-    if any(token.language == "zh" for token in second_tokens):
-        chinese = _merge_unique(
-            second_tokens,
-            [token for token in first_tokens if token.language == "zh"],
-        )
-        chinese_cues = other_cues or cues
-    else:
-        chinese = [token for token in first_tokens if token.language == "zh"]
-        chinese_cues = cues
-    english = _monotonic(english)
+    if not english and not chinese:
+        return []
 
     if english and chinese:
         aligned = _cue_aligned_events(

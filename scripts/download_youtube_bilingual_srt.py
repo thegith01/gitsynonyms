@@ -66,6 +66,10 @@ ENGLISH_HIGHLIGHT_COLOR = "#00D7FF"
 INLINE_TIMESTAMP_TOLERANCE = 0.5
 
 
+class SubtitleOverlapError(ValueError):
+    """An overlap cannot be corrected without losing a cue's duration."""
+
+
 def video_id_from_url(value: str) -> str:
     if re.fullmatch(r"[A-Za-z0-9_-]{11}", value):
         return value
@@ -648,7 +652,8 @@ def parse_caption_file(path: Path) -> list[dict]:
     if parser is None:
         raise ValueError(f"Unsupported caption format: {path.name}")
     content = path.read_text(encoding="utf-8-sig", errors="replace")
-    return parser(content)
+    cues = parser(content)
+    return _without_rolling_cues(cues) if extension == "srt" else cues
 
 
 def select_most_precise_cues(files: Sequence[Path]) -> tuple[list[dict], Path]:
@@ -664,6 +669,8 @@ def select_most_precise_cues(files: Sequence[Path]) -> tuple[list[dict], Path]:
             continue
         try:
             cues = parse_caption_file(path)
+        except SubtitleOverlapError:
+            raise
         except ValueError:
             continue
         if cues:
@@ -675,12 +682,20 @@ def _without_rolling_cues(cues: Sequence[dict]) -> list[dict]:
     ordered = sorted(cues, key=lambda cue: cue["start"])
     result = []
     for index, cue in enumerate(ordered):
-        end = min(
-            cue["end"],
-            ordered[index + 1]["start"] if index + 1 < len(ordered) else cue["end"],
-        )
-        if end > cue["start"]:
-            result.append({**cue, "end": end})
+        end = cue["end"]
+        if index + 1 < len(ordered):
+            next_start = ordered[index + 1]["start"]
+            if end > next_start:
+                if next_start <= cue["start"]:
+                    raise SubtitleOverlapError(
+                        "Cannot trim overlapping subtitle cue to a positive duration."
+                    )
+                end = next_start
+        if end <= cue["start"]:
+            raise SubtitleOverlapError(
+                "Subtitle cue has no positive duration after overlap correction."
+            )
+        result.append({**cue, "end": end})
     return result
 
 
@@ -787,6 +802,89 @@ def align_and_merge(
         end = format_timestamp(segment["end"])
         text = "\n".join(line for line in (segment["top"], segment["bottom"]) if line)
         blocks.append(f"{index}\n{start} --> {end}\n{text}")
+    return "\n\n".join(blocks) + "\n"
+
+
+def build_scheme1_bilingual_srt(
+    chinese: Sequence[dict],
+    english: Sequence[dict],
+) -> str:
+    """Write bilingual cues on the corrected English SRT timeline."""
+    if not chinese or not english:
+        raise ValueError("Both subtitle tracks must contain cues.")
+
+    chinese_cues = _without_rolling_cues(
+        [cue for cue in chinese if str(cue.get("text", "")).strip()]
+    )
+    english_cues = _without_rolling_cues(
+        [cue for cue in english if str(cue.get("text", "")).strip()]
+    )
+    if not chinese_cues or not english_cues:
+        raise ValueError("Scheme 1 requires non-empty English and Chinese cues.")
+
+    segments = []
+    used_chinese = set()
+    for index, english_cue in enumerate(english_cues, 1):
+        overlapping = [
+            cue
+            for cue in chinese_cues
+            if cue["start"] < english_cue["end"]
+            and cue["end"] > english_cue["start"]
+        ]
+        if overlapping:
+            chinese_text = _single_caption_line(
+                "\n".join(cue["text"] for cue in overlapping)
+            )
+            used_chinese.update(id(cue) for cue in overlapping)
+        else:
+            next_cue = next(
+                (
+                    cue
+                    for cue in chinese_cues
+                    if cue["start"] >= english_cue["end"]
+                ),
+                None,
+            )
+            if next_cue is None or next_cue["start"] - english_cue["end"] > 0.001:
+                raise ValueError(
+                    "Scheme 1 cannot pair an English cue with a timed Chinese cue."
+                )
+            chinese_text = _single_caption_line(next_cue["text"])
+            used_chinese.add(id(next_cue))
+
+        english_text = _single_caption_line(english_cue["text"])
+        if not english_text or not chinese_text:
+            raise ValueError("Scheme 1 cannot emit a single-language cue.")
+        segment = {
+            "start": english_cue["start"],
+            "end": english_cue["end"],
+            "chinese": chinese_text,
+            "english": english_text,
+        }
+        punctuation_only = all(
+            character in subtitle_layout.NO_LINE_START
+            for character in chinese_text
+        )
+        if punctuation_only:
+            if not segments or abs(segments[-1]["end"] - segment["start"]) > 0.001:
+                raise ValueError(
+                    "Scheme 1 cannot place a closing-punctuation-only cue without "
+                    "its preceding bilingual sentence."
+                )
+            previous = segments[-1]
+            previous["end"] = segment["end"]
+            previous["chinese"] += chinese_text
+            previous["english"] += " " + english_text
+        else:
+            segments.append(segment)
+
+    if len(used_chinese) != len(chinese_cues):
+        raise ValueError("Scheme 1 left one or more Chinese cues unpaired.")
+    blocks = [
+        f"{index}\n{format_timestamp(segment['start'])} --> "
+        f"{format_timestamp(segment['end'])}\n{segment['chinese']}\n{segment['english']}"
+        for index, segment in enumerate(segments, 1)
+    ]
     return "\n\n".join(blocks) + "\n"
 
 
@@ -1550,6 +1648,8 @@ def build_ass(
     caption_area: tuple[int, int, int, int] = CAPTION_AREA,
     first_color: str = "#FFC928",
     second_color: str = "#FFFFFF",
+    english_highlight_color: str = ENGLISH_HIGHLIGHT_COLOR,
+    cue_aligned: bool = False,
     box_color: str = "#000000",
     box_opacity: float = 0.6,
     line_gap: int = 10,
@@ -1601,7 +1701,7 @@ def build_ass(
 
     first_ass_color = ass_color(first_color)
     second_ass_color = ass_color(second_color)
-    highlight_ass_color = ass_color(ENGLISH_HIGHLIGHT_COLOR)
+    highlight_ass_color = ass_color(english_highlight_color)
     shadow_ass_color = ass_color(shadow_color, opacity=35)
     box_ass_color = ass_color(box_color, opacity=round(box_opacity * 100))
     box_edge_color = ass_color(BOX_STYLES.get(box_style, BOX_STYLES["glass-diamond"])["edge"], opacity=24)
@@ -1636,10 +1736,14 @@ def build_ass(
         raise ValueError("Cannot serialize empty or invalid subtitle cues.")
 
     box_end = max(max(cue["end"] for cue in cues), video_duration or 0)
-    display_events = subtitle_timeline.build_display_events(
-        second,
-        other_cues=first,
-        max_chars=event_max_chars,
+    display_events = (
+        subtitle_timeline.build_cue_aligned_events(second, first)
+        if cue_aligned
+        else subtitle_timeline.build_bilingual_sentence_events(
+            second,
+            other_cues=first,
+            max_chars=event_max_chars,
+        )
     )
     if not display_events:
         raise ValueError("Caption cues contain no timed words.")
@@ -1687,12 +1791,13 @@ def build_ass(
         # still rendered once, inside this event.
         event_start = english_tokens[0].start if english_tokens else chinese_tokens[0].start
         event_end = max(token.end for token in all_tokens)
-        event_start = max(event_start, previous_end)
+        if not cue_aligned:
+            event_start = max(event_start, previous_end)
         # The next event's earliest word is a hard ceiling: two layer-1
         # dialogues must never overlap, even by the few centiseconds that a
         # long Chinese group assigned here would otherwise add.
         ceiling = None
-        if event_index + 1 < len(display_events):
+        if not cue_aligned and event_index + 1 < len(display_events):
             next_english, next_chinese = display_events[event_index + 1]
             next_tokens = [*next_english, *next_chinese]
             if next_tokens:
@@ -2356,10 +2461,19 @@ def main(argv: list[str] | None = None) -> int:
             flush=True,
         )
 
-        print("Step 4/5: Merging the unchanged downloaded tracks...", flush=True)
+        print("Step 4/5: Merging subtitle tracks...", flush=True)
         combined_kind = f"{first_kind}+{second_kind}"
         output_stem = f"{combined_kind}_Bilingual_{first_code}-{second_code}"
-        merged_srt = align_and_merge(first, second)
+        first_language = first_code.lower().split("-")[0]
+        second_language = second_code.lower().split("-")[0]
+        if first_language == "zh" and second_language == "en":
+            merged_srt = build_scheme1_bilingual_srt(first, second)
+            print("  Applied Scheme 1 bilingual cue rules.", flush=True)
+        elif first_language == "en" and second_language == "zh":
+            merged_srt = build_scheme1_bilingual_srt(second, first)
+            print("  Applied Scheme 1 bilingual cue rules.", flush=True)
+        else:
+            merged_srt = align_and_merge(first, second)
         output = folder / f"{output_stem}.srt"
         write_srt(output, merged_srt)
         vtt_output = folder / f"{output_stem}.vtt"

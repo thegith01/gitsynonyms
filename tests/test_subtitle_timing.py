@@ -81,6 +81,84 @@ def test_discover_tracks_reads_legacy_names(tmp_path):
     assert found["vtt"].name == "source_English.vtt"
 
 
+def test_srt_scheme1_clamps_overlapping_cue_end_to_next_start(tmp_path):
+    source = tmp_path / "overlap.srt"
+    source.write_text(
+        "1\n00:00:01,000 --> 00:00:03,000\nFirst\n\n"
+        "2\n00:00:02,000 --> 00:00:04,000\nSecond\n\n"
+        "3\n00:00:05,000 --> 00:00:06,000\nThird\n",
+        encoding="utf-8",
+    )
+
+    cues = subtitle_timing.parse_formats({"srt": source})["srt"]
+
+    assert [(cue["start"], cue["end"]) for cue in cues] == [
+        (1.0, 2.0),
+        (2.0, 4.0),
+        (5.0, 6.0),
+    ]
+
+
+def test_srt_scheme1_fails_when_overlap_cannot_keep_positive_duration(tmp_path):
+    source = tmp_path / "same-start.srt"
+    source.write_text(
+        "1\n00:00:01,000 --> 00:00:03,000\nFirst\n\n"
+        "2\n00:00:01,000 --> 00:00:04,000\nSecond\n",
+        encoding="utf-8",
+    )
+
+    try:
+        subtitle_timing.parse_formats({"srt": source})
+    except ValueError as error:
+        assert "positive duration" in str(error)
+    else:
+        raise AssertionError("an unrenderable overlap must fail instead of dropping a cue")
+
+
+def test_srt_scheme1_official_rolling_translation_example(tmp_path):
+    english_file = tmp_path / "official.en.srt"
+    english_file.write_text(
+        "1\n00:00:00,480 --> 00:00:06,960\nFirst English cue\n\n"
+        "2\n00:00:02,399 --> 00:00:09,599\nSecond English cue\n\n"
+        "3\n00:00:06,960 --> 00:00:12,080\nThird English cue\n\n"
+        "4\n00:00:09,599 --> 00:00:14,480\nFourth English cue\n\n"
+        "5\n00:00:12,080 --> 00:00:17,760\nFifth English cue\n",
+        encoding="utf-8",
+    )
+    chinese_file = tmp_path / "official.zh.srt"
+    chinese_file.write_text(
+        "1\n00:00:00,480 --> 00:00:06,960\n\n"
+        "2\n00:00:02,399 --> 00:00:09,599\n第一条译文\n\n"
+        "3\n00:00:06,960 --> 00:00:12,080\n第二条译文\n\n"
+        "4\n00:00:09,599 --> 00:00:14,480\n第三条译文\n\n"
+        "5\n00:00:12,080 --> 00:00:17,760\n第四条译文\n",
+        encoding="utf-8",
+    )
+
+    english = subtitle_timing.parse_formats({"srt": english_file})["srt"]
+    chinese = subtitle_timing.parse_formats({"srt": chinese_file})["srt"]
+
+    assert [(cue["start"], cue["end"]) for cue in english] == [
+        (0.480, 2.399),
+        (2.399, 6.960),
+        (6.960, 9.599),
+        (9.599, 12.080),
+        (12.080, 14.480),
+    ]
+    assert [(cue["start"], cue["end"]) for cue in chinese] == [
+        (2.399, 6.960),
+        (6.960, 9.599),
+        (9.599, 12.080),
+        (12.080, 17.760),
+    ]
+    assert [cue["text"] for cue in chinese] == [
+        "第一条译文",
+        "第二条译文",
+        "第三条译文",
+        "第四条译文",
+    ]
+
+
 def test_fused_track_uses_json3_words_on_a_nanosecond_timebase(tmp_path):
     folder = make_caption_dir(tmp_path)
     files = subtitle_timing.discover_tracks(folder, "TEST", "en-orig")

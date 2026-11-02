@@ -137,11 +137,13 @@ def discover_tracks(folder: Path, video_id: str, language: str) -> dict[str, Pat
 
 
 def parse_formats(files: dict[str, Path]) -> dict[str, list[dict]]:
-    """Parse each format, dropping rolling WebVTT duplicates."""
+    """Parse each format and correct overlapping SRT/WebVTT cue boundaries."""
     parsed: dict[str, list[dict]] = {}
     for extension, path in files.items():
         try:
             cues = captions.parse_caption_file(path)
+        except captions.SubtitleOverlapError:
+            raise
         except (OSError, ValueError):
             continue
         if extension == "vtt":

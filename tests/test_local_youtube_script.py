@@ -28,6 +28,46 @@ def test_parse_and_merge_srt_chinese_above_english():
     assert youtube_srt.validate_srt(result) == 1
 
 
+def test_scheme1_bilingual_srt_matches_empty_leading_translation_example():
+    english = youtube_srt.parse_srt(
+        "1\n00:00:00,480 --> 00:00:06,960\nFirst fragment\n\n"
+        "2\n00:00:02,399 --> 00:00:09,599\nSecond fragment\n\n"
+        "3\n00:00:06,960 --> 00:00:12,080\nComplete sentence.\n"
+    )
+    chinese = youtube_srt.parse_srt(
+        "1\n00:00:00,480 --> 00:00:06,960\n\n"
+        "2\n00:00:02,399 --> 00:00:09,599\n合并译文。\n\n"
+        "3\n00:00:06,960 --> 00:00:12,080\n下一句。\n"
+    )
+
+    result = youtube_srt.build_scheme1_bilingual_srt(chinese, english)
+
+    assert result == (
+        "1\n00:00:00,480 --> 00:00:02,399\n合并译文。\nFirst fragment\n\n"
+        "2\n00:00:02,399 --> 00:00:06,960\n合并译文。\nSecond fragment\n\n"
+        "3\n00:00:06,960 --> 00:00:12,080\n下一句。\nComplete sentence.\n"
+    )
+    assert youtube_srt.validate_srt(result) == 3
+
+
+def test_scheme1_bilingual_srt_attaches_closing_punctuation_to_prior_cue():
+    chinese = youtube_srt.parse_srt(
+        "1\n00:00:01,000 --> 00:00:02,000\n她应该留下吗\n\n"
+        "2\n00:00:02,000 --> 00:00:03,000\n？\n"
+    )
+    english = youtube_srt.parse_srt(
+        "1\n00:00:01,000 --> 00:00:02,000\nShould she stay\n\n"
+        "2\n00:00:02,000 --> 00:00:03,000\nor go?\n"
+    )
+
+    result = youtube_srt.build_scheme1_bilingual_srt(chinese, english)
+
+    assert result == (
+        "1\n00:00:01,000 --> 00:00:03,000\n"
+        "她应该留下吗？\nShould she stay or go?\n"
+    )
+
+
 def test_ass_uses_chinese_above_english_with_chinese_1_2x_size():
     chinese = youtube_srt.parse_srt(
         "1\n00:00:01,000 --> 00:00:02,000\n你好\n\n"

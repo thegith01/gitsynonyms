@@ -247,6 +247,62 @@ def test_chinese_source_group_is_never_split_across_events():
             assert seen.setdefault(token.group, index) == index
 
 
+def test_bilingual_sentence_events_keep_sentence_starts_and_both_languages():
+    english = [
+        {"start": 1.0, "end": 2.0, "text": "We have news,"},
+        {"start": 2.0, "end": 3.0, "text": "and it changes everything."},
+        {"start": 4.0, "end": 5.0, "text": "They will act."},
+    ]
+    chinese = [
+        {"start": 1.1, "end": 2.1, "text": "有个消息，"},
+        {"start": 2.1, "end": 3.1, "text": "这改变了一切。"},
+        {"start": 4.1, "end": 5.1, "text": "他们会行动。"},
+    ]
+
+    events = subtitle_timeline.build_bilingual_sentence_events(
+        english, other_cues=chinese
+    )
+
+    assert len(events) == 2
+    assert all(
+        english_tokens and chinese_tokens
+        for english_tokens, chinese_tokens in events
+    )
+    assert " ".join(token.text for token in events[0][0]) == (
+        "We have news, and it changes everything."
+    )
+    assert "".join(token.text for token in events[0][1]) == "有个消息，这改变了一切。"
+    assert events[0][0][0].start == 1.0
+    assert events[0][0][-1].text.endswith(".")
+    assert events[0][1][-1].text.endswith("。")
+    assert events[1][0][0].text == "They"
+
+
+def test_bilingual_sentence_events_merge_adjacent_translation_sentences():
+    english = [{"start": 1.0, "end": 3.0, "text": "Mr. President, welcome."}]
+    chinese = [
+        {"start": 1.0, "end": 2.0, "text": "总统先生。"},
+        {"start": 2.0, "end": 3.0, "text": "欢迎。"},
+    ]
+
+    events = subtitle_timeline.build_bilingual_sentence_events(
+        english, other_cues=chinese
+    )
+
+    assert len(events) == 1
+    english_tokens, chinese_tokens = events[0]
+    assert english_tokens and chinese_tokens
+    assert " ".join(token.text for token in english_tokens) == "Mr. President, welcome."
+    assert "".join(token.text for token in chinese_tokens) == "总统先生。欢迎。"
+
+
+def test_bilingual_sentence_events_reject_a_missing_translation_track():
+    with pytest.raises(ValueError, match="requires timed English and Chinese"):
+        subtitle_timeline.build_bilingual_sentence_events(
+            [{"start": 1.0, "end": 2.0, "text": "No translation."}]
+        )
+
+
 @pytest.fixture(scope="module")
 def archived_events():
     if not ARCHIVE.exists():
