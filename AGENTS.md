@@ -137,10 +137,28 @@ gh run view <run-id> --log
 - `republish-site.yml` only regenerates `site/` from the committed `output/`
   archive; it does not touch media.
 
+## Local caption folder
+
+A manually downloaded video with the fourteen caption files (seven per
+language) can be turned into the ASS without any cloud run:
+
+```bash
+python scripts/local_bilingual_ass.py --directory "D:\MyDownload\a"
+```
+
+It finds the video id in the media name (or takes `--video-id`), fuses all
+seven formats per language, and writes `bilingual_precise_Chinese-English.ass`,
+`TIMING.json`, the two 1 ms precision VTT sidecars and `ASS_ERGONOMICS.json`
+next to the media. The local default is one line per language (`--max-lines 1`);
+a dense Chinese phrase shrinks to fit instead of adding a third line. The
+pipeline keeps its two-line overflow guard.
+
 ## Repository map
 
 - `scripts/download_youtube_bilingual_srt.py`: download/parse the seven
   formats, fuse cues, write ASS/SRT/VTT, burn with ffmpeg.
+- `scripts/local_bilingual_ass.py`: local ASS-only build from a hand-made
+  caption folder; `--strict` fails on ergonomics errors.
 - `scripts/subtitle_timing.py`: seven-format fusion, nanosecond sidecar,
   `build_precise_ass`.
 - `scripts/subtitle_layout.py`, `scripts/subtitle_timeline.py`,

@@ -692,10 +692,12 @@ def _coalesce_one_sided(
 def _can_merge_units(
     left: tuple[list[Token], list[Token]],
     right: tuple[list[Token], list[Token]],
+    *,
+    max_chars: int = EN_EVENT_CHARS,
 ) -> bool:
     left_english, left_chinese = left
     right_english, right_chinese = right
-    if len(_english_text([*left_english, *right_english])) > EN_EVENT_CHARS:
+    if len(_english_text([*left_english, *right_english])) > max_chars:
         return False
     if len(_chinese_text([*left_chinese, *right_chinese])) > ZH_EVENT_CHARS:
         return False
@@ -718,11 +720,13 @@ def _can_merge_units(
 
 def _merge_units(
     units: Sequence[tuple[list[Token], list[Token]]],
+    *,
+    max_chars: int = EN_EVENT_CHARS,
 ) -> list[tuple[list[Token], list[Token]]]:
     """Greedily join touching translation cues while both lines still fit."""
     merged: list[tuple[list[Token], list[Token]]] = []
     for english, chinese in units:
-        if merged and _can_merge_units(merged[-1], (english, chinese)):
+        if merged and _can_merge_units(merged[-1], (english, chinese), max_chars=max_chars):
             previous_english, previous_chinese = merged[-1]
             merged[-1] = (
                 [*previous_english, *english],
@@ -739,6 +743,7 @@ def _cue_aligned_events(
     *,
     chinese_cues: Sequence[dict],
     english_cue_count: int,
+    max_chars: int = EN_EVENT_CHARS,
 ) -> list[tuple[list[Token], list[Token]]] | None:
     """Pair each translated cue with the English words it translates.
 
@@ -792,17 +797,18 @@ def _cue_aligned_events(
     # Every translation unit must fit one line in both languages. If one does
     # not, fall back rather than silently splitting the phrase or wrapping.
     for unit_english, unit_chinese in units:
-        if len(_english_text(unit_english)) > EN_EVENT_CHARS:
+        if len(_english_text(unit_english)) > max_chars:
             return None
         if len(_chinese_text(unit_chinese)) > ZH_EVENT_CHARS:
             return None
-    return _merge_units(units)
+    return _merge_units(units, max_chars=max_chars)
 
 
 def build_display_events(
     cues: Sequence[dict],
     *,
     other_cues: Sequence[dict] | None = None,
+    max_chars: int = EN_EVENT_CHARS,
 ) -> list[tuple[list[Token], list[Token]]]:
     """Return ``(english_tokens, chinese_tokens)`` for each display event.
 
@@ -855,12 +861,13 @@ def build_display_events(
             chinese,
             chinese_cues=chinese_cues,
             english_cue_count=len(_cue_starts(english_cues)),
+            max_chars=max_chars,
         )
         if aligned is not None:
             return aligned
 
     if english:
-        events = segment_timeline(english, max_chars=EN_EVENT_CHARS)
+        events = segment_timeline(english, max_chars=max_chars)
         english_events = events
         chinese_events = assign_tokens(events, chinese) if chinese else [[] for _ in events]
     elif chinese:

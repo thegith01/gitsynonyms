@@ -1525,6 +1525,20 @@ def _serialize_same_end_cues(
     return sorted(serialized, key=lambda cue: (cue["start"], cue["end"]))
 
 
+def _strip_leading_closers(value: str) -> str:
+    """Drop closing punctuation that a rolling delta carried into a new event.
+
+    YouTube's translated rolling cues overlap, so the de-duplicated delta can
+    begin with the previous sentence's ``。`` or ``,``.  Closing punctuation is
+    never allowed to start a caption line; here the orphan is the first
+    character of the event, so it is dropped instead of moved backwards into
+    an event that has already rendered.
+    """
+    while value and value[0] in subtitle_layout.NO_LINE_START:
+        value = value[1:].lstrip()
+    return value
+
+
 def build_ass(
     first: Sequence[dict],
     second: Sequence[dict],
@@ -1546,6 +1560,9 @@ def build_ass(
     caption_order: str = "chinese-first",
     video_duration: float | None = None,
     box_style: str = "glass-diamond",
+    event_max_chars: int = subtitle_timeline.EN_EVENT_CHARS,
+    max_english_lines: int = 2,
+    max_chinese_lines: int = 2,
 ) -> str:
     if not first or not second:
         raise ValueError("Both subtitle tracks must contain cues.")
@@ -1557,6 +1574,10 @@ def build_ass(
         raise ValueError("Font size must be positive and Chinese font scale must be between 0.5 and 3.")
     if caption_order not in {"chinese-first", "english-first"}:
         raise ValueError("Caption order must be 'chinese-first' or 'english-first'.")
+    if not isinstance(event_max_chars, int) or not 10 <= event_max_chars <= 120:
+        raise ValueError("Event character budget must be an integer between 10 and 120.")
+    if not 1 <= max_english_lines <= 3 or not 1 <= max_chinese_lines <= 3:
+        raise ValueError("Each language may use one to three lines.")
     if box_style not in {*BOX_STYLES, "none"}:
         raise ValueError(f"Unsupported subtitle box style: {box_style!r}")
     if video_duration is not None and (
@@ -1615,7 +1636,11 @@ def build_ass(
         raise ValueError("Cannot serialize empty or invalid subtitle cues.")
 
     box_end = max(max(cue["end"] for cue in cues), video_duration or 0)
-    display_events = subtitle_timeline.build_display_events(second, other_cues=first)
+    display_events = subtitle_timeline.build_display_events(
+        second,
+        other_cues=first,
+        max_chars=event_max_chars,
+    )
     if not display_events:
         raise ValueError("Caption cues contain no timed words.")
     events = []
@@ -1679,19 +1704,23 @@ def build_ass(
         event_end = max(event_end, event_start + 0.04)
         previous_end = event_end
 
-        english_text = subtitle_layout.normalize(
-            " ".join(token.text for token in english_tokens)
+        english_text = _strip_leading_closers(
+            subtitle_layout.normalize(" ".join(token.text for token in english_tokens))
         )
-        chinese_text = subtitle_layout.normalize(
-            "".join(token.text for token in chinese_tokens)
+        chinese_text = _strip_leading_closers(
+            subtitle_layout.normalize("".join(token.text for token in chinese_tokens))
         )
         chinese_lines = (
-            subtitle_layout.wrap_caption(chinese_text, "zh-Hans", hard_limit=True)
+            subtitle_layout.wrap_caption(
+                chinese_text, "zh-Hans", max_lines=max_chinese_lines, hard_limit=True
+            )
             if chinese_text
             else []
         )
         english_lines = (
-            subtitle_layout.wrap_caption(english_text, "en", hard_limit=True)
+            subtitle_layout.wrap_caption(
+                english_text, "en", max_lines=max_english_lines, hard_limit=True
+            )
             if english_text
             else []
         )

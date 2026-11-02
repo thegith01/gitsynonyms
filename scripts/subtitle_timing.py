@@ -40,6 +40,7 @@ if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
 import download_youtube_bilingual_srt as captions  # noqa: E402
+import subtitle_timeline  # noqa: E402
 
 NS_PER_SECOND = 1_000_000_000
 CS_PER_SECOND = 100
@@ -497,6 +498,9 @@ def build_precise_ass(
     second_color: str = "#FFFFFF",
     caption_order: str = "chinese-first",
     video_duration: float | None = None,
+    event_max_chars: int = subtitle_timeline.EN_EVENT_CHARS,
+    max_english_lines: int = 2,
+    max_chinese_lines: int = 2,
 ) -> tuple[str, dict]:
     """Build the bilingual ASS from two fused tracks.
 
@@ -521,6 +525,9 @@ def build_precise_ass(
         caption_order=caption_order,
         video_duration=video_duration,
         box_style=box_style,
+        event_max_chars=event_max_chars,
+        max_english_lines=max_english_lines,
+        max_chinese_lines=max_chinese_lines,
     )
     timestamp = re.compile(
         r"^Dialogue: [^,]+,\d+:\d{2}:\d{2}\.(\d{2}),\d+:\d{2}:\d{2}\.(\d{2}),"
