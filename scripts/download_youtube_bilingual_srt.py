@@ -1819,6 +1819,12 @@ def _fixed_size_bilingual_events(
         if len(chunks) < 2:
             raise ValueError("An overwide bilingual caption could not be split.")
         other = chinese if split_english else english
+        if len(other) < 2:
+            # A single token cannot support two bilingual segments. Keeping
+            # the event intact is the only non-recursive option; splitting it
+            # and merging back to one chunk would loop forever.
+            result.append((english, chinese))
+            continue
         if len(chunks) > len(other):
             # The other track has fewer tokens than the split produced. Merge
             # adjacent chunks so every segment keeps both languages; the token
