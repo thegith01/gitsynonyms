@@ -137,7 +137,10 @@
   `url-youtube-official`、`url-youtube-mt`、`offline-official`、`offline-mt`；
   `--english-source youtube|asr|auto` 与 `--chinese-source youtube|mt|auto` 是底层
   开关，选择结果写入 `LOCAL_FLOW.json.selection`。可直接复制的 PowerShell 命令见
-  `docs/LOCAL_FLOW_MATRIX.md`。56 秒通过 yt-dlp 的 `--sleep-subtitles` 传给中文字幕请求，
+  `docs/LOCAL_FLOW_MATRIX.md`；`local_subtitle_flow.ps1` 支持 `-List` 逐行复制执行，
+  也支持 `-Preset a,b`、`-All -Yes` 批处理，每次调用按行追加到
+  `<Directory>\LOCAL_FLOW_COMMANDS.jsonl`（预设、命令、退出码、耗时、是否 dry-run），
+  该日志不提交仓库。56 秒通过 yt-dlp 的 `--sleep-subtitles` 传给中文字幕请求，
   英文请求不设置该间隔；它不是流程级等待（可由同名参数覆盖），`--wait` 暂保留为
   兼容别名。本地流程默认不画背景框；启用背景框时，使用独立的框坐标
   `CAPTION_BOX_AREA = (66, 883, 1852, 1022)`，文字安全区仍为

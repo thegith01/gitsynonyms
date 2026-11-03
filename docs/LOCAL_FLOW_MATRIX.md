@@ -21,7 +21,45 @@ flow, reason, engines and output formats.
 `local-asr-official` is the case where YouTube published Chinese but no English
 track; ASR supplies English and the official Chinese translation is kept.
 
-## PowerShell
+## PowerShell runner: line-by-line or batch
+
+`scripts\local_subtitle_flow.ps1` wraps the same presets so one file can be
+used either way.
+
+```powershell
+# Print the variable block and one command per preset, then copy any line.
+.\scripts\local_subtitle_flow.ps1 -List
+
+# Batch: run two presets in order (comma-separated names are split).
+.\scripts\local_subtitle_flow.ps1 -Preset local-youtube-official,local-youtube-mt `
+    -Url "https://youtu.be/<video-id>" -Directory "D:\MyDownload\a"
+
+# Batch: all eight presets, no confirmation prompt.
+.\scripts\local_subtitle_flow.ps1 -All -Yes `
+    -Url "https://youtu.be/<video-id>" -Directory "D:\MyDownload\a"
+
+# Print and log without calling Python.
+.\scripts\local_subtitle_flow.ps1 -Preset local-asr-mt -DryRun `
+    -Url "https://youtu.be/<video-id>" -Directory "D:\MyDownload\a"
+```
+
+- `-KeepGoing` continues after a failing preset; the script exits `1` if any
+  preset failed.
+- `-LogPath` overrides the command log location.
+- `-Python`, `-TranslationEngine` and `-AsrEngine` are forwarded to the Python
+  entry point when they apply to the selected preset.
+
+### Which file records every command?
+
+| File | Written by | Contents |
+|------|------------|----------|
+| `<Directory>\LOCAL_FLOW_COMMANDS.jsonl` | `local_subtitle_flow.ps1` | One JSON line per invocation: `observed_at`, `preset`, `command`, `exit_code`, `duration_seconds`, `directory`, `url`, `video_id`, `dry_run` |
+| `<Directory>\LOCAL_FLOW.json` | `local_subtitle_flow.py` | Flow decision: `flow`, `reason`, `selection`, engines, output formats, `status`, `error` |
+
+`LOCAL_FLOW_COMMANDS.jsonl` is gitignored; `LOCAL_FLOW.json` is a per-run
+artifact and is not part of the repository either.
+
+## Copy-paste commands
 
 Open PowerShell in the repository root and set the two paths once. Every
 command below can then be copied and run as-is.

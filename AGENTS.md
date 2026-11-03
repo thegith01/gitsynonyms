@@ -174,6 +174,12 @@ python scripts/local_subtitle_flow.py --url "https://youtu.be/<id>" --directory 
   `offline-official`, `offline-mt`. Copy-paste PowerShell commands for all
   eight are in `docs/LOCAL_FLOW_MATRIX.md`. `--english-source youtube|asr|auto`
   and `--chinese-source youtube|mt|auto` are the lower-level switches.
+- `scripts/local_subtitle_flow.ps1` runs the presets from PowerShell. `-List`
+  prints one copy-paste command per preset for line-by-line execution;
+  `-Preset a,b`, `-All -Yes`, `-DryRun`, `-KeepGoing` and `-LogPath` cover batch
+  and dry-run use. Every invocation is appended as one JSON line to
+  `<Directory>\LOCAL_FLOW_COMMANDS.jsonl`; the Python decision record stays in
+  `<Directory>\LOCAL_FLOW.json`. The command log is gitignored.
 - `--force-asr` skips the probe; `--refresh` re-probes even a complete local
   set; `--skip-youtube` (alias `--offline`) uses only the files already there.
 - When a source banner overlaps the subtitle area, set a persistent box
