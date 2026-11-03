@@ -94,6 +94,31 @@ parameter. `yt-dlp` itself still receives the URL last, as its CLI expects.
   `<OutDir>\MANUAL_FLOW_COMMANDS.jsonl` with step, command, exit code, duration
   and dry-run flag.
 
+## Raw command notebook (`manual_youtube_commands.ps1`)
+
+If you want to edit the commands themselves instead of passing parameters, use
+`scripts\manual_youtube_commands.ps1`. It is a flat command list: each step is
+an `if ($Run -contains N) { ... }` block with the literal `yt-dlp` / `ffmpeg`
+command inside. There is no argument builder and no hidden wrapper.
+
+```powershell
+# Edit the variable block at the top, then choose steps with $Run.
+$Run = @(1)                   # only step 1
+$Run = @(1,3,5)               # steps 1, 3, 5
+$Run = @(0,1,2,3,5,6,9,10)    # main path
+$Run = @(0..10)               # all steps (4/7/8 duplicate or overwrite)
+```
+
+The commands are literal and can be changed in place:
+
+```powershell
+yt-dlp -v --list-subs "$Url"
+
+yt-dlp --concurrent-fragments 50 --merge-output-format mp4 `
+    -f "bv*[height<=1080]+ba/b[height<=1080]" `
+    -o "$OutDir\%(title)s [%(id)s].%(ext)s" "$Url"
+```
+
 ## Copy-paste commands
 
 Open PowerShell in the repository root and set the two paths once. Every
