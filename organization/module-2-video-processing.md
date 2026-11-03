@@ -143,8 +143,10 @@
   该日志不提交仓库。另有 `manual_local_flow.ps1` 面向人工逐条操作：`-List` 打印
   带注释的命令，`-Step 1,3,5` 单步/多步执行，`-All -Yes` 跑主路径（0-3、5、6、9、10，
   4/7/8 为手工/备选分支），日志写入 `<Directory>\MANUAL_FLOW_COMMANDS.jsonl`。
-  另有 `manual_youtube_commands.ps1` 为原样命令清单：变量区选 `$Run`，每条
-  yt-dlp/ffmpeg 命令直接写在 `if ($Run -contains N)` 块里，可就地改参数。
+  另有 `manual_youtube_commands.ps1` 为原样命令清单：每条 yt-dlp/ffmpeg 命令直接写在
+  `if ($RunIds -contains N)` 块里，可就地改参数。步骤既可在文件里改 `$Run = @(0)`，
+  也可命令行传 `-Run 0`、`-Run 1,3,5`、`-Run 0,1,2,3,5,6,9,10`；`-Url` / `-OutDir`
+  同样可在命令行覆盖。
   56 秒通过 yt-dlp 的 `--sleep-subtitles` 传给中文字幕请求，
   英文请求不设置该间隔；它不是流程级等待（可由同名参数覆盖），`--wait` 暂保留为
   兼容别名。本地流程默认不画背景框；启用背景框时，使用独立的框坐标

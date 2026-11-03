@@ -98,11 +98,25 @@ parameter. `yt-dlp` itself still receives the URL last, as its CLI expects.
 
 If you want to edit the commands themselves instead of passing parameters, use
 `scripts\manual_youtube_commands.ps1`. It is a flat command list: each step is
-an `if ($Run -contains N) { ... }` block with the literal `yt-dlp` / `ffmpeg`
+an `if ($RunIds -contains N) { ... }` block with the literal `yt-dlp` / `ffmpeg`
 command inside. There is no argument builder and no hidden wrapper.
 
+The step selector is a real parameter, so it can be changed on the command line
+instead of editing the file:
+
 ```powershell
-# Edit the variable block at the top, then choose steps with $Run.
+# One step.
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\manual_youtube_commands.ps1 -Run 0
+
+# Several steps; -File passes "1,3,5" as one string and the script splits it.
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\manual_youtube_commands.ps1 -Run 1,3,5
+
+# Main path, plus a different URL and output directory.
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\manual_youtube_commands.ps1 `
+    -Url "https://youtu.be/<video-id>" -OutDir "D:\MyDownload\a" `
+    -Run 0,1,2,3,5,6,9,10
+
+# Edit the default in the file instead; @(0) is the same as -Run 0.
 $Run = @(1)                   # only step 1
 $Run = @(1,3,5)               # steps 1, 3, 5
 $Run = @(0,1,2,3,5,6,9,10)    # main path
