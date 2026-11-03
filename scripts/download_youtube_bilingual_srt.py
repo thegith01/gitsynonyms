@@ -1673,6 +1673,11 @@ def _split_tokens_at_width(
         current_width += token_width
     if current:
         chunks.append(current)
+    # Rebalancing is O(chunks * moved tokens); only worth it for the handful
+    # of chunks a readable caption produces, not for a pathological split of
+    # an entire transcript into hundreds of segments.
+    if len(chunks) > 40:
+        return chunks
     for index in range(len(chunks) - 1):
         left, right = chunks[index], chunks[index + 1]
         while len(left) > 1:
