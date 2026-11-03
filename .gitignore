@@ -26,6 +26,7 @@ output/**/*.ytdl
 .tools/
 # PowerShell runner log: one JSON line per executed local-flow command.
 LOCAL_FLOW_COMMANDS.jsonl
+MANUAL_FLOW_COMMANDS.jsonl
 
 # Proxy index: keep the tooling and the source list, not the multi-million-line pools.
 proxyindex/raw.txt

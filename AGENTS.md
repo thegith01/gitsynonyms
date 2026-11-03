@@ -180,6 +180,12 @@ python scripts/local_subtitle_flow.py --url "https://youtu.be/<id>" --directory 
   and dry-run use. Every invocation is appended as one JSON line to
   `<Directory>\LOCAL_FLOW_COMMANDS.jsonl`; the Python decision record stays in
   `<Directory>\LOCAL_FLOW.json`. The command log is gitignored.
+- `scripts/manual_local_flow.ps1` is the human-operated command notebook:
+  `-List` prints Chinese notes plus one copy-paste command per step,
+  `-Step 1,3,5` runs selected steps, and `-All -Yes` runs the main path
+  (0-6, 9, 10; 7/8 are alternatives). The URL is the first positional
+  parameter. It logs every external command to
+  `<OutDir>\MANUAL_FLOW_COMMANDS.jsonl`.
 - `--force-asr` skips the probe; `--refresh` re-probes even a complete local
   set; `--skip-youtube` (alias `--offline`) uses only the files already there.
 - When a source banner overlaps the subtitle area, set a persistent box

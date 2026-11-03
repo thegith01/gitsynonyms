@@ -140,7 +140,10 @@
   `docs/LOCAL_FLOW_MATRIX.md`；`local_subtitle_flow.ps1` 支持 `-List` 逐行复制执行，
   也支持 `-Preset a,b`、`-All -Yes` 批处理，每次调用按行追加到
   `<Directory>\LOCAL_FLOW_COMMANDS.jsonl`（预设、命令、退出码、耗时、是否 dry-run），
-  该日志不提交仓库。56 秒通过 yt-dlp 的 `--sleep-subtitles` 传给中文字幕请求，
+  该日志不提交仓库。另有 `manual_local_flow.ps1` 面向人工逐条操作：`-List` 打印
+  带注释的命令，`-Step 1,3,5` 单步/多步执行，`-All -Yes` 跑主路径（0-6、9、10，
+  7/8 为备选分支），日志写入 `<Directory>\MANUAL_FLOW_COMMANDS.jsonl`。
+  56 秒通过 yt-dlp 的 `--sleep-subtitles` 传给中文字幕请求，
   英文请求不设置该间隔；它不是流程级等待（可由同名参数覆盖），`--wait` 暂保留为
   兼容别名。本地流程默认不画背景框；启用背景框时，使用独立的框坐标
   `CAPTION_BOX_AREA = (66, 883, 1852, 1022)`，文字安全区仍为

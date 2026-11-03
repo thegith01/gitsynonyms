@@ -59,6 +59,39 @@ used either way.
 `LOCAL_FLOW_COMMANDS.jsonl` is gitignored; `LOCAL_FLOW.json` is a per-run
 artifact and is not part of the repository either.
 
+## Manual command notebook (`manual_local_flow.ps1`)
+
+`scripts\manual_local_flow.ps1` is the human-operated counterpart: every step
+has Chinese notes plus a copy-paste command, and the URL is the first positional
+parameter. `yt-dlp` itself still receives the URL last, as its CLI expects.
+
+```powershell
+# List steps 0-10 with notes and commands, then copy any line.
+.\scripts\manual_local_flow.ps1 -List
+
+# One step: inspect the official subtitle list.
+.\scripts\manual_local_flow.ps1 "https://www.youtube.com/watch?v=shMvm9S_4n4" -Step 1
+
+# Several steps: download video, seven subtitle formats, canonical names.
+.\scripts\manual_local_flow.ps1 "https://youtu.be/<video-id>" -Step 3,4,5 `
+    -OutDir "D:\MyDownload\a"
+
+# Main-path batch: 0-6, 9, 10; steps 7/8 are alternative branches.
+.\scripts\manual_local_flow.ps1 "https://youtu.be/<video-id>" -All -Yes
+```
+
+- Step 3 is the requested
+  `yt-dlp --concurrent-fragments 50 --merge-output-format mp4` download.
+- Step 4 downloads all seven official subtitle serializations; step 5 renames
+  them to `en-orig` / `zh-Hans` and writes `CAPTION_FORMATS.json`.
+- Step 6 renders the offline ASS; steps 7/8 are the machine-translation and ASR
+  alternatives.
+- `-DryRun` prints and logs without executing; `-KeepGoing` continues after a
+  failing step.
+- Every external command is appended to
+  `<OutDir>\MANUAL_FLOW_COMMANDS.jsonl` with step, command, exit code, duration
+  and dry-run flag.
+
 ## Copy-paste commands
 
 Open PowerShell in the repository root and set the two paths once. Every
