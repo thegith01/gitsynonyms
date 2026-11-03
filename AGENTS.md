@@ -166,7 +166,14 @@ python scripts/local_subtitle_flow.py --url "https://youtu.be/<id>" --directory 
   English with AssemblyAI (`ASSEMBLYAI`), translates to Chinese through the
   same gateway, then renders the same ASS. Without a key it falls back to
   faster-whisper + Argos.
-- `LOCAL_FLOW.json` records the flow, reason, engines and output formats.
+- `LOCAL_FLOW.json` records the flow, reason, engines, output formats and the
+  explicit `selection` (`preset`, `english_source`, `chinese_source`).
+- Explicit source dimensions are selected with `--preset`:
+  `local-youtube-official`, `local-youtube-mt`, `local-asr-mt`,
+  `local-asr-official`, `url-youtube-official`, `url-youtube-mt`,
+  `offline-official`, `offline-mt`. Copy-paste PowerShell commands for all
+  eight are in `docs/LOCAL_FLOW_MATRIX.md`. `--english-source youtube|asr|auto`
+  and `--chinese-source youtube|mt|auto` are the lower-level switches.
 - `--force-asr` skips the probe; `--refresh` re-probes even a complete local
   set; `--skip-youtube` (alias `--offline`) uses only the files already there.
 - When a source banner overlaps the subtitle area, set a persistent box

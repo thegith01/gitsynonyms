@@ -60,6 +60,63 @@ ASR_WORK_DIR = "work"
 
 YOUTUBE = "youtube"
 ASR = "asr"
+MT = "mt"
+
+# Explicit paths the operator can request with --preset.  Each entry maps to
+# the English source, the Chinese source, and whether YouTube may be probed.
+# ``auto`` keeps the historical behavior (YouTube first, ASR only when the
+# report proves English is absent).
+PRESETS: dict[str, dict[str, object]] = {
+    # Local media, official YouTube English, official YouTube Chinese.
+    "local-youtube-official": {
+        "english": YOUTUBE,
+        "chinese": YOUTUBE,
+        "skip_youtube": False,
+    },
+    # Local media, official YouTube English, machine-translated Chinese.
+    "local-youtube-mt": {
+        "english": YOUTUBE,
+        "chinese": MT,
+        "skip_youtube": False,
+    },
+    # Local media, ASR English, machine-translated Chinese.
+    "local-asr-mt": {
+        "english": ASR,
+        "chinese": MT,
+        "skip_youtube": False,
+    },
+    # Local media, ASR English, official YouTube Chinese.
+    "local-asr-official": {
+        "english": ASR,
+        "chinese": YOUTUBE,
+        "skip_youtube": False,
+    },
+    # URL only (no local media), official YouTube English and Chinese.
+    "url-youtube-official": {
+        "english": YOUTUBE,
+        "chinese": YOUTUBE,
+        "skip_youtube": False,
+    },
+    # URL only, official YouTube English, machine-translated Chinese.
+    "url-youtube-mt": {
+        "english": YOUTUBE,
+        "chinese": MT,
+        "skip_youtube": False,
+    },
+    # Offline: reuse the local English and Chinese caption files.
+    "offline-official": {
+        "english": YOUTUBE,
+        "chinese": YOUTUBE,
+        "skip_youtube": True,
+    },
+    # Offline: reuse the local English captions and translate Chinese.
+    "offline-mt": {
+        "english": YOUTUBE,
+        "chinese": MT,
+        "skip_youtube": True,
+    },
+}
+
 
 
 def log(message: str) -> None:
@@ -308,12 +365,45 @@ def run_ass(folder: Path, video_id: str, args: argparse.Namespace) -> int:
 # --------------------------------------------------------------------------
 
 
+def apply_preset(args: argparse.Namespace) -> None:
+    """Fill the source choices from --preset, keeping explicit flags on top."""
+    preset = PRESETS.get(args.preset or "")
+    if preset:
+        if args.english_source is None:
+            args.english_source = str(preset["english"])
+        if args.chinese_source is None:
+            args.chinese_source = str(preset["chinese"])
+        if preset.get("skip_youtube"):
+            args.skip_youtube = True
+    if args.english_source is None:
+        args.english_source = "auto"
+    if args.chinese_source is None:
+        args.chinese_source = "auto"
+    if args.force_asr:
+        if args.english_source == YOUTUBE:
+            raise ValueError(
+                "--force-asr contradicts --english-source youtube"
+            )
+        # Leave english_source as auto; choose_flow keeps the historical
+        # "force-asr" reason for this explicit switch.
+    if args.english_source == ASR and args.skip_youtube:
+        raise ValueError(
+            "--skip-youtube/--offline cannot be combined with --english-source asr"
+        )
+    if args.english_source == ASR and args.refresh:
+        log("warning: --refresh has no effect when --english-source is asr")
+
+
 def choose_flow(
     folder: Path,
     video_id: str,
     args: argparse.Namespace,
 ) -> tuple[str, str]:
     """Return ``(flow, reason)`` and make sure flow 1 has its tracks."""
+    if args.english_source == ASR:
+        log("english-source=asr: skipping the YouTube probe")
+        return ASR, "forced-asr"
+
     if args.force_asr:
         log("force-asr: skipping the YouTube probe")
         return ASR, "force-asr"
@@ -365,6 +455,12 @@ def choose_flow(
     if has_track(folder, video_id, ENGLISH):
         log("warning: YouTube no longer lists English captions; reusing the local set")
         return YOUTUBE, "local-captions"
+    if args.english_source == YOUTUBE:
+        raise RuntimeError(
+            "YouTube publishes no English track and --english-source youtube "
+            "was requested; rerun with --english-source asr to transcribe "
+            "the local media"
+        )
     log("YouTube publishes no English track; falling back to ASR")
     return ASR, "youtube-english-absent"
 
@@ -377,6 +473,14 @@ def execute_flow(
     args: argparse.Namespace,
     state: dict,
 ) -> None:
+    if args.chinese_source == YOUTUBE and not has_track(
+        folder, video_id, CHINESE
+    ):
+        raise RuntimeError(
+            f"no Chinese caption track for {video_id} in {folder}; "
+            "rerun with --chinese-source mt to machine-translate the "
+            "English track"
+        )
     if flow == ASR:
         if media is None:
             raise RuntimeError(
@@ -398,10 +502,14 @@ def execute_flow(
             f"no English caption track for {video_id} in {folder}"
         )
 
-    if has_track(folder, video_id, CHINESE):
-        log("Chinese track present; skipping translation")
-        state["translation"] = {"ran": False}
-    else:
+    chinese_present = has_track(folder, video_id, CHINESE)
+    needs_translation = args.chinese_source == MT or not chinese_present
+    if needs_translation:
+        if chinese_present:
+            log(
+                "chinese-source=mt: replacing the existing Chinese track "
+                "with machine translation"
+            )
         engine = translation_engine(args.translation_engine)
         log(f"translation engine: {engine}")
         duration = local_bilingual_ass.probe_duration(media) or 0.0
@@ -417,6 +525,9 @@ def execute_flow(
             log(f"translation fell back to {actual}")
         if not has_track(folder, video_id, CHINESE):
             raise RuntimeError("translation produced no Chinese caption track")
+    else:
+        log("Chinese track present; skipping translation")
+        state["translation"] = {"ran": False}
 
     stage("ASS", run_ass, folder, video_id, args)
 
@@ -430,7 +541,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
             "Local bilingual caption flow: YouTube seven formats first, "
-            "AssemblyAI word-timed ASR only when YouTube has no English track."
+            "AssemblyAI word-timed ASR only when YouTube has no English track. "
+            "Use --preset or --english-source/--chinese-source to force one of "
+            "the explicit source dimensions."
         )
     )
     parser.add_argument(
@@ -456,6 +569,33 @@ def build_parser() -> argparse.ArgumentParser:
         "--refresh",
         action="store_true",
         help="Probe YouTube even when the local seven-format set looks complete.",
+    )
+    parser.add_argument(
+        "--preset",
+        choices=tuple(PRESETS),
+        help=(
+            "Explicit source dimension: local/url/offline x YouTube/ASR English "
+            "x official/machine Chinese. See docs/LOCAL_FLOW_MATRIX.md."
+        ),
+    )
+    parser.add_argument(
+        "--english-source",
+        choices=("auto", YOUTUBE, ASR),
+        default=None,
+        help=(
+            "English source: youtube = official track only, asr = transcribe "
+            "the local media, auto = current behavior (default: auto)."
+        ),
+    )
+    parser.add_argument(
+        "--chinese-source",
+        choices=("auto", YOUTUBE, MT),
+        default=None,
+        help=(
+            "Chinese source: youtube = official track only, mt = machine "
+            "translation (replaces an existing Chinese track), auto = use "
+            "YouTube when present (default: auto)."
+        ),
     )
     parser.add_argument(
         "--force-asr",
@@ -571,6 +711,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     report_path = folder / FLOW_REPORT
 
     try:
+        apply_preset(args)
         media = (
             args.media.expanduser().resolve()
             if args.media
@@ -587,6 +728,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         flow, reason = choose_flow(folder, video_id, args)
         state["flow"] = flow
         state["reason"] = reason
+        state["selection"] = {
+            "preset": args.preset,
+            "english_source": args.english_source,
+            "chinese_source": args.chinese_source,
+        }
         execute_flow(flow, folder, video_id, media, args, state)
 
         formats = {

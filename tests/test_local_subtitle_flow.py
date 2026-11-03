@@ -707,3 +707,173 @@ def test_faster_whisper_json3_keeps_spaces_between_words(tmp_path):
     )
 
     assert parsed[0]["text"] == "Hello world"
+
+
+# ---------------------------------------------------------------------------
+# Explicit source dimensions (local/url/offline x YouTube/ASR x official/MT)
+# ---------------------------------------------------------------------------
+
+
+def test_presets_cover_the_explicit_source_dimensions():
+    expected = {
+        "local-youtube-official": ("youtube", "youtube", False),
+        "local-youtube-mt": ("youtube", "mt", False),
+        "local-asr-mt": ("asr", "mt", False),
+        "local-asr-official": ("asr", "youtube", False),
+        "url-youtube-official": ("youtube", "youtube", False),
+        "url-youtube-mt": ("youtube", "mt", False),
+        "offline-official": ("youtube", "youtube", True),
+        "offline-mt": ("youtube", "mt", True),
+    }
+    for name, (english, chinese, offline) in expected.items():
+        preset = flow.PRESETS[name]
+        assert preset["english"] == english
+        assert preset["chinese"] == chinese
+        assert bool(preset["skip_youtube"]) is offline
+
+
+def test_preset_local_asr_mt_forces_asr_and_translation(tmp_path, monkeypatch):
+    folder = make_folder(tmp_path)
+    clear_keys(monkeypatch)
+    calls: list[tuple[str, str]] = []
+
+    def fake_fetch(*_args):
+        raise AssertionError("local-asr-mt must not probe YouTube")
+
+    def fake_asr(directory, video_id, media, engine, model):
+        calls.append(("asr", engine))
+        write_track(directory, flow.ENGLISH)
+        return 0
+
+    def fake_translate(directory, video_id, engine, duration):
+        calls.append(("translate", engine))
+        write_track(directory, flow.CHINESE, ("json3", "srt", "vtt", "ttml"))
+        return 0
+
+    def fake_build(directory, video_id, args):
+        calls.append(("ass", ""))
+        return fake_ass(directory, video_id, args)
+
+    monkeypatch.setattr(flow, "run_youtube_captions", fake_fetch)
+    monkeypatch.setattr(flow, "run_asr", fake_asr)
+    monkeypatch.setattr(flow, "run_translation", fake_translate)
+    monkeypatch.setattr(flow, "run_ass", fake_build)
+
+    assert flow.main(
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--preset",
+            "local-asr-mt",
+        ]
+    ) == 0
+
+    report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
+    assert report["flow"] == "asr"
+    assert report["selection"] == {
+        "preset": "local-asr-mt",
+        "english_source": "asr",
+        "chinese_source": "mt",
+    }
+    assert calls == [("asr", "whisper"), ("translate", "argos"), ("ass", "")]
+
+
+def test_forced_youtube_english_refuses_asr_when_absent(tmp_path, monkeypatch):
+    folder = make_folder(tmp_path)
+
+    def fake_fetch(directory, video_id, wait, report):
+        write_caption_report(directory, {"present": False, "formats": []})
+        return 0
+
+    def fake_asr(*_args):
+        raise AssertionError("--english-source youtube must not fall back to ASR")
+
+    monkeypatch.setattr(flow, "run_youtube_captions", fake_fetch)
+    monkeypatch.setattr(flow, "run_asr", fake_asr)
+
+    assert flow.main(
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--english-source",
+            "youtube",
+        ]
+    ) == 1
+
+    report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
+    assert report["status"] == "failed"
+    assert "--english-source youtube" in report["error"]
+
+
+def test_forced_mt_replaces_an_existing_chinese_track(tmp_path, monkeypatch):
+    folder = make_folder(tmp_path)
+    clear_keys(monkeypatch)
+    write_track(folder, flow.ENGLISH)
+    write_track(folder, flow.CHINESE)
+    write_caption_report(
+        folder,
+        {"present": True, "formats": list(FORMATS)},
+        {"present": True, "formats": list(FORMATS)},
+    )
+    translated: list[str] = []
+
+    def fake_translate(directory, video_id, engine, duration):
+        translated.append(engine)
+        return 0
+
+    monkeypatch.setattr(flow, "run_translation", fake_translate)
+    monkeypatch.setattr(flow, "run_ass", fake_ass)
+
+    assert flow.main(
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--preset",
+            "local-youtube-mt",
+        ]
+    ) == 0
+
+    report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
+    assert report["selection"]["chinese_source"] == "mt"
+    assert report["translation"]["ran"] is True
+    assert translated == ["argos"]
+
+
+def test_forced_official_chinese_errors_when_absent(tmp_path, monkeypatch):
+    folder = make_folder(tmp_path)
+
+    def fake_fetch(directory, video_id, wait, report):
+        write_track(directory, flow.ENGLISH)
+        write_caption_report(
+            directory,
+            {"present": True, "formats": list(FORMATS)},
+            {"present": False, "formats": []},
+        )
+        return 0
+
+    def fake_translate(*_args):
+        raise AssertionError("--chinese-source youtube must not translate")
+
+    monkeypatch.setattr(flow, "run_youtube_captions", fake_fetch)
+    monkeypatch.setattr(flow, "run_translation", fake_translate)
+
+    assert flow.main(
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--chinese-source",
+            "youtube",
+        ]
+    ) == 1
+
+    report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
+    assert report["status"] == "failed"
+    assert "--chinese-source mt" in report["error"]

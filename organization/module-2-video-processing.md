@@ -132,7 +132,12 @@
 - `local_subtitle_flow.py` 是本地两段式入口：先走 YouTube 七格式（中文轨缺失时机器
   翻译），仅在字幕报告证明英文轨确实缺失时才用 AssemblyAI 逐词转写并翻译；探测
   失败按暂时性故障中止，不得当作“无字幕”直接付费转写。决策、引擎与输出格式写入
-  `LOCAL_FLOW.json`。56 秒通过 yt-dlp 的 `--sleep-subtitles` 传给中文字幕请求，
+  `LOCAL_FLOW.json`。显式维度通过 `--preset` 选择：`local-youtube-official`、
+  `local-youtube-mt`、`local-asr-mt`、`local-asr-official`、
+  `url-youtube-official`、`url-youtube-mt`、`offline-official`、`offline-mt`；
+  `--english-source youtube|asr|auto` 与 `--chinese-source youtube|mt|auto` 是底层
+  开关，选择结果写入 `LOCAL_FLOW.json.selection`。可直接复制的 PowerShell 命令见
+  `docs/LOCAL_FLOW_MATRIX.md`。56 秒通过 yt-dlp 的 `--sleep-subtitles` 传给中文字幕请求，
   英文请求不设置该间隔；它不是流程级等待（可由同名参数覆盖），`--wait` 暂保留为
   兼容别名。本地流程默认不画背景框；启用背景框时，使用独立的框坐标
   `CAPTION_BOX_AREA = (66, 883, 1852, 1022)`，文字安全区仍为
