@@ -186,13 +186,22 @@ def write_outputs(cues: list[dict], out: Path, stem: str, language: str) -> list
 
     events = []
     for cue in cues:
-        segments = [
-            {
-                "utf8": word["word"],
-                "tOffsetMs": max(0, int(round((word["start"] - cue["start"]) * 1000))),
-            }
-            for word in cue["words"]
-        ] or [{"utf8": cue["text"], "tOffsetMs": 0}]
+        # JSON3 segments are concatenated verbatim by the parser, so the space
+        # between words must live in the segment text, not in a separate join.
+        segments = []
+        for word in cue["words"]:
+            text = str(word["word"]).strip()
+            if not text:
+                continue
+            segments.append(
+                {
+                    "utf8": (" " if segments else "") + text,
+                    "tOffsetMs": max(
+                        0, int(round((word["start"] - cue["start"]) * 1000))
+                    ),
+                }
+            )
+        segments = segments or [{"utf8": cue["text"], "tOffsetMs": 0}]
         events.append(
             {
                 "tStartMs": int(round(cue["start"] * 1000)),
@@ -211,7 +220,7 @@ def escape(text: str) -> str:
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="AssemblyAI word-timed captions")
     parser.add_argument("--video", required=True)
     parser.add_argument("--video-id", required=True)
@@ -220,7 +229,7 @@ def main() -> int:
     parser.add_argument("--output-dir", default="output")
     parser.add_argument("--work-dir", default="work")
     parser.add_argument("--timeout", type=int, default=5400)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     video = Path(args.video)
     if not video.is_file():

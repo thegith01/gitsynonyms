@@ -87,6 +87,7 @@
 | 环节 | 实现 |
 |---|---|
 | 批量翻译 | `scripts/machine_translate_captions.py --engine assemblyai\|argos\|mymemory` |
+| 本地两段式入口 | `scripts/local_subtitle_flow.py`（中文轨缺失时按同一引擎翻译） |
 | 流水线接入 | `.github/workflows/auto-pipeline.yml` 的 “Machine-translation fallback for the Chinese track” |
 | 排名与校验 | `scripts/engine_registry.py check` / `rank --office translation` |
 | 评分离线测试 | `tests/test_engine_registry.py` |

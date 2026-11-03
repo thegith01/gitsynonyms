@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -100,3 +101,50 @@ def test_overlapping_source_words_are_not_sent_twice_for_translation():
     words = " ".join(unit["text"] for unit in units).split()
 
     assert words == ["I", "think", "we", "should", "go", "home", "now."]
+
+
+def test_report_names_the_engine_that_actually_ran(tmp_path, monkeypatch):
+    video_id = "TESTVIDEOID"
+    caption = {
+        "events": [
+            {
+                "tStartMs": 1000,
+                "dDurationMs": 2000,
+                "segs": [{"utf8": "Hello"}, {"utf8": " world", "tOffsetMs": 500}],
+            }
+        ]
+    }
+    (tmp_path / f"{video_id}.en-orig.json3").write_text(
+        json.dumps(caption), encoding="utf-8"
+    )
+
+    def unavailable(*_args):
+        raise RuntimeError("gateway unavailable")
+
+    monkeypatch.setattr(machine_translate_captions, "translate_assemblyai", unavailable)
+    monkeypatch.setattr(
+        machine_translate_captions,
+        "translate_argos",
+        lambda texts, *_args: ["你好"] * len(texts),
+    )
+
+    assert machine_translate_captions.main(
+        [
+            "--caption-dir",
+            str(tmp_path),
+            "--video-id",
+            video_id,
+            "--engine",
+            "assemblyai",
+            "--report",
+            str(tmp_path / "SUBTITLE_SOURCES.json"),
+        ]
+    ) == 0
+
+    report = json.loads(
+        (tmp_path / "SUBTITLE_SOURCES.json").read_text(encoding="utf-8")
+    )
+    assert report["engine"] == "argos"
+    assert report["requested_engine"] == "assemblyai"
+    assert report["candidates"][0]["engine"] == "argos"
+    assert report["selected"] == "zh-Hans-argos"

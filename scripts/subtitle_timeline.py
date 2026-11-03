@@ -670,7 +670,113 @@ def _pair_sentence_groups(
     *,
     max_chars: int = EN_EVENT_CHARS,
 ) -> list[tuple[list[Token], list[Token]]]:
-    """Monotonically pair sentence groups, merging adjacent groups as needed."""
+    """Globally pair sentence groups, merging adjacent groups as needed."""
+    english_count = len(english_groups)
+    chinese_count = len(chinese_groups)
+    transitions = ((1, 1, 0.0), (1, 2, 1.3), (2, 1, 1.3))
+    costs = [
+        [math.inf] * (chinese_count + 1)
+        for _ in range(english_count + 1)
+    ]
+    previous: dict[tuple[int, int], tuple[int, int, int, int]] = {}
+    costs[0][0] = 0.0
+
+    for english_index in range(english_count + 1):
+        for chinese_index in range(chinese_count + 1):
+            current_cost = costs[english_index][chinese_index]
+            if not math.isfinite(current_cost):
+                continue
+            for english_size, chinese_size, merge_penalty in transitions:
+                next_english = english_index + english_size
+                next_chinese = chinese_index + chinese_size
+                if (
+                    next_english > english_count
+                    or next_chinese > chinese_count
+                ):
+                    continue
+                english_part = english_groups[english_index:next_english]
+                chinese_part = chinese_groups[chinese_index:next_chinese]
+                start_delta = abs(
+                    english_part[0][0].start - chinese_part[0][0].start
+                )
+                end_delta = abs(
+                    english_part[-1][-1].end - chinese_part[-1][-1].end
+                )
+                english_text = " ".join(
+                    token.text for group in english_part for token in group
+                )
+                chinese_text = "".join(
+                    token.text for group in chinese_part for token in group
+                )
+                overflow = (
+                    max(0, len(english_text) - max_chars) / max_chars
+                    + max(0, len(chinese_text) - ZH_EVENT_CHARS)
+                    / ZH_EVENT_CHARS
+                )
+                candidate_cost = (
+                    current_cost
+                    + end_delta
+                    + 0.25 * start_delta
+                    + merge_penalty
+                    + 0.1 * overflow
+                )
+                if candidate_cost < costs[next_english][next_chinese]:
+                    costs[next_english][next_chinese] = candidate_cost
+                    previous[next_english, next_chinese] = (
+                        english_index,
+                        chinese_index,
+                        english_size,
+                        chinese_size,
+                    )
+
+    if not math.isfinite(costs[english_count][chinese_count]):
+        # The transition set can only consume balanced tracks (one English
+        # group per one or two Chinese groups). A translation track without
+        # sentence punctuation collapses into one group, so fall back to the
+        # monotonic pairing that attaches the unpaired tail to the last event.
+        return _pair_sentence_groups_greedy(
+            english_groups, chinese_groups, max_chars=max_chars
+        )
+
+    pairs: list[tuple[list[Token], list[Token]]] = []
+    english_index = english_count
+    chinese_index = chinese_count
+    while english_index or chinese_index:
+        step = previous.get((english_index, chinese_index))
+        if step is None:
+            raise ValueError(
+                "Could not align complete English and Chinese sentence timelines."
+            )
+        previous_english, previous_chinese, english_size, chinese_size = step
+        english = [
+            token
+            for group in english_groups[previous_english:english_index]
+            for token in group
+        ]
+        chinese = [
+            token
+            for group in chinese_groups[previous_chinese:chinese_index]
+            for token in group
+        ]
+        pairs.append((english, chinese))
+        english_index = previous_english
+        chinese_index = previous_chinese
+    pairs.reverse()
+    return pairs
+
+
+def _pair_sentence_groups_greedy(
+    english_groups: Sequence[list[Token]],
+    chinese_groups: Sequence[list[Token]],
+    *,
+    max_chars: int = EN_EVENT_CHARS,
+) -> list[tuple[list[Token], list[Token]]]:
+    """Monotonically pair sentence groups, merging adjacent groups as needed.
+
+    Used when the tracks are too unbalanced for the global dynamic program
+    (for example a Chinese translation with no sentence punctuation at all).
+    The unpaired tail is attached to the last event, so no spoken word is lost.
+    """
     pairs: list[tuple[list[Token], list[Token]]] = []
     english_index = 0
     chinese_index = 0
@@ -678,17 +784,17 @@ def _pair_sentence_groups(
 
     while english_index < len(english_groups) and chinese_index < len(chinese_groups):
         candidates: list[tuple[float, int, int]] = []
-        for english_count, chinese_count, merge_penalty in transitions:
+        for english_size, chinese_size, merge_penalty in transitions:
             if (
-                english_index + english_count > len(english_groups)
-                or chinese_index + chinese_count > len(chinese_groups)
+                english_index + english_size > len(english_groups)
+                or chinese_index + chinese_size > len(chinese_groups)
             ):
                 continue
             english_part = english_groups[
-                english_index : english_index + english_count
+                english_index : english_index + english_size
             ]
             chinese_part = chinese_groups[
-                chinese_index : chinese_index + chinese_count
+                chinese_index : chinese_index + chinese_size
             ]
             start_delta = abs(
                 english_part[0][0].start - chinese_part[0][0].start
@@ -712,28 +818,31 @@ def _pair_sentence_groups(
                     + 0.25 * start_delta
                     + merge_penalty
                     + 0.1 * overflow,
-                    english_count,
-                    chinese_count,
+                    english_size,
+                    chinese_size,
                 )
             )
-        _, english_count, chinese_count = min(candidates)
-        english = [
-            token
-            for group in english_groups[
-                english_index : english_index + english_count
-            ]
-            for token in group
-        ]
-        chinese = [
-            token
-            for group in chinese_groups[
-                chinese_index : chinese_index + chinese_count
-            ]
-            for token in group
-        ]
-        pairs.append((english, chinese))
-        english_index += english_count
-        chinese_index += chinese_count
+        _, english_size, chinese_size = min(candidates)
+        pairs.append(
+            (
+                [
+                    token
+                    for group in english_groups[
+                        english_index : english_index + english_size
+                    ]
+                    for token in group
+                ],
+                [
+                    token
+                    for group in chinese_groups[
+                        chinese_index : chinese_index + chinese_size
+                    ]
+                    for token in group
+                ],
+            )
+        )
+        english_index += english_size
+        chinese_index += chinese_size
 
     if pairs:
         if english_index < len(english_groups):

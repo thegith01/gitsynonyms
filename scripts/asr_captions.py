@@ -63,12 +63,19 @@ def write_ttml(cues: list[dict], path: Path) -> None:
 def write_json3(cues: list[dict], path: Path, language: str) -> None:
     events = []
     for cue in cues:
+        # JSON3 segments are concatenated verbatim by the parser; put the
+        # separating space in the segment so the fused text keeps its words.
         segments = []
         for word in cue.get("words") or []:
+            text = str(word["word"]).strip()
+            if not text:
+                continue
             segments.append(
                 {
-                    "utf8": word["word"],
-                    "tOffsetMs": max(0, int(round((word["start"] - cue["start"]) * 1000))),
+                    "utf8": (" " if segments else "") + text,
+                    "tOffsetMs": max(
+                        0, int(round((word["start"] - cue["start"]) * 1000))
+                    ),
                 }
             )
         if not segments:
@@ -90,7 +97,7 @@ def escape(text: str) -> str:
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Word-timed ASR captions")
     parser.add_argument("--video", required=True)
     parser.add_argument("--video-id", required=True)
@@ -101,7 +108,7 @@ def main() -> int:
     parser.add_argument("--output-dir", default="output")
     parser.add_argument("--bilingual", action="store_true",
                         help="The other language already exists, so the pair is complete")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     from faster_whisper import WhisperModel
 

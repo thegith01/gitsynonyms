@@ -67,6 +67,7 @@ faster-whisper，接受更慢的中文质量。
 |---|---|
 | 托管转写 | `scripts/assemblyai_captions.py`（上传 → 提交 → 轮询 → 写 json3/srt/vtt/ttml + `ASR.json`） |
 | 本地兜底 | `scripts/asr_captions.py`（faster-whisper） |
+| 本地两段式入口 | `scripts/local_subtitle_flow.py`（字幕报告确认英文轨缺失后才调用 ASR） |
 | 流水线接入 | `.github/workflows/auto-pipeline.yml` 的 “ASR fallback when the English track is missing” |
 | 排名与校验 | `scripts/engine_registry.py check` / `rank --office asr` |
 | 评分离线测试 | `tests/test_engine_registry.py` |

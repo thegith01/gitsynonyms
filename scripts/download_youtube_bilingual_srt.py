@@ -37,6 +37,8 @@ PLAY_RESOLUTION = (1920, 1080)
 # 5% side margins and a 72 px bottom margin keep text out of the overscan area
 # of TVs and phones with rounded corners.
 CAPTION_AREA = (96, 883, 1824, 1008)
+# Extends beyond the text-safe area to cover source graphics.
+CAPTION_BOX_AREA = (66, 883, 1852, 1022)
 STYLE_PRESETS = {
     "classic": {
         "first_font": "Microsoft YaHei",
@@ -1637,6 +1639,196 @@ def _strip_leading_closers(value: str) -> str:
     return value
 
 
+def _event_text_width(
+    tokens: Sequence[subtitle_timeline.Token], language: str
+) -> float:
+    separator = " " if language == "en" else ""
+    text = separator.join(token.text for token in tokens)
+    return subtitle_layout.line_units(text)
+
+
+def _split_tokens_at_width(
+    tokens: Sequence[subtitle_timeline.Token],
+    language: str,
+    max_width: float,
+) -> list[list[subtitle_timeline.Token]]:
+    chunks: list[list[subtitle_timeline.Token]] = []
+    current: list[subtitle_timeline.Token] = []
+    current_width = 0.0
+    for token in tokens:
+        token_width = subtitle_layout.line_units(token.text)
+        if current and language == "en":
+            token_width += subtitle_layout.LATIN_EM
+        if current and current_width + token_width > max_width:
+            chunks.append(current)
+            current = []
+            current_width = 0.0
+            token_width = subtitle_layout.line_units(token.text)
+        if token_width > max_width:
+            raise ValueError(
+                f"A {language} subtitle token exceeds the fixed-font caption width: "
+                f"{token.text!r}"
+            )
+        current.append(token)
+        current_width += token_width
+    if current:
+        chunks.append(current)
+    for index in range(len(chunks) - 1):
+        left, right = chunks[index], chunks[index + 1]
+        while len(left) > 1:
+            left_duration = left[-1].end - left[0].start
+            right_duration = right[-1].end - right[0].start
+            current_delta = abs(left_duration - right_duration)
+            moved = left[-1]
+            candidate_left = left[:-1]
+            candidate_right = [moved, *right]
+            candidate_width = _event_text_width(candidate_right, language)
+            candidate_delta = abs(
+                (candidate_left[-1].end - candidate_left[0].start)
+                - (candidate_right[-1].end - candidate_right[0].start)
+            )
+            if candidate_width > max_width or candidate_delta >= current_delta:
+                break
+            left.pop()
+            right.insert(0, moved)
+    return chunks
+
+
+def _merge_token_chunks(
+    chunks: Sequence[Sequence[subtitle_timeline.Token]],
+    target: int,
+) -> list[list[subtitle_timeline.Token]]:
+    """Merge adjacent chunks until only ``target`` remain, keeping text order."""
+    target = max(1, min(target, len(chunks)))
+    if target == len(chunks):
+        return [list(chunk) for chunk in chunks]
+    merged: list[list[subtitle_timeline.Token]] = []
+    total = len(chunks)
+    for index in range(target):
+        start = round(index * total / target)
+        end = round((index + 1) * total / target)
+        merged.append(
+            [token for chunk in chunks[start:end] for token in chunk]
+        )
+    return merged
+
+
+def _partition_tokens_by_time(
+    tokens: Sequence[subtitle_timeline.Token],
+    reference_chunks: Sequence[Sequence[subtitle_timeline.Token]],
+) -> list[list[subtitle_timeline.Token]]:
+    if len(tokens) < len(reference_chunks):
+        raise ValueError(
+            "Cannot split an overlong bilingual event without leaving a segment "
+            "without translated text."
+        )
+    boundaries = [
+        (
+            (left[-1].start + left[-1].end)
+            + (right[0].start + right[0].end)
+        )
+        / 4
+        for left, right in zip(reference_chunks, reference_chunks[1:])
+    ]
+    partitions: list[list[subtitle_timeline.Token]] = [
+        [] for _ in reference_chunks
+    ]
+    chunk_index = 0
+    for token in tokens:
+        midpoint = (token.start + token.end) / 2
+        while chunk_index < len(boundaries) and midpoint > boundaries[chunk_index]:
+            chunk_index += 1
+        partitions[chunk_index].append(token)
+    if all(
+        _strip_leading_closers("".join(token.text for token in partition)).strip()
+        for partition in partitions
+    ):
+        return partitions
+
+    # Some translated tracks only have cue-level timing. Preserve every token
+    # and keep segments bilingual when those estimates collapse at one boundary.
+    partitions = [[] for _ in reference_chunks]
+    for index, token in enumerate(tokens):
+        target = min(
+            len(reference_chunks) - 1,
+            ((2 * index + 1) * len(reference_chunks)) // (2 * len(tokens)),
+        )
+        partitions[target].append(token)
+    if any(not partition for partition in partitions):
+        raise ValueError(
+            "Cannot distribute translated subtitle tokens across fixed-size segments."
+        )
+    return partitions
+
+
+def _fixed_size_bilingual_events(
+    events: Sequence[
+        tuple[
+            list[subtitle_timeline.Token],
+            list[subtitle_timeline.Token],
+        ]
+    ],
+    *,
+    english_font_size: float,
+    chinese_font_size: float,
+    available_width: float,
+    max_english_chars: int = subtitle_timeline.EN_EVENT_CHARS,
+) -> list[
+    tuple[list[subtitle_timeline.Token], list[subtitle_timeline.Token]]
+]:
+    """Split overwide bilingual events instead of shrinking individual fonts."""
+    pending = list(reversed(events))
+    result: list[
+        tuple[list[subtitle_timeline.Token], list[subtitle_timeline.Token]]
+    ] = []
+    english_max_width = min(
+        available_width / english_font_size,
+        max_english_chars * subtitle_layout.LATIN_EM,
+    )
+    chinese_max_width = min(
+        available_width / chinese_font_size,
+        subtitle_timeline.ZH_EVENT_CHARS * subtitle_layout.CJK_EM,
+    )
+    while pending:
+        english, chinese = pending.pop()
+        english_units = _event_text_width(english, "en")
+        chinese_units = _event_text_width(chinese, "zh")
+        if (
+            english_units <= english_max_width
+            and chinese_units <= chinese_max_width
+        ):
+            result.append((english, chinese))
+            continue
+
+        split_english = (
+            english_units / english_max_width
+            >= chinese_units / chinese_max_width
+        )
+        tokens = english if split_english else chinese
+        language = "en" if split_english else "zh"
+        chunks = _split_tokens_at_width(
+            tokens,
+            language,
+            english_max_width if split_english else chinese_max_width,
+        )
+        if len(chunks) < 2:
+            raise ValueError("An overwide bilingual caption could not be split.")
+        other = chinese if split_english else english
+        if len(chunks) > len(other):
+            # The other track has fewer tokens than the split produced. Merge
+            # adjacent chunks so every segment keeps both languages; the token
+            # granularity, not the renderer, now limits how narrow it can get.
+            chunks = _merge_token_chunks(chunks, len(other))
+        other_chunks = _partition_tokens_by_time(other, chunks)
+        paired = (
+            list(zip(chunks, other_chunks))
+            if split_english
+            else list(zip(other_chunks, chunks))
+        )
+        pending.extend(reversed(paired))
+    return result
+
+
 def build_ass(
     first: Sequence[dict],
     second: Sequence[dict],
@@ -1646,6 +1838,7 @@ def build_ass(
     second_font_size: int = 48,
     first_font_scale: float = 1.2,
     caption_area: tuple[int, int, int, int] = CAPTION_AREA,
+    box_area: tuple[int, int, int, int] = CAPTION_BOX_AREA,
     first_color: str = "#FFC928",
     second_color: str = "#FFFFFF",
     english_highlight_color: str = ENGLISH_HIGHLIGHT_COLOR,
@@ -1698,6 +1891,14 @@ def build_ass(
         and 0 <= area_top < area_bottom <= play_res_y
     ):
         raise ValueError("Caption area must be a positive rectangle inside the ASS play resolution.")
+    if len(box_area) != 4:
+        raise ValueError("Caption box area must contain left, top, right, and bottom coordinates.")
+    box_left, box_top, box_right, box_bottom = box_area
+    if not (
+        0 <= box_left < box_right <= play_res_x
+        and 0 <= box_top < box_bottom <= play_res_y
+    ):
+        raise ValueError("Caption box area must be a positive rectangle inside the ASS play resolution.")
 
     first_ass_color = ass_color(first_color)
     second_ass_color = ass_color(second_color)
@@ -1747,6 +1948,13 @@ def build_ass(
     )
     if not display_events:
         raise ValueError("Caption cues contain no timed words.")
+    display_events = _fixed_size_bilingual_events(
+        display_events,
+        english_font_size=second_font_size,
+        chinese_font_size=first_font_size,
+        available_width=available_width,
+        max_english_chars=event_max_chars,
+    )
     events = []
 
     def append_box_events(start: float, end: float) -> None:
@@ -1757,23 +1965,23 @@ def build_ass(
                 "layer": 0,
                 "style": "CaptionBox",
                 "body": (
-                    f"{{\\an7\\pos({area_left},{area_top})\\p1}}"
-                    f"m 0 0 l {area_width} 0 {area_width} "
-                    f"{area_bottom - area_top} 0 {area_bottom - area_top} 0 0"
+                    f"{{\\an7\\pos({box_left},{box_top})\\p1}}"
+                    f"m 0 0 l {box_right - box_left} 0 {box_right - box_left} "
+                    f"{box_bottom - box_top} 0 {box_bottom - box_top} 0 0"
                     f"{{\\p0}}"
                 ),
             }
         )
         if box_style == "glass-diamond":
-            facet_width = max(1, round(area_width * 0.28))
-            facet_height = max(1, round((area_bottom - area_top) * 0.42))
+            facet_width = max(1, round((box_right - box_left) * 0.28))
+            facet_height = max(1, round((box_bottom - box_top) * 0.42))
             events.append({
                 "start": start,
                 "end": end,
                 "layer": 0,
                 "style": "CaptionFacet",
                 "body": (
-                    f"{{\\an7\\pos({area_left},{area_top})\\p1}}"
+                    f"{{\\an7\\pos({box_left},{box_top})\\p1}}"
                     f"m 0 0 l {facet_width} 0 l {round(facet_width * 0.78)} "
                     f"{facet_height} l 0 {facet_height} 0 0{{\\p0}}"
                 ),
@@ -1829,16 +2037,8 @@ def build_ass(
             if english_text
             else []
         )
-        cn_size = (
-            subtitle_layout.fit_font_size(chinese_lines, first_font_size, available_width)
-            if chinese_lines
-            else 0
-        )
-        en_size = (
-            subtitle_layout.fit_font_size(english_lines, second_font_size, available_width)
-            if english_lines
-            else 0
-        )
+        cn_size = first_font_size if chinese_lines else 0
+        en_size = second_font_size if english_lines else 0
         order = (
             (("english", english_lines, en_size), ("chinese", chinese_lines, cn_size))
             if caption_order == "english-first"
@@ -2331,10 +2531,10 @@ def main(argv: list[str] | None = None) -> int:
         type=float,
         help="Override box opacity from 0 (transparent) to 1 (opaque).",
     )
-    parser.add_argument("--box-x", type=int, default=66, help="Caption-box left coordinate on the 1920x1080 canvas.")
-    parser.add_argument("--box-y", type=int, default=883, help="Caption-box top coordinate on the 1920x1080 canvas.")
-    parser.add_argument("--box-width", type=int, default=1786, help="Caption-box width on the 1920x1080 canvas.")
-    parser.add_argument("--box-height", type=int, default=139, help="Caption-box height on the 1920x1080 canvas.")
+    parser.add_argument("--box-x", type=int, default=CAPTION_BOX_AREA[0], help="Caption-box left coordinate on the 1920x1080 canvas.")
+    parser.add_argument("--box-y", type=int, default=CAPTION_BOX_AREA[1], help="Caption-box top coordinate on the 1920x1080 canvas.")
+    parser.add_argument("--box-width", type=int, default=CAPTION_BOX_AREA[2] - CAPTION_BOX_AREA[0], help="Caption-box width on the 1920x1080 canvas.")
+    parser.add_argument("--box-height", type=int, default=CAPTION_BOX_AREA[3] - CAPTION_BOX_AREA[1], help="Caption-box height on the 1920x1080 canvas.")
     parser.add_argument(
         "--burn-in",
         action="store_true",
@@ -2370,7 +2570,7 @@ def main(argv: list[str] | None = None) -> int:
     if len(languages) != 2 or not all(languages) or languages[0].lower() == languages[1].lower():
         parser.error("--languages must contain two distinct comma-separated language codes")
     preset = STYLE_PRESETS[args.style_preset]
-    caption_area = (
+    box_area = (
         args.box_x,
         args.box_y,
         args.box_x + args.box_width,
@@ -2496,7 +2696,8 @@ def main(argv: list[str] | None = None) -> int:
                     if args.box_opacity is None
                     else args.box_opacity
                 ),
-                caption_area=caption_area,
+                caption_area=CAPTION_AREA,
+                box_area=box_area,
                 caption_order="english-first" if args.style_preset == "cinema" else "chinese-first",
                 video_duration=video_duration,
                 box_style=args.box_style,

@@ -298,6 +298,34 @@ def build_parser() -> argparse.ArgumentParser:
         type=float,
         help="Box opacity 0-1 (default: the style's own opacity).",
     )
+    parser.add_argument(
+        "--box-color",
+        help="Solid subtitle-box color in #RRGGBB form (default: the selected style's color).",
+    )
+    parser.add_argument(
+        "--box-x",
+        type=int,
+        default=captions.CAPTION_BOX_AREA[0],
+        help="Caption-box left coordinate on the 1920x1080 canvas.",
+    )
+    parser.add_argument(
+        "--box-y",
+        type=int,
+        default=captions.CAPTION_BOX_AREA[1],
+        help="Caption-box top coordinate on the 1920x1080 canvas.",
+    )
+    parser.add_argument(
+        "--box-width",
+        type=int,
+        default=captions.CAPTION_BOX_AREA[2] - captions.CAPTION_BOX_AREA[0],
+        help="Caption-box width on the 1920x1080 canvas.",
+    )
+    parser.add_argument(
+        "--box-height",
+        type=int,
+        default=captions.CAPTION_BOX_AREA[3] - captions.CAPTION_BOX_AREA[1],
+        help="Caption-box height on the 1920x1080 canvas.",
+    )
     parser.add_argument("--first-font", default="Microsoft YaHei")
     parser.add_argument("--second-font", default="Arial")
     parser.add_argument("--second-font-size", type=int, default=48)
@@ -322,8 +350,8 @@ def build_parser() -> argparse.ArgumentParser:
         default=1,
         help=(
             "Lines per language (default: 1). The local viewing default keeps "
-            "one Chinese and one English line and lets the font shrink for a "
-            "dense phrase instead of growing a third line."
+            "one Chinese and one English line; overwide bilingual events are "
+            "split at timed token boundaries to keep font sizes consistent."
         ),
     )
     parser.add_argument(
@@ -377,10 +405,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         second,
         box_style=box_style,
         box_opacity=box_opacity,
+        box_color=args.box_color,
         first_font=args.first_font,
         second_font=args.second_font,
         second_font_size=args.second_font_size,
         first_font_scale=args.first_font_scale,
+        box_area=(
+            args.box_x,
+            args.box_y,
+            args.box_x + args.box_width,
+            args.box_y + args.box_height,
+        ),
         caption_order=args.caption_order,
         first_color=args.first_color,
         second_color=args.second_color,

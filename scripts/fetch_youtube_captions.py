@@ -32,11 +32,8 @@ CHINESE_PREFERENCES = ("zh-Hans", "zh-CN", "zh", "zh-SG", "zh-Hant", "zh-TW", "z
 
 CANONICAL = {"en": "en-orig", "zh": "zh-Hans"}
 
-# YouTube rate-limits the timedtext endpoint per address.  Seven serializations
-# for English followed immediately by Chinese produced HTTP 429 on every
-# Chinese request, so leave a cooling gap between languages and retry a
-# rate-limited language once.
-GROUP_GAP_SECONDS = 20
+# Chinese format requests are spaced by yt-dlp's --sleep-subtitles option.
+# Retry once after a timedtext rate-limit response.
 RATE_LIMIT_BACKOFF = 20
 
 
@@ -240,15 +237,27 @@ def fetch_listing(url: str, video_id: str, report_path: Path) -> dict:
     raise RuntimeError(f"could not read the YouTube caption listing: {message}")
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Download all published YouTube caption formats")
     parser.add_argument("--video-id", required=True)
     parser.add_argument("--output-dir", default="output")
     parser.add_argument("--groups", default="en,zh")
-    parser.add_argument("--wait", type=int, default=0, help="Seconds between subtitle requests")
+    parser.add_argument(
+        "--sleep-subtitles",
+        "--wait",
+        dest="sleep_subtitles",
+        type=int,
+        default=56,
+        help=(
+            "Pass this interval to yt-dlp as --sleep-subtitles for Chinese "
+            "caption requests; English requests use 0 (default: 56 seconds)."
+        ),
+    )
     parser.add_argument("--report", default="")
     parser.add_argument("--require", default="", help="Comma separated canonical codes that must exist")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
+    if args.sleep_subtitles < 0:
+        parser.error("--sleep-subtitles must not be negative")
 
     url = f"https://www.youtube.com/watch?v={args.video_id}"
     directory = Path(args.output_dir)
@@ -269,12 +278,7 @@ def main() -> int:
         ),
     }
 
-    first_group = True
     for group in [item.strip() for item in args.groups.split(",") if item.strip()]:
-        if not first_group:
-            log(f"waiting {GROUP_GAP_SECONDS}s before the next language")
-            time.sleep(GROUP_GAP_SECONDS)
-        first_group = False
         canonical = CANONICAL[group]
         resolved = resolve(metadata, group)
         if not resolved:
@@ -291,7 +295,13 @@ def main() -> int:
         download_error = ""
         try:
             files, _cues, _source = captions.download_track(
-                url, args.video_id, code, kind, directory, args.wait, formats
+                url,
+                args.video_id,
+                code,
+                kind,
+                directory,
+                args.sleep_subtitles if group == "zh" else 0,
+                formats,
             )
         except Exception as error:  # noqa: BLE001 - a missing track is a normal outcome
             download_error = str(error)
@@ -301,7 +311,13 @@ def main() -> int:
                 time.sleep(RATE_LIMIT_BACKOFF)
                 try:
                     files, _cues, _source = captions.download_track(
-                        url, args.video_id, code, kind, directory, args.wait, formats
+                        url,
+                        args.video_id,
+                        code,
+                        kind,
+                        directory,
+                        args.sleep_subtitles if group == "zh" else 0,
+                        formats,
                     )
                     download_error = ""
                 except Exception as retry_error:  # noqa: BLE001 - keep the first cause

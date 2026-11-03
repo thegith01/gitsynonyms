@@ -89,8 +89,9 @@ from the repository root. `scripts/` is not an installed package —
 - `scripts/subtitle_layout.py` wraps: zh ≤28 full-width chars/line, en ≤60
   chars/line. Cue-aligned bilingual events are built to fit exactly one line per
   language; the two-line budget is only an overflow guard for single-language
-  fallbacks. Closing punctuation never starts a line, and the font shrinks
-  before overflow.
+  fallbacks. Closing punctuation never starts a line. Bilingual ASS keeps its
+  configured font sizes and splits overwide events at timed token boundaries;
+  it does not shrink individual events to fit.
 - `scripts/subtitle_timeline.py` builds one monotonic token timeline and
   disjoint display events. When both tracks are full parallel transcripts,
   translation cue starts define the display units and each unit carries the
@@ -137,6 +138,53 @@ gh run view <run-id> --log
 - `republish-site.yml` only regenerates `site/` from the committed `output/`
   archive; it does not touch media.
 
+## Local caption flows
+
+`scripts/local_subtitle_flow.py` is the single local entry point for the two
+caption paths allowed by `DIRECTIVE.md` 3.7. It never downloads the video; it
+uses the media already in `--directory` and fetches only captions or audio.
+
+```bash
+# Flow 1: YouTube has an English track (manual or auto-generated)
+python scripts/local_subtitle_flow.py --url "https://youtu.be/<id>" --directory "D:\MyDownload\a"
+
+# Flow 2: the caption report proves YouTube has no English track
+python scripts/local_subtitle_flow.py --url "https://youtu.be/<id>" --directory "D:\MyDownload\a"
+```
+
+- **Flow 1** calls `fetch_youtube_captions.py` for every published
+  `json3`/`srv3`/`srv2`/`srv1`/`ttml`/`vtt`/`srt` file in `en-orig` and
+  `zh-Hans`. If YouTube publishes no Chinese track, it machine-translates the
+  English display units (AssemblyAI LLM gateway first, Argos without a key),
+  then renders the ASS with `local_bilingual_ass.py`. Each subtitle-format
+  requests use yt-dlp's `--sleep-subtitles 56` by default; English is not delayed.
+  `--sleep-subtitles` overrides the Chinese request interval (`--wait` is a
+  compatibility alias), not a process-level workflow pause.
+- **Flow 2** runs only when `CAPTION_FORMATS.json` says the English track is
+  *absent*. A probe error is transient: the flow aborts instead of paying for
+  ASR. It extracts mono audio from the local media, transcribes word-timed
+  English with AssemblyAI (`ASSEMBLYAI`), translates to Chinese through the
+  same gateway, then renders the same ASS. Without a key it falls back to
+  faster-whisper + Argos.
+- `LOCAL_FLOW.json` records the flow, reason, engines and output formats.
+- `--force-asr` skips the probe; `--refresh` re-probes even a complete local
+  set; `--skip-youtube` (alias `--offline`) uses only the files already there.
+- When a source banner overlaps the subtitle area, set a persistent box
+  explicitly, for example `--box-style solid-color --box-color "#000000"
+  --box-opacity 1`; the local default remains `none` for clean sources.
+- For manual per-format downloads on Windows, use PowerShell and keep each
+  format separate so the source file and wait are auditable:
+
+```powershell
+$formats = @("vtt", "srt", "ttml", "srv3", "srv2", "srv1", "json3")
+$url = "https://www.youtube.com/watch?v=<id>"
+foreach ($fmt in $formats) {
+    Write-Host "Downloading $fmt"
+    yt-dlp --write-auto-subs --sub-langs "zh-Hans" --sub-format $fmt `
+        --skip-download --sleep-subtitles 56 -o "%(title)s.%(ext)s" $url
+}
+```
+
 ## Local caption folder
 
 A manually downloaded video with the fourteen caption files (seven per
@@ -159,6 +207,8 @@ pipeline keeps its two-line overflow guard.
   formats, fuse cues, write ASS/SRT/VTT, burn with ffmpeg.
 - `scripts/local_bilingual_ass.py`: local ASS-only build from a hand-made
   caption folder; `--strict` fails on ergonomics errors.
+- `scripts/local_subtitle_flow.py`: two-flow local entry point (YouTube seven
+  formats, AssemblyAI word-timed ASR fallback); writes `LOCAL_FLOW.json`.
 - `scripts/subtitle_timing.py`: seven-format fusion, nanosecond sidecar,
   `build_precise_ass`.
 - `scripts/subtitle_layout.py`, `scripts/subtitle_timeline.py`,

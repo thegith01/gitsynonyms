@@ -92,13 +92,101 @@ def test_ass_uses_chinese_above_english_with_chinese_1_2x_size():
     assert "Dialogue: 0,0:00:00.00,0:00:02.00,CaptionFacet" in result
     assert (
         "Dialogue: 0,0:00:00.00,0:00:02.00,CaptionBox,,0,0,0,,"
-        r"{\an7\pos(96,883)\p1}m 0 0 l 1728 0 1728 125 0 125 0 0{\p0}"
+        r"{\an7\pos(66,883)\p1}m 0 0 l 1786 0 1786 139 0 139 0 0{\p0}"
     ) in result
     assert (
         r"{\an2\pos(960,1000)}{\fs57.6}你好\N{\fs10}\h\N"
         r"{\rEnglish\fs48}{\kt0\k100}Hello"
     ) in result
     assert "Style: English,Arial,48,&H00FFD700,&H00FFFFFF," in result
+
+
+def test_overwide_bilingual_events_split_without_changing_font_size_or_text():
+    english_text = (
+        "This is a deliberately long caption that must be split into several "
+        "readable timed segments without losing any of the original spoken words."
+    )
+    chinese_text = "这是一段需要按照时间拆分的较长中文翻译字幕并且不能漏掉或重复任何文字。"
+    english_words = english_text.split()
+    timeline = youtube_srt.subtitle_timeline
+    english_tokens = [
+        timeline.Token(
+            word,
+            index * 0.6,
+            (index + 1) * 0.6,
+            "en",
+            group=0,
+        )
+        for index, word in enumerate(english_words)
+    ]
+    chinese_tokens = [
+        timeline.Token(
+            char,
+            index * 0.2,
+            (index + 1) * 0.2,
+            "zh",
+            group=0,
+        )
+        for index, char in enumerate(chinese_text)
+    ]
+    source = [(english_tokens, chinese_tokens)]
+    width = 1680
+
+    events = youtube_srt._fixed_size_bilingual_events(
+        source,
+        english_font_size=48,
+        chinese_font_size=57.6,
+        available_width=width,
+    )
+
+    assert len(events) > 1
+    assert " ".join(
+        token.text for english, _ in events for token in english
+    ) == english_text
+    assert "".join(
+        token.text for _, chinese in events for token in chinese
+    ) == chinese_text
+    assert all(english and chinese for english, chinese in events)
+    assert all(
+        youtube_srt._event_text_width(english, "en") * 48 <= width
+        and youtube_srt._event_text_width(chinese, "zh") * 57.6 <= width
+        for english, chinese in events
+    )
+
+    cue = f"1\n00:00:00,000 --> 00:00:20,000\n{english_text}\n\n"
+    translation = f"1\n00:00:00,000 --> 00:00:20,000\n{chinese_text}\n\n"
+    ass = youtube_srt.build_ass(
+        youtube_srt.parse_srt(translation),
+        youtube_srt.parse_srt(cue),
+    )
+    assert len(
+        [
+            line
+            for line in ass.splitlines()
+            if line.startswith("Dialogue: 1,")
+        ]
+    ) > 1
+    assert set(re.findall(r"\\fs([0-9.]+)", ass)) == {"57.6", "48", "10"}
+
+
+def test_caption_box_can_cover_source_banner_without_changing_text_area():
+    chinese = youtube_srt.parse_srt("1\n00:00:01,000 --> 00:00:02,000\n你好\n\n")
+    english = youtube_srt.parse_srt("1\n00:00:01,000 --> 00:00:02,000\ncaption\n\n")
+
+    result = youtube_srt.build_ass(
+        chinese,
+        english,
+        box_style="solid-color",
+        box_opacity=1,
+        caption_area=youtube_srt.CAPTION_AREA,
+        box_area=youtube_srt.CAPTION_BOX_AREA,
+    )
+
+    assert (
+        "Dialogue: 0,0:00:00.00,0:00:02.00,CaptionBox,,0,0,0,,"
+        r"{\an7\pos(66,883)\p1}m 0 0 l 1786 0 1786 139 0 139 0 0{\p0}"
+    ) in result
+    assert r"{\an2\pos(960,1000)}" in result
 
 
 def test_ass_highlights_english_words_in_sequence():
@@ -205,6 +293,7 @@ def test_cinema_preset_places_english_above_chinese_and_supports_custom_box():
         first_color="#FFF0D0",
         second_color="#FFF0D0",
         caption_area=(100, 800, 1800, 1000),
+        box_area=(100, 800, 1800, 1000),
         caption_order="english-first",
         video_duration=8,
     )
@@ -379,18 +468,25 @@ def test_ass_word_rate_counts_name_initials_as_one_word():
     assert len(youtube_srt._rolling_word_spans(text)) == 10
 
 
-def test_long_ass_lines_shrink_to_fit_caption_box():
+def test_long_ass_lines_split_instead_of_shrinking():
     english_text = "A long English caption " * 100
-    chinese = youtube_srt.parse_srt("1\n00:00:01,000 --> 00:00:02,000\n你好\n\n")
+    chinese_text = "很长的中文字幕" * 60
+    chinese = youtube_srt.parse_srt(
+        f"1\n00:00:00,000 --> 00:00:20,000\n{chinese_text}\n\n"
+    )
     english = youtube_srt.parse_srt(
-        f"1\n00:00:01,000 --> 00:00:02,000\n{english_text}\n\n"
+        f"1\n00:00:00,000 --> 00:00:20,000\n{english_text}\n\n"
     )
 
     result = youtube_srt.build_ass(chinese, english)
 
-    english_style = result.split(r"\rEnglish", 1)[1].split("}", 1)[0]
-    assert english_style.startswith(r"\fs")
-    assert english_style != r"\fs48"
+    dialogues = [
+        line for line in result.splitlines() if line.startswith("Dialogue: 1,")
+    ]
+    assert len(dialogues) > 1
+    # Fixed configured sizes: overwide events split at timed token boundaries
+    # instead of shrinking the font for one event.
+    assert set(re.findall(r"\\fs([0-9.]+)", result)) == {"57.6", "48", "10"}
 
 
 def test_ass_converts_caption_markup_and_escapes_literal_override_braces():

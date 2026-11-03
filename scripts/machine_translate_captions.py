@@ -266,7 +266,7 @@ def score_candidate(
     }
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Machine-translate a caption track")
     parser.add_argument("--caption-dir", required=True, help="Folder with the source track")
     parser.add_argument("--video-id", required=True)
@@ -278,7 +278,7 @@ def main() -> int:
     parser.add_argument("--email", default="", help="MyMemory contact email (raises quota)")
     parser.add_argument("--limit", type=int, default=0, help="Translate only the first N cues")
     parser.add_argument("--video-duration", type=float, default=0.0)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     caption_dir = Path(args.caption_dir)
     output_dir = Path(args.output_dir) if args.output_dir else caption_dir
@@ -301,11 +301,13 @@ def main() -> int:
     log(f"deduplicated rolling captions into {len(texts)} display units")
     log(f"unique translation units: {len(unique)}")
 
+    engine_used = args.engine
     if args.engine == "assemblyai":
         try:
             rendered_unique = translate_assemblyai(unique, "en", "zh")
         except Exception as error:  # noqa: BLE001 - keep the local engine as a floor
             log(f"AssemblyAI translation failed ({error}); falling back to Argos")
+            engine_used = "argos"
             rendered_unique = translate_argos(unique, "en", "zh")
     elif args.engine == "argos":
         rendered_unique = translate_argos(unique, "en", "zh")
@@ -346,7 +348,8 @@ def main() -> int:
         "video_id": args.video_id,
         "generated_at": subtitle_timing.utc_now(),
         "target_language": args.target_language,
-        "engine": args.engine,
+        "engine": engine_used,
+        "requested_engine": args.engine,
         "source_track": {
             "language": args.source_language,
             "format": track["primary_format"],
@@ -356,15 +359,15 @@ def main() -> int:
         },
         "candidates": [
             {
-                "id": f"{args.target_language}-{args.engine}",
+                "id": f"{args.target_language}-{engine_used}",
                 "kind": "machine-translated",
-                "engine": args.engine,
+                "engine": engine_used,
                 "formats": ["srt", "vtt", "ttml", "json3"],
                 "notes": "srv1/srv2/srv3 are YouTube-internal serializations and are not synthesized",
                 "score": score,
             }
         ],
-        "selected": f"{args.target_language}-{args.engine}",
+        "selected": f"{args.target_language}-{engine_used}",
     }
     report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     log(f"wrote {len(out_cues)} cues; score {score['total']}/100")
