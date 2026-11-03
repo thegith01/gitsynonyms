@@ -8,20 +8,20 @@
       * 每一步都有中文注释、注意事项和一条可复制的命令；
       * -List 只打印步骤和命令，方便逐行复制到 PowerShell；
       * -Step 3 只执行第 3 步；
-      * -All -Yes 按顺序执行“主路径”步骤（跳过 7/8 两个备选分支）。
+      * -All -Yes 按顺序执行“主路径”步骤（跳过 4/7/8 三个手工/备选分支）。
 
     主路径：
       0 环境检查
       1 详查官方字幕（yt-dlp -v --list-subs）
       2 查看可用清晰度（yt-dlp -F）
       3 下载视频（1080p / mp4 / 50 并发分片）
-      4 用 yt-dlp 下载官方字幕七种格式（英文 + 简体中文）
-      5 用仓库 wrapper 规范字幕文件名（en-orig / zh-Hans）
+      5 用仓库 wrapper 下载七格式并规范文件名（en-orig / zh-Hans）
       6 官方英文 + 官方中文 -> 本地双语 ASS
       9 用 ffmpeg 把 ASS 刻录到视频
      10 用 ffprobe 验收输出
 
-    备选分支（默认不参与 -All）：
+    手工/备选分支（默认不参与 -All）：
+      4 用原始 yt-dlp 下载七格式，手工检查文件名
       7 官方英文 + 机器翻译中文
       8 ASR 英文 + 机器翻译中文
 
@@ -91,7 +91,7 @@
     只执行指定步骤，可多个：-Step 1,2,4。
 
 .PARAMETER All
-    按顺序执行主路径步骤（0-6、9、10），需要 -Yes 确认。
+    按顺序执行主路径步骤（0-3、5、6、9、10），需要 -Yes 确认。
 
 .PARAMETER List
     只打印步骤、注释和命令，不执行。
@@ -582,13 +582,14 @@ $script:Steps = @(
 
     [pscustomobject]@{
         Id = 4
-        Title = "下载官方字幕七种格式"
-        Batch = $true
+        Title = "下载官方字幕七种格式（手工检查）"
+        Batch = $false
         Notes = @(
             "七种格式：json3 / srv3 / srv2 / srv1 / ttml / vtt / srt。",
             "每种格式单独跑一次 yt-dlp，避免 --sub-format 只保留一个文件。",
             "--sleep-subtitles $SleepSubtitles 秒用于降低 429；英文和中文都会等待。",
             "输出文件名是 <id>.<语言>.<格式>，例如 <id>.en-orig.vtt。",
+            "这一步用于手工检查；-All 主路径会跳过它，由第 5 步直接下载并规范命名。",
             "某个格式不存在时 yt-dlp 可能返回 0 或非 0；加 -KeepGoing 可继续后面的格式。"
         )
         Preview = {
@@ -627,7 +628,7 @@ $script:Steps = @(
         Batch = $true
         Notes = @(
             "第 4 步是原始 yt-dlp 下载，文件名可能是 en / zh-Hans；本地流程只认 en-orig / zh-Hans。",
-            "fetch_youtube_captions.py 会重命名并写 CAPTION_FORMATS.json。",
+            "fetch_youtube_captions.py 会下载七格式、重命名并写 CAPTION_FORMATS.json；主路径用它代替第 4 步。",
             "这个 wrapper 目前不转发 -Proxy / -Browser / -CookiesFile；需要时先设置 HTTPS_PROXY 或用第 6 步的在线 preset。",
             "video id 从链接自动解析；解析失败时用 -VideoId 指定。"
         )
@@ -773,7 +774,7 @@ function Show-StepList {
         Write-Host ("# " + ("=" * 74)) -ForegroundColor DarkGray
         Write-Host ("# 步骤 {0}：{1}" -f $item.Id, $item.Title) -ForegroundColor Yellow
         if (-not $item.Batch) {
-            Write-Host "# （备选分支，不参与 -All）" -ForegroundColor DarkYellow
+            Write-Host "# （手工/备选分支，不参与 -All）" -ForegroundColor DarkYellow
         }
         foreach ($note in $item.Notes) {
             Write-Host ("# " + $note) -ForegroundColor DarkGray

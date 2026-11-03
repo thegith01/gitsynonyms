@@ -76,14 +76,16 @@ parameter. `yt-dlp` itself still receives the URL last, as its CLI expects.
 .\scripts\manual_local_flow.ps1 "https://youtu.be/<video-id>" -Step 3,4,5 `
     -OutDir "D:\MyDownload\a"
 
-# Main-path batch: 0-6, 9, 10; steps 7/8 are alternative branches.
+# Main-path batch: 0-3, 5, 6, 9, 10; steps 4/7/8 are manual alternatives.
 .\scripts\manual_local_flow.ps1 "https://youtu.be/<video-id>" -All -Yes
 ```
 
 - Step 3 is the requested
   `yt-dlp --concurrent-fragments 50 --merge-output-format mp4` download.
-- Step 4 downloads all seven official subtitle serializations; step 5 renames
-  them to `en-orig` / `zh-Hans` and writes `CAPTION_FORMATS.json`.
+- Step 4 downloads all seven official subtitle serializations with raw
+  `yt-dlp` for manual inspection; step 5 is the main-path wrapper that
+  downloads them again under canonical `en-orig` / `zh-Hans` names and writes
+  `CAPTION_FORMATS.json`. `-All` skips step 4 to avoid duplicate requests.
 - Step 6 renders the offline ASS; steps 7/8 are the machine-translation and ASR
   alternatives.
 - `-DryRun` prints and logs without executing; `-KeepGoing` continues after a
