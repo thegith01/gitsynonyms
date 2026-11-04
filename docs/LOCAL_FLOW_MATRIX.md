@@ -97,9 +97,10 @@ parameter. `yt-dlp` itself still receives the URL last, as its CLI expects.
 ## Raw command notebook (`manual_youtube_commands.ps1`)
 
 If you want to edit the commands themselves instead of passing parameters, use
-`scripts\manual_youtube_commands.ps1`. It is a flat command list: each step is
+`scripts\manual_youtube_commands.ps1`. It is a command notebook: each step is
 an `if ($RunIds -contains N) { ... }` block with the literal `yt-dlp` / `ffmpeg`
-command inside. There is no argument builder and no hidden wrapper.
+command inside. The AssemblyAI step calls the existing local subtitle flow so
+the API, word-timed JSON3, translation, and reports share the tested pipeline.
 
 The step selector is a real parameter, so it can be changed on the command line
 instead of editing the file:
@@ -120,8 +121,36 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\manual_youtube_comma
 $Run = @(1)                   # only step 1
 $Run = @(1,3,5)               # steps 1, 3, 5
 $Run = @(0,1,2,3,5,6,9,10)    # main path
-$Run = @(0..10)               # all steps (4/7/8 duplicate or overwrite)
+$Run = @(0..10)               # original steps (4/7/8 duplicate or overwrite)
 ```
+
+The optional audio/API steps are intentionally excluded from the original full
+range because they download media and incur paid API usage:
+
+```powershell
+# Step 11: module 1 downloads and extracts audio into OutDir.
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\manual_youtube_commands.ps1 `
+    -Url "https://www.youtube.com/watch?v=<video-id>" `
+    -OutDir "D:\MyDownload\a" -Run 11
+
+# Step 12: module 2 uses AssemblyAI only when step 5's fresh report confirms
+# YouTube provides no subtitle track in any language.
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\manual_youtube_commands.ps1 `
+    -Url "https://www.youtube.com/watch?v=<video-id>" `
+    -OutDir "D:\MyDownload\a" -Run 12
+```
+
+Step 11 is source acquisition (module 1), not module 2 processing. Run step 5
+first; step 12 requires its matching, less-than-24-hour-old
+`CAPTION_FORMATS.json` report to show that YouTube provides no subtitle track
+in any language. A present track, missing/stale report, or probe error stops
+before upload. When ASR is allowed, step 12 prefers an audio file in `OutDir`
+whose filename contains the video ID; if none exists, it uses the matching
+video and extracts audio before upload. Outputs are saved under
+`OutDir\assemblyai`: English SRT/VTT, transcript text/full JSON, paragraphs,
+sentences and word-timed JSON, plus translated Chinese text. The AssemblyAI key
+is read from the process environment or the gitignored `input\api_keys` file,
+never from a command-line argument.
 
 The commands are literal and can be changed in place:
 
@@ -130,6 +159,9 @@ yt-dlp -v --list-subs "$Url"
 
 yt-dlp --concurrent-fragments 50 --merge-output-format mp4 `
     -f "bv*[height<=1080]+ba/b[height<=1080]" `
+    -o "$OutDir\%(title)s [%(id)s].%(ext)s" "$Url"
+
+yt-dlp -x --audio-quality 0 `
     -o "$OutDir\%(title)s [%(id)s].%(ext)s" "$Url"
 ```
 

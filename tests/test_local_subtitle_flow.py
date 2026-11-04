@@ -64,6 +64,11 @@ def fake_ass(folder: Path, video_id: str, args) -> int:
 
 
 def clear_keys(monkeypatch) -> None:
+    monkeypatch.setattr(
+        flow,
+        "API_KEYS_FILE",
+        Path(__file__).with_name(".no-api-keys-for-tests"),
+    )
     for name in ("ASSEMBLYAI", "ASSEMBLYAI_API_KEY"):
         monkeypatch.delenv(name, raising=False)
 

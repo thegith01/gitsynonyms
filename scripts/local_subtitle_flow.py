@@ -123,11 +123,40 @@ def log(message: str) -> None:
     print(message, flush=True)
 
 
+API_KEYS_FILE = Path(__file__).resolve().parents[1] / "input" / "api_keys"
+
+
+def load_local_api_keys(path: Path | None = None) -> None:
+    """Load ``name:value`` lines from the gitignored local key file.
+
+    Environment variables always win, so GitHub Actions secrets and explicit
+    shell exports are not shadowed by a stale developer-machine key file.
+    """
+    path = path or API_KEYS_FILE
+    if not path.is_file():
+        return
+    for number, raw in enumerate(
+        path.read_text(encoding="utf-8-sig").splitlines(), start=1
+    ):
+        line = raw.strip()
+        if not line or line.startswith("#") or ":" not in line:
+            continue
+        name, value = (part.strip() for part in line.split(":", 1))
+        if name and value:
+            os.environ.setdefault(name, value)
+
+
+def assemblyai_key(path: Path | None = None) -> str:
+    load_local_api_keys(path)
+    for name in ("ASSEMBLYAI", "ASSEMBLYAI_API_KEY"):
+        value = os.environ.get(name, "").strip()
+        if value:
+            return value
+    return ""
+
+
 def has_key() -> bool:
-    return bool(
-        os.environ.get("ASSEMBLYAI", "").strip()
-        or os.environ.get("ASSEMBLYAI_API_KEY", "").strip()
-    )
+    return bool(assemblyai_key())
 
 
 def has_track(folder: Path, video_id: str, language: str) -> bool:
@@ -700,6 +729,7 @@ def write_report(path: Path, payload: dict) -> None:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    load_local_api_keys()
     folder = args.directory.expanduser().resolve()
     folder.mkdir(parents=True, exist_ok=True)
 

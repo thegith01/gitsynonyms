@@ -44,3 +44,4 @@ output/unknown_*/
 # conditional-request cache and observation clock are local state.
 output/materials/.http-cache.json
 output/materials/.seen.json
+input/api_keys

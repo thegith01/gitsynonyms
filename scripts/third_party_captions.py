@@ -46,6 +46,21 @@ if str(SCRIPTS_DIR) not in sys.path:
 import subtitle_ergonomics  # noqa: E402
 import subtitle_timing  # noqa: E402
 
+def _local_api_keys(path: Path | None = None) -> dict[str, str]:
+    """Read optional dev keys from the gitignored ``input/api_keys`` file."""
+    path = path or ROOT / "input" / "api_keys"
+    if not path.is_file():
+        return {}
+    values: dict[str, str] = {}
+    for raw in path.read_text(encoding="utf-8-sig").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or ":" not in line:
+            continue
+        name, value = (part.strip() for part in line.split(":", 1))
+        if name and value:
+            values[name] = value
+    return values
+
 PROVIDERS = {
     "assemblyai": {
         "name": "AssemblyAI",
@@ -1026,7 +1041,9 @@ def main(argv: list[str] | None = None) -> int:
     runnable = []
     for slug in selected:
         meta = PROVIDERS[slug]
-        key = os.environ.get(meta["env"], "").strip()
+        key = os.environ.get(meta["env"], "").strip() or _local_api_keys().get(
+            meta["env"], ""
+        )
         if meta["adapter"] not in ADAPTERS:
             report["providers"][slug] = {
                 "name": meta["name"],

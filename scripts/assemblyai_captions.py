@@ -31,13 +31,28 @@ def log(message: str) -> None:
     print(message, flush=True)
 
 
+def load_local_api_keys(path: Path) -> None:
+    """Load ``name:value`` lines without shadowing environment variables."""
+    if not path.is_file():
+        return
+    for raw in path.read_text(encoding="utf-8-sig").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or ":" not in line:
+            continue
+        name, value = (part.strip() for part in line.split(":", 1))
+        if name and value:
+            os.environ.setdefault(name, value)
+
+
 def api_key() -> str:
+    load_local_api_keys(
+        Path(__file__).resolve().parents[1] / "input" / "api_keys"
+    )
     for name in ("ASSEMBLYAI", "ASSEMBLYAI_API_KEY"):
         value = os.environ.get(name, "").strip()
         if value:
             return value
     raise SystemExit("ASSEMBLYAI is not set; cannot use the hosted ASR path")
-
 
 def request_json(url: str, key: str, payload: dict | None = None, method: str = "GET") -> dict:
     body = json.dumps(payload).encode("utf-8") if payload is not None else None

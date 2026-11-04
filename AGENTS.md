@@ -188,9 +188,12 @@ python scripts/local_subtitle_flow.py --url "https://youtu.be/<id>" --directory 
   `<OutDir>\MANUAL_FLOW_COMMANDS.jsonl`.
 - `scripts/manual_youtube_commands.ps1` is the raw command notebook: edit
   `$Url`, `$OutDir` and `$Run` at the top, then change the literal
-  `yt-dlp`/`ffmpeg` lines in place. `$Run` is also a command-line parameter:
+  `yt-dlp`/`ffmpeg` lines in place. Step 11 downloads/extracts audio for module 1;
+  step 12 requires step 5's fresh report to confirm YouTube has no caption track
+  before using AssemblyAI in module 2. `$Run` is also a command-line parameter:
   `-Run 0` runs one step, `-Run 1,3,5` runs several, and
-  `-Run 0,1,2,3,5,6,9,10` runs the main path; `$Run = @(0)` is equivalent to
+  `-Run 0,1,2,3,5,6,9,10` runs the main path; run 11 and 12 separately to
+  avoid unintended downloads or paid API usage. `$Run = @(0)` is equivalent to
   `-Run 0`.
 - `--force-asr` skips the probe; `--refresh` re-probes even a complete local
   set; `--skip-youtube` (alias `--offline`) uses only the files already there.
