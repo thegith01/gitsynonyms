@@ -81,10 +81,27 @@ def split_bilingual_tracks(source: Path) -> tuple[list[dict], list[dict]]:
     return chinese, english
 
 
-def convert_srt_to_ass(source: Path, destination: Path) -> Path:
+def convert_srt_to_ass(
+    source: Path,
+    destination: Path,
+    *,
+    box_style: str | None = None,
+    box_color: str | None = None,
+    box_opacity: float | None = None,
+    caption_order: str | None = None,
+) -> Path:
     chinese, english = split_bilingual_tracks(source)
+    style = dict(SCHEME1_ASS_STYLE)
+    if box_style is not None:
+        style["box_style"] = box_style
+    if box_color is not None:
+        style["box_color"] = box_color
+    if box_opacity is not None:
+        style["box_opacity"] = box_opacity
+    if caption_order is not None:
+        style["caption_order"] = caption_order
     content = captions.build_ass(
-        chinese, english, cue_aligned=True, **SCHEME1_ASS_STYLE
+        chinese, english, cue_aligned=True, **style
     )
     dialogues = [
         line for line in content.splitlines() if line.startswith("Dialogue: 1,")

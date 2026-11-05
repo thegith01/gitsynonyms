@@ -235,6 +235,8 @@ def test_run_ass_forwards_box_settings(tmp_path, monkeypatch):
     monkeypatch.setattr(flow.local_bilingual_ass, "main", fake_main)
     args = flow.build_parser().parse_args(
         [
+            "--ass-mode",
+            "fused",
             "--box-style",
             "solid-color",
             "--box-color",
@@ -339,7 +341,14 @@ def test_flow1_downloads_both_languages_and_skips_translation(tmp_path, monkeypa
     monkeypatch.setattr(flow, "run_ass", fake_build)
 
     assert flow.main(
-        ["--url", f"https://youtu.be/{VIDEO_ID}", "--directory", str(folder)]
+        [
+            "--url",
+            f"https://youtu.be/{VIDEO_ID}",
+            "--directory",
+            str(folder),
+            "--ass-mode",
+            "fused",
+        ]
     ) == 0
 
     report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
@@ -379,7 +388,16 @@ def test_flow1_translates_chinese_when_youtube_has_only_english(tmp_path, monkey
     monkeypatch.setattr(flow, "run_translation", fake_translate)
     monkeypatch.setattr(flow, "run_ass", fake_build)
 
-    assert flow.main(["--directory", str(folder), "--video-id", VIDEO_ID]) == 0
+    assert flow.main(
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--ass-mode",
+            "fused",
+        ]
+    ) == 0
 
     report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
     assert report["flow"] == "youtube"
@@ -412,7 +430,16 @@ def test_translation_fallback_is_reported_as_the_engine_that_ran(tmp_path, monke
     monkeypatch.setattr(flow, "run_translation", fake_translate)
     monkeypatch.setattr(flow, "run_ass", fake_ass)
 
-    assert flow.main(["--directory", str(folder), "--video-id", VIDEO_ID]) == 0
+    assert flow.main(
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--ass-mode",
+            "fused",
+        ]
+    ) == 0
 
     report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
     assert report["translation"] == {
@@ -441,7 +468,16 @@ def test_flow1_uses_assemblyai_translation_when_a_key_is_set(tmp_path, monkeypat
     monkeypatch.setattr(flow, "run_translation", fake_translate)
     monkeypatch.setattr(flow, "run_ass", fake_ass)
 
-    assert flow.main(["--directory", str(folder), "--video-id", VIDEO_ID]) == 0
+    assert flow.main(
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--ass-mode",
+            "fused",
+        ]
+    ) == 0
     assert seen == ["assemblyai"]
 
 
@@ -516,7 +552,14 @@ def test_flow2_transcribes_then_translates_then_builds_ass(tmp_path, monkeypatch
     monkeypatch.setattr(flow, "run_ass", fake_build)
 
     assert flow.main(
-        ["--url", f"https://www.youtube.com/watch?v={VIDEO_ID}", "--directory", str(folder)]
+        [
+            "--url",
+            f"https://www.youtube.com/watch?v={VIDEO_ID}",
+            "--directory",
+            str(folder),
+            "--ass-mode",
+            "fused",
+        ]
     ) == 0
 
     report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
@@ -601,7 +644,15 @@ def test_force_asr_skips_the_probe_even_when_youtube_has_captions(tmp_path, monk
     monkeypatch.setattr(flow, "run_ass", fake_build)
 
     assert flow.main(
-        ["--directory", str(folder), "--video-id", VIDEO_ID, "--force-asr"]
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--force-asr",
+            "--ass-mode",
+            "fused",
+        ]
     ) == 0
 
     report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
@@ -772,6 +823,8 @@ def test_preset_local_asr_mt_forces_asr_and_translation(tmp_path, monkeypatch):
             VIDEO_ID,
             "--preset",
             "local-asr-mt",
+            "--ass-mode",
+            "fused",
         ]
     ) == 0
 
@@ -781,6 +834,8 @@ def test_preset_local_asr_mt_forces_asr_and_translation(tmp_path, monkeypatch):
         "preset": "local-asr-mt",
         "english_source": "asr",
         "chinese_source": "mt",
+        "ass_mode": "fused",
+        "translation_model": None,
     }
     assert calls == [("asr", "whisper"), ("translate", "argos"), ("ass", "")]
 
@@ -841,6 +896,8 @@ def test_forced_mt_replaces_an_existing_chinese_track(tmp_path, monkeypatch):
             VIDEO_ID,
             "--preset",
             "local-youtube-mt",
+            "--ass-mode",
+            "fused",
         ]
     ) == 0
 

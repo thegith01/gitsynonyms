@@ -18,6 +18,7 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -30,6 +31,18 @@ import subtitle_timing  # noqa: E402
 import subtitle_timeline  # noqa: E402
 
 MYMEMORY_URL = "https://api.mymemory.translated.net/get?q={text}&langpair={pair}"
+ASSEMBLYAI_ENDPOINT = "https://llm-gateway.assemblyai.com/v1/chat/completions"
+# The gateway grants model access per account.  Start with the historical
+# default and fall back to a small, cheap model that every account can reach,
+# so a revoked model does not turn a local caption run into a hard failure.
+ASSEMBLYAI_DEFAULT_MODEL = "gemini-2.5-flash-lite"
+# gemma preserves one output per input far more reliably than the tiny Qwen
+# model, which frequently merges adjacent subtitle fragments.
+ASSEMBLYAI_FALLBACK_MODELS = ("gemma-4-31b", "qwen3.5-4b-32k-fast")
+
+
+class ModelUnavailable(RuntimeError):
+    """The gateway rejected the selected model for this account."""
 
 
 def log(message: str) -> None:
@@ -152,7 +165,145 @@ def translate_mymemory(texts: list[str], source: str, target: str, email: str) -
     return translated
 
 
-def translate_assemblyai(texts: list[str], source: str, target: str) -> list[str]:
+def _assemblyai_completion(payload: dict, key: str) -> dict:
+    request = urllib.request.Request(
+        ASSEMBLYAI_ENDPOINT,
+        data=json.dumps(payload).encode("utf-8"),
+        method="POST",
+        headers={"authorization": key, "content-type": "application/json"},
+    )
+    attempts = 3
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=180) as response:
+                return json.loads(response.read().decode("utf-8", errors="replace"))
+        except urllib.error.HTTPError as error:
+            detail = error.read().decode("utf-8", errors="replace")
+            if error.code == 400 and "does not have access" in detail:
+                raise ModelUnavailable(detail) from error
+            retryable = error.code in (429, 500, 502, 503, 504)
+            if retryable and attempt + 1 < attempts:
+                time.sleep(2 * (attempt + 1))
+                continue
+            raise RuntimeError(
+                f"AssemblyAI LLM gateway returned HTTP {error.code}: {detail[:400]}"
+            ) from error
+        except (urllib.error.URLError, TimeoutError, OSError) as error:
+            if attempt + 1 < attempts:
+                time.sleep(2 * (attempt + 1))
+                continue
+            raise RuntimeError(
+                f"AssemblyAI LLM gateway request failed after {attempts} attempts: {error}"
+            ) from error
+    raise RuntimeError("AssemblyAI LLM gateway request failed")
+
+
+def _assemblyai_lines(content: str) -> list[str] | None:
+    """Parse the gateway's JSON ``lines`` array, or None when malformed."""
+    content = (
+        content.strip()
+        .removeprefix("```json")
+        .removeprefix("```")
+        .removesuffix("```")
+        .strip()
+    )
+    try:
+        payload = json.loads(content)
+    except json.JSONDecodeError:
+        return None
+    if not isinstance(payload, dict):
+        return None
+    lines = payload.get("lines")
+    if not isinstance(lines, list):
+        return None
+    return [str(line).strip() for line in lines]
+
+
+def _translate_assemblyai_batch(
+    batch: list[str],
+    key: str,
+    models: list[str],
+    instruction: str,
+    *,
+    target: str,
+) -> list[str]:
+    """Translate one batch, bisecting when the model merges or drops lines.
+
+    Small local models sometimes return fewer lines than inputs even when the
+    prompt forbids it.  Halving the batch is cheap and preserves the one-line
+    per-cue contract; a single line is joined if the model still splits it.
+    """
+    while True:
+        payload = {
+            "model": models[0],
+            "temperature": 0,
+            "messages": [
+                {"role": "system", "content": instruction},
+                {
+                    "role": "user",
+                    "content": json.dumps({"lines": batch}, ensure_ascii=False),
+                },
+            ],
+        }
+        try:
+            body = _assemblyai_completion(payload, key)
+            break
+        except ModelUnavailable as error:
+            log(f"  model {models[0]} is unavailable; trying the next one")
+            models.pop(0)
+            if not models:
+                raise RuntimeError(
+                    f"no accessible AssemblyAI LLM Gateway model: {error}"
+                ) from error
+
+    content = (body.get("choices") or [{}])[0].get("message", {}).get("content", "")
+    rendered = _assemblyai_lines(content)
+
+    if rendered is not None and len(rendered) == len(batch):
+        return rendered
+
+    if len(batch) == 1:
+        if rendered is None:
+            # A one-line request sometimes comes back as plain text.
+            plain = (
+                content.strip()
+                .removeprefix("```json")
+                .removeprefix("```")
+                .removesuffix("```")
+                .strip()
+            )
+            if plain and not plain.startswith("{"):
+                return [plain]
+            raise RuntimeError(
+                f"AssemblyAI returned unreadable JSON for one input: {content[:200]!r}"
+            )
+        joiner = " " if target.lower().startswith("en") else ""
+        joined = joiner.join(line for line in rendered if line).strip()
+        if joined:
+            return [joined]
+        raise RuntimeError("AssemblyAI returned an empty translation for one input")
+
+    half = len(batch) // 2
+    found = "invalid JSON" if rendered is None else f"{len(rendered)} lines"
+    log(
+        f"  batch of {len(batch)} returned {found}; "
+        f"retrying as {half}+{len(batch) - half}"
+    )
+    return _translate_assemblyai_batch(
+        batch[:half], key, models, instruction, target=target
+    ) + _translate_assemblyai_batch(
+        batch[half:], key, models, instruction, target=target
+    )
+
+
+def translate_assemblyai(
+    texts: list[str],
+    source: str,
+    target: str,
+    *,
+    model: str | None = None,
+    max_chars: int | None = None,
+) -> list[str]:
     """Translate display units through the AssemblyAI LLM gateway in JSON batches."""
     key = ""
     for name in ("ASSEMBLYAI", "ASSEMBLYAI_API_KEY"):
@@ -160,56 +311,35 @@ def translate_assemblyai(texts: list[str], source: str, target: str) -> list[str
     if not key:
         raise RuntimeError("ASSEMBLYAI is not set")
 
-    endpoint = "https://llm-gateway.assemblyai.com/v1/chat/completions"
+    models = [model] if model else [
+        ASSEMBLYAI_DEFAULT_MODEL,
+        *ASSEMBLYAI_FALLBACK_MODELS,
+    ]
+    length_hint = (
+        f" Keep every Chinese line within {max_chars} characters; shorten the "
+        "wording instead of splitting a unit into two lines."
+        if max_chars
+        else ""
+    )
+    instruction = (
+        "Translate each complete subtitle display unit using its full "
+        "sentence context. Reply with a JSON object "
+        '{"lines": ["...", ...]} that has exactly one Simplified Chinese '
+        "string per input unit, in the same order. There must be exactly as "
+        "many strings as inputs: never merge two inputs into one line, never "
+        "split one input into two lines, and never drop a line, even when the "
+        "input is a short fragment. Do not add commentary."
+        f"{length_hint}"
+    )
     translated: list[str] = []
-    batch_size = 40
+    batch_size = 20
     for start in range(0, len(texts), batch_size):
         batch = texts[start : start + batch_size]
-        payload = {
-            "model": "gemini-2.5-flash-lite",
-            "temperature": 0,
-            "messages": [
-                {
-                    "role": "system",
-                    "content": (
-                        "Translate each complete subtitle display unit using its full "
-                        "sentence context. Reply with a JSON object "
-                        '{"lines": ["...", ...]} that has exactly one Simplified Chinese '
-                        "string per input unit, in the same order. Keep each unit intact; "
-                        "do not merge, split or renumber units. Do not add commentary."
-                    ),
-                },
-                {
-                    "role": "user",
-                    "content": json.dumps({"lines": batch}, ensure_ascii=False),
-                },
-            ],
-        }
-        request = urllib.request.Request(
-            endpoint,
-            data=json.dumps(payload).encode("utf-8"),
-            method="POST",
-            headers={"authorization": key, "content-type": "application/json"},
-        )
-        with urllib.request.urlopen(request, timeout=180) as response:
-            body = json.loads(response.read().decode("utf-8", errors="replace"))
-        content = (body.get("choices") or [{}])[0].get("message", {}).get("content", "")
-        content = (
-            content.strip()
-            .removeprefix("```json")
-            .removeprefix("```")
-            .removesuffix("```")
-            .strip()
-        )
-        try:
-            rendered = json.loads(content).get("lines") or []
-        except json.JSONDecodeError as error:
-            raise RuntimeError(f"AssemblyAI returned non-JSON at batch {start}: {error}") from error
-        if len(rendered) != len(batch):
-            raise RuntimeError(
-                f"AssemblyAI returned {len(rendered)} lines for {len(batch)} inputs at {start}"
+        translated.extend(
+            _translate_assemblyai_batch(
+                batch, key, models, instruction, target=target
             )
-        translated.extend(str(line).strip() for line in rendered)
+        )
         log(f"  translated {min(start + batch_size, len(texts))}/{len(texts)}")
     return translated
 
@@ -273,6 +403,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--source-language", default="en-orig")
     parser.add_argument("--target-language", default="zh-Hans")
     parser.add_argument("--engine", choices=("argos", "mymemory", "assemblyai"), default="argos")
+    parser.add_argument(
+        "--model",
+        help=(
+            "AssemblyAI LLM Gateway model (default: "
+            f"{ASSEMBLYAI_DEFAULT_MODEL}, then {', '.join(ASSEMBLYAI_FALLBACK_MODELS)})."
+        ),
+    )
     parser.add_argument("--output-dir", help="Where the translated formats are written")
     parser.add_argument("--report", help="SUBTITLE_SOURCES.json path")
     parser.add_argument("--email", default="", help="MyMemory contact email (raises quota)")
@@ -304,7 +441,9 @@ def main(argv: list[str] | None = None) -> int:
     engine_used = args.engine
     if args.engine == "assemblyai":
         try:
-            rendered_unique = translate_assemblyai(unique, "en", "zh")
+            rendered_unique = translate_assemblyai(
+                unique, "en", "zh", model=args.model
+            )
         except Exception as error:  # noqa: BLE001 - keep the local engine as a floor
             log(f"AssemblyAI translation failed ({error}); falling back to Argos")
             engine_used = "argos"

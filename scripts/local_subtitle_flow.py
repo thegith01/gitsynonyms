@@ -50,6 +50,7 @@ import download_youtube_bilingual_srt as captions  # noqa: E402
 import fetch_youtube_captions  # noqa: E402
 import local_bilingual_ass  # noqa: E402
 import machine_translate_captions  # noqa: E402
+import scheme1_local_ass  # noqa: E402
 import subtitle_timing  # noqa: E402
 
 ENGLISH = "en-orig"
@@ -61,6 +62,9 @@ ASR_WORK_DIR = "work"
 YOUTUBE = "youtube"
 ASR = "asr"
 MT = "mt"
+
+ASS_SCHEME1 = "scheme1"
+ASS_FUSED = "fused"
 
 # Explicit paths the operator can request with --preset.  Each entry maps to
 # the English source, the Chinese source, and whether YouTube may be probed.
@@ -345,7 +349,47 @@ def run_asr(
     )
 
 
-def run_ass(folder: Path, video_id: str, args: argparse.Namespace) -> int:
+def run_scheme1_ass(
+    folder: Path,
+    video_id: str,
+    args: argparse.Namespace,
+    media: Path | None = None,
+) -> int:
+    """Render the simple cue-aligned Scheme 1 ASS."""
+    media = media or local_bilingual_ass.media_file(folder, video_id)
+    ass_path = (
+        args.ass_output or folder / scheme1_local_ass.DEFAULT_ASS_NAME
+    ).expanduser().resolve()
+    try:
+        scheme1_local_ass.build(
+            folder,
+            video_id,
+            media,
+            ass_path=ass_path,
+            engine=translation_engine(args.translation_engine),
+            model=args.translation_model,
+            force_mt=args.chinese_source == MT,
+            box_style=args.box_style,
+            box_color=args.box_color,
+            box_opacity=args.box_opacity,
+            caption_order=args.caption_order,
+            fps=args.fps,
+            strict=args.strict,
+        )
+    except (OSError, ValueError, RuntimeError) as error:
+        log(f"error: {error}")
+        return 1
+    return 0
+
+
+def run_ass(
+    folder: Path,
+    video_id: str,
+    args: argparse.Namespace,
+    media: Path | None = None,
+) -> int:
+    if args.ass_mode == ASS_SCHEME1:
+        return run_scheme1_ass(folder, video_id, args, media)
     ass_path = (
         args.ass_output or folder / local_bilingual_ass.DEFAULT_ASS_NAME
     ).expanduser().resolve()
@@ -421,6 +465,13 @@ def apply_preset(args: argparse.Namespace) -> None:
         )
     if args.english_source == ASR and args.refresh:
         log("warning: --refresh has no effect when --english-source is asr")
+    if args.ass_mode == ASS_SCHEME1 and args.max_lines != 1:
+        raise ValueError(
+            "--ass-mode scheme1 keeps one line per language; "
+            "use --ass-mode fused for --max-lines 2"
+        )
+    if args.ass_mode == ASS_SCHEME1 and args.timing_report:
+        log("warning: --timing-report is only used by --ass-mode fused")
 
 
 def choose_flow(
@@ -532,31 +583,42 @@ def execute_flow(
         )
 
     chinese_present = has_track(folder, video_id, CHINESE)
-    needs_translation = args.chinese_source == MT or not chinese_present
-    if needs_translation:
-        if chinese_present:
-            log(
-                "chinese-source=mt: replacing the existing Chinese track "
-                "with machine translation"
-            )
-        engine = translation_engine(args.translation_engine)
-        log(f"translation engine: {engine}")
-        duration = local_bilingual_ass.probe_duration(media) or 0.0
-        stage("translation", run_translation, folder, video_id, engine, duration)
-        # The translator may fall back (AssemblyAI -> Argos); report what ran.
-        actual = str(translation_report(folder).get("engine") or engine)
+    if args.ass_mode == ASS_SCHEME1:
+        # Scheme 1 pairs Chinese per English cue.  A sentence-level translation
+        # would be re-segmented by the ASS stage, so translating here would pay
+        # twice; the Scheme 1 builder decides whether an aligned official track
+        # can be reused or whether per-cue translation is needed.
+        log("scheme1: pairing Chinese per English cue in the ASS stage")
         state["translation"] = {
-            "engine": actual,
-            "requested_engine": engine,
-            "ran": True,
+            "ran": False,
+            "deferred_to": "scheme1",
         }
-        if actual != engine:
-            log(f"translation fell back to {actual}")
-        if not has_track(folder, video_id, CHINESE):
-            raise RuntimeError("translation produced no Chinese caption track")
     else:
-        log("Chinese track present; skipping translation")
-        state["translation"] = {"ran": False}
+        needs_translation = args.chinese_source == MT or not chinese_present
+        if needs_translation:
+            if chinese_present:
+                log(
+                    "chinese-source=mt: replacing the existing Chinese track "
+                    "with machine translation"
+                )
+            engine = translation_engine(args.translation_engine)
+            log(f"translation engine: {engine}")
+            duration = local_bilingual_ass.probe_duration(media) or 0.0
+            stage("translation", run_translation, folder, video_id, engine, duration)
+            # The translator may fall back (AssemblyAI -> Argos); report what ran.
+            actual = str(translation_report(folder).get("engine") or engine)
+            state["translation"] = {
+                "engine": actual,
+                "requested_engine": engine,
+                "ran": True,
+            }
+            if actual != engine:
+                log(f"translation fell back to {actual}")
+            if not has_track(folder, video_id, CHINESE):
+                raise RuntimeError("translation produced no Chinese caption track")
+        else:
+            log("Chinese track present; skipping translation")
+            state["translation"] = {"ran": False}
 
     stage("ASS", run_ass, folder, video_id, args)
 
@@ -697,7 +759,23 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         choices=(1, 2),
         default=1,
-        help="Lines per language in the ASS (default: 1).",
+        help="Lines per language in the fused ASS (default: 1).",
+    )
+    parser.add_argument(
+        "--ass-mode",
+        choices=(ASS_SCHEME1, ASS_FUSED),
+        default=ASS_SCHEME1,
+        help=(
+            "ASS layout: scheme1 = one bilingual event per trimmed English cue "
+            "(default); fused = the seven-format sentence timeline."
+        ),
+    )
+    parser.add_argument(
+        "--translation-model",
+        help=(
+            "AssemblyAI LLM Gateway model for Scheme 1 per-cue translation "
+            "(default: the gateway's model list with an accessible fallback)."
+        ),
     )
     parser.add_argument(
         "--fps", type=float, default=24.0, help="Ergonomics frame rate (default: 24)."
@@ -705,7 +783,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--ass-output",
         type=Path,
-        help=f"ASS path (default: <folder>/{local_bilingual_ass.DEFAULT_ASS_NAME}).",
+        help=(
+            "ASS path (default: <folder>/"
+            f"{scheme1_local_ass.DEFAULT_ASS_NAME} for scheme1, "
+            f"{local_bilingual_ass.DEFAULT_ASS_NAME} for fused)."
+        ),
     )
     parser.add_argument(
         "--timing-report",
@@ -762,6 +844,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             "preset": args.preset,
             "english_source": args.english_source,
             "chinese_source": args.chinese_source,
+            "ass_mode": args.ass_mode,
+            "translation_model": args.translation_model,
         }
         execute_flow(flow, folder, video_id, media, args, state)
 
@@ -769,9 +853,37 @@ def main(argv: Sequence[str] | None = None) -> int:
             language: sorted(subtitle_timing.discover_tracks(folder, video_id, language))
             for language in (ENGLISH, CHINESE)
         }
-        ass_path = (
-            args.ass_output or folder / local_bilingual_ass.DEFAULT_ASS_NAME
-        ).expanduser().resolve()
+        default_ass = (
+            scheme1_local_ass.DEFAULT_ASS_NAME
+            if args.ass_mode == ASS_SCHEME1
+            else local_bilingual_ass.DEFAULT_ASS_NAME
+        )
+        ass_path = (args.ass_output or folder / default_ass).expanduser().resolve()
+        if args.ass_mode == ASS_SCHEME1:
+            scheme1_report = folder / scheme1_local_ass.DEFAULT_REPORT_NAME
+            if scheme1_report.is_file():
+                state["scheme1"] = json.loads(
+                    scheme1_report.read_text(encoding="utf-8")
+                )
+            outputs = {
+                "ass": ass_path.name,
+                "bilingual_srt": ass_path.with_suffix(".srt").name,
+                "ergonomics": scheme1_local_ass.DEFAULT_ERGONOMICS_NAME,
+                "translation_cache": scheme1_local_ass.DEFAULT_CACHE_NAME,
+            }
+        else:
+            outputs = {
+                "ass": ass_path.name,
+                "timing": (
+                    args.timing_report
+                    or folder / local_bilingual_ass.DEFAULT_TIMING_NAME
+                ).name,
+                "ergonomics": local_bilingual_ass.DEFAULT_ERGONOMICS_NAME,
+                "precision_vtt": [
+                    f"{ass_path.stem}.{language}.precision.vtt"
+                    for language in (ENGLISH, CHINESE)
+                ],
+            }
         state.update(
             {
                 "status": "ok",
@@ -779,18 +891,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "caption_report": (
                     CAPTION_REPORT if (folder / CAPTION_REPORT).is_file() else None
                 ),
-                "outputs": {
-                    "ass": ass_path.name,
-                    "timing": (
-                        args.timing_report
-                        or folder / local_bilingual_ass.DEFAULT_TIMING_NAME
-                    ).name,
-                    "ergonomics": local_bilingual_ass.DEFAULT_ERGONOMICS_NAME,
-                    "precision_vtt": [
-                        f"{ass_path.stem}.{language}.precision.vtt"
-                        for language in (ENGLISH, CHINESE)
-                    ],
-                },
+                "outputs": outputs,
             }
         )
         write_report(report_path, state)

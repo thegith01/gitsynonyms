@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import re
 import sys
 from pathlib import Path
 
@@ -26,7 +27,7 @@ def test_converts_scheme1_bilingual_srt_with_scheme1_style(tmp_path):
 
     content = destination.read_text(encoding="utf-8-sig")
     assert "Style: Chinese,Microsoft YaHei,57.6," in content
-    assert "Style: English,Segoe UI,48,&H00D1CB9B,&HECF1F2," in content
+    assert "Style: English,Segoe UI,48,&H00D1CB9B,&H00ECF1F2," in content
     assert "WrapStyle: 0" in content
     assert "CaptionBox" not in content
     dialogues = [
@@ -58,8 +59,9 @@ def test_attaches_standalone_closing_punctuation_to_complete_ass_cue(tmp_path):
     ]
     assert len(dialogues) == 1
     assert dialogues[0].startswith("Dialogue: 1,0:00:01.00,0:00:03.00,")
-    assert "她应该留下吗？" in dialogues[0]
-    assert "Should she stay or go?" in dialogues[0]
+    visible = re.sub(r"\{[^}]*\}", "", dialogues[0])
+    assert "她应该留下吗？" in visible
+    assert "Should she stay or go?" in visible
 
 
 @pytest.mark.parametrize(
