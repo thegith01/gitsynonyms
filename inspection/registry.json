@@ -1,6 +1,6 @@
 {
   "schema": "gitsynonyms.inspection.registry/1",
-  "updated_at": "2026-10-27T12:45:00Z",
+  "updated_at": "2026-11-05T02:52:15Z",
   "directive": "DIRECTIVE.md",
   "principle": "minimum-granularity",
   "cadence_policy": {
@@ -20,13 +20,13 @@
   ],
   "units": [
     {
-      "id": "gh:gitsynonyms01/monitor-whitehouse",
+      "id": "gh:gitsynonyms07/monitor-whitehouse",
       "mechanism": "github-workflow",
       "title": "Monitor White House Videos",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Monitor White House Videos",
-        "workflow_id": "397852739",
+        "workflow_id": "407558454",
         "path": ".github/workflows/monitor-whitehouse.yml"
       },
       "trigger": "schedule",
@@ -35,19 +35,20 @@
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 397852739 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/397852739"
+        "gh run list --workflow 407558454 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558454"
       ],
       "note": "每 30 分钟扫描 @WhiteHouse 的 videos 与 streams 列表；发现未登记的新上传即触发 auto-pipeline。"
     },
     {
-      "id": "gh:gitsynonyms01/auto-pipeline",
+      "id": "gh:gitsynonyms07/auto-pipeline",
       "mechanism": "github-workflow",
       "title": "Auto pipeline - detect to publish",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Auto pipeline - detect to publish",
-        "path": ".github/workflows/auto-pipeline.yml"
+        "path": ".github/workflows/auto-pipeline.yml",
+        "workflow_id": "407558444"
       },
       "trigger": "manual",
       "cadence": "1h",
@@ -55,19 +56,19 @@
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow auto-pipeline.yml --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/auto-pipeline.yml"
+        "gh run list --workflow 407558444 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558444"
       ],
       "note": "单条视频的全链路：核实事件、挑选信源、直连后代理池下载、取 YouTube 七格式、ASR 与机器翻译兜底、逐字 ASS 刻录、发布。执行单位为模块2视频处理部。"
     },
     {
-      "id": "gh:gitsynonyms01/module2-burn",
+      "id": "gh:gitsynonyms07/module2-burn",
       "mechanism": "github-workflow",
       "title": "Module 2 burn - bilingual 1080p",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Module 2 burn - bilingual 1080p",
-        "workflow_id": "398173054",
+        "workflow_id": "407558453",
         "path": ".github/workflows/module2-burn.yml"
       },
       "trigger": "workflow_dispatch",
@@ -76,19 +77,19 @@
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 398173054 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398173054"
+        "gh run list --workflow 407558453 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558453"
       ],
       "note": "手工重跑单条视频的双语刻录；执行单位为模块2视频处理部。"
     },
     {
-      "id": "gh:gitsynonyms01/full-pipeline",
+      "id": "gh:gitsynonyms07/full-pipeline",
       "mechanism": "github-workflow",
       "title": "Full Pipeline - captions to ASS to burn-in to Pages",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Full Pipeline - captions to ASS to burn-in to Pages",
-        "workflow_id": "398052574",
+        "workflow_id": "407558447",
         "path": ".github/workflows/full-pipeline.yml"
       },
       "trigger": "workflow_dispatch",
@@ -97,19 +98,19 @@
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 398052574 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398052574"
+        "gh run list --workflow 407558447 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558447"
       ],
       "note": "历史全流程入口；执行单位为模块2视频处理部。"
     },
     {
-      "id": "gh:gitsynonyms01/access-probe",
+      "id": "gh:gitsynonyms07/access-probe",
       "mechanism": "github-workflow",
       "title": "Access probe",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Access probe",
-        "workflow_id": "398160327",
+        "workflow_id": "407558443",
         "path": ".github/workflows/access-probe.yml"
       },
       "trigger": "workflow_dispatch",
@@ -118,19 +119,19 @@
       "owner": "资源获取分析司",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 398160327 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398160327"
+        "gh run list --workflow 407558443 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558443"
       ],
       "note": "探测直连与代理池对目标站点的可达性。"
     },
     {
-      "id": "gh:gitsynonyms01/caption-probe",
+      "id": "gh:gitsynonyms07/caption-probe",
       "mechanism": "github-workflow",
       "title": "Caption probe",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Caption probe",
-        "workflow_id": "398155220",
+        "workflow_id": "407558446",
         "path": ".github/workflows/caption-probe.yml"
       },
       "trigger": "workflow_dispatch",
@@ -139,19 +140,40 @@
       "owner": "资源获取分析司",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 398155220 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398155220"
+        "gh run list --workflow 407558446 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558446"
       ],
       "note": "枚举单条视频实际可用的字幕语言与序列化格式。"
     },
     {
-      "id": "gh:gitsynonyms01/tts-dub",
+      "id": "gh:gitsynonyms07/proxy-pool",
+      "mechanism": "github-workflow",
+      "title": "Proxy pool tiers",
+      "target": {
+        "repo": "gitsynonyms07/gitsynonyms",
+        "workflow": "Proxy pool tiers",
+        "workflow_id": "407558455",
+        "path": ".github/workflows/proxy-pool.yml"
+      },
+      "trigger": "schedule",
+      "cadence": "15m",
+      "severity": "P1",
+      "owner": "资源获取分析司",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow 407558455 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558455"
+      ],
+      "note": "三级公共代理池：6 小时采集、30 分钟筛选 HTTPS、15 分钟用真实 yt-dlp 提取与分段下载验证；池保存在 Actions 缓存。"
+    },
+    {
+      "id": "gh:gitsynonyms07/tts-dub",
       "mechanism": "github-workflow",
       "title": "TTS dub a burned video",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "TTS dub a burned video",
-        "workflow_id": "398057661",
+        "workflow_id": "407558458",
         "path": ".github/workflows/tts-dub.yml"
       },
       "trigger": "workflow_dispatch",
@@ -160,19 +182,19 @@
       "owner": "模块2视频处理部",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 398057661 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/398057661"
+        "gh run list --workflow 407558458 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558458"
       ],
       "note": "粤语等配音实验线，不属于双语刻录主链。"
     },
     {
-      "id": "gh:gitsynonyms01/jekyll-gh-pages",
+      "id": "gh:gitsynonyms07/jekyll-gh-pages",
       "mechanism": "github-workflow",
       "title": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
-        "workflow_id": "397810431",
+        "workflow_id": "407558449",
         "path": ".github/workflows/jekyll-gh-pages.yml"
       },
       "trigger": "push",
@@ -181,40 +203,20 @@
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 397810431 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/397810431"
+        "gh run list --workflow 407558449 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558449"
       ],
       "note": "main 推送触发；以 site/ 为源构建并部署 Pages，是所有发布页的唯一发布者。"
     },
     {
-      "id": "gh:gitsynonyms01/pages-build-deployment",
-      "mechanism": "github-workflow",
-      "title": "pages-build-deployment",
-      "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
-        "workflow": "pages-build-deployment",
-        "workflow_id": "397861502",
-        "path": "dynamic/pages/pages-build-deployment"
-      },
-      "trigger": "push",
-      "cadence": "1h",
-      "severity": "P3",
-      "owner": "巡检任务执行方案处",
-      "status": "active",
-      "evidence": [
-        "gh run list --workflow 397861502 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/397861502"
-      ],
-      "note": "GitHub 托管的 Pages 构建工作流（动态注册，无仓库内文件）。"
-    },
-    {
-      "id": "gh:gitsynonyms01/republish-site",
+      "id": "gh:gitsynonyms07/republish-site",
       "mechanism": "github-workflow",
       "title": "Republish Pages site",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Republish Pages site",
-        "path": ".github/workflows/republish-site.yml"
+        "path": ".github/workflows/republish-site.yml",
+        "workflow_id": "407558456"
       },
       "trigger": "workflow_dispatch",
       "cadence": "1d",
@@ -222,19 +224,40 @@
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow republish-site.yml --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/republish-site.yml"
+        "gh run list --workflow 407558456 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558456"
       ],
       "note": "只从已提交的 output/ 归档重生成 site/，不下载、不转码、不刻录。"
     },
     {
-      "id": "gh:gitsynonyms01/infogap",
+      "id": "gh:gitsynonyms07/make-preview",
+      "mechanism": "github-workflow",
+      "title": "Make web preview",
+      "target": {
+        "repo": "gitsynonyms07/gitsynonyms",
+        "workflow": "Make web preview",
+        "workflow_id": "407558450",
+        "path": ".github/workflows/make-preview.yml"
+      },
+      "trigger": "workflow_dispatch",
+      "cadence": "1d",
+      "severity": "P2",
+      "owner": "模块3发布与治理部",
+      "status": "active",
+      "evidence": [
+        "gh run list --workflow 407558450 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558450"
+      ],
+      "note": "从 Release 附件抽取 720p 预览与海报并重生成 site/；预览必须低于 40 MB。"
+    },
+    {
+      "id": "gh:gitsynonyms07/infogap",
       "mechanism": "github-workflow",
       "title": "Generate Information Gap Report",
       "target": {
-        "repo": "gitsynonyms01/gitsynonyms",
+        "repo": "gitsynonyms07/gitsynonyms",
         "workflow": "Generate Information Gap Report",
-        "workflow_id": "397841147",
+        "workflow_id": "407558448",
         "path": ".github/workflows/infogap.yml"
       },
       "trigger": "schedule",
@@ -243,8 +266,8 @@
       "owner": "巡检任务执行方案处",
       "status": "active",
       "evidence": [
-        "gh run list --workflow 397841147 --limit 20 --json conclusion,createdAt,event",
-        "gh api repos/gitsynonyms01/gitsynonyms/actions/workflows/397841147"
+        "gh run list --workflow 407558448 --limit 20 --json conclusion,createdAt,event",
+        "gh api repos/gitsynonyms07/gitsynonyms/actions/workflows/407558448"
       ],
       "note": "同一个工作流同时支持定时与手动触发，按最小可观测单元只登记一条记录。"
     }

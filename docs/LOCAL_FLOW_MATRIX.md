@@ -2,8 +2,8 @@
 
 `scripts/local_subtitle_flow.py` exposes every supported source dimension with
 `--preset` (or the lower-level `--english-source` / `--chinese-source` flags).
-The preset is recorded in `LOCAL_FLOW.json` under `selection`, together with the
-flow, reason, engines and output formats.
+The preset and ASS mode are recorded in `LOCAL_FLOW.json` under `selection`,
+together with the flow, reason, engines and output formats.
 
 ## Dimensions
 
@@ -20,6 +20,25 @@ flow, reason, engines and output formats.
 
 `local-asr-official` is the case where YouTube published Chinese but no English
 track; ASR supplies English and the official Chinese translation is kept.
+
+## ASS mode
+
+The local flow defaults to Scheme 1 (`--ass-mode scheme1`):
+
+- English SRT is the display timeline; each cue's end is trimmed to the next
+  cue's start.
+- Each English cue gets exactly one Chinese line. An official Chinese track is
+  reused only when it has the same cue grid; otherwise the cues are translated
+  1:1 (AssemblyAI gateway first, Argos without a key) and cached in
+  `SCHEME1_TRANSLATIONS.json`.
+- Outputs: `bilingual_scheme1_Chinese-English.srt`, `.ass`, `SCHEME1.json` and
+  `ASS_ERGONOMICS.json`.
+
+Use `--ass-mode fused` to keep the seven-format sentence timeline and the
+`local_bilingual_ass.py` outputs (`bilingual_precise_Chinese-English.ass`,
+`TIMING.json`, precision VTT sidecars). `--translation-model` selects the
+AssemblyAI gateway model for Scheme 1; `--force-mt` ignores an aligned official
+Chinese track.
 
 ## PowerShell runner: line-by-line or batch
 
@@ -55,6 +74,8 @@ used either way.
 |------|------------|----------|
 | `<Directory>\LOCAL_FLOW_COMMANDS.jsonl` | `local_subtitle_flow.ps1` | One JSON line per invocation: `observed_at`, `preset`, `command`, `exit_code`, `duration_seconds`, `directory`, `url`, `video_id`, `dry_run` |
 | `<Directory>\LOCAL_FLOW.json` | `local_subtitle_flow.py` | Flow decision: `flow`, `reason`, `selection`, engines, output formats, `status`, `error` |
+| `<Directory>\SCHEME1.json` | `scheme1_local_ass.py` | Scheme 1 audit: sources, cue count, translation kind/engine, style, ergonomics summary |
+| `<Directory>\SCHEME1_TRANSLATIONS.json` | `scheme1_local_ass.py` | Per-cue Chinese translation cache, one line per unique English cue |
 
 `LOCAL_FLOW_COMMANDS.jsonl` is gitignored; `LOCAL_FLOW.json` is a per-run
 artifact and is not part of the repository either.
@@ -87,7 +108,9 @@ parameter. `yt-dlp` itself still receives the URL last, as its CLI expects.
   downloads them again under canonical `en-orig` / `zh-Hans` names and writes
   `CAPTION_FORMATS.json`. `-All` skips step 4 to avoid duplicate requests.
 - Step 6 renders the offline ASS; steps 7/8 are the machine-translation and ASR
-  alternatives.
+  alternatives. Step 6 uses the fused seven-format builder; for the simpler
+  cue-aligned output run `scripts/scheme1_local_ass.py` directly, or use
+  `local_subtitle_flow.py`, which defaults to `--ass-mode scheme1`.
 - `-DryRun` prints and logs without executing; `-KeepGoing` continues after a
   failing step.
 - Every external command is appended to

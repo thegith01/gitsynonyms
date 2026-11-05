@@ -148,3 +148,89 @@ def test_report_names_the_engine_that_actually_ran(tmp_path, monkeypatch):
     assert report["requested_engine"] == "assemblyai"
     assert report["candidates"][0]["engine"] == "argos"
     assert report["selected"] == "zh-Hans-argos"
+
+
+def test_assemblyai_falls_back_when_the_default_model_is_unavailable(monkeypatch):
+    monkeypatch.setenv("ASSEMBLYAI", "test-key")
+    seen: list[str] = []
+
+    def fake_completion(payload, _key):
+        seen.append(payload["model"])
+        if payload["model"] == machine_translate_captions.ASSEMBLYAI_DEFAULT_MODEL:
+            raise machine_translate_captions.ModelUnavailable("no access")
+        return {
+            "choices": [
+                {
+                    "message": {
+                        "content": json.dumps(
+                            {"lines": ["你好", "再见"]}, ensure_ascii=False
+                        )
+                    }
+                }
+            ]
+        }
+
+    monkeypatch.setattr(
+        machine_translate_captions, "_assemblyai_completion", fake_completion
+    )
+
+    assert machine_translate_captions.translate_assemblyai(
+        ["Hello", "Bye"], "en", "zh"
+    ) == ["你好", "再见"]
+    assert seen == [
+        machine_translate_captions.ASSEMBLYAI_DEFAULT_MODEL,
+        machine_translate_captions.ASSEMBLYAI_FALLBACK_MODELS[0],
+    ]
+
+
+def test_assemblyai_bisects_a_batch_that_merges_lines(monkeypatch):
+    monkeypatch.setenv("ASSEMBLYAI", "test-key")
+    calls: list[int] = []
+
+    def fake_completion(payload, _key):
+        batch = json.loads(payload["messages"][1]["content"])["lines"]
+        calls.append(len(batch))
+        lines = ["合并"] if len(batch) > 1 else [f"译{batch[0]}"]
+        return {
+            "choices": [
+                {
+                    "message": {
+                        "content": json.dumps({"lines": lines}, ensure_ascii=False)
+                    }
+                }
+            ]
+        }
+
+    monkeypatch.setattr(
+        machine_translate_captions, "_assemblyai_completion", fake_completion
+    )
+
+    assert machine_translate_captions.translate_assemblyai(
+        ["a", "b", "c", "d"], "en", "zh"
+    ) == ["译a", "译b", "译c", "译d"]
+    assert max(calls) == 4
+
+
+def test_assemblyai_joins_one_input_that_the_model_splits(monkeypatch):
+    monkeypatch.setenv("ASSEMBLYAI", "test-key")
+
+    def fake_completion(_payload, _key):
+        return {
+            "choices": [
+                {
+                    "message": {
+                        "content": json.dumps(
+                            {"lines": ["你", "好"]}, ensure_ascii=False
+                        )
+                    }
+                }
+            ]
+        }
+
+    monkeypatch.setattr(
+        machine_translate_captions, "_assemblyai_completion", fake_completion
+    )
+
+    assert machine_translate_captions.translate_assemblyai(
+        ["Hello"], "en", "zh"
+    ) == ["你好"]

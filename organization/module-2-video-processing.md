@@ -105,11 +105,18 @@
   和一行英文，且时间顺序递增、cue 不重叠。样式为中文 Microsoft YaHei（英文字号的
   1.2 倍、金色 `#FFC928`）、英文 Segoe UI 48 px，英文常态暖白 `#F2F1EC`、
   逐词高亮低饱和青色 `#9BCBD1`，使用深色描边且不默认加背景框。每种语言严格单行，
-  超宽时缩小字号至安全区内而不换行。独立的右侧闭合标点 cue 必须附到前一条双语 cue，
-  并将其结束时间延长至该标点 cue 的结束时间，避免标点单独起行。其余每个 SRT cue 成为
-  独立 ASS 显示事件，不合并 cue、不改变起止时间。字体与配色是方案默认值；生成器允许
-  替换 ASS 的英文高亮色参数，但不得改变方案1的双语和时间校验。示例：
+  超宽时按逐词/逐字时间边界拆分事件，不逐事件缩小字号；无法满足时显式失败。独立的
+  右侧闭合标点 cue 必须附到前一条双语 cue，并将其结束时间延长至该标点 cue 的结束
+  时间，避免标点单独起行。其余每个 SRT cue 成为独立 ASS 显示事件，不合并 cue、不改变
+  起止时间。字体与配色是方案默认值；生成器允许替换 ASS 的英文高亮色参数，但不得改变
+  方案1的双语和时间校验。示例：
   `python scripts/scheme1_srt_to_ass.py "D:\MyDownload\a\bilingual_scheme1_Chinese-English.srt"`。
+- **本地方案1 ASS**：`scripts/scheme1_local_ass.py` 以英文 SRT 为显示时间轴，逐条将结束
+  时间截到下一 cue 开始；每条英文 cue 配一条中文。官方中文轨与英文同网格时直接复用，
+  否则逐条机器翻译（AssemblyAI LLM Gateway 优先，无 key 时 Argos）并缓存到
+  `SCHEME1_TRANSLATIONS.json`。输出 `bilingual_scheme1_Chinese-English.srt/.ass`、
+  `SCHEME1.json` 与 `ASS_ERGONOMICS.json`。`local_subtitle_flow.py` 默认
+  `--ass-mode scheme1`；`--ass-mode fused` 保留七格式句段融合路径。
 - 等级是方案分类，不等同于已证实的质量胜出；与沉浸式翻译的行为比较仍须按翻译处的
   盲审要求执行并记录结果。
 
@@ -132,7 +139,8 @@
 - `local_subtitle_flow.py` 是本地两段式入口：先走 YouTube 七格式（中文轨缺失时机器
   翻译），仅在字幕报告证明英文轨确实缺失时才用 AssemblyAI 逐词转写并翻译；探测
   失败按暂时性故障中止，不得当作“无字幕”直接付费转写。决策、引擎与输出格式写入
-  `LOCAL_FLOW.json`。显式维度通过 `--preset` 选择：`local-youtube-official`、
+  `LOCAL_FLOW.json`。ASS 默认使用方案1（`--ass-mode scheme1`）；`--ass-mode fused`
+  使用七格式句段融合。显式维度通过 `--preset` 选择：`local-youtube-official`、
   `local-youtube-mt`、`local-asr-mt`、`local-asr-official`、
   `url-youtube-official`、`url-youtube-mt`、`offline-official`、`offline-mt`；
   `--english-source youtube|asr|auto` 与 `--chinese-source youtube|mt|auto` 是底层

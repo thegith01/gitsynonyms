@@ -360,6 +360,44 @@ def test_flow1_downloads_both_languages_and_skips_translation(tmp_path, monkeypa
     assert calls == ["fetch", "ass"]
 
 
+def test_default_ass_mode_is_scheme1_and_defers_translation(tmp_path, monkeypatch):
+    folder = make_folder(tmp_path)
+    clear_keys(monkeypatch)
+    calls: list[dict] = []
+
+    def fake_fetch(directory, video_id, wait, report):
+        write_track(directory, flow.ENGLISH)
+        write_track(directory, flow.CHINESE, ("json3", "srt", "vtt", "ttml"))
+        write_caption_report(
+            directory,
+            {"present": True, "formats": list(FORMATS)},
+            {"present": True, "formats": ["json3", "srt", "vtt", "ttml"]},
+        )
+        return 0
+
+    def fake_translate(*_args):
+        raise AssertionError("scheme1 must translate in the ASS stage")
+
+    def fake_scheme1(directory, video_id, media, **kwargs):
+        calls.append(
+            {"directory": directory, "video_id": video_id, "media": media, **kwargs}
+        )
+        return {}
+
+    monkeypatch.setattr(flow, "run_youtube_captions", fake_fetch)
+    monkeypatch.setattr(flow, "run_translation", fake_translate)
+    monkeypatch.setattr(flow.scheme1_local_ass, "build", fake_scheme1)
+
+    assert flow.main(["--directory", str(folder), "--video-id", VIDEO_ID]) == 0
+
+    report = json.loads((folder / flow.FLOW_REPORT).read_text(encoding="utf-8"))
+    assert report["status"] == "ok"
+    assert report["selection"]["ass_mode"] == "scheme1"
+    assert report["translation"] == {"ran": False, "deferred_to": "scheme1"}
+    assert calls and calls[0]["directory"] == folder
+    assert calls[0]["video_id"] == VIDEO_ID
+
+
 def test_flow1_translates_chinese_when_youtube_has_only_english(tmp_path, monkeypatch):
     folder = make_folder(tmp_path)
     clear_keys(monkeypatch)

@@ -45,3 +45,7 @@ output/unknown_*/
 output/materials/.http-cache.json
 output/materials/.seen.json
 input/api_keys
+
+# Local agent tooling state and browser captures.
+.kilo/
+.playwright-mcp/
