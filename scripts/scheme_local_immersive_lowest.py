@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """Build the lowest-standard local Immersive Translate bilingual subtitle pair.
 
-The REA-observed cue model snapshots every active source cue on each
-``cuechange``. This local baseline mirrors that behavior with the official
-YouTube English ASR and its official auto-translated Chinese track. It does
-not deduplicate rolling cues or invent a translation when the active windows
-do not overlap.
+The REA-observed display follows the source cue: when the English cue changes,
+the visible source changes, while the Chinese translation unit can persist
+across several source cues. This local baseline mirrors that behavior with the
+official YouTube English ASR and its official auto-translated Chinese track.
+Each official English cue becomes exactly one display event, trimmed to the
+next English cue start. Its Chinese line is the latest official Chinese cue
+active at the original English cue midpoint, so a target may stay on screen
+while the source moves on. Unpaired or zero-duration cues are skipped and
+recorded; the scheme never writes a monolingual display event.
 """
 
 from __future__ import annotations
@@ -33,6 +37,9 @@ DEFAULT_SRT_NAME = "bilingual_immersive_lowest_Chinese-English.srt"
 DEFAULT_ASS_NAME = "bilingual_immersive_lowest_Chinese-English.ass"
 DEFAULT_REPORT_NAME = "IMMERSIVE_LOWEST.json"
 DEFAULT_ERGONOMICS_NAME = "IMMERSIVE_LOWEST_ERGONOMICS.json"
+DEFAULT_BOX_STYLE = "presidential-blue"
+DEFAULT_BOX_COLOR = "#0F1647"
+CHINESE_TEXT_COLOR = "#FFFFA8"
 SCHEME_NAME = "scheme_local__immersive_lowest"
 SCHEME_LABEL = "scheme_低级_沉浸翻译（最低 / LOWEST 标准）"
 BASELINE_ID = "immersive-translate"
@@ -180,10 +187,20 @@ def _active_cues(cues: Sequence[dict], instant: float) -> list[dict]:
     return active
 
 
-def build_active_snapshots(
+def build_source_anchored_events(
     chinese: Sequence[dict], english: Sequence[dict]
 ) -> tuple[list[dict], list[dict]]:
-    """Create full active-cue snapshots at every source or translation boundary."""
+    """Create one bilingual display event per official English source cue.
+
+    The source cue owns the display interval. The interval ends at the next
+    English cue start so display events stay disjoint, while the Chinese line
+    is selected from the official Chinese cues active at the original English
+    cue midpoint. Selecting only the latest active Chinese cue lets a larger
+    translation unit persist across several source cues, which is the observed
+    desynchronized behavior this baseline must reproduce. A cue with no active
+    Chinese target or no positive display duration is skipped and recorded;
+    the scheme never emits a monolingual event.
+    """
     for language, cues in ((CHINESE, chinese), (ENGLISH, english)):
         if not cues:
             raise ValueError(f"{language} track contains no usable cues")
@@ -200,75 +217,108 @@ def build_active_snapshots(
                     f"{language} track contains an empty or invalid source cue"
                 )
 
-    boundaries = sorted(
-        {
-            round(float(cue[key]), 3)
-            for cue in (*chinese, *english)
-            for key in ("start", "end")
-        }
+    ordered_english = sorted(
+        english, key=lambda cue: (float(cue["start"]), float(cue["end"]))
     )
-    snapshots = []
+    for previous, current in zip(ordered_english, ordered_english[1:]):
+        if float(current["start"]) <= float(previous["start"]):
+            raise ValueError(
+                "English source cues share a start time; source-anchored "
+                "events cannot be made disjoint"
+            )
+
+    events = []
     unpaired = []
-    for start, end in zip(boundaries, boundaries[1:]):
-        if end <= start:
-            continue
-        midpoint = (start + end) / 2
-        active_chinese = _active_cues(chinese, midpoint)
-        active_english = _active_cues(english, midpoint)
-        active_chinese = active_chinese[-1:]
-        active_english = active_english[-1:]
-        chinese_text = captions._single_caption_line(
-            "\n".join(str(cue["text"]).strip() for cue in active_chinese)
-        ).strip()
+    for index, cue in enumerate(ordered_english):
+        start = float(cue["start"])
+        source_end = float(cue["end"])
+        end = source_end
+        if index + 1 < len(ordered_english):
+            next_start = float(ordered_english[index + 1]["start"])
+            end = min(end, next_start)
         english_text = captions._single_caption_line(
-            "\n".join(str(cue["text"]).strip() for cue in active_english)
+            str(cue.get("text", ""))
         ).strip()
-        if not chinese_text and not english_text:
+        if end <= start:
+            unpaired.append(
+                {
+                    "start": start,
+                    "end": source_end,
+                    "reason": "no-positive-display-duration",
+                    "missing": "display duration",
+                    "active": "English",
+                    "active_chinese_cues": 0,
+                }
+            )
             continue
-        if not chinese_text or not english_text:
+        midpoint = (start + source_end) / 2
+        active_chinese = _active_cues(chinese, midpoint)
+        chinese_text = (
+            captions._single_caption_line(
+                str(active_chinese[-1].get("text", ""))
+            ).strip()
+            if active_chinese
+            else ""
+        )
+        if not english_text or not chinese_text:
             unpaired.append(
                 {
                     "start": start,
                     "end": end,
+                    "reason": (
+                        "missing-chinese" if not chinese_text else "missing-english"
+                    ),
                     "missing": "Chinese" if not chinese_text else "English",
-                    "active": "English" if not english_text else "Chinese",
+                    "active": "English" if not chinese_text else "Chinese",
+                    "active_chinese_cues": len(active_chinese),
                 }
             )
-        snapshot = {
-            "start": start,
-            "end": end,
-            "chinese": chinese_text,
-            "english": english_text,
-            "english_word_timings": [
-                timing
-                for cue in active_english
-                for timing in captions._word_timings_for_text(
-                    str(cue.get("text", "")), [cue]
-                )
-            ],
-        }
-        snapshots.append(snapshot)
-
-    if not any(item["chinese"] and item["english"] for item in snapshots):
-        raise ValueError(
-            "the official tracks have no bilingual active interval"
+            continue
+        events.append(
+            {
+                "start": start,
+                "end": end,
+                "source_start": start,
+                "source_end": source_end,
+                "source_trimmed": end < source_end,
+                "chinese": chinese_text,
+                "english": english_text,
+                "target_cue_start": float(active_chinese[-1]["start"]),
+                "target_cue_end": float(active_chinese[-1]["end"]),
+                "active_chinese_cues": len(active_chinese),
+                "english_word_timings": captions._word_timings_for_text(
+                    english_text, [cue]
+                ),
+            }
         )
-    return snapshots, unpaired
+
+    if not events:
+        raise ValueError(
+            "the official tracks have no bilingual source-anchored event"
+        )
+    return events, unpaired
 
 
 def render_ass(
     snapshots: Sequence[dict],
     *,
     video_duration: float | None = None,
-    box_style: str = "none",
-    box_color: str = "#000000",
+    box_style: str = DEFAULT_BOX_STYLE,
+    box_color: str = DEFAULT_BOX_COLOR,
     box_opacity: float = 0.99,
     caption_order: str = "chinese-first",
 ) -> str:
-    """Render active-cue snapshots with the shared bilingual ASS styling."""
-    bilingual_snapshots = [
-        item for item in snapshots if item["chinese"] and item["english"]
+    """Render source-anchored bilingual events with the shared ASS styling."""
+    monolingual = [
+        item
+        for item in snapshots
+        if not item["chinese"] or not item["english"]
     ]
+    if monolingual:
+        raise ValueError(
+            "the lowest-standard renderer only accepts bilingual snapshots"
+        )
+    bilingual_snapshots = list(snapshots)
     chinese = [
         {"start": item["start"], "end": item["end"], "text": item["chinese"]}
         for item in bilingual_snapshots
@@ -289,7 +339,7 @@ def render_ass(
         second_font="Segoe UI",
         second_font_size=48,
         first_font_scale=1.2,
-        first_color="#FFC928",
+        first_color=CHINESE_TEXT_COLOR,
         second_color="#F2F1EC",
         english_highlight_color="#9BCBD1",
         cue_aligned=True,
@@ -331,60 +381,6 @@ def render_ass(
                 fields[9],
             )
             lines[dialogue_index] = ",".join(fields)
-
-    left = captions.CAPTION_AREA[0]
-    right = captions.CAPTION_AREA[2]
-    bottom = captions.CAPTION_AREA[3]
-    center_x = (left + right) // 2
-    baseline_y = bottom - 8
-    chinese_size = 48 * 1.2
-    english_size = 48
-    line_gap = 10
-    for snapshot in snapshots:
-        chinese_text = str(snapshot["chinese"]).strip()
-        english_text = str(snapshot["english"]).strip()
-        if chinese_text and english_text:
-            continue
-        if english_text:
-            language = "English"
-            font_size = english_size
-            text = english_text
-            lower_language = (
-                "Chinese" if caption_order == "english-first" else "English"
-            )
-            word_timings = snapshot.get("english_word_timings", [])
-        else:
-            language = "Chinese"
-            font_size = chinese_size
-            text = chinese_text
-            lower_language = (
-                "Chinese" if caption_order == "english-first" else "English"
-            )
-            word_timings = []
-        lower_size = english_size if lower_language == "English" else chinese_size
-        y = (
-            baseline_y - line_gap - lower_size
-            if language != lower_language
-            else baseline_y
-        )
-        body = (
-            f"{{\\an2\\pos({center_x},{y:g})}}"
-            f"{{\\r{language}\\fs{font_size:g}}}"
-        )
-        if language == "English":
-            body += captions.ass_karaoke_text(
-                text,
-                float(snapshot["end"]) - float(snapshot["start"]),
-                start=float(snapshot["start"]),
-                word_timings=word_timings,
-            )
-        else:
-            body += captions.ass_escape_text(text)
-        lines.append(
-            f"Dialogue: 1,{captions.ass_timestamp(float(snapshot['start']))},"
-            f"{captions.ass_timestamp(float(snapshot['end']))},"
-            f"{language},,0,0,0,,{body}"
-        )
 
     events = [
         line for line in lines if line.startswith("Dialogue: 1,")
@@ -441,8 +437,8 @@ def build(
     ergonomics_path: Path | None = None,
     fps: float = 24.0,
     strict: bool = False,
-    box_style: str = "none",
-    box_color: str = "#000000",
+    box_style: str = DEFAULT_BOX_STYLE,
+    box_color: str = DEFAULT_BOX_COLOR,
     box_opacity: float = 0.99,
     caption_order: str = "chinese-first",
 ) -> dict:
@@ -450,7 +446,7 @@ def build(
     tracks, provenance = load_source_tracks(
         folder, video_id, media.stem if media else None
     )
-    snapshots, unpaired = build_active_snapshots(
+    events, unpaired = build_source_anchored_events(
         tracks[CHINESE]["cues"], tracks[ENGLISH]["cues"]
     )
     raw_video_duration = local_bilingual_ass.probe_duration(media)
@@ -477,12 +473,12 @@ def build(
         f"{index}\n{captions.format_timestamp(event['start'])} --> "
         f"{captions.format_timestamp(event['end'])}\n"
         f"{event['chinese']}\n{event['english']}"
-        for index, event in enumerate(snapshots, 1)
+        for index, event in enumerate(events, 1)
     ]
     srt_file.write_text("\n\n".join(blocks) + "\n", encoding="utf-8")
     ass_file.write_text(
         render_ass(
-            snapshots,
+            events,
             video_duration=video_duration,
             box_style=box_style,
             box_color=box_color,
@@ -494,6 +490,21 @@ def build(
     ergonomics = subtitle_ergonomics.analyze_subtitle(ass_file, fps=fps)
     subtitle_ergonomics.write_report(ergonomics_file, ergonomics)
 
+    target_persistence_events = sum(
+        1
+        for left, right in zip(events, events[1:])
+        if left["chinese"] == right["chinese"]
+    )
+    trimmed_source_events = sum(
+        1 for event in events if event["source_trimmed"]
+    )
+    max_active_chinese = max(
+        (event["active_chinese_cues"] for event in events), default=0
+    )
+    multi_cue_chinese_intervals = sum(
+        1 for event in events if event["active_chinese_cues"] > 1
+    )
+
     report = {
         "generated_at": subtitle_timing.utc_now(),
         "video_id": video_id,
@@ -504,10 +515,17 @@ def build(
             "version": BASELINE_VERSION,
             "rea_evidence_id": REA_EVIDENCE_ID,
             "rea_coverage": REA_COVERAGE,
-            "observed_model": "latest active cue per language at cuechange boundaries",
+            "observed_model": (
+                "source-anchored display: one event per official English cue; "
+                "latest active official Chinese cue at the source midpoint"
+            ),
+            "source_anchored": True,
+            "active_cues_joined": False,
+            "target_persistence": True,
             "cross_cue_deduplication": False,
-            "stale_active_cues_reemitted": False,
-            "word_karaoke": True,
+            "monolingual_events": 0,
+            "word_karaoke": False,
+            "local_word_karaoke": True,
         },
         "sources": {
             language: {
@@ -524,19 +542,34 @@ def build(
         },
         "style": {
             "caption_order": caption_order,
+            "chinese_color": CHINESE_TEXT_COLOR,
             "box_style": box_style,
             "box_color": box_color,
             "box_opacity": box_opacity,
+            "box_area": list(captions.CAPTION_BOX_AREA),
             "video_duration": raw_video_duration,
             "background_end": video_duration,
         },
         "synchronization": {
-            "method": "union of official cue boundaries; snapshot all active cues",
-            "event_count": len(snapshots),
-            "bilingual_event_count": len(snapshots) - len(unpaired),
-            "events_are_bilingual": not unpaired,
+            "method": (
+                "one event per official English cue, trimmed to the next "
+                "English cue start; latest active official Chinese cue at the "
+                "original English cue midpoint; bilingual-only events"
+            ),
+            "event_count": len(events),
+            "bilingual_event_count": len(events),
+            "events_are_bilingual": True,
+            "source_anchored": True,
+            "source_cue_count": len(tracks[ENGLISH]["cues"]),
+            "source_cues_skipped": len(unpaired),
             "unpaired_intervals": len(unpaired),
+            "unpaired_intervals_skipped": True,
             "unpaired_details": unpaired,
+            "monolingual_events": 0,
+            "target_persistence_events": target_persistence_events,
+            "trimmed_source_events": trimmed_source_events,
+            "max_active_chinese_cues": max_active_chinese,
+            "multi_cue_chinese_intervals": multi_cue_chinese_intervals,
         },
         "outputs": {
             "srt": srt_file.name,
@@ -571,9 +604,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument(
         "--box-style",
         choices=(*captions.BOX_STYLES, "none"),
-        default="none",
+        default=DEFAULT_BOX_STYLE,
     )
-    parser.add_argument("--box-color", default="#000000")
+    parser.add_argument("--box-color", default=DEFAULT_BOX_COLOR)
     parser.add_argument("--box-opacity", type=float, default=0.99)
     parser.add_argument(
         "--caption-order",
@@ -603,7 +636,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 1
     print(
         f"{report['scheme']}: {report['synchronization']['event_count']} "
-        f"bilingual active-cue snapshots"
+        f"bilingual source-anchored events; "
+        f"{report['synchronization']['unpaired_intervals']} source cues skipped"
     )
     return 0
 

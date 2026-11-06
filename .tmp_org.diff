@@ -1,0 +1,21 @@
+diff --git a/organization/module-2-video-processing.md b/organization/module-2-video-processing.md
+index ce732f2..fd9a78c 100644
+--- a/organization/module-2-video-processing.md
++++ b/organization/module-2-video-processing.md
+@@ -198,12 +198,12 @@
+   有轨、报告缺失/过期或探测报错时不得上传音频。处理时优先使用模块1已取得的本地音频。
+   56 秒通过 yt-dlp 的 `--sleep-subtitles` 传给中文字幕请求，
+   英文请求不设置该间隔；它不是流程级等待（可由同名参数覆盖），`--wait` 暂保留为
+-  兼容别名。本地流程默认不画背景框；启用背景框时，使用独立的框坐标
++  兼容别名。最低（LOWEST）沉浸翻译方案默认使用总统蓝 `#0F1647`、99% 不透明的
++  全片字幕区背景框，中文为 `#FFFFA8`（RGB 255,255,168）；使用独立的框坐标
+   `CAPTION_BOX_AREA = (66, 883, 1852, 1022)`，文字安全区仍为
+   `CAPTION_AREA = (96, 883, 1824, 1008)`；前者可通过 `--box-x/y/width/height` 覆盖。
+-  确认源横幅压住字幕区时，须显式传入
+-  `--box-style solid-color --box-color "#000000" --box-opacity 1`，背景框从视频起始持续
+-  至片尾；干净片源仍可保持无框。
++  其他干净片源仍可显式使用 `--box-style none`；启用任何背景框时，它从视频起始持续
++  至片尾。
+ - `subtitle_timing.py` 发现七种格式、融合 JSON3 优先的逐词时间，调用
+   `subtitle_timeline.py` 按完整句段配对后生成 ASS、`TIMING.json` 和毫秒级 precision
+   VTT。ASS 输出的 10 毫秒粒度与 5 毫秒最大量化误差是格式/渲染器边界，不得描述为

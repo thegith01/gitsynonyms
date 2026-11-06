@@ -415,6 +415,14 @@ def run_immersive_lowest_ass(
         or folder / scheme_local_immersive_lowest.DEFAULT_ASS_NAME
     ).expanduser().resolve()
     try:
+        box_style = (
+            args.box_style
+            if args.box_style is not None
+            else scheme_local_immersive_lowest.DEFAULT_BOX_STYLE
+        )
+        box_color = args.box_color or captions.BOX_STYLES.get(
+            box_style, {"color": scheme_local_immersive_lowest.DEFAULT_BOX_COLOR}
+        )["color"]
         scheme_local_immersive_lowest.build(
             folder,
             video_id,
@@ -423,8 +431,8 @@ def run_immersive_lowest_ass(
             srt_path=ass_path.with_suffix(".srt"),
             fps=args.fps,
             strict=args.strict,
-            box_style=args.box_style if args.box_style is not None else "solid-color",
-            box_color=args.box_color or "#000000",
+            box_style=box_style,
+            box_color=box_color,
             box_opacity=(
                 args.box_opacity if args.box_opacity is not None else 0.99
             ),
@@ -811,7 +819,10 @@ def build_parser() -> argparse.ArgumentParser:
         "--box-style",
         choices=(*captions.BOX_STYLES, "none"),
         default=None,
-        help="Caption box behind the text (default: none).",
+        help=(
+            "Caption box style (default: presidential-blue for the lowest "
+            "Immersive Translate scheme; other modes may use different defaults)."
+        ),
     )
     parser.add_argument(
         "--box-opacity",
