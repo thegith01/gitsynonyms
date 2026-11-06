@@ -64,6 +64,33 @@ def test_attaches_standalone_closing_punctuation_to_complete_ass_cue(tmp_path):
     assert "Should she stay or go?" in visible
 
 
+def test_splits_overwide_bilingual_cue_at_timed_boundaries(tmp_path):
+    source = tmp_path / "source.srt"
+    source.write_text(
+        "1\n00:00:01,000 --> 00:00:02,520\n"
+        "我们正在做的所有不同的事情时，你会觉得这是最壮观的。 一流的，杰出的\n"
+        "that we're doing. Top of the line, great\n",
+        encoding="utf-8",
+    )
+    destination = tmp_path / "result.ass"
+
+    scheme1.convert_srt_to_ass(source, destination)
+
+    dialogues = [
+        line
+        for line in destination.read_text(encoding="utf-8-sig").splitlines()
+        if line.startswith("Dialogue: 1,")
+    ]
+    assert len(dialogues) == 2
+    fields = [line.split(",", 9) for line in dialogues]
+    assert fields[0][2] == fields[1][1]
+    assert all(
+        line.split(",", 9)[-1].count(r"\N") == 2 for line in dialogues
+    )
+    assert all(re.search(r"[\u4e00-\u9fff]", line) for line in dialogues)
+    assert all(re.search(r"\{\\kt\d+\\k\d+\}", line) for line in dialogues)
+
+
 @pytest.mark.parametrize(
     "text",
     [

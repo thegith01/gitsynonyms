@@ -107,8 +107,9 @@ from the repository root. `scripts/` is not an installed package —
   never drop repetition that carries meaning.
 - Translate rolling YouTube cues only after de-duplicating their source words
   into readable time-aligned display units. Keep the Immersive Translate
-  v1.34.4 release as an independent behavioral comparison baseline; do not copy
-  its proprietary implementation or claim an unmeasured quality win.
+  v1.34.4 release as the independent `scheme_local__immersive_lowest`
+  (沉浸翻译最低 / LOWEST 标准) bilingual comparison baseline; do not copy its
+  proprietary implementation or claim an unmeasured quality win.
 
 ## Cloud operations
 
@@ -154,21 +155,22 @@ python scripts/local_subtitle_flow.py --url "https://youtu.be/<id>" --directory 
 
 - **Flow 1** calls `fetch_youtube_captions.py` for every published
   `json3`/`srv3`/`srv2`/`srv1`/`ttml`/`vtt`/`srt` file in `en-orig` and
-  `zh-Hans`. If YouTube publishes no Chinese track, it machine-translates the
-  English display units (AssemblyAI LLM gateway first, Argos without a key),
-  then renders the ASS. Each subtitle-format requests use yt-dlp's
+  `zh-Hans`. The lowest-baseline and Scheme 1 modes require YouTube's
+  auto-generated English and corresponding auto-translated Chinese tracks;
+  only the fused mode may machine-translate missing Chinese. Each
+  subtitle-format request uses yt-dlp's
   `--sleep-subtitles 56` by default; English is not delayed.
   `--sleep-subtitles` overrides the Chinese request interval (`--wait` is a
   compatibility alias), not a process-level workflow pause.
-- **Scheme 1 ASS (default)** uses the English SRT as the display timeline:
-  each cue's end is trimmed to the next cue's start, and every English cue
-  gets exactly one Chinese line. An official Chinese track is reused only when
-  it has the same cue grid; otherwise the English cues are translated 1:1
-  through the AssemblyAI gateway (Argos without a key) and cached in
-  `SCHEME1_TRANSLATIONS.json`. The build writes
-  `bilingual_scheme1_Chinese-English.srt/.ass`, `SCHEME1.json` and
-  `ASS_ERGONOMICS.json`. `--ass-mode fused` keeps the seven-format sentence
-  timeline and `local_bilingual_ass.py` instead.
+- **Scheme 1 ASS (default; `scheme_高级_自研_1`)** uses the English SRT as the
+  display timeline: each cue's end is trimmed to the next cue's start, and
+  every English cue gets exactly one official Chinese line. The official
+  auto-translated Chinese track is required; absent, unreadable or unpairable
+  Chinese fails rather than silently falling back to machine translation.
+  The build writes `bilingual_scheme_advanced_selfdev_1_Chinese-English.srt/.ass`,
+  `SCHEME_ADVANCED_SELFDEV_1.json` and
+  `SCHEME_ADVANCED_SELFDEV_1_ERGONOMICS.json`. `--ass-mode fused` keeps the
+  seven-format sentence timeline and `local_bilingual_ass.py` instead.
 - **Flow 2** runs only when `CAPTION_FORMATS.json` says the English track is
   *absent*. A probe error is transient: the flow aborts instead of paying for
   ASR. It extracts mono audio from the local media, transcribes word-timed
@@ -233,11 +235,12 @@ simple path:
 python scripts/scheme1_local_ass.py --directory "D:\MyDownload\a" --video-id <id>
 ```
 
-It uses the English SRT as the display timeline, pairs one Chinese line per
-trimmed English cue, and writes `bilingual_scheme1_Chinese-English.srt/.ass`,
-`SCHEME1.json` and `ASS_ERGONOMICS.json`. An aligned official Chinese track is
-reused; otherwise the cues are translated 1:1 and cached in
-`SCHEME1_TRANSLATIONS.json`.
+It uses the English SRT as the display timeline, pairs one official Chinese
+line per trimmed English cue, and writes
+`bilingual_scheme_advanced_selfdev_1_Chinese-English.srt/.ass`,
+`SCHEME_ADVANCED_SELFDEV_1.json` and
+`SCHEME_ADVANCED_SELFDEV_1_ERGONOMICS.json`. The official auto-translated
+Chinese track is required; if it is absent or cannot be paired, generation fails.
 
 The fused seven-format path is still available:
 
@@ -259,9 +262,9 @@ The pipeline keeps its two-line overflow guard.
   formats, fuse cues, write ASS/SRT/VTT, burn with ffmpeg.
 - `scripts/local_bilingual_ass.py`: local ASS-only build from a hand-made
   caption folder; `--strict` fails on ergonomics errors.
-- `scripts/scheme1_local_ass.py`: Scheme 1 local builder (English SRT display
-  timeline, one Chinese line per trimmed cue, aligned official reuse or 1:1 MT
-  with `SCHEME1_TRANSLATIONS.json`).
+- `scripts/scheme1_local_ass.py`: `scheme_高级_自研_1` local builder (English SRT
+  display timeline, official Chinese track required, one line per trimmed cue; writes
+  the `SCHEME_ADVANCED_SELFDEV_1.json` provenance report.
 - `scripts/local_subtitle_flow.py`: two-flow local entry point (YouTube seven
   formats, AssemblyAI word-timed ASR fallback); default `--ass-mode scheme1`,
   fused timeline via `--ass-mode fused`; writes `LOCAL_FLOW.json`.

@@ -811,7 +811,7 @@ def build_scheme1_bilingual_srt(
     chinese: Sequence[dict],
     english: Sequence[dict],
 ) -> str:
-    """Write bilingual cues on the corrected English SRT timeline."""
+    """Write aligned cues and retain English-only windows lacking translation."""
     if not chinese or not english:
         raise ValueError("Both subtitle tracks must contain cues.")
 
@@ -826,7 +826,7 @@ def build_scheme1_bilingual_srt(
 
     segments = []
     used_chinese = set()
-    for index, english_cue in enumerate(english_cues, 1):
+    for english_cue in english_cues:
         overlapping = [
             cue
             for cue in chinese_cues
@@ -847,34 +847,33 @@ def build_scheme1_bilingual_srt(
                 ),
                 None,
             )
-            if next_cue is None or next_cue["start"] - english_cue["end"] > 0.001:
-                raise ValueError(
-                    "Scheme 1 cannot pair an English cue with a timed Chinese cue."
-                )
-            chinese_text = _single_caption_line(next_cue["text"])
-            used_chinese.add(id(next_cue))
+            if next_cue is not None and next_cue["start"] - english_cue["end"] <= 0.001:
+                chinese_text = _single_caption_line(next_cue["text"])
+                used_chinese.add(id(next_cue))
+            else:
+                chinese_text = ""
 
         english_text = _single_caption_line(english_cue["text"])
-        if not english_text or not chinese_text:
-            raise ValueError("Scheme 1 cannot emit a single-language cue.")
+        if not english_text:
+            raise ValueError("Scheme 1 cannot emit an empty English cue.")
         segment = {
             "start": english_cue["start"],
             "end": english_cue["end"],
             "chinese": chinese_text,
             "english": english_text,
         }
-        punctuation_only = all(
+        punctuation_only = bool(chinese_text) and all(
             character in subtitle_layout.NO_LINE_START
             for character in chinese_text
         )
         if punctuation_only:
-            if not segments or abs(segments[-1]["end"] - segment["start"]) > 0.001:
+            if not segments:
                 raise ValueError(
                     "Scheme 1 cannot place a closing-punctuation-only cue without "
                     "its preceding bilingual sentence."
                 )
             previous = segments[-1]
-            previous["end"] = segment["end"]
+            previous["end"] = max(previous["end"], segment["end"])
             previous["chinese"] += chinese_text
             previous["english"] += " " + english_text
         else:
@@ -882,11 +881,16 @@ def build_scheme1_bilingual_srt(
 
     if len(used_chinese) != len(chinese_cues):
         raise ValueError("Scheme 1 left one or more Chinese cues unpaired.")
-    blocks = [
-        f"{index}\n{format_timestamp(segment['start'])} --> "
-        f"{format_timestamp(segment['end'])}\n{segment['chinese']}\n{segment['english']}"
-        for index, segment in enumerate(segments, 1)
-    ]
+    blocks = []
+    for index, segment in enumerate(segments, 1):
+        language_lines = [
+            line for line in (segment["chinese"], segment["english"]) if line
+        ]
+        blocks.append(
+            f"{index}\n{format_timestamp(segment['start'])} --> "
+            f"{format_timestamp(segment['end'])}\n"
+            + "\n".join(language_lines)
+        )
     return "\n\n".join(blocks) + "\n"
 
 
@@ -1331,7 +1335,11 @@ def _trim_stale_ass_cue_ends(
     cues = [*first, *second]
     latest_word_starts: dict[tuple[int, int], float] = {}
     for cue in cues:
-        timings = cue.get("word_timings", [])
+        timings = [
+            word
+            for word in cue.get("word_timings", [])
+            if word is not None
+        ]
         if len(timings) < 2:
             continue
         last_word_start = max(word["start"] for word in timings)
@@ -2317,6 +2325,8 @@ def download_track(
     directory: Path,
     wait: int,
     formats: Sequence[str],
+    *,
+    overwrite: bool = False,
 ) -> tuple[list[Path], list[dict], Path]:
     """Download one caption track in every published format.
 
@@ -2338,8 +2348,9 @@ def download_track(
             "--skip-download",
             "--retries",
             "5",
-            "--no-overwrites",
         ]
+        if not overwrite:
+            args.append("--no-overwrites")
         if wait:
             args.extend(["--sleep-subtitles", str(wait)])
         args.extend([

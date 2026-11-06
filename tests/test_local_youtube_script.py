@@ -68,6 +68,44 @@ def test_scheme1_bilingual_srt_attaches_closing_punctuation_to_prior_cue():
     )
 
 
+def test_scheme1_punctuation_cue_after_gap_stays_with_prior_bilingual_sentence():
+    chinese = youtube_srt.parse_srt(
+        "1\n00:00:01,000 --> 00:00:02,000\n她应该留下吗\n\n"
+        "2\n00:00:03,000 --> 00:00:04,000\n？\n"
+    )
+    english = youtube_srt.parse_srt(
+        "1\n00:00:01,000 --> 00:00:02,000\nShould she stay\n\n"
+        "2\n00:00:03,000 --> 00:00:04,000\nor go?\n"
+    )
+
+    result = youtube_srt.build_scheme1_bilingual_srt(chinese, english)
+
+    assert result == (
+        "1\n00:00:01,000 --> 00:00:04,000\n"
+        "她应该留下吗？\nShould she stay or go?\n"
+    )
+
+
+def test_scheme1_keeps_official_english_when_translation_has_no_timed_cue():
+    chinese = youtube_srt.parse_srt(
+        "1\n00:00:01,000 --> 00:00:02,000\n你好。\n\n"
+        "2\n00:00:03,000 --> 00:00:04,000\n再见。\n"
+    )
+    english = youtube_srt.parse_srt(
+        "1\n00:00:01,000 --> 00:00:02,000\nHello.\n\n"
+        "2\n00:00:02,100 --> 00:00:02,900\nUntranslated phrase.\n\n"
+        "3\n00:00:03,000 --> 00:00:04,000\nGoodbye.\n"
+    )
+
+    result = youtube_srt.build_scheme1_bilingual_srt(chinese, english)
+
+    assert result == (
+        "1\n00:00:01,000 --> 00:00:02,000\n你好。\nHello.\n\n"
+        "2\n00:00:02,100 --> 00:00:02,900\nUntranslated phrase.\n\n"
+        "3\n00:00:03,000 --> 00:00:04,000\n再见。\nGoodbye.\n"
+    )
+
+
 def test_ass_uses_chinese_above_english_with_chinese_1_2x_size():
     chinese = youtube_srt.parse_srt(
         "1\n00:00:01,000 --> 00:00:02,000\n你好\n\n"

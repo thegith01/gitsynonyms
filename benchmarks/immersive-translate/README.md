@@ -1,6 +1,8 @@
-# 字幕质量最低基准：Immersive Translate v1.34.4
+# 中英双语字幕最低（LOWEST）基准：`scheme_local__immersive_lowest` /
+# Immersive Translate v1.34.4
 
-这份基线回答一个问题：**烧录字幕做到什么程度才算合格？**
+这份基线回答一个问题：**烧录字幕做到什么程度才算合格？** 本地中英基准方案为
+`scheme_local__immersive_lowest`（沉浸翻译最低 / LOWEST 标准）。
 
 答案是「至少不比浏览器里最常用的双语字幕扩展差」。沉浸式翻译（Immersive
 Translate）是 Chrome 商店里使用最广的视频双语字幕方案，用户每天拿它当参照

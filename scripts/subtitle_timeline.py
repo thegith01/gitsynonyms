@@ -211,7 +211,7 @@ def _spread(
 def _align_timings(
     parts: Sequence[str],
     usable: Sequence[int],
-    timings: Sequence[dict],
+    timings: Sequence[dict | None],
     start: float,
     end: float,
 ) -> list[tuple[float, float] | None] | None:
@@ -224,6 +224,7 @@ def _align_timings(
     the whole cue — which used to misplace the first word of the line and then
     pull the next event onto the wrong clock.
     """
+    timings = [timing for timing in timings if timing is not None]
     if not timings:
         return None
     positional = len(timings) == len(usable) and not any(

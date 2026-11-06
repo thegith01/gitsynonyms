@@ -304,22 +304,25 @@ def fuse_track(
     language: str,
     parsed: dict[str, list[dict]],
     source_files: dict[str, Path] | None = None,
+    *,
+    primary_format: str | None = None,
 ) -> dict:
     """Fuse every parsed format of one language into a nanosecond track."""
     available = [extension for extension in FORMAT_PRIORITY if extension in parsed]
     if not available:
         raise ValueError(f"No usable caption format for {language}.")
-    primary_extension = available[0]
+    primary_extension = primary_format if primary_format in parsed else available[0]
     primary = parsed[primary_extension]
+    other_formats = [extension for extension in available if extension != primary_extension]
     matches = {
         extension: match_cues(primary, parsed[extension])
-        for extension in available[1:]
+        for extension in other_formats
     }
     conflicts: list[dict] = []
     cues: list[dict] = []
     for index, cue in enumerate(primary):
         group = {primary_extension: cue}
-        for extension in available[1:]:
+        for extension in other_formats:
             match = matches[extension][index]
             if match is not None:
                 group[extension] = match
@@ -327,7 +330,21 @@ def fuse_track(
         end_pairs = [(extension, to_ns(item["end"])) for extension, item in group.items()]
         start_ns = fuse_values(start_pairs)
         end_ns = fuse_values(end_pairs)
-        text = normalize_text(str(cue.get("text", "")))
+        text_order = [primary_extension, *other_formats]
+        text_source = next(
+            (
+                extension
+                for extension in text_order
+                if extension in group
+                and normalize_text(str(group[extension].get("text", "")))
+            ),
+            None,
+        )
+        text = (
+            normalize_text(str(group[text_source].get("text", "")))
+            if text_source is not None
+            else ""
+        )
         if not text or end_ns <= start_ns:
             continue
         words = _fuse_words(group, start_ns, end_ns, index, conflicts)
@@ -339,6 +356,7 @@ def fuse_track(
                 "start_ns": start_ns,
                 "end_ns": end_ns,
                 "text": text,
+                "text_source": text_source,
                 "word_timings": words,
                 "sources": [extension for extension in FORMAT_PRIORITY if extension in group],
             }

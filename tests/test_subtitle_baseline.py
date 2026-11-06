@@ -1,4 +1,5 @@
-"""Executable subtitle quality floor: Immersive Translate v1.34.4.
+"""Executable subtitle quality floor: scheme_local__immersive_lowest /
+Immersive Translate v1.34.4.
 
 ``benchmarks/immersive-translate/baseline.json`` records what the shipped
 extension actually does. This module turns that record into obligations: every

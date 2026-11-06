@@ -2,18 +2,16 @@
 """Run the two local caption flows behind one command.
 
 Flow 1 (YouTube first, DIRECTIVE 3.7)
-    When YouTube publishes an English track -- manual or auto-generated --
-    download every published serialization for English and Chinese
-    (``json3``/``srv3``/``srv2``/``srv1``/``ttml``/``vtt``/``srt``).  If the
-    Chinese track is missing, machine-translate the English display units
-    (AssemblyAI LLM gateway first, Argos as the keyless floor).  Then render
-    the bilingual ASS with the same layout the pipeline burns.
+    Download every published serialization for the selected official tracks.
+    The Immersive-lowest and Scheme 1 modes require YouTube's English auto-ASR
+    and its official auto-translated Chinese track. The fused mode may
+    machine-translate Chinese when explicitly selected or when no track exists.
 
 Flow 2 (ASR fallback)
     Only when the caption report *proves* that YouTube has no English track:
     extract mono audio from the local media file, send it to AssemblyAI for a
     word-timed English transcript (faster-whisper when no key is configured),
-    translate the display units to Chinese, then render the same ASS.
+    translate the display units to Chinese, then render the fused ASS.
 
 A failed probe is not proof that a track is absent.  The flow aborts on a
 probe error instead of paying for ASR, exactly like ``auto-pipeline.yml``.
@@ -50,6 +48,7 @@ import download_youtube_bilingual_srt as captions  # noqa: E402
 import fetch_youtube_captions  # noqa: E402
 import local_bilingual_ass  # noqa: E402
 import machine_translate_captions  # noqa: E402
+import scheme_local_immersive_lowest  # noqa: E402
 import scheme1_local_ass  # noqa: E402
 import subtitle_timing  # noqa: E402
 
@@ -65,6 +64,7 @@ MT = "mt"
 
 ASS_SCHEME1 = "scheme1"
 ASS_FUSED = "fused"
+ASS_IMMERSIVE_LOWEST = "immersive-lowest"
 
 # Explicit paths the operator can request with --preset.  Each entry maps to
 # the English source, the Chinese source, and whether YouTube may be probed.
@@ -203,6 +203,25 @@ def complete_youtube_pair(folder: Path, video_id: str) -> bool:
         written = set(track.get("formats") or [])
         return bool(track.get("present")) and published <= written
     return len(english) == len(subtitle_timing.FORMAT_PRIORITY)
+
+
+def complete_immersive_lowest_pair(folder: Path, video_id: str) -> bool:
+    """Require both current YouTube auto-caption origins before offline reuse."""
+    if not complete_youtube_pair(folder, video_id):
+        return False
+    try:
+        report = json.loads((folder / CAPTION_REPORT).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return False
+    tracks = report.get("tracks") or {}
+    return all(
+        (tracks.get(language) or {}).get("present")
+        and (tracks.get(language) or {}).get("kind") == kind
+        for language, kind in (
+            (ENGLISH, "auto-generated"),
+            (CHINESE, "auto-translated"),
+        )
+    )
 
 
 def caption_verdict(report_path: Path) -> str:
@@ -366,15 +385,50 @@ def run_scheme1_ass(
             video_id,
             media,
             ass_path=ass_path,
-            engine=translation_engine(args.translation_engine),
-            model=args.translation_model,
-            force_mt=args.chinese_source == MT,
-            box_style=args.box_style,
-            box_color=args.box_color,
-            box_opacity=args.box_opacity,
+            srt_path=ass_path.with_suffix(".srt"),
+            report_path=folder / scheme1_local_ass.DEFAULT_REPORT_NAME,
+            ergonomics_path=folder / scheme1_local_ass.DEFAULT_ERGONOMICS_NAME,
+            box_style=args.box_style if args.box_style is not None else "solid-color",
+            box_color=args.box_color or "#000000",
+            box_opacity=(
+                args.box_opacity if args.box_opacity is not None else 0.99
+            ),
             caption_order=args.caption_order,
             fps=args.fps,
             strict=args.strict,
+        )
+    except (OSError, ValueError, RuntimeError) as error:
+        log(f"error: {error}")
+        return 1
+    return 0
+
+
+def run_immersive_lowest_ass(
+    folder: Path,
+    video_id: str,
+    args: argparse.Namespace,
+    media: Path | None = None,
+) -> int:
+    """Render the lowest-standard Immersive Translate bilingual baseline."""
+    ass_path = (
+        args.ass_output
+        or folder / scheme_local_immersive_lowest.DEFAULT_ASS_NAME
+    ).expanduser().resolve()
+    try:
+        scheme_local_immersive_lowest.build(
+            folder,
+            video_id,
+            media,
+            ass_path=ass_path,
+            srt_path=ass_path.with_suffix(".srt"),
+            fps=args.fps,
+            strict=args.strict,
+            box_style=args.box_style if args.box_style is not None else "solid-color",
+            box_color=args.box_color or "#000000",
+            box_opacity=(
+                args.box_opacity if args.box_opacity is not None else 0.99
+            ),
+            caption_order=args.caption_order,
         )
     except (OSError, ValueError, RuntimeError) as error:
         log(f"error: {error}")
@@ -388,6 +442,8 @@ def run_ass(
     args: argparse.Namespace,
     media: Path | None = None,
 ) -> int:
+    if args.ass_mode == ASS_IMMERSIVE_LOWEST:
+        return run_immersive_lowest_ass(folder, video_id, args, media)
     if args.ass_mode == ASS_SCHEME1:
         return run_scheme1_ass(folder, video_id, args, media)
     ass_path = (
@@ -412,7 +468,7 @@ def run_ass(
         "--fps",
         str(args.fps),
         "--box-style",
-        args.box_style,
+        args.box_style or "none",
     ]
     if args.box_opacity is not None:
         command += ["--box-opacity", str(args.box_opacity)]
@@ -448,6 +504,24 @@ def apply_preset(args: argparse.Namespace) -> None:
             args.chinese_source = str(preset["chinese"])
         if preset.get("skip_youtube"):
             args.skip_youtube = True
+    if args.ass_mode in (ASS_SCHEME1, ASS_IMMERSIVE_LOWEST):
+        scheme_name = (
+            "immersive-lowest"
+            if args.ass_mode == ASS_IMMERSIVE_LOWEST
+            else "scheme_高级_自研_1"
+        )
+        if args.english_source not in (None, YOUTUBE):
+            raise ValueError(
+                f"--ass-mode {scheme_name} requires YouTube's official "
+                "English auto-ASR track"
+            )
+        if args.chinese_source not in (None, YOUTUBE):
+            raise ValueError(
+                f"--ass-mode {scheme_name} requires the official YouTube "
+                "auto-translated Chinese track"
+            )
+        args.english_source = YOUTUBE
+        args.chinese_source = YOUTUBE
     if args.english_source is None:
         args.english_source = "auto"
     if args.chinese_source is None:
@@ -470,7 +544,7 @@ def apply_preset(args: argparse.Namespace) -> None:
             "--ass-mode scheme1 keeps one line per language; "
             "use --ass-mode fused for --max-lines 2"
         )
-    if args.ass_mode == ASS_SCHEME1 and args.timing_report:
+    if args.ass_mode in (ASS_SCHEME1, ASS_IMMERSIVE_LOWEST) and args.timing_report:
         log("warning: --timing-report is only used by --ass-mode fused")
 
 
@@ -497,7 +571,12 @@ def choose_flow(
         log("skip-youtube: using the captions already in the folder")
         return YOUTUBE, "offline-local"
 
-    if not args.refresh and complete_youtube_pair(folder, video_id):
+    pair_is_complete = (
+        complete_immersive_lowest_pair(folder, video_id)
+        if args.ass_mode == ASS_IMMERSIVE_LOWEST
+        else complete_youtube_pair(folder, video_id)
+    )
+    if not args.refresh and pair_is_complete:
         log("local captions are complete; skipping the YouTube probe (use --refresh to re-probe)")
         return YOUTUBE, "local-captions"
 
@@ -556,10 +635,14 @@ def execute_flow(
     if args.chinese_source == YOUTUBE and not has_track(
         folder, video_id, CHINESE
     ):
+        rerun_hint = (
+            "refresh the official YouTube tracks"
+            if args.ass_mode in (ASS_SCHEME1, ASS_IMMERSIVE_LOWEST)
+            else "rerun with --chinese-source mt to machine-translate the English track"
+        )
         raise RuntimeError(
             f"no Chinese caption track for {video_id} in {folder}; "
-            "rerun with --chinese-source mt to machine-translate the "
-            "English track"
+            f"{rerun_hint}"
         )
     if flow == ASR:
         if media is None:
@@ -583,15 +666,18 @@ def execute_flow(
         )
 
     chinese_present = has_track(folder, video_id, CHINESE)
-    if args.ass_mode == ASS_SCHEME1:
-        # Scheme 1 pairs Chinese per English cue.  A sentence-level translation
-        # would be re-segmented by the ASS stage, so translating here would pay
-        # twice; the Scheme 1 builder decides whether an aligned official track
-        # can be reused or whether per-cue translation is needed.
-        log("scheme1: pairing Chinese per English cue in the ASS stage")
+    if args.ass_mode in (ASS_SCHEME1, ASS_IMMERSIVE_LOWEST):
+        if args.ass_mode == ASS_IMMERSIVE_LOWEST:
+            log(
+                "scheme_local__immersive_lowest / scheme_低级_沉浸翻译 "
+                "(最低 / LOWEST 标准): retaining official tracks for active-cue "
+                "snapshot synchronization"
+            )
+        else:
+            log("scheme_高级_自研_1: running self-developed segmentation and synchronization")
         state["translation"] = {
             "ran": False,
-            "deferred_to": "scheme1",
+            "deferred_to": args.ass_mode,
         }
     else:
         needs_translation = args.chinese_source == MT or not chinese_present
@@ -620,7 +706,7 @@ def execute_flow(
             log("Chinese track present; skipping translation")
             state["translation"] = {"ran": False}
 
-    stage("ASS", run_ass, folder, video_id, args)
+    stage("ASS", run_ass, folder, video_id, args, media)
 
 
 # --------------------------------------------------------------------------
@@ -724,7 +810,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--box-style",
         choices=(*captions.BOX_STYLES, "none"),
-        default="none",
+        default=None,
         help="Caption box behind the text (default: none).",
     )
     parser.add_argument(
@@ -763,18 +849,23 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--ass-mode",
-        choices=(ASS_SCHEME1, ASS_FUSED),
+        choices=(
+            ASS_IMMERSIVE_LOWEST,
+            ASS_SCHEME1,
+            ASS_FUSED,
+        ),
         default=ASS_SCHEME1,
         help=(
-            "ASS layout: scheme1 = one bilingual event per trimmed English cue "
-            "(default); fused = the seven-format sentence timeline."
+            "Subtitle scheme: immersive-lowest = minimum/lowest-standard official "
+            "bilingual active-cue snapshots; scheme1 = self-developed "
+            "segmentation and synchronization "
+            "(default); fused = the existing seven-format sentence timeline."
         ),
     )
     parser.add_argument(
         "--translation-model",
         help=(
-            "AssemblyAI LLM Gateway model for Scheme 1 per-cue translation "
-            "(default: the gateway's model list with an accessible fallback)."
+            "Machine-translation model override for the fused caption path."
         ),
     )
     parser.add_argument(
@@ -853,13 +944,25 @@ def main(argv: Sequence[str] | None = None) -> int:
             language: sorted(subtitle_timing.discover_tracks(folder, video_id, language))
             for language in (ENGLISH, CHINESE)
         }
-        default_ass = (
-            scheme1_local_ass.DEFAULT_ASS_NAME
-            if args.ass_mode == ASS_SCHEME1
-            else local_bilingual_ass.DEFAULT_ASS_NAME
-        )
+        default_ass = {
+            ASS_IMMERSIVE_LOWEST: scheme_local_immersive_lowest.DEFAULT_ASS_NAME,
+            ASS_SCHEME1: scheme1_local_ass.DEFAULT_ASS_NAME,
+            ASS_FUSED: local_bilingual_ass.DEFAULT_ASS_NAME,
+        }[args.ass_mode]
         ass_path = (args.ass_output or folder / default_ass).expanduser().resolve()
-        if args.ass_mode == ASS_SCHEME1:
+        if args.ass_mode == ASS_IMMERSIVE_LOWEST:
+            baseline_report = folder / scheme_local_immersive_lowest.DEFAULT_REPORT_NAME
+            if baseline_report.is_file():
+                state["immersive_lowest"] = json.loads(
+                    baseline_report.read_text(encoding="utf-8")
+                )
+            outputs = {
+                "ass": ass_path.name,
+                "bilingual_srt": ass_path.with_suffix(".srt").name,
+                "report": scheme_local_immersive_lowest.DEFAULT_REPORT_NAME,
+                "ergonomics": scheme_local_immersive_lowest.DEFAULT_ERGONOMICS_NAME,
+            }
+        elif args.ass_mode == ASS_SCHEME1:
             scheme1_report = folder / scheme1_local_ass.DEFAULT_REPORT_NAME
             if scheme1_report.is_file():
                 state["scheme1"] = json.loads(
@@ -868,8 +971,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             outputs = {
                 "ass": ass_path.name,
                 "bilingual_srt": ass_path.with_suffix(".srt").name,
+                "report": scheme1_local_ass.DEFAULT_REPORT_NAME,
                 "ergonomics": scheme1_local_ass.DEFAULT_ERGONOMICS_NAME,
-                "translation_cache": scheme1_local_ass.DEFAULT_CACHE_NAME,
             }
         else:
             outputs = {

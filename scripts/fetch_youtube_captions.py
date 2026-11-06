@@ -8,12 +8,13 @@ records exactly which of ``json3/srv3/srv2/srv1/ttml/vtt/srt`` YouTube served.
 
 The downloaded files are renamed to the canonical language codes the burner
 expects (``en-orig`` and ``zh-Hans``) while the report keeps the real YouTube
-code and whether the track was manual, auto-generated or auto-translated.
+code and whether the track was auto-generated or auto-translated.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -53,17 +54,19 @@ def first_match(tracks: dict, preferences: tuple[str, ...]) -> str | None:
 
 
 def resolve(metadata: dict, group: str) -> tuple[str, str] | None:
-    """Return (youtube_code, track_kind) for one language group, or None."""
+    """Select the English ASR track and its YouTube auto-translated counterpart."""
     preferences = ENGLISH_PREFERENCES if group == "en" else CHINESE_PREFERENCES
-    manual = metadata.get("subtitles") or {}
     auto = metadata.get("automatic_captions") or {}
-    code = first_match(manual, preferences)
-    if code:
-        return code, "manual"
+    source_language = str(metadata.get("language") or "").lower().split("-")[0]
+    if source_language != "en":
+        return None
+    english_source = first_match(auto, ENGLISH_PREFERENCES)
+    if not english_source:
+        return None
     code = first_match(auto, preferences)
-    if code:
-        return code, "auto-generated"
-    return None
+    if not code:
+        return None
+    return code, "auto-generated" if group == "en" else "auto-translated"
 
 
 def proxy_from_env() -> str | None:
@@ -286,15 +289,19 @@ def main(argv: list[str] | None = None) -> int:
             report["tracks"][canonical] = {"present": False, "formats": []}
             continue
         code, kind = resolved
-        formats = sorted(set(
-            captions.track_formats(metadata.get("subtitles") or {}, code)
-            + captions.track_formats(metadata.get("automatic_captions") or {}, code)
-        ))
+        table_name = "subtitles" if kind == "manual" else "automatic_captions"
+        source_tracks = metadata.get(table_name) or {}
+        formats = sorted(set(captions.track_formats(source_tracks, code)))
         log(f"{group}: using {code} ({kind}) with {', '.join(formats) or 'no formats'}")
         files: list[Path] = []
         download_error = ""
+        before_download = {
+            path.name: hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in directory.glob(f"{args.video_id}.{code}.*")
+            if path.is_file()
+        }
         try:
-            files, _cues, _source = captions.download_track(
+            downloaded, _cues, _source = captions.download_track(
                 url,
                 args.video_id,
                 code,
@@ -302,7 +309,13 @@ def main(argv: list[str] | None = None) -> int:
                 directory,
                 args.sleep_subtitles if group == "zh" else 0,
                 formats,
+                overwrite=True,
             )
+            files = [
+                path
+                for path in downloaded
+                if path.suffix.lstrip(".").lower() in formats
+            ]
         except Exception as error:  # noqa: BLE001 - a missing track is a normal outcome
             download_error = str(error)
             log(f"{group}: download failed: {error}")
@@ -310,7 +323,7 @@ def main(argv: list[str] | None = None) -> int:
                 log(f"{group}: rate limited; retrying once after {RATE_LIMIT_BACKOFF}s")
                 time.sleep(RATE_LIMIT_BACKOFF)
                 try:
-                    files, _cues, _source = captions.download_track(
+                    downloaded, _cues, _source = captions.download_track(
                         url,
                         args.video_id,
                         code,
@@ -318,37 +331,47 @@ def main(argv: list[str] | None = None) -> int:
                         directory,
                         args.sleep_subtitles if group == "zh" else 0,
                         formats,
+                        overwrite=True,
                     )
+                    files = [
+                        path
+                        for path in downloaded
+                        if path.suffix.lstrip(".").lower() in formats
+                    ]
                     download_error = ""
                 except Exception as retry_error:  # noqa: BLE001 - keep the first cause
                     download_error = str(retry_error)
                     log(f"{group}: retry failed: {retry_error}")
+            if download_error:
+                files.extend(
+                    path
+                    for path in directory.glob(f"{args.video_id}.{code}.*")
+                    if path.is_file()
+                    and path.suffix.lstrip(".").lower() in formats
+                    and hashlib.sha256(path.read_bytes()).hexdigest()
+                    != before_download.get(path.name)
+                    and path not in files
+                )
 
         # The listing above already carries signed timedtext URLs.  When
         # yt-dlp loses the subtitle request to a bot check, fetch the missing
         # serializations directly so all seven formats can still be kept.
         entries: list[dict] = []
-        for table in (
-            metadata.get("subtitles") or {},
-            metadata.get("automatic_captions") or {},
-        ):
-            entries.extend(
-                entry
-                for entry in (table.get(code) or [])
-                if isinstance(entry, dict)
-            )
+        entries.extend(
+            entry
+            for entry in (source_tracks.get(code) or [])
+            if isinstance(entry, dict)
+        )
         by_extension = {
             str(entry["ext"]): str(entry["url"])
             for entry in entries
             if entry.get("ext") and entry.get("url")
         }
-        existing = {
-            path.suffix.lstrip(".").lower(): path
-            for path in directory.glob(f"{args.video_id}.*")
-            if path.is_file() and code.lower() in path.name.lower()
+        downloaded_extensions = {
+            path.suffix.lstrip(".").lower() for path in files
         }
         for extension in formats:
-            if extension.lower() in existing:
+            if extension.lower() in downloaded_extensions:
                 continue
             url_for_format = by_extension.get(extension)
             if not url_for_format:
@@ -358,15 +381,15 @@ def main(argv: list[str] | None = None) -> int:
                 log(f"{group}: direct timedtext fallback for {extension}")
                 download_caption_url(url_for_format, target)
                 files.append(target)
-                existing[extension.lower()] = target
+                downloaded_extensions.add(extension.lower())
             except Exception as error:  # noqa: BLE001 - keep trying other formats
                 log(f"{group}: direct {extension} failed: {error}")
         files = [path for path in files if path.is_file()]
-        files.extend(
+        files = [
             path
-            for path in existing.values()
-            if path.is_file() and path not in files
-        )
+            for path in files
+            if path.suffix.lstrip(".").lower() in formats
+        ]
         if not files:
             report["tracks"][canonical] = {
                 "present": False,
@@ -389,6 +412,7 @@ def main(argv: list[str] | None = None) -> int:
                 for extension in captions.CAPTION_FORMATS
                 if extension not in written
             ],
+            **({"download_error": download_error} if download_error else {}),
         }
 
     required = [item.strip() for item in args.require.split(",") if item.strip()]

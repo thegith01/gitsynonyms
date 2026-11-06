@@ -86,11 +86,36 @@
 
 ## 字幕方案等级
 
-- **基准档：沉浸式翻译 v1.34.4**，作为独立行为比较基线，不复制其实现。
-- **自研方案1：SRT 重叠结束时间校正**，高于基准档一个方案等级。格式融合时，若当前
-  SRT cue 的结束时间晚于下一 cue 的开始时间，则将当前 cue 的结束时间截到下一 cue
-  的开始时间；开始时间与文本不变。若截断会令 cue 时长归零或为负，必须显式失败，不得
+- **`scheme_local__immersive_lowest` / `scheme_低级_沉浸翻译（最低 / LOWEST 标准）**：
+  最低档基准方案，Immersive Translate v1.34.4。
+  英文必须来自 YouTube 原始 `en-orig` 自动 ASR；中文必须来自同一英文轨的 YouTube
+  自动翻译。两种语言分别保留 YouTube 实际发布的七种格式
+  (`json3`、`srv3`、`srv2`、`srv1`、`ttml`、`vtt`、`srt`)；没有发布的格式明确记录，
+  不得用其他语言轨或机器翻译冒充。基准本地流程按每轨最高精度可解析格式恢复源 cue，
+  在中英文 cue 的全部起止边界取活动 cue 快照，两个语言轨共享同一事件时间。任一时间窗
+  缺少中/英文时显式失败，不生成伪同步或单语事件。按 REA 已观察到的 `cuechange` →
+  `activeCues` 全量快照行为建模，不做跨 cue 去重；这只是基于部分静态证据的本地比较
+  模型，不宣称完整复刻插件。入口为
+  `python scripts/local_subtitle_flow.py --ass-mode immersive-lowest ...`，产出
+  `bilingual_immersive_lowest_Chinese-English.srt/.ass` 与
+  `IMMERSIVE_LOWEST.json`。
+  所有该中英字幕方案的文件名、函数、报告和用户可见标签均明确含最低 / LOWEST 档次。
+- **`scheme_高级_自研_1`：比最低档高一档的自研方案1**。输入仍严格为英文官方 `en-orig`
+  七格式与其官方自动翻译中文七格式；差别只在字幕断句、双语配对与时间同步由自研流程
+  完成，而非采用沉浸翻译的活动 cue 快照模型。自研方案按 SRT 重叠结束时间校正规则：
+  若当前 SRT cue 的结束时间晚于下一 cue 的开始时间，则只把当前结束时间截到下一 cue
+  的开始时间，开始时间与文本不变；若截断会令 cue 时长归零或为负，必须显式失败，不得
   静默丢弃字幕。该校正不改变其他格式的时间规则。
+- **样例1**：官方英文自动字幕 cue 为 `00:00:00,480–00:00:06,960`、
+  `00:00:02,399–00:00:09,599`、`00:00:06,960–00:00:12,080` 等连续滚动区间；
+  方案1 将前几条结束时间依次截到 `00:00:02,399`、`00:00:06,960`、
+  `00:00:09,599`。官方中文自动翻译轨的首条 cue 为空，解析时跳过；其余 cue 保留文本，
+  并按相同规则截断重叠结束时间。生成双语 SRT 时，以校正后的英文 cue 为输出时间轴；
+  每条必须有中英两行。若首条英文 cue 与首条有效中文 cue 仅在边界相接，则将该中文 cue
+  延用到首条英文 cue，形成样例中的重复译文，不得输出单语 cue。此样例不授权对译文
+  文本去重或静默改写。
+- 所有自研方案1生成的双语 SRT 都必须遵守上述逐条双语与结束时间截断规则；若无法匹配
+  双语 cue 或会留下未配对译文，必须显式失败，不得静默输出部分字幕。
 - **样例1**：官方英文自动字幕 cue 为 `00:00:00,480–00:00:06,960`、
   `00:00:02,399–00:00:09,599`、`00:00:06,960–00:00:12,080` 等连续滚动区间；
   方案1 将前几条结束时间依次截到 `00:00:02,399`、`00:00:06,960`、
@@ -110,13 +135,23 @@
   时间，避免标点单独起行。其余每个 SRT cue 成为独立 ASS 显示事件，不合并 cue、不改变
   起止时间。字体与配色是方案默认值；生成器允许替换 ASS 的英文高亮色参数，但不得改变
   方案1的双语和时间校验。示例：
-  `python scripts/scheme1_srt_to_ass.py "D:\MyDownload\a\bilingual_scheme1_Chinese-English.srt"`。
-- **本地方案1 ASS**：`scripts/scheme1_local_ass.py` 以英文 SRT 为显示时间轴，逐条将结束
-  时间截到下一 cue 开始；每条英文 cue 配一条中文。官方中文轨与英文同网格时直接复用，
-  否则逐条机器翻译（AssemblyAI LLM Gateway 优先，无 key 时 Argos）并缓存到
-  `SCHEME1_TRANSLATIONS.json`。输出 `bilingual_scheme1_Chinese-English.srt/.ass`、
-  `SCHEME1.json` 与 `ASS_ERGONOMICS.json`。`local_subtitle_flow.py` 默认
-  `--ass-mode scheme1`；`--ass-mode fused` 保留七格式句段融合路径。
+  `python scripts/scheme1_srt_to_ass.py "D:\MyDownload\a\bilingual_scheme_advanced_selfdev_1_Chinese-English.srt"`。
+- **`scheme_高级_自研_1` ASS**：`scripts/scheme1_local_ass.py` 对英文和中文分别融合所有可用的
+  YouTube 七格式，优先级为 `json3`、`srv3`、`srv2`、`srv1`、`ttml`、`vtt`、`srt`。
+  英文以 SRT 作为方案1显示文本和 cue 单位（缺失时选最高优先级可用格式）；中文使用
+  最高优先级的非空官方格式。其余可解析格式参与 cue 时间佐证；保留每 cue 的文本来源
+  与时间来源。随后按方案1规则把重叠 cue 的结束时间截到下一 cue 开始。只要官方
+  中文轨可读，就使用官方中文：同网格标记为 `official-aligned`，不同网格按来源时间
+  重叠配对并标记为 `official-time-aligned`，不能配对时显式失败；官方中文缺失或
+  不可读时同样显式失败，不得用机器翻译替代。`SCHEME_ADVANCED_SELFDEV_1.json` 记录两种
+  语言的已发现、已解析、实际参与融合格式及逐 cue 来源。输出
+  `bilingual_scheme_advanced_selfdev_1_Chinese-English.srt/.ass` 与
+  `SCHEME_ADVANCED_SELFDEV_1_ERGONOMICS.json`。
+  `local_subtitle_flow.py` 默认 `--ass-mode scheme1`（即 `scheme_高级_自研_1`）；
+  `--ass-mode immersive-lowest` 运行独立的 `scheme_local__immersive_lowest` /
+  `scheme_低级_沉浸翻译（最低 / LOWEST 标准）`；
+  `--ass-mode fused` 保留七格式句段融合路径。沉浸式翻译基准规格与验收定义不随任一
+  本地实现改变。
 - 等级是方案分类，不等同于已证实的质量胜出；与沉浸式翻译的行为比较仍须按翻译处的
   盲审要求执行并记录结果。
 
@@ -136,10 +171,12 @@
 - `video_processing.py` 接收已选择的视频/字幕清单，运行 ffprobe 检查，自动判定横幅，
   单遍 libass 刻录，并按选项生成 540p 预览、封面和 `BURN.json`；刻录到临时文件，
   检查输出后通过原子替换发布最终 MP4。
-- `local_subtitle_flow.py` 是本地两段式入口：先走 YouTube 七格式（中文轨缺失时机器
+- `local_subtitle_flow.py` 是本地两段式入口：先走 YouTube 七格式（融合路径中文轨缺失时机器
   翻译），仅在字幕报告证明英文轨确实缺失时才用 AssemblyAI 逐词转写并翻译；探测
   失败按暂时性故障中止，不得当作“无字幕”直接付费转写。决策、引擎与输出格式写入
-  `LOCAL_FLOW.json`。ASS 默认使用方案1（`--ass-mode scheme1`）；`--ass-mode fused`
+  `LOCAL_FLOW.json`。ASS 默认使用高档方案1（`--ass-mode scheme1`）；基准档单独选择
+  `--ass-mode immersive-lowest`，它强制官方英文 ASR 与官方自动翻译中文且不允许 ASR/机器翻译
+  回退；`--ass-mode fused`
   使用七格式句段融合。显式维度通过 `--preset` 选择：`local-youtube-official`、
   `local-youtube-mt`、`local-asr-mt`、`local-asr-official`、
   `url-youtube-official`、`url-youtube-mt`、`offline-official`、`offline-mt`；

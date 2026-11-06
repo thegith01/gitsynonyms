@@ -21,24 +21,63 @@ together with the flow, reason, engines and output formats.
 `local-asr-official` is the case where YouTube published Chinese but no English
 track; ASR supplies English and the official Chinese translation is kept.
 
-## ASS mode
+## Subtitle scheme / ASS mode
 
-The local flow defaults to Scheme 1 (`--ass-mode scheme1`):
+The local flow defaults to the higher-tier self-developed Scheme 1
+(`--ass-mode scheme1`). Immersive Translate bilingual output always carries
+the explicit lowest-standard identity `scheme_local__immersive_lowest` /
+`scheme_低级_沉浸翻译（最低 / LOWEST 标准）`; its mode is
+`--ass-mode immersive-lowest`.
+The two modes intentionally use different segmentation and synchronization.
+
+### `scheme_local__immersive_lowest` / `scheme_低级_沉浸翻译（最低 / LOWEST 标准）
+(`--ass-mode immersive-lowest`)
+
+- Requires the YouTube original English `en-orig` auto-ASR track and that
+  track's official YouTube auto-translated Chinese track. It will not accept
+  manual Chinese, machine translation, or an ASR fallback as equivalent
+  sources.
+- Downloads and retains every format YouTube publishes for both tracks. The
+  baseline timeline uses each language's most precise readable source format;
+  source format presence, missing formats, and source kinds are recorded.
+- Based on REA's partially analyzed `cuechange` → full `activeCues` snapshot,
+  it creates output intervals at the union of both tracks' cue boundaries and
+  includes every active cue in each language. It does not deduplicate rolling
+  cues. If any interval has only one active language, it fails rather than
+  writing falsely synchronized or monolingual captions.
+- Outputs: `bilingual_immersive_lowest_Chinese-English.srt/.ass`,
+  `IMMERSIVE_LOWEST.json` and `IMMERSIVE_LOWEST_ERGONOMICS.json`.
+- REA coverage is partial; this is an explicit local comparison model, not a
+  claim of complete plugin reproduction. The pinned baseline specification and
+  its tests are unchanged.
+
+### `scheme_高级_自研_1` (`--ass-mode scheme1`)
 
 - English SRT is the display timeline; each cue's end is trimmed to the next
   cue's start.
-- Each English cue gets exactly one Chinese line. An official Chinese track is
-  reused only when it has the same cue grid; otherwise the cues are translated
-  1:1 (AssemblyAI gateway first, Argos without a key) and cached in
-  `SCHEME1_TRANSLATIONS.json`.
-- Outputs: `bilingual_scheme1_Chinese-English.srt`, `.ass`, `SCHEME1.json` and
-  `ASS_ERGONOMICS.json`.
+- Inputs remain the same official English ASR and corresponding official
+  auto-translated Chinese seven-format tracks as the lower baseline. The
+  difference is that Scheme 1 uses self-developed segmentation, bilingual
+  pairing and synchronization instead of active-cue snapshots.
+- English and Chinese each fuse all available YouTube formats in the order
+  `json3`, `srv3`, `srv2`, `srv1`, `ttml`, `vtt`, `srt`. English SRT remains
+  Scheme 1's display transcript and cue unit when available; the highest-
+  priority non-empty format supplies Chinese text. Other usable formats
+  corroborate timing. Scheme 1's overlap correction is applied to both tracks.
+- Official auto-translated Chinese is required, including when its cue grid differs from English.
+  `SCHEME_ADVANCED_SELFDEV_1.json` records its text/timing sources and whether pairing used an
+  identical grid or source-time overlap. If official Chinese files exist but
+  cannot be read or paired, or the track is absent, generation fails rather
+  than silently substituting machine translation.
+- Outputs: `bilingual_scheme_advanced_selfdev_1_Chinese-English.srt/.ass`,
+  `SCHEME_ADVANCED_SELFDEV_1.json` and
+  `SCHEME_ADVANCED_SELFDEV_1_ERGONOMICS.json`.
 
-Use `--ass-mode fused` to keep the seven-format sentence timeline and the
+Use `--ass-mode fused` to keep the existing seven-format sentence timeline and the
 `local_bilingual_ass.py` outputs (`bilingual_precise_Chinese-English.ass`,
-`TIMING.json`, precision VTT sidecars). `--translation-model` selects the
-AssemblyAI gateway model for Scheme 1; `--force-mt` ignores an aligned official
-Chinese track.
+`TIMING.json`, precision VTT sidecars). Machine translation options apply only
+to the fused path; neither Scheme 1 nor the Immersive-lowest baseline substitutes
+machine translation for a missing official Chinese track.
 
 ## PowerShell runner: line-by-line or batch
 
@@ -74,8 +113,8 @@ used either way.
 |------|------------|----------|
 | `<Directory>\LOCAL_FLOW_COMMANDS.jsonl` | `local_subtitle_flow.ps1` | One JSON line per invocation: `observed_at`, `preset`, `command`, `exit_code`, `duration_seconds`, `directory`, `url`, `video_id`, `dry_run` |
 | `<Directory>\LOCAL_FLOW.json` | `local_subtitle_flow.py` | Flow decision: `flow`, `reason`, `selection`, engines, output formats, `status`, `error` |
-| `<Directory>\SCHEME1.json` | `scheme1_local_ass.py` | Scheme 1 audit: sources, cue count, translation kind/engine, style, ergonomics summary |
-| `<Directory>\SCHEME1_TRANSLATIONS.json` | `scheme1_local_ass.py` | Per-cue Chinese translation cache, one line per unique English cue |
+| `<Directory>\IMMERSIVE_LOWEST.json` | `scheme_local_immersive_lowest.py` | Lowest-standard baseline audit: verified official source kinds, available formats, active-cue synchronization windows, REA evidence and coverage |
+| `<Directory>\SCHEME_ADVANCED_SELFDEV_1.json` | `scheme1_local_ass.py` | Higher-tier Scheme 1 audit: both languages' source formats, per-format cue participation, cue count, pairing kind, style, ergonomics summary |
 
 `LOCAL_FLOW_COMMANDS.jsonl` is gitignored; `LOCAL_FLOW.json` is a per-run
 artifact and is not part of the repository either.

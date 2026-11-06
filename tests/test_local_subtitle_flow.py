@@ -186,24 +186,46 @@ def test_caption_fetch_sets_yt_dlp_sleep_for_chinese_not_workflow_pause(
 ):
     fetcher = flow.fetch_youtube_captions
     waits: list[tuple[str, int]] = []
+    kinds: list[tuple[str, str, tuple[str, ...], bool]] = []
     pauses: list[int] = []
     monkeypatch.setattr(
         fetcher,
         "fetch_listing",
         lambda *_args: {
-            "subtitles": {},
+            "language": "en",
+            "subtitles": {
+                "en-orig": [{"ext": "vtt", "url": "https://example.test/manual-en.vtt"}],
+                "zh-Hans": [{"ext": "srt", "url": "https://example.test/manual-zh.srt"}],
+            },
             "automatic_captions": {
-                "en": [{"ext": "srt", "url": "https://example.test/en.srt"}],
+                "en-orig": [
+                    {"ext": "json3", "url": "https://example.test/en.json3"},
+                    {"ext": "srt", "url": "https://example.test/en.srt"},
+                ],
                 "zh-Hans": [{"ext": "srt", "url": "https://example.test/zh.srt"}],
             },
         },
     )
 
-    def fake_download(_url, video_id, language, _kind, directory, wait, _formats):
+    def fake_download(
+        _url,
+        video_id,
+        language,
+        kind,
+        directory,
+        wait,
+        formats,
+        *,
+        overwrite=False,
+    ):
         waits.append((language, wait))
-        path = directory / f"{video_id}.{language}.srt"
-        path.write_text("caption", encoding="utf-8")
-        return [path], [], path
+        kinds.append((language, kind, tuple(formats), overwrite))
+        files = []
+        for extension in formats:
+            path = directory / f"{video_id}.{language}.{extension}"
+            path.write_text("caption", encoding="utf-8")
+            files.append(path)
+        return files, [], files[0]
 
     monkeypatch.setattr(fetcher.captions, "download_track", fake_download)
     monkeypatch.setattr(fetcher.time, "sleep", pauses.append)
@@ -221,8 +243,61 @@ def test_caption_fetch_sets_yt_dlp_sleep_for_chinese_not_workflow_pause(
         ]
     ) == 0
 
-    assert waits == [("en", 0), ("zh-Hans", 56)]
+    assert waits == [("en-orig", 0), ("zh-Hans", 56)]
+    assert kinds == [
+        ("en-orig", "auto-generated", ("json3", "srt"), True),
+        ("zh-Hans", "auto-translated", ("srt",), True),
+    ]
     assert pauses == []
+
+
+def test_caption_fetch_requires_english_asr_and_its_auto_translated_chinese():
+    fetcher = flow.fetch_youtube_captions
+    metadata = {
+        "language": "en",
+        "subtitles": {
+            "en-orig": [{"ext": "srt"}],
+            "zh-Hans": [{"ext": "srt"}],
+        },
+        "automatic_captions": {
+            "en-orig": [{"ext": "json3"}],
+            "zh-Hans": [{"ext": "json3"}],
+        },
+    }
+
+    assert fetcher.resolve(metadata, "en") == ("en-orig", "auto-generated")
+    assert fetcher.resolve(metadata, "zh") == ("zh-Hans", "auto-translated")
+
+    metadata["language"] = "zh"
+    assert fetcher.resolve(metadata, "zh") is None
+
+
+def test_immersive_lowest_forces_both_official_youtube_tracks():
+    args = flow.build_parser().parse_args(["--ass-mode", "immersive-lowest"])
+
+    flow.apply_preset(args)
+
+    assert args.ass_mode == flow.ASS_IMMERSIVE_LOWEST
+    assert args.english_source == flow.YOUTUBE
+    assert args.chinese_source == flow.YOUTUBE
+
+
+def test_immersive_lowest_rejects_non_youtube_sources():
+    args = flow.build_parser().parse_args(
+        [
+            "--ass-mode",
+            "immersive-lowest",
+            "--chinese-source",
+            "mt",
+        ]
+    )
+
+    try:
+        flow.apply_preset(args)
+    except ValueError as error:
+        assert "official auto-translated Chinese" in str(error)
+    else:
+        raise AssertionError("baseline mode must reject machine-translated Chinese")
 
 
 def test_run_ass_forwards_box_settings(tmp_path, monkeypatch):
@@ -396,6 +471,12 @@ def test_default_ass_mode_is_scheme1_and_defers_translation(tmp_path, monkeypatc
     assert report["translation"] == {"ran": False, "deferred_to": "scheme1"}
     assert calls and calls[0]["directory"] == folder
     assert calls[0]["video_id"] == VIDEO_ID
+    assert calls[0]["box_style"] == "solid-color"
+    assert calls[0]["box_color"] == "#000000"
+    assert calls[0]["box_opacity"] == 0.99
+    assert "engine" not in calls[0]
+    assert "force_mt" not in calls[0]
+    assert report["outputs"]["report"] == "SCHEME_ADVANCED_SELFDEV_1.json"
 
 
 def test_flow1_translates_chinese_when_youtube_has_only_english(tmp_path, monkeypatch):

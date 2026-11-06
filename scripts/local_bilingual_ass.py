@@ -29,7 +29,7 @@ ergonomics errors when ``--strict`` is set).
 from __future__ import annotations
 
 import argparse
-import json
+import math
 import re
 import subprocess
 import sys
@@ -159,6 +159,37 @@ def discover_formats(
     }
 
 
+def discover_reported_formats(
+    folder: Path,
+    video_id: str,
+    language: str,
+    media_stem: str | None,
+    track_report: dict,
+) -> dict[str, Path]:
+    """Prefer the exact files recorded by the YouTube caption fetch report."""
+    names = track_report.get("files")
+    if not names:
+        return discover_formats(folder, video_id, language, media_stem)
+
+    files: dict[str, Path] = {}
+    for name in names:
+        path = folder / str(name)
+        extension = path.suffix.lstrip(".").lower()
+        if extension not in subtitle_timing.FORMAT_PRIORITY:
+            continue
+        if not path.is_file():
+            raise ValueError(
+                f"CAPTION_FORMATS.json names a missing {language} caption file: "
+                f"{path.name}"
+            )
+        files[extension] = path
+    return {
+        extension: files[extension]
+        for extension in subtitle_timing.FORMAT_PRIORITY
+        if extension in files
+    }
+
+
 def probe_duration(media: Path | None) -> float | None:
     """Read the container duration with ffprobe, if it is installed."""
     if media is None:
@@ -186,6 +217,13 @@ def probe_duration(media: Path | None) -> float | None:
     except ValueError:
         return None
     return value if value > 0 else None
+
+
+def ass_coverage_duration(duration: float | None) -> float | None:
+    """Round up so centisecond ASS timing never ends before the media."""
+    if duration is None:
+        return None
+    return math.ceil(duration * 100 - 1e-9) / 100
 
 
 def build_track(folder: Path, video_id: str, language: str, media_stem: str | None = None) -> dict:

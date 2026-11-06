@@ -43,6 +43,16 @@ def split_bilingual_tracks(source: Path) -> tuple[list[dict], list[dict]]:
                 f"Scheme 1 SRT cues must be ordered and non-overlapping near {start:.3f}s."
             )
         lines = [line.strip() for line in cue["text"].splitlines() if line.strip()]
+        if len(lines) == 1:
+            plain = captions.html.unescape(re.sub(r"<[^>]*>", "", lines[0]))
+            if captions.CJK.search(plain):
+                raise ValueError(
+                    f"Scheme 1 cue at {start:.3f}s has Chinese text without an "
+                    "English source cue."
+                )
+            english.append({**cue, "text": lines[0], "unpaired": True})
+            previous_start, previous_end = start, end
+            continue
         if len(lines) != 2:
             raise ValueError(
                 f"Scheme 1 cue at {start:.3f}s must contain exactly two non-empty language lines."
@@ -81,16 +91,36 @@ def split_bilingual_tracks(source: Path) -> tuple[list[dict], list[dict]]:
     return chinese, english
 
 
+def ass_timestamp_seconds(value: str) -> float:
+    hours, minutes, seconds = value.split(":")
+    whole_seconds, fraction = seconds.split(".")
+    return (
+        int(hours) * 3600
+        + int(minutes) * 60
+        + int(whole_seconds)
+        + int(fraction) / 100
+    )
+
+
 def convert_srt_to_ass(
     source: Path,
     destination: Path,
     *,
+    english_word_timings: list[list[dict | None]] | None = None,
+    video_duration: float | None = None,
     box_style: str | None = None,
     box_color: str | None = None,
     box_opacity: float | None = None,
     caption_order: str | None = None,
 ) -> Path:
     chinese, english = split_bilingual_tracks(source)
+    if english_word_timings is not None:
+        if len(english_word_timings) != len(english):
+            raise ValueError(
+                "Scheme 1 word timings do not match the bilingual SRT cue count."
+            )
+        for cue, timings in zip(english, english_word_timings):
+            cue["word_timings"] = timings
     style = dict(SCHEME1_ASS_STYLE)
     if box_style is not None:
         style["box_style"] = box_style
@@ -100,25 +130,138 @@ def convert_srt_to_ass(
         style["box_opacity"] = box_opacity
     if caption_order is not None:
         style["caption_order"] = caption_order
-    content = captions.build_ass(
-        chinese, english, cue_aligned=True, **style
-    )
-    dialogues = [
-        line for line in content.splitlines() if line.startswith("Dialogue: 1,")
+    if video_duration is not None:
+        style["video_duration"] = video_duration
+    unpaired_english = [cue for cue in english if cue.get("unpaired")]
+    bilingual_english = [
+        cue for cue in english if not cue.get("unpaired")
     ]
-    if len(dialogues) != len(english):
-        raise ValueError("Generated ASS does not preserve every Scheme 1 cue.")
-    for cue, dialogue in zip(english, dialogues):
-        fields = dialogue.split(",", 3)
-        if (
-            fields[1] != captions.ass_timestamp(cue["start"])
-            or fields[2] != captions.ass_timestamp(cue["end"])
-            or dialogue.split(",", 9)[-1].count(r"\N") != 2
-        ):
+    if not chinese or not bilingual_english:
+        raise ValueError(
+            "Scheme 1 needs at least one bilingual cue to render the styled timeline."
+        )
+    content = captions.build_ass(
+        chinese, bilingual_english, cue_aligned=True, **style
+    )
+    lines = content.splitlines()
+    dialogues = [line for line in lines if line.startswith("Dialogue: 1,")]
+    cue_events: list[list[tuple[int, list[str], float, float]]] = [
+        [] for _ in bilingual_english
+    ]
+    for line_index, line in enumerate(lines):
+        if not line.startswith("Dialogue: 1,"):
+            continue
+        fields = line.split(",", 9)
+        if len(fields) != 10:
+            raise ValueError("Generated ASS contains a malformed Scheme 1 event.")
+        actual_start = ass_timestamp_seconds(fields[1])
+        actual_end = ass_timestamp_seconds(fields[2])
+        matching_cues = [
+            index
+            for index, cue in enumerate(bilingual_english)
+            if cue["start"] - 0.02 <= actual_start < cue["end"] + 0.02
+        ]
+        if not matching_cues:
             raise ValueError(
-                f"Generated ASS changed cue timing or wrapped a language line at "
-                f"{cue['start']:.3f}s."
+                f"Generated ASS event at {actual_start:.3f}s does not map to a "
+                "Scheme 1 SRT cue."
             )
+        cue_index = max(
+                matching_cues, key=lambda index: bilingual_english[index]["start"]
+        )
+        cue_events[cue_index].append(
+            (line_index, fields, actual_start, actual_end)
+        )
+
+    if not dialogues or any(not events for events in cue_events):
+        raise ValueError("Generated ASS does not preserve every Scheme 1 cue.")
+
+    for cue, events in zip(bilingual_english, cue_events):
+        events.sort(key=lambda event: event[2])
+        for event_index, (line_index, fields, actual_start, actual_end) in enumerate(
+            events
+        ):
+            if len(events) == 1:
+                target_start = cue["start"]
+                target_end = cue["end"]
+            else:
+                if (
+                    actual_start < cue["start"] - 0.02
+                    or actual_end > cue["end"] + 0.02
+                ):
+                    raise ValueError(
+                        f"Split ASS events exceed the Scheme 1 cue at "
+                        f"{cue['start']:.3f}s."
+                    )
+                target_start = max(actual_start, cue["start"])
+                target_end = min(actual_end, cue["end"])
+                if event_index + 1 < len(events):
+                    target_end = min(target_end, events[event_index + 1][2])
+                if target_end <= target_start:
+                    raise ValueError(
+                        f"Split ASS event has no positive duration at "
+                        f"{cue['start']:.3f}s."
+                    )
+            shift = round((actual_start - target_start) * 100)
+            fields[1] = captions.ass_timestamp(target_start)
+            fields[2] = captions.ass_timestamp(target_end)
+            fields[9] = re.sub(
+                r"\\kt(\d+)",
+                lambda match: f"\\kt{max(0, int(match.group(1)) + shift)}",
+                fields[9],
+            )
+            if fields[9].count(r"\N") != 2:
+                raise ValueError(
+                    f"Generated ASS changed cue timing or wrapped a language "
+                    f"line at {cue['start']:.3f}s."
+                )
+            lines[line_index] = ",".join(fields)
+
+    left = captions.CAPTION_AREA[0]
+    right = captions.CAPTION_AREA[2]
+    bottom = captions.CAPTION_AREA[3]
+    center_x = (left + right) // 2
+    baseline_y = bottom - 8
+    caption_order = str(style.get("caption_order", "chinese-first"))
+    english_size = int(style.get("second_font_size", 48))
+    chinese_size = english_size * float(style.get("first_font_scale", 1.2))
+    line_gap = int(style.get("line_gap", 10))
+    lower_language = (
+        "English" if caption_order == "chinese-first" else "Chinese"
+    )
+    for cue in unpaired_english:
+        font_size = english_size
+        y = (
+            baseline_y
+            if lower_language == "English"
+            else baseline_y - line_gap - english_size
+        )
+        body = (
+            f"{{\\an2\\pos({center_x},{y:g})}}"
+            f"{{\\rEnglish\\fs{font_size:g}}}"
+            + captions.ass_karaoke_text(
+                cue["text"],
+                float(cue["end"]) - float(cue["start"]),
+                start=float(cue["start"]),
+                word_timings=cue.get("word_timings", []),
+            )
+        )
+        lines.append(
+            f"Dialogue: 1,{captions.ass_timestamp(cue['start'])},"
+            f"{captions.ass_timestamp(cue['end'])},English,,0,0,0,,{body}"
+        )
+
+    dialogue_lines = [
+        line for line in lines if line.startswith("Dialogue: 1,")
+    ]
+    non_dialogue_lines = [
+        line for line in lines if not line.startswith("Dialogue: 1,")
+    ]
+    dialogue_lines.sort(
+        key=lambda line: ass_timestamp_seconds(line.split(",", 9)[1])
+    )
+    lines = [*non_dialogue_lines, *dialogue_lines]
+    content = "\n".join(lines) + "\n"
     captions.write_ass(destination, content)
     return destination
 
