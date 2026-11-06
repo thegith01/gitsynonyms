@@ -6,10 +6,10 @@ the visible source changes, while the Chinese translation unit can persist
 across several source cues. This local baseline mirrors that behavior with the
 official YouTube English ASR and its official auto-translated Chinese track.
 Each official English cue becomes exactly one display event, trimmed to the
-next English cue start. Its Chinese line is the latest official Chinese cue
-active at the original English cue midpoint, so a target may stay on screen
-while the source moves on. Unpaired or zero-duration cues are skipped and
-recorded; the scheme never writes a monolingual display event.
+next English cue start. Its Chinese line is the official Chinese cue with the
+same start and end when YouTube published one; otherwise it is the Chinese cue
+with the largest temporal overlap. Unpaired or zero-duration cues are skipped
+and recorded; the scheme never writes a monolingual display event.
 """
 
 from __future__ import annotations
@@ -187,6 +187,55 @@ def _active_cues(cues: Sequence[dict], instant: float) -> list[dict]:
     return active
 
 
+def _select_chinese_target(
+    cue: dict, chinese: Sequence[dict]
+) -> tuple[dict | None, str]:
+    """Pair an English source cue with its official Chinese translation cue.
+
+    YouTube's auto-translated Chinese track normally reuses the English cue
+    boundaries exactly, so an exact timing pair is the strongest evidence. When
+    no exact pair exists, the Chinese cue with the largest temporal overlap is
+    the next best source-aligned choice. The midpoint fallback is retained only
+    for malformed or highly fragmented sources.
+    """
+    start = float(cue["start"])
+    end = float(cue["end"])
+    exact = [
+        item
+        for item in chinese
+        if abs(float(item["start"]) - start) <= 0.001
+        and abs(float(item["end"]) - end) <= 0.001
+        and str(item.get("text", "")).strip()
+    ]
+    if exact:
+        return exact[0], "exact-timing"
+
+    candidates: list[tuple[float, dict]] = []
+    for item in chinese:
+        if not str(item.get("text", "")).strip():
+            continue
+        overlap = min(end, float(item["end"])) - max(
+            start, float(item["start"])
+        )
+        if overlap > 0:
+            candidates.append((overlap, item))
+    if candidates:
+        best = max(
+            candidates,
+            key=lambda pair: (
+                pair[0],
+                -abs(float(pair[1]["start"]) - start),
+                -float(pair[1]["start"]),
+            ),
+        )[1]
+        return best, "max-overlap"
+
+    active = _active_cues(chinese, (start + end) / 2)
+    if active:
+        return active[-1], "midpoint-fallback"
+    return None, "missing"
+
+
 def build_source_anchored_events(
     chinese: Sequence[dict], english: Sequence[dict]
 ) -> tuple[list[dict], list[dict]]:
@@ -194,12 +243,11 @@ def build_source_anchored_events(
 
     The source cue owns the display interval. The interval ends at the next
     English cue start so display events stay disjoint, while the Chinese line
-    is selected from the official Chinese cues active at the original English
-    cue midpoint. Selecting only the latest active Chinese cue lets a larger
-    translation unit persist across several source cues, which is the observed
-    desynchronized behavior this baseline must reproduce. A cue with no active
-    Chinese target or no positive display duration is skipped and recorded;
-    the scheme never emits a monolingual event.
+    comes from the official Chinese cue that YouTube published on the same
+    start/end boundaries. When no exact pair exists, the Chinese cue with the
+    largest temporal overlap is used. A cue with no Chinese target or no
+    positive display duration is skipped and recorded; the scheme never emits
+    a monolingual event.
     """
     for language, cues in ((CHINESE, chinese), (ENGLISH, english)):
         if not cues:
@@ -253,11 +301,10 @@ def build_source_anchored_events(
             continue
         midpoint = (start + source_end) / 2
         active_chinese = _active_cues(chinese, midpoint)
+        target, target_selection = _select_chinese_target(cue, chinese)
         chinese_text = (
-            captions._single_caption_line(
-                str(active_chinese[-1].get("text", ""))
-            ).strip()
-            if active_chinese
+            captions._single_caption_line(str(target.get("text", ""))).strip()
+            if target
             else ""
         )
         if not english_text or not chinese_text:
@@ -271,6 +318,7 @@ def build_source_anchored_events(
                     "missing": "Chinese" if not chinese_text else "English",
                     "active": "English" if not chinese_text else "Chinese",
                     "active_chinese_cues": len(active_chinese),
+                    "target_selection": target_selection,
                 }
             )
             continue
@@ -283,8 +331,9 @@ def build_source_anchored_events(
                 "source_trimmed": end < source_end,
                 "chinese": chinese_text,
                 "english": english_text,
-                "target_cue_start": float(active_chinese[-1]["start"]),
-                "target_cue_end": float(active_chinese[-1]["end"]),
+                "target_selection": target_selection,
+                "target_cue_start": float(target["start"]),
+                "target_cue_end": float(target["end"]),
                 "active_chinese_cues": len(active_chinese),
                 "english_word_timings": captions._word_timings_for_text(
                     english_text, [cue]
