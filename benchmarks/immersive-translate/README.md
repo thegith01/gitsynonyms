@@ -50,6 +50,38 @@ python scripts/benchmarks/fetch_immersive_translate.py --refresh-hashes   # 版�
 | 静音词 | 默认开启，正则 `\([^)]*\)|\[[^\]]*\]` 过滤 `[music]`、`(applause)`、`>>` 之类 |
 | 词级高亮 | 扩展 overlay 没有；YouTube 原生播放器可能在自己的字幕 DOM 里加粗当前词 |
 
+## 端到端流程（v1.34.4）
+
+```text
+YouTube watch page
+  └─ 页面自己的 timedtext 请求（TTML <p> / json3 events）
+       └─ 扩展 hook XHR/fetch（hookType: "xhr", preTranslation: true）
+            └─ preMergeSubtitles：把当前活动的滚动短语拼成一个可见窗口
+                 │  · 重叠短语首尾相接，重叠部分原样保留（会看到 that, that）
+                 │  · pCe 按阅读速度裁剪单条短语的显示时长
+                 └─ 对整个可见窗口请求翻译（观察到的加载标签：微软翻译；
+                    defaultFallbackServices 仍为 bing、google）
+                      └─ 目标行通常晚约 0.5 s 到达；加载期间只显示原文或“翻译中”
+                           └─ dual overlay：原文 + 译文，bottom，白字，
+                              #080808 75% 底、阴影；排版由每站点注入 CSS 决定
+```
+
+关键点不是“它用了哪个翻译 API”，而是**显示单位和翻译单位都是当前活动的短语窗口**：
+源短语先合并，再整体翻译，最后作为一条 overlay 显示。扩展不重新下载字幕，也不在
+本地保存字幕文件；它复用页面已经拿到的 timedtext 响应。
+
+本地 LOWEST 流程按同一顺序重建，但把 overlay 换成可烧录的 ASS：
+
+| 环节 | 扩展 v1.34.4 | 本地 `scheme_local__immersive_lowest` |
+|---|---|---|
+| 源时间轴 | 页面 timedtext；TTML/json3 | 七格式齐全，`json3` 为主时间轴，其余六种交叉校验 |
+| 显示单位 | 活动短语窗口，重叠不去重 | 英文短语按句/从句聚成单元，跨 cue 去重 |
+| 翻译单位 | 整个可见窗口 | 整条官方中文 cue 分配给重叠最多的英文单元，不切开中文 |
+| 缺中文的英文单元 | 窗口里可能只有原文 | 合并到最近的双语事件，`source_units_skipped = 0` |
+| 排版 | 站点 CSS，无固定字符预算 | 中文 ≤28 全角字符/行、英文 ≤60 字符/行；超宽在从句/ cue 边界切分 |
+| 词级时间 | overlay 无卡拉 OK | `json3` 的 `tStartMs + tOffsetMs` 驱动英文 `\k` 卡拉 OK |
+| 交付 | 浏览器 overlay，依赖页面和网络 | 离线 ASS，两种语言在同一事件里同时出现 |
+
 ## 它没有做的四件事（也就是我们必须超过的地方）
 
 1. **没有跨 cue 去重。** 活动的重叠短语直接拼接，捕获到的源窗口里出现
