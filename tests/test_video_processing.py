@@ -560,8 +560,8 @@ def frame_stack(width, height, count, banner):
 
 
 def test_caption_region_scales_with_the_video():
-    assert video_processing.caption_region(1920, 1080) == (66, 882, 1786, 140)
-    assert video_processing.caption_region(640, 360) == (22, 294, 594, 46)
+    assert video_processing.caption_region(1920, 1080) == (96, 882, 1728, 126)
+    assert video_processing.caption_region(640, 360) == (32, 294, 576, 42)
 
 
 def test_analyze_frame_stack_detects_a_static_banner():

@@ -28,8 +28,8 @@ VIDEOS = [
 
 
 def test_nav_links_are_relative_per_page_depth():
-    root = pages.nav("", "index")
-    detail = pages.nav("../", "videos")
+    root = "\n".join(pages.nav("", "index"))
+    detail = "\n".join(pages.nav("../", "videos"))
 
     assert '<a class="active" href="./">首页</a>' in root
     assert '<a href="about.html">说明</a>' in root

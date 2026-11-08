@@ -117,6 +117,7 @@ NAV_ITEMS = (
     ("latest", "latest.html", "最新成片"),
     ("videos", "videos.html", "全部成片"),
     ("generator", "generator.html", "字幕生成"),
+    ("flow", "flow.html", "流程编排"),
     ("about", "about.html", "说明"),
 )
 

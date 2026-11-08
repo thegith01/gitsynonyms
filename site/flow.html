@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1020">
+    <meta name="description" content="像 n8n 一样按流程编排 GitSynonyms 的白宫视频监测、字幕、刻录、配音与发布模块，并生成可复制的命令。">
+    <title>流程编排 · GitSynonyms</title>
+    <link rel="stylesheet" href="styles.css?v=flow-v1">
+    <link rel="stylesheet" href="flow.css?v=flow-v3">
+  </head>
+  <body>
+    <main class="flow-shell">
+      <header class="flow-header">
+        <p class="eyebrow">GITSYNONYMS · FLOW WORKSPACE</p>
+        <h1>流程编排</h1>
+        <p class="intro">像 n8n 一样管理多条流程：每条流程单独选择模块、拖动排序、填写参数，命令计划实时更新。所有本机 Python 步骤统一通过 Anaconda <code>a</code> 环境执行；页面只生成命令，不执行、不上传，也不保存令牌。</p>
+        <nav class="page-nav" aria-label="主导航">
+          <a href="./">首页</a>
+          <a href="latest.html">最新成片</a>
+          <a href="videos.html">全部成片</a>
+          <a href="generator.html">字幕生成</a>
+          <a class="active" href="flow.html">流程编排</a>
+          <a href="about.html">说明</a>
+        </nav>
+      </header>
+
+      <section class="panel workspace-panel" aria-labelledby="workspace-title">
+        <div class="workspace-head">
+          <div class="workspace-heading">
+            <p class="section-kicker">WORKFLOWS</p>
+            <h2 id="workspace-title">流程工作区</h2>
+            <p class="hint">每个流程都有自己的节点链和参数；切换标签即可独立编排，互不影响。</p>
+          </div>
+          <div class="workspace-actions">
+            <button id="open-templates" class="secondary-button" type="button">模板</button>
+            <button id="duplicate-workflow" class="ghost-button" type="button">复制流程</button>
+            <button id="delete-workflow" class="ghost-button" type="button">删除流程</button>
+            <button id="share-flow" class="secondary-button" type="button">分享链接</button>
+            <button id="export-flow" class="secondary-button" type="button">导出 JSON</button>
+            <button id="import-flow" class="ghost-button" type="button" title="导入会替换整个工作区">导入 JSON</button>
+            <input id="import-file" type="file" accept="application/json,.json" hidden>
+          </div>
+        </div>
+        <div class="workflow-bar">
+          <div id="workflow-tabs" class="workflow-tabs" role="tablist" aria-label="流程列表"></div>
+          <button id="new-workflow" class="workflow-new" type="button" title="新建空白流程" aria-label="新建空白流程">＋</button>
+        </div>
+        <div class="workflow-titlebar">
+          <label class="workflow-name-field" for="workflow-name">
+            <span>当前流程</span>
+            <input id="workflow-name" type="text" maxlength="80" autocomplete="off" placeholder="流程名称">
+          </label>
+          <p id="workflow-meta" class="workflow-meta"></p>
+        </div>
+      </section>
+
+      <section class="panel param-panel" aria-labelledby="params-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">CONTEXT</p>
+            <h2 id="params-title">流程参数</h2>
+            <p class="hint">参数属于当前流程；切换流程后会使用该流程自己的值。</p>
+          </div>
+        </div>
+        <div class="param-grid">
+          <label class="param-wide" for="video-input">
+            视频链接或 ID
+            <input id="video-input" type="text" autocomplete="off" spellcheck="false" placeholder="https://www.youtube.com/watch?v=... 或 11 位 ID">
+            <small id="video-hint" class="field-hint">支持完整 YouTube 链接或 11 位视频 ID。</small>
+          </label>
+          <label for="outdir-input">
+            本机输出目录
+            <input id="outdir-input" type="text" autocomplete="off" spellcheck="false" placeholder="D:\MyDownload\a">
+            <small class="field-hint">本机字幕流程与离线 ASS 重建读取这里。</small>
+          </label>
+          <label for="repo-input">
+            GitHub 仓库
+            <input id="repo-input" type="text" autocomplete="off" spellcheck="false" placeholder="gitsynonyms/gitsynonyms">
+            <small class="field-hint">云端步骤通过 <code>gh workflow run</code> 调用。</small>
+          </label>
+          <div class="param-wide python-field">
+            <label for="python-input">
+              Anaconda Python（<code>a</code> 环境）
+              <span class="env-badge">本机步骤统一使用</span>
+            </label>
+            <div class="python-input-row">
+              <input id="python-input" type="text" autocomplete="off" spellcheck="false" placeholder="$env:USERPROFILE\anaconda3\envs\a\python.exe">
+              <button id="reset-python" class="ghost-button" type="button">默认路径</button>
+            </div>
+            <small id="python-hint" class="field-hint">本机命令会先定义 <code>$py</code> 并检查解释器是否存在。</small>
+          </div>
+        </div>
+        <details class="advanced-params">
+          <summary>高级参数（标题 / 日期 / 源片直链）</summary>
+          <div class="param-grid">
+            <label for="title-input">
+              事件标题
+              <input id="title-input" type="text" autocomplete="off" placeholder="可选；写入 BURN.json 与站点">
+            </label>
+            <label for="event-date-input">
+              事件日期
+              <input id="event-date-input" type="date">
+            </label>
+            <label class="param-wide" for="source-url-input">
+              源片直链（重刻用）
+              <input id="source-url-input" type="text" autocomplete="off" spellcheck="false" placeholder="https://filebin.net/.../source.mp4">
+            </label>
+          </div>
+          <p class="hint">重刻时 <code>source_url</code> 留空会使用 workflow 默认示例地址；非示例视频请显式填写，避免取错素材。</p>
+        </details>
+      </section>
+
+      <div class="studio-grid">
+        <aside class="panel palette-panel" aria-labelledby="palette-title">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">MODULES</p>
+              <h2 id="palette-title">模块库</h2>
+            </div>
+            <button id="new-module" class="ghost-button" type="button">新建模块</button>
+          </div>
+          <p class="hint">点击模块即可插入当前流程；内置模块可用“另存”克隆成可编辑模块。</p>
+          <input id="palette-search" class="palette-search" type="search" autocomplete="off" placeholder="搜索模块…" aria-label="搜索模块">
+          <div id="insert-hint" class="insert-hint" hidden>
+            <span id="insert-hint-text"></span>
+            <button id="cancel-insert" class="ghost-button" type="button">取消</button>
+          </div>
+          <div id="palette-groups" class="palette-groups"></div>
+        </aside>
+
+        <section class="panel canvas-panel" aria-labelledby="canvas-title">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">CANVAS</p>
+              <h2 id="canvas-title">执行链</h2>
+              <p class="hint">从上到下执行；拖动节点或使用箭头调整顺序，关闭开关可临时跳过该节点。</p>
+            </div>
+            <div class="head-actions">
+              <button id="expand-all" class="ghost-button" type="button">展开参数</button>
+              <button id="collapse-all" class="ghost-button" type="button">收起参数</button>
+              <button id="clear-nodes" class="ghost-button" type="button">清空节点</button>
+            </div>
+          </div>
+          <p id="flow-summary" class="flow-summary">尚未添加节点</p>
+          <div id="flow-canvas" class="flow-canvas"></div>
+          <div id="flow-warnings" class="flow-warnings" role="status" aria-live="polite"></div>
+        </section>
+
+        <aside class="runbook-rail" aria-label="命令计划">
+          <section class="panel rail-panel" aria-labelledby="plan-title">
+            <div class="section-head">
+              <div>
+                <p class="section-kicker">RUNBOOK</p>
+                <h2 id="plan-title">命令计划</h2>
+                <p id="plan-summary" class="hint">添加节点后生成对应命令。</p>
+              </div>
+            </div>
+            <div class="rail-actions">
+              <button id="copy-plan" type="button">复制全部命令</button>
+              <button id="reset-flow" class="ghost-button" type="button">恢复示例</button>
+            </div>
+            <p id="flow-status" class="flow-status" role="status" aria-live="polite"></p>
+            <div id="command-plan" class="command-plan"></div>
+          </section>
+        </aside>
+      </div>
+
+      <section class="panel rules-panel" aria-labelledby="rules-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">GUARDRAILS</p>
+            <h2 id="rules-title">编排边界</h2>
+          </div>
+          <a class="secondary-button" href="about.html">完整规则</a>
+        </div>
+        <ul class="rules-list">
+          <li><strong>每条流程独立</strong><span>流程标签之间互不影响；可复制流程后只改一个节点做对比，也可用模板快速创建新流程。</span></li>
+          <li><strong>Anaconda 环境</strong><span>所有本机 Python 步骤都通过流程参数里的 Anaconda <code>a</code> 解释器执行，不调用系统 <code>python</code>。</span></li>
+          <li><strong>模块可重复</strong><span>同一模块可以多次加入同一条流程，例如先探测再重试；重复节点会按画布顺序执行。</span></li>
+          <li><strong>执行边界</strong><span>页面只生成 PowerShell 与 <code>gh</code> 命令，不在浏览器执行；跑云端步骤前请确认 <code>gh</code> 已登录且有仓库权限。</span></li>
+          <li><strong>自定义模块</strong><span>只保存在当前浏览器与导出的 JSON 中，不改写仓库文件；分享链接会携带流程用到的自定义模块。</span></li>
+        </ul>
+      </section>
+
+      <dialog id="templates-dialog" class="flow-dialog templates-dialog" aria-labelledby="templates-title">
+        <div class="dialog-head">
+          <div>
+            <p class="section-kicker">TEMPLATES</p>
+            <h2 id="templates-title">从模板创建流程</h2>
+            <p class="hint">“新建流程”会保留当前工作区；也可以直接替换当前流程的节点。</p>
+          </div>
+          <button id="close-templates" class="ghost-button" type="button">关闭</button>
+        </div>
+        <div id="template-grid" class="template-grid"></div>
+      </dialog>
+
+      <dialog id="module-dialog" class="flow-dialog module-dialog" aria-labelledby="editor-title">
+        <div class="dialog-head">
+          <div>
+            <p class="section-kicker">MODULE EDITOR</p>
+            <h2 id="editor-title">新建自定义模块</h2>
+            <p class="hint">自定义模块只保存在浏览器与导出的 JSON 中；内置模块可用“另存”克隆后修改。</p>
+          </div>
+          <button id="editor-close" class="ghost-button" type="button">关闭</button>
+        </div>
+        <form id="module-form" class="module-form">
+          <input id="editor-id" type="hidden">
+          <div class="editor-grid">
+            <label for="editor-name">
+              模块名称
+              <input id="editor-name" type="text" maxlength="80" autocomplete="off" required>
+            </label>
+            <label for="editor-group">
+              所属分组
+              <select id="editor-group"></select>
+            </label>
+            <label for="editor-kind">
+              运行位置
+              <select id="editor-kind">
+                <option value="cloud">云端 · gh / Actions</option>
+                <option value="local">本机 · PowerShell + Anaconda</option>
+              </select>
+            </label>
+            <label class="editor-check" id="editor-setup-row" for="editor-setup" hidden>
+              <input id="editor-setup" type="checkbox" checked>
+              <span>本机模块自动加入 <code>$py</code> 与 Anaconda 检查</span>
+            </label>
+            <label class="editor-wide" for="editor-summary">
+              简介
+              <input id="editor-summary" type="text" maxlength="300" autocomplete="off" placeholder="一句话说明这个模块做什么">
+            </label>
+            <label class="editor-wide" for="editor-command">
+              命令
+              <textarea id="editor-command" rows="7" spellcheck="false" required placeholder="&amp; $py -X utf8 scripts\..."></textarea>
+              <small class="field-hint">可用占位符：<code>{video_id}</code> <code>{video_url}</code> <code>{repo}</code> <code>{out_dir}</code> <code>{python_path}</code> <code>{title}</code> <code>{event_date}</code> <code>{source_url}</code>。</small>
+            </label>
+            <label class="editor-wide" for="editor-note">
+              执行备注
+              <input id="editor-note" type="text" maxlength="500" autocomplete="off" placeholder="可选；显示在命令计划中">
+            </label>
+            <label class="editor-check" for="editor-requires-video">
+              <input id="editor-requires-video" type="checkbox">
+              <span>需要视频 ID（缺失时提示）</span>
+            </label>
+            <label class="editor-check" for="editor-add">
+              <input id="editor-add" type="checkbox" checked>
+              <span>保存后插入当前流程</span>
+            </label>
+          </div>
+          <div class="editor-actions">
+            <button id="editor-save" type="submit">保存模块</button>
+            <button id="editor-cancel" class="ghost-button" type="button">取消</button>
+            <button id="editor-delete" class="ghost-button editor-delete" type="button" hidden>删除此模块</button>
+            <span id="editor-status" class="editor-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </dialog>
+
+      <footer>
+        本页只做流程组合与命令生成，不执行命令、不读取令牌、不上传视频。流程保存在当前浏览器；云端操作需要 <code>gh</code> 已登录且有仓库 Actions 权限。
+      </footer>
+    </main>
+    <noscript><p class="noscript-note">流程编排需要 JavaScript 才能动态生成模块与命令。</p></noscript>
+    <script src="flow-modules.js?v=flow-v3"></script>
+    <script src="flow.js?v=flow-v3"></script>
+  </body>
+</html>
