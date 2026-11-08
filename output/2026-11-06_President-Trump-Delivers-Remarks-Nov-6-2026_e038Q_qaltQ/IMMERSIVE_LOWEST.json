@@ -1,0 +1,564 @@
+{
+  "generated_at": "2026-11-08T13:12:03Z",
+  "video_id": "e038Q_qaltQ",
+  "scheme": "scheme_低级_沉浸翻译（最低 / LOWEST 标准）",
+  "scheme_id": "scheme_local__immersive_lowest",
+  "baseline": {
+    "id": "immersive-translate",
+    "version": "1.34.4",
+    "rea_evidence_id": "ev_8afad77784dc3350625bc01599d2ddd910cc811cc08b8f6054508c3d7a25855f",
+    "rea_coverage": "partial: 53 inventoried files, 1 analyzed source; semantic graph truncated",
+    "observed_model": "short timed-text phrase units: ambient labels removed, overlapping visible phrases joined while active, each visible unit translated into the target line; no word karaoke in the extension overlay",
+    "source_anchored": true,
+    "active_cues_joined": true,
+    "clause_units": true,
+    "target_persistence": false,
+    "cross_cue_deduplication": true,
+    "monolingual_events": 0,
+    "word_karaoke": false,
+    "local_word_karaoke": true
+  },
+  "sources": {
+    "en-orig": {
+      "youtube": {
+        "verified": true,
+        "kind": "auto-generated",
+        "youtube_code": "en-orig",
+        "formats": [
+          "json3",
+          "srt",
+          "srv1",
+          "srv2",
+          "srv3",
+          "ttml",
+          "vtt"
+        ],
+        "missing_formats": []
+      },
+      "primary_format": "json3",
+      "formats_found": [
+        "json3",
+        "srv3",
+        "srv2",
+        "srv1",
+        "ttml",
+        "vtt",
+        "srt"
+      ],
+      "formats_parsed": [
+        "json3",
+        "srv3",
+        "srv2",
+        "srv1",
+        "ttml",
+        "vtt",
+        "srt"
+      ],
+      "formats_used": [
+        "json3"
+      ],
+      "format_sources": {
+        "json3": "e038Q_qaltQ.en.en-orig.json3",
+        "srv3": "e038Q_qaltQ.en.en-orig.srv3",
+        "srv2": "e038Q_qaltQ.en.en-orig.srv2",
+        "srv1": "e038Q_qaltQ.en.en-orig.srv1",
+        "ttml": "e038Q_qaltQ.en.en-orig.ttml",
+        "vtt": "e038Q_qaltQ.en.en-orig.vtt",
+        "srt": "e038Q_qaltQ.en.en-orig.srt"
+      },
+      "format_failures": {},
+      "cue_count": 809
+    },
+    "zh-Hans": {
+      "youtube": {
+        "verified": true,
+        "kind": "auto-translated",
+        "youtube_code": "zh-Hans",
+        "formats": [
+          "json3",
+          "srt",
+          "srv1",
+          "srv2",
+          "srv3",
+          "ttml",
+          "vtt"
+        ],
+        "missing_formats": []
+      },
+      "primary_format": "json3",
+      "formats_found": [
+        "json3",
+        "srv3",
+        "srv2",
+        "srv1",
+        "ttml",
+        "vtt",
+        "srt"
+      ],
+      "formats_parsed": [
+        "json3",
+        "srv3",
+        "srv2",
+        "srv1",
+        "ttml",
+        "vtt",
+        "srt"
+      ],
+      "formats_used": [
+        "json3"
+      ],
+      "format_sources": {
+        "json3": "e038Q_qaltQ.en.zh-Hans.json3",
+        "srv3": "e038Q_qaltQ.en.zh-Hans.srv3",
+        "srv2": "e038Q_qaltQ.en.zh-Hans.srv2",
+        "srv1": "e038Q_qaltQ.en.zh-Hans.srv1",
+        "ttml": "e038Q_qaltQ.en.zh-Hans.ttml",
+        "vtt": "e038Q_qaltQ.en.zh-Hans.vtt",
+        "srt": "e038Q_qaltQ.en.zh-Hans.srt"
+      },
+      "format_failures": {},
+      "cue_count": 754
+    }
+  },
+  "style": {
+    "caption_order": "chinese-first",
+    "chinese_color": "#FFFFA8",
+    "box_style": "none",
+    "box_color": "#0F1647",
+    "box_opacity": 0.99,
+    "box_area": [
+      66,
+      883,
+      1852,
+      1022
+    ],
+    "video_duration": null,
+    "background_end": null
+  },
+  "synchronization": {
+    "method": "whole English phrase cues are grouped into sentence/clause units under the 6.5 s and 60-character reading budgets; each whole official Chinese cue is assigned to the English unit it overlaps most, so a re-segmented translation is never split; a Chinese-less English unit is merged into the nearest bilingual event so no spoken word is dropped and no event is monolingual",
+    "event_count": 582,
+    "rendered_event_count": 619,
+    "overwide_event_splits": 37,
+    "bilingual_event_count": 582,
+    "events_are_bilingual": true,
+    "source_anchored": true,
+    "clause_units": true,
+    "source_cue_count": 809,
+    "source_unit_count": 616,
+    "source_cues_skipped": 0,
+    "source_units_skipped": 0,
+    "source_units_merged": 34,
+    "unpaired_intervals": 34,
+    "unpaired_intervals_skipped": false,
+    "unpaired_intervals_merged": true,
+    "unpaired_details": [
+      {
+        "start": 12.8,
+        "end": 16.12,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "to Maxar. It is an absolute honor to",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 21.64,
+        "end": 24.2,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "energizing the most accomplished space",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 53.96,
+        "end": 56.44,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "superiority has given us missions like",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 88.64,
+        "end": 90.4,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "through Space Force, through the Artemis",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 100.4,
+        "end": 102.96,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "bigger, move faster, and pursue the kind",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 319.614,
+        "end": 324.414,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "next to you and defend her still today,",
+        "active_chinese_cues": 0,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 330.894,
+        "end": 332.974,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "the",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 385.575,
+        "end": 387.255,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "And I want to congratulate while I'm",
+        "active_chinese_cues": 0,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 433.975,
+        "end": 435.415,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "that we've ever had in this country.",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 480.135,
+        "end": 481.215,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "Yes.",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 568.617,
+        "end": 570.897,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "in many, many decades.",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 685.338,
+        "end": 688.298,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "achievement and success that",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 853.459,
+        "end": 856.341,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "airliner was unveiled at the show on",
+        "active_chinese_cues": 0,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 938.781,
+        "end": 940.421,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "in the world. That'll take place very",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 976.901,
+        "end": 979.942,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "All right here in Central Florida where",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 989.382,
+        "end": 991.422,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "here every year with me, okay? We'll be",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1011.942,
+        "end": 1013.702,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "There could be no better place to launch",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1013.702,
+        "end": 1015.542,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "the next generation of American",
+        "active_chinese_cues": 0,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1026.942,
+        "end": 1029.862,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "became the first American to ride into",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1158.183,
+        "end": 1160.503,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "America cannot remain the leading nation",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1201.703,
+        "end": 1203.303,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "Pushing the boundaries of human",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1234.665,
+        "end": 1237.505,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "circling the moon for the first time in",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1242.705,
+        "end": 1244.665,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "before. Think of that. The furthest",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1286.985,
+        "end": 1288.785,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "Great people.",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1377.106,
+        "end": 1380.346,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "that. My father my father's brother, Dr.",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1485.227,
+        "end": 1488.668,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "have great brilliant people going through that Academy for",
+        "active_chinese_cues": 0,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1490.747,
+        "end": 1493.268,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "an executive order to repeal",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1496.307,
+        "end": 1498.467,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "over the continental United States for",
+        "active_chinese_cues": 0,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1557.107,
+        "end": 1559.908,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "are ensuring that the United States",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1672.869,
+        "end": 1674.949,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "legacy of the greatest pioneers,",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1692.669,
+        "end": 1696.069,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "Navy said that the idea of man flight",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1715.15,
+        "end": 1717.67,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "that man will never reach the moon",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1764.03,
+        "end": 1765.67,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "Looking around these grounds today, we",
+        "active_chinese_cues": 2,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      },
+      {
+        "start": 1781.75,
+        "end": 1784.63,
+        "reason": "missing-chinese",
+        "missing": "Chinese",
+        "active": "English",
+        "english": "weekend.",
+        "active_chinese_cues": 1,
+        "pairing": "missing",
+        "disposition": "merged-into-neighbor"
+      }
+    ],
+    "monolingual_events": 0,
+    "target_persistence_events": 0,
+    "trimmed_source_events": 0,
+    "max_active_chinese_cues": 2,
+    "multi_cue_chinese_intervals": 502,
+    "target_selection_counts": {
+      "cue-aligned": 124,
+      "nearest-fallback": 1,
+      "unit-overlap": 457
+    },
+    "english_tokens_rendered": 4263,
+    "chinese_tokens_rendered": 7792
+  },
+  "outputs": {
+    "srt": "bilingual_immersive_lowest_Chinese-English.srt",
+    "ass": "bilingual_immersive_lowest_Chinese-English.ass",
+    "ergonomics": "IMMERSIVE_LOWEST_ERGONOMICS.json"
+  },
+  "ergonomics_summary": {
+    "cues": 619,
+    "max_cps": 30.77,
+    "p95_cps": 20.74,
+    "mean_cps": 9.48,
+    "violations": 129,
+    "errors": 37,
+    "warnings": 92,
+    "by_code": {
+      "reading_speed": 118,
+      "duration_short": 8,
+      "line_length": 2,
+      "gap_short": 1
+    }
+  }
+}

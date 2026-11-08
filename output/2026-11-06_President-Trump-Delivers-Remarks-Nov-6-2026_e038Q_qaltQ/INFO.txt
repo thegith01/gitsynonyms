@@ -1,0 +1,56 @@
+Video: President Trump Delivers Remarks, Nov. 6, 2026
+Video ID: e038Q_qaltQ
+Event date: 2026-11-06
+Channel: The White House
+Source: https://www.youtube.com/watch?v=e038Q_qaltQ
+
+Scheme: scheme_local__immersive_lowest (沉浸翻译最低 / LOWEST 标准)
+Baseline: Immersive Translate 1.34.4, extension id
+bpoadfkcbjbfhfodiogcnhhhpibjhbnh, CRX SHA-256
+72c0dc8ad563db812df9385b3207b0f85a8d2f071738f13a31a6377e39c0cf5f.
+
+Caption sources: YouTube en-orig auto-generated English (json3, srv3, srv2,
+srv1, ttml, vtt, srt) and the matching zh-Hans auto-translated track (same
+seven formats). All fourteen files were verified by CAPTION_FORMATS.json. No
+machine translation and no ASR were used.
+
+Outputs:
+- bilingual_immersive_lowest_Chinese-English.ass: burn-ready ASS, one line per
+  language, word karaoke on the English line, Chinese-first order, no
+  background box (--box-style none; no local media was used).
+- bilingual_immersive_lowest_Chinese-English.srt: generated from the rendered
+  ASS dialogues.
+- IMMERSIVE_LOWEST.json: provenance, source formats, synchronization model,
+  merged-orphan details, style and event counts.
+- IMMERSIVE_LOWEST_ERGONOMICS.json: CPS, line length, duration, gap and overlap
+  checks.
+- e038Q_qaltQ.en.en-orig.srt and e038Q_qaltQ.en.zh-Hans.srt: the two source
+  tracks used for the build.
+
+Synchronization: whole English phrase cues are grouped into sentence/clause
+units under the 6.5 s and 60-character reading budgets. Each whole official
+Chinese cue is assigned to the English unit it overlaps most. An English unit
+with no Chinese evidence is merged into the nearest bilingual event, so no
+spoken word is dropped and no event is monolingual. Overwide units split at
+clause or cue boundaries; the clause mode does not rebalance duration after
+the cut.
+
+Build command (reproducible, from the repository root):
+
+  pwsh -NoProfile -File .github\skills\immersive-lowest-subtitles\run.ps1 `
+      -Directory "D:\MyDownload\e038Q" -VideoId e038Q_qaltQ -BoxStyle none
+
+Validation: 619 rendered events, 0 monolingual events, 0 skipped source units,
+0 leading-punctuation lines, 4,263 English tokens and 7,792 Chinese tokens
+rendered. Two consecutive builds produced byte-identical ASS and SRT:
+
+  ASS SHA-256 7AA5AF38C8389FE8D97EAA4F6C2D004ADEA9B36B17CD3FDC4256FEB08426A71F
+  SRT SHA-256 FD8F530796FA9ACC833D78A25954C655EF8C3002160B827B36E0FEA46AACD055
+
+Ergonomics: 129 violations (37 errors, 92 warnings) from dense auto-captions,
+mostly reading_speed and duration_short. These are inspection evidence, not
+permission to drop words or merge unrelated sentences. The structural gate is
+clean.
+
+The ASS is an offline, burn-ready deliverable. Burn only a 1080p-or-better
+source; the pipeline order is burn -> back up -> publish.

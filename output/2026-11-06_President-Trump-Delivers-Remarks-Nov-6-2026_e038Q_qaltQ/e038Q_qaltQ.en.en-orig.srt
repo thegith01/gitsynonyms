@@ -1,0 +1,3236 @@
+1
+00:00:00,654 --> 00:00:04,240
+[cheering]
+
+2
+00:00:02,619 --> 00:00:06,600
+[applause]
+
+3
+00:00:04,240 --> 00:00:09,840
+>> How about that?
+
+4
+00:00:06,600 --> 00:00:12,800
+Good evening, everyone. Mr. President,
+
+5
+00:00:09,840 --> 00:00:16,120
+welcome to Kennedy Space Center. Welcome
+
+6
+00:00:12,800 --> 00:00:18,280
+to Maxar. It is an absolute honor to
+
+7
+00:00:16,120 --> 00:00:21,640
+serve under a president whose vision is
+
+8
+00:00:18,280 --> 00:00:24,200
+igniting a golden age of exploration and
+
+9
+00:00:21,640 --> 00:00:26,560
+energizing the most accomplished space
+
+10
+00:00:24,200 --> 00:00:30,320
+agency in the world. As America
+
+11
+00:00:26,560 --> 00:00:32,680
+celebrates our 250th birthday, we gather
+
+12
+00:00:30,320 --> 00:00:35,200
+at a place where so many of our greatest
+
+13
+00:00:32,680 --> 00:00:36,560
+ambitions have taken flight. From
+
+14
+00:00:35,200 --> 00:00:38,800
+Mercury
+
+15
+00:00:36,560 --> 00:00:41,920
+first astronaut, Alan Shepard, through
+
+16
+00:00:38,800 --> 00:00:45,640
+Neil Armstrong and Buzz Aldrin of Apollo
+
+17
+00:00:41,920 --> 00:00:49,000
+to over 135 shuttle missions, the great
+
+18
+00:00:45,640 --> 00:00:51,600
+telescopes of Hubble, Webb, the rovers
+
+19
+00:00:49,000 --> 00:00:53,960
+on Mars to today, where your executive
+
+20
+00:00:51,600 --> 00:00:56,440
+order on ensuring American space support
+
+21
+00:00:53,960 --> 00:01:00,760
+superiority has given us missions like
+
+22
+00:00:56,440 --> 00:01:03,440
+Roman, Artemis 2, and soon Artemis 3 and
+
+23
+00:01:00,760 --> 00:01:05,960
+Artemis 4. Mr. President, you have given
+
+24
+00:01:03,440 --> 00:01:09,360
+NASA a clear mandate to move with
+
+25
+00:01:05,960 --> 00:01:12,360
+urgency, restore the fire, passion, and
+
+26
+00:01:09,360 --> 00:01:15,000
+greatness that made this agency the envy
+
+27
+00:01:12,360 --> 00:01:18,080
+of the world, and lay the groundwork for
+
+28
+00:01:15,000 --> 00:01:20,880
+another 250 years of American
+
+29
+00:01:18,080 --> 00:01:24,480
+technological breakthroughs, discovery,
+
+30
+00:01:20,880 --> 00:01:26,400
+and inspiration in air and space. We are
+
+31
+00:01:24,480 --> 00:01:28,640
+building on what you ignited during your
+
+32
+00:01:26,400 --> 00:01:30,400
+first term through the Artemis program,
+
+33
+00:01:28,640 --> 00:01:33,120
+through Space Force, through the Artemis
+
+34
+00:01:30,400 --> 00:01:35,160
+Accords, and a commitment to keeping the
+
+35
+00:01:33,120 --> 00:01:38,040
+United States at the forefront of this
+
+36
+00:01:35,160 --> 00:01:40,400
+great adventure, challenging NASA, our
+
+37
+00:01:38,040 --> 00:01:42,960
+military, and American industry to think
+
+38
+00:01:40,400 --> 00:01:45,680
+bigger, move faster, and pursue the kind
+
+39
+00:01:42,960 --> 00:01:48,720
+of bold endeavors worthy of the United
+
+40
+00:01:45,680 --> 00:01:51,400
+States of America. And to showcase that
+
+41
+00:01:48,720 --> 00:01:54,480
+ingenuity, as you see it today, as it
+
+42
+00:01:51,400 --> 00:01:57,200
+will become the greatest exhibition of
+
+43
+00:01:54,480 --> 00:02:00,212
+American aerospace capabilities, not at
+
+44
+00:01:57,200 --> 00:02:03,132
+the Paris Air Show, not at Farnborough,
+
+45
+00:02:00,212 --> 00:02:04,412
+but here at Kennedy Space Center, next
+
+46
+00:02:03,132 --> 00:02:05,972
+to this
+
+47
+00:02:04,412 --> 00:02:07,726
+next to this
+
+48
+00:02:05,972 --> 00:02:09,746
+historic runway.
+
+49
+00:02:07,726 --> 00:02:09,746
+>> [applause]
+
+50
+00:02:11,332 --> 00:02:16,132
+>> This historic runway that President
+
+51
+00:02:14,052 --> 00:02:18,652
+Trump brought back to life. Your
+
+52
+00:02:16,132 --> 00:02:20,732
+leadership has energized NASA, energized
+
+53
+00:02:18,652 --> 00:02:23,532
+the industry gathered here today, and
+
+54
+00:02:20,732 --> 00:02:25,612
+sir, we are not slowing down. We will
+
+55
+00:02:23,532 --> 00:02:27,372
+return American astronauts to the moon.
+
+56
+00:02:25,612 --> 00:02:29,972
+We will build an enduring presence on
+
+57
+00:02:27,372 --> 00:02:32,692
+the lunar surface, a moon base. We will
+
+58
+00:02:29,972 --> 00:02:35,772
+unleash the drones, next generation
+
+59
+00:02:32,692 --> 00:02:38,012
+transportation taking us quietly through
+
+60
+00:02:35,772 --> 00:02:39,812
+the sound barrier. We're rebuilding our
+
+61
+00:02:38,012 --> 00:02:42,372
+X-Plane fleet. We are finally getting
+
+62
+00:02:39,812 --> 00:02:44,052
+America underway on nuclear power in
+
+63
+00:02:42,372 --> 00:02:46,292
+space, and we are going to venture
+
+64
+00:02:44,052 --> 00:02:48,812
+farther into the solar system, and move
+
+65
+00:02:46,292 --> 00:02:51,252
+closer to that next giant leap you
+
+66
+00:02:48,812 --> 00:02:53,652
+called for in your inaugural address
+
+67
+00:02:51,252 --> 00:02:55,332
+when American astronauts plant the stars
+
+68
+00:02:53,652 --> 00:02:57,052
+and stripes on Mars.
+
+69
+00:02:55,332 --> 00:02:59,932
+Mr. President, thank you for setting an
+
+70
+00:02:57,052 --> 00:03:01,572
+ambitious course for America, for NASA,
+
+71
+00:02:59,932 --> 00:03:04,212
+for believing this country should
+
+72
+00:03:01,572 --> 00:03:06,812
+continue to undertake and achieve the
+
+73
+00:03:04,212 --> 00:03:09,612
+near impossible, and for reminding us
+
+74
+00:03:06,812 --> 00:03:12,372
+that great nations do great things.
+
+75
+00:03:09,612 --> 00:03:15,372
+Ladies and gentlemen, it is my honor, my
+
+76
+00:03:12,372 --> 00:03:17,812
+privilege to welcome the 45th and 47th
+
+77
+00:03:15,372 --> 00:03:20,652
+President of the United States, Donald
+
+78
+00:03:17,812 --> 00:03:20,652
+J. Trump.
+
+79
+00:03:23,052 --> 00:03:25,672
+>> [applause]
+
+80
+00:03:24,292 --> 00:03:26,092
+>> I'm free
+
+81
+00:03:25,672 --> 00:03:28,692
+>> [music]
+
+82
+00:03:26,092 --> 00:03:32,222
+>> and I won't [singing] forget the men who
+
+83
+00:03:28,692 --> 00:03:34,812
+died, who gave that right to me, and I
+
+84
+00:03:32,222 --> 00:03:38,117
+[music] gladly [singing] stand up
+
+85
+00:03:34,812 --> 00:03:39,372
+next to you, and it hurts still today,
+
+86
+00:03:38,117 --> 00:03:42,132
+[music and singing]
+
+87
+00:03:39,372 --> 00:03:44,412
+cuz there ain't no doubt I love this
+
+88
+00:03:42,132 --> 00:03:48,532
+land.
+
+89
+00:03:44,412 --> 00:03:48,532
+God [music] bless the USA.
+
+90
+00:03:51,872 --> 00:03:53,892
+>> [music]
+
+91
+00:03:59,532 --> 00:04:02,852
+>> From the lakes [music and singing] of
+
+92
+00:04:00,572 --> 00:04:06,282
+Minnesota
+
+93
+00:04:02,852 --> 00:04:06,374
+to the hills of Tennessee,
+
+94
+00:04:06,282 --> 00:04:09,454
+>> [music]
+
+95
+00:04:06,374 --> 00:04:12,177
+>> across [singing] the plains of Texas,
+
+96
+00:04:09,454 --> 00:04:12,974
+from sea to shining sea.
+
+97
+00:04:12,177 --> 00:04:16,294
+>> [music]
+
+98
+00:04:12,974 --> 00:04:19,374
+>> From Detroit down to [singing] Houston,
+
+99
+00:04:16,294 --> 00:04:21,374
+and New York to LA,
+
+100
+00:04:19,374 --> 00:04:23,967
+where [music] there's pride in every
+
+101
+00:04:21,374 --> 00:04:24,494
+American heart, and it's time we stand
+
+102
+00:04:23,967 --> 00:04:26,587
+[singing]
+
+103
+00:04:24,494 --> 00:04:28,607
+and say
+
+104
+00:04:26,587 --> 00:04:28,607
+>> [music]
+
+105
+00:04:29,414 --> 00:04:34,054
+>> that I'm proud to be [music] an
+
+106
+00:04:31,374 --> 00:04:36,094
+American, where at [singing] least I
+
+107
+00:04:34,054 --> 00:04:38,734
+know I'm free.
+
+108
+00:04:36,094 --> 00:04:42,294
+And I [music] won't forget the men who
+
+109
+00:04:38,734 --> 00:04:43,014
+died, who gave that right to me. And I
+
+110
+00:04:42,294 --> 00:04:44,694
+gladly [music]
+
+111
+00:04:43,014 --> 00:04:48,203
+stand [singing] up
+
+112
+00:04:44,694 --> 00:04:49,374
+next to you and defend her still today,
+
+113
+00:04:48,203 --> 00:04:52,094
+[singing and music]
+
+114
+00:04:49,374 --> 00:04:54,254
+cuz there ain't no doubt I love this
+
+115
+00:04:52,094 --> 00:04:54,254
+land.
+
+116
+00:04:54,334 --> 00:04:58,414
+God bless [music] the USA.
+
+117
+00:05:01,958 --> 00:05:04,654
+>> [music]
+
+118
+00:05:02,734 --> 00:05:08,174
+>> And I'm proud to
+
+119
+00:05:04,654 --> 00:05:09,814
+be an American, where at least I know
+
+120
+00:05:08,174 --> 00:05:13,654
+I'm free. [music]
+
+121
+00:05:09,814 --> 00:05:16,174
+And I won't forget the men who died, who
+
+122
+00:05:13,654 --> 00:05:19,614
+gave that right to [music] me. And I
+
+123
+00:05:16,174 --> 00:05:22,734
+gladly stand up
+
+124
+00:05:19,614 --> 00:05:24,414
+next [music] to you and defend her still
+
+125
+00:05:22,734 --> 00:05:26,934
+today,
+
+126
+00:05:24,414 --> 00:05:28,158
+cuz there [music] ain't no doubt I love
+
+127
+00:05:26,934 --> 00:05:29,574
+this land.
+
+128
+00:05:28,158 --> 00:05:30,894
+>> [singing]
+
+129
+00:05:29,574 --> 00:05:32,974
+>> God bless [music]
+
+130
+00:05:30,894 --> 00:05:32,974
+the
+
+131
+00:05:34,254 --> 00:05:36,414
+USA.
+
+132
+00:05:40,774 --> 00:05:43,774
+>> Thank you very much. Wow, what a
+
+133
+00:05:43,223 --> 00:05:46,454
+>> [applause]
+
+134
+00:05:43,774 --> 00:05:48,054
+>> What an amazing place. What an amazing
+
+135
+00:05:46,454 --> 00:05:49,814
+place and what a wonderful leader you
+
+136
+00:05:48,054 --> 00:05:51,654
+have in Jared. Thank you, Jared, very
+
+137
+00:05:49,814 --> 00:05:54,094
+much.
+
+138
+00:05:51,654 --> 00:05:56,614
+And I will say this, the best
+
+139
+00:05:54,094 --> 00:05:58,894
+administrator in NASA history, and I
+
+140
+00:05:56,614 --> 00:06:00,334
+mean that. He's a pilot, an astronaut, a
+
+141
+00:05:58,894 --> 00:06:02,454
+patriot.
+
+142
+00:06:00,334 --> 00:06:04,735
+So, Jared, great job. You're doing a
+
+143
+00:06:02,454 --> 00:06:06,135
+fantastic job. I was very proud to pick
+
+144
+00:06:04,735 --> 00:06:08,415
+them.
+
+145
+00:06:06,135 --> 00:06:10,695
+And thanks as well to every innovator,
+
+146
+00:06:08,415 --> 00:06:13,775
+pioneer, and distinguished guest
+
+147
+00:06:10,695 --> 00:06:16,975
+gathered today for one simple reason, to
+
+148
+00:06:13,775 --> 00:06:19,335
+keep America first on Earth, first in
+
+149
+00:06:16,975 --> 00:06:21,655
+the skies, and of course,
+
+150
+00:06:19,335 --> 00:06:24,455
+first in space.
+
+151
+00:06:21,655 --> 00:06:24,455
+Very important.
+
+152
+00:06:24,489 --> 00:06:27,255
+>> [applause]
+
+153
+00:06:25,575 --> 00:06:29,495
+>> And I want to congratulate while I'm
+
+154
+00:06:27,255 --> 00:06:30,975
+looking at that big, strong guy just won
+
+155
+00:06:29,495 --> 00:06:33,575
+for governor. Will you stand up, please,
+
+156
+00:06:30,975 --> 00:06:36,415
+Byron? While we have [cheering] you.
+
+157
+00:06:33,575 --> 00:06:38,244
+That's [applause] fantastic.
+
+158
+00:06:36,415 --> 00:06:39,935
+He and he won it and he did it
+
+159
+00:06:38,244 --> 00:06:41,455
+[applause] the hard way. He worked. He
+
+160
+00:06:39,935 --> 00:06:43,415
+worked hard and
+
+161
+00:06:41,455 --> 00:06:46,104
+please stand up, Madam Senator, if you
+
+162
+00:06:43,415 --> 00:06:46,575
+don't mind. You'll be approving this.
+
+163
+00:06:46,104 --> 00:06:48,615
+>> [applause]
+
+164
+00:06:46,575 --> 00:06:49,495
+>> Thank you, Byron. Great job, both of
+
+165
+00:06:48,615 --> 00:06:51,415
+you.
+
+166
+00:06:49,495 --> 00:06:53,975
+Great job.
+
+167
+00:06:51,415 --> 00:06:56,335
+I want to thank the co-founder of the Up
+
+168
+00:06:53,975 --> 00:06:59,735
+Summit, Cyrus
+
+169
+00:06:56,335 --> 00:07:02,015
+Sagari for helping organize this really
+
+170
+00:06:59,735 --> 00:07:03,495
+unbelievable event. It's going to be
+
+171
+00:07:02,015 --> 00:07:04,615
+bigger and bigger. Every year you'll see
+
+172
+00:07:03,495 --> 00:07:07,615
+that.
+
+173
+00:07:04,615 --> 00:07:09,855
+And congratulations to also our
+
+174
+00:07:07,615 --> 00:07:11,775
+Secretary of State. He was here. He's
+
+175
+00:07:09,855 --> 00:07:13,975
+had a fantastic run. He's the greatest
+
+176
+00:07:11,775 --> 00:07:15,415
+Secretary of State
+
+177
+00:07:13,975 --> 00:07:16,775
+that we've ever had in this country.
+
+178
+00:07:15,415 --> 00:07:18,735
+Marco Rubio, is he around here
+
+179
+00:07:16,775 --> 00:07:20,164
+someplace? Where is Marco?
+
+180
+00:07:18,735 --> 00:07:21,575
+Where is our Marco?
+
+181
+00:07:20,164 --> 00:07:23,375
+>> [applause]
+
+182
+00:07:21,575 --> 00:07:25,975
+>> Thank you, Marco.
+
+183
+00:07:23,375 --> 00:07:27,815
+It's been fantastic. OMB Director Russ
+
+184
+00:07:25,975 --> 00:07:30,095
+Vought.
+
+185
+00:07:27,815 --> 00:07:32,495
+Thank you, Russ. Thank you.
+
+186
+00:07:30,095 --> 00:07:34,935
+UN Ambassador Mike Walls. Good job you
+
+187
+00:07:32,495 --> 00:07:37,175
+did, Mike.
+
+188
+00:07:34,935 --> 00:07:39,775
+It was a natural home.
+
+189
+00:07:37,175 --> 00:07:41,535
+I saw the way you took on uh
+
+190
+00:07:39,775 --> 00:07:43,815
+the Cubans.
+
+191
+00:07:41,535 --> 00:07:47,175
+Anybody watch? I loved it.
+
+192
+00:07:43,815 --> 00:07:48,015
+And uh Sam Graves and Mike Kerdo plus
+
+193
+00:07:47,175 --> 00:07:50,055
+were
+
+194
+00:07:48,015 --> 00:07:52,295
+fantastic. Thank you, Mike. Great job.
+
+195
+00:07:50,055 --> 00:07:54,215
+Great job. And you went Acting Secretary
+
+196
+00:07:52,295 --> 00:07:57,415
+of the Navy,
+
+197
+00:07:54,215 --> 00:07:59,175
+Hong Cao. I love the name, Hong Cao.
+
+198
+00:07:57,415 --> 00:08:00,135
+You're doing a fantastic job. Where are
+
+199
+00:07:59,175 --> 00:08:01,215
+you, lady? [applause] Where are you?
+
+200
+00:08:00,135 --> 00:08:04,735
+Yes.
+
+201
+00:08:01,215 --> 00:08:07,335
+FAA Administrator Brian Bedwell, who is
+
+202
+00:08:04,735 --> 00:08:09,097
+amazing. Thank you, Brian.
+
+203
+00:08:07,335 --> 00:08:09,945
+Where is Brian? He's around here. Thank
+
+204
+00:08:09,097 --> 00:08:10,577
+you, Brian.
+
+205
+00:08:09,945 --> 00:08:11,777
+>> [applause]
+
+206
+00:08:10,577 --> 00:08:13,977
+>> Thank you.
+
+207
+00:08:11,777 --> 00:08:15,657
+Director of the Office of Science and
+
+208
+00:08:13,977 --> 00:08:18,257
+Technology
+
+209
+00:08:15,657 --> 00:08:19,697
+policy. It's really a very important
+
+210
+00:08:18,257 --> 00:08:22,390
+job, Michael.
+
+211
+00:08:19,697 --> 00:08:23,417
+Kretsios. Thank you, Michael. Thank you.
+
+212
+00:08:22,390 --> 00:08:26,457
+>> [applause]
+
+213
+00:08:23,417 --> 00:08:28,417
+>> Thank you, Michael. Good job.
+
+214
+00:08:26,457 --> 00:08:30,337
+And many other leaders in aviation,
+
+215
+00:08:28,417 --> 00:08:31,497
+aerospace technology. We got a lot of
+
+216
+00:08:30,337 --> 00:08:33,057
+them here.
+
+217
+00:08:31,497 --> 00:08:34,857
+A lot of guys that sell this stuff that
+
+218
+00:08:33,057 --> 00:08:36,697
+make it a lot of money
+
+219
+00:08:34,857 --> 00:08:38,857
+and they feel his meal.
+
+220
+00:08:36,697 --> 00:08:40,897
+Having met you once before, a long time
+
+221
+00:08:38,857 --> 00:08:42,057
+ago. Remember, I don't want to shake any
+
+222
+00:08:40,897 --> 00:08:43,497
+of your hands. That way you have no
+
+223
+00:08:42,057 --> 00:08:45,097
+problem.
+
+224
+00:08:43,497 --> 00:08:46,657
+But you're doing a fantastic job. We
+
+225
+00:08:45,097 --> 00:08:48,897
+make the best
+
+226
+00:08:46,657 --> 00:08:50,257
+equipment, space equipment, military
+
+227
+00:08:48,897 --> 00:08:52,217
+equipment than anyone in the world.
+
+228
+00:08:50,257 --> 00:08:54,097
+There's nobody even close.
+
+229
+00:08:52,217 --> 00:08:56,057
+And before going any further, it's it's
+
+230
+00:08:54,097 --> 00:08:57,761
+true, too. Yeah, go ahead. You can clap
+
+231
+00:08:56,057 --> 00:08:59,781
+for that one.
+
+232
+00:08:57,761 --> 00:08:59,781
+>> [applause]
+
+233
+00:09:00,217 --> 00:09:04,177
+>> But before going any further, we have
+
+234
+00:09:01,897 --> 00:09:06,737
+some great news today. We just received
+
+235
+00:09:04,177 --> 00:09:09,137
+yet another blockbuster jobs report that
+
+236
+00:09:06,737 --> 00:09:11,417
+smashed all expectations. The job
+
+237
+00:09:09,137 --> 00:09:14,737
+numbers are through the roof.
+
+238
+00:09:11,417 --> 00:09:16,457
+The United States just added 165,000
+
+239
+00:09:14,737 --> 00:09:17,697
+jobs in October. They thought the number
+
+240
+00:09:16,457 --> 00:09:20,617
+would be
+
+241
+00:09:17,697 --> 00:09:23,577
+maybe around 20, slightly more.
+
+242
+00:09:20,617 --> 00:09:25,497
+I told them, including 19,000 brand new
+
+243
+00:09:23,577 --> 00:09:28,617
+manufacturing jobs, the largest
+
+244
+00:09:25,497 --> 00:09:30,897
+one-month increase in manufacturing jobs
+
+245
+00:09:28,617 --> 00:09:33,217
+in many, many decades.
+
+246
+00:09:30,897 --> 00:09:36,977
+And despite the Thank you.
+
+247
+00:09:33,217 --> 00:09:39,817
+Despite the $3 trillion loss yesterday.
+
+248
+00:09:36,977 --> 00:09:41,497
+You know, our country lost $3 trillion
+
+249
+00:09:39,817 --> 00:09:42,977
+all because of an election. I wonder
+
+250
+00:09:41,497 --> 00:09:44,457
+what that means.
+
+251
+00:09:42,977 --> 00:09:47,697
+If we were to gain $3 trillion, I
+
+252
+00:09:44,457 --> 00:09:49,257
+probably would have been more unhappy.
+
+253
+00:09:47,697 --> 00:09:51,417
+But you know what that means? That means
+
+254
+00:09:49,257 --> 00:09:53,177
+that they thought somebody else
+
+255
+00:09:51,417 --> 00:09:54,857
+did well in election. By the way, I was
+
+256
+00:09:53,177 --> 00:09:56,297
+not on the ballot, just in case you had
+
+257
+00:09:54,857 --> 00:09:57,457
+any question.
+
+258
+00:09:56,297 --> 00:09:59,017
+He said, "If we were in the ballot, we
+
+259
+00:09:57,457 --> 00:10:00,537
+would have won."
+
+260
+00:09:59,017 --> 00:10:02,417
+But we weren't.
+
+261
+00:10:00,537 --> 00:10:04,817
+But these guys were and they won. That's
+
+262
+00:10:02,417 --> 00:10:08,177
+why we're so proud of you. You won.
+
+263
+00:10:04,817 --> 00:10:09,057
+Pretty easily, too. We've secured $22.2
+
+264
+00:10:08,177 --> 00:10:10,937
+trillion
+
+265
+00:10:09,057 --> 00:10:12,778
+of investment in
+
+266
+00:10:10,937 --> 00:10:14,298
+less than 2 years. Nobody's ever done
+
+267
+00:10:12,778 --> 00:10:17,098
+that. No country has ever done that
+
+268
+00:10:14,298 --> 00:10:19,178
+much. Personal incomes for the typical
+
+269
+00:10:17,098 --> 00:10:21,178
+American recently reached the highest
+
+270
+00:10:19,178 --> 00:10:22,898
+level ever recorded.
+
+271
+00:10:21,178 --> 00:10:25,418
+The poverty rate is at the best and
+
+272
+00:10:22,898 --> 00:10:27,538
+lowest level ever recorded. More
+
+273
+00:10:25,418 --> 00:10:29,458
+Americans are working today than at any
+
+274
+00:10:27,538 --> 00:10:31,738
+time ever before in the history of our
+
+275
+00:10:29,458 --> 00:10:33,258
+country. Think about that one.
+
+276
+00:10:31,738 --> 00:10:35,418
+We're also
+
+277
+00:10:33,258 --> 00:10:37,378
+ensuring that Iran will never have a
+
+278
+00:10:35,418 --> 00:10:39,258
+nuclear weapon. They will never have it.
+
+279
+00:10:37,378 --> 00:10:40,597
+Not even close.
+
+280
+00:10:39,258 --> 00:10:42,578
+They're not close. They tried.
+
+281
+00:10:40,597 --> 00:10:46,138
+[applause]
+
+282
+00:10:42,578 --> 00:10:48,138
+They tried. And you know what? If they
+
+283
+00:10:46,138 --> 00:10:49,658
+did have it, if we didn't go in with
+
+284
+00:10:48,138 --> 00:10:51,498
+those beautiful
+
+285
+00:10:49,658 --> 00:10:53,098
+B-2 bombers a little more than a year
+
+286
+00:10:51,498 --> 00:10:55,618
+ago,
+
+287
+00:10:53,098 --> 00:10:58,698
+if I allowed them to have it,
+
+288
+00:10:55,618 --> 00:11:00,418
+today there would be no Israel.
+
+289
+00:10:58,698 --> 00:11:02,258
+It would have been wiped off the face of
+
+290
+00:11:00,418 --> 00:11:03,578
+the earth, and there would be no Middle
+
+291
+00:11:02,258 --> 00:11:05,058
+East.
+
+292
+00:11:03,578 --> 00:11:06,618
+And I know because I deal with these
+
+293
+00:11:05,058 --> 00:11:09,778
+people.
+
+294
+00:11:06,618 --> 00:11:11,818
+We will never let that happen. Iran will
+
+295
+00:11:09,778 --> 00:11:13,347
+never, ever have a nuclear weapon. You
+
+296
+00:11:11,818 --> 00:11:15,258
+can rest assured.
+
+297
+00:11:13,347 --> 00:11:17,378
+>> [applause]
+
+298
+00:11:15,258 --> 00:11:20,018
+>> So, our country is strong again. Our
+
+299
+00:11:17,378 --> 00:11:22,138
+country is respected again. Over the
+
+300
+00:11:20,018 --> 00:11:25,338
+next 2 years, we will
+
+301
+00:11:22,138 --> 00:11:28,298
+lead America and NASA to new heights of
+
+302
+00:11:25,338 --> 00:11:30,298
+achievement and success that
+
+303
+00:11:28,298 --> 00:11:32,258
+the world has never seen. We've never
+
+304
+00:11:30,298 --> 00:11:34,258
+seen what we're doing right now. Jared,
+
+305
+00:11:32,258 --> 00:11:35,898
+such a big part of it.
+
+306
+00:11:34,258 --> 00:11:37,938
+We have the smartest minds, the most
+
+307
+00:11:35,898 --> 00:11:39,858
+brilliant minds
+
+308
+00:11:37,938 --> 00:11:41,858
+anywhere in the world. When I came into
+
+309
+00:11:39,858 --> 00:11:43,618
+office and began my first term back in
+
+310
+00:11:41,858 --> 00:11:46,418
+2017,
+
+311
+00:11:43,618 --> 00:11:48,058
+the NASA I was here.
+
+312
+00:11:46,418 --> 00:11:50,378
+It was dead.
+
+313
+00:11:48,058 --> 00:11:52,498
+I said, "Are there any people around?"
+
+314
+00:11:50,378 --> 00:11:54,818
+All you had was broken runways with
+
+315
+00:11:52,498 --> 00:11:57,178
+grass growing up the cracks of the
+
+316
+00:11:54,818 --> 00:11:58,858
+runways. It wasn't pretty. I said,
+
+317
+00:11:57,178 --> 00:12:00,938
+"You know, that only happens when a
+
+318
+00:11:58,858 --> 00:12:03,658
+place isn't used,
+
+319
+00:12:00,938 --> 00:12:04,978
+when wheels aren't running over it."
+
+320
+00:12:03,658 --> 00:12:07,258
+But there was grass. There was more
+
+321
+00:12:04,978 --> 00:12:08,658
+grass than they had in asphalt or
+
+322
+00:12:07,258 --> 00:12:10,778
+concrete.
+
+323
+00:12:08,658 --> 00:12:12,538
+And here at the Kennedy Space Center,
+
+324
+00:12:10,778 --> 00:12:15,779
+things are
+
+325
+00:12:12,538 --> 00:12:17,659
+really going well. The ambition was
+
+326
+00:12:15,779 --> 00:12:19,819
+was gone though at that time. I never
+
+327
+00:12:17,659 --> 00:12:21,579
+forget it. The spirit was gone. I met
+
+328
+00:12:19,819 --> 00:12:23,539
+like two people. That's about all we had
+
+329
+00:12:21,579 --> 00:12:25,099
+here. We were almost nobody. I said, "Is
+
+330
+00:12:23,539 --> 00:12:26,939
+there anybody around? Knock, knock.
+
+331
+00:12:25,099 --> 00:12:28,859
+Anybody home?"
+
+332
+00:12:26,939 --> 00:12:31,299
+Now it's thriving, but the spirit was
+
+333
+00:12:28,859 --> 00:12:32,739
+gone, the inspiration was gone.
+
+334
+00:12:31,299 --> 00:12:35,339
+And after many years of failed
+
+335
+00:12:32,739 --> 00:12:36,939
+leadership from Washington,
+
+336
+00:12:35,339 --> 00:12:39,459
+the United States had even lost the
+
+337
+00:12:36,939 --> 00:12:40,579
+ability to send our own astronauts into
+
+338
+00:12:39,459 --> 00:12:42,739
+space.
+
+339
+00:12:40,579 --> 00:12:45,019
+Wasn't going to happen.
+
+340
+00:12:42,739 --> 00:12:48,139
+But I had to make a decision. Do we open
+
+341
+00:12:45,019 --> 00:12:51,099
+this place up and make it great,
+
+342
+00:12:48,139 --> 00:12:52,779
+or do we let it die?
+
+343
+00:12:51,099 --> 00:12:54,819
+And I think you know the decision cuz
+
+344
+00:12:52,779 --> 00:12:55,939
+it's never been more vibrant. I watched
+
+345
+00:12:54,819 --> 00:12:57,339
+just
+
+346
+00:12:55,939 --> 00:12:59,539
+a couple of months ago what was
+
+347
+00:12:57,339 --> 00:13:01,139
+happening. That big beautiful ship going
+
+348
+00:12:59,539 --> 00:13:02,779
+up and everybody who was with me, they
+
+349
+00:13:01,139 --> 00:13:05,059
+all stopped a very important dinner.
+
+350
+00:13:02,779 --> 00:13:07,099
+Let's watch.
+
+351
+00:13:05,059 --> 00:13:10,219
+But those days are
+
+352
+00:13:07,099 --> 00:13:12,499
+days of failure and neglect and decline.
+
+353
+00:13:10,219 --> 00:13:14,899
+They're all behind us. They're gone.
+
+354
+00:13:12,499 --> 00:13:17,539
+Under the Trump administration,
+
+355
+00:13:14,899 --> 00:13:20,499
+our ambition is back, our momentum is
+
+356
+00:13:17,539 --> 00:13:23,379
+back, our leadership is back. NASA is
+
+357
+00:13:20,499 --> 00:13:26,969
+back and above all, most importantly,
+
+358
+00:13:23,379 --> 00:13:28,989
+the United States of America is back.
+
+359
+00:13:26,969 --> 00:13:28,989
+>> [applause]
+
+360
+00:13:32,379 --> 00:13:36,459
+>> As a symbol of that national
+
+361
+00:13:35,259 --> 00:13:38,699
+renewal,
+
+362
+00:13:36,459 --> 00:13:41,219
+today we gather by the And this is a
+
+363
+00:13:38,699 --> 00:13:43,499
+gathering of real friends.
+
+364
+00:13:41,219 --> 00:13:46,219
+By the same runway that once stood
+
+365
+00:13:43,499 --> 00:13:49,179
+cracked and silent to announce that this
+
+366
+00:13:46,219 --> 00:13:51,979
+very site will soon be the premier venue
+
+367
+00:13:49,179 --> 00:13:53,539
+for the air and space
+
+368
+00:13:51,979 --> 00:13:56,219
+demonstrations
+
+369
+00:13:53,539 --> 00:13:58,419
+from all over the world. They'll come.
+
+370
+00:13:56,219 --> 00:14:00,899
+For decades, the world's major aerospace
+
+371
+00:13:58,419 --> 00:14:04,659
+shows have been held overseas, from
+
+372
+00:14:00,899 --> 00:14:06,539
+Paris to the United Kingdom to Dubai.
+
+373
+00:14:04,659 --> 00:14:09,339
+Those foreign air shows have drawn the
+
+374
+00:14:06,539 --> 00:14:11,059
+biggest crowds and big contracts, big
+
+375
+00:14:09,339 --> 00:14:13,459
+headlines, and
+
+376
+00:14:11,059 --> 00:14:16,341
+it's been more than 30 years since a new
+
+377
+00:14:13,459 --> 00:14:18,701
+airliner was unveiled at the show on
+
+378
+00:14:16,341 --> 00:14:21,021
+American soil. We didn't have the big
+
+379
+00:14:18,701 --> 00:14:23,581
+shows. They were in Paris mostly I think
+
+380
+00:14:21,021 --> 00:14:25,261
+of the Paris Air Show.
+
+381
+00:14:23,581 --> 00:14:27,581
+But those foreign countries do not
+
+382
+00:14:25,261 --> 00:14:28,981
+dominate aviation and they don't
+
+383
+00:14:27,581 --> 00:14:31,141
+dominate
+
+384
+00:14:28,981 --> 00:14:32,341
+aerospace. They don't even come close
+
+385
+00:14:31,141 --> 00:14:35,021
+actually.
+
+386
+00:14:32,341 --> 00:14:36,781
+We do and under the Trump administration
+
+387
+00:14:35,021 --> 00:14:38,621
+we believe that the future of those
+
+388
+00:14:36,781 --> 00:14:41,381
+industries should be
+
+389
+00:14:38,621 --> 00:14:43,301
+unveiled right here in the USA. We
+
+390
+00:14:41,381 --> 00:14:45,901
+dominate and we should have the biggest
+
+391
+00:14:43,301 --> 00:14:47,261
+show. We will have within
+
+392
+00:14:45,901 --> 00:14:49,501
+2 years
+
+393
+00:14:47,261 --> 00:14:52,021
+the biggest air show. That means
+
+394
+00:14:49,501 --> 00:14:54,581
+commercial, that means space, that means
+
+395
+00:14:52,021 --> 00:14:56,705
+in the world by far. It won't even be
+
+396
+00:14:54,581 --> 00:14:58,725
+close.
+
+397
+00:14:56,705 --> 00:14:58,725
+>> [applause]
+
+398
+00:15:00,821 --> 00:15:05,181
+>> And when people ask me what exactly
+
+399
+00:15:03,061 --> 00:15:07,301
+we're trying to do I said
+
+400
+00:15:05,181 --> 00:15:10,301
+exactly that, that we're going to do a
+
+401
+00:15:07,301 --> 00:15:11,941
+bigger and better grander version than
+
+402
+00:15:10,301 --> 00:15:14,381
+the Paris
+
+403
+00:15:11,941 --> 00:15:15,981
+Air Show, much bigger.
+
+404
+00:15:14,381 --> 00:15:17,661
+Much grander.
+
+405
+00:15:15,981 --> 00:15:21,021
+And we have the right location. This is
+
+406
+00:15:17,661 --> 00:15:24,141
+such a great unlimited runway.
+
+407
+00:15:21,021 --> 00:15:26,061
+Unlimited space to do fantastic
+
+408
+00:15:24,141 --> 00:15:27,541
+buildings and all the things necessary
+
+409
+00:15:26,061 --> 00:15:28,941
+to do it. So
+
+410
+00:15:27,541 --> 00:15:29,981
+we're going to have a show the likes of
+
+411
+00:15:28,941 --> 00:15:32,181
+which
+
+412
+00:15:29,981 --> 00:15:34,301
+has never been done before.
+
+413
+00:15:32,181 --> 00:15:36,741
+Next year you'll see an even bigger
+
+414
+00:15:34,301 --> 00:15:38,781
+building and over the next few years
+
+415
+00:15:36,741 --> 00:15:40,421
+you'll see the biggest air show anywhere
+
+416
+00:15:38,781 --> 00:15:42,581
+in the world. That'll take place very
+
+417
+00:15:40,421 --> 00:15:45,221
+quickly. I'd say 2 years.
+
+418
+00:15:42,581 --> 00:15:47,981
+And that includes commercial aircraft of
+
+419
+00:15:45,221 --> 00:15:49,341
+all types. You'll have all of the big
+
+420
+00:15:47,981 --> 00:15:51,581
+commercial
+
+421
+00:15:49,341 --> 00:15:54,381
+flights and companies, Boeing,
+
+422
+00:15:51,581 --> 00:15:56,141
+everybody's going to be here. The former
+
+423
+00:15:54,381 --> 00:16:00,261
+shuttle landing facility will be
+
+424
+00:15:56,141 --> 00:16:02,421
+transformed into a 1,900 acre venue that
+
+425
+00:16:00,261 --> 00:16:04,221
+will bring hundreds of thousands of
+
+426
+00:16:02,421 --> 00:16:06,741
+visitors each year.
+
+427
+00:16:04,221 --> 00:16:09,541
+Generate billions of dollars in economic
+
+428
+00:16:06,741 --> 00:16:12,661
+impact and host hundreds of billions of
+
+429
+00:16:09,541 --> 00:16:15,221
+dollars in deals. We're going to
+
+430
+00:16:12,661 --> 00:16:16,901
+sign deals with commercial and private
+
+431
+00:16:15,221 --> 00:16:19,942
+and whoever.
+
+432
+00:16:16,901 --> 00:16:22,302
+All right here in Central Florida where
+
+433
+00:16:19,942 --> 00:16:24,822
+all of that business is is very
+
+434
+00:16:22,302 --> 00:16:26,142
+important to Byron Byron's already
+
+435
+00:16:24,822 --> 00:16:28,022
+getting very happy. He's saying, "Oh,
+
+436
+00:16:26,142 --> 00:16:29,382
+what a great job." But, uh
+
+437
+00:16:28,022 --> 00:16:31,422
+you're going to be happy and you'll be
+
+438
+00:16:29,382 --> 00:16:34,622
+here every year with me, okay? We'll be
+
+439
+00:16:31,422 --> 00:16:36,822
+here to launch each year.
+
+440
+00:16:34,622 --> 00:16:38,742
+To the entire team at NASA who have
+
+441
+00:16:36,822 --> 00:16:42,702
+worked to make this
+
+442
+00:16:38,742 --> 00:16:44,862
+vision a real reality, a beautiful
+
+443
+00:16:42,702 --> 00:16:47,782
+a gorgeous reality. And especially
+
+444
+00:16:44,862 --> 00:16:50,582
+administrator Isaacman,
+
+445
+00:16:47,782 --> 00:16:51,942
+congratulations on this historic
+
+446
+00:16:50,582 --> 00:16:53,702
+achievement.
+
+447
+00:16:51,942 --> 00:16:55,542
+There could be no better place to launch
+
+448
+00:16:53,702 --> 00:16:58,542
+the next generation of American
+
+449
+00:16:55,542 --> 00:17:00,102
+breakthroughs than Cape Canaveral
+
+450
+00:16:58,542 --> 00:17:01,902
+and the Kennedy Space Center where
+
+451
+00:17:00,102 --> 00:17:03,902
+America's future
+
+452
+00:17:01,902 --> 00:17:06,942
+will take flight.
+
+453
+00:17:03,902 --> 00:17:09,862
+This storied soil is where Alan Shepard
+
+454
+00:17:06,942 --> 00:17:12,742
+became the first American to ride into
+
+455
+00:17:09,862 --> 00:17:15,742
+space or on a pillar of fire. It was
+
+456
+00:17:12,742 --> 00:17:17,382
+fire. I remember that so well.
+
+457
+00:17:15,742 --> 00:17:19,902
+It's where the largest rocket ever
+
+458
+00:17:17,382 --> 00:17:22,262
+built, the Saturn V, tore free of
+
+459
+00:17:19,902 --> 00:17:24,182
+Earth's gravity and raced
+
+460
+00:17:22,262 --> 00:17:25,822
+into the stars.
+
+461
+00:17:24,182 --> 00:17:28,022
+It's where the space shuttle first
+
+462
+00:17:25,822 --> 00:17:31,062
+climbed into the heavens and where the
+
+463
+00:17:28,022 --> 00:17:34,262
+heroes of Apollo 11 embarked on their
+
+464
+00:17:31,062 --> 00:17:35,782
+mission to plant our great American flag
+
+465
+00:17:34,262 --> 00:17:37,582
+on the moon,
+
+466
+00:17:35,782 --> 00:17:40,942
+securing our place as the most
+
+467
+00:17:37,582 --> 00:17:42,302
+incredible and exceptional nation in all
+
+468
+00:17:40,942 --> 00:17:44,302
+of history.
+
+469
+00:17:42,302 --> 00:17:47,342
+The breakthroughs of
+
+470
+00:17:44,302 --> 00:17:49,982
+single lifetime carried Americans from
+
+471
+00:17:47,342 --> 00:17:52,582
+the sands of Kitty Hawk to the
+
+472
+00:17:49,982 --> 00:17:54,942
+surface of the moon in just 66 years.
+
+473
+00:17:52,582 --> 00:17:57,262
+Think of it, 66 years.
+
+474
+00:17:54,942 --> 00:17:59,222
+But then in one of the great tragedies
+
+475
+00:17:57,262 --> 00:18:01,382
+of modern times, our
+
+476
+00:17:59,222 --> 00:18:03,622
+political class, you know what you think
+
+477
+00:18:01,382 --> 00:18:04,942
+about them. You don't think
+
+478
+00:18:03,622 --> 00:18:07,022
+these people
+
+479
+00:18:04,942 --> 00:18:08,422
+They abandoned you. They abandoned this
+
+480
+00:18:07,022 --> 00:18:11,182
+vision
+
+481
+00:18:08,422 --> 00:18:12,862
+and they abandoned the commitment to
+
+482
+00:18:11,182 --> 00:18:15,142
+progress.
+
+483
+00:18:12,862 --> 00:18:17,742
+We lost the ability to go to moon to the
+
+484
+00:18:15,142 --> 00:18:20,743
+moon. We lost the ability to go anywhere
+
+485
+00:18:17,742 --> 00:18:22,863
+in space. We forgot how to build the
+
+486
+00:18:20,743 --> 00:18:26,343
+Saturn V rocket.
+
+487
+00:18:22,863 --> 00:18:29,063
+We walked away from supersonic flight.
+
+488
+00:18:26,343 --> 00:18:31,103
+And when you think about it,
+
+489
+00:18:29,063 --> 00:18:33,423
+I used to travel
+
+490
+00:18:31,103 --> 00:18:35,303
+on a supersonic plane
+
+491
+00:18:33,423 --> 00:18:37,343
+30 years ago,
+
+492
+00:18:35,303 --> 00:18:39,223
+and it used to go extremely fast, more
+
+493
+00:18:37,343 --> 00:18:42,023
+than double what they go today. This may
+
+494
+00:18:39,223 --> 00:18:44,343
+be the only industry in the world where
+
+495
+00:18:42,023 --> 00:18:45,943
+we've gone backwards.
+
+496
+00:18:44,343 --> 00:18:47,943
+We used to fly in that beautiful
+
+497
+00:18:45,943 --> 00:18:49,663
+Concorde, one of the most beautiful
+
+498
+00:18:47,943 --> 00:18:51,303
+pieces of art I've ever seen. It was a
+
+499
+00:18:49,663 --> 00:18:54,583
+piece of art.
+
+500
+00:18:51,303 --> 00:18:57,303
+I flew on it often, and then one day
+
+501
+00:18:54,583 --> 00:18:58,863
+they cut the speed in about 1/3. I said,
+
+502
+00:18:57,303 --> 00:19:00,423
+"What happened?"
+
+503
+00:18:58,863 --> 00:19:02,743
+So, it's one of the few industries that
+
+504
+00:19:00,423 --> 00:19:05,023
+have gone backward, but no more. No
+
+505
+00:19:02,743 --> 00:19:06,663
+more. We're going way forward. We'll be
+
+506
+00:19:05,023 --> 00:19:08,183
+way forward, actually, of the Concorde
+
+507
+00:19:06,663 --> 00:19:11,223
+itself.
+
+508
+00:19:08,183 --> 00:19:13,703
+We lowered our ambitions and turned from
+
+509
+00:19:11,223 --> 00:19:15,143
+big dreams and bold visions to small
+
+510
+00:19:13,703 --> 00:19:18,183
+thinking and
+
+511
+00:19:15,143 --> 00:19:20,503
+stagnation. It was pure stagnation. But,
+
+512
+00:19:18,183 --> 00:19:22,703
+America cannot remain the leading nation
+
+513
+00:19:20,503 --> 00:19:25,343
+on Earth if we turn away from
+
+514
+00:19:22,703 --> 00:19:27,223
+that big, great, giant
+
+515
+00:19:25,343 --> 00:19:30,023
+frontier, the biggest frontier of them
+
+516
+00:19:27,223 --> 00:19:31,943
+all. History has shown that if a nation
+
+517
+00:19:30,023 --> 00:19:35,303
+wants to dominate the future, then it
+
+518
+00:19:31,943 --> 00:19:38,143
+must build for the future.
+
+519
+00:19:35,303 --> 00:19:41,583
+Great civilizations do not stand still.
+
+520
+00:19:38,143 --> 00:19:45,023
+They're rising or falling, expanding or
+
+521
+00:19:41,583 --> 00:19:47,783
+shrinking, leading or declining.
+
+522
+00:19:45,023 --> 00:19:50,583
+And in America, our destiny is to lead.
+
+523
+00:19:47,783 --> 00:19:52,543
+That's what we do is we lead.
+
+524
+00:19:50,583 --> 00:19:55,343
+Make America great again. That's what we
+
+525
+00:19:52,543 --> 00:19:58,143
+do. Our calling is to explore. Our
+
+526
+00:19:55,343 --> 00:20:01,703
+purpose is to build, and our aim is
+
+527
+00:19:58,143 --> 00:20:03,303
+always to win. We want to win.
+
+528
+00:20:01,703 --> 00:20:05,543
+Pushing the boundaries of human
+
+529
+00:20:03,303 --> 00:20:07,743
+achievement further than anyone has ever
+
+530
+00:20:05,543 --> 00:20:09,823
+gone before. And we're there now. We're
+
+531
+00:20:07,743 --> 00:20:11,783
+ready. We're ready. We've
+
+532
+00:20:09,823 --> 00:20:14,303
+taken a long time to put us back in a
+
+533
+00:20:11,783 --> 00:20:15,783
+position where we were far advanced over
+
+534
+00:20:14,303 --> 00:20:18,663
+what we were
+
+535
+00:20:15,783 --> 00:20:22,023
+when we were at our previous height.
+
+536
+00:20:18,663 --> 00:20:24,945
+That's why in my first term, I signed
+
+537
+00:20:22,023 --> 00:20:27,025
+the orders creating the Artemis program
+
+538
+00:20:24,945 --> 00:20:29,065
+directing NASA to return American
+
+539
+00:20:27,025 --> 00:20:30,305
+astronauts to the moon and then push
+
+540
+00:20:29,065 --> 00:20:31,745
+forward
+
+541
+00:20:30,305 --> 00:20:34,665
+to Mars.
+
+542
+00:20:31,745 --> 00:20:37,505
+This year Artemis 2 made history
+
+543
+00:20:34,665 --> 00:20:39,425
+circling the moon for the first time in
+
+544
+00:20:37,505 --> 00:20:42,705
+more than 50 years traveling further
+
+545
+00:20:39,425 --> 00:20:44,665
+from Earth than anyone has ever traveled
+
+546
+00:20:42,705 --> 00:20:47,665
+before. Think of that. The furthest
+
+547
+00:20:44,665 --> 00:20:50,105
+anyone has ever traveled
+
+548
+00:20:47,665 --> 00:20:53,505
+before. Three months ago, it was my
+
+549
+00:20:50,105 --> 00:20:58,625
+privilege to award the crew of Artemis 2
+
+550
+00:20:53,505 --> 00:21:00,785
+the Congressional Space Medal of Honor.
+
+551
+00:20:58,625 --> 00:21:03,545
+And today we're pleased to be joined by
+
+552
+00:21:00,785 --> 00:21:05,545
+astronauts Reed Wiseman,
+
+553
+00:21:03,545 --> 00:21:06,905
+Victor Glover,
+
+554
+00:21:05,545 --> 00:21:08,825
+and Jeremy
+
+555
+00:21:06,905 --> 00:21:09,404
+Hansen. And wherever you may be, please
+
+556
+00:21:08,825 --> 00:21:11,424
+stand up.
+
+557
+00:21:09,404 --> 00:21:11,424
+>> [applause]
+
+558
+00:21:16,609 --> 00:21:18,629
+[applause]
+
+559
+00:21:24,905 --> 00:21:28,785
+>> They're great guys.
+
+560
+00:21:26,985 --> 00:21:30,945
+Great people.
+
+561
+00:21:28,785 --> 00:21:33,585
+Next summer Artemis 3 will carry
+
+562
+00:21:30,945 --> 00:21:35,825
+astronauts into orbit on a complex
+
+563
+00:21:33,585 --> 00:21:38,625
+mission to test the next
+
+564
+00:21:35,825 --> 00:21:41,585
+lunar landers. And we are pleased to be
+
+565
+00:21:38,625 --> 00:21:45,185
+joined by Artemis 3 astronauts,
+
+566
+00:21:41,585 --> 00:21:47,185
+Randy Bresnik and Frank Rubio. Any
+
+567
+00:21:45,185 --> 00:21:48,505
+relation to Marco Rubio, Frank? Where's
+
+568
+00:21:47,185 --> 00:21:50,185
+Marco?
+
+569
+00:21:48,505 --> 00:21:51,305
+Marco, do you know this guy? Come here,
+
+570
+00:21:50,185 --> 00:21:52,545
+Marco.
+
+571
+00:21:51,305 --> 00:21:53,985
+Where is Marco? Would you shake his
+
+572
+00:21:52,545 --> 00:21:56,025
+hand? Shake his hand just in case
+
+573
+00:21:53,985 --> 00:21:58,530
+somewhere along the line you're
+
+574
+00:21:56,025 --> 00:22:00,065
+somewhere along the line you're related.
+
+575
+00:21:58,530 --> 00:22:03,345
+>> [applause]
+
+576
+00:22:00,065 --> 00:22:03,345
+>> Two good-looking [cheering] guys.
+
+577
+00:22:04,225 --> 00:22:09,025
+I don't know. Somewhere deep down
+
+578
+00:22:07,225 --> 00:22:11,985
+from hundreds of years ago, I think
+
+579
+00:22:09,025 --> 00:22:13,665
+you're related, Marco.
+
+580
+00:22:11,985 --> 00:22:16,505
+And thank you all. Because of their
+
+581
+00:22:13,665 --> 00:22:18,585
+work, before the end of my term,
+
+582
+00:22:16,505 --> 00:22:20,625
+the United States will return American
+
+583
+00:22:18,585 --> 00:22:22,225
+astronauts to the surface of the moon.
+
+584
+00:22:20,625 --> 00:22:24,225
+So exciting.
+
+585
+00:22:22,225 --> 00:22:27,426
+And soon thereafter, the United States
+
+586
+00:22:24,225 --> 00:22:29,626
+will establish a permanent presence on
+
+587
+00:22:27,426 --> 00:22:31,506
+lunar soil. That's a big ambition has
+
+588
+00:22:29,626 --> 00:22:34,026
+been for many years.
+
+589
+00:22:31,506 --> 00:22:37,266
+Just this week I issued the American
+
+590
+00:22:34,026 --> 00:22:39,786
+Declaration of Freedom in Space claiming
+
+591
+00:22:37,266 --> 00:22:42,426
+all of space open for American
+
+592
+00:22:39,786 --> 00:22:44,386
+settlement, American civilization, and
+
+593
+00:22:42,426 --> 00:22:46,906
+American freedom.
+
+594
+00:22:44,386 --> 00:22:49,546
+Within the next 2 years NASA will launch
+
+595
+00:22:46,906 --> 00:22:53,186
+the first ever nuclear-powered
+
+596
+00:22:49,546 --> 00:22:54,706
+spacecraft to Mars. I spent so much time
+
+597
+00:22:53,186 --> 00:22:57,106
+talking
+
+598
+00:22:54,706 --> 00:23:00,346
+to Jared and a lot of the people on
+
+599
+00:22:57,106 --> 00:23:04,466
+that. My father my father's brother, Dr.
+
+600
+00:23:00,346 --> 00:23:06,266
+John Trump, was for 51 years at MIT. He
+
+601
+00:23:04,466 --> 00:23:08,626
+knew a lot about this, although probably
+
+602
+00:23:06,266 --> 00:23:11,786
+not quite as advanced then.
+
+603
+00:23:08,626 --> 00:23:14,626
+But he spent 51 years as a professor at
+
+604
+00:23:11,786 --> 00:23:16,386
+MIT from a young man to the
+
+605
+00:23:14,626 --> 00:23:17,706
+longest-serving
+
+606
+00:23:16,386 --> 00:23:19,346
+professor.
+
+607
+00:23:17,706 --> 00:23:23,146
+And I gave
+
+608
+00:23:19,346 --> 00:23:25,626
+Elon and some of the great geniuses of
+
+609
+00:23:23,146 --> 00:23:26,866
+our time the science award, and then
+
+610
+00:23:25,626 --> 00:23:28,906
+they told me
+
+611
+00:23:26,866 --> 00:23:31,826
+that Ronald Reagan gave my uncle the
+
+612
+00:23:28,906 --> 00:23:34,026
+science award, Dr. John Trump,
+
+613
+00:23:31,826 --> 00:23:35,026
+years before. So that was a great honor,
+
+614
+00:23:34,026 --> 00:23:36,826
+but
+
+615
+00:23:35,026 --> 00:23:39,986
+we would talk about it a lot. He was an
+
+616
+00:23:36,826 --> 00:23:41,106
+expert at sort of everything science.
+
+617
+00:23:39,986 --> 00:23:42,626
+And
+
+618
+00:23:41,106 --> 00:23:44,346
+he would be amazed at what we've been
+
+619
+00:23:42,626 --> 00:23:47,866
+able to do, but we're going to be paving
+
+620
+00:23:44,346 --> 00:23:50,706
+the way for astronauts to plant the
+
+621
+00:23:47,866 --> 00:23:52,226
+stars and stripes on the red planet, as
+
+622
+00:23:50,706 --> 00:23:54,706
+they call it.
+
+623
+00:23:52,226 --> 00:23:56,666
+Everywhere we can, our administration is
+
+624
+00:23:54,706 --> 00:23:58,506
+ending years of slow progress and
+
+625
+00:23:56,666 --> 00:24:00,586
+seizing the future that rightfully
+
+626
+00:23:58,506 --> 00:24:03,346
+belongs to America.
+
+627
+00:24:00,586 --> 00:24:06,746
+In my first term I created the first new
+
+628
+00:24:03,346 --> 00:24:08,026
+branch of the US military in nearly 75
+
+629
+00:24:06,746 --> 00:24:10,546
+years,
+
+630
+00:24:08,026 --> 00:24:11,496
+Space Force. Think of that.
+
+631
+00:24:10,546 --> 00:24:13,516
+Think of that.
+
+632
+00:24:11,496 --> 00:24:13,516
+>> [applause]
+
+633
+00:24:15,346 --> 00:24:16,906
+>> One of the
+
+634
+00:24:16,081 --> 00:24:18,506
+>> [applause]
+
+635
+00:24:16,906 --> 00:24:19,706
+>> one of the coolest things we've ever
+
+636
+00:24:18,506 --> 00:24:21,626
+done.
+
+637
+00:24:19,706 --> 00:24:24,506
+And at the Johnson Space Center last
+
+638
+00:24:21,626 --> 00:24:28,347
+summer I signed an executive order to
+
+639
+00:24:24,506 --> 00:24:31,587
+establish a new National Academy, the US
+
+640
+00:24:28,347 --> 00:24:34,067
+Space Academy that'll be
+
+641
+00:24:31,587 --> 00:24:36,148
+designated fairly soon.
+
+642
+00:24:34,067 --> 00:24:38,867
+And it's going to be special. Think of
+
+643
+00:24:36,148 --> 00:24:41,148
+West Point, think of the Air Force
+
+644
+00:24:38,867 --> 00:24:42,587
+Academy or Annapolis or Coast Guard
+
+645
+00:24:41,148 --> 00:24:43,987
+Academy.
+
+646
+00:24:42,587 --> 00:24:45,227
+You're going to have your own. Going to
+
+647
+00:24:43,987 --> 00:24:46,707
+make you very happy. You're going to
+
+648
+00:24:45,227 --> 00:24:48,668
+have great brilliant people going
+
+649
+00:24:46,707 --> 00:24:50,747
+through that Academy for
+
+650
+00:24:48,668 --> 00:24:53,268
+many years to come. Last year I signed
+
+651
+00:24:50,747 --> 00:24:56,307
+an executive order to repeal
+
+652
+00:24:53,268 --> 00:24:58,467
+the prohibition on supersonic flight
+
+653
+00:24:56,307 --> 00:25:00,987
+over the continental United States for
+
+654
+00:24:58,467 --> 00:25:02,707
+the first time in more than 50 years. I
+
+655
+00:25:00,987 --> 00:25:05,862
+love hearing that.
+
+656
+00:25:02,707 --> 00:25:07,148
+I constantly ask Jared, "How bad is it?"
+
+657
+00:25:05,862 --> 00:25:08,867
+>> [applause]
+
+658
+00:25:07,148 --> 00:25:10,747
+>> Every time I'm with Jared, I said, "How
+
+659
+00:25:08,867 --> 00:25:13,028
+bad is bad is that
+
+660
+00:25:10,747 --> 00:25:14,987
+sonic boom or whatever you call it?" And
+
+661
+00:25:13,028 --> 00:25:16,268
+I said, "How bad?"
+
+662
+00:25:14,987 --> 00:25:18,867
+He goes, "Not bad." I said, "So, why
+
+663
+00:25:16,268 --> 00:25:19,987
+don't we just open it up? Let's open it
+
+664
+00:25:18,867 --> 00:25:21,587
+up."
+
+665
+00:25:19,987 --> 00:25:24,427
+And they've got lots of ways of
+
+666
+00:25:21,587 --> 00:25:26,388
+controlling it. So, we've we've uh
+
+667
+00:25:24,427 --> 00:25:27,947
+terminated that ban.
+
+668
+00:25:26,388 --> 00:25:29,307
+That's going to be
+
+669
+00:25:27,947 --> 00:25:31,627
+the lot. That's going to know is one of
+
+670
+00:25:29,307 --> 00:25:34,028
+the reasons we never went further. It's
+
+671
+00:25:31,627 --> 00:25:36,148
+one of the reasons the Concorde and
+
+672
+00:25:34,028 --> 00:25:37,908
+all of the future of those supersonic
+
+673
+00:25:36,148 --> 00:25:40,307
+planes never happened. And now it can
+
+674
+00:25:37,908 --> 00:25:42,987
+happen thanks to advancements in
+
+675
+00:25:40,307 --> 00:25:45,028
+engineering. This will soon be possible
+
+676
+00:25:42,987 --> 00:25:47,987
+without a sonic boom.
+
+677
+00:25:45,028 --> 00:25:50,148
+I also signed an order to supercharge
+
+678
+00:25:47,987 --> 00:25:51,867
+the American drone industry and even
+
+679
+00:25:50,148 --> 00:25:54,067
+allow for advanced
+
+680
+00:25:51,867 --> 00:25:57,107
+electric vertical takeoff and landing
+
+681
+00:25:54,067 --> 00:25:59,908
+aircraft and autonomous flight. And we
+
+682
+00:25:57,107 --> 00:26:03,347
+are ensuring that the United States
+
+683
+00:25:59,908 --> 00:26:05,747
+remains the undisputed global leader in
+
+684
+00:26:03,347 --> 00:26:07,587
+super intelligence, SI, super
+
+685
+00:26:05,747 --> 00:26:09,747
+intelligence, which is really a much
+
+686
+00:26:07,587 --> 00:26:12,148
+better name than artificial. This is not
+
+687
+00:26:09,747 --> 00:26:13,668
+artificial. It's super. It's too super
+
+688
+00:26:12,148 --> 00:26:15,067
+sometimes. That's what we have to worry
+
+689
+00:26:13,668 --> 00:26:16,347
+about.
+
+690
+00:26:15,067 --> 00:26:17,867
+We'll make it a little bit less super
+
+691
+00:26:16,347 --> 00:26:19,987
+maybe.
+
+692
+00:26:17,867 --> 00:26:22,148
+But whoever wins SI wins, you know.
+
+693
+00:26:19,987 --> 00:26:24,107
+We're leading China now by
+
+694
+00:26:22,148 --> 00:26:25,788
+a year, maybe even a little more. And we
+
+695
+00:26:24,107 --> 00:26:28,627
+want to win. We have to win. Whoever
+
+696
+00:26:25,788 --> 00:26:29,827
+wins SI Whoever wins super intelligence
+
+697
+00:26:28,627 --> 00:26:31,709
+wins.
+
+698
+00:26:29,827 --> 00:26:34,229
+And under the Trump administration, the
+
+699
+00:26:31,709 --> 00:26:36,669
+winner will always be the United States
+
+700
+00:26:34,229 --> 00:26:38,989
+of America. We're leading now, and
+
+701
+00:26:36,669 --> 00:26:41,469
+I was with President Xi
+
+702
+00:26:38,989 --> 00:26:44,269
+3 weeks ago at the White House,
+
+703
+00:26:41,469 --> 00:26:46,989
+and we talked about it, and he's all in.
+
+704
+00:26:44,269 --> 00:26:48,829
+And he congratulated us in how well
+
+705
+00:26:46,989 --> 00:26:50,629
+we're doing, and I said the same to him.
+
+706
+00:26:48,829 --> 00:26:52,149
+He's doing great.
+
+707
+00:26:50,629 --> 00:26:53,549
+But we're we're leading, and we want to
+
+708
+00:26:52,149 --> 00:26:56,229
+keep it that way. It's a big deal.
+
+709
+00:26:53,549 --> 00:26:58,989
+America is the nation that dreamed and
+
+710
+00:26:56,229 --> 00:27:01,149
+created the modern world, and we laid
+
+711
+00:26:58,989 --> 00:27:02,869
+the railroads, harnessed electricity,
+
+712
+00:27:01,149 --> 00:27:05,629
+and invented the
+
+713
+00:27:02,869 --> 00:27:08,429
+lightbulb, the telephone, the airplane,
+
+714
+00:27:05,629 --> 00:27:11,109
+the assembly line, the television,
+
+715
+00:27:08,429 --> 00:27:13,469
+the microchip, the personal computer,
+
+716
+00:27:11,109 --> 00:27:15,469
+the internet, GPS,
+
+717
+00:27:13,469 --> 00:27:16,909
+the smartphone, and almost every other
+
+718
+00:27:15,469 --> 00:27:19,149
+thing
+
+719
+00:27:16,909 --> 00:27:22,509
+Think of it. Almost every other thing
+
+720
+00:27:19,149 --> 00:27:23,749
+that's worth mentioning.
+
+721
+00:27:22,509 --> 00:27:25,709
+That's a cool list, though, when you
+
+722
+00:27:23,749 --> 00:27:27,589
+think, huh? How about a little piece of
+
+723
+00:27:25,709 --> 00:27:29,029
+each of them? Wouldn't that be nice? You
+
+724
+00:27:27,589 --> 00:27:31,069
+wouldn't be sitting here right now.
+
+725
+00:27:29,029 --> 00:27:33,309
+You'd be someplace else.
+
+726
+00:27:31,069 --> 00:27:35,709
+But think of that, that names every one
+
+727
+00:27:33,309 --> 00:27:38,429
+of them and many, many more.
+
+728
+00:27:35,709 --> 00:27:41,989
+We charted the human
+
+729
+00:27:38,429 --> 00:27:44,469
+genome to cure diseases, powered entire
+
+730
+00:27:41,989 --> 00:27:47,509
+cities by splitting single atoms, and
+
+731
+00:27:44,469 --> 00:27:50,669
+built telescopes to peer all the way
+
+732
+00:27:47,509 --> 00:27:52,869
+back to the beginning of time.
+
+733
+00:27:50,669 --> 00:27:54,949
+And to be an American is to inherit the
+
+734
+00:27:52,869 --> 00:27:57,669
+legacy of the greatest pioneers,
+
+735
+00:27:54,949 --> 00:27:59,149
+explorers, inventors, and innovators who
+
+736
+00:27:57,669 --> 00:28:00,829
+ever lived.
+
+737
+00:27:59,149 --> 00:28:03,229
+And so,
+
+738
+00:28:00,829 --> 00:28:04,549
+to laugh in the face of doubters and
+
+739
+00:28:03,229 --> 00:28:06,669
+critics
+
+740
+00:28:04,549 --> 00:28:10,109
+who are always ready to say, "Why are
+
+741
+00:28:06,669 --> 00:28:12,669
+you doing this? Why are you doing it?"
+
+742
+00:28:10,109 --> 00:28:16,069
+In 1901, the chief engineer of the US
+
+743
+00:28:12,669 --> 00:28:19,709
+Navy said that the idea of man flight
+
+744
+00:28:16,069 --> 00:28:21,869
+was nothing but a vain fantasy as
+
+745
+00:28:19,709 --> 00:28:23,509
+thin as air itself.
+
+746
+00:28:21,869 --> 00:28:26,549
+Two years later, the Wright brothers
+
+747
+00:28:23,509 --> 00:28:29,429
+achieved the age-old dream of all
+
+748
+00:28:26,549 --> 00:28:31,269
+humanity, and that's to fly. They flew.
+
+749
+00:28:29,429 --> 00:28:35,150
+Nobody could believe it.
+
+750
+00:28:31,269 --> 00:28:37,670
+In 1957, inventor Lee De Forest said
+
+751
+00:28:35,150 --> 00:28:40,670
+that man will never reach the moon
+
+752
+00:28:37,670 --> 00:28:43,470
+regardless of all future scientific
+
+753
+00:28:40,670 --> 00:28:45,790
+advances. 12 years later,
+
+754
+00:28:43,470 --> 00:28:47,990
+Neil Armstrong and Buzz Aldrin strode
+
+755
+00:28:45,790 --> 00:28:50,430
+across the lunar surface.
+
+756
+00:28:47,990 --> 00:28:52,710
+Time and time again, our courage,
+
+757
+00:28:50,430 --> 00:28:55,110
+ingenuity, and sheer determination has
+
+758
+00:28:52,710 --> 00:28:58,310
+achieved what everyone thought to be
+
+759
+00:28:55,110 --> 00:29:01,550
+totally impossible until American
+
+760
+00:28:58,310 --> 00:29:03,990
+and America and our great country and
+
+761
+00:29:01,550 --> 00:29:05,670
+our unbelievable genius minds got it
+
+762
+00:29:03,990 --> 00:29:07,590
+done.
+
+763
+00:29:05,670 --> 00:29:10,030
+As I said in my
+
+764
+00:29:07,590 --> 00:29:12,830
+inaugural address, in America, the
+
+765
+00:29:10,030 --> 00:29:15,390
+impossible is what we do best. That's
+
+766
+00:29:12,830 --> 00:29:17,390
+exactly what we do best. Now, our nation
+
+767
+00:29:15,390 --> 00:29:19,710
+is ready to prove
+
+768
+00:29:17,390 --> 00:29:24,030
+the doubters wrong yet again and to make
+
+769
+00:29:19,710 --> 00:29:25,670
+the next giant leap for all of mankind.
+
+770
+00:29:24,030 --> 00:29:29,270
+Looking around these grounds today, we
+
+771
+00:29:25,670 --> 00:29:32,150
+can still proudly say that after 250
+
+772
+00:29:29,270 --> 00:29:35,390
+years of American freedom,
+
+773
+00:29:32,150 --> 00:29:38,990
+the best is yet to come. So, I want to
+
+774
+00:29:35,390 --> 00:29:40,670
+just thank everyone. And again, this is
+
+775
+00:29:38,990 --> 00:29:42,930
+a phenomenal
+
+776
+00:29:40,670 --> 00:29:44,630
+a phenomenal weekend.
+
+777
+00:29:42,930 --> 00:29:46,390
+>> [applause]
+
+778
+00:29:44,630 --> 00:29:49,710
+>> And maybe most importantly, I want to
+
+779
+00:29:46,390 --> 00:29:52,190
+thank and congratulate our great
+
+780
+00:29:49,710 --> 00:29:54,230
+continuation of the senator. Not totally
+
+781
+00:29:52,190 --> 00:29:55,910
+new, sort of new, but it's a
+
+782
+00:29:54,230 --> 00:29:58,590
+continuation.
+
+783
+00:29:55,910 --> 00:30:00,430
+And a man who will end up being a great
+
+784
+00:29:58,590 --> 00:30:02,390
+governor. I have absolutely no doubt
+
+785
+00:30:00,430 --> 00:30:06,110
+about it. Thank you both.
+
+786
+00:30:02,390 --> 00:30:08,390
+And congratulations. Now, let me invite
+
+787
+00:30:06,110 --> 00:30:10,590
+Administrator Isaacman back to the stage
+
+788
+00:30:08,390 --> 00:30:12,550
+for a very special
+
+789
+00:30:10,590 --> 00:30:15,025
+presentation. Jared, please. Thank you
+
+790
+00:30:12,550 --> 00:30:17,045
+very much, everybody. Great honor.
+
+791
+00:30:15,025 --> 00:30:17,045
+>> [applause]
+
+792
+00:30:18,910 --> 00:30:20,150
+>> Test. Test.
+
+793
+00:30:19,610 --> 00:30:22,030
+>> [applause]
+
+794
+00:30:20,150 --> 00:30:24,630
+>> Mr. President, we
+
+795
+00:30:22,030 --> 00:30:26,830
+brought you something very special here.
+
+796
+00:30:24,630 --> 00:30:29,030
+This plaque was made for you. We are
+
+797
+00:30:26,830 --> 00:30:30,710
+going to install it on the runway that
+
+798
+00:30:29,030 --> 00:30:32,950
+you helped energize, that you helped
+
+799
+00:30:30,710 --> 00:30:34,830
+bring bring back to life.
+
+800
+00:30:32,950 --> 00:30:36,152
+So, thank you very much, Mr. President.
+
+801
+00:30:34,830 --> 00:30:38,112
+Thank you for being with us tonight.
+
+802
+00:30:36,152 --> 00:30:39,916
+Thanks for what you're doing for NASA
+
+803
+00:30:38,112 --> 00:30:41,936
+and for the nation.
+
+804
+00:30:39,916 --> 00:30:41,936
+>> [applause]
+
+805
+00:30:49,086 --> 00:30:51,106
+[applause]
+
+806
+00:30:52,632 --> 00:30:57,001
+>> Thank you very much.
+
+807
+00:30:54,981 --> 00:30:57,001
+>> [applause]
+
+808
+00:31:04,806 --> 00:31:08,136
+[music]
+
+809
+00:31:06,116 --> 00:31:08,136
+[applause]
+

@@ -1,0 +1,3094 @@
+1
+00:00:04,240 --> 00:00:06,600
+怎么样？
+How about that?
+
+2
+00:00:06,600 --> 00:00:09,840
+各位晚上好。总统先生，
+Good evening, everyone. Mr. President,
+
+3
+00:00:09,840 --> 00:00:12,800
+欢迎来到肯尼迪航天中心。欢迎
+welcome to Kennedy Space Center. Welcome
+
+4
+00:00:12,800 --> 00:00:14,280
+来到Maxar。能够在一位具有远见卓识的总统领导下工作，
+to Maxar.
+
+5
+00:00:14,280 --> 00:00:17,640
+我感到无比荣幸。
+It is an absolute honor to serve under a president whose
+
+6
+00:00:17,640 --> 00:00:18,280
+这位总统正在
+vision is
+
+7
+00:00:18,280 --> 00:00:21,640
+开启探索的黄金时代，并为
+igniting a golden age of exploration and
+
+8
+00:00:21,640 --> 00:00:25,760
+世界上最杰出的航天机构注入活力。
+energizing the most accomplished space agency in the world.
+
+9
+00:00:25,760 --> 00:00:26,560
+值此美国
+As America
+
+10
+00:00:26,560 --> 00:00:30,320
+庆祝建国250周年之际，我们聚集
+celebrates our 250th birthday, we gather
+
+11
+00:00:30,320 --> 00:00:32,680
+在这个我们许多伟大
+at a place where so many of our greatest
+
+12
+00:00:32,680 --> 00:00:36,560
+抱负起飞的地方。从
+ambitions have taken flight. From Mercury
+
+13
+00:00:36,560 --> 00:00:38,800
+水星计划的首位宇航员艾伦·谢泼德，到
+first astronaut, Alan Shepard, through
+
+14
+00:00:38,800 --> 00:00:41,920
+阿波罗计划的尼尔·阿姆斯特朗和巴兹·奥尔德林，
+Neil Armstrong and Buzz Aldrin of Apollo
+
+15
+00:00:41,920 --> 00:00:45,640
+再到超过135次的航天飞机任务，以及
+to over 135 shuttle missions, the great
+
+16
+00:00:45,640 --> 00:00:49,000
+哈勃和韦伯等伟大的望远镜、
+telescopes of Hubble, Webb, the rovers
+
+17
+00:00:49,000 --> 00:00:51,600
+火星探测车，直至今日，您关于
+on Mars to today, where your executive
+
+18
+00:00:51,600 --> 00:00:53,960
+确保美国太空支援优势的行政命令，促成了“
+order on ensuring American space support
+
+19
+00:00:53,960 --> 00:00:58,400
+罗马”号、“阿尔忒弥斯2号”以及即将到来
+superiority has given us missions like Roman, Artemis 2,
+
+20
+00:00:58,400 --> 00:01:00,760
+的“阿尔忒弥斯3号”和“
+and soon Artemis 3 and
+
+21
+00:01:00,760 --> 00:01:03,440
+阿尔忒弥斯4号”等任务。总统先生，您已
+Artemis 4. Mr. President, you have given
+
+22
+00:01:03,440 --> 00:01:05,960
+明确授权NASA以
+NASA a clear mandate to move with
+
+23
+00:01:05,960 --> 00:01:09,360
+紧迫的步伐，重燃其昔日的激情、活力和
+urgency, restore the fire, passion, and
+
+24
+00:01:09,360 --> 00:01:12,360
+辉煌，使之成为世界瞩目的机构
+greatness that made this agency the envy
+
+25
+00:01:12,360 --> 00:01:15,000
+并为
+of the world, and lay the groundwork for
+
+26
+00:01:15,000 --> 00:01:18,080
+未来250年美国在航空航天领域的
+another 250 years of American
+
+27
+00:01:18,080 --> 00:01:20,880
+技术突破、发现
+technological breakthroughs, discovery,
+
+28
+00:01:20,880 --> 00:01:24,480
+和创新奠定基础。我们将以
+and inspiration in air and space. We are
+
+29
+00:01:24,480 --> 00:01:26,400
+您在
+building on what you ignited during your
+
+30
+00:01:26,400 --> 00:01:28,640
+第一任期内通过阿尔忒弥斯计划、
+first term through the Artemis program,
+
+31
+00:01:28,640 --> 00:01:31,080
+太空部队、阿尔忒弥斯协定所点燃的热情为基础，
+through Space Force, through the Artemis Accords,
+
+32
+00:01:31,080 --> 00:01:33,120
+致力于让
+and a commitment to keeping the
+
+33
+00:01:33,120 --> 00:01:35,160
+美国继续走在这场
+United States at the forefront of this
+
+34
+00:01:35,160 --> 00:01:38,040
+伟大冒险的前沿，激励美国国家航空航天局、我们的
+great adventure, challenging NASA, our
+
+35
+00:01:38,040 --> 00:01:40,400
+军队和美国工业界放眼
+military, and American industry to think
+
+36
+00:01:40,400 --> 00:01:41,920
+未来，
+bigger, move faster,
+
+37
+00:01:41,920 --> 00:01:45,680
+加快步伐，追求配得上美利坚
+and pursue the kind of bold endeavors worthy of the United
+
+38
+00:01:45,680 --> 00:01:48,720
+合众国的宏伟目标。为了展现这种
+States of America. And to showcase that
+
+39
+00:01:48,720 --> 00:01:51,400
+独创性，正如你们今天所看到的，它将
+ingenuity, as you see it today, as it
+
+40
+00:01:51,400 --> 00:01:54,480
+成为
+will become the greatest exhibition of
+
+41
+00:01:54,480 --> 00:01:57,200
+美国航空航天能力最伟大的展览，不是在
+American aerospace capabilities, not at
+
+42
+00:01:57,200 --> 00:02:00,210
+巴黎航展，也不是在范堡罗航展，
+the Paris Air Show, not at Farnborough,
+
+43
+00:02:00,210 --> 00:02:05,970
+而是在肯尼迪航天中心，就在这条
+but here at Kennedy Space Center, next to this
+
+44
+00:02:05,970 --> 00:02:07,230
+历史悠久的跑道旁边。
+historic runway.
+
+45
+00:02:11,330 --> 00:02:14,050
+这条具有历史意义的跑道，是
+This historic runway that President
+
+46
+00:02:14,050 --> 00:02:16,130
+特朗普总统让它重获新生。您的
+Trump brought back to life. Your
+
+47
+00:02:16,130 --> 00:02:18,650
+领导为美国国家航空航天局注入了活力，也为
+leadership has energized NASA, energized
+
+48
+00:02:18,650 --> 00:02:20,730
+今天聚集在这里的业界注入了活力，
+the industry gathered here today, and
+
+49
+00:02:20,730 --> 00:02:23,530
+先生，我们不会放慢脚步。我们将把
+sir, we are not slowing down. We will
+
+50
+00:02:23,530 --> 00:02:25,610
+美国宇航员送回月球。
+return American astronauts to the moon.
+
+51
+00:02:25,610 --> 00:02:27,370
+我们将在月球表面建立一个永久性的存在
+We will build an enduring presence on
+
+52
+00:02:27,370 --> 00:02:29,970
+即月球基地。我们将
+the lunar surface, a moon base. We will
+
+53
+00:02:29,970 --> 00:02:32,690
+释放无人机，下一代
+unleash the drones, next generation
+
+54
+00:02:32,690 --> 00:02:35,770
+交通工具将带我们悄无声息地突破
+transportation taking us quietly through
+
+55
+00:02:35,770 --> 00:02:38,010
+音障。我们正在重建我们的
+the sound barrier. We're rebuilding our
+
+56
+00:02:38,010 --> 00:02:39,810
+X-Plane机队。我们终于让
+X-Plane fleet. We are finally getting
+
+57
+00:02:39,810 --> 00:02:42,370
+美国在太空发展核能方面取得了进展
+America underway on nuclear power in
+
+58
+00:02:42,370 --> 00:02:44,050
+我们将
+space, and we are going to venture
+
+59
+00:02:44,050 --> 00:02:46,290
+进一步探索太阳系，并朝着
+farther into the solar system, and move
+
+60
+00:02:46,290 --> 00:02:48,810
+您
+closer to that next giant leap you
+
+61
+00:02:48,810 --> 00:02:51,250
+在就职演说中呼吁的下一个巨大飞跃迈进——
+called for in your inaugural address
+
+62
+00:02:51,250 --> 00:02:53,650
+届时美国宇航员将在
+when American astronauts plant the stars
+
+63
+00:02:53,650 --> 00:02:55,330
+火星上插上星条旗。
+and stripes on Mars.
+
+64
+00:02:55,330 --> 00:02:57,050
+总统先生，感谢您
+Mr. President, thank you for setting an
+
+65
+00:02:57,050 --> 00:02:58,930
+为美国、为美国国家航空航天局制定了雄心勃勃的发展方向，
+ambitious course for America,
+
+66
+00:02:58,930 --> 00:02:59,930
+感谢您
+for NASA,
+
+67
+00:02:59,930 --> 00:03:01,570
+相信这个国家应该
+for believing this country should
+
+68
+00:03:01,570 --> 00:03:04,210
+继续承担并实现
+continue to undertake and achieve the
+
+69
+00:03:04,210 --> 00:03:06,810
+近乎不可能的任务，感谢您提醒我们，
+near impossible, and for reminding us
+
+70
+00:03:06,810 --> 00:03:09,610
+伟大的国家会成就伟大的事业。
+that great nations do great things.
+
+71
+00:03:09,610 --> 00:03:12,370
+女士们、先生们，我
+Ladies and gentlemen, it is my honor, my
+
+72
+00:03:12,370 --> 00:03:15,370
+荣幸地欢迎美国第45任和第47任
+privilege to welcome the 45th and 47th
+
+73
+00:03:15,370 --> 00:03:20,650
+总统唐纳德·J·特朗普。
+President of the United States, Donald J. Trump.
+
+74
+00:03:24,290 --> 00:03:28,690
+我是自由的我不会忘记那些为
+I'm free and I won't forget the men who
+
+75
+00:03:28,690 --> 00:03:34,810
+我争取到这项权利而牺牲的人们，我乐意与
+died, who gave that right to me, and I gladly stand up
+
+76
+00:03:34,810 --> 00:03:39,370
+你们并肩而立，直到今天，我仍然感到心痛
+next to you, and it hurts still today,
+
+77
+00:03:39,370 --> 00:03:44,410
+因为毫无疑问，我爱这片土地。
+cuz there ain't no doubt I love this land.
+
+78
+00:03:44,410 --> 00:03:48,530
+上帝（音乐）保佑美国。
+God bless the USA.
+
+79
+00:03:59,530 --> 00:04:02,850
+从明尼苏达州的湖泊
+From the lakes of Minnesota
+
+80
+00:04:02,850 --> 00:04:06,370
+到田纳西州的山丘，
+to the hills of Tennessee,
+
+81
+00:04:06,370 --> 00:04:09,450
+穿过德克萨斯平原，
+across the plains of Texas,
+
+82
+00:04:09,450 --> 00:04:12,970
+从东海岸到西海岸。
+from sea to shining sea.
+
+83
+00:04:12,970 --> 00:04:19,370
+从底特律到休斯顿，从纽约到洛杉矶，
+From Detroit down to Houston, and New York to LA,
+
+84
+00:04:19,370 --> 00:04:21,370
+每个
+where there's pride in every
+
+85
+00:04:21,370 --> 00:04:24,490
+美国人的心中都充满自豪，现在是我们站起来
+American heart, and it's time we stand
+
+86
+00:04:24,490 --> 00:04:25,110
+说
+and say
+
+87
+00:04:29,410 --> 00:04:34,050
+我为自己是美国人而感到自豪的时候了，至少我
+that I'm proud to be an American, where at least I
+
+88
+00:04:34,050 --> 00:04:36,090
+知道我是自由的。
+know I'm free.
+
+89
+00:04:36,090 --> 00:04:38,730
+我（音乐人）不会忘记那些
+And I won't forget the men who
+
+90
+00:04:38,730 --> 00:04:43,010
+牺牲的人，是他们给了我这项权利。我
+died, who gave that right to me. And I gladly
+
+91
+00:04:43,010 --> 00:04:49,370
+今天仍然乐意与你并肩而立，捍卫这片土地，
+stand up next to you and defend her still today,
+
+92
+00:04:49,370 --> 00:04:54,250
+因为毫无疑问，我深爱着这片土地。
+cuz there ain't no doubt I love this land.
+
+93
+00:04:54,330 --> 00:04:58,410
+上帝保佑美国（音乐）。
+God bless the USA.
+
+94
+00:05:02,730 --> 00:05:08,170
+我为自己是美国人而感到自豪，至少我知道在这里
+And I'm proud to be an American, where at least I know
+
+95
+00:05:08,170 --> 00:05:08,830
+我是自由的。
+I'm free.
+
+96
+00:05:09,810 --> 00:05:13,650
+我不会忘记那些牺牲的人，是他们
+And I won't forget the men who died, who
+
+97
+00:05:13,650 --> 00:05:19,610
+给了我这项权利。我
+gave that right to me. And I gladly stand up
+
+98
+00:05:19,610 --> 00:05:24,410
+今天仍然乐意站在你身边，
+next to you and defend her still today,
+
+99
+00:05:24,410 --> 00:05:29,570
+捍卫这片土地，因为毫无疑问，我深爱着这片土地。
+cuz there ain't no doubt I love this land.
+
+100
+00:05:29,570 --> 00:05:32,970
+上帝保佑
+God bless the
+
+101
+00:05:34,250 --> 00:05:36,410
+美国。
+USA.
+
+102
+00:05:40,770 --> 00:05:43,770
+非常感谢。哇，真是个令人
+Thank you very much. Wow, what a
+
+103
+00:05:43,770 --> 00:05:46,450
+惊叹的地方！（掌声）多么棒的
+What an amazing place. What an amazing
+
+104
+00:05:46,450 --> 00:05:48,050
+地方，贾里德真是个优秀的领导者！
+place and what a wonderful leader you
+
+105
+00:05:48,050 --> 00:05:51,650
+非常感谢你，贾里德
+have in Jared. Thank you, Jared, very much.
+
+106
+00:05:51,650 --> 00:05:54,090
+我还要说，他是
+And I will say this, the best
+
+107
+00:05:54,090 --> 00:05:56,610
+NASA历史上最优秀的管理者，我说的就是这个意思
+administrator in NASA history, and I
+
+108
+00:05:56,610 --> 00:06:00,330
+他既是飞行员，又是宇航员，还是爱国者。
+mean that. He's a pilot, an astronaut, a patriot.
+
+109
+00:06:00,330 --> 00:06:02,450
+贾里德，干得好。你做得
+So, Jared, great job. You're doing a
+
+110
+00:06:02,450 --> 00:06:06,140
+非常出色。我为选中他们感到非常自豪
+fantastic job. I was very proud to pick them.
+
+111
+00:06:06,140 --> 00:06:08,420
+还要感谢今天聚集在一起的每一位创新者、
+And thanks as well to every innovator,
+
+112
+00:06:08,420 --> 00:06:10,700
+先驱者和尊贵的来宾，他们聚集于此的
+pioneer, and distinguished guest
+
+113
+00:06:10,700 --> 00:06:13,780
+原因很简单，就是为了让
+gathered today for one simple reason, to
+
+114
+00:06:13,780 --> 00:06:16,980
+美国在地球上保持领先地位，在
+keep America first on Earth, first in
+
+115
+00:06:16,980 --> 00:06:21,660
+天空中保持领先地位，当然，在太空中也保持领先地位。
+the skies, and of course, first in space.
+
+116
+00:06:21,660 --> 00:06:24,460
+非常重要。
+Very important.
+
+117
+00:06:25,580 --> 00:06:28,180
+看着这位身材高大、
+And I want to congratulate while I'm looking at that big,
+
+118
+00:06:28,180 --> 00:06:29,500
+体格强壮的男士刚刚当选
+strong guy just won
+
+119
+00:06:29,500 --> 00:06:30,980
+州长，我想向他表示祝贺。拜伦，请你站起来好吗
+for governor. Will you stand up, please,
+
+120
+00:06:30,980 --> 00:06:33,580
+我们为你加油！
+Byron? While we have you.
+
+121
+00:06:33,580 --> 00:06:36,420
+太棒了！（掌声）
+That's fantastic.
+
+122
+00:06:36,420 --> 00:06:39,940
+他赢了，而且他赢得非常艰难（掌声）。他工作了。他
+He and he won it and he did it the hard way. He worked. He
+
+123
+00:06:39,940 --> 00:06:43,420
+工作非常努力，参议员
+worked hard and please stand up, Madam Senator, if you
+
+124
+00:06:43,420 --> 00:06:46,580
+女士，如果您不介意的话，请站起来。你会批准这项请求。
+don't mind. You'll be approving this.
+
+125
+00:06:46,580 --> 00:06:49,500
+谢谢你，拜伦。你们俩都做得很好
+Thank you, Byron. Great job, both of you.
+
+126
+00:06:49,500 --> 00:06:51,420
+干得好。
+Great job.
+
+127
+00:06:51,420 --> 00:06:56,340
+我要感谢UpSummit的联合创始人Cyrus
+I want to thank the co-founder of the Up Summit, Cyrus
+
+128
+00:06:56,340 --> 00:06:59,740
+Sagari，感谢他帮助组织了这场令人
+Sagari for helping organize this really
+
+129
+00:06:59,740 --> 00:07:02,020
+难以置信的盛会。它会
+unbelievable event. It's going to be
+
+130
+00:07:02,020 --> 00:07:04,620
+越来越大。每年都会看到这种情况
+bigger and bigger. Every year you'll see that.
+
+131
+00:07:04,620 --> 00:07:07,620
+也祝贺我们的
+And congratulations to also our
+
+132
+00:07:07,620 --> 00:07:09,860
+国务卿。他来过这里。他
+Secretary of State. He was here. He's
+
+133
+00:07:09,860 --> 00:07:13,980
+取得了非常辉煌的成就。他是我们国家有史以来最伟大的国务卿
+had a fantastic run. He's the greatest Secretary of State
+
+134
+00:07:13,980 --> 00:07:16,180
+马可·卢比奥，
+that we've ever had in this country. Marco Rubio,
+
+135
+00:07:16,180 --> 00:07:18,740
+他是不是在附近？马可在哪里？
+is he around here someplace? Where is Marco?
+
+136
+00:07:18,740 --> 00:07:21,580
+我们的马可在哪里？
+Where is our Marco?
+
+137
+00:07:21,580 --> 00:07:23,380
+谢谢你，马可。
+Thank you, Marco.
+
+138
+00:07:23,380 --> 00:07:27,820
+太棒了。美国管理和预算局局长拉斯·沃特。
+It's been fantastic. OMB Director Russ Vought.
+
+139
+00:07:27,820 --> 00:07:30,100
+谢谢你，Russ。谢谢。
+Thank you, Russ. Thank you.
+
+140
+00:07:30,100 --> 00:07:34,940
+联合国大使迈克·沃尔斯。干得好，迈克。
+UN Ambassador Mike Walls. Good job you did, Mike.
+
+141
+00:07:34,940 --> 00:07:37,180
+这是一个天然的家。
+It was a natural home.
+
+142
+00:07:37,180 --> 00:07:41,540
+我看到了你对抗古巴人的方式。
+I saw the way you took on uh the Cubans.
+
+143
+00:07:41,540 --> 00:07:43,820
+有人在看吗？我很喜欢。
+Anybody watch? I loved it.
+
+144
+00:07:43,820 --> 00:07:48,020
+萨姆·格雷夫斯和迈克·克尔多也都
+And uh Sam Graves and Mike Kerdo plus were
+
+145
+00:07:48,020 --> 00:07:50,540
+很棒。谢谢你，迈克。干得好。干得
+fantastic. Thank you, Mike. Great job.
+
+146
+00:07:50,540 --> 00:07:54,220
+好。然后你就去了海军代理部长
+And you went Acting Secretary of the Navy,
+
+147
+00:07:54,220 --> 00:07:57,420
+洪曹。我喜欢“洪曹”这个名字。
+Hong Cao. I love the name, Hong Cao.
+
+148
+00:07:57,420 --> 00:07:59,180
+你做得非常出色。
+You're doing a fantastic job. Where are
+
+149
+00:07:59,180 --> 00:08:00,140
+女士，您在哪里？你在哪里？是的
+you, lady? Where are you?
+
+150
+00:08:00,140 --> 00:08:04,740
+美国
+Yes. FAA Administrator Brian Bedwell, who is
+
+151
+00:08:04,740 --> 00:08:05,780
+联邦航空管理局局长布莱恩·贝德韦尔非常了不起。谢谢你，
+amazing. Thank you,
+
+152
+00:08:05,780 --> 00:08:07,340
+布莱恩。
+Brian.
+
+153
+00:08:07,340 --> 00:08:10,580
+布莱恩在哪里？他就在附近。谢谢你，布莱恩。
+Where is Brian? He's around here. Thank you, Brian.
+
+154
+00:08:10,580 --> 00:08:11,780
+谢谢。
+Thank you.
+
+155
+00:08:11,780 --> 00:08:15,660
+科学技术
+Director of the Office of Science and Technology
+
+156
+00:08:15,660 --> 00:08:19,700
+政策办公室主任。迈克尔，这真是一份非常重要的工作。
+policy. It's really a very important job, Michael.
+
+157
+00:08:19,700 --> 00:08:23,420
+克雷齐奥斯。谢谢你，迈克尔。谢谢。
+Kretsios. Thank you, Michael. Thank you.
+
+158
+00:08:23,740 --> 00:08:26,460
+谢谢你，迈克尔。好工作。
+Michael. Good job.
+
+159
+00:08:26,460 --> 00:08:28,420
+以及航空、航天技术领域的许多其他领导者
+And many other leaders in aviation,
+
+160
+00:08:28,420 --> 00:08:31,500
+我们这里有很多
+aerospace technology. We got a lot of them here.
+
+161
+00:08:31,500 --> 00:08:33,060
+很多卖这些东西的人
+A lot of guys that sell this stuff that
+
+162
+00:08:33,060 --> 00:08:36,700
+赚了很多钱，他们也从中获得了满足感。
+make it a lot of money and they feel his meal.
+
+163
+00:08:36,700 --> 00:08:38,860
+很久以前，我们曾见过一次面
+Having met you once before, a long time
+
+164
+00:08:38,860 --> 00:08:40,900
+记住，我不想和你们任何人握手
+ago. Remember, I don't want to shake any
+
+165
+00:08:40,900 --> 00:08:43,500
+这样你就不会有问题了。
+of your hands. That way you have no problem.
+
+166
+00:08:43,500 --> 00:08:46,660
+但你做得非常出色。我们生产的
+But you're doing a fantastic job. We make the best
+
+167
+00:08:46,660 --> 00:08:48,900
+设备、航天设备和军事
+equipment, space equipment, military
+
+168
+00:08:48,900 --> 00:08:50,260
+设备比世界上任何人都好。
+equipment than anyone in the world.
+
+169
+00:08:50,260 --> 00:08:52,220
+根本没人能接近。
+There's nobody even close.
+
+170
+00:08:52,220 --> 00:08:54,100
+而且在进一步讨论之前，必须承认，这也是
+And before going any further, it's it's
+
+171
+00:08:54,100 --> 00:08:56,920
+事实。好的，请便。你可以为此鼓掌。
+true, too. Yeah, go ahead. You can clap for that one.
+
+172
+00:09:00,220 --> 00:09:01,900
+但在继续之前，我们
+But before going any further, we have
+
+173
+00:09:01,900 --> 00:09:04,180
+今天有一些好消息要宣布。我们刚刚收到一份
+some great news today. We just received
+
+174
+00:09:04,180 --> 00:09:06,740
+远超预期的重磅就业报告
+yet another blockbuster jobs report that
+
+175
+00:09:06,740 --> 00:09:09,140
+就业
+smashed all expectations. The job
+
+176
+00:09:09,140 --> 00:09:11,420
+人数激增。
+numbers are through the roof.
+
+177
+00:09:11,420 --> 00:09:14,740
+美国10月份新增了16.5万个
+The United States just added 165,000
+
+178
+00:09:14,740 --> 00:09:17,700
+工作岗位。他们认为人数
+jobs in October. They thought the number would be
+
+179
+00:09:17,700 --> 00:09:20,620
+可能在20人左右，略多一些。
+maybe around 20, slightly more.
+
+180
+00:09:20,620 --> 00:09:23,580
+我告诉他们，其中包括19,000个全新的
+I told them, including 19,000 brand new
+
+181
+00:09:23,580 --> 00:09:25,500
+制造业工作岗位，这是几十年来
+manufacturing jobs, the largest
+
+182
+00:09:25,500 --> 00:09:28,620
+制造业工作岗位单月增幅最大的一次
+one-month increase in manufacturing jobs
+
+183
+00:09:28,620 --> 00:09:33,220
+尽管如此，还是要说声谢谢。
+in many, many decades. And despite the Thank you.
+
+184
+00:09:33,220 --> 00:09:36,980
+尽管昨天损失了3万亿美元。
+Despite the $3 trillion loss yesterday.
+
+185
+00:09:36,980 --> 00:09:39,820
+你知道吗，我们国家因为一场选举损失了3万亿美元
+You know, our country lost $3 trillion
+
+186
+00:09:39,820 --> 00:09:42,980
+我想知道这意味着什么。
+all because of an election. I wonder what that means.
+
+187
+00:09:42,980 --> 00:09:44,460
+如果我们赚了3万亿美元，我
+If we were to gain $3 trillion, I
+
+188
+00:09:44,460 --> 00:09:47,700
+可能反而会更不高兴。
+probably would have been more unhappy.
+
+189
+00:09:47,700 --> 00:09:49,260
+但你知道这意味着什么吗？这意味着
+But you know what that means? That means
+
+190
+00:09:49,260 --> 00:09:51,420
+他们认为其他人
+that they thought somebody else
+
+191
+00:09:51,420 --> 00:09:53,180
+在选举中表现出色。顺便说一句，我
+did well in election. By the way, I was
+
+192
+00:09:53,180 --> 00:09:56,300
+没有参选，以防你有任何疑问。
+not on the ballot, just in case you had any question.
+
+193
+00:09:56,300 --> 00:09:59,020
+他说：“如果我们参与投票，我们肯定会赢。”
+He said, "If we were in the ballot, we would have won."
+
+194
+00:09:59,020 --> 00:10:00,540
+但我们并没有。
+But we weren't.
+
+195
+00:10:00,540 --> 00:10:02,420
+但这些人做到了，他们赢了。这就是
+But these guys were and they won. That's
+
+196
+00:10:02,420 --> 00:10:04,820
+我们为你感到骄傲的原因。你赢了。也
+why we're so proud of you. won.
+
+197
+00:10:04,820 --> 00:10:09,060
+很容易。我们在不到两年的时间里获得了22.2万亿美元
+Pretty easily, too. We've secured $22.2 trillion
+
+198
+00:10:09,060 --> 00:10:12,780
+的投资。从来没有人
+of investment in less than 2 years. Nobody's ever done
+
+199
+00:10:12,780 --> 00:10:14,300
+这样做过。没有任何一个国家做到过这一点
+that. No country has ever done that
+
+200
+00:10:14,300 --> 00:10:17,100
+美国人均个人收入
+much. Personal incomes for the typical
+
+201
+00:10:17,100 --> 00:10:21,180
+最近达到了有史以来的最高水平。
+American recently reached the highest level ever recorded.
+
+202
+00:10:21,180 --> 00:10:22,900
+贫困率处于有
+The poverty rate is at the best and
+
+203
+00:10:22,900 --> 00:10:25,420
+记录以来的最佳和最低水平。
+lowest level ever recorded. More
+
+204
+00:10:25,420 --> 00:10:27,540
+如今，美国的就业人口比
+Americans are working today than at any
+
+205
+00:10:27,540 --> 00:10:29,460
+我国历史上任何时期都多
+time ever before in the history of our
+
+206
+00:10:29,460 --> 00:10:31,740
+好好想想这个问题。
+country. Think about that one.
+
+207
+00:10:31,740 --> 00:10:35,420
+我们也在确保伊朗永远不会拥有
+We're also ensuring that Iran will never have a
+
+208
+00:10:35,420 --> 00:10:37,380
+核武器。他们永远不会得到它。
+nuclear weapon. They will never have it.
+
+209
+00:10:37,380 --> 00:10:39,260
+差远了。
+Not even close.
+
+210
+00:10:39,260 --> 00:10:42,580
+他们关系并不亲近。他们尝试过了。
+They're not close. They tried.
+
+211
+00:10:43,220 --> 00:10:46,140
+他们尽力了。你知道吗？如果他们真的
+And you know what? If they
+
+212
+00:10:46,140 --> 00:10:49,660
+拥有了它，如果我们一年多前没有派出那些漂亮的
+did have it, if we didn't go in with those beautiful
+
+213
+00:10:49,660 --> 00:10:53,100
+B-2轰炸机
+B-2 bombers a little more than a year ago,
+
+214
+00:10:53,100 --> 00:10:55,620
+如果我允许他们拥有了它，那么
+if I allowed them to have it,
+
+215
+00:10:55,620 --> 00:10:58,700
+今天就不会有以色列了。
+today there would be no Israel.
+
+216
+00:10:58,700 --> 00:11:00,420
+它本应从
+It would have been wiped off the face of
+
+217
+00:11:00,420 --> 00:11:03,580
+地球上消失，中东也不会存在
+the earth, and there would be no Middle East.
+
+218
+00:11:03,580 --> 00:11:06,620
+我知道，因为我经常和这些
+And I know because I deal with these people.
+
+219
+00:11:06,620 --> 00:11:09,780
+人打交道。我们绝不会让这种事情发生。伊朗永远
+We will never let that happen. Iran will
+
+220
+00:11:09,780 --> 00:11:15,260
+不可能拥有核武器。您可以放心。
+never, ever have a nuclear weapon. You can rest assured.
+
+221
+00:11:15,260 --> 00:11:17,380
+所以，我们的国家又强大起来了。我们的
+So, our country is strong again. Our
+
+222
+00:11:17,380 --> 00:11:22,140
+国家再次赢得了尊重。在接下来的两年里，我们将
+country is respected again. Over the next 2 years, we will
+
+223
+00:11:22,140 --> 00:11:25,340
+带领美国和美国宇航局取得
+lead America and NASA to new heights of
+
+224
+00:11:25,340 --> 00:11:29,780
+前所未有的成就和成功。
+achievement and success that the world has never seen.
+
+225
+00:11:29,780 --> 00:11:30,300
+我们从未
+We've never
+
+226
+00:11:30,300 --> 00:11:32,260
+预料到自己现在正在做的事情。Jared，他在其中扮演了非常
+seen what we're doing right now. Jared,
+
+227
+00:11:32,260 --> 00:11:34,260
+重要的角色。
+such a big part of it.
+
+228
+00:11:34,260 --> 00:11:37,940
+我们拥有世界上最聪明、最杰出的人才
+We have the smartest minds, the most brilliant minds
+
+229
+00:11:37,940 --> 00:11:39,860
+2017年我上任
+anywhere in the world. When I came into
+
+230
+00:11:39,860 --> 00:11:43,620
+并开始我的第一个任期时
+office and began my first term back in 2017,
+
+231
+00:11:43,620 --> 00:11:46,420
+NASA就在这里。
+the NASA I was here.
+
+232
+00:11:46,420 --> 00:11:48,060
+它死了。
+It was dead.
+
+233
+00:11:48,060 --> 00:11:50,380
+我问：“周围有人吗？”
+I said, "Are there any people around?"
+
+234
+00:11:50,380 --> 00:11:52,500
+那里只有破损的跑道，
+All you had was broken runways with
+
+235
+00:11:52,500 --> 00:11:54,820
+杂草从跑道的裂缝中长了出来
+grass growing up the cracks of the
+
+236
+00:11:54,820 --> 00:11:57,180
+情况不太好。我说：
+runways. It wasn't pretty. I said,
+
+237
+00:11:57,180 --> 00:12:00,940
+“你知道，这种情况只有在一个地方无人使用，
+"You know, that only happens when a place isn't used,
+
+238
+00:12:00,940 --> 00:12:03,660
+没有车辆碾过时才会发生。”
+when wheels aren't running over it."
+
+239
+00:12:03,660 --> 00:12:04,980
+但那里有草。
+But there was grass. There was more
+
+240
+00:12:04,980 --> 00:12:08,660
+草地比沥青或
+grass than they had in asphalt or concrete.
+
+241
+00:12:08,660 --> 00:12:12,540
+水泥地上的草多得多。肯尼迪航天中心这边一切
+And here at the Kennedy Space Center, things are
+
+242
+00:12:12,540 --> 00:12:15,780
+进展顺利。
+really going well. The ambition was
+
+243
+00:12:15,780 --> 00:12:17,660
+但那时他的雄心壮志已经消失了。我永远不会
+was gone though at that time. I never
+
+244
+00:12:17,660 --> 00:12:19,820
+忘记这件事。灵魂消失了。我
+forget it. The spirit was gone. I met
+
+245
+00:12:19,820 --> 00:12:21,580
+好像只遇到了两个人。这就是我们
+like two people. That's about all we had
+
+246
+00:12:21,580 --> 00:12:23,540
+这里全部的东西了。我们当时几乎无人知晓。我说：“
+here. We were almost nobody. I said, "Is
+
+247
+00:12:23,540 --> 00:12:25,100
+有人在吗？咚咚咚。
+there anybody around? Knock, knock.
+
+248
+00:12:25,100 --> 00:12:26,940
+有人在家吗？”
+Anybody home?"
+
+249
+00:12:26,940 --> 00:12:28,860
+现在它发展得很好，但精神却
+Now it's thriving, but the spirit was
+
+250
+00:12:28,860 --> 00:12:31,300
+消失了，灵感也消失了。
+gone, the inspiration was gone.
+
+251
+00:12:31,300 --> 00:12:35,340
+经过华盛顿多年的领导失败，
+And after many years of failed leadership from Washington,
+
+252
+00:12:35,340 --> 00:12:36,940
+美国甚至失去了将
+the United States had even lost the
+
+253
+00:12:36,940 --> 00:12:40,580
+自己的宇航员送入
+ability to send our own astronauts into space.
+
+254
+00:12:40,580 --> 00:12:42,740
+太空的能力。这不可能发生。
+Wasn't going to happen.
+
+255
+00:12:42,740 --> 00:12:45,020
+但我必须做出决定。我们是应该开放
+But I had to make a decision. Do we open
+
+256
+00:12:45,020 --> 00:12:51,100
+这个地方，让它变得辉煌，还是应该任其衰落？
+this place up and make it great, or do we let it die?
+
+257
+00:12:51,100 --> 00:12:52,780
+我想你们都知道这个决定，因为
+And I think you know the decision cuz
+
+258
+00:12:52,780 --> 00:12:55,940
+它从未如此充满活力。我
+it's never been more vibrant. I watched just
+
+259
+00:12:55,940 --> 00:12:57,340
+几个月前亲眼目睹了这一切
+a couple of months ago what was
+
+260
+00:12:57,340 --> 00:12:59,540
+那艘漂亮的大船
+happening. That big beautiful ship going
+
+261
+00:12:59,540 --> 00:13:01,140
+升空了，和我在一起的所有人，都
+up and everybody who was with me, they
+
+262
+00:13:01,140 --> 00:13:02,780
+打断了一场非常重要的晚宴。
+all stopped a very important dinner.
+
+263
+00:13:02,780 --> 00:13:05,060
+我们来看。
+Let's watch.
+
+264
+00:13:05,060 --> 00:13:10,220
+但那些日子是失败、忽视和衰落的日子。
+But those days are days of failure and neglect and decline.
+
+265
+00:13:10,220 --> 00:13:12,500
+他们都在我们身后了。他们走了。
+They're all behind us. They're gone.
+
+266
+00:13:12,500 --> 00:13:14,900
+在特朗普政府的领导下，
+Under the Trump administration,
+
+267
+00:13:14,900 --> 00:13:17,540
+我们的雄心壮志回来了，我们的势头
+our ambition is back, our momentum is
+
+268
+00:13:17,540 --> 00:13:20,500
+回来了，我们的领导力回来了。美国国家航空航天局（NASA）
+back, our leadership is back. NASA is
+
+269
+00:13:20,500 --> 00:13:23,380
+回来了，更重要的是，美利坚
+back and above all, most importantly,
+
+270
+00:13:23,380 --> 00:13:25,880
+合众国回来了。
+the United States of America is back.
+
+271
+00:13:32,380 --> 00:13:36,460
+作为国家复兴的象征，
+As a symbol of that national renewal,
+
+272
+00:13:36,460 --> 00:13:38,700
+今天我们聚集在这里，这是一场
+today we gather by the And this is a
+
+273
+00:13:38,700 --> 00:13:41,220
+真正的朋友聚会。
+gathering of real friends.
+
+274
+00:13:41,220 --> 00:13:43,500
+曾经破败不堪、寂静无声的同一条跑道，如今
+By the same runway that once stood
+
+275
+00:13:43,500 --> 00:13:46,220
+宣告着这里
+cracked and silent to announce that this
+
+276
+00:13:46,220 --> 00:13:49,180
+即将成为世界各地
+very site will soon be the premier venue
+
+277
+00:13:49,180 --> 00:13:53,540
+航空航天
+for the air and space demonstrations
+
+278
+00:13:53,540 --> 00:13:56,220
+表演的首选场地。他们会来的。几
+from all over the world. They'll come.
+
+279
+00:13:56,220 --> 00:13:58,420
+十年来，世界主要的航空航天
+For decades, the world's major aerospace
+
+280
+00:13:58,420 --> 00:14:00,900
+展览都在海外举行，从
+shows have been held overseas, from
+
+281
+00:14:00,900 --> 00:14:04,660
+巴黎到英国再到迪拜。
+Paris to the United Kingdom to Dubai.
+
+282
+00:14:04,660 --> 00:14:06,540
+这些外国航展吸引了
+Those foreign air shows have drawn the
+
+283
+00:14:06,540 --> 00:14:11,060
+最多的观众、最大的合同和最大的
+biggest crowds and big contracts, big headlines, and
+
+284
+00:14:11,060 --> 00:14:13,460
+新闻头条，而
+it's been more than 30 years since a new
+
+285
+00:14:13,460 --> 00:14:17,860
+美国本土的航展上已经30多年没有推出过新型客机了。
+airliner was unveiled at the show on American soil.
+
+286
+00:14:17,860 --> 00:14:18,700
+我们没有举办大型
+We didn't have the big
+
+287
+00:14:18,700 --> 00:14:21,020
+演出。我想他们当时主要都在巴黎，参加
+shows. They were in Paris mostly I think
+
+288
+00:14:21,020 --> 00:14:23,580
+巴黎航展。
+of the Paris Air Show.
+
+289
+00:14:23,580 --> 00:14:25,260
+但这些外国并不
+But those foreign countries do not
+
+290
+00:14:25,260 --> 00:14:28,980
+主导航空业，也不主导
+dominate aviation and they don't dominate
+
+291
+00:14:28,980 --> 00:14:32,340
+航天业。实际上，他们根本就差远了
+aerospace. They don't even come close actually.
+
+292
+00:14:32,340 --> 00:14:35,020
+我们确实如此，而且我们相信，在特朗普政府的领导下，
+We do and under the Trump administration
+
+293
+00:14:35,020 --> 00:14:38,620
+这些行业的未来应该
+we believe that the future of those industries should be
+
+294
+00:14:38,620 --> 00:14:41,380
+在美国本土揭晓。我们
+unveiled right here in the USA. We
+
+295
+00:14:41,380 --> 00:14:43,300
+占据优势，我们应该举办规模最大的
+dominate and we should have the biggest
+
+296
+00:14:43,300 --> 00:14:47,260
+演出。两年内，我们将举办规模
+show. We will have within 2 years
+
+297
+00:14:47,260 --> 00:14:49,500
+最大的航展。这意味着
+the biggest air show. That means
+
+298
+00:14:49,500 --> 00:14:52,020
+商业领域，这意味着太空领域，这意味着
+commercial, that means space, that means
+
+299
+00:14:52,020 --> 00:14:54,580
+在世界范围内遥遥领先。根本没有
+in the world by far. It won't even be
+
+300
+00:14:54,580 --> 00:14:58,720
+悬念。
+close.
+
+301
+00:15:00,820 --> 00:15:03,060
+当人们问我
+And when people ask me what exactly
+
+302
+00:15:03,060 --> 00:15:07,300
+我们究竟想做什么时，我的回答
+we're trying to do I said exactly that, we're going to do a
+
+303
+00:15:07,300 --> 00:15:11,940
+正是如此，我们要举办一个比巴黎
+bigger and better grander version than the Paris
+
+304
+00:15:11,940 --> 00:15:14,380
+航展更大、更好、更盛大的版本，规模要大得多。
+Air Show, much bigger.
+
+305
+00:15:14,380 --> 00:15:15,980
+规模宏大得多。
+Much grander.
+
+306
+00:15:15,980 --> 00:15:17,660
+而且我们选址合适。这是一条多么
+And we have the right location. This is
+
+307
+00:15:17,660 --> 00:15:21,020
+棒的无限跑道啊！
+such a great unlimited runway.
+
+308
+00:15:21,020 --> 00:15:24,140
+无限的空间，可以建造宏伟的
+Unlimited space to do fantastic
+
+309
+00:15:24,140 --> 00:15:27,540
+建筑，以及所有必要的设施。所以
+buildings and all the things necessary to do it. So
+
+310
+00:15:27,540 --> 00:15:29,980
+我们将要举办一场
+we're going to have a show the likes of which
+
+311
+00:15:29,980 --> 00:15:32,180
+前所未有的演出。
+has never been done before.
+
+312
+00:15:32,180 --> 00:15:34,300
+明年你们将会看到一座更大的
+Next year you'll see an even bigger
+
+313
+00:15:34,300 --> 00:15:36,740
+建筑，未来几年
+building and over the next few years
+
+314
+00:15:36,740 --> 00:15:38,780
+你们将看到世界上最大的航空展
+you'll see the biggest air show anywhere
+
+315
+00:15:38,780 --> 00:15:40,900
+那件事很快就会发生。
+in the world. That'll take place very quickly.
+
+316
+00:15:40,900 --> 00:15:42,580
+我估计是两年。
+I'd say 2 years.
+
+317
+00:15:42,580 --> 00:15:45,220
+这包括
+And that includes commercial aircraft of
+
+318
+00:15:45,220 --> 00:15:49,340
+所有类型的商用飞机。所有的大型商业
+all types. You'll have all of the big commercial
+
+319
+00:15:49,340 --> 00:15:51,580
+航班和公司，波音公司，
+flights and companies, Boeing,
+
+320
+00:15:51,580 --> 00:15:54,380
+所有人都会来这里。原
+everybody's going to be here. The former
+
+321
+00:15:54,380 --> 00:15:56,140
+航天飞机着陆设施将
+shuttle landing facility will be
+
+322
+00:15:56,140 --> 00:16:00,260
+改建为占地1900英亩的场馆，
+transformed into a 1,900 acre venue that
+
+323
+00:16:00,260 --> 00:16:04,220
+每年将吸引数十万游客。
+will bring hundreds of thousands of visitors each year.
+
+324
+00:16:04,220 --> 00:16:06,740
+创造数十亿美元的
+Generate billions of dollars in economic
+
+325
+00:16:06,740 --> 00:16:09,540
+经济效益，并促成数千亿
+impact and host hundreds of billions of
+
+326
+00:16:09,540 --> 00:16:12,660
+美元的交易。我们将
+dollars in deals. We're going to
+
+327
+00:16:12,660 --> 00:16:16,900
+与商业机构、私人机构以及任何其他机构签署协议
+sign deals with commercial and private and whoever.
+
+328
+00:16:16,900 --> 00:16:20,420
+所有这些生意都集中在佛罗里达州中部，
+All right here in Central Florida where all of that
+
+329
+00:16:20,420 --> 00:16:22,300
+这
+business is is very
+
+330
+00:16:22,300 --> 00:16:24,820
+对拜伦来说非常重要，拜伦已经
+important to Byron Byron's already
+
+331
+00:16:24,820 --> 00:16:26,140
+非常高兴了。他说：“哦，
+getting very happy. He's saying, "Oh,
+
+332
+00:16:26,140 --> 00:16:28,020
+真是份好工作。”但是，呃，
+what a great job." But, uh
+
+333
+00:16:28,020 --> 00:16:29,380
+你会很开心，而且
+you're going to be happy and you'll be
+
+334
+00:16:29,380 --> 00:16:31,100
+每年都会和我一起来这里，
+here every year with me, okay?
+
+335
+00:16:31,100 --> 00:16:34,620
+好吗？我们每年都会来这里进行发布会。
+We'll be here to launch each year.
+
+336
+00:16:34,620 --> 00:16:38,740
+致美国宇航局全体团队成员，感谢你们为将这一
+To the entire team at NASA who have worked to make this
+
+337
+00:16:38,740 --> 00:16:42,700
+愿景变为现实所付出的努力，使其成为一个美好而
+vision a real reality, a beautiful
+
+338
+00:16:42,700 --> 00:16:47,780
+壮丽的现实。尤其要
+a gorgeous reality. And especially administrator Isaacman,
+
+339
+00:16:47,780 --> 00:16:51,940
+祝贺管理员艾萨克曼取得这
+congratulations on this historic achievement.
+
+340
+00:16:51,940 --> 00:16:53,700
+一历史性成就。
+There could be no better place to launch
+
+341
+00:16:53,700 --> 00:16:56,780
+对于美国而言，
+the next generation of American breakthroughs than Cape
+
+342
+00:16:56,780 --> 00:16:58,540
+没有比卡纳维拉尔角
+Canaveral
+
+343
+00:16:58,540 --> 00:16:59,540
+和肯尼迪航天中心更适合开启下一代突破性科技的地方了，
+and the Kennedy Space
+
+344
+00:16:59,540 --> 00:17:01,900
+美国的未来
+Center where America's future
+
+345
+00:17:01,900 --> 00:17:03,900
+将在这里腾飞。在
+will take flight.
+
+346
+00:17:03,900 --> 00:17:06,940
+这片充满传奇色彩的土地上，艾伦·谢泼德
+This storied soil is where Alan Shepard
+
+347
+00:17:06,940 --> 00:17:11,380
+成为了第一个骑着摩托车或火柱进入太空的美国人。
+became the first American to ride into space or on a pillar
+
+348
+00:17:11,380 --> 00:17:12,740
+那是一场
+of fire. It was
+
+349
+00:17:12,740 --> 00:17:15,740
+火灾。我记得很清楚。
+fire. I remember that so well.
+
+350
+00:17:15,740 --> 00:17:17,380
+这里是人类历史上建造的最大火箭
+It's where the largest rocket ever
+
+351
+00:17:17,380 --> 00:17:22,260
+——土星五号——挣脱地球引力、飞向
+built, the Saturn V, tore free of Earth's gravity and raced
+
+352
+00:17:22,260 --> 00:17:24,180
+星辰的地方。
+into the stars.
+
+353
+00:17:24,180 --> 00:17:25,820
+这里是航天飞机首次
+It's where the space shuttle first
+
+354
+00:17:25,820 --> 00:17:28,020
+飞向太空的地方，也是
+climbed into the heavens and where the
+
+355
+00:17:28,020 --> 00:17:31,060
+阿波罗11号英雄们开始执行
+heroes of Apollo 11 embarked on their
+
+356
+00:17:31,060 --> 00:17:35,780
+任务，将我们伟大的美国国旗插在月球上，
+mission to plant our great American flag on the moon,
+
+357
+00:17:35,780 --> 00:17:37,580
+巩固了我们作为历史上最
+securing our place as the most
+
+358
+00:17:37,580 --> 00:17:42,300
+不可思议、最杰出国家的地位的地方
+incredible and exceptional nation in all of history.
+
+359
+00:17:42,300 --> 00:17:47,340
+美国人凭借毕生的突破，仅用了66年时间就从
+The breakthroughs of single lifetime carried Americans from
+
+360
+00:17:47,340 --> 00:17:49,980
+基蒂霍克的沙漠登上了
+the sands of Kitty Hawk to the
+
+361
+00:17:49,980 --> 00:17:52,580
+月球表面。
+surface of the moon in just 66 years.
+
+362
+00:17:52,580 --> 00:17:54,940
+想想看，66年了。
+Think of it, 66 years.
+
+363
+00:17:54,940 --> 00:17:59,220
+但是，在现代的一大悲剧中，我们的
+But then in one of the great tragedies of modern times, our
+
+364
+00:17:59,220 --> 00:18:01,380
+政治阶层，你知道你
+political class, you know what you think
+
+365
+00:18:01,380 --> 00:18:04,940
+对他们有什么看法。你不认为这些人
+about them. You don't think these people
+
+366
+00:18:04,940 --> 00:18:08,420
+抛弃了你。他们放弃了这一
+They abandoned you. They abandoned this vision
+
+367
+00:18:08,420 --> 00:18:12,860
+愿景，也放弃了对进步的承诺。
+and they abandoned the commitment to progress.
+
+368
+00:18:12,860 --> 00:18:15,140
+我们失去了登月的能力
+We lost the ability to go to moon to the
+
+369
+00:18:15,140 --> 00:18:17,740
+我们失去了
+moon. We lost the ability to go anywhere
+
+370
+00:18:17,740 --> 00:18:18,460
+在太空中自由穿梭的能力。
+in space.
+
+371
+00:18:18,460 --> 00:18:22,860
+我们已经忘记如何建造土星五号火箭了。
+We forgot how to build the Saturn V rocket.
+
+372
+00:18:22,860 --> 00:18:26,340
+我们放弃了超音速飞行。仔细
+We walked away from supersonic flight.
+
+373
+00:18:26,340 --> 00:18:31,100
+想想，我30年前坐过
+And when you think about it, I used to travel
+
+374
+00:18:31,100 --> 00:18:35,300
+超音速飞机，它的速度
+on a supersonic plane 30 years ago,
+
+375
+00:18:35,300 --> 00:18:37,340
+非常快，是
+and it used to go extremely fast, more
+
+376
+00:18:37,340 --> 00:18:39,220
+现在飞机速度的两倍多。这可能
+than double what they go today. This may
+
+377
+00:18:39,220 --> 00:18:42,020
+是世界上唯一一个
+be the only industry in the world where
+
+378
+00:18:42,020 --> 00:18:44,340
+我们走下坡路的行业。
+we've gone backwards.
+
+379
+00:18:44,340 --> 00:18:45,940
+我们以前经常乘坐那架美丽的
+We used to fly in that beautiful
+
+380
+00:18:45,940 --> 00:18:47,940
+协和式飞机，那是
+Concorde, one of the most beautiful
+
+381
+00:18:47,940 --> 00:18:51,300
+我见过的最美丽的艺术品之一。那是一件艺术品。
+pieces of art I've ever seen. It was a piece of art.
+
+382
+00:18:51,300 --> 00:18:54,580
+我以前经常乘坐这架飞机，但有一天，
+I flew on it often, and then one day
+
+383
+00:18:54,580 --> 00:18:58,860
+他们把速度降低了大约三分之一。我问：“发生了什么事？”
+they cut the speed in about 1/3. I said, "What happened?"
+
+384
+00:18:58,860 --> 00:19:00,420
+所以，它是少数几个
+So, it's one of the few industries that
+
+385
+00:19:00,420 --> 00:19:02,740
+曾经倒退的行业之一，但现在情况已经不同了。
+have gone backward, but no more. No
+
+386
+00:19:02,740 --> 00:19:05,020
+不再。我们正在大步前进。
+more. We're going way forward. We'll be
+
+387
+00:19:05,020 --> 00:19:08,180
+实际上，我们将比协和式飞机
+way forward, actually, of the Concorde itself.
+
+388
+00:19:08,180 --> 00:19:11,220
+本身领先很多。我们降低了雄心壮志，从
+We lowered our ambitions and turned from
+
+389
+00:19:11,220 --> 00:19:15,140
+远大的梦想和大胆的愿景转变为狭隘的思维和
+big dreams and bold visions to small thinking and
+
+390
+00:19:15,140 --> 00:19:18,180
+停滞不前。完全停滞不前。但是，
+stagnation. It was pure stagnation. But,
+
+391
+00:19:18,180 --> 00:19:21,420
+如果我们背离
+America cannot remain the leading nation on Earth if we turn
+
+392
+00:19:21,420 --> 00:19:25,340
+那片广袤无垠的
+away from that big, great, giant
+
+393
+00:19:25,340 --> 00:19:25,860
+边疆，那片所有边疆中最大的边疆，
+frontier,
+
+394
+00:19:25,860 --> 00:19:27,220
+美国就无法继续保持世界领先国家的地位
+the biggest frontier of them
+
+395
+00:19:27,220 --> 00:19:30,020
+历史表明，一个国家
+all. History has shown that if a nation
+
+396
+00:19:30,020 --> 00:19:31,940
+要想主宰未来，就
+wants to dominate the future, then it
+
+397
+00:19:31,940 --> 00:19:35,300
+必须为未来做好准备。
+must build for the future.
+
+398
+00:19:35,300 --> 00:19:38,140
+伟大的文明不会停滞不前。
+Great civilizations do not stand still.
+
+399
+00:19:38,140 --> 00:19:41,580
+它们或上升或下降，或扩张或
+They're rising or falling, expanding or
+
+400
+00:19:41,580 --> 00:19:45,020
+收缩，或领先或落后。
+shrinking, leading or declining.
+
+401
+00:19:45,020 --> 00:19:47,780
+在美国，我们的使命就是引领。
+And in America, our destiny is to lead.
+
+402
+00:19:47,780 --> 00:19:50,580
+这就是我们的职责所在——引领。
+That's what we do is we lead.
+
+403
+00:19:50,580 --> 00:19:52,540
+让美国再次伟大。这就是我们
+Make America great again. That's what we
+
+404
+00:19:52,540 --> 00:19:55,340
+所做的。我们的使命是探索。我们的
+do. Our calling is to explore. Our
+
+405
+00:19:55,340 --> 00:19:58,140
+目的是建设，我们的目标
+purpose is to build, and our aim is
+
+406
+00:19:58,140 --> 00:20:01,700
+始终是胜利。我们想赢。将
+always to win. We want to win.
+
+407
+00:20:01,700 --> 00:20:04,620
+人类成就的极限推向了前所未
+Pushing the boundaries of human achievement further than
+
+408
+00:20:04,620 --> 00:20:05,540
+有的高度
+anyone has ever
+
+409
+00:20:05,540 --> 00:20:07,740
+我们现在就到了。我们
+gone before. And we're there now. We're
+
+410
+00:20:07,740 --> 00:20:09,820
+准备好了。我们准备好了。我们
+ready. We're ready. We've
+
+411
+00:20:09,820 --> 00:20:11,780
+花了很长时间才使我们重新回到巅峰时期之前的
+taken a long time to put us back in a
+
+412
+00:20:11,780 --> 00:20:15,780
+水平，并且远远超过了我们
+position where we were far advanced over what we were
+
+413
+00:20:15,780 --> 00:20:18,660
+之前的水平。
+when we were at our previous height.
+
+414
+00:20:18,660 --> 00:20:22,020
+这就是为什么在我第一个任期内，我签署了
+That's why in my first term, I signed
+
+415
+00:20:22,020 --> 00:20:24,940
+创建阿尔忒弥斯计划的命令，
+the orders creating the Artemis program
+
+416
+00:20:24,940 --> 00:20:27,030
+指示美国国家航空航天局将美国
+directing NASA to return American
+
+417
+00:20:27,030 --> 00:20:31,740
+宇航员送回月球，然后继续向火星进​​军。
+astronauts to the moon and then push forward to Mars.
+
+418
+00:20:31,740 --> 00:20:34,660
+今年，阿尔忒弥斯2号创造了历史，
+This year Artemis 2 made history
+
+419
+00:20:34,660 --> 00:20:38,510
+50多年来首次绕月飞行，
+circling the moon for the first time in more than 50 years
+
+420
+00:20:38,510 --> 00:20:39,420
+其飞行距离
+traveling further
+
+421
+00:20:39,420 --> 00:20:42,700
+地球的距离比以往任何人的飞行距离都要远
+from Earth than anyone has ever traveled
+
+422
+00:20:42,700 --> 00:20:47,660
+想想看。这是人类有史以来旅行过的最远距离
+before. Think of that. The furthest anyone has ever traveled
+
+423
+00:20:47,660 --> 00:20:50,100
+三个月前，我
+before. Three months ago, it was my
+
+424
+00:20:50,100 --> 00:20:53,510
+有幸为阿尔忒弥斯2号的宇航员颁发了
+privilege to award the crew of Artemis 2
+
+425
+00:20:53,510 --> 00:20:58,620
+国会太空荣誉勋章。
+the Congressional Space Medal of Honor.
+
+426
+00:20:58,620 --> 00:21:00,790
+今天，我们非常荣幸地邀请到
+And today we're pleased to be joined by
+
+427
+00:21:00,790 --> 00:21:06,900
+宇航员里德·怀斯曼、维克托·格洛弗和杰里米·
+astronauts Reed Wiseman, Victor Glover, and Jeremy
+
+428
+00:21:06,900 --> 00:21:11,420
+汉森。无论你在哪里，请站起来。
+Hansen. And wherever you may be, please stand up.
+
+429
+00:21:24,900 --> 00:21:26,980
+他们真是很棒的人。
+They're great guys.
+
+430
+00:21:26,980 --> 00:21:30,940
+明年夏天，阿尔忒弥斯3号将搭载
+Great people. Next summer Artemis 3 will carry
+
+431
+00:21:30,940 --> 00:21:35,820
+宇航员进入轨道，执行一项复杂的任务，测试下一代
+astronauts into orbit on a complex mission to test the next
+
+432
+00:21:35,820 --> 00:21:38,620
+月球着陆器。我们很高兴邀请到
+lunar landers. And we are pleased to be
+
+433
+00:21:38,620 --> 00:21:41,580
+阿尔忒弥斯3号宇航员
+joined by Artemis 3 astronauts,
+
+434
+00:21:41,580 --> 00:21:45,180
+兰迪·布雷斯尼克和弗兰克·鲁比奥。
+Randy Bresnik and Frank Rubio. Any
+
+435
+00:21:45,180 --> 00:21:48,510
+弗兰克，你和马可·卢比奥有关系吗？马可去哪儿了？
+relation to Marco Rubio, Frank? Where's Marco?
+
+436
+00:21:48,510 --> 00:21:51,300
+马可，你认识这个人吗？过来，马可。
+Marco, do you know this guy? Come here, Marco.
+
+437
+00:21:51,300 --> 00:21:52,540
+马可在哪里？你会和他
+Where is Marco? Would you shake his
+
+438
+00:21:52,540 --> 00:21:53,980
+握手吗？跟他握个手，万一
+hand? Shake his hand just in case
+
+439
+00:21:53,980 --> 00:22:00,060
+你们之间有什么亲戚关系呢。
+somewhere along the line you're related.
+
+440
+00:22:00,060 --> 00:22:03,340
+两个帅哥
+Two good-looking guys.
+
+441
+00:22:04,220 --> 00:22:07,220
+我不知道。马可，
+I don't know. Somewhere deep down
+
+442
+00:22:07,220 --> 00:22:11,980
+我觉得从几百年前的某个地方开始，你们之间就有某种联系。
+from hundreds of years ago, I think you're related, Marco.
+
+443
+00:22:11,980 --> 00:22:13,660
+谢谢大家。由于他们的
+And thank you all. Because of their
+
+444
+00:22:13,660 --> 00:22:16,500
+努力，在我任期结束之前，
+work, before the end of my term,
+
+445
+00:22:16,500 --> 00:22:18,580
+美国将再次把美国
+the United States will return American
+
+446
+00:22:18,580 --> 00:22:20,620
+宇航员送上月球表面。
+astronauts to the surface of the moon.
+
+447
+00:22:20,620 --> 00:22:22,220
+太令人兴奋了。
+So exciting.
+
+448
+00:22:22,220 --> 00:22:24,220
+此后不久，美国
+And soon thereafter, the United States
+
+449
+00:22:24,220 --> 00:22:27,430
+将在月球表面建立永久存在
+will establish a permanent presence on
+
+450
+00:22:27,430 --> 00:22:31,510
+这是一个我们多年来的远大目标
+lunar soil. That's a big ambition has been for many years.
+
+451
+00:22:31,510 --> 00:22:34,030
+就在本周，我发表了《美国
+Just this week I issued the American
+
+452
+00:22:34,030 --> 00:22:37,270
+太空自由宣言》，宣布
+Declaration of Freedom in Space claiming
+
+453
+00:22:37,270 --> 00:22:39,790
+整个太空都向美国开放，供美国
+all of space open for American
+
+454
+00:22:39,790 --> 00:22:44,390
+定居、美国文明和美国自由使用。
+settlement, American civilization, and American freedom.
+
+455
+00:22:44,390 --> 00:22:46,910
+未来两年内，NASA将发射
+Within the next 2 years NASA will launch
+
+456
+00:22:46,910 --> 00:22:49,550
+首个核动力
+the first ever nuclear-powered
+
+457
+00:22:49,550 --> 00:22:54,710
+火星探测器。我花了很多时间
+spacecraft to Mars. I spent so much time talking
+
+458
+00:22:54,710 --> 00:22:57,110
+和Jared以及其他很多人聊天
+to Jared and a lot of the people on
+
+459
+00:22:57,110 --> 00:23:01,030
+我的父亲，也就是我父亲的兄弟约翰·特朗普博士，
+that. My father my father's brother, Dr. John Trump,
+
+460
+00:23:01,030 --> 00:23:04,470
+在麻省理工学院工作了51年。他
+was for 51 years at MIT. He
+
+461
+00:23:04,470 --> 00:23:06,270
+对此了解很多，虽然
+knew a lot about this, although probably
+
+462
+00:23:06,270 --> 00:23:08,630
+当时可能还没有那么先进。
+not quite as advanced then.
+
+463
+00:23:08,630 --> 00:23:11,110
+但他从青年时期就成为麻省理工学院任教的教授，长达51年，
+But he spent 51 years as a professor
+
+464
+00:23:11,110 --> 00:23:11,790
+是该校任教时间
+at
+
+465
+00:23:11,790 --> 00:23:17,710
+最长的教授。
+MIT from a young man to the longest-serving professor.
+
+466
+00:23:17,710 --> 00:23:23,150
+我把科学奖颁给了埃隆·马斯克和我们这个时代的一些伟大天才
+And I gave Elon and some of the great geniuses of
+
+467
+00:23:23,150 --> 00:23:26,870
+然后他们告诉我，
+our time the science award, and then they told me
+
+468
+00:23:26,870 --> 00:23:28,910
+罗纳德·里根总统多年前就把科学奖颁给了我的叔叔
+that Ronald Reagan gave my uncle the
+
+469
+00:23:28,910 --> 00:23:31,830
+约翰·特朗普博士
+science award, Dr. John Trump,
+
+470
+00:23:31,830 --> 00:23:35,030
+所以那真是莫大的荣幸，
+years before. So that was a great honor, but
+
+471
+00:23:35,030 --> 00:23:36,830
+我们经常谈论这件事。他
+we would talk about it a lot. He was an
+
+472
+00:23:36,830 --> 00:23:39,990
+几乎精通所有科学领域。
+expert at sort of everything science.
+
+473
+00:23:39,990 --> 00:23:42,630
+他一定会对我们取得的成就感到惊讶
+And he would be amazed at what we've been
+
+474
+00:23:42,630 --> 00:23:44,350
+但我们将为
+able to do, but we're going to be paving
+
+475
+00:23:44,350 --> 00:23:47,870
+宇航员在他们称之为
+the way for astronauts to plant the
+
+476
+00:23:47,870 --> 00:23:52,230
+红色星球的这颗星球上插上星条旗铺平道路
+stars and stripes on the red planet, as they call it.
+
+477
+00:23:52,230 --> 00:23:54,710
+我们的政府正在尽一切可能
+Everywhere we can, our administration is
+
+478
+00:23:54,710 --> 00:23:56,670
+结束多年来的缓慢进展，并
+ending years of slow progress and
+
+479
+00:23:56,670 --> 00:24:00,590
+抓住本应属于美国的未来。
+seizing the future that rightfully belongs to America.
+
+480
+00:24:00,590 --> 00:24:03,350
+在我的第一个任期内，我创建了
+In my first term I created the first new
+
+481
+00:24:03,350 --> 00:24:08,030
+近75年来美国军队的第一个新分支——
+branch of the US military in nearly 75 years,
+
+482
+00:24:08,030 --> 00:24:09,970
+太空部队。想想看。这是
+Space Force. Think of that.
+
+483
+00:24:15,350 --> 00:24:19,710
+我们做过的最酷的事情之一
+One of the coolest things we've ever done.
+
+484
+00:24:19,710 --> 00:24:21,630
+去年夏天，我在约翰逊航天中心
+And at the Johnson Space Center last
+
+485
+00:24:21,630 --> 00:24:24,510
+签署了一项行政命令，
+summer I signed an executive order to
+
+486
+00:24:24,510 --> 00:24:28,350
+成立一个新的国家学院——美国
+establish a new National Academy, the US
+
+487
+00:24:28,350 --> 00:24:34,070
+航天学院，该学院很快就会正式成立。这将是一次
+Space Academy that'll be designated fairly soon.
+
+488
+00:24:34,070 --> 00:24:36,150
+特别的经历。想想
+And it's going to be special. Think of
+
+489
+00:24:36,150 --> 00:24:38,870
+西点军校、空军
+West Point, think of the Air Force
+
+490
+00:24:38,870 --> 00:24:42,590
+学院、安纳波利斯海军学院或者海岸警卫队学院。
+Academy or Annapolis or Coast Guard Academy.
+
+491
+00:24:42,590 --> 00:24:43,990
+你将会拥有自己的。我会让
+You're going to have your own. Going to
+
+492
+00:24:43,990 --> 00:24:45,230
+你非常高兴。
+make you very happy. You're going to
+
+493
+00:24:45,230 --> 00:24:48,670
+未来很多年里，这所学院将会培养出许多杰出人才。
+have great brilliant people going through that Academy for
+
+494
+00:24:48,670 --> 00:24:50,750
+去年，我签署了
+many years to come. Last year I signed
+
+495
+00:24:50,750 --> 00:24:55,350
+一项行政命令，
+an executive order to repeal the prohibition on supersonic
+
+496
+00:24:55,350 --> 00:24:56,310
+废除了
+flight
+
+497
+00:24:56,310 --> 00:24:59,830
+50多年来首次禁止超音速飞机飞越美国大陆的禁令。
+over the continental United States for the first time in
+
+498
+00:24:59,830 --> 00:25:02,710
+听到这个消息我很高兴。
+more than 50 years. I love hearing that.
+
+499
+00:25:02,710 --> 00:25:07,150
+我总是问贾里德：“情况到底有多糟糕？”
+I constantly ask Jared, "How bad is it?"
+
+500
+00:25:07,150 --> 00:25:10,750
+每次我和贾里德在一起时，我都会问他：“那个
+Every time I'm with Jared, I said, "How bad is bad is that
+
+501
+00:25:10,750 --> 00:25:13,710
+音爆到底有多糟糕，
+sonic boom or whatever you call it?" And I said,
+
+502
+00:25:13,710 --> 00:25:14,990
+或者不管你怎么称呼它？”我问：“情况有多糟？”
+"How bad?"
+
+503
+00:25:14,990 --> 00:25:16,270
+他说：“还不错。”我说：“那
+He goes, "Not bad." I said, "So, why
+
+504
+00:25:16,270 --> 00:25:19,990
+我们为什么不打开它呢？就打开它吧
+don't we just open it up? Let's open it up."
+
+505
+00:25:19,990 --> 00:25:21,590
+他们有很多方法可以
+And they've got lots of ways of
+
+506
+00:25:21,590 --> 00:25:26,390
+控制它。所以，我们已经
+controlling it. So, we've we've uh terminated that ban.
+
+507
+00:25:26,390 --> 00:25:29,310
+解除了那项禁令。就这些了。这正是
+That's going to be the lot. That's going to know is one of
+
+508
+00:25:29,310 --> 00:25:31,630
+我们始终没有继续深入的原因之一。这也是
+the reasons we never went further. It's
+
+509
+00:25:31,630 --> 00:25:34,030
+协和式飞机以及
+one of the reasons the Concorde and
+
+510
+00:25:34,030 --> 00:25:36,150
+所有未来超音速
+all of the future of those supersonic
+
+511
+00:25:36,150 --> 00:25:37,910
+飞机最终未能实现的原因之一。现在，
+planes never happened. And now it can
+
+512
+00:25:37,910 --> 00:25:40,310
+得益于
+happen thanks to advancements in
+
+513
+00:25:40,310 --> 00:25:42,990
+工程技术的进步，这已成为可能。不久的将来，
+engineering. This will soon be possible
+
+514
+00:25:42,990 --> 00:25:45,030
+无需音爆就能实现这一点。
+without a sonic boom.
+
+515
+00:25:45,030 --> 00:25:47,990
+我还签署了一项命令，旨在大力推动
+I also signed an order to supercharge
+
+516
+00:25:47,990 --> 00:25:51,870
+美国无人机产业发展，甚至允许先进的
+the American drone industry and even allow for advanced
+
+517
+00:25:51,870 --> 00:25:54,070
+电动垂直起降
+electric vertical takeoff and landing
+
+518
+00:25:54,070 --> 00:25:57,110
+飞机和自主飞行。我们
+aircraft and autonomous flight. And we
+
+519
+00:25:57,110 --> 00:26:01,350
+正在确保美国继续
+are ensuring that the United States remains the undisputed
+
+520
+00:26:01,350 --> 00:26:03,350
+保持其在
+global leader in
+
+521
+00:26:03,350 --> 00:26:05,750
+超级智能（SI，即超级
+super intelligence, SI, super
+
+522
+00:26:05,750 --> 00:26:07,590
+智能）领域无可争议的全球领导者地位，超级智能这个
+intelligence, which is really a much
+
+523
+00:26:07,590 --> 00:26:09,750
+名称比人工智能要好得多。这不是
+better name than artificial. This is not
+
+524
+00:26:09,750 --> 00:26:12,150
+人为造成的。太棒了。
+artificial. It's super. It's too super
+
+525
+00:26:12,150 --> 00:26:15,070
+有时候真的太棒了。这就是我们所需要担心的
+sometimes. That's what we have to worry about.
+
+526
+00:26:15,070 --> 00:26:17,870
+我们可能会让它没那么“超级”
+We'll make it a little bit less super maybe.
+
+527
+00:26:17,870 --> 00:26:19,990
+但你知道，无论谁赢，SI都是赢家。
+But whoever wins SI wins, you know.
+
+528
+00:26:19,990 --> 00:26:22,150
+我们现在领先中国
+We're leading China now by
+
+529
+00:26:22,150 --> 00:26:24,110
+一年，甚至可能更多。我们
+a year, maybe even a little more. And we
+
+530
+00:26:24,110 --> 00:26:25,790
+想要赢。我们必须赢。谁
+want to win. We have to win. Whoever
+
+531
+00:26:25,790 --> 00:26:29,830
+赢了SI，谁就拥有超强的智力。在
+wins SI Whoever wins super intelligence wins.
+
+532
+00:26:29,830 --> 00:26:31,710
+特朗普政府的领导下，最终的
+And under the Trump administration, the
+
+533
+00:26:31,710 --> 00:26:34,230
+赢家永远是
+winner will always be the United States
+
+534
+00:26:34,230 --> 00:26:38,990
+美国。我们现在处于领先地位，
+of America. We're leading now, and I was with President Xi
+
+535
+00:26:38,990 --> 00:26:41,470
+三周前我在白宫与习近平主席会面，
+3 weeks ago at the White House,
+
+536
+00:26:41,470 --> 00:26:44,270
+我们谈到了这一点，他非常支持。
+and we talked about it, and he's all in.
+
+537
+00:26:44,270 --> 00:26:46,990
+他祝贺我们做得非常出色
+And he congratulated us in how well
+
+538
+00:26:46,990 --> 00:26:48,830
+我也向他表达了同样的祝贺。
+we're doing, and I said the same to him.
+
+539
+00:26:48,830 --> 00:26:50,630
+他做得很好。
+He's doing great.
+
+540
+00:26:50,630 --> 00:26:52,150
+但我们目前处于领先地位，我们希望
+But we're we're leading, and we want to
+
+541
+00:26:52,150 --> 00:26:53,550
+保持这种地位。这是件大事。
+keep it that way. It's a big deal.
+
+542
+00:26:53,550 --> 00:26:56,230
+美国是梦想并
+America is the nation that dreamed and
+
+543
+00:26:56,230 --> 00:26:58,990
+创造了现代世界的国家，我们铺设了
+created the modern world, and we laid
+
+544
+00:26:58,990 --> 00:27:02,870
+铁路，利用了电力，发明了电
+the railroads, harnessed electricity, and invented the
+
+545
+00:27:02,870 --> 00:27:05,630
+灯泡、电话、飞机、
+lightbulb, the telephone, the airplane,
+
+546
+00:27:05,630 --> 00:27:08,430
+流水线、电视、
+the assembly line, the television,
+
+547
+00:27:08,430 --> 00:27:13,470
+微芯片、个人电脑、互联网、GPS、
+the microchip, the personal computer, the internet, GPS,
+
+548
+00:27:13,470 --> 00:27:16,910
+智能手机以及几乎所有其他东西
+the smartphone, and almost every other thing
+
+549
+00:27:16,910 --> 00:27:19,150
+想想看。几乎所有其他
+Think of it. Almost every other thing
+
+550
+00:27:19,150 --> 00:27:22,510
+值得一提的事情。
+that's worth mentioning.
+
+551
+00:27:22,510 --> 00:27:23,750
+不过仔细想想，这确实是个很酷的清单，
+That's a cool list, though, when you
+
+552
+00:27:23,750 --> 00:27:25,710
+对吧？要不
+think, huh? How about a little piece of
+
+553
+00:27:25,710 --> 00:27:27,590
+每样都来一点？那岂不是很好吗？你
+each of them? Wouldn't that be nice? You
+
+554
+00:27:27,590 --> 00:27:29,030
+现在就不会坐在这里了。
+wouldn't be sitting here right now.
+
+555
+00:27:29,030 --> 00:27:31,070
+你本该身处别处。
+You'd be someplace else.
+
+556
+00:27:31,070 --> 00:27:33,310
+但想想看，这不仅列出了他们所有人的名字，
+But think of that, names every one
+
+557
+00:27:33,310 --> 00:27:35,710
+还列出了更多更多的人的名字。
+of them and many, many more.
+
+558
+00:27:35,710 --> 00:27:38,430
+我们绘制了人类
+We charted the human
+
+559
+00:27:38,430 --> 00:27:41,990
+基因组图谱以治愈疾病，
+genome to cure diseases, powered entire
+
+560
+00:27:41,990 --> 00:27:44,470
+通过分裂单个原子为整个城市提供动力，并
+cities by splitting single atoms, and
+
+561
+00:27:44,470 --> 00:27:47,510
+建造望远镜来窥探
+built telescopes to peer all the way
+
+562
+00:27:47,510 --> 00:27:50,670
+时间的起源。
+back to the beginning of time.
+
+563
+00:27:50,670 --> 00:27:52,870
+身为美国人，就意味着继承了
+And to be an American is to inherit the
+
+564
+00:27:52,870 --> 00:27:56,670
+历史上最伟大的先驱者、探险家、
+legacy of the greatest pioneers, explorers, inventors,
+
+565
+00:27:56,670 --> 00:27:59,150
+发明家和创新者的遗产。
+and innovators who ever lived.
+
+566
+00:27:59,150 --> 00:28:04,550
+所以，面对那些
+And so, to laugh in the face of doubters and critics
+
+567
+00:28:04,550 --> 00:28:06,670
+总是质疑“
+who are always ready to say, "Why are
+
+568
+00:28:06,670 --> 00:28:07,710
+你为什么要这样做？你为什么要这样做？”的怀疑者和批评者，
+you doing this?
+
+569
+00:28:07,710 --> 00:28:10,110
+我们要一笑置之。
+Why are you doing it?"
+
+570
+00:28:10,110 --> 00:28:12,670
+1901年，美国海军总工程师
+In 1901, the chief engineer of the US
+
+571
+00:28:12,670 --> 00:28:17,230
+曾说，人类飞行的想法不过是虚妄的幻想，
+Navy said that the idea of man flight was nothing but a
+
+572
+00:28:17,230 --> 00:28:21,870
+就像空气一样稀薄。
+vain fantasy as thin as air itself.
+
+573
+00:28:21,870 --> 00:28:23,510
+两年后，莱特兄弟
+Two years later, the Wright brothers
+
+574
+00:28:23,510 --> 00:28:26,550
+实现了全人类由来已久的梦想——
+achieved the age-old dream of all
+
+575
+00:28:26,550 --> 00:28:29,430
+飞行。他们飞了。
+humanity, and that's to fly. They flew.
+
+576
+00:28:29,430 --> 00:28:31,270
+谁都不敢相信。
+Nobody could believe it.
+
+577
+00:28:31,270 --> 00:28:35,150
+1957年，发明家李·德·福雷斯特曾说过，
+In 1957, inventor Lee De Forest said
+
+578
+00:28:35,150 --> 00:28:39,390
+无论未来科学
+that man will never reach the moon regardless of all future
+
+579
+00:28:39,390 --> 00:28:40,670
+如何
+scientific
+
+580
+00:28:40,670 --> 00:28:43,470
+进步，人类永远也无法登上月球。12年后，
+advances. 12 years later,
+
+581
+00:28:43,470 --> 00:28:45,790
+尼尔·阿姆斯特朗和巴兹·奥尔德林
+Neil Armstrong and Buzz Aldrin strode
+
+582
+00:28:45,790 --> 00:28:47,990
+踏上了月球表面。
+across the lunar surface.
+
+583
+00:28:47,990 --> 00:28:50,430
+一次又一次，我们的勇气、
+Time and time again, our courage,
+
+584
+00:28:50,430 --> 00:28:52,710
+智慧和坚定的决心，
+ingenuity, and sheer determination has
+
+585
+00:28:52,710 --> 00:28:55,110
+成就了所有人认为
+achieved what everyone thought to be
+
+586
+00:28:55,110 --> 00:28:58,310
+完全不可能的事情，直到美国人
+totally impossible until American
+
+587
+00:28:58,310 --> 00:29:01,550
+美国、我们伟大的国家以及
+and America and our great country and
+
+588
+00:29:01,550 --> 00:29:05,670
+我们不可思议的天才头脑完成了这件事
+our unbelievable genius minds got it done.
+
+589
+00:29:05,670 --> 00:29:10,030
+正如我在就职演说中所说，在美国，
+As I said in my inaugural address, in America, the
+
+590
+00:29:10,030 --> 00:29:12,830
+我们最擅长的就是化不可能为可能。这正是
+impossible is what we do best. That's
+
+591
+00:29:12,830 --> 00:29:17,390
+我们最擅长的。现在，我们的国家已经准备好
+exactly what we do best. Now, our nation is ready to prove
+
+592
+00:29:17,390 --> 00:29:19,710
+再次证明那些怀疑者是错的，并
+the doubters wrong yet again and to make
+
+593
+00:29:19,710 --> 00:29:24,030
+为全人类实现下一个巨大飞跃。
+the next giant leap for all of mankind.
+
+594
+00:29:24,030 --> 00:29:25,470
+环顾今天的这片土地，
+Looking around these grounds today,
+
+595
+00:29:25,470 --> 00:29:29,270
+我们仍然可以自豪地说，经过250
+we can still proudly say that after 250
+
+596
+00:29:29,270 --> 00:29:32,150
+年的美国自由之后，
+years of American freedom,
+
+597
+00:29:32,150 --> 00:29:35,390
+最好的还在后头。所以，我只想
+the best is yet to come. So, I want to
+
+598
+00:29:35,390 --> 00:29:41,750
+感谢大家。再说一遍，这真是一个精彩绝伦的周末。
+just thank everyone. And again, this is a phenomenal
+
+599
+00:29:41,750 --> 00:29:46,390
+也许最重要的是，我要
+weekend. And maybe most importantly, I want to
+
+600
+00:29:46,390 --> 00:29:49,710
+感谢并祝贺我们这位
+thank and congratulate our great
+
+601
+00:29:49,710 --> 00:29:52,190
+参议员的出色延续。不算完全
+continuation of the senator. Not totally
+
+602
+00:29:52,190 --> 00:29:55,910
+新，算是新，但也是延续。
+new, sort of new, but it's a continuation.
+
+603
+00:29:55,910 --> 00:29:58,590
+而他最终会成为一位伟大的
+And a man who will end up being a great
+
+604
+00:29:58,590 --> 00:30:00,430
+州长。我对此毫不怀疑
+governor. I have absolutely no doubt
+
+605
+00:30:00,430 --> 00:30:02,390
+谢谢你们两位。
+about it. Thank you both.
+
+606
+00:30:02,390 --> 00:30:06,110
+恭喜！现在，请
+And congratulations. Now, let me invite
+
+607
+00:30:06,110 --> 00:30:10,590
+管理员艾萨克曼回到台上，为大家带来一个非常特别的
+Administrator Isaacman back to the stage for a very special
+
+608
+00:30:10,590 --> 00:30:12,550
+演讲。贾里德，拜托了。
+presentation. Jared, please. Thank you
+
+609
+00:30:12,550 --> 00:30:17,040
+非常感谢大家。莫大的荣幸。
+very much, everybody. Great honor.
+
+610
+00:30:18,910 --> 00:30:20,150
+测试。测试。
+Test. Test.
+
+611
+00:30:20,150 --> 00:30:24,630
+总统先生，我们今天为您带来了一些非常特别的东西。
+Mr. President, we brought you something very special here.
+
+612
+00:30:24,630 --> 00:30:26,830
+这块牌匾是为你制作的。我们
+This plaque was made for you. We are
+
+613
+00:30:26,830 --> 00:30:29,030
+将把它安装在
+going to install it on the runway that
+
+614
+00:30:29,030 --> 00:30:30,710
+你曾帮助激活、帮助
+you helped energize, that you helped
+
+615
+00:30:30,710 --> 00:30:32,950
+恢复生机的跑道上。
+bring bring back to life.
+
+616
+00:30:32,950 --> 00:30:34,830
+非常感谢您，总统先生。
+So, thank you very much, Mr. President.
+
+617
+00:30:34,830 --> 00:30:36,150
+谢谢各位今晚的到来。
+Thank you for being with us tonight.
+
+618
+00:30:36,150 --> 00:30:39,010
+感谢您为美国宇航局和国家所做的一切。
+Thanks for what you're doing for NASA and for the nation.
+
+619
+00:30:52,630 --> 00:30:53,650
+非常感谢。
+Thank you very much.

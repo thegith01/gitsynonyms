@@ -42,6 +42,25 @@ The fetcher keeps every published format and writes `CAPTION_FORMATS.json`.
 Do not fabricate a missing format and do not substitute a manual or
 machine-translated track for the required official pair.
 
+## One-command entry point
+
+`run.ps1` resolves the repository root and the Anaconda `a` interpreter, so an
+agent can call it from any working directory:
+
+```powershell
+pwsh -NoProfile -File .github\skills\immersive-lowest-subtitles\run.ps1 `
+    -Directory "D:\MyDownload\<video-id>" -VideoId <video-id> -BoxStyle none
+```
+
+`-Fetch` downloads the fourteen formats first; `-Strict` propagates ergonomics
+failures; `-CaptionOrder english-first`, `-Media`, and `-BoxStyle` map to the
+builder switches. The wrapper prints the four output paths on success.
+
+On this machine the skill is also linked into the OpenCode global skill folder,
+so a new agent session can load `immersive-lowest-subtitles` directly. If the
+link is missing, set `GITSYNONYMS_REPO` to the repository root or call the
+wrapper by its absolute path.
+
 ## Build the LOWEST pair
 
 ```powershell
@@ -223,6 +242,19 @@ ffmpeg -i "source.mp4" -vf "subtitles='bilingual_immersive_lowest_Chinese-Englis
 | Low CPS warning / high CPS error | Dense auto speech, long official Chinese cue | Inspect the event; fix only by better source segmentation, never by deleting words |
 | Chinese appears one phrase later than English | Whole-cue assignment | Expected; verify the Chinese cue still covers the English unit it was assigned to |
 | Mojibake in PowerShell | Console encoding | Use `python -X utf8`; files are UTF-8 |
+
+## Proven example
+
+`e038Q_qaltQ` (President Trump Delivers Remarks, Nov. 6, 2026) was built on
+2026-11-08 from its fourteen official formats. Two consecutive runs produced
+byte-identical ASS and SRT files:
+
+- `bilingual_immersive_lowest_Chinese-English.ass` SHA-256
+  `7AA5AF38C8389FE8D97EAA4F6C2D004ADEA9B36B17CD3FDC4256FEB08426A71F`
+- `bilingual_immersive_lowest_Chinese-English.srt` SHA-256
+  `FD8F530796FA9ACC833D78A25954C655EF8C3002160B827B36E0FEA46AACD055`
+- 619 rendered events, 0 monolingual events, 0 skipped source units.
+- Archive: `output/2026-11-06_President-Trump-Delivers-Remarks-Nov-6-2026_e038Q_qaltQ/`.
 
 ## Baseline evidence
 
