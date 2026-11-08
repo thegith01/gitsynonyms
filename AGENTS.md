@@ -103,6 +103,11 @@ from the repository root. `scripts/` is not an installed package —
   source). ASS karaoke is centisecond-quantized by the format; `TIMING.json`
   keeps the nanosecond sidecar. Do not evenly distribute when real word timings
   exist.
+- Overwide bilingual events split at sentence/clause punctuation first, then at
+  a source-cue change. Clause mode skips duration rebalancing so it cannot undo
+  the chosen cut. The LOWEST scheme always uses it; the fused builder enables it
+  with `--prefer-clause-boundaries`, while the pipeline default keeps the
+  historical width-only split for its regression contract.
 - Collapse only immediate ASR stutters from closed-class words (`I I`, `the the`);
   never drop repetition that carries meaning.
 - Translate rolling YouTube cues only after de-duplicating their source words

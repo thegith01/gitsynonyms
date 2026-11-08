@@ -868,7 +868,7 @@ def build_parser() -> argparse.ArgumentParser:
         default=ASS_SCHEME1,
         help=(
             "Subtitle scheme: immersive-lowest = minimum/lowest-standard official "
-            "bilingual active-cue snapshots; scheme1 = self-developed "
+            "phrase-window baseline; scheme1 = self-developed "
             "segmentation and synchronization "
             "(default); fused = the existing seven-format sentence timeline."
         ),

@@ -40,16 +40,32 @@ The two modes intentionally use different segmentation and synchronization.
 - Downloads and retains every format YouTube publishes for both tracks. The
   baseline timeline uses each language's most precise readable source format;
   source format presence, missing formats, and source kinds are recorded.
-- Based on REA's partially analyzed `cuechange` → full `activeCues` snapshot,
-  it creates output intervals at the union of both tracks' cue boundaries and
-  includes every active cue in each language. It does not deduplicate rolling
-  cues. If any interval has only one active language, it fails rather than
-  writing falsely synchronized or monolingual captions.
+- Mirrors the observed v1.34.4 phrase-window model: ambient labels are removed,
+  whole English phrase cues are grouped into sentence/clause units under the
+  6.5 s and 60-character reading budgets, and each whole official Chinese cue
+  is assigned to the English unit it overlaps most. Chinese text is never split
+  at a re-segmented source boundary.
+- An English unit with no Chinese evidence is **merged into the nearest
+  bilingual event**, never dropped and never rendered alone. Every rendered
+  event contains both languages; `IMMERSIVE_LOWEST.json` records the
+  `target_selection_counts` and the merged `unpaired_details`.
+- The ASS keeps one line per language and, when an event is overwide, splits it
+  at sentence/clause punctuation or a source-cue boundary (`--prefer-clause`
+  behavior is always on for this scheme). The SRT is generated from the rendered
+  ASS dialogues, so both deliverables carry identical events.
 - Outputs: `bilingual_immersive_lowest_Chinese-English.srt/.ass`,
   `IMMERSIVE_LOWEST.json` and `IMMERSIVE_LOWEST_ERGONOMICS.json`.
-- REA coverage is partial; this is an explicit local comparison model, not a
-  claim of complete plugin reproduction. The pinned baseline specification and
-  its tests are unchanged.
+- `IMMERSIVE_LOWEST.json` records both `event_count` (logical phrase units) and
+  `rendered_event_count` (ASS/SRT dialogues after overwide units are split), so
+  the report and the deliverables can be reconciled exactly.
+- Validation gate: `--strict` exits `1` on any ergonomics error. A passing run
+  must report `monolingual_events: 0`, `source_units_skipped: 0`,
+  `events_are_bilingual: true`, and an `english_tokens_rendered` /
+  `chinese_tokens_rendered` count consistent with the filtered source tracks.
+- REA coverage is partial; the model is anchored by both the pinned v1.34.4
+  release analysis and the 2026-11-08 Chrome observation in
+  `benchmarks/immersive-translate/observed-2026-11-08.json`. It is a local
+  comparison baseline, not a claim of complete plugin reproduction.
 
 ### `scheme_高级_自研_1` (`--ass-mode scheme1`)
 
@@ -78,6 +94,15 @@ Use `--ass-mode fused` to keep the existing seven-format sentence timeline and t
 `TIMING.json`, precision VTT sidecars). Machine translation options apply only
 to the fused path; neither Scheme 1 nor the Immersive-lowest baseline substitutes
 machine translation for a missing official Chinese track.
+
+The fused path's standalone builder (`scripts/local_bilingual_ass.py`) splits
+overwide events at an arbitrary word unless `--prefer-clause-boundaries` is
+passed. That flag makes the splitter walk back to the latest sentence/clause
+punctuation, then to a source-cue change, and skips the duration rebalancing
+that would undo the clause cut. The LOWEST scheme always uses the clause-aware
+behavior; `--ass-mode fused` through `local_subtitle_flow.py` keeps the
+historical width-only split, while the pipeline default does too so existing
+cue boundaries stay stable.
 
 ## PowerShell runner: line-by-line or batch
 
@@ -113,7 +138,7 @@ used either way.
 |------|------------|----------|
 | `<Directory>\LOCAL_FLOW_COMMANDS.jsonl` | `local_subtitle_flow.ps1` | One JSON line per invocation: `observed_at`, `preset`, `command`, `exit_code`, `duration_seconds`, `directory`, `url`, `video_id`, `dry_run` |
 | `<Directory>\LOCAL_FLOW.json` | `local_subtitle_flow.py` | Flow decision: `flow`, `reason`, `selection`, engines, output formats, `status`, `error` |
-| `<Directory>\IMMERSIVE_LOWEST.json` | `scheme_local_immersive_lowest.py` | Lowest-standard baseline audit: verified official source kinds, available formats, active-cue synchronization windows, REA evidence and coverage |
+| `<Directory>\IMMERSIVE_LOWEST.json` | `scheme_local_immersive_lowest.py` | Lowest-standard baseline audit: verified official source kinds, available formats, phrase-window synchronization, Chinese whole-cue assignment, merged orphan units, REA evidence and coverage |
 | `<Directory>\SCHEME_ADVANCED_SELFDEV_1.json` | `scheme1_local_ass.py` | Higher-tier Scheme 1 audit: both languages' source formats, per-format cue participation, cue count, pairing kind, style, ergonomics summary |
 
 `LOCAL_FLOW_COMMANDS.jsonl` is gitignored; `LOCAL_FLOW.json` is a per-run

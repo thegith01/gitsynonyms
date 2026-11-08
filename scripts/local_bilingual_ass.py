@@ -397,6 +397,15 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Exit 1 when the ergonomics report finds an error.",
     )
+    parser.add_argument(
+        "--prefer-clause-boundaries",
+        action="store_true",
+        help=(
+            "Split overwide bilingual events at sentence/clause punctuation or "
+            "a source-cue boundary instead of an arbitrary word boundary. The "
+            "default keeps the pipeline's historical width-only split."
+        ),
+    )
     return parser
 
 
@@ -461,6 +470,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         event_max_chars=args.event_max_chars,
         max_english_lines=args.max_lines,
         max_chinese_lines=args.max_lines,
+        prefer_clause_boundaries=args.prefer_clause_boundaries,
     )
 
     ass_path = (args.ass_output or folder / DEFAULT_ASS_NAME).expanduser().resolve()

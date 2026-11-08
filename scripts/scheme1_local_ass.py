@@ -394,6 +394,14 @@ def build(
         for cue in chinese
         if subtitle_layout.line_units(clean_text(cue["text"])) > max_chinese
     ]
+    if overwide_chinese:
+        first = overwide_chinese[0]
+        raise ValueError(
+            f"{len(overwide_chinese)} official Chinese cue(s) exceed 28 "
+            "characters for a one-line label; the first starts at "
+            f"{first['start']:.3f}s with {first['characters']} characters. "
+            "Use the fused sentence-aligned pipeline instead of Scheme 1."
+        )
 
     bilingual_srt = captions.build_scheme1_bilingual_srt(chinese, english)
     raw_video_duration = local_bilingual_ass.probe_duration(media)

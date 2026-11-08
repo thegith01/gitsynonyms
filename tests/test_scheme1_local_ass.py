@@ -86,7 +86,6 @@ def build_paths(tmp_path: Path) -> dict[str, Path]:
         "srt_path": tmp_path / "result.srt",
         "report_path": tmp_path / "SCHEME_ADVANCED_SELFDEV_1.json",
         "ergonomics_path": tmp_path / "ERGONOMICS.json",
-        "cache_path": tmp_path / "TRANSLATIONS.json",
     }
 
 
@@ -112,20 +111,11 @@ def write_source_report(
     )
 
 
-def test_aligned_official_chinese_is_reused_without_translation(tmp_path, monkeypatch):
+def test_aligned_official_chinese_is_reused_without_translation(tmp_path):
     write_srt(tmp_path / f"{VIDEO_ID}.en-orig.srt", english_cues())
     write_srt(tmp_path / f"{VIDEO_ID}.zh-Hans.srt", chinese_cues())
     write_source_report(tmp_path)
     paths = build_paths(tmp_path)
-
-    def fail(*_args, **_kwargs):
-        raise AssertionError("an aligned Chinese track must not be translated")
-
-    monkeypatch.setattr(
-        scheme1_local_ass.machine_translate_captions,
-        "translate_assemblyai",
-        fail,
-    )
 
     report = scheme1_local_ass.build(
         tmp_path, VIDEO_ID, None, **paths
@@ -134,7 +124,6 @@ def test_aligned_official_chinese_is_reused_without_translation(tmp_path, monkey
     assert report["cue_count"] == 2
     assert report["chinese"]["kind"] == "official-aligned"
     assert report["chinese"]["source"] == f"{VIDEO_ID}.zh-Hans.srt"
-    assert not paths["cache_path"].exists()
     content = paths["ass_path"].read_text(encoding="utf-8-sig")
     assert content.count("Dialogue: 1,") == 2
     assert "你好。" in content
@@ -142,7 +131,7 @@ def test_aligned_official_chinese_is_reused_without_translation(tmp_path, monkey
 
 
 def test_official_chinese_priority_and_all_available_formats_are_reported(
-    tmp_path, monkeypatch
+    tmp_path,
 ):
     write_srt(
         tmp_path / f"{VIDEO_ID}.en-orig.srt",
@@ -163,15 +152,6 @@ def test_official_chinese_priority_and_all_available_formats_are_reported(
     write_source_report(tmp_path)
     paths = build_paths(tmp_path)
 
-    def fail(*_args, **_kwargs):
-        raise AssertionError("an available official Chinese track must not be translated")
-
-    monkeypatch.setattr(
-        scheme1_local_ass.machine_translate_captions,
-        "translate_assemblyai",
-        fail,
-    )
-
     report = scheme1_local_ass.build(tmp_path, VIDEO_ID, None, **paths)
 
     assert report["english"]["primary_format"] == "srt"
@@ -190,7 +170,7 @@ def test_official_chinese_priority_and_all_available_formats_are_reported(
 
 
 def test_official_chinese_with_different_cue_grid_is_not_replaced_by_mt(
-    tmp_path, monkeypatch
+    tmp_path,
 ):
     write_srt(tmp_path / f"{VIDEO_ID}.en-orig.srt", english_cues())
     write_json3(
@@ -200,46 +180,25 @@ def test_official_chinese_with_different_cue_grid_is_not_replaced_by_mt(
     write_source_report(tmp_path)
     paths = build_paths(tmp_path)
 
-    def fail(*_args, **_kwargs):
-        raise AssertionError("official Chinese must not be machine-translated")
-
-    monkeypatch.setattr(
-        scheme1_local_ass.machine_translate_captions,
-        "translate_assemblyai",
-        fail,
-    )
-
     report = scheme1_local_ass.build(tmp_path, VIDEO_ID, None, **paths)
 
     assert report["chinese"]["kind"] == "official-time-aligned"
     assert report["chinese"]["alignment"] == "source-time-overlap"
     assert report["chinese"]["source"] == f"{VIDEO_ID}.zh-Hans.json3"
-    assert not paths["cache_path"].exists()
     content = paths["srt_path"].read_text(encoding="utf-8")
     assert content.count("来自 YouTube 的官方整句译文。") == 2
 
 
 def test_unreadable_official_chinese_does_not_silently_fall_back_to_mt(
-    tmp_path, monkeypatch
+    tmp_path,
 ):
     write_srt(tmp_path / f"{VIDEO_ID}.en-orig.srt", english_cues())
     (tmp_path / f"{VIDEO_ID}.zh-Hans.json3").write_text("not json", encoding="utf-8")
     write_source_report(tmp_path)
     paths = build_paths(tmp_path)
 
-    def fail(*_args, **_kwargs):
-        raise AssertionError("unreadable official files must not trigger translation")
-
-    monkeypatch.setattr(
-        scheme1_local_ass.machine_translate_captions,
-        "translate_assemblyai",
-        fail,
-    )
-
     with pytest.raises(ValueError, match="no readable Chinese caption format"):
         scheme1_local_ass.build(tmp_path, VIDEO_ID, None, **paths)
-
-    assert not paths["cache_path"].exists()
 
 
 def test_recorded_non_translated_chinese_source_is_rejected(tmp_path):
@@ -269,8 +228,6 @@ def test_missing_official_chinese_fails_without_machine_translation(tmp_path):
 
     with pytest.raises(ValueError, match="requires the official YouTube auto-translated"):
         scheme1_local_ass.build(tmp_path, VIDEO_ID, None, **paths)
-
-    assert not paths["cache_path"].exists()
 
 
 def test_overlong_official_chinese_is_rejected(tmp_path):

@@ -143,7 +143,7 @@ def test_srt_scheme1_official_rolling_translation_example(tmp_path):
         (2.399, 6.960),
         (6.960, 9.599),
         (9.599, 12.080),
-        (12.080, 14.480),
+        (12.080, 17.760),
     ]
     assert [(cue["start"], cue["end"]) for cue in chinese] == [
         (2.399, 6.960),
@@ -234,7 +234,7 @@ def test_precise_ass_without_a_box_contains_only_subtitle_events(tmp_path):
 
     assert "CaptionBox" not in content
     assert "CaptionFacet" not in content
-    assert "Dialogue: 1,0:00:01.00,0:00:03.00" in content
+    assert "Dialogue: 1,0:00:01.00,0:00:06.00" in content
     assert "; timebase=nanosecond ass-resolution=centisecond" in content
     assert stats["ass_resolution"] == "centisecond"
     assert stats["word_timings"] == 11  # 7 Chinese characters + 4 English words

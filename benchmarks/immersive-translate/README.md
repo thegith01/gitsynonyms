@@ -12,6 +12,7 @@ Translate）是 Chrome 商店里使用最广的视频双语字幕方案，用户
 - 扩展 ID：`bpoadfkcbjbfhfodiogcnhhhpibjhbnh`
 - CRX SHA-256：`72c0dc8ad563db812df9385b3207b0f85a8d2f071738f13a31a6377e39c0cf5f`
 - 机器可读规格：[`baseline.json`](baseline.json)
+- Chrome 运行时观察：[`observed-2026-11-08.json`](observed-2026-11-08.json)
 - 验收测试：[`tests/test_subtitle_baseline.py`](../../tests/test_subtitle_baseline.py)
 
 ## 为什么仓库里没有 CRX
@@ -32,33 +33,39 @@ python scripts/benchmarks/fetch_immersive_translate.py --refresh-hashes   # 版�
 ## 观察到的行为（v1.34.4）
 
 证据来自发布产物本身：`content_main.js`、`video-subtitle/inject.js`、
-`default_config.json`，以及一次 REA 静态应用图分析
-（`ev_8afad77784dc3350625bc01599d2ddd910cc811cc08b8f6054508c3d7a25855f`）。
+`default_config.json`，一次 REA 静态应用图分析
+（`ev_8afad77784dc3350625bc01599d2ddd910cc811cc08b8f6054508c3d7a25855f`），
+以及 2026-11-08 在 Chrome 里对 `e038Q_qaltQ` 的实时采样
+（`observed-2026-11-08.json`，150 s / 1186 帧）。
 
 | 环节 | 行为 |
 |---|---|
 | 字幕获取 | 劫持页面自己的 XHR/fetch 字幕请求，**不重新下载**；`hookType: "xhr"`、`preTranslation: true` |
-| 时间轴 | 监听 `TextTrack` 的 `cuechange`，取 `activeCues` 全量快照；把原生轨道设成 `mode="hidden"`，自己画 |
-| 显示单位 | 源 cue：`{text, start: startTime, end: endTime}` |
-| 翻译批量 | 每 5 个 cue 一批（`translateGroupCount: 5`），按语速分档 `velocityGroup: [4,4,4]` |
+| 短语来源 | YouTube 的 TTML `p` / json3 事件；`preMergeSubtitles` 先合并滚动短语，再做阅读速度裁剪 |
+| 显示单位 | **拼接后的活动短语窗口**，不是单条源 cue；重叠短语首尾相接，重叠部分原样保留（观察到 `that, that`） |
+| 译文 | 对当前可见窗口整体翻译，通常晚约 0.5 s 到达；加载时只显示原文或“翻译中”提示 |
+| 翻译服务 | 观察到的加载标签是“微软翻译”；`defaultFallbackServices` 仍为 `["bing","google"]` |
 | 双语呈现 | `translationMode: "dual"`、`translationPosition: "bottom"`，字号 100%、白字、`#080808` 75% 底、阴影 |
 | 排版 | 由每站点远程规则 `attachRule.injectedCSS` 决定，**扩展本体没有固定字符预算** |
-| 静音词 | 默认开启，正则 `\([^)]*\)|\[[^\]]*\]` 过滤 `[music]`、`(applause)` 之类 |
+| 静音词 | 默认开启，正则 `\([^)]*\)|\[[^\]]*\]` 过滤 `[music]`、`(applause)`、`>>` 之类 |
+| 词级高亮 | 扩展 overlay 没有；YouTube 原生播放器可能在自己的字幕 DOM 里加粗当前词 |
 
 ## 它没有做的四件事（也就是我们必须超过的地方）
 
-1. **没有跨 cue 去重。** 每个 `cuechange` 都取当前 `activeCues` 原样渲染。遇到
-   YouTube 那种滚动字幕（后一条 cue 重复前一条的尾巴），重复文字会跟着一起上屏。
-2. **没有词级时间。** `formatToSubtitleItem` 只产出 cue 的 `start/end`，英文按整块
-   替换，不存在卡拉 OK 逐词高亮。
+1. **没有跨 cue 去重。** 活动的重叠短语直接拼接，捕获到的源窗口里出现
+   `exactly that, that we're going to do...`；滚动字幕的尾巴会重复上屏。
+2. **没有词级时间。** overlay 只按短语窗口整体显示，英文不存在卡拉 OK 逐词高亮；
+   原生播放器的加粗不是扩展产出的 ASS 能力。
 3. **没有排版预算。** 换行、最大行数、溢出处理都交给各站点注入的 CSS；扩展自己
-   不测量文本宽度，也不缩字号。
+   不测量文本宽度，也不缩字号。捕获到 98 字符的源窗口仍按一条显示。
 4. **不是离线烧录。** 它是浏览器 overlay，依赖页面、网络与运行时；我们的产物是
-   写进画面的 ASS，必须自己保证每个像素可控。
+   写进画面的 ASS，必须自己保证每个像素可控，且译文不能等到 0.5 s 后才出现。
 
 这四条不是「它做得差」，而是两种交付形态的差异。正因为形态不同，**拿它当最低
-线是安全的**：凡是它保证的（双语、与源时间轴对齐、不丢文本），我们必须保证；它
-不保证的，我们额外保证。
+线是安全的**：凡是它保证的（源文本不丢、短语锚定源时间轴），我们必须保证；它
+不保证的（同时双语、去重、词级时间、固定排版预算、离线可控），我们额外保证。
+它也暴露了一个反向要求：新窗口出现后的前约 0.5 s 不能只有原文占屏，我们的 ASS
+必须让两种语言在同一事件里同时出现。
 
 ## 验收方式
 
@@ -77,3 +84,14 @@ python scripts/benchmarks/fetch_immersive_translate.py --refresh-hashes
 
 然后人工复核 `observed` / `baseline_limits`：如果新版本补上了词级时间或去重，
 把它从「我们额外保证」移到「必须保证」，而不是放宽测试。基线只允许单向收紧。
+
+运行时行为用 CDP 采样复核：
+
+```bash
+node scripts/benchmarks/capture_immersive_translate.mjs 300 90 capture_300.json
+node scripts/benchmarks/capture_immersive_translate.mjs 900 60 capture_900.json
+```
+
+脚本假设 Chrome 已用 `--remote-debugging-port=9222` 打开、目标页是
+`youtube.com/watch`，且沉浸式翻译已启用。捕获文件是临时证据，不提交；把结论
+写入 `observed-YYYY-MM-DD.json` 并更新 `baseline.json` 的 `observed` 字段。

@@ -1,0 +1,104 @@
+{
+  "schema": "gitsynonyms.subtitle-observation/1",
+  "id": "immersive-translate",
+  "version": "1.34.4",
+  "role": "minimum",
+  "observed_at": "2026-11-08",
+  "method": {
+    "browser": "Google Chrome, profile \"Profile 2\"",
+    "extension": {
+      "id": "bpoadfkcbjbfhfodiogcnhhhpibjhbnh",
+      "state": "ENABLED",
+      "install_type": "FROM_STORE",
+      "errors": 0
+    },
+    "driver": "Chrome DevTools Protocol, runtime sampling every ~120 ms",
+    "overlay_host": "#immersive-translate-caption-window",
+    "overlay_shadow_root": ".imt-caption-container / .imt-cue.source-cue / .imt-cue.target-cue / .loading-text",
+    "capture_script": "scripts/benchmarks/capture_immersive_translate.mjs",
+    "capture_files": [
+      "D:\\MyDownload\\immersive-local\\capture_e038Q_300.json",
+      "D:\\MyDownload\\immersive-local\\capture_e038Q_900.json"
+    ],
+    "capture_files_committed": false,
+    "screenshot": "D:\\MyDownload\\immersive-local\\imt-overlay-e038Q.png"
+  },
+  "target": {
+    "url": "https://www.youtube.com/watch?v=e038Q_qaltQ",
+    "title": "President Trump Delivers Remarks, Nov. 6, 2026",
+    "channel": "The White House",
+    "captures": [
+      {
+        "at_seconds": 300,
+        "duration_seconds": 90,
+        "sampled_frames": 713,
+        "source_windows": 24,
+        "max_source_chars": 77,
+        "max_target_chars": 27
+      },
+      {
+        "at_seconds": 900,
+        "duration_seconds": 60,
+        "sampled_frames": 473,
+        "source_windows": 18,
+        "max_source_chars": 98,
+        "max_target_chars": 30
+      }
+    ]
+  },
+  "findings": {
+    "display_unit": "a joined window of the source phrases that are active at that moment, not one raw source cue",
+    "phrase_source": "YouTube timed-text phrases (TTML p elements / json3 events) are pre-merged before display",
+    "phrase_join": "overlapping active phrases are concatenated into one source window; the shared tail is not de-duplicated",
+    "cross_cue_deduplication": false,
+    "every_word_rendered_once": false,
+    "word_karaoke": false,
+    "translation_unit": "the whole visible source window",
+    "translation_engine_seen": "Microsoft Translator (loading label: 使用 微软翻译 翻译中...（沉浸式翻译）)",
+    "translation_latency_seconds": {
+      "observed": [0.5, 0.52, 1.38, 4.26],
+      "note": "target line is empty or shows the loading label while the new source window is already visible"
+    },
+    "reading_speed_trim": "the pCe step shortens a phrase's display duration for reading speed; the source can change before the target finishes",
+    "ambient_filter": {
+      "arrows": "leading >> speaker markers are removed from the overlay source line",
+      "bracketed": "[applause] / [music] style labels are removed",
+      "evidence": "native YouTube text contains '>> And when' and '[applause]'; overlay source text does not"
+    },
+    "native_captions": "the extension's own window is the visible caption in the captured screenshot; YouTube's caption container may still exist in the DOM",
+    "native_word_highlight": "YouTube's player can bold the current word in its own caption DOM; the extension overlay itself has no word-level highlight"
+  },
+  "examples": [
+    {
+      "video_seconds": 901.061,
+      "source": "and when people ask me what exactly we're trying to do i said",
+      "target": "",
+      "loading": "使用 微软翻译 翻译中...（沉浸式翻译）",
+      "note": "a new source window is already visible while the target is still loading"
+    },
+    {
+      "video_seconds": 905.351,
+      "source": "exactly that, that we're going to do a bigger and better grander version than the paris",
+      "target": "正是如此，我们要做一个比巴黎更大、更豪华的版本",
+      "note": "'that, that' repeats the overlap; the extension does not de-duplicate the joined window"
+    },
+    {
+      "video_seconds": 342.296,
+      "source": "wow, what a   what an amazing place.",
+      "target": "哇，多么令人惊叹的地方。",
+      "note": "ASR stutter is preserved in the source window"
+    },
+    {
+      "video_seconds": 916.296,
+      "source": "and we have the right location.",
+      "target": "而且我们找到了正确的地点。",
+      "note": "a short phrase with a complete translation"
+    }
+  ],
+  "limits": [
+    "two short observation windows on one video, not a full-film comparison",
+    "the translation engine is identified from the overlay loading label, not from a captured network payload",
+    "the capture does not prove which internal function performs every merge; the source-code path was read separately",
+    "the observed windows are not a substitute for the committed seven-format caption corpus"
+  ]
+}

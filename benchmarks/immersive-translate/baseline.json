@@ -32,7 +32,13 @@
     "source_paths": ["content_main.js", "video-subtitle/inject.js"],
     "visited_ast_nodes": 832612,
     "coverage": "partial (partial: 53 inventoried files, 1 analyzed source; semantic graph truncated at the 20000-node per-file ceiling)",
-    "note": "REA 的 Windows 原生自检拒绝 junction 化的用户目录（C:\\Users\\a2023 是重解析点）。本次分析以 USERPROFILE=D:\\rea-home 运行，绕开自检但没有改变分析对象。"
+    "note": "REA 的 Windows 原生自检拒绝 junction 化的用户目录（C:\\Users\\a2023 是重解析点）。本次分析以 USERPROFILE=D:\\rea-home 运行，绕开自检但没有改变分析对象。",
+    "runtime_observation": {
+      "file": "observed-2026-11-08.json",
+      "method": "Chrome DevTools Protocol live sampling",
+      "coverage": "2 windows / 150 s / 1186 frames on e038Q_qaltQ",
+      "note": "运行时观察取代了只按源码推断的 cuechange 模型；源码路径与 Chrome 行为分开记录，互相校验。"
+    }
   },
   "observed": {
     "acquisition": {
@@ -46,11 +52,13 @@
       "evidence": "default_config.json: generalRule.subtitleRule.{hookType,isInject,preTranslation,videoPlayerSelector,defaultFallbackServices}; video-subtitle/inject.js: XMLHttpRequest.prototype.open/send 与 globalThis.fetch 包装"
     },
     "cue_model": {
-      "unit": "源 cue",
-      "trigger": "TextTrack 的 cuechange 事件",
-      "active_set": "每次 cuechange 取当前 activeCues 全量快照，转换为 {text,start:startTime,end:endTime}",
-      "native_track": "接管后设置 mode=\"hidden\"，由扩展自绘 overlay",
-      "evidence": "content_main.js: onCueChange → formatToSubtitleItem(activeCues) → attachSubtitle(...) + o.mode=\"hidden\""
+      "unit": "拼接后的活动短语窗口",
+      "trigger": "源短语的出现与消失（TTML p / json3 事件）；Chrome 观察到的 YouTube 路径不是 TextTrack cuechange",
+      "active_set": "同一时刻活动的重叠短语首尾相接成一个窗口；重叠部分原样保留（捕获到 \"that, that\"），不跨 cue 去重",
+      "translation": "对当前可见窗口整体翻译；译文通常晚约 0.5 s 到达，源窗口变化时可能暂时只有加载提示",
+      "reading_speed": "pCe 按阅读速度裁剪短语显示时长",
+      "native_track": "扩展在 #immersive-translate-caption-window 的 shadow root 里自绘 overlay；截图中可见的是扩展窗口",
+      "evidence": "Chrome 1.34.4 实时采样 + W8.loadSubtitle → TTML p → preMergeSubtitles → getSubtitlesByDoc → pCe；详见 observed-2026-11-08.json"
     },
     "translation_batching": {
       "translate_group_count": 5,
@@ -91,28 +99,28 @@
     {
       "id": "dual-language",
       "statement": "每个显示事件同时给出原文与译文，不允许只有一种语言占屏。",
-      "baseline_v1_34_4": "subtitleRule.translationMode = \"dual\"，原文与译文同屏上下排列。",
-      "ours": "同一事件的英文与中文 token 同批渲染，任一侧缺失即视为回归。",
+      "baseline_v1_34_4": "translationMode = \"dual\"；但新源窗口出现后的前约 0.5 s 通常只有原文或加载提示，译文到达后才是双语。",
+      "ours": "同一事件的英文与中文 token 同批渲染，任一侧缺失或时间不重叠即视为回归。",
       "test": "test_baseline_dual_language"
     },
     {
       "id": "cue-aligned-timing",
       "statement": "字幕的出现与消失必须锚定源字幕时间轴，不得凭空提前或拖后。",
-      "baseline_v1_34_4": "事件区间直接取源 cue 的 startTime/endTime。",
-      "ours": "事件起点取源词的真实起点（json3 tStartMs + tOffsetMs），精度高于 cue 边界。",
+      "baseline_v1_34_4": "源窗口锚定源短语；译文晚约 0.5 s，且 pCe 会按阅读速度裁剪显示时长。",
+      "ours": "事件起点取源词的真实起点（json3 tStartMs + tOffsetMs），译文与原文同一事件同时上屏，不复制插件的加载延迟。",
       "test": "test_baseline_cue_aligned_timing"
     },
     {
       "id": "no-source-loss",
       "statement": "源字幕中的口语内容不得静默丢失。",
-      "baseline_v1_34_4": "对每个 active cue 的文本原样翻译渲染，不丢弃。",
+      "baseline_v1_34_4": "对当前可见窗口整体翻译；环境标签被正则过滤，ASR 口吃（\"what a   what an\"）保留。",
       "ours": "输出 token 流必须是源词流的子序列；只允许两类删除：闭合类 ASR 口吃与滚动窗口已上屏的重复前缀。",
       "test": "test_baseline_no_source_loss"
     },
     {
       "id": "single-render",
       "statement": "同一个词在一次播放中只能渲染一次，不得因滚动字幕重复上屏。",
-      "baseline_v1_34_4": "无跨 cue 去重：重叠的滚动 cue 会被原样逐次渲染。",
+      "baseline_v1_34_4": "无跨 cue 去重：重叠滚动短语被原样拼接，捕获到 \"that, that\" 的重复。",
       "ours": "全局不变量：每个源词恰好出现在一个事件里，相邻事件文本不得相同。",
       "test": "test_baseline_single_render"
     },

@@ -522,6 +522,7 @@ def build_precise_ass(
     event_max_chars: int = subtitle_timeline.EN_EVENT_CHARS,
     max_english_lines: int = 2,
     max_chinese_lines: int = 2,
+    prefer_clause_boundaries: bool = False,
 ) -> tuple[str, dict]:
     """Build the bilingual ASS from two fused tracks.
 
@@ -550,6 +551,7 @@ def build_precise_ass(
         event_max_chars=event_max_chars,
         max_english_lines=max_english_lines,
         max_chinese_lines=max_chinese_lines,
+        prefer_clause_boundaries=prefer_clause_boundaries,
     )
     timestamp = re.compile(
         r"^Dialogue: [^,]+,\d+:\d{2}:\d{2}\.(\d{2}),\d+:\d{2}:\d{2}\.(\d{2}),"

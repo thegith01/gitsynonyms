@@ -1655,35 +1655,102 @@ def _event_text_width(
     return subtitle_layout.line_units(text)
 
 
+def _token_is_clause_end(token: subtitle_timeline.Token) -> bool:
+    return token.text.rstrip().endswith(
+        (",", ";", ":", ".", "!", "?", "…", "，", "；", "：", "。", "！", "？", "、")
+    )
+
+
 def _split_tokens_at_width(
     tokens: Sequence[subtitle_timeline.Token],
     language: str,
     max_width: float,
+    *,
+    prefer_clause_boundaries: bool = False,
 ) -> list[list[subtitle_timeline.Token]]:
-    chunks: list[list[subtitle_timeline.Token]] = []
-    current: list[subtitle_timeline.Token] = []
-    current_width = 0.0
-    for token in tokens:
-        token_width = subtitle_layout.line_units(token.text)
-        if current and language == "en":
-            token_width += subtitle_layout.LATIN_EM
-        if current and current_width + token_width > max_width:
-            chunks.append(current)
-            current = []
-            current_width = 0.0
+    """Split by width while preferring a real clause or source-phrase boundary.
+
+    With ``prefer_clause_boundaries`` the split first walks back to the latest
+    sentence/clause punctuation before the width limit, then falls back to a
+    source-cue change, so a caption does not start in the middle of a phrase
+    ("to do I said…"). Punctuation outranks the cue grid because YouTube cue
+    boundaries are often mid-clause. The default keeps the legacy width-only
+    split because the pipeline's expected cue boundaries are part of its
+    regression contract.
+    """
+    if not prefer_clause_boundaries:
+        chunks: list[list[subtitle_timeline.Token]] = []
+        current: list[subtitle_timeline.Token] = []
+        current_width = 0.0
+        for token in tokens:
             token_width = subtitle_layout.line_units(token.text)
-        if token_width > max_width:
+            if current and language == "en":
+                token_width += subtitle_layout.LATIN_EM
+            if current and current_width + token_width > max_width:
+                chunks.append(current)
+                current = []
+                current_width = 0.0
+                token_width = subtitle_layout.line_units(token.text)
+            if token_width > max_width:
+                raise ValueError(
+                    f"A {language} subtitle token exceeds the fixed-font caption width: "
+                    f"{token.text!r}"
+                )
+            current.append(token)
+            current_width += token_width
+        if current:
+            chunks.append(current)
+        return _rebalance_token_chunks(chunks, language, max_width)
+
+    chunks = []
+    start = 0
+    while start < len(tokens):
+        width = 0.0
+        end = start
+        while end < len(tokens):
+            token_width = subtitle_layout.line_units(tokens[end].text)
+            if end > start and language == "en":
+                token_width += subtitle_layout.LATIN_EM
+            if end > start and width + token_width > max_width:
+                break
+            width += token_width
+            end += 1
+        if end == start:
+            token = tokens[start]
             raise ValueError(
                 f"A {language} subtitle token exceeds the fixed-font caption width: "
                 f"{token.text!r}"
             )
-        current.append(token)
-        current_width += token_width
-    if current:
-        chunks.append(current)
-    # Rebalancing is O(chunks * moved tokens); only worth it for the handful
-    # of chunks a readable caption produces, not for a pathological split of
-    # an entire transcript into hundreds of segments.
+        if end >= len(tokens):
+            chunks.append(list(tokens[start:]))
+            break
+
+        split_at = None
+        for index in range(end, start, -1):
+            if _token_is_clause_end(tokens[index - 1]):
+                split_at = index
+                break
+        if split_at is None or split_at <= start:
+            for index in range(end, start, -1):
+                if tokens[index].group != tokens[index - 1].group:
+                    split_at = index
+                    break
+        if split_at is None or split_at <= start:
+            split_at = end
+        chunks.append(list(tokens[start:split_at]))
+        start = split_at
+    # Rebalancing by duration would move words across the clause boundary that
+    # the split just chose, recreating fragments such as "比巴黎". In clause
+    # mode the boundary is the contract, so the chunks stay as chosen.
+    return chunks
+
+
+def _rebalance_token_chunks(
+    chunks: list[list[subtitle_timeline.Token]],
+    language: str,
+    max_width: float,
+) -> list[list[subtitle_timeline.Token]]:
+    """Balance adjacent chunks by duration without exceeding the line width."""
     if len(chunks) > 40:
         return chunks
     for index in range(len(chunks) - 1):
@@ -1729,6 +1796,8 @@ def _merge_token_chunks(
 def _partition_tokens_by_time(
     tokens: Sequence[subtitle_timeline.Token],
     reference_chunks: Sequence[Sequence[subtitle_timeline.Token]],
+    *,
+    prefer_group_boundaries: bool = False,
 ) -> list[list[subtitle_timeline.Token]]:
     if len(tokens) < len(reference_chunks):
         raise ValueError(
@@ -1743,6 +1812,58 @@ def _partition_tokens_by_time(
         / 4
         for left, right in zip(reference_chunks, reference_chunks[1:])
     ]
+
+    def split_at(cuts: Sequence[int]) -> list[list[subtitle_timeline.Token]]:
+        partitions: list[list[subtitle_timeline.Token]] = []
+        previous = 0
+        for cut in cuts:
+            partitions.append(list(tokens[previous:cut]))
+            previous = cut
+        partitions.append(list(tokens[previous:]))
+        return partitions
+
+    # Keep source-cue groups and clause punctuation whole: a Chinese cue is a
+    # complete translation phrase, and a time split inside it produced
+    # fragments such as "什么时" from "什么时候". The nearest allowed boundary
+    # to each time boundary is used. This is opt-in so the pipeline keeps its
+    # existing cue-boundary regression contract.
+    if prefer_group_boundaries:
+        candidate_cuts = [
+            index
+            for index in range(1, len(tokens))
+            if tokens[index].group != tokens[index - 1].group
+            or _token_is_clause_end(tokens[index - 1])
+        ]
+        if len(candidate_cuts) >= len(boundaries):
+            cuts: list[int] = []
+            previous = 0
+            for boundary in boundaries:
+                remaining = [cut for cut in candidate_cuts if cut > previous]
+                if not remaining:
+                    break
+                cut = min(
+                    remaining,
+                    key=lambda index: abs(
+                        (
+                            (tokens[index - 1].start + tokens[index - 1].end)
+                            + (tokens[index].start + tokens[index].end)
+                        )
+                        / 4
+                        - boundary
+                    ),
+                )
+                cuts.append(cut)
+                previous = cut
+            if len(cuts) == len(boundaries):
+                partitions = split_at(cuts)
+                if all(
+                    _strip_leading_closers(
+                        "".join(token.text for token in partition)
+                    ).strip()
+                    for partition in partitions
+                ):
+                    return partitions
+
     partitions: list[list[subtitle_timeline.Token]] = [
         [] for _ in reference_chunks
     ]
@@ -1786,6 +1907,7 @@ def _fixed_size_bilingual_events(
     chinese_font_size: float,
     available_width: float,
     max_english_chars: int = subtitle_timeline.EN_EVENT_CHARS,
+    prefer_clause_boundaries: bool = False,
 ) -> list[
     tuple[list[subtitle_timeline.Token], list[subtitle_timeline.Token]]
 ]:
@@ -1823,6 +1945,7 @@ def _fixed_size_bilingual_events(
             tokens,
             language,
             english_max_width if split_english else chinese_max_width,
+            prefer_clause_boundaries=prefer_clause_boundaries,
         )
         if len(chunks) < 2:
             raise ValueError("An overwide bilingual caption could not be split.")
@@ -1838,7 +1961,11 @@ def _fixed_size_bilingual_events(
             # adjacent chunks so every segment keeps both languages; the token
             # granularity, not the renderer, now limits how narrow it can get.
             chunks = _merge_token_chunks(chunks, len(other))
-        other_chunks = _partition_tokens_by_time(other, chunks)
+        other_chunks = _partition_tokens_by_time(
+            other,
+            chunks,
+            prefer_group_boundaries=prefer_clause_boundaries,
+        )
         paired = (
             list(zip(chunks, other_chunks))
             if split_english
@@ -1875,6 +2002,7 @@ def build_ass(
     event_max_chars: int = subtitle_timeline.EN_EVENT_CHARS,
     max_english_lines: int = 2,
     max_chinese_lines: int = 2,
+    prefer_clause_boundaries: bool = False,
 ) -> str:
     if not first or not second:
         raise ValueError("Both subtitle tracks must contain cues.")
@@ -1973,6 +2101,7 @@ def build_ass(
         chinese_font_size=first_font_size,
         available_width=available_width,
         max_english_chars=event_max_chars,
+        prefer_clause_boundaries=prefer_clause_boundaries,
     )
     events = []
 

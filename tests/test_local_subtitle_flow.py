@@ -54,7 +54,7 @@ def write_caption_report(folder: Path, english: dict, chinese: dict | None = Non
     return path
 
 
-def fake_ass(folder: Path, video_id: str, args) -> int:
+def fake_ass(folder: Path, video_id: str, args, media: Path | None = None) -> int:
     path = (
         args.ass_output
         or folder / flow.local_bilingual_ass.DEFAULT_ASS_NAME
@@ -168,11 +168,11 @@ def test_run_asr_passes_arguments_to_the_selected_engine(tmp_path, monkeypatch):
     ]
 
 
-def test_local_defaults_sleep_subtitles_56_seconds_and_allow_opaque_black_box():
+def test_local_defaults_sleep_subtitles_56_seconds_and_leave_box_style_to_scheme():
     args = flow.build_parser().parse_args([])
 
     assert args.sleep_subtitles == 56
-    assert args.box_style == "none"
+    assert args.box_style is None
 
 
 def test_local_wait_alias_sets_ytdlp_subtitle_sleep():
@@ -295,7 +295,7 @@ def test_immersive_lowest_rejects_non_youtube_sources():
     try:
         flow.apply_preset(args)
     except ValueError as error:
-        assert "official auto-translated Chinese" in str(error)
+        assert "official YouTube auto-translated Chinese" in str(error)
     else:
         raise AssertionError("baseline mode must reject machine-translated Chinese")
 
@@ -407,7 +407,7 @@ def test_flow1_downloads_both_languages_and_skips_translation(tmp_path, monkeypa
     def fake_translate(*_args):
         raise AssertionError("translation must not run when YouTube has Chinese")
 
-    def fake_build(directory, video_id, args):
+    def fake_build(directory, video_id, args, media=None):
         calls.append("ass")
         return fake_ass(directory, video_id, args)
 
@@ -499,7 +499,7 @@ def test_flow1_translates_chinese_when_youtube_has_only_english(tmp_path, monkey
         write_track(directory, flow.CHINESE, ("json3", "srt", "vtt", "ttml"))
         return 0
 
-    def fake_build(directory, video_id, args):
+    def fake_build(directory, video_id, args, media=None):
         calls.append(("ass", ""))
         return fake_ass(directory, video_id, args)
 
@@ -661,7 +661,7 @@ def test_flow2_transcribes_then_translates_then_builds_ass(tmp_path, monkeypatch
         write_track(directory, flow.CHINESE, ("json3", "srt", "vtt", "ttml"))
         return 0
 
-    def fake_build(directory, video_id, args):
+    def fake_build(directory, video_id, args, media=None):
         calls.append("ass")
         return fake_ass(directory, video_id, args)
 
@@ -712,7 +712,16 @@ def test_flow2_uses_assemblyai_asr_when_a_key_is_set(tmp_path, monkeypatch):
     monkeypatch.setattr(flow, "run_translation", fake_translate)
     monkeypatch.setattr(flow, "run_ass", fake_ass)
 
-    assert flow.main(["--directory", str(folder), "--video-id", VIDEO_ID]) == 0
+    assert flow.main(
+        [
+            "--directory",
+            str(folder),
+            "--video-id",
+            VIDEO_ID,
+            "--ass-mode",
+            "fused",
+        ]
+    ) == 0
     assert seen == ["assemblyai"]
 
 
@@ -753,7 +762,7 @@ def test_force_asr_skips_the_probe_even_when_youtube_has_captions(tmp_path, monk
         write_track(directory, flow.CHINESE, ("json3", "srt", "vtt", "ttml"))
         return 0
 
-    def fake_build(directory, video_id, args):
+    def fake_build(directory, video_id, args, media=None):
         calls.append("ass")
         return fake_ass(directory, video_id, args)
 
@@ -925,7 +934,7 @@ def test_preset_local_asr_mt_forces_asr_and_translation(tmp_path, monkeypatch):
         write_track(directory, flow.CHINESE, ("json3", "srt", "vtt", "ttml"))
         return 0
 
-    def fake_build(directory, video_id, args):
+    def fake_build(directory, video_id, args, media=None):
         calls.append(("ass", ""))
         return fake_ass(directory, video_id, args)
 
@@ -1052,6 +1061,8 @@ def test_forced_official_chinese_errors_when_absent(tmp_path, monkeypatch):
             VIDEO_ID,
             "--chinese-source",
             "youtube",
+            "--ass-mode",
+            "fused",
         ]
     ) == 1
 

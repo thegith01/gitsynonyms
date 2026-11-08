@@ -207,6 +207,82 @@ def test_overwide_bilingual_events_split_without_changing_font_size_or_text():
     assert set(re.findall(r"\\fs([0-9.]+)", ass)) == {"57.6", "48", "10"}
 
 
+def test_clause_split_prefers_punctuation_over_a_later_cue_boundary():
+    timeline = youtube_srt.subtitle_timeline
+    words = [
+        "we're",
+        "trying",
+        "to",
+        "do",
+        "I",
+        "said",
+        "exactly",
+        "that,",
+        "we're",
+        "going",
+        "to",
+        "do",
+        "a",
+        "bigger",
+        "and",
+        "better",
+    ]
+    groups = [1] * 8 + [2] * 8
+    tokens = [
+        timeline.Token(
+            word,
+            index * 0.5,
+            (index + 1) * 0.5,
+            "en",
+            group=groups[index],
+        )
+        for index, word in enumerate(words)
+    ]
+
+    chunks = youtube_srt._split_tokens_at_width(
+        tokens,
+        "en",
+        60 * youtube_srt.subtitle_layout.LATIN_EM,
+        prefer_clause_boundaries=True,
+    )
+
+    assert len(chunks) > 1
+    assert chunks[0][-1].text == "that,"
+    assert " ".join(token.text for chunk in chunks for token in chunk) == (
+        " ".join(words)
+    )
+
+
+def test_clause_partition_keeps_a_chinese_sentence_whole_at_a_time_cut():
+    timeline = youtube_srt.subtitle_timeline
+    characters = list("世界上最杰出的航天机构注入活力。值此美国")
+    tokens = [
+        timeline.Token(
+            character,
+            index * 0.2,
+            (index + 1) * 0.2,
+            "zh",
+            group=0,
+        )
+        for index, character in enumerate(characters)
+    ]
+    # The reference boundary falls between "机" and "构"; the only allowed
+    # Chinese boundary is the full stop after "活力。".
+    split_index = characters.index("机") + 1
+    reference = [tokens[:split_index], tokens[split_index:]]
+
+    partitions = youtube_srt._partition_tokens_by_time(
+        tokens,
+        reference,
+        prefer_group_boundaries=True,
+    )
+
+    assert "".join(token.text for token in partitions[0]) == (
+        "世界上最杰出的航天机构注入活力。"
+    )
+    assert "".join(token.text for token in partitions[1]) == "值此美国"
+
+
 def test_caption_box_can_cover_source_banner_without_changing_text_area():
     chinese = youtube_srt.parse_srt("1\n00:00:01,000 --> 00:00:02,000\n你好\n\n")
     english = youtube_srt.parse_srt("1\n00:00:01,000 --> 00:00:02,000\ncaption\n\n")
