@@ -1,0 +1,90 @@
+{
+  "video_id": "1s-csaeYr5w",
+  "generated_at": "2026-11-10T18:06:03+00:00",
+  "source": "youtube",
+  "tracks": {
+    "en-orig": {
+      "present": true,
+      "youtube_code": "en-orig",
+      "kind": "auto-generated",
+      "source_formats": [
+        "json3",
+        "srt",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "vtt"
+      ],
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "vtt"
+      ],
+      "files": [
+        "1s-csaeYr5w.en-orig.json3",
+        "1s-csaeYr5w.en-orig.srv1",
+        "1s-csaeYr5w.en-orig.srv2",
+        "1s-csaeYr5w.en-orig.vtt"
+      ],
+      "missing_formats": [
+        "srt",
+        "ttml",
+        "srv3"
+      ],
+      "download_error": "yt-dlp failed: Command '['/opt/hostedtoolcache/Python/3.12.16/x64/bin/yt-dlp', '--js-runtimes', 'deno', '--proxy', '[configured proxy]', '--no-warnings', '--skip-download', '--retries', '5', '--write-auto-subs', '--sub-langs', 'en-orig', '--sub-format', 'vtt', '-o', 'output/auto_1s-csaeYr5w/%(id)s.%(language)s.%(ext)s', 'https://www.youtube.com/watch?v=1s-csaeYr5w']' returned non-zero exit status 1."
+    },
+    "zh-Hans": {
+      "present": true,
+      "youtube_code": "zh-Hant",
+      "kind": "auto-translated",
+      "source_formats": [
+        "json3",
+        "srt",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "vtt"
+      ],
+      "formats": [
+        "srv2"
+      ],
+      "files": [
+        "1s-csaeYr5w.zh-Hans.srv2"
+      ],
+      "missing_formats": [
+        "vtt",
+        "srt",
+        "ttml",
+        "srv3",
+        "srv1",
+        "json3"
+      ],
+      "download_error": "yt-dlp failed: Command '['/opt/hostedtoolcache/Python/3.12.16/x64/bin/yt-dlp', '--js-runtimes', 'deno', '--proxy', '[configured proxy]', '--no-warnings', '--skip-download', '--retries', '5', '--sleep-subtitles', '2', '--write-auto-subs', '--sub-langs', 'zh-Hant', '--sub-format', 'vtt', '-o', 'output/auto_1s-csaeYr5w/%(id)s.%(language)s.%(ext)s', 'https://www.youtube.com/watch?v=1s-csaeYr5w']' returned non-zero exit status 1."
+    }
+  },
+  "available_languages": [
+    "ar",
+    "de",
+    "en",
+    "en-orig",
+    "es",
+    "fr",
+    "hi",
+    "id",
+    "it",
+    "ja",
+    "ko",
+    "nl",
+    "pt",
+    "ru",
+    "th",
+    "uk",
+    "vi",
+    "zh-Hant"
+  ],
+  "required": [],
+  "missing": []
+}

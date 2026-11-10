@@ -12,133 +12,36 @@
     "fps": 23.976023976023978
   },
   "summary": {
-    "cues": 15,
-    "max_cps": 24.12,
-    "p95_cps": 22.06,
-    "mean_cps": 11.78,
-    "violations": 22,
-    "errors": 0,
-    "warnings": 22,
+    "cues": 16,
+    "max_cps": 27.4,
+    "p95_cps": 16.53,
+    "mean_cps": 9.47,
+    "violations": 9,
+    "errors": 1,
+    "warnings": 8,
     "by_code": {
-      "reading_speed": 7,
-      "duration_long": 1,
-      "gap_short": 14
+      "reading_speed": 1,
+      "gap_short": 8
     }
   },
   "issues": [
     {
       "code": "reading_speed",
-      "severity": "warning",
-      "cue": 1,
-      "start": 3.28,
-      "end": 5.32,
-      "message": "en line 2 reads at 23.0 CPS (limit 20)",
-      "measured": 23.04,
+      "severity": "error",
+      "cue": 12,
+      "start": 45.2,
+      "end": 47.28,
+      "message": "en line 2 reads at 27.4 CPS (limit 20)",
+      "measured": 27.4,
       "limit": 20.0,
-      "text": "I get the privilege of leading the world's most"
-    },
-    {
-      "code": "reading_speed",
-      "severity": "warning",
-      "cue": 3,
-      "start": 8.4,
-      "end": 10.44,
-      "message": "en line 2 reads at 22.1 CPS (limit 20)",
-      "measured": 22.06,
-      "limit": 20.0,
-      "text": "and discovery. We are going back to the moon."
-    },
-    {
-      "code": "reading_speed",
-      "severity": "warning",
-      "cue": 5,
-      "start": 13.76,
-      "end": 16.04,
-      "message": "en line 2 reads at 24.1 CPS (limit 20)",
-      "measured": 24.12,
-      "limit": 20.0,
-      "text": "We are so excited to represent America and the American"
-    },
-    {
-      "code": "reading_speed",
-      "severity": "warning",
-      "cue": 7,
-      "start": 19.68,
-      "end": 21.64,
-      "message": "en line 2 reads at 20.4 CPS (limit 20)",
-      "measured": 20.41,
-      "limit": 20.0,
-      "text": "partner for the exploration of the moon."
-    },
-    {
-      "code": "reading_speed",
-      "severity": "warning",
-      "cue": 8,
-      "start": 21.68,
-      "end": 24.28,
-      "message": "en line 2 reads at 21.9 CPS (limit 20)",
-      "measured": 21.92,
-      "limit": 20.0,
-      "text": "We're launching a bunch of different rockets from the SLS"
-    },
-    {
-      "code": "reading_speed",
-      "severity": "warning",
-      "cue": 10,
-      "start": 27.04,
-      "end": 29.8,
-      "message": "en line 2 reads at 20.7 CPS (limit 20)",
-      "measured": 20.65,
-      "limit": 20.0,
-      "text": "It's going to be fantastic. laying the groundwork for the"
-    },
-    {
-      "code": "reading_speed",
-      "severity": "warning",
-      "cue": 13,
-      "start": 34.96,
-      "end": 37.72,
-      "message": "en line 2 reads at 21.4 CPS (limit 20)",
-      "measured": 21.38,
-      "limit": 20.0,
-      "text": "in space and the Artemis program leading humans back to the"
-    },
-    {
-      "code": "duration_long",
-      "severity": "warning",
-      "cue": 14,
-      "start": 37.76,
-      "end": 45.8,
-      "message": "Cue lasts 8.040 s (maximum 7 s)",
-      "measured": 8.04,
-      "limit": 7.0
+      "text": "There could be no better place to [music] launch the next"
     },
     {
       "code": "gap_short",
       "severity": "warning",
       "cue": 0,
-      "start": 0.0,
-      "end": 3.24,
-      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
-      "measured": 0.04,
-      "limit": 0.083
-    },
-    {
-      "code": "gap_short",
-      "severity": "warning",
-      "cue": 1,
-      "start": 3.28,
-      "end": 5.32,
-      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
-      "measured": 0.04,
-      "limit": 0.083
-    },
-    {
-      "code": "gap_short",
-      "severity": "warning",
-      "cue": 2,
-      "start": 5.36,
-      "end": 8.36,
+      "start": 1.0,
+      "end": 5.36,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -147,28 +50,18 @@
       "code": "gap_short",
       "severity": "warning",
       "cue": 3,
-      "start": 8.4,
-      "end": 10.44,
-      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
-      "measured": 0.04,
+      "start": 13.3,
+      "end": 17.75,
+      "message": "Gap to the next cue is 50 ms (minimum 83 ms)",
+      "measured": 0.05,
       "limit": 0.083
     },
     {
       "code": "gap_short",
       "severity": "warning",
       "cue": 4,
-      "start": 10.48,
-      "end": 13.72,
-      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
-      "measured": 0.04,
-      "limit": 0.083
-    },
-    {
-      "code": "gap_short",
-      "severity": "warning",
-      "cue": 5,
-      "start": 13.76,
-      "end": 16.04,
+      "start": 17.8,
+      "end": 21.36,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -177,8 +70,8 @@
       "code": "gap_short",
       "severity": "warning",
       "cue": 6,
-      "start": 16.08,
-      "end": 19.64,
+      "start": 25.2,
+      "end": 28.66,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -187,28 +80,18 @@
       "code": "gap_short",
       "severity": "warning",
       "cue": 7,
-      "start": 19.68,
-      "end": 21.64,
-      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
-      "measured": 0.04,
+      "start": 28.7,
+      "end": 32.82,
+      "message": "Gap to the next cue is 80 ms (minimum 83 ms)",
+      "measured": 0.08,
       "limit": 0.083
     },
     {
       "code": "gap_short",
       "severity": "warning",
       "cue": 8,
-      "start": 21.68,
-      "end": 24.28,
-      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
-      "measured": 0.04,
-      "limit": 0.083
-    },
-    {
-      "code": "gap_short",
-      "severity": "warning",
-      "cue": 9,
-      "start": 24.32,
-      "end": 27.0,
+      "start": 32.9,
+      "end": 36.56,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -217,8 +100,8 @@
       "code": "gap_short",
       "severity": "warning",
       "cue": 10,
-      "start": 27.04,
-      "end": 29.8,
+      "start": 40.2,
+      "end": 42.96,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -227,28 +110,8 @@
       "code": "gap_short",
       "severity": "warning",
       "cue": 11,
-      "start": 29.84,
-      "end": 31.96,
-      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
-      "measured": 0.04,
-      "limit": 0.083
-    },
-    {
-      "code": "gap_short",
-      "severity": "warning",
-      "cue": 12,
-      "start": 32.0,
-      "end": 34.92,
-      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
-      "measured": 0.04,
-      "limit": 0.083
-    },
-    {
-      "code": "gap_short",
-      "severity": "warning",
-      "cue": 13,
-      "start": 34.96,
-      "end": 37.72,
+      "start": 43.0,
+      "end": 45.16,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -257,184 +120,130 @@
   "cues": [
     {
       "index": 0,
-      "start": 0.0,
-      "end": 3.24,
-      "duration": 3.24,
+      "start": 1.0,
+      "end": 5.36,
+      "duration": 4.36,
       "lines": [
         {
           "index": 0,
-          "text": "我叫贾里德·艾萨克曼我是NASA的管理员",
+          "text": "作為國家復興的象徵，今天我們聚集在曾經破敗不堪、",
           "language": "zh-Hans",
-          "characters": 17.5,
-          "cps": 5.4,
+          "characters": 24.0,
+          "cps": 5.5,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "My name is Jared Isaacman. I am the administrator of NASA.",
+          "text": "As a symbol of national renewal, today we gather by the",
           "language": "en",
-          "characters": 58.0,
-          "cps": 17.9,
+          "characters": 55.0,
+          "cps": 12.61,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 17.9
+      "max_cps": 12.61
     },
     {
       "index": 1,
-      "start": 3.28,
-      "end": 5.32,
-      "duration": 2.04,
+      "start": 5.4,
+      "end": 9.36,
+      "duration": 3.96,
       "lines": [
         {
           "index": 0,
-          "text": "我有幸领导世界最",
+          "text": "寂靜無聲的同一條跑道旁，",
           "language": "zh-Hans",
-          "characters": 8.0,
-          "cps": 3.92,
+          "characters": 12.0,
+          "cps": 3.03,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "I get the privilege of leading the world's most",
+          "text": "same runway that once stood cracked [music] and silent to",
           "language": "en",
-          "characters": 47.0,
-          "cps": 23.04,
+          "characters": 57.0,
+          "cps": 14.39,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 23.04
+      "max_cps": 14.39
     },
     {
       "index": 2,
-      "start": 5.36,
-      "end": 8.36,
-      "duration": 3.0,
+      "start": 9.5,
+      "end": 13.13,
+      "duration": 3.63,
       "lines": [
         {
           "index": 0,
-          "text": "科学黄金时代完成的空间机构",
+          "text": "宣布這裡很快",
           "language": "zh-Hans",
-          "characters": 13.0,
-          "cps": 4.33,
+          "characters": 6.0,
+          "cps": 1.65,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "accomplished space agency during the golden age of science",
+          "text": "announce that this very site will soon be the premiere venue",
           "language": "en",
-          "characters": 58.0,
-          "cps": 19.33,
+          "characters": 60.0,
+          "cps": 16.53,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 19.33
+      "max_cps": 16.53
     },
     {
       "index": 3,
-      "start": 8.4,
-      "end": 10.44,
-      "duration": 2.04,
+      "start": 13.3,
+      "end": 17.75,
+      "duration": 4.45,
       "lines": [
         {
           "index": 0,
-          "text": "和发现。我们要回月球了",
+          "text": "將成為川普政",
           "language": "zh-Hans",
-          "characters": 11.0,
-          "cps": 5.39,
+          "characters": 6.0,
+          "cps": 1.35,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "and discovery. We are going back to the moon.",
+          "text": "for the air and space demonstrations from",
           "language": "en",
-          "characters": 45.0,
-          "cps": 22.06,
+          "characters": 41.0,
+          "cps": 9.21,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 22.06
+      "max_cps": 9.21
     },
     {
       "index": 4,
-      "start": 10.48,
-      "end": 13.72,
-      "duration": 3.24,
-      "lines": [
-        {
-          "index": 0,
-          "text": "我们在这里与阿耳忒弥斯3。2027年发射.",
-          "language": "zh-Hans",
-          "characters": 18.0,
-          "cps": 5.56,
-          "limit_cps": 9.0,
-          "limit_chars": 28
-        },
-        {
-          "index": 1,
-          "text": "We're here with Artemis 3. They launch in 2027.",
-          "language": "en",
-          "characters": 47.0,
-          "cps": 14.51,
-          "limit_cps": 20.0,
-          "limit_chars": 60
-        }
-      ],
-      "max_cps": 14.51
-    },
-    {
-      "index": 5,
-      "start": 13.76,
-      "end": 16.04,
-      "duration": 2.28,
-      "lines": [
-        {
-          "index": 0,
-          "text": "我们很高兴代表美国和美国",
-          "language": "zh-Hans",
-          "characters": 12.0,
-          "cps": 5.26,
-          "limit_cps": 9.0,
-          "limit_chars": 28
-        },
-        {
-          "index": 1,
-          "text": "We are so excited to represent America and the American",
-          "language": "en",
-          "characters": 55.0,
-          "cps": 24.12,
-          "limit_cps": 20.0,
-          "limit_chars": 60
-        }
-      ],
-      "max_cps": 24.12
-    },
-    {
-      "index": 6,
-      "start": 16.08,
-      "end": 19.64,
+      "start": 17.8,
+      "end": 21.36,
       "duration": 3.56,
       "lines": [
         {
           "index": 0,
-          "text": "人类欧洲希望成为最强大最可靠的国家",
+          "text": "府領導下，世界各地航空航天演示的首要場地。",
           "language": "zh-Hans",
-          "characters": 17.0,
-          "cps": 4.78,
+          "characters": 21.0,
+          "cps": 5.9,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "people. Europe wants to be the strongest and most reliable",
+          "text": "all over the world under the Trump [music] administration.",
           "language": "en",
           "characters": 58.0,
           "cps": 16.29,
@@ -445,220 +254,301 @@
       "max_cps": 16.29
     },
     {
-      "index": 7,
-      "start": 19.68,
-      "end": 21.64,
-      "duration": 1.96,
+      "index": 5,
+      "start": 21.4,
+      "end": 25.09,
+      "duration": 3.69,
       "lines": [
         {
           "index": 0,
-          "text": "探索月球的合作伙伴",
+          "text": "我們的雄心壯志回來了，我們的勢頭回來",
           "language": "zh-Hans",
-          "characters": 9.0,
-          "cps": 4.59,
+          "characters": 18.0,
+          "cps": 4.88,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "partner for the exploration of the moon.",
+          "text": "Our ambition is back, our momentum is back, our leadership",
           "language": "en",
-          "characters": 40.0,
-          "cps": 20.41,
+          "characters": 58.0,
+          "cps": 15.72,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 20.41
+      "max_cps": 15.72
+    },
+    {
+      "index": 6,
+      "start": 25.2,
+      "end": 28.66,
+      "duration": 3.46,
+      "lines": [
+        {
+          "index": 0,
+          "text": "了，我們的領導力回來了，[音樂]美國宇航局回來了，最重",
+          "language": "zh-Hans",
+          "characters": 26.0,
+          "cps": 7.51,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "is back, [music] NASA is back, and above all, most",
+          "language": "en",
+          "characters": 50.0,
+          "cps": 14.45,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 14.45
+    },
+    {
+      "index": 7,
+      "start": 28.7,
+      "end": 32.82,
+      "duration": 4.12,
+      "lines": [
+        {
+          "index": 0,
+          "text": "要的是，美利堅合眾國回來了。",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 3.4,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "importantly, the United [music] States of America is back.",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 14.08,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 14.08
     },
     {
       "index": 8,
-      "start": 21.68,
-      "end": 24.28,
-      "duration": 2.6,
+      "start": 32.9,
+      "end": 36.56,
+      "duration": 3.66,
       "lines": [
         {
           "index": 0,
-          "text": "我们发射的火箭与SLS不同",
+          "text": "致所有為實現這一願景而努力​​的NASA團隊，",
           "language": "zh-Hans",
-          "characters": 11.5,
-          "cps": 4.42,
+          "characters": 20.0,
+          "cps": 5.46,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "We're launching a bunch of different rockets from the SLS",
+          "text": "To the entire team at NASA who have worked to make this",
           "language": "en",
-          "characters": 57.0,
-          "cps": 21.92,
+          "characters": 55.0,
+          "cps": 15.03,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 21.92
+      "max_cps": 15.03
     },
     {
       "index": 9,
-      "start": 24.32,
-      "end": 27.0,
-      "duration": 2.68,
+      "start": 36.6,
+      "end": 40.0,
+      "duration": 3.4,
       "lines": [
         {
           "index": 0,
-          "text": "前往\"星舰\"和\"蓝色起源\"火箭",
+          "text": "一個美麗、輝煌的現實",
           "language": "zh-Hans",
-          "characters": 13.0,
-          "cps": 4.85,
+          "characters": 10.0,
+          "cps": 2.94,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "to the Starship and to the Blue Origin rocket.",
+          "text": "vision a [music] real reality, a beautiful, a gorgeous",
           "language": "en",
-          "characters": 46.0,
-          "cps": 17.16,
+          "characters": 54.0,
+          "cps": 15.88,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 17.16
+      "max_cps": 15.88
     },
     {
       "index": 10,
-      "start": 27.04,
-      "end": 29.8,
+      "start": 40.2,
+      "end": 42.96,
       "duration": 2.76,
       "lines": [
         {
           "index": 0,
-          "text": "一定会很棒的为《公约》缔约方会议",
+          "text": "祝賀你們取得這一",
           "language": "zh-Hans",
-          "characters": 16.0,
-          "cps": 5.8,
+          "characters": 8.0,
+          "cps": 2.9,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "It's going to be fantastic. laying the groundwork for the",
+          "text": "reality, congratulations [music] on this",
           "language": "en",
-          "characters": 57.0,
-          "cps": 20.65,
+          "characters": 40.0,
+          "cps": 14.49,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 20.65
+      "max_cps": 14.49
     },
     {
       "index": 11,
-      "start": 29.84,
-      "end": 31.96,
-      "duration": 2.12,
+      "start": 43.0,
+      "end": 45.16,
+      "duration": 2.16,
       "lines": [
         {
           "index": 0,
-          "text": "下一个人类探索阶段",
+          "text": "歷史性成就。",
           "language": "zh-Hans",
-          "characters": 9.0,
-          "cps": 4.25,
+          "characters": 6.0,
+          "cps": 2.78,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "next phase of human exploration.",
+          "text": "historic achievement.",
           "language": "en",
-          "characters": 32.0,
-          "cps": 15.09,
+          "characters": 21.0,
+          "cps": 9.72,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 15.09
+      "max_cps": 9.72
     },
     {
       "index": 12,
-      "start": 32.0,
-      "end": 34.92,
-      "duration": 2.92,
+      "start": 45.2,
+      "end": 47.28,
+      "duration": 2.08,
       "lines": [
         {
           "index": 0,
-          "text": "我们明年启动的任务显示了美国的领导地位",
+          "text": "對於美國音樂而言",
           "language": "zh-Hans",
-          "characters": 19.0,
-          "cps": 6.51,
+          "characters": 8.0,
+          "cps": 3.85,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "Our mission to launch next year shows American leadership",
+          "text": "There could be no better place to [music] launch the next",
           "language": "en",
           "characters": 57.0,
-          "cps": 19.52,
+          "cps": 27.4,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 19.52
+      "max_cps": 27.4
     },
     {
       "index": 13,
-      "start": 34.96,
-      "end": 37.72,
-      "duration": 2.76,
+      "start": 47.4,
+      "end": 50.87,
+      "duration": 3.47,
       "lines": [
         {
           "index": 0,
-          "text": "和阿尔特米斯计划带领人类回到太空",
+          "text": "沒有比卡納維爾角和甘迺迪太空中心更",
           "language": "zh-Hans",
-          "characters": 16.0,
-          "cps": 5.8,
+          "characters": 17.0,
+          "cps": 4.9,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "in space and the Artemis program leading humans back to the",
+          "text": "generation of American breakthroughs than Cape Canaveral",
           "language": "en",
-          "characters": 59.0,
-          "cps": 21.38,
+          "characters": 56.0,
+          "cps": 16.14,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 21.38
+      "max_cps": 16.14
     },
     {
       "index": 14,
-      "start": 37.76,
-      "end": 45.8,
-      "duration": 8.04,
+      "start": 51.1,
+      "end": 54.25,
+      "duration": 3.15,
       "lines": [
         {
           "index": 0,
-          "text": "月亮和火星带领人类和美国在太空。",
+          "text": "適合開啟下一代美國音樂突破的地方了，美國的未來音樂",
           "language": "zh-Hans",
-          "characters": 16.0,
-          "cps": 1.99,
+          "characters": 25.0,
+          "cps": 7.94,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "moon and onto Mars to lead humanity and America in space.",
+          "text": "and the Kennedy Space Center where America's future [music]",
           "language": "en",
-          "characters": 57.0,
-          "cps": 7.09,
+          "characters": 59.0,
+          "cps": 18.73,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 7.09
+      "max_cps": 18.73
+    },
+    {
+      "index": 15,
+      "start": 54.5,
+      "end": 57.4,
+      "duration": 2.9,
+      "lines": [
+        {
+          "index": 0,
+          "text": "將在這裡起飛。",
+          "language": "zh-Hans",
+          "characters": 7.0,
+          "cps": 2.41,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "will take flight.",
+          "language": "en",
+          "characters": 17.0,
+          "cps": 5.86,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 5.86
     }
   ],
   "source": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",

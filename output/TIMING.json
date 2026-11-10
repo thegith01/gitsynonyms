@@ -1,1792 +1,1911 @@
 {
-  "generated_at": "2026-10-30T21:11:06Z",
+  "generated_at": "2026-11-10T18:06:58Z",
   "module": "module2a-subtitle-timing",
   "timebase": "nanosecond",
   "ass_resolution": "centisecond",
   "ass_timestamp_limit": "libass accepts exactly two fractional digits; three or more digits make the event disappear, so the ASS is quantized to 10 ms",
   "ass_max_quantization_error_ms": 5.0,
-  "video_id": "YZT8jsIJyQU",
-  "video": "/home/runner/work/gitsynonyms/gitsynonyms/work/YZT8jsIJyQU.source.mp4",
+  "video_id": "1s-csaeYr5w",
+  "video": "/home/runner/work/gitsynonyms/gitsynonyms/work/1s-csaeYr5w.source.mp4",
   "statistics": {
     "timebase": "nanosecond",
     "ass_resolution": "centisecond",
     "ass_max_quantization_error_ms": 5.0,
-    "measured_max_quantization_error_ms": 4.933333,
-    "measured_mean_quantization_error_ms": 1.080568,
-    "timestamps": 407,
-    "word_timings": 331,
+    "measured_max_quantization_error_ms": 5.0,
+    "measured_mean_quantization_error_ms": 0.825018,
+    "timestamps": 431,
+    "word_timings": 343,
     "source_resolution": [
-      "1 ms",
-      "10 ms"
+      "1 ms"
     ]
   },
   "tracks": {
     "zh-Hans": {
       "language": "zh-Hans",
       "timebase": "nanosecond",
-      "primary_format": "json3",
+      "primary_format": "srv2",
       "formats_used": [
-        "json3",
-        "vtt",
-        "ttml",
-        "srt"
+        "srv2"
       ],
       "source_resolution": {
-        "json3": "1 ms",
-        "vtt": "1 ms",
-        "ttml": "1 ms",
-        "srt": "10 ms"
+        "srv2": "1 ms"
       },
       "source_files": {
-        "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.zh-Hans.json3",
-        "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.zh-Hans.vtt",
-        "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.zh-Hans.ttml",
-        "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.zh-Hans.srt"
+        "srv2": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.zh-Hans.srv2"
       },
-      "cue_count": 16,
+      "cue_count": 19,
       "cues": [
         {
-          "start_ns": 0,
-          "end_ns": 3280000000,
-          "text": "我叫贾里德·艾萨克曼 我是NASA的管理员",
+          "start_ns": 1000000000,
+          "end_ns": 7200000000,
+          "text": "作為國家復興的象徵，今天",
+          "text_source": "srv2",
           "word_timings": [
             {
-              "text": "我",
-              "start_ns": 0,
-              "end_ns": 156190476,
+              "text": "作",
+              "start_ns": 1000000000,
+              "end_ns": 1258000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "叫",
-              "start_ns": 156190476,
-              "end_ns": 312380952,
+              "text": "為",
+              "start_ns": 1258000000,
+              "end_ns": 1516000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "贾",
-              "start_ns": 312380952,
-              "end_ns": 468571429,
+              "text": "國",
+              "start_ns": 1516000000,
+              "end_ns": 1774000000,
               "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "里",
-              "start_ns": 468571429,
-              "end_ns": 624761905,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "德",
-              "start_ns": 624761905,
-              "end_ns": 937142857,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "艾",
-              "start_ns": 937142857,
-              "end_ns": 1093333333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "萨",
-              "start_ns": 1093333333,
-              "end_ns": 1249523810,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "克",
-              "start_ns": 1249523810,
-              "end_ns": 1405714286,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "曼",
-              "start_ns": 1405714286,
-              "end_ns": 1718095238,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "我",
-              "start_ns": 1718095238,
-              "end_ns": 1874285714,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "是",
-              "start_ns": 1874285714,
-              "end_ns": 2655238095,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "的",
-              "start_ns": 2655238095,
-              "end_ns": 2811428571,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "管",
-              "start_ns": 2811428571,
-              "end_ns": 2967619048,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "理",
-              "start_ns": 2967619048,
-              "end_ns": 3123809524,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "员",
-              "start_ns": 3123809524,
-              "end_ns": 3280000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 3280000000,
-          "end_ns": 5359000000,
-          "text": "我有幸领导世界最",
-          "word_timings": [
-            {
-              "text": "我",
-              "start_ns": 3280000000,
-              "end_ns": 3539875000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "有",
-              "start_ns": 3539875000,
-              "end_ns": 3799750000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "幸",
-              "start_ns": 3799750000,
-              "end_ns": 4059625000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "领",
-              "start_ns": 4059625000,
-              "end_ns": 4319500000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "导",
-              "start_ns": 4319500000,
-              "end_ns": 4579375000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "世",
-              "start_ns": 4579375000,
-              "end_ns": 4839250000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "界",
-              "start_ns": 4839250000,
-              "end_ns": 5099125000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "最",
-              "start_ns": 5099125000,
-              "end_ns": 5359000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 5359000000,
-          "end_ns": 8400000000,
-          "text": "科学黄金时代完成的空间机构",
-          "word_timings": [
-            {
-              "text": "科",
-              "start_ns": 5359000000,
-              "end_ns": 5592923077,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "学",
-              "start_ns": 5592923077,
-              "end_ns": 5826846154,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "黄",
-              "start_ns": 5826846154,
-              "end_ns": 6060769231,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "金",
-              "start_ns": 6060769231,
-              "end_ns": 6294692308,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "时",
-              "start_ns": 6294692308,
-              "end_ns": 6528615385,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "代",
-              "start_ns": 6528615385,
-              "end_ns": 6762538462,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "完",
-              "start_ns": 6762538462,
-              "end_ns": 6996461538,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "成",
-              "start_ns": 6996461538,
-              "end_ns": 7230384615,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "的",
-              "start_ns": 7230384615,
-              "end_ns": 7464307692,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "空",
-              "start_ns": 7464307692,
-              "end_ns": 7698230769,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "间",
-              "start_ns": 7698230769,
-              "end_ns": 7932153846,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "机",
-              "start_ns": 7932153846,
-              "end_ns": 8166076923,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "构",
-              "start_ns": 8166076923,
-              "end_ns": 8400000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 8400000000,
-          "end_ns": 10480000000,
-          "text": "和发现。 我们要回月球了",
-          "word_timings": [
-            {
-              "text": "和",
-              "start_ns": 8400000000,
-              "end_ns": 8573333333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "发",
-              "start_ns": 8573333333,
-              "end_ns": 8746666667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "现",
-              "start_ns": 8746666667,
-              "end_ns": 9266666667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "我",
-              "start_ns": 9266666667,
-              "end_ns": 9440000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "们",
-              "start_ns": 9440000000,
-              "end_ns": 9613333333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "要",
-              "start_ns": 9613333333,
-              "end_ns": 9786666667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "回",
-              "start_ns": 9786666667,
-              "end_ns": 9960000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "月",
-              "start_ns": 9960000000,
-              "end_ns": 10133333333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "球",
-              "start_ns": 10133333333,
-              "end_ns": 10306666667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "了",
-              "start_ns": 10306666667,
-              "end_ns": 10480000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 10480000000,
-          "end_ns": 12080000000,
-          "text": "我们在这里与阿耳忒弥斯3。",
-          "word_timings": [
-            {
-              "text": "我",
-              "start_ns": 10480000000,
-              "end_ns": 10603076923,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "们",
-              "start_ns": 10603076923,
-              "end_ns": 10726153846,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "在",
-              "start_ns": 10726153846,
-              "end_ns": 10849230769,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "这",
-              "start_ns": 10849230769,
-              "end_ns": 10972307692,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "里",
-              "start_ns": 10972307692,
-              "end_ns": 11095384615,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "与",
-              "start_ns": 11095384615,
-              "end_ns": 11218461538,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "阿",
-              "start_ns": 11218461538,
-              "end_ns": 11341538462,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "耳",
-              "start_ns": 11341538462,
-              "end_ns": 11464615385,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "忒",
-              "start_ns": 11464615385,
-              "end_ns": 11587692308,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "弥",
-              "start_ns": 11587692308,
-              "end_ns": 11710769231,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "斯",
-              "start_ns": 11710769231,
-              "end_ns": 12080000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 12080000000,
-          "end_ns": 13759000000,
-          "text": "2027年发射.",
-          "word_timings": [
-            {
-              "text": "年",
-              "start_ns": 12919500000,
-              "end_ns": 13129375000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "发",
-              "start_ns": 13129375000,
-              "end_ns": 13339250000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "射",
-              "start_ns": 13339250000,
-              "end_ns": 13759000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 13759000000,
-          "end_ns": 16080000000,
-          "text": "我们很高兴代表美国和美国",
-          "word_timings": [
-            {
-              "text": "我",
-              "start_ns": 13759000000,
-              "end_ns": 13952416667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "们",
-              "start_ns": 13952416667,
-              "end_ns": 14145833333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "很",
-              "start_ns": 14145833333,
-              "end_ns": 14339250000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "高",
-              "start_ns": 14339250000,
-              "end_ns": 14532666667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "兴",
-              "start_ns": 14532666667,
-              "end_ns": 14726083333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "代",
-              "start_ns": 14726083333,
-              "end_ns": 14919500000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "表",
-              "start_ns": 14919500000,
-              "end_ns": 15112916667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "美",
-              "start_ns": 15112916667,
-              "end_ns": 15306333333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "国",
-              "start_ns": 15306333333,
-              "end_ns": 15499750000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "和",
-              "start_ns": 15499750000,
-              "end_ns": 15693166667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "美",
-              "start_ns": 15693166667,
-              "end_ns": 15886583333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "国",
-              "start_ns": 15886583333,
-              "end_ns": 16080000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 16080000000,
-          "end_ns": 19680000000,
-          "text": "人类 欧洲希望成为最强大最可靠的国家",
-          "word_timings": [
-            {
-              "text": "人",
-              "start_ns": 16080000000,
-              "end_ns": 16280000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "类",
-              "start_ns": 16280000000,
-              "end_ns": 16680000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "欧",
-              "start_ns": 16680000000,
-              "end_ns": 16880000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "洲",
-              "start_ns": 16880000000,
-              "end_ns": 17080000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "希",
-              "start_ns": 17080000000,
-              "end_ns": 17280000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "望",
-              "start_ns": 17280000000,
-              "end_ns": 17480000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "成",
-              "start_ns": 17480000000,
-              "end_ns": 17680000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "为",
-              "start_ns": 17680000000,
-              "end_ns": 17880000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "最",
-              "start_ns": 17880000000,
-              "end_ns": 18080000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "强",
-              "start_ns": 18080000000,
-              "end_ns": 18280000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "大",
-              "start_ns": 18280000000,
-              "end_ns": 18480000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "最",
-              "start_ns": 18480000000,
-              "end_ns": 18680000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "可",
-              "start_ns": 18680000000,
-              "end_ns": 18880000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "靠",
-              "start_ns": 18880000000,
-              "end_ns": 19080000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "的",
-              "start_ns": 19080000000,
-              "end_ns": 19280000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "国",
-              "start_ns": 19280000000,
-              "end_ns": 19480000000,
-              "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
               "text": "家",
-              "start_ns": 19480000000,
-              "end_ns": 19680000000,
+              "start_ns": 1774000000,
+              "end_ns": 2032000000,
               "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 19680000000,
-          "end_ns": 21680000000,
-          "text": "探索月球的合作伙伴",
-          "word_timings": [
-            {
-              "text": "探",
-              "start_ns": 19680000000,
-              "end_ns": 19902222222,
-              "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "索",
-              "start_ns": 19902222222,
-              "end_ns": 20124444444,
+              "text": "復",
+              "start_ns": 2032000000,
+              "end_ns": 2290000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "月",
-              "start_ns": 20124444444,
-              "end_ns": 20346666667,
+              "text": "興",
+              "start_ns": 2290000000,
+              "end_ns": 2548000000,
               "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "球",
-              "start_ns": 20346666667,
-              "end_ns": 20568888889,
-              "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
               "text": "的",
-              "start_ns": 20568888889,
-              "end_ns": 20791111111,
+              "start_ns": 2548000000,
+              "end_ns": 3064000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "合",
-              "start_ns": 20791111111,
-              "end_ns": 21013333333,
+              "text": "象",
+              "start_ns": 3064000000,
+              "end_ns": 3322000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "作",
-              "start_ns": 21013333333,
-              "end_ns": 21235555556,
+              "text": "徵",
+              "start_ns": 3322000000,
+              "end_ns": 4096000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "伙",
-              "start_ns": 21235555556,
-              "end_ns": 21457777778,
+              "text": "今",
+              "start_ns": 4096000000,
+              "end_ns": 5648000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "伴",
-              "start_ns": 21457777778,
-              "end_ns": 21680000000,
+              "text": "天",
+              "start_ns": 5648000000,
+              "end_ns": 7200000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             }
           ],
           "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
+            "srv2"
           ]
         },
         {
-          "start_ns": 21680000000,
-          "end_ns": 24320000000,
-          "text": "我们发射的火箭与SLS不同",
+          "start_ns": 4400000000,
+          "end_ns": 9400000000,
+          "text": "我們聚集在曾經破敗不堪、寂靜無聲的同一條跑道旁，",
+          "text_source": "srv2",
           "word_timings": [
             {
               "text": "我",
-              "start_ns": 21680000000,
-              "end_ns": 21883076923,
+              "start_ns": 4400000000,
+              "end_ns": 4500000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "们",
-              "start_ns": 21883076923,
-              "end_ns": 22086153846,
+              "text": "們",
+              "start_ns": 4500000000,
+              "end_ns": 4600000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "发",
-              "start_ns": 22086153846,
-              "end_ns": 22289230769,
+              "text": "聚",
+              "start_ns": 4600000000,
+              "end_ns": 4700000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "射",
-              "start_ns": 22289230769,
-              "end_ns": 22492307692,
+              "text": "集",
+              "start_ns": 4700000000,
+              "end_ns": 4800000000,
               "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "的",
-              "start_ns": 22492307692,
-              "end_ns": 22695384615,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "火",
-              "start_ns": 22695384615,
-              "end_ns": 22898461538,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "箭",
-              "start_ns": 22898461538,
-              "end_ns": 23101538462,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "与",
-              "start_ns": 23101538462,
-              "end_ns": 23913846154,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "不",
-              "start_ns": 23913846154,
-              "end_ns": 24116923077,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "同",
-              "start_ns": 24116923077,
-              "end_ns": 24320000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 24320000000,
-          "end_ns": 27039000000,
-          "text": "前往\"星舰\"和\"蓝色起源\"火箭",
-          "word_timings": [
-            {
-              "text": "前",
-              "start_ns": 24320000000,
-              "end_ns": 24501266667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "往",
-              "start_ns": 24501266667,
-              "end_ns": 24863800000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "星",
-              "start_ns": 24863800000,
-              "end_ns": 25045066667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "舰",
-              "start_ns": 25045066667,
-              "end_ns": 25407600000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "和",
-              "start_ns": 25407600000,
-              "end_ns": 25770133333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "蓝",
-              "start_ns": 25770133333,
-              "end_ns": 25951400000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "色",
-              "start_ns": 25951400000,
-              "end_ns": 26132666667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "起",
-              "start_ns": 26132666667,
-              "end_ns": 26313933333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "源",
-              "start_ns": 26313933333,
-              "end_ns": 26676466667,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "火",
-              "start_ns": 26676466667,
-              "end_ns": 26857733333,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "箭",
-              "start_ns": 26857733333,
-              "end_ns": 27039000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 27039000000,
-          "end_ns": 29840000000,
-          "text": "一定会很棒的 为《公约》缔约方会议",
-          "word_timings": [
-            {
-              "text": "一",
-              "start_ns": 27039000000,
-              "end_ns": 27203764706,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "定",
-              "start_ns": 27203764706,
-              "end_ns": 27368529412,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "会",
-              "start_ns": 27368529412,
-              "end_ns": 27533294118,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "很",
-              "start_ns": 27533294118,
-              "end_ns": 27698058824,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "棒",
-              "start_ns": 27698058824,
-              "end_ns": 27862823529,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "的",
-              "start_ns": 27862823529,
-              "end_ns": 28192352941,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "为",
-              "start_ns": 28192352941,
-              "end_ns": 28521882353,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "公",
-              "start_ns": 28521882353,
-              "end_ns": 28686647059,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "约",
-              "start_ns": 28686647059,
-              "end_ns": 29016176471,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "缔",
-              "start_ns": 29016176471,
-              "end_ns": 29180941176,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "约",
-              "start_ns": 29180941176,
-              "end_ns": 29345705882,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "方",
-              "start_ns": 29345705882,
-              "end_ns": 29510470588,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "会",
-              "start_ns": 29510470588,
-              "end_ns": 29675235294,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "议",
-              "start_ns": 29675235294,
-              "end_ns": 29840000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 29840000000,
-          "end_ns": 32000000000,
-          "text": "下一个人类探索阶段",
-          "word_timings": [
-            {
-              "text": "下",
-              "start_ns": 29840000000,
-              "end_ns": 30080000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "一",
-              "start_ns": 30080000000,
-              "end_ns": 30320000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "个",
-              "start_ns": 30320000000,
-              "end_ns": 30560000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "人",
-              "start_ns": 30560000000,
-              "end_ns": 30800000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "类",
-              "start_ns": 30800000000,
-              "end_ns": 31040000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "探",
-              "start_ns": 31040000000,
-              "end_ns": 31280000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "索",
-              "start_ns": 31280000000,
-              "end_ns": 31520000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "阶",
-              "start_ns": 31520000000,
-              "end_ns": 31760000000,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "段",
-              "start_ns": 31760000000,
-              "end_ns": 32000000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 32000000000,
-          "end_ns": 34960000000,
-          "text": "我们明年启动的任务显示了美国的领导地位",
-          "word_timings": [
-            {
-              "text": "我",
-              "start_ns": 32000000000,
-              "end_ns": 32155789474,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "们",
-              "start_ns": 32155789474,
-              "end_ns": 32311578947,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "明",
-              "start_ns": 32311578947,
-              "end_ns": 32467368421,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "年",
-              "start_ns": 32467368421,
-              "end_ns": 32623157895,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "启",
-              "start_ns": 32623157895,
-              "end_ns": 32778947368,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "动",
-              "start_ns": 32778947368,
-              "end_ns": 32934736842,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "的",
-              "start_ns": 32934736842,
-              "end_ns": 33090526316,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "任",
-              "start_ns": 33090526316,
-              "end_ns": 33246315789,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "务",
-              "start_ns": 33246315789,
-              "end_ns": 33402105263,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "显",
-              "start_ns": 33402105263,
-              "end_ns": 33557894737,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "示",
-              "start_ns": 33557894737,
-              "end_ns": 33713684211,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "了",
-              "start_ns": 33713684211,
-              "end_ns": 33869473684,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "美",
-              "start_ns": 33869473684,
-              "end_ns": 34025263158,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "国",
-              "start_ns": 34025263158,
-              "end_ns": 34181052632,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "的",
-              "start_ns": 34181052632,
-              "end_ns": 34336842105,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "领",
-              "start_ns": 34336842105,
-              "end_ns": 34492631579,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "导",
-              "start_ns": 34492631579,
-              "end_ns": 34648421053,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "地",
-              "start_ns": 34648421053,
-              "end_ns": 34804210526,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "位",
-              "start_ns": 34804210526,
-              "end_ns": 34960000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 34960000000,
-          "end_ns": 37760000000,
-          "text": "和阿尔特米斯计划 带领人类回到太空",
-          "word_timings": [
-            {
-              "text": "和",
-              "start_ns": 34960000000,
-              "end_ns": 35124705882,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "阿",
-              "start_ns": 35124705882,
-              "end_ns": 35289411765,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "尔",
-              "start_ns": 35289411765,
-              "end_ns": 35454117647,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "特",
-              "start_ns": 35454117647,
-              "end_ns": 35618823529,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "米",
-              "start_ns": 35618823529,
-              "end_ns": 35783529412,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "斯",
-              "start_ns": 35783529412,
-              "end_ns": 35948235294,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "计",
-              "start_ns": 35948235294,
-              "end_ns": 36112941176,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "划",
-              "start_ns": 36112941176,
-              "end_ns": 36442352941,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "带",
-              "start_ns": 36442352941,
-              "end_ns": 36607058824,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "领",
-              "start_ns": 36607058824,
-              "end_ns": 36771764706,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "人",
-              "start_ns": 36771764706,
-              "end_ns": 36936470588,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "类",
-              "start_ns": 36936470588,
-              "end_ns": 37101176471,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "回",
-              "start_ns": 37101176471,
-              "end_ns": 37265882353,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "到",
-              "start_ns": 37265882353,
-              "end_ns": 37430588235,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "太",
-              "start_ns": 37430588235,
-              "end_ns": 37595294118,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "空",
-              "start_ns": 37595294118,
-              "end_ns": 37760000000,
-              "sources": [
-                "json3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 37760000000,
-          "end_ns": 45800000000,
-          "text": "月亮和火星 带领人类和美国在太空。",
-          "word_timings": [
-            {
-              "text": "月",
-              "start_ns": 37760000000,
-              "end_ns": 38232941176,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "亮",
-              "start_ns": 38232941176,
-              "end_ns": 38705882353,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "和",
-              "start_ns": 38705882353,
-              "end_ns": 39178823529,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "火",
-              "start_ns": 39178823529,
-              "end_ns": 39651764706,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "星",
-              "start_ns": 39651764706,
-              "end_ns": 40597647059,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "带",
-              "start_ns": 40597647059,
-              "end_ns": 41070588235,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "领",
-              "start_ns": 41070588235,
-              "end_ns": 41543529412,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "人",
-              "start_ns": 41543529412,
-              "end_ns": 42016470588,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "类",
-              "start_ns": 42016470588,
-              "end_ns": 42489411765,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "和",
-              "start_ns": 42489411765,
-              "end_ns": 42962352941,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "美",
-              "start_ns": 42962352941,
-              "end_ns": 43435294118,
-              "sources": [
-                "json3"
-              ]
-            },
-            {
-              "text": "国",
-              "start_ns": 43435294118,
-              "end_ns": 43908235294,
-              "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
               "text": "在",
-              "start_ns": 43908235294,
-              "end_ns": 44381176471,
+              "start_ns": 4800000000,
+              "end_ns": 5000000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "太",
-              "start_ns": 44381176471,
-              "end_ns": 44854117647,
+              "text": "曾",
+              "start_ns": 5000000000,
+              "end_ns": 5100000000,
               "sources": [
-                "json3"
+                "srv2"
               ]
             },
             {
-              "text": "空",
-              "start_ns": 44854117647,
-              "end_ns": 45800000000,
+              "text": "經",
+              "start_ns": 5100000000,
+              "end_ns": 5200000000,
               "sources": [
-                "json3"
+                "srv2"
+              ]
+            },
+            {
+              "text": "破",
+              "start_ns": 5200000000,
+              "end_ns": 5250000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "敗",
+              "start_ns": 5250000000,
+              "end_ns": 5300000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "不",
+              "start_ns": 5300000000,
+              "end_ns": 5350000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "堪",
+              "start_ns": 5350000000,
+              "end_ns": 5600000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "寂",
+              "start_ns": 5600000000,
+              "end_ns": 5650000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "靜",
+              "start_ns": 5650000000,
+              "end_ns": 5700000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "無",
+              "start_ns": 5700000000,
+              "end_ns": 5750000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "聲",
+              "start_ns": 5750000000,
+              "end_ns": 5800000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 5800000000,
+              "end_ns": 6000000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "同",
+              "start_ns": 6000000000,
+              "end_ns": 6200000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "一",
+              "start_ns": 6200000000,
+              "end_ns": 6400000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "條",
+              "start_ns": 6400000000,
+              "end_ns": 6600000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "跑",
+              "start_ns": 6600000000,
+              "end_ns": 6700000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "道",
+              "start_ns": 6700000000,
+              "end_ns": 6800000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "旁",
+              "start_ns": 6800000000,
+              "end_ns": 9400000000,
+              "sources": [
+                "srv2"
               ]
             }
           ],
           "sources": [
-            "json3",
-            "vtt",
-            "ttml",
-            "srt"
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 9400000000,
+          "end_ns": 14600000000,
+          "text": "宣布這裡",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "宣",
+              "start_ns": 9400000000,
+              "end_ns": 10150000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "布",
+              "start_ns": 10150000000,
+              "end_ns": 10900000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "這",
+              "start_ns": 10900000000,
+              "end_ns": 12750000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "裡",
+              "start_ns": 12750000000,
+              "end_ns": 14600000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 11100000000,
+          "end_ns": 16000000000,
+          "text": "很快將成為",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "很",
+              "start_ns": 11100000000,
+              "end_ns": 12133000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "快",
+              "start_ns": 12133000000,
+              "end_ns": 13166000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "將",
+              "start_ns": 13166000000,
+              "end_ns": 14199000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "成",
+              "start_ns": 14199000000,
+              "end_ns": 15099500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "為",
+              "start_ns": 15099500000,
+              "end_ns": 16000000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 17600000000,
+          "end_ns": 21400000000,
+          "text": "川普政府領導下，世界各地航空航天演示的首要場地。",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "川",
+              "start_ns": 17600000000,
+              "end_ns": 17664000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "普",
+              "start_ns": 17664000000,
+              "end_ns": 17728000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "政",
+              "start_ns": 17728000000,
+              "end_ns": 17792000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "府",
+              "start_ns": 17792000000,
+              "end_ns": 17856000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "領",
+              "start_ns": 17856000000,
+              "end_ns": 17920000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "導",
+              "start_ns": 17920000000,
+              "end_ns": 17984000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "下",
+              "start_ns": 17984000000,
+              "end_ns": 18240000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "世",
+              "start_ns": 18240000000,
+              "end_ns": 18304000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "界",
+              "start_ns": 18304000000,
+              "end_ns": 18368000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "各",
+              "start_ns": 18368000000,
+              "end_ns": 18496000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "地",
+              "start_ns": 18496000000,
+              "end_ns": 18624000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "航",
+              "start_ns": 18624000000,
+              "end_ns": 18688000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "空",
+              "start_ns": 18688000000,
+              "end_ns": 18752000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "航",
+              "start_ns": 18752000000,
+              "end_ns": 18816000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "天",
+              "start_ns": 18816000000,
+              "end_ns": 18880000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "演",
+              "start_ns": 18880000000,
+              "end_ns": 18944000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "示",
+              "start_ns": 18944000000,
+              "end_ns": 19008000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 19008000000,
+              "end_ns": 19136000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "首",
+              "start_ns": 19136000000,
+              "end_ns": 19200000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "要",
+              "start_ns": 19200000000,
+              "end_ns": 19264000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "場",
+              "start_ns": 19264000000,
+              "end_ns": 19328000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "地",
+              "start_ns": 19328000000,
+              "end_ns": 21400000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 21400000000,
+          "end_ns": 26300000000,
+          "text": "我們的雄心壯志回來了，我們的勢頭",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "我",
+              "start_ns": 21400000000,
+              "end_ns": 21538500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "們",
+              "start_ns": 21538500000,
+              "end_ns": 21677000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 21677000000,
+              "end_ns": 21954000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "雄",
+              "start_ns": 21954000000,
+              "end_ns": 22092500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "心",
+              "start_ns": 22092500000,
+              "end_ns": 22231000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "壯",
+              "start_ns": 22231000000,
+              "end_ns": 22369500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "志",
+              "start_ns": 22369500000,
+              "end_ns": 22508000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "回",
+              "start_ns": 22508000000,
+              "end_ns": 22646500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "來",
+              "start_ns": 22646500000,
+              "end_ns": 22785000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "了",
+              "start_ns": 22785000000,
+              "end_ns": 23339000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "我",
+              "start_ns": 23339000000,
+              "end_ns": 23477500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "們",
+              "start_ns": 23477500000,
+              "end_ns": 23616000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 23616000000,
+              "end_ns": 23893000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "勢",
+              "start_ns": 23893000000,
+              "end_ns": 25096500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "頭",
+              "start_ns": 25096500000,
+              "end_ns": 26300000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 24100000000,
+          "end_ns": 28700000000,
+          "text": "回來了，我們的領導力回來了，[音樂]",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "回",
+              "start_ns": 24100000000,
+              "end_ns": 24172000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "來",
+              "start_ns": 24172000000,
+              "end_ns": 24244000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "了",
+              "start_ns": 24244000000,
+              "end_ns": 24532000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "我",
+              "start_ns": 24532000000,
+              "end_ns": 24604000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "們",
+              "start_ns": 24604000000,
+              "end_ns": 24676000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 24676000000,
+              "end_ns": 24820000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "領",
+              "start_ns": 24820000000,
+              "end_ns": 24868000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "導",
+              "start_ns": 24868000000,
+              "end_ns": 24916000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "力",
+              "start_ns": 24916000000,
+              "end_ns": 24964000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "回",
+              "start_ns": 24964000000,
+              "end_ns": 25036000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "來",
+              "start_ns": 25036000000,
+              "end_ns": 25108000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "了",
+              "start_ns": 25108000000,
+              "end_ns": 25396000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "音",
+              "start_ns": 25396000000,
+              "end_ns": 25468000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "樂",
+              "start_ns": 25468000000,
+              "end_ns": 28700000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 26300000000,
+          "end_ns": 31000000000,
+          "text": "美國宇航局回來了，最",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "美",
+              "start_ns": 26300000000,
+              "end_ns": 26520000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "國",
+              "start_ns": 26520000000,
+              "end_ns": 26740000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "宇",
+              "start_ns": 26740000000,
+              "end_ns": 26886666667,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "航",
+              "start_ns": 26886666667,
+              "end_ns": 27033333333,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "局",
+              "start_ns": 27033333333,
+              "end_ns": 27180000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "回",
+              "start_ns": 27180000000,
+              "end_ns": 27400000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "來",
+              "start_ns": 27400000000,
+              "end_ns": 27620000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "了",
+              "start_ns": 27620000000,
+              "end_ns": 28500000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "最",
+              "start_ns": 28500000000,
+              "end_ns": 31000000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 28700000000,
+          "end_ns": 34000000000,
+          "text": "重要的是，",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "重",
+              "start_ns": 28700000000,
+              "end_ns": 29000000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "要",
+              "start_ns": 29000000000,
+              "end_ns": 29300000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 29300000000,
+              "end_ns": 29900000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "是",
+              "start_ns": 29900000000,
+              "end_ns": 34000000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 31000000000,
+          "end_ns": 36600000000,
+          "text": "美利堅合眾國回來了。致所有為",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "美",
+              "start_ns": 31000000000,
+              "end_ns": 31185500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "利",
+              "start_ns": 31185500000,
+              "end_ns": 31371000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "堅",
+              "start_ns": 31371000000,
+              "end_ns": 31463750000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "合",
+              "start_ns": 31463750000,
+              "end_ns": 31556500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "眾",
+              "start_ns": 31556500000,
+              "end_ns": 31649250000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "國",
+              "start_ns": 31649250000,
+              "end_ns": 31742000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "回",
+              "start_ns": 31742000000,
+              "end_ns": 31927500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "來",
+              "start_ns": 31927500000,
+              "end_ns": 32113000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "了",
+              "start_ns": 32113000000,
+              "end_ns": 32855000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "致",
+              "start_ns": 32855000000,
+              "end_ns": 33226000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "所",
+              "start_ns": 33226000000,
+              "end_ns": 33411500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "有",
+              "start_ns": 33411500000,
+              "end_ns": 33597000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "為",
+              "start_ns": 33597000000,
+              "end_ns": 36600000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 34000000000,
+          "end_ns": 38500000000,
+          "text": "實現這一願景而努力​​的 NASA 團隊，",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "實",
+              "start_ns": 34000000000,
+              "end_ns": 34100000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "現",
+              "start_ns": 34100000000,
+              "end_ns": 34200000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "這",
+              "start_ns": 34200000000,
+              "end_ns": 34400000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "一",
+              "start_ns": 34400000000,
+              "end_ns": 34600000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "願",
+              "start_ns": 34600000000,
+              "end_ns": 34700000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "景",
+              "start_ns": 34700000000,
+              "end_ns": 34800000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "而",
+              "start_ns": 34800000000,
+              "end_ns": 35000000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "努",
+              "start_ns": 35000000000,
+              "end_ns": 35050000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "力",
+              "start_ns": 35050000000,
+              "end_ns": 35200000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 35200000000,
+              "end_ns": 35600000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "團",
+              "start_ns": 35600000000,
+              "end_ns": 35700000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "隊",
+              "start_ns": 35700000000,
+              "end_ns": 38500000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 36600000000,
+          "end_ns": 41000000000,
+          "text": "一個",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "一",
+              "start_ns": 36600000000,
+              "end_ns": 38400000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "個",
+              "start_ns": 38400000000,
+              "end_ns": 41000000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 38500000000,
+          "end_ns": 43900000000,
+          "text": "美麗、輝煌的現實，",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "美",
+              "start_ns": 38500000000,
+              "end_ns": 38670000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "麗",
+              "start_ns": 38670000000,
+              "end_ns": 39180000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "輝",
+              "start_ns": 39180000000,
+              "end_ns": 39350000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "煌",
+              "start_ns": 39350000000,
+              "end_ns": 39520000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 39520000000,
+              "end_ns": 39860000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "現",
+              "start_ns": 39860000000,
+              "end_ns": 40030000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "實",
+              "start_ns": 40030000000,
+              "end_ns": 43900000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 41000000000,
+          "end_ns": 45200000000,
+          "text": "祝賀你們取得這一歷史性",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "祝",
+              "start_ns": 41000000000,
+              "end_ns": 41200000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "賀",
+              "start_ns": 41200000000,
+              "end_ns": 41400000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "你",
+              "start_ns": 41400000000,
+              "end_ns": 41600000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "們",
+              "start_ns": 41600000000,
+              "end_ns": 41800000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "取",
+              "start_ns": 41800000000,
+              "end_ns": 42000000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "得",
+              "start_ns": 42000000000,
+              "end_ns": 42200000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "這",
+              "start_ns": 42200000000,
+              "end_ns": 42600000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "一",
+              "start_ns": 42600000000,
+              "end_ns": 43000000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "歷",
+              "start_ns": 43000000000,
+              "end_ns": 43733333333,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "史",
+              "start_ns": 43733333333,
+              "end_ns": 44466666667,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "性",
+              "start_ns": 44466666667,
+              "end_ns": 45200000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 43900000000,
+          "end_ns": 46520000000,
+          "text": "成就。 對於美國",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "成",
+              "start_ns": 43900000000,
+              "end_ns": 44191111111,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "就",
+              "start_ns": 44191111111,
+              "end_ns": 45355555556,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "對",
+              "start_ns": 45355555556,
+              "end_ns": 45646666667,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "於",
+              "start_ns": 45646666667,
+              "end_ns": 45937777778,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "美",
+              "start_ns": 45937777778,
+              "end_ns": 46228888889,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "國",
+              "start_ns": 46228888889,
+              "end_ns": 46520000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 46520000000,
+          "end_ns": 50100000000,
+          "text": "音樂而言，沒有",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "音",
+              "start_ns": 46520000000,
+              "end_ns": 46783000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "樂",
+              "start_ns": 46783000000,
+              "end_ns": 47046000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "而",
+              "start_ns": 47046000000,
+              "end_ns": 47309000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "言",
+              "start_ns": 47309000000,
+              "end_ns": 48098000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "沒",
+              "start_ns": 48098000000,
+              "end_ns": 49099000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "有",
+              "start_ns": 49099000000,
+              "end_ns": 50100000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 50100000000,
+          "end_ns": 54500000000,
+          "text": "比卡納維爾角和甘迺迪太空中心更適合開啟下一代美國音樂突破的地方了，",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "比",
+              "start_ns": 50100000000,
+              "end_ns": 50216000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "卡",
+              "start_ns": 50216000000,
+              "end_ns": 50239200000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "納",
+              "start_ns": 50239200000,
+              "end_ns": 50262400000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "維",
+              "start_ns": 50262400000,
+              "end_ns": 50285600000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "爾",
+              "start_ns": 50285600000,
+              "end_ns": 50308800000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "角",
+              "start_ns": 50308800000,
+              "end_ns": 50332000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "和",
+              "start_ns": 50332000000,
+              "end_ns": 50448000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "甘",
+              "start_ns": 50448000000,
+              "end_ns": 50486666667,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "迺",
+              "start_ns": 50486666667,
+              "end_ns": 50525333333,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "迪",
+              "start_ns": 50525333333,
+              "end_ns": 50564000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "太",
+              "start_ns": 50564000000,
+              "end_ns": 50622000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "空",
+              "start_ns": 50622000000,
+              "end_ns": 50680000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "中",
+              "start_ns": 50680000000,
+              "end_ns": 50738000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "心",
+              "start_ns": 50738000000,
+              "end_ns": 50796000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "更",
+              "start_ns": 50796000000,
+              "end_ns": 50912000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "適",
+              "start_ns": 50912000000,
+              "end_ns": 50970000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "合",
+              "start_ns": 50970000000,
+              "end_ns": 51028000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "開",
+              "start_ns": 51028000000,
+              "end_ns": 51086000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "啟",
+              "start_ns": 51086000000,
+              "end_ns": 51144000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "下",
+              "start_ns": 51144000000,
+              "end_ns": 51260000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "一",
+              "start_ns": 51260000000,
+              "end_ns": 51376000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "代",
+              "start_ns": 51376000000,
+              "end_ns": 51492000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "美",
+              "start_ns": 51492000000,
+              "end_ns": 51550000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "國",
+              "start_ns": 51550000000,
+              "end_ns": 51608000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "音",
+              "start_ns": 51608000000,
+              "end_ns": 51666000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "樂",
+              "start_ns": 51666000000,
+              "end_ns": 51724000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "突",
+              "start_ns": 51724000000,
+              "end_ns": 51782000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "破",
+              "start_ns": 51782000000,
+              "end_ns": 51840000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 51840000000,
+              "end_ns": 51956000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "地",
+              "start_ns": 51956000000,
+              "end_ns": 52014000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "方",
+              "start_ns": 52014000000,
+              "end_ns": 52072000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "了",
+              "start_ns": 52072000000,
+              "end_ns": 54500000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 52500000000,
+          "end_ns": 57400000000,
+          "text": "美國的未來音樂",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "美",
+              "start_ns": 52500000000,
+              "end_ns": 52701500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "國",
+              "start_ns": 52701500000,
+              "end_ns": 52903000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "的",
+              "start_ns": 52903000000,
+              "end_ns": 53306000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "未",
+              "start_ns": 53306000000,
+              "end_ns": 53507500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "來",
+              "start_ns": 53507500000,
+              "end_ns": 53709000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "音",
+              "start_ns": 53709000000,
+              "end_ns": 55554500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "樂",
+              "start_ns": 55554500000,
+              "end_ns": 57400000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
+          ]
+        },
+        {
+          "start_ns": 54500000000,
+          "end_ns": 57400000000,
+          "text": "將在這裡起飛。",
+          "text_source": "srv2",
+          "word_timings": [
+            {
+              "text": "將",
+              "start_ns": 54500000000,
+              "end_ns": 54625000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "在",
+              "start_ns": 54625000000,
+              "end_ns": 54750000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "這",
+              "start_ns": 54750000000,
+              "end_ns": 54812500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "裡",
+              "start_ns": 54812500000,
+              "end_ns": 54875000000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "起",
+              "start_ns": 54875000000,
+              "end_ns": 54937500000,
+              "sources": [
+                "srv2"
+              ]
+            },
+            {
+              "text": "飛",
+              "start_ns": 54937500000,
+              "end_ns": 57400000000,
+              "sources": [
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "srv2"
           ]
         }
       ],
@@ -1798,2102 +1917,1638 @@
       "primary_format": "json3",
       "formats_used": [
         "json3",
-        "srv3",
         "srv2",
         "srv1",
-        "vtt",
-        "ttml",
-        "srt"
+        "vtt"
       ],
       "source_resolution": {
         "json3": "1 ms",
-        "srv3": "1 ms",
         "srv2": "1 ms",
         "srv1": "1 ms",
-        "vtt": "1 ms",
-        "ttml": "1 ms",
-        "srt": "10 ms"
+        "vtt": "1 ms"
       },
       "source_files": {
-        "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.en.en-orig.json3",
-        "srv3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.en.en-orig.srv3",
-        "srv2": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.en.en-orig.srv2",
-        "srv1": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.en.en-orig.srv1",
-        "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.en.en-orig.vtt",
-        "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.en.en-orig.ttml",
-        "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_YZT8jsIJyQU/YZT8jsIJyQU.en.en-orig.srt"
+        "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.json3",
+        "srv2": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.srv2",
+        "srv1": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.srv1",
+        "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.vtt"
       },
-      "cue_count": 22,
+      "cue_count": 25,
       "cues": [
         {
-          "start_ns": 0,
-          "end_ns": 3760000000,
-          "text": "My name is Jared Isaacman. I am the",
-          "word_timings": [
-            {
-              "text": "My",
-              "start_ns": 0,
-              "end_ns": 240000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3",
-                "vtt"
-              ]
-            },
-            {
-              "text": "name",
-              "start_ns": 240000000,
-              "end_ns": 320000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3",
-                "vtt"
-              ]
-            },
-            {
-              "text": "is",
-              "start_ns": 320000000,
-              "end_ns": 400000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3",
-                "vtt"
-              ]
-            },
-            {
-              "text": "Jared",
-              "start_ns": 400000000,
-              "end_ns": 719000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3",
-                "vtt"
-              ]
-            },
-            {
-              "text": "Isaacman",
-              "start_ns": 719000000,
-              "end_ns": 1280000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3",
-                "vtt"
-              ]
-            },
-            {
-              "text": "I",
-              "start_ns": 1280000000,
-              "end_ns": 1439000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3",
-                "vtt"
-              ]
-            },
-            {
-              "text": "am",
-              "start_ns": 1439000000,
-              "end_ns": 1600000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3",
-                "vtt"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 1600000000,
-              "end_ns": 3760000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3",
-                "vtt"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 1760000000,
-          "end_ns": 5359000000,
-          "text": "administrator of NASA. I get the",
-          "word_timings": [
-            {
-              "text": "administrator",
-              "start_ns": 1760000000,
-              "end_ns": 2560000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "of",
-              "start_ns": 2560000000,
-              "end_ns": 2800000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "NASA",
-              "start_ns": 2800000000,
-              "end_ns": 3280000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "I",
-              "start_ns": 3280000000,
-              "end_ns": 3439000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "get",
-              "start_ns": 3439000000,
-              "end_ns": 3600000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 3600000000,
-              "end_ns": 5359000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 3760000000,
+          "start_ns": 1000000000,
           "end_ns": 7200000000,
-          "text": "privilege of leading the world's most",
+          "text": "As a symbol of national renewal, today",
+          "text_source": "json3",
           "word_timings": [
             {
-              "text": "privilege",
-              "start_ns": 3760000000,
-              "end_ns": 4080000000,
+              "text": "As",
+              "start_ns": 1000000000,
+              "end_ns": 1200000000,
               "sources": [
                 "json3",
                 "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "of",
-              "start_ns": 4080000000,
-              "end_ns": 4240000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "leading",
-              "start_ns": 4240000000,
-              "end_ns": 4560000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 4560000000,
-              "end_ns": 4720000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "world's",
-              "start_ns": 4720000000,
-              "end_ns": 5040000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "most",
-              "start_ns": 5040000000,
-              "end_ns": 7200000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 5359000000,
-          "end_ns": 9360000000,
-          "text": "accomplished space agency during the",
-          "word_timings": [
-            {
-              "text": "accomplished",
-              "start_ns": 5359000000,
-              "end_ns": 5920000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "space",
-              "start_ns": 5920000000,
-              "end_ns": 6240000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "agency",
-              "start_ns": 6240000000,
-              "end_ns": 6720000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "during",
-              "start_ns": 6720000000,
-              "end_ns": 6960000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 6960000000,
-              "end_ns": 9360000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 7200000000,
-          "end_ns": 10880000000,
-          "text": "golden age of science and discovery. We",
-          "word_timings": [
-            {
-              "text": "golden",
-              "start_ns": 7200000000,
-              "end_ns": 7600000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "age",
-              "start_ns": 7600000000,
-              "end_ns": 7839000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "of",
-              "start_ns": 7839000000,
-              "end_ns": 8080000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "science",
-              "start_ns": 8080000000,
-              "end_ns": 8400000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "and",
-              "start_ns": 8400000000,
-              "end_ns": 8559000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "discovery",
-              "start_ns": 8559000000,
-              "end_ns": 9120000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "We",
-              "start_ns": 9120000000,
-              "end_ns": 10880000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 9360000000,
-          "end_ns": 13759000000,
-          "text": "are going back to the moon. We're here",
-          "word_timings": [
-            {
-              "text": "are",
-              "start_ns": 9360000000,
-              "end_ns": 9519000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "going",
-              "start_ns": 9519000000,
-              "end_ns": 9760000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "back",
-              "start_ns": 9760000000,
-              "end_ns": 10000000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "to",
-              "start_ns": 10000000000,
-              "end_ns": 10160000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 10160000000,
-              "end_ns": 10240000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "moon",
-              "start_ns": 10240000000,
-              "end_ns": 10480000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "We're",
-              "start_ns": 10480000000,
-              "end_ns": 10719000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "here",
-              "start_ns": 10719000000,
-              "end_ns": 13759000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 10880000000,
-          "end_ns": 15440000000,
-          "text": "with Artemis 3. They launch in 2027.",
-          "word_timings": [
-            {
-              "text": "with",
-              "start_ns": 10880000000,
-              "end_ns": 11040000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "Artemis",
-              "start_ns": 11040000000,
-              "end_ns": 11599000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "3",
-              "start_ns": 11599000000,
-              "end_ns": 12080000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "They",
-              "start_ns": 12080000000,
-              "end_ns": 12320000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "launch",
-              "start_ns": 12320000000,
-              "end_ns": 12559000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "in",
-              "start_ns": 12559000000,
-              "end_ns": 12800000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "2027",
-              "start_ns": 12800000000,
-              "end_ns": 15440000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 13759000000,
-          "end_ns": 16560000000,
-          "text": ">> We are so excited to represent America",
-          "word_timings": [
-            {
-              "text": "We",
-              "start_ns": 13759000000,
-              "end_ns": 13920000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "are",
-              "start_ns": 13920000000,
-              "end_ns": 14080000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "so",
-              "start_ns": 14080000000,
-              "end_ns": 14240000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "excited",
-              "start_ns": 14240000000,
-              "end_ns": 14480000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "to",
-              "start_ns": 14480000000,
-              "end_ns": 14639000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "represent",
-              "start_ns": 14639000000,
-              "end_ns": 15120000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "America",
-              "start_ns": 15120000000,
-              "end_ns": 16560000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 15440000000,
-          "end_ns": 18880000000,
-          "text": "and the American people.",
-          "word_timings": [
-            {
-              "text": "and",
-              "start_ns": 15440000000,
-              "end_ns": 15599000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 15599000000,
-              "end_ns": 15759000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "American",
-              "start_ns": 15759000000,
-              "end_ns": 16080000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "people",
-              "start_ns": 16080000000,
-              "end_ns": 18880000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 16560000000,
-          "end_ns": 20560000000,
-          "text": ">> Europe wants to be the strongest and",
-          "word_timings": [
-            {
-              "text": "Europe",
-              "start_ns": 16560000000,
-              "end_ns": 16960000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "wants",
-              "start_ns": 16960000000,
-              "end_ns": 17279000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "to",
-              "start_ns": 17279000000,
-              "end_ns": 17440000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "be",
-              "start_ns": 17440000000,
-              "end_ns": 18080000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 18080000000,
-              "end_ns": 18320000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "strongest",
-              "start_ns": 18320000000,
-              "end_ns": 18720000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "and",
-              "start_ns": 18720000000,
-              "end_ns": 20560000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 18880000000,
-          "end_ns": 21680000000,
-          "text": "most reliable partner for the",
-          "word_timings": [
-            {
-              "text": "most",
-              "start_ns": 18880000000,
-              "end_ns": 19119000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "reliable",
-              "start_ns": 19119000000,
-              "end_ns": 19680000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "partner",
-              "start_ns": 19680000000,
-              "end_ns": 20160000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "for",
-              "start_ns": 20160000000,
-              "end_ns": 20480000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 20480000000,
-              "end_ns": 21680000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 20560000000,
-          "end_ns": 22720000000,
-          "text": "exploration of the moon.",
-          "word_timings": [
-            {
-              "text": "exploration",
-              "start_ns": 20560000000,
-              "end_ns": 21039000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "of",
-              "start_ns": 21039000000,
-              "end_ns": 21199000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 21199000000,
-              "end_ns": 21279000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "moon",
-              "start_ns": 21279000000,
-              "end_ns": 22720000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 21680000000,
-          "end_ns": 25600000000,
-          "text": ">> We're launching a bunch of different",
-          "word_timings": [
-            {
-              "text": "We're",
-              "start_ns": 21680000000,
-              "end_ns": 21840000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "launching",
-              "start_ns": 21840000000,
-              "end_ns": 22080000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
+                "vtt"
               ]
             },
             {
               "text": "a",
-              "start_ns": 22080000000,
-              "end_ns": 22240000000,
+              "start_ns": 1200000000,
+              "end_ns": 1300000000,
               "sources": [
                 "json3",
                 "srv2",
-                "srv3"
+                "vtt"
               ]
             },
             {
-              "text": "bunch",
-              "start_ns": 22240000000,
-              "end_ns": 22400000000,
+              "text": "symbol",
+              "start_ns": 1300000000,
+              "end_ns": 2100000000,
               "sources": [
                 "json3",
                 "srv2",
-                "srv3"
+                "vtt"
               ]
             },
             {
               "text": "of",
-              "start_ns": 22400000000,
-              "end_ns": 22480000000,
+              "start_ns": 2100000000,
+              "end_ns": 2400000000,
               "sources": [
                 "json3",
                 "srv2",
-                "srv3"
+                "vtt"
               ]
             },
             {
-              "text": "different",
-              "start_ns": 22480000000,
-              "end_ns": 25600000000,
+              "text": "national",
+              "start_ns": 2400000000,
+              "end_ns": 3200000000,
               "sources": [
                 "json3",
                 "srv2",
-                "srv3"
+                "vtt"
+              ]
+            },
+            {
+              "text": "renewal",
+              "start_ns": 3200000000,
+              "end_ns": 4100000000,
+              "sources": [
+                "json3",
+                "srv2",
+                "vtt"
+              ]
+            },
+            {
+              "text": "today",
+              "start_ns": 4100000000,
+              "end_ns": 7200000000,
+              "sources": [
+                "json3",
+                "srv2",
+                "vtt"
               ]
             }
           ],
           "sources": [
             "json3",
-            "srv3",
             "srv2",
             "srv1",
-            "vtt",
-            "ttml",
-            "srt"
+            "vtt"
           ]
         },
         {
-          "start_ns": 22720000000,
-          "end_ns": 27359000000,
-          "text": "rockets from the SLS to the Starship and",
+          "start_ns": 4400000000,
+          "end_ns": 9400000000,
+          "text": "we gather by the same runway that once",
+          "text_source": "json3",
           "word_timings": [
             {
-              "text": "rockets",
-              "start_ns": 22720000000,
-              "end_ns": 23359000000,
+              "text": "we",
+              "start_ns": 4400000000,
+              "end_ns": 4600000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "from",
-              "start_ns": 23359000000,
-              "end_ns": 23600000000,
+              "text": "gather",
+              "start_ns": 4600000000,
+              "end_ns": 5200000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "the",
-              "start_ns": 23600000000,
-              "end_ns": 23760000000,
+              "text": "by",
+              "start_ns": 5200000000,
+              "end_ns": 5300000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "SLS",
-              "start_ns": 23760000000,
-              "end_ns": 24320000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "to",
-              "start_ns": 24320000000,
-              "end_ns": 24560000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
               "text": "the",
-              "start_ns": 24560000000,
-              "end_ns": 24720000000,
+              "start_ns": 5300000000,
+              "end_ns": 5400000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "Starship",
-              "start_ns": 24720000000,
-              "end_ns": 25439000000,
+              "text": "same",
+              "start_ns": 5400000000,
+              "end_ns": 6200000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
+              ]
+            },
+            {
+              "text": "runway",
+              "start_ns": 6200000000,
+              "end_ns": 6800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "that",
+              "start_ns": 6800000000,
+              "end_ns": 7000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "once",
+              "start_ns": 7000000000,
+              "end_ns": 9400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 7200000000,
+          "end_ns": 11100000000,
+          "text": "stood cracked [music] and silent",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "stood",
+              "start_ns": 7200000000,
+              "end_ns": 7500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "cracked",
+              "start_ns": 7500000000,
+              "end_ns": 7860000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "music",
+              "start_ns": 7860000000,
+              "end_ns": 8100000000,
+              "sources": [
+                "json3",
+                "srv2"
               ]
             },
             {
               "text": "and",
-              "start_ns": 25439000000,
-              "end_ns": 27359000000,
+              "start_ns": 8100000000,
+              "end_ns": 8300000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
+              ]
+            },
+            {
+              "text": "silent",
+              "start_ns": 8300000000,
+              "end_ns": 11100000000,
+              "sources": [
+                "json3",
+                "srv2"
               ]
             }
           ],
           "sources": [
             "json3",
-            "srv3",
             "srv2",
             "srv1",
-            "vtt",
-            "ttml",
-            "srt"
+            "vtt"
           ]
         },
         {
-          "start_ns": 25600000000,
-          "end_ns": 29599000000,
-          "text": "to the Blue Origin rocket. It's going to",
+          "start_ns": 9400000000,
+          "end_ns": 14600000000,
+          "text": "to announce that this very site will",
+          "text_source": "json3",
           "word_timings": [
             {
               "text": "to",
-              "start_ns": 25600000000,
-              "end_ns": 25760000000,
+              "start_ns": 9400000000,
+              "end_ns": 9500000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "the",
-              "start_ns": 25760000000,
-              "end_ns": 26000000000,
+              "text": "announce",
+              "start_ns": 9500000000,
+              "end_ns": 10000000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "Blue",
-              "start_ns": 26000000000,
-              "end_ns": 26240000000,
+              "text": "that",
+              "start_ns": 10000000000,
+              "end_ns": 10100000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "Origin",
-              "start_ns": 26240000000,
-              "end_ns": 26640000000,
+              "text": "this",
+              "start_ns": 10100000000,
+              "end_ns": 10300000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "rocket",
-              "start_ns": 26640000000,
-              "end_ns": 27039000000,
+              "text": "very",
+              "start_ns": 10300000000,
+              "end_ns": 10500000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "It's",
-              "start_ns": 27039000000,
-              "end_ns": 27199000000,
+              "text": "site",
+              "start_ns": 10500000000,
+              "end_ns": 10900000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "going",
-              "start_ns": 27199000000,
-              "end_ns": 27279000000,
+              "text": "will",
+              "start_ns": 10900000000,
+              "end_ns": 14600000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "to",
-              "start_ns": 27279000000,
-              "end_ns": 29599000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             }
           ],
           "sources": [
             "json3",
-            "srv3",
             "srv2",
             "srv1",
-            "vtt",
-            "ttml",
-            "srt"
+            "vtt"
           ]
         },
         {
-          "start_ns": 27359000000,
-          "end_ns": 32000000000,
-          "text": "be fantastic. laying the groundwork for",
+          "start_ns": 11100000000,
+          "end_ns": 16000000000,
+          "text": "soon be the premiere venue for the air",
+          "text_source": "json3",
           "word_timings": [
+            {
+              "text": "soon",
+              "start_ns": 11100000000,
+              "end_ns": 11600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
             {
               "text": "be",
-              "start_ns": 27359000000,
-              "end_ns": 27519000000,
+              "start_ns": 11600000000,
+              "end_ns": 12000000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "fantastic",
-              "start_ns": 27519000000,
-              "end_ns": 28400000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "laying",
-              "start_ns": 28400000000,
-              "end_ns": 28560000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
               "text": "the",
-              "start_ns": 28560000000,
-              "end_ns": 28800000000,
+              "start_ns": 12000000000,
+              "end_ns": 12300000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "groundwork",
-              "start_ns": 28800000000,
-              "end_ns": 29199000000,
+              "text": "premiere",
+              "start_ns": 12300000000,
+              "end_ns": 12700000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
+              ]
+            },
+            {
+              "text": "venue",
+              "start_ns": 12700000000,
+              "end_ns": 13300000000,
+              "sources": [
+                "json3",
+                "srv2"
               ]
             },
             {
               "text": "for",
-              "start_ns": 29199000000,
-              "end_ns": 32000000000,
+              "start_ns": 13300000000,
+              "end_ns": 13500000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 29599000000,
-          "end_ns": 34239000000,
-          "text": "the next phase of human exploration.",
-          "word_timings": [
+            },
             {
               "text": "the",
-              "start_ns": 29599000000,
-              "end_ns": 29840000000,
+              "start_ns": 13500000000,
+              "end_ns": 14200000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "next",
-              "start_ns": 29840000000,
-              "end_ns": 30080000000,
+              "text": "air",
+              "start_ns": 14200000000,
+              "end_ns": 16000000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "phase",
-              "start_ns": 30080000000,
-              "end_ns": 30480000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "of",
-              "start_ns": 30480000000,
-              "end_ns": 30880000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "human",
-              "start_ns": 30880000000,
-              "end_ns": 31199000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "exploration",
-              "start_ns": 31199000000,
-              "end_ns": 34239000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             }
           ],
           "sources": [
             "json3",
-            "srv3",
             "srv2",
             "srv1",
-            "vtt",
-            "ttml",
-            "srt"
+            "vtt"
           ]
         },
         {
-          "start_ns": 32000000000,
-          "end_ns": 36000000000,
-          "text": ">> Our mission to launch next year shows",
+          "start_ns": 14600000000,
+          "end_ns": 17600000000,
+          "text": "and space",
+          "text_source": "json3",
           "word_timings": [
             {
-              "text": "Our",
-              "start_ns": 32000000000,
-              "end_ns": 32239000000,
+              "text": "and",
+              "start_ns": 14600000000,
+              "end_ns": 14700000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "mission",
-              "start_ns": 32239000000,
-              "end_ns": 32559000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "to",
-              "start_ns": 32559000000,
-              "end_ns": 32800000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "launch",
-              "start_ns": 32800000000,
-              "end_ns": 33120000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "next",
-              "start_ns": 33120000000,
-              "end_ns": 33360000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "year",
-              "start_ns": 33360000000,
-              "end_ns": 33920000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "shows",
-              "start_ns": 33920000000,
-              "end_ns": 36000000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            }
-          ],
-          "sources": [
-            "json3",
-            "srv3",
-            "srv2",
-            "srv1",
-            "vtt",
-            "ttml",
-            "srt"
-          ]
-        },
-        {
-          "start_ns": 34239000000,
-          "end_ns": 37600000000,
-          "text": "American leadership in space and the",
-          "word_timings": [
-            {
-              "text": "American",
-              "start_ns": 34239000000,
-              "end_ns": 34640000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "leadership",
-              "start_ns": 34640000000,
-              "end_ns": 34960000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "in",
-              "start_ns": 34960000000,
-              "end_ns": 35200000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
               "text": "space",
-              "start_ns": 35200000000,
-              "end_ns": 35600000000,
+              "start_ns": 14700000000,
+              "end_ns": 17600000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "and",
-              "start_ns": 35600000000,
-              "end_ns": 35840000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "the",
-              "start_ns": 35840000000,
-              "end_ns": 37600000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             }
           ],
           "sources": [
             "json3",
-            "srv3",
             "srv2",
             "srv1",
-            "vtt",
-            "ttml",
-            "srt"
+            "vtt"
           ]
         },
         {
-          "start_ns": 36000000000,
-          "end_ns": 41200000000,
-          "text": "Artemis program leading humans back to",
+          "start_ns": 16000000000,
+          "end_ns": 19650000000,
+          "text": "demonstrations",
+          "text_source": "json3",
           "word_timings": [
             {
-              "text": "Artemis",
-              "start_ns": 36000000000,
-              "end_ns": 36480000000,
+              "text": "demonstrations",
+              "start_ns": 16000000000,
+              "end_ns": 19650000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 17600000000,
+          "end_ns": 21400000000,
+          "text": "from all over the world under the Trump",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "from",
+              "start_ns": 17600000000,
+              "end_ns": 17800000000,
+              "sources": [
+                "json3",
+                "srv2"
               ]
             },
             {
-              "text": "program",
-              "start_ns": 36480000000,
-              "end_ns": 36719000000,
+              "text": "all",
+              "start_ns": 17800000000,
+              "end_ns": 18000000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "leading",
-              "start_ns": 36719000000,
-              "end_ns": 37040000000,
+              "text": "over",
+              "start_ns": 18000000000,
+              "end_ns": 18200000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "humans",
-              "start_ns": 37040000000,
-              "end_ns": 37360000000,
+              "text": "the",
+              "start_ns": 18200000000,
+              "end_ns": 18300000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
+              ]
+            },
+            {
+              "text": "world",
+              "start_ns": 18300000000,
+              "end_ns": 19000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "under",
+              "start_ns": 19000000000,
+              "end_ns": 19200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "the",
+              "start_ns": 19200000000,
+              "end_ns": 19400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "Trump",
+              "start_ns": 19400000000,
+              "end_ns": 21400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 19650000000,
+          "end_ns": 24100000000,
+          "text": "[music] administration.",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "music",
+              "start_ns": 19650000000,
+              "end_ns": 19700000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "administration",
+              "start_ns": 19700000000,
+              "end_ns": 24100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 21400000000,
+          "end_ns": 26300000000,
+          "text": "Our ambition is back, our momentum is",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "Our",
+              "start_ns": 21400000000,
+              "end_ns": 21600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "ambition",
+              "start_ns": 21600000000,
+              "end_ns": 22200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "is",
+              "start_ns": 22200000000,
+              "end_ns": 22400000000,
+              "sources": [
+                "json3",
+                "srv2"
               ]
             },
             {
               "text": "back",
-              "start_ns": 37360000000,
-              "end_ns": 37520000000,
+              "start_ns": 22400000000,
+              "end_ns": 23200000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "to",
-              "start_ns": 37520000000,
-              "end_ns": 41200000000,
+              "text": "our",
+              "start_ns": 23200000000,
+              "end_ns": 23300000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
+              ]
+            },
+            {
+              "text": "momentum",
+              "start_ns": 23300000000,
+              "end_ns": 23900000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "is",
+              "start_ns": 23900000000,
+              "end_ns": 26300000000,
+              "sources": [
+                "json3",
+                "srv2"
               ]
             }
           ],
           "sources": [
             "json3",
-            "srv3",
             "srv2",
             "srv1",
-            "vtt",
-            "ttml",
-            "srt"
+            "vtt"
           ]
         },
         {
-          "start_ns": 37600000000,
-          "end_ns": 45800000000,
-          "text": "the moon and onto Mars to lead humanity",
+          "start_ns": 24100000000,
+          "end_ns": 28700000000,
+          "text": "back, our leadership is back, [music]",
+          "text_source": "json3",
           "word_timings": [
+            {
+              "text": "back",
+              "start_ns": 24100000000,
+              "end_ns": 24500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "our",
+              "start_ns": 24500000000,
+              "end_ns": 24700000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "leadership",
+              "start_ns": 24700000000,
+              "end_ns": 25200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "is",
+              "start_ns": 25200000000,
+              "end_ns": 25400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "back",
+              "start_ns": 25400000000,
+              "end_ns": 25545000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "music",
+              "start_ns": 25545000000,
+              "end_ns": 28700000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 26300000000,
+          "end_ns": 31000000000,
+          "text": "NASA is back, and above all, most",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "NASA",
+              "start_ns": 26300000000,
+              "end_ns": 26800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "is",
+              "start_ns": 26800000000,
+              "end_ns": 27000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "back",
+              "start_ns": 27000000000,
+              "end_ns": 27400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "and",
+              "start_ns": 27400000000,
+              "end_ns": 27600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "above",
+              "start_ns": 27600000000,
+              "end_ns": 27900000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "all",
+              "start_ns": 27900000000,
+              "end_ns": 28500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "most",
+              "start_ns": 28500000000,
+              "end_ns": 31000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 28700000000,
+          "end_ns": 34000000000,
+          "text": "importantly, the United [music] States",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "importantly",
+              "start_ns": 28700000000,
+              "end_ns": 30011818182,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
             {
               "text": "the",
-              "start_ns": 37600000000,
-              "end_ns": 37760000000,
+              "start_ns": 30011818182,
+              "end_ns": 30059090909,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "moon",
-              "start_ns": 37760000000,
-              "end_ns": 38160000000,
+              "text": "United",
+              "start_ns": 30059090909,
+              "end_ns": 30130000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "and",
-              "start_ns": 38160000000,
-              "end_ns": 38399000000,
+              "text": "music",
+              "start_ns": 30130000000,
+              "end_ns": 30500000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "onto",
-              "start_ns": 38399000000,
-              "end_ns": 38719000000,
+              "text": "States",
+              "start_ns": 30500000000,
+              "end_ns": 34000000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "Mars",
-              "start_ns": 38719000000,
-              "end_ns": 39360000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "to",
-              "start_ns": 39360000000,
-              "end_ns": 39600000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "lead",
-              "start_ns": 39600000000,
-              "end_ns": 40320000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
-              ]
-            },
-            {
-              "text": "humanity",
-              "start_ns": 40320000000,
-              "end_ns": 45800000000,
-              "sources": [
-                "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             }
           ],
           "sources": [
             "json3",
-            "srv3",
             "srv2",
             "srv1",
-            "vtt",
-            "ttml",
-            "srt"
+            "vtt"
           ]
         },
         {
-          "start_ns": 41200000000,
-          "end_ns": 45800000000,
-          "text": "and America in space.",
+          "start_ns": 31000000000,
+          "end_ns": 36600000000,
+          "text": "of America is back. To the entire team",
+          "text_source": "json3",
           "word_timings": [
             {
-              "text": "and",
-              "start_ns": 41200000000,
-              "end_ns": 41840000000,
+              "text": "of",
+              "start_ns": 31000000000,
+              "end_ns": 31100000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
               "text": "America",
-              "start_ns": 41840000000,
-              "end_ns": 42480000000,
+              "start_ns": 31100000000,
+              "end_ns": 31700000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "in",
-              "start_ns": 42480000000,
-              "end_ns": 42800000000,
+              "text": "is",
+              "start_ns": 31700000000,
+              "end_ns": 32000000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
               ]
             },
             {
-              "text": "space",
-              "start_ns": 42800000000,
-              "end_ns": 45800000000,
+              "text": "back",
+              "start_ns": 32000000000,
+              "end_ns": 32900000000,
               "sources": [
                 "json3",
-                "srv2",
-                "srv3"
+                "srv2"
+              ]
+            },
+            {
+              "text": "To",
+              "start_ns": 32900000000,
+              "end_ns": 33000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "the",
+              "start_ns": 33000000000,
+              "end_ns": 33100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "entire",
+              "start_ns": 33100000000,
+              "end_ns": 33600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "team",
+              "start_ns": 33600000000,
+              "end_ns": 36600000000,
+              "sources": [
+                "json3",
+                "srv2"
               ]
             }
           ],
           "sources": [
             "json3",
-            "srv3",
             "srv2",
             "srv1",
-            "vtt",
-            "ttml",
-            "srt"
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 34000000000,
+          "end_ns": 38500000000,
+          "text": "at NASA who have worked to make this",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "at",
+              "start_ns": 34000000000,
+              "end_ns": 34200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "NASA",
+              "start_ns": 34200000000,
+              "end_ns": 34800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "who",
+              "start_ns": 34800000000,
+              "end_ns": 34900000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "have",
+              "start_ns": 34900000000,
+              "end_ns": 35100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "worked",
+              "start_ns": 35100000000,
+              "end_ns": 35400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "to",
+              "start_ns": 35400000000,
+              "end_ns": 35600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "make",
+              "start_ns": 35600000000,
+              "end_ns": 35800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "this",
+              "start_ns": 35800000000,
+              "end_ns": 38500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 36600000000,
+          "end_ns": 41000000000,
+          "text": "vision a [music] real reality, a",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "vision",
+              "start_ns": 36600000000,
+              "end_ns": 37100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "a",
+              "start_ns": 37100000000,
+              "end_ns": 37335000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "music",
+              "start_ns": 37335000000,
+              "end_ns": 37600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "real",
+              "start_ns": 37600000000,
+              "end_ns": 37800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "reality",
+              "start_ns": 37800000000,
+              "end_ns": 38400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "a",
+              "start_ns": 38400000000,
+              "end_ns": 41000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 38500000000,
+          "end_ns": 43900000000,
+          "text": "beautiful, a gorgeous reality,",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "beautiful",
+              "start_ns": 38500000000,
+              "end_ns": 39400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "a",
+              "start_ns": 39400000000,
+              "end_ns": 39500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "gorgeous",
+              "start_ns": 39500000000,
+              "end_ns": 40200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "reality",
+              "start_ns": 40200000000,
+              "end_ns": 43900000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 41000000000,
+          "end_ns": 45200000000,
+          "text": "congratulations [music] on this historic",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "congratulations",
+              "start_ns": 41000000000,
+              "end_ns": 41920000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "music",
+              "start_ns": 41920000000,
+              "end_ns": 42100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "on",
+              "start_ns": 42100000000,
+              "end_ns": 42200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "this",
+              "start_ns": 42200000000,
+              "end_ns": 43000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "historic",
+              "start_ns": 43000000000,
+              "end_ns": 45200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 43900000000,
+          "end_ns": 46520000000,
+          "text": "achievement.",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "achievement",
+              "start_ns": 43900000000,
+              "end_ns": 46520000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 45200000000,
+          "end_ns": 48200000000,
+          "text": "There could be no better place to",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "There",
+              "start_ns": 45200000000,
+              "end_ns": 45300000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "could",
+              "start_ns": 45300000000,
+              "end_ns": 45500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "be",
+              "start_ns": 45500000000,
+              "end_ns": 45600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "no",
+              "start_ns": 45600000000,
+              "end_ns": 45800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "better",
+              "start_ns": 45800000000,
+              "end_ns": 46100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "place",
+              "start_ns": 46100000000,
+              "end_ns": 46500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "to",
+              "start_ns": 46500000000,
+              "end_ns": 48200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 46520000000,
+          "end_ns": 50100000000,
+          "text": "[music] launch the next generation of",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "music",
+              "start_ns": 46520000000,
+              "end_ns": 46600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "launch",
+              "start_ns": 46600000000,
+              "end_ns": 47000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "the",
+              "start_ns": 47000000000,
+              "end_ns": 47100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "next",
+              "start_ns": 47100000000,
+              "end_ns": 47400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "generation",
+              "start_ns": 47400000000,
+              "end_ns": 48100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "of",
+              "start_ns": 48100000000,
+              "end_ns": 50100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 48200000000,
+          "end_ns": 52500000000,
+          "text": "American breakthroughs than Cape",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "American",
+              "start_ns": 48200000000,
+              "end_ns": 48800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "breakthroughs",
+              "start_ns": 48800000000,
+              "end_ns": 49600000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "than",
+              "start_ns": 49600000000,
+              "end_ns": 49800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "Cape",
+              "start_ns": 49800000000,
+              "end_ns": 52500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 50100000000,
+          "end_ns": 54500000000,
+          "text": "Canaveral and the Kennedy Space Center",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "Canaveral",
+              "start_ns": 50100000000,
+              "end_ns": 51100000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "and",
+              "start_ns": 51100000000,
+              "end_ns": 51200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "the",
+              "start_ns": 51200000000,
+              "end_ns": 51300000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "Kennedy",
+              "start_ns": 51300000000,
+              "end_ns": 51800000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "Space",
+              "start_ns": 51800000000,
+              "end_ns": 52200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "Center",
+              "start_ns": 52200000000,
+              "end_ns": 54500000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 52500000000,
+          "end_ns": 57400000000,
+          "text": "where America's future [music]",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "where",
+              "start_ns": 52500000000,
+              "end_ns": 52700000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "America's",
+              "start_ns": 52700000000,
+              "end_ns": 53200000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "future",
+              "start_ns": 53200000000,
+              "end_ns": 53710000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "music",
+              "start_ns": 53710000000,
+              "end_ns": 57400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
+          ]
+        },
+        {
+          "start_ns": 54500000000,
+          "end_ns": 57400000000,
+          "text": "will take flight.",
+          "text_source": "json3",
+          "word_timings": [
+            {
+              "text": "will",
+              "start_ns": 54500000000,
+              "end_ns": 54700000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "take",
+              "start_ns": 54700000000,
+              "end_ns": 55000000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            },
+            {
+              "text": "flight",
+              "start_ns": 55000000000,
+              "end_ns": 57400000000,
+              "sources": [
+                "json3",
+                "srv2"
+              ]
+            }
+          ],
+          "sources": [
+            "json3",
+            "srv2",
+            "srv1",
+            "vtt"
           ]
         }
       ],
       "conflicts": [
         {
-          "cue": 2,
-          "word": 5,
-          "text": "most",
-          "spread_ms": 80.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 5,
-          "word": 7,
-          "text": "here",
-          "spread_ms": 71.7,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 7,
-          "word": 1,
-          "text": "are",
-          "spread_ms": 73.182,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 7,
-          "word": 2,
-          "text": "so",
-          "spread_ms": 174.636,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 7,
+          "cue": 0,
           "word": 3,
-          "text": "excited",
-          "spread_ms": 320.0,
+          "text": "of",
+          "spread_ms": 100.0,
           "formats": [
             "json3",
             "srv2",
-            "srv3"
+            "vtt"
           ]
         },
         {
-          "cue": 7,
+          "cue": 0,
           "word": 4,
-          "text": "to",
-          "spread_ms": 150.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 7,
-          "word": 5,
-          "text": "represent",
-          "spread_ms": 219.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 7,
-          "word": 6,
-          "text": "America",
-          "spread_ms": 481.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 9,
-          "word": 0,
-          "text": "Europe",
-          "spread_ms": 80.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 9,
-          "word": 1,
-          "text": "wants",
-          "spread_ms": 133.333,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 9,
-          "word": 2,
-          "text": "to",
-          "spread_ms": 265.833,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 9,
-          "word": 3,
-          "text": "be",
-          "spread_ms": 267.333,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 9,
-          "word": 4,
-          "text": "the",
-          "spread_ms": 801.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 9,
-          "word": 5,
-          "text": "strongest",
-          "spread_ms": 880.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 9,
-          "word": 6,
-          "text": "and",
+          "text": "national",
           "spread_ms": 400.0,
           "formats": [
             "json3",
             "srv2",
-            "srv3"
+            "vtt"
           ]
         },
         {
-          "cue": 12,
-          "word": 1,
-          "text": "launching",
-          "spread_ms": 80.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 12,
+          "cue": 23,
           "word": 2,
-          "text": "a",
-          "spread_ms": 216.0,
+          "text": "future",
+          "spread_ms": 107.143,
           "formats": [
             "json3",
-            "srv2",
-            "srv3"
+            "srv2"
           ]
         },
         {
-          "cue": 12,
+          "cue": 23,
           "word": 3,
-          "text": "bunch",
-          "spread_ms": 328.0,
+          "text": "music",
+          "spread_ms": 510.0,
           "formats": [
             "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 12,
-          "word": 4,
-          "text": "of",
-          "spread_ms": 344.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 12,
-          "word": 5,
-          "text": "different",
-          "spread_ms": 240.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 14,
-          "word": 6,
-          "text": "going",
-          "spread_ms": 53.333,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 14,
-          "word": 7,
-          "text": "to",
-          "spread_ms": 80.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 17,
-          "word": 0,
-          "text": "Our",
-          "spread_ms": 59.75,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 17,
-          "word": 1,
-          "text": "mission",
-          "spread_ms": 99.583,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 17,
-          "word": 2,
-          "text": "to",
-          "spread_ms": 200.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 17,
-          "word": 3,
-          "text": "launch",
-          "spread_ms": 321.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 17,
-          "word": 4,
-          "text": "next",
-          "spread_ms": 320.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 17,
-          "word": 5,
-          "text": "year",
-          "spread_ms": 240.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
-          ]
-        },
-        {
-          "cue": 17,
-          "word": 6,
-          "text": "shows",
-          "spread_ms": 560.0,
-          "formats": [
-            "json3",
-            "srv2",
-            "srv3"
+            "srv2"
           ]
         }
       ]
