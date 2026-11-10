@@ -8,7 +8,7 @@ WrapStyle: 0
 ; Module 2 precision timing (subtitle timing office)
 ; timebase=nanosecond ass-resolution=centisecond
 ; ass-max-quantization-error-ms=5.0
-; sources=zh-Hans:srv2,en-orig:json3+srv2+srv1+vtt
+; sources=zh-Hans:srv2,en-orig:json3+srv3+srv2+srv1+vtt+ttml+srt
 ; cues=44
 
 [V4+ Styles]

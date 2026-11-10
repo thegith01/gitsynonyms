@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:06:58Z",
+  "generated_at": "2026-11-10T23:19:01Z",
   "module": "module2a-subtitle-timing",
   "timebase": "nanosecond",
   "ass_resolution": "centisecond",
@@ -16,7 +16,8 @@
     "timestamps": 431,
     "word_timings": 343,
     "source_resolution": [
-      "1 ms"
+      "1 ms",
+      "10 ms"
     ]
   },
   "tracks": {
@@ -1917,21 +1918,30 @@
       "primary_format": "json3",
       "formats_used": [
         "json3",
+        "srv3",
         "srv2",
         "srv1",
-        "vtt"
+        "vtt",
+        "ttml",
+        "srt"
       ],
       "source_resolution": {
         "json3": "1 ms",
+        "srv3": "1 ms",
         "srv2": "1 ms",
         "srv1": "1 ms",
-        "vtt": "1 ms"
+        "vtt": "1 ms",
+        "ttml": "1 ms",
+        "srt": "10 ms"
       },
       "source_files": {
         "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.json3",
+        "srv3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.srv3",
         "srv2": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.srv2",
         "srv1": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.srv1",
-        "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.vtt"
+        "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.vtt",
+        "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.ttml",
+        "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.srt"
       },
       "cue_count": 25,
       "cues": [
@@ -1948,6 +1958,7 @@
               "sources": [
                 "json3",
                 "srv2",
+                "srv3",
                 "vtt"
               ]
             },
@@ -1958,6 +1969,7 @@
               "sources": [
                 "json3",
                 "srv2",
+                "srv3",
                 "vtt"
               ]
             },
@@ -1968,6 +1980,7 @@
               "sources": [
                 "json3",
                 "srv2",
+                "srv3",
                 "vtt"
               ]
             },
@@ -1978,6 +1991,7 @@
               "sources": [
                 "json3",
                 "srv2",
+                "srv3",
                 "vtt"
               ]
             },
@@ -1988,6 +2002,7 @@
               "sources": [
                 "json3",
                 "srv2",
+                "srv3",
                 "vtt"
               ]
             },
@@ -1998,6 +2013,7 @@
               "sources": [
                 "json3",
                 "srv2",
+                "srv3",
                 "vtt"
               ]
             },
@@ -2008,15 +2024,19 @@
               "sources": [
                 "json3",
                 "srv2",
+                "srv3",
                 "vtt"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2031,7 +2051,8 @@
               "end_ns": 4600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2040,7 +2061,8 @@
               "end_ns": 5200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2049,7 +2071,8 @@
               "end_ns": 5300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2058,7 +2081,8 @@
               "end_ns": 5400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2067,7 +2091,8 @@
               "end_ns": 6200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2076,7 +2101,8 @@
               "end_ns": 6800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2085,7 +2111,8 @@
               "end_ns": 7000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2094,15 +2121,19 @@
               "end_ns": 9400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2117,7 +2148,8 @@
               "end_ns": 7500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2126,7 +2158,8 @@
               "end_ns": 7860000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2135,7 +2168,8 @@
               "end_ns": 8100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2144,7 +2178,8 @@
               "end_ns": 8300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2153,15 +2188,19 @@
               "end_ns": 11100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2176,7 +2215,8 @@
               "end_ns": 9500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2185,7 +2225,8 @@
               "end_ns": 10000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2194,7 +2235,8 @@
               "end_ns": 10100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2203,7 +2245,8 @@
               "end_ns": 10300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2212,7 +2255,8 @@
               "end_ns": 10500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2221,7 +2265,8 @@
               "end_ns": 10900000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2230,15 +2275,19 @@
               "end_ns": 14600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2253,7 +2302,8 @@
               "end_ns": 11600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2262,7 +2312,8 @@
               "end_ns": 12000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2271,7 +2322,8 @@
               "end_ns": 12300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2280,7 +2332,8 @@
               "end_ns": 12700000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2289,7 +2342,8 @@
               "end_ns": 13300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2298,7 +2352,8 @@
               "end_ns": 13500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2307,7 +2362,8 @@
               "end_ns": 14200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2316,15 +2372,19 @@
               "end_ns": 16000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2339,7 +2399,8 @@
               "end_ns": 14700000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2348,15 +2409,19 @@
               "end_ns": 17600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2377,9 +2442,12 @@
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2394,7 +2462,8 @@
               "end_ns": 17800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2403,7 +2472,8 @@
               "end_ns": 18000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2412,7 +2482,8 @@
               "end_ns": 18200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2421,7 +2492,8 @@
               "end_ns": 18300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2430,7 +2502,8 @@
               "end_ns": 19000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2439,7 +2512,8 @@
               "end_ns": 19200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2448,7 +2522,8 @@
               "end_ns": 19400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2457,15 +2532,19 @@
               "end_ns": 21400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2480,7 +2559,8 @@
               "end_ns": 19700000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2489,15 +2569,19 @@
               "end_ns": 24100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2512,7 +2596,8 @@
               "end_ns": 21600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2521,7 +2606,8 @@
               "end_ns": 22200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2530,7 +2616,8 @@
               "end_ns": 22400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2539,7 +2626,8 @@
               "end_ns": 23200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2548,7 +2636,8 @@
               "end_ns": 23300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2557,7 +2646,8 @@
               "end_ns": 23900000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2566,15 +2656,19 @@
               "end_ns": 26300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2589,7 +2683,8 @@
               "end_ns": 24500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2598,7 +2693,8 @@
               "end_ns": 24700000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2607,7 +2703,8 @@
               "end_ns": 25200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2616,7 +2713,8 @@
               "end_ns": 25400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2625,7 +2723,8 @@
               "end_ns": 25545000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2634,15 +2733,19 @@
               "end_ns": 28700000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2657,7 +2760,8 @@
               "end_ns": 26800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2666,7 +2770,8 @@
               "end_ns": 27000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2675,7 +2780,8 @@
               "end_ns": 27400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2684,7 +2790,8 @@
               "end_ns": 27600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2693,7 +2800,8 @@
               "end_ns": 27900000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2702,7 +2810,8 @@
               "end_ns": 28500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2711,15 +2820,19 @@
               "end_ns": 31000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2734,7 +2847,8 @@
               "end_ns": 30011818182,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2743,7 +2857,8 @@
               "end_ns": 30059090909,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2752,7 +2867,8 @@
               "end_ns": 30130000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2761,7 +2877,8 @@
               "end_ns": 30500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2770,15 +2887,19 @@
               "end_ns": 34000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2793,7 +2914,8 @@
               "end_ns": 31100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2802,7 +2924,8 @@
               "end_ns": 31700000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2811,7 +2934,8 @@
               "end_ns": 32000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2820,7 +2944,8 @@
               "end_ns": 32900000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2829,7 +2954,8 @@
               "end_ns": 33000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2838,7 +2964,8 @@
               "end_ns": 33100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2847,7 +2974,8 @@
               "end_ns": 33600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2856,15 +2984,19 @@
               "end_ns": 36600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2879,7 +3011,8 @@
               "end_ns": 34200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2888,7 +3021,8 @@
               "end_ns": 34800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2897,7 +3031,8 @@
               "end_ns": 34900000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2906,7 +3041,8 @@
               "end_ns": 35100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2915,7 +3051,8 @@
               "end_ns": 35400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2924,7 +3061,8 @@
               "end_ns": 35600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2933,7 +3071,8 @@
               "end_ns": 35800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2942,15 +3081,19 @@
               "end_ns": 38500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -2965,7 +3108,8 @@
               "end_ns": 37100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2974,7 +3118,8 @@
               "end_ns": 37335000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2983,7 +3128,8 @@
               "end_ns": 37600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -2992,7 +3138,8 @@
               "end_ns": 37800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3001,7 +3148,8 @@
               "end_ns": 38400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3010,15 +3158,19 @@
               "end_ns": 41000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3033,7 +3185,8 @@
               "end_ns": 39400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3042,7 +3195,8 @@
               "end_ns": 39500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3051,7 +3205,8 @@
               "end_ns": 40200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3060,15 +3215,19 @@
               "end_ns": 43900000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3083,7 +3242,8 @@
               "end_ns": 41920000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3092,7 +3252,8 @@
               "end_ns": 42100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3101,7 +3262,8 @@
               "end_ns": 42200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3110,7 +3272,8 @@
               "end_ns": 43000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3119,15 +3282,19 @@
               "end_ns": 45200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3148,9 +3315,12 @@
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3165,7 +3335,8 @@
               "end_ns": 45300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3174,7 +3345,8 @@
               "end_ns": 45500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3183,7 +3355,8 @@
               "end_ns": 45600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3192,7 +3365,8 @@
               "end_ns": 45800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3201,7 +3375,8 @@
               "end_ns": 46100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3210,7 +3385,8 @@
               "end_ns": 46500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3219,15 +3395,19 @@
               "end_ns": 48200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3242,7 +3422,8 @@
               "end_ns": 46600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3251,7 +3432,8 @@
               "end_ns": 47000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3260,7 +3442,8 @@
               "end_ns": 47100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3269,7 +3452,8 @@
               "end_ns": 47400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3278,7 +3462,8 @@
               "end_ns": 48100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3287,15 +3472,19 @@
               "end_ns": 50100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3310,7 +3499,8 @@
               "end_ns": 48800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3319,7 +3509,8 @@
               "end_ns": 49600000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3328,7 +3519,8 @@
               "end_ns": 49800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3337,15 +3529,19 @@
               "end_ns": 52500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3360,7 +3556,8 @@
               "end_ns": 51100000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3369,7 +3566,8 @@
               "end_ns": 51200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3378,7 +3576,8 @@
               "end_ns": 51300000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3387,7 +3586,8 @@
               "end_ns": 51800000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3396,7 +3596,8 @@
               "end_ns": 52200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3405,15 +3606,19 @@
               "end_ns": 54500000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3428,7 +3633,8 @@
               "end_ns": 52700000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3437,7 +3643,8 @@
               "end_ns": 53200000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3446,7 +3653,8 @@
               "end_ns": 53710000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3455,15 +3663,19 @@
               "end_ns": 57400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         },
         {
@@ -3478,7 +3690,8 @@
               "end_ns": 54700000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3487,7 +3700,8 @@
               "end_ns": 55000000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             },
             {
@@ -3496,15 +3710,19 @@
               "end_ns": 57400000000,
               "sources": [
                 "json3",
-                "srv2"
+                "srv2",
+                "srv3"
               ]
             }
           ],
           "sources": [
             "json3",
+            "srv3",
             "srv2",
             "srv1",
-            "vtt"
+            "vtt",
+            "ttml",
+            "srt"
           ]
         }
       ],
@@ -3517,6 +3735,7 @@
           "formats": [
             "json3",
             "srv2",
+            "srv3",
             "vtt"
           ]
         },
@@ -3528,6 +3747,7 @@
           "formats": [
             "json3",
             "srv2",
+            "srv3",
             "vtt"
           ]
         },
@@ -3538,7 +3758,8 @@
           "spread_ms": 107.143,
           "formats": [
             "json3",
-            "srv2"
+            "srv2",
+            "srv3"
           ]
         },
         {
@@ -3548,7 +3769,8 @@
           "spread_ms": 510.0,
           "formats": [
             "json3",
-            "srv2"
+            "srv2",
+            "srv3"
           ]
         }
       ]

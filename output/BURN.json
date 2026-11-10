@@ -2,10 +2,10 @@
   "module": "module2-video-processing",
   "version": "1.0",
   "status": "burned",
-  "created_at": "2026-11-10T18:06:45Z",
+  "created_at": "2026-11-10T23:18:48Z",
   "selection": {
     "video_id": "1s-csaeYr5w",
-    "title": "President Trump Delivers Remarks, Nov. 9, 2026",
+    "title": "President Trump Delivers Remarks at NASA's Kennedy Space Center",
     "event_date": "",
     "manifest": null
   },
@@ -14,44 +14,62 @@
       "path": "/home/runner/work/gitsynonyms/gitsynonyms/work/1s-csaeYr5w.source.mp4",
       "size_bytes": 22588778,
       "sha256": "9c69aaff4214a083773228d29ec9c6117e4b7f494704f2ac8f4e1474f731300f",
-      "modified_at": "2026-11-10T18:04:10Z"
+      "modified_at": "2026-11-10T23:16:39Z"
     },
     "subtitle": {
       "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",
-      "size_bytes": 5643,
-      "sha256": "2d5f5f713cebe091e4bb9558813ee850d93bd039526b05658b2371ce3e853698",
-      "modified_at": "2026-11-10T18:06:58Z"
+      "size_bytes": 5657,
+      "sha256": "3a003a04c507b84a188a6fd6661c385f3750b474be327b2dce72124fc160eecf",
+      "modified_at": "2026-11-10T23:19:01Z"
     },
     "captions": [
       {
         "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.json3",
         "size_bytes": 12664,
         "sha256": "862521c995cf8db24c6943f3d34030afce88961409741b0f23ab6d056ea1f4b6",
-        "modified_at": "2026-11-10T18:06:08Z"
+        "modified_at": "2026-11-10T23:02:55Z"
       },
       {
         "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.srv1",
         "size_bytes": 1745,
         "sha256": "fac0469c4ee42b6fa110bb423faeb0b707527ff5cb8df9ab95b767b19fcd22f8",
-        "modified_at": "2026-11-10T18:06:08Z"
+        "modified_at": "2026-11-10T23:02:55Z"
       },
       {
         "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.srv2",
         "size_bytes": 8687,
         "sha256": "66cc5d357b3f03beedce6dc0468eb44bd0a581331b5c905f22b365d339e855a1",
-        "modified_at": "2026-11-10T18:06:09Z"
+        "modified_at": "2026-11-10T23:02:55Z"
       },
       {
         "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.vtt",
         "size_bytes": 7491,
         "sha256": "4c2ee9eac8c8d868baf9c0a3db885961e43b67156f2d9248d31c06cb5b66130a",
-        "modified_at": "2026-11-10T18:06:09Z"
+        "modified_at": "2026-11-10T23:02:55Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.srt",
+        "size_bytes": 1653,
+        "sha256": "88c7f08e0b8632f2a34d2c6d2b968fbc8dd04e2a33fa36229ec8db6b58d34636",
+        "modified_at": "2026-11-10T23:18:15Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.srv3",
+        "size_bytes": 4656,
+        "sha256": "b48d6bab2ef5ebc865045f71115d7289270e9c46f379effd7043ed12500527d5",
+        "modified_at": "2026-11-10T23:18:24Z"
+      },
+      {
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.ttml",
+        "size_bytes": 2881,
+        "sha256": "f670b8a26e7cb9ac781ea1c03762a0b62fdd237bc0bf02b70d09e067c857ae1c",
+        "modified_at": "2026-11-10T23:18:19Z"
       },
       {
         "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.zh-Hans.srv2",
         "size_bytes": 8869,
         "sha256": "df48c59d8b923e7e999c9aa08dfa2ad1ee6056c71224af4281ba20f2aecd4b83",
-        "modified_at": "2026-11-10T18:06:43Z"
+        "modified_at": "2026-11-10T23:02:55Z"
       }
     ]
   },
@@ -75,8 +93,8 @@
   "subtitles": {
     "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",
     "format": "ass",
-    "size_bytes": 5643,
-    "sha256": "2d5f5f713cebe091e4bb9558813ee850d93bd039526b05658b2371ce3e853698",
+    "size_bytes": 5657,
+    "sha256": "3a003a04c507b84a188a6fd6661c385f3750b474be327b2dce72124fc160eecf",
     "cues": 16,
     "drawing_cues": 0,
     "first_cue_seconds": 1.0,
@@ -165,7 +183,7 @@
         "cues": 19,
         "size_bytes": 1308,
         "sha256": "b5a48a24b2b0a9a59411484791ba196b573e5223b59bc57c4eef3451befe383d",
-        "modified_at": "2026-11-10T18:06:58Z"
+        "modified_at": "2026-11-10T23:19:01Z"
       },
       "en-orig": {
         "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.en-orig.precision.vtt",
@@ -175,7 +193,7 @@
         "cues": 25,
         "size_bytes": 1594,
         "sha256": "238615b54e9028cde847e09b33de0c10fd52134b95487d4a75486327d1831604",
-        "modified_at": "2026-11-10T18:06:58Z"
+        "modified_at": "2026-11-10T23:19:01Z"
       }
     },
     "statistics": {
@@ -187,7 +205,8 @@
       "timestamps": 431,
       "word_timings": 343,
       "source_resolution": [
-        "1 ms"
+        "1 ms",
+        "10 ms"
       ]
     },
     "tracks": {
@@ -205,18 +224,24 @@
       "en-orig": {
         "formats_used": [
           "json3",
+          "srv3",
           "srv2",
           "srv1",
-          "vtt"
+          "vtt",
+          "ttml",
+          "srt"
         ],
         "primary_format": "json3",
         "cue_count": 25,
         "conflicts": 4,
         "source_files": {
           "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.json3",
+          "srv3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.srv3",
           "srv2": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.srv2",
           "srv1": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.srv1",
-          "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.vtt"
+          "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en-orig.vtt",
+          "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.ttml",
+          "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_1s-csaeYr5w/1s-csaeYr5w.en.en-orig.srt"
         }
       }
     }
@@ -230,7 +255,8 @@
     "timestamps": 431,
     "word_timings": 343,
     "source_resolution": [
-      "1 ms"
+      "1 ms",
+      "10 ms"
     ]
   },
   "ergonomics": {
@@ -303,7 +329,7 @@
       "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/Burned_Bilingual_1s-csaeYr5w.mp4",
       "size_bytes": 18580850,
       "sha256": "d532f1cb77bceec5300d2ff01da3f6b44833ff5fc1c37dc3e441ee5313f8fe34",
-      "modified_at": "2026-11-10T18:08:09Z",
+      "modified_at": "2026-11-10T23:20:12Z",
       "duration_seconds": 59.021,
       "width": 3840,
       "height": 2026,
@@ -322,5 +348,5 @@
     "fontselect: (Microsoft YaHei, 700, 0) -> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc, 0, WenQuanYiZenHei",
     "Rendering could not find glyphs for 1 characters; the fonts named by the ASS file are missing on this machine, so that text is not drawn."
   ],
-  "finished_at": "2026-11-10T18:08:09Z"
+  "finished_at": "2026-11-10T23:20:13Z"
 }

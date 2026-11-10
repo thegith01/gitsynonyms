@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:01.000" end="00:00:07.200" style="s2">As a symbol of national renewal, today</p>
+<p begin="00:00:04.400" end="00:00:09.400" style="s2">we gather by the same runway that once</p>
+<p begin="00:00:07.200" end="00:00:11.100" style="s2">stood cracked [music] and silent</p>
+<p begin="00:00:09.400" end="00:00:14.600" style="s2">to announce that this very site will</p>
+<p begin="00:00:11.100" end="00:00:16.000" style="s2">soon be the premiere venue for the air</p>
+<p begin="00:00:14.600" end="00:00:17.600" style="s2">and space</p>
+<p begin="00:00:16.000" end="00:00:19.650" style="s2">demonstrations</p>
+<p begin="00:00:17.600" end="00:00:21.400" style="s2">from all over the world under the Trump</p>
+<p begin="00:00:19.650" end="00:00:24.100" style="s2">[music] administration.</p>
+<p begin="00:00:21.400" end="00:00:26.300" style="s2">Our ambition is back, our momentum is</p>
+<p begin="00:00:24.100" end="00:00:28.700" style="s2">back, our leadership is back, [music]</p>
+<p begin="00:00:26.300" end="00:00:31.000" style="s2">NASA is back, and above all, most</p>
+<p begin="00:00:28.700" end="00:00:34.000" style="s2">importantly, the United [music] States</p>
+<p begin="00:00:31.000" end="00:00:36.600" style="s2">of America is back. To the entire team</p>
+<p begin="00:00:34.000" end="00:00:38.500" style="s2">at NASA who have worked to make this</p>
+<p begin="00:00:36.600" end="00:00:41.000" style="s2">vision a [music] real reality, a</p>
+<p begin="00:00:38.500" end="00:00:43.900" style="s2">beautiful, a gorgeous reality,</p>
+<p begin="00:00:41.000" end="00:00:45.200" style="s2">congratulations [music] on this historic</p>
+<p begin="00:00:43.900" end="00:00:46.520" style="s2">achievement.</p>
+<p begin="00:00:45.200" end="00:00:48.200" style="s2">There could be no better place to</p>
+<p begin="00:00:46.520" end="00:00:50.100" style="s2">[music] launch the next generation of</p>
+<p begin="00:00:48.200" end="00:00:52.500" style="s2">American breakthroughs than Cape</p>
+<p begin="00:00:50.100" end="00:00:54.500" style="s2">Canaveral and the Kennedy Space Center</p>
+<p begin="00:00:52.500" end="00:00:57.400" style="s2">where America&#39;s future [music]</p>
+<p begin="00:00:54.500" end="00:00:57.400" style="s2">will take flight.</p>
+</div>
+</body>
+</tt>
