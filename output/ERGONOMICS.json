@@ -9,39 +9,561 @@
     "max_duration": 7.0,
     "min_gap": 0.083,
     "children": false,
-    "fps": 23.976023976023978
+    "fps": 23.9760610650747
   },
   "summary": {
-    "cues": 16,
-    "max_cps": 27.4,
-    "p95_cps": 16.53,
-    "mean_cps": 9.47,
-    "violations": 9,
-    "errors": 1,
-    "warnings": 8,
+    "cues": 97,
+    "max_cps": 213.64,
+    "p95_cps": 34.31,
+    "mean_cps": 13.66,
+    "violations": 106,
+    "errors": 26,
+    "warnings": 80,
     "by_code": {
-      "reading_speed": 1,
-      "gap_short": 8
+      "reading_speed": 41,
+      "duration_short": 6,
+      "line_count": 2,
+      "gap_short": 57
     }
   },
   "issues": [
     {
       "code": "reading_speed",
       "severity": "error",
-      "cue": 12,
-      "start": 45.2,
-      "end": 47.28,
-      "message": "en line 2 reads at 27.4 CPS (limit 20)",
-      "measured": 27.4,
+      "cue": 1,
+      "start": 2.0,
+      "end": 2.16,
+      "message": "zh-Hans line 1 reads at 15.6 CPS (limit 9)",
+      "measured": 15.62,
+      "limit": 9.0,
+      "text": "对吧?"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 1,
+      "start": 2.0,
+      "end": 2.16,
+      "message": "en line 2 reads at 37.5 CPS (limit 20)",
+      "measured": 37.5,
       "limit": 20.0,
-      "text": "There could be no better place to [music] launch the next"
+      "text": "Right?"
+    },
+    {
+      "code": "duration_short",
+      "severity": "error",
+      "cue": 1,
+      "start": 2.0,
+      "end": 2.16,
+      "message": "Cue lasts 0.160 s (minimum 0.833 s)",
+      "measured": 0.16,
+      "limit": 0.833
+    },
+    {
+      "code": "line_count",
+      "severity": "error",
+      "cue": 9,
+      "start": 23.0,
+      "end": 26.36,
+      "message": "Cue has 3 lines (limit 2)",
+      "measured": 3,
+      "limit": 2
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 13,
+      "start": 37.4,
+      "end": 39.26,
+      "message": "en line 2 reads at 20.4 CPS (limit 20)",
+      "measured": 20.43,
+      "limit": 20.0,
+      "text": "And uh I shouldn't say they went down."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 18,
+      "start": 50.4,
+      "end": 51.65,
+      "message": "en line 2 reads at 45.6 CPS (limit 20)",
+      "measured": 45.6,
+      "limit": 20.0,
+      "text": "President Trump. And our new IP switches did not go down."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 25,
+      "start": 72.6,
+      "end": 75.16,
+      "message": "en line 2 reads at 20.3 CPS (limit 20)",
+      "measured": 20.31,
+      "limit": 20.0,
+      "text": "build a state-of-the-art air traffic control system."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 27,
+      "start": 80.1,
+      "end": 82.46,
+      "message": "en line 2 reads at 22.0 CPS (limit 20)",
+      "measured": 22.03,
+      "limit": 20.0,
+      "text": "critical for every single family. It's not red, it's"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 28,
+      "start": 82.5,
+      "end": 83.76,
+      "message": "en line 2 reads at 38.9 CPS (limit 20)",
+      "measured": 38.89,
+      "limit": 20.0,
+      "text": "not blue, it's not Democrat, it's not Republican."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 29,
+      "start": 84.8,
+      "end": 85.2,
+      "message": "zh-Hans line 1 reads at 11.2 CPS (limit 9)",
+      "measured": 11.25,
+      "limit": 9.0,
+      "text": "共和党人."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 29,
+      "start": 84.8,
+      "end": 85.2,
+      "message": "en line 2 reads at 35.0 CPS (limit 20)",
+      "measured": 35.0,
+      "limit": 20.0,
+      "text": "It's American."
+    },
+    {
+      "code": "duration_short",
+      "severity": "error",
+      "cue": 29,
+      "start": 84.8,
+      "end": 85.2,
+      "message": "Cue lasts 0.400 s (minimum 0.833 s)",
+      "measured": 0.4,
+      "limit": 0.833
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 31,
+      "start": 88.0,
+      "end": 90.86,
+      "message": "en line 2 reads at 20.6 CPS (limit 20)",
+      "measured": 20.63,
+      "limit": 20.0,
+      "text": "Now, if you look to the past administrations, going back 25"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 34,
+      "start": 99.8,
+      "end": 100.26,
+      "message": "zh-Hans line 1 reads at 12.0 CPS (limit 9)",
+      "measured": 11.96,
+      "limit": 9.0,
+      "text": "你猜怎么着?"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 34,
+      "start": 99.8,
+      "end": 100.26,
+      "message": "en line 2 reads at 104.3 CPS (limit 20)",
+      "measured": 104.35,
+      "limit": 20.0,
+      "text": "Barely anything was done. We had a down payment."
+    },
+    {
+      "code": "duration_short",
+      "severity": "error",
+      "cue": 34,
+      "start": 99.8,
+      "end": 100.26,
+      "message": "Cue lasts 0.460 s (minimum 0.833 s)",
+      "measured": 0.46,
+      "limit": 0.833
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 35,
+      "start": 103.4,
+      "end": 106.2,
+      "message": "en line 2 reads at 21.1 CPS (limit 20)",
+      "measured": 21.07,
+      "limit": 20.0,
+      "text": "Uh President Trump asked for it in the uh one big beautiful"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 38,
+      "start": 113.0,
+      "end": 115.2,
+      "message": "en line 2 reads at 21.4 CPS (limit 20)",
+      "measured": 21.36,
+      "limit": 20.0,
+      "text": "done by the time President Trump leaves office."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 39,
+      "start": 115.2,
+      "end": 116.7,
+      "message": "zh-Hans line 1 reads at 10.0 CPS (limit 9)",
+      "measured": 10.0,
+      "limit": 9.0,
+      "text": "特朗普总统要求的在呃一个大美丽"
+    },
+    {
+      "code": "line_count",
+      "severity": "error",
+      "cue": 39,
+      "start": 115.2,
+      "end": 116.7,
+      "message": "Cue has 3 lines (limit 2)",
+      "measured": 3,
+      "limit": 2
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 40,
+      "start": 116.7,
+      "end": 118.2,
+      "message": "zh-Hans line 1 reads at 18.7 CPS (limit 9)",
+      "measured": 18.67,
+      "limit": 9.0,
+      "text": "亿美元建造其中一部分特朗普总统离开后建筑工程将会完成办公"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 41,
+      "start": 118.2,
+      "end": 121.05,
+      "message": "zh-Hans line 1 reads at 9.8 CPS (limit 9)",
+      "measured": 9.82,
+      "limit": 9.0,
+      "text": "室我们以从未有过的速度前进之前关于联邦航空局的情况但这是"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 50,
+      "start": 147.59,
+      "end": 150.45,
+      "message": "en line 2 reads at 20.3 CPS (limit 20)",
+      "measured": 20.28,
+      "limit": 20.0,
+      "text": "new state-of-the-art system, you won't have these outages."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 51,
+      "start": 150.49,
+      "end": 151.61,
+      "message": "en line 2 reads at 52.7 CPS (limit 20)",
+      "measured": 52.68,
+      "limit": 20.0,
+      "text": "So what you experienced today, but you can think back, many"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 52,
+      "start": 152.59,
+      "end": 152.81,
+      "message": "zh-Hans line 1 reads at 43.2 CPS (limit 9)",
+      "measured": 43.18,
+      "limit": 9.0,
+      "text": "但你可以回想,很多从"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 52,
+      "start": 152.59,
+      "end": 152.81,
+      "message": "en line 2 reads at 213.6 CPS (limit 20)",
+      "measured": 213.64,
+      "limit": 20.0,
+      "text": "of you covered the story from a year and a half"
+    },
+    {
+      "code": "duration_short",
+      "severity": "error",
+      "cue": 52,
+      "start": 152.59,
+      "end": 152.81,
+      "message": "Cue lasts 0.220 s (minimum 0.833 s)",
+      "measured": 0.22,
+      "limit": 0.833
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 53,
+      "start": 155.9,
+      "end": 157.69,
+      "message": "en line 2 reads at 32.4 CPS (limit 20)",
+      "measured": 32.4,
+      "limit": 20.0,
+      "text": "ago, we had outages in Newark, multiple outages in Newark."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 58,
+      "start": 169.89,
+      "end": 172.25,
+      "message": "en line 2 reads at 25.0 CPS (limit 20)",
+      "measured": 25.0,
+      "limit": 20.0,
+      "text": "I want $50 billion. And by the way, if you look at how much"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 59,
+      "start": 172.29,
+      "end": 174.65,
+      "message": "en line 2 reads at 22.9 CPS (limit 20)",
+      "measured": 22.88,
+      "limit": 20.0,
+      "text": "money Congress spends, Peter, you've covered Congress,"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 60,
+      "start": 174.69,
+      "end": 177.25,
+      "message": "zh-Hans line 1 reads at 9.4 CPS (limit 9)",
+      "measured": 9.37,
+      "limit": 9.0,
+      "text": "国会,他们浪费了很多钱还有什么比空中交通更重要的?"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 61,
+      "start": 177.29,
+      "end": 179.48,
+      "message": "en line 2 reads at 25.6 CPS (limit 20)",
+      "measured": 25.57,
+      "limit": 20.0,
+      "text": "What's more important than having an air traffic control"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 63,
+      "start": 181.59,
+      "end": 183.45,
+      "message": "en line 2 reads at 22.0 CPS (limit 20)",
+      "measured": 22.04,
+      "limit": 20.0,
+      "text": "And so the president said, you know what?"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 67,
+      "start": 194.29,
+      "end": 195.87,
+      "message": "en line 2 reads at 23.4 CPS (limit 20)",
+      "measured": 23.42,
+      "limit": 20.0,
+      "text": "traffic controllers have leaky roofs,"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 68,
+      "start": 195.99,
+      "end": 197.65,
+      "message": "en line 2 reads at 21.1 CPS (limit 20)",
+      "measured": 21.08,
+      "limit": 20.0,
+      "text": "air conditioning that doesn't work."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 69,
+      "start": 197.69,
+      "end": 198.59,
+      "message": "en line 2 reads at 51.1 CPS (limit 20)",
+      "measured": 51.11,
+      "limit": 20.0,
+      "text": "They're high in the air, their elevators don't"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 70,
+      "start": 199.29,
+      "end": 199.75,
+      "message": "zh-Hans line 1 reads at 9.8 CPS (limit 9)",
+      "measured": 9.78,
+      "limit": 9.0,
+      "text": "电梯不通."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 70,
+      "start": 199.29,
+      "end": 199.75,
+      "message": "en line 2 reads at 50.0 CPS (limit 20)",
+      "measured": 50.0,
+      "limit": 20.0,
+      "text": "work. Their roofs leak."
+    },
+    {
+      "code": "duration_short",
+      "severity": "error",
+      "cue": 70,
+      "start": 199.29,
+      "end": 199.75,
+      "message": "Cue lasts 0.460 s (minimum 0.833 s)",
+      "measured": 0.46,
+      "limit": 0.833
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 79,
+      "start": 226.49,
+      "end": 228.79,
+      "message": "en line 2 reads at 23.5 CPS (limit 20)",
+      "measured": 23.48,
+      "limit": 20.0,
+      "text": "any knowledge of where they're going to sleep tonight."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 80,
+      "start": 228.79,
+      "end": 229.3,
+      "message": "zh-Hans line 1 reads at 34.3 CPS (limit 9)",
+      "measured": 34.31,
+      "limit": 9.0,
+      "text": "不知道他们在哪里今晚要睡觉了现在,你"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 80,
+      "start": 228.79,
+      "end": 229.3,
+      "message": "en line 2 reads at 31.4 CPS (limit 20)",
+      "measured": 31.37,
+      "limit": 20.0,
+      "text": "Now you probably"
+    },
+    {
+      "code": "duration_short",
+      "severity": "error",
+      "cue": 80,
+      "start": 228.79,
+      "end": 229.3,
+      "message": "Cue lasts 0.510 s (minimum 0.833 s)",
+      "measured": 0.51,
+      "limit": 0.833
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 82,
+      "start": 233.19,
+      "end": 236.14,
+      "message": "en line 2 reads at 20.3 CPS (limit 20)",
+      "measured": 20.34,
+      "limit": 20.0,
+      "text": "We've got our centers and our TRACONs operational right now."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 84,
+      "start": 239.09,
+      "end": 241.18,
+      "message": "en line 2 reads at 20.6 CPS (limit 20)",
+      "measured": 20.57,
+      "limit": 20.0,
+      "text": "Eastern time, we've opened up the airspace."
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 86,
+      "start": 244.99,
+      "end": 246.65,
+      "message": "en line 2 reads at 20.5 CPS (limit 20)",
+      "measured": 20.48,
+      "limit": 20.0,
+      "text": "It's It's going to be slow, right?"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 91,
+      "start": 255.29,
+      "end": 257.0,
+      "message": "en line 2 reads at 23.4 CPS (limit 20)",
+      "measured": 23.39,
+      "limit": 20.0,
+      "text": "attendants available to fly your flight?"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "error",
+      "cue": 92,
+      "start": 257.09,
+      "end": 258.95,
+      "message": "en line 2 reads at 28.5 CPS (limit 20)",
+      "measured": 28.49,
+      "limit": 20.0,
+      "text": "We're going to try to move as many of those as we can"
+    },
+    {
+      "code": "reading_speed",
+      "severity": "warning",
+      "cue": 95,
+      "start": 263.69,
+      "end": 266.25,
+      "message": "en line 2 reads at 22.3 CPS (limit 20)",
+      "measured": 22.27,
+      "limit": 20.0,
+      "text": "If not, we're going to uh start tomorrow morning with our"
     },
     {
       "code": "gap_short",
       "severity": "warning",
       "cue": 0,
-      "start": 1.0,
-      "end": 5.36,
+      "start": 0.4,
+      "end": 1.96,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -49,19 +571,19 @@
     {
       "code": "gap_short",
       "severity": "warning",
-      "cue": 3,
-      "start": 13.3,
-      "end": 17.75,
-      "message": "Gap to the next cue is 50 ms (minimum 83 ms)",
-      "measured": 0.05,
+      "cue": 1,
+      "start": 2.0,
+      "end": 2.16,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
       "limit": 0.083
     },
     {
       "code": "gap_short",
       "severity": "warning",
       "cue": 4,
-      "start": 17.8,
-      "end": 21.36,
+      "start": 7.6,
+      "end": 9.16,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -70,8 +592,8 @@
       "code": "gap_short",
       "severity": "warning",
       "cue": 6,
-      "start": 25.2,
-      "end": 28.66,
+      "start": 13.5,
+      "end": 16.86,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -80,18 +602,28 @@
       "code": "gap_short",
       "severity": "warning",
       "cue": 7,
-      "start": 28.7,
-      "end": 32.82,
-      "message": "Gap to the next cue is 80 ms (minimum 83 ms)",
-      "measured": 0.08,
+      "start": 16.9,
+      "end": 20.24,
+      "message": "Gap to the next cue is 60 ms (minimum 83 ms)",
+      "measured": 0.06,
       "limit": 0.083
     },
     {
       "code": "gap_short",
       "severity": "warning",
       "cue": 8,
-      "start": 32.9,
-      "end": 36.56,
+      "start": 20.3,
+      "end": 22.96,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 9,
+      "start": 23.0,
+      "end": 26.36,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -100,8 +632,8 @@
       "code": "gap_short",
       "severity": "warning",
       "cue": 10,
-      "start": 40.2,
-      "end": 42.96,
+      "start": 26.4,
+      "end": 31.26,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -109,9 +641,489 @@
     {
       "code": "gap_short",
       "severity": "warning",
-      "cue": 11,
-      "start": 43.0,
+      "cue": 12,
+      "start": 34.2,
+      "end": 37.36,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 13,
+      "start": 37.4,
+      "end": 39.26,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 14,
+      "start": 39.3,
+      "end": 42.76,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 15,
+      "start": 42.8,
       "end": 45.16,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 16,
+      "start": 45.2,
+      "end": 47.46,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 17,
+      "start": 47.5,
+      "end": 50.36,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 19,
+      "start": 54.5,
+      "end": 57.86,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 21,
+      "start": 61.2,
+      "end": 63.36,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 22,
+      "start": 63.4,
+      "end": 66.06,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 23,
+      "start": 66.1,
+      "end": 70.06,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 24,
+      "start": 70.1,
+      "end": 72.56,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 25,
+      "start": 72.6,
+      "end": 75.16,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 26,
+      "start": 75.2,
+      "end": 80.06,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 27,
+      "start": 80.1,
+      "end": 82.46,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 30,
+      "start": 86.2,
+      "end": 87.96,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 31,
+      "start": 88.0,
+      "end": 90.86,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 32,
+      "start": 90.9,
+      "end": 95.26,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 41,
+      "start": 118.2,
+      "end": 121.05,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 42,
+      "start": 121.09,
+      "end": 123.85,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 43,
+      "start": 123.89,
+      "end": 126.95,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 44,
+      "start": 126.99,
+      "end": 132.55,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 45,
+      "start": 132.59,
+      "end": 135.17,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 46,
+      "start": 135.21,
+      "end": 137.75,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 47,
+      "start": 137.79,
+      "end": 140.95,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 48,
+      "start": 140.99,
+      "end": 144.65,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 50,
+      "start": 147.59,
+      "end": 150.45,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 54,
+      "start": 158.09,
+      "end": 160.45,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 55,
+      "start": 160.49,
+      "end": 163.25,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 57,
+      "start": 166.59,
+      "end": 169.85,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 58,
+      "start": 169.89,
+      "end": 172.25,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 59,
+      "start": 172.29,
+      "end": 174.65,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 60,
+      "start": 174.69,
+      "end": 177.25,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 62,
+      "start": 179.59,
+      "end": 181.55,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 63,
+      "start": 181.59,
+      "end": 183.45,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 64,
+      "start": 183.49,
+      "end": 185.45,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 65,
+      "start": 185.49,
+      "end": 190.05,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 66,
+      "start": 190.09,
+      "end": 194.25,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 68,
+      "start": 195.99,
+      "end": 197.65,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 81,
+      "start": 229.49,
+      "end": 233.15,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 83,
+      "start": 236.59,
+      "end": 239.05,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 85,
+      "start": 241.69,
+      "end": 244.95,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 86,
+      "start": 244.99,
+      "end": 246.65,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 87,
+      "start": 246.69,
+      "end": 249.65,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 88,
+      "start": 249.69,
+      "end": 251.55,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 89,
+      "start": 251.59,
+      "end": 253.55,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 90,
+      "start": 253.59,
+      "end": 255.25,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 92,
+      "start": 257.09,
+      "end": 258.95,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 94,
+      "start": 261.29,
+      "end": 263.65,
+      "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
+      "measured": 0.04,
+      "limit": 0.083
+    },
+    {
+      "code": "gap_short",
+      "severity": "warning",
+      "cue": 95,
+      "start": 263.69,
+      "end": 266.25,
       "message": "Gap to the next cue is 40 ms (minimum 83 ms)",
       "measured": 0.04,
       "limit": 0.083
@@ -120,49 +1132,652 @@
   "cues": [
     {
       "index": 0,
-      "start": 1.0,
-      "end": 5.36,
-      "duration": 4.36,
+      "start": 0.4,
+      "end": 1.96,
+      "duration": 1.56,
       "lines": [
         {
           "index": 0,
-          "text": "作為國家復興的象徵，今天我們聚集在曾經破敗不堪、",
+          "text": "那么,发生了什么事?",
           "language": "zh-Hans",
-          "characters": 24.0,
-          "cps": 5.5,
+          "characters": 9.0,
+          "cps": 5.77,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "As a symbol of national renewal, today we gather by the",
+          "text": "Uh so, what happened?",
           "language": "en",
-          "characters": 55.0,
-          "cps": 12.61,
+          "characters": 21.0,
+          "cps": 13.46,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 12.61
+      "max_cps": 13.46
     },
     {
       "index": 1,
-      "start": 5.4,
-      "end": 9.36,
-      "duration": 3.96,
+      "start": 2.0,
+      "end": 2.16,
+      "duration": 0.16,
       "lines": [
         {
           "index": 0,
-          "text": "寂靜無聲的同一條跑道旁，",
+          "text": "对吧?",
           "language": "zh-Hans",
-          "characters": 12.0,
-          "cps": 3.03,
+          "characters": 2.5,
+          "cps": 15.62,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "same runway that once stood cracked [music] and silent to",
+          "text": "Right?",
+          "language": "en",
+          "characters": 6.0,
+          "cps": 37.5,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 37.5
+    },
+    {
+      "index": 2,
+      "start": 2.2,
+      "end": 5.48,
+      "duration": 3.28,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我听过很多像马克·韦恩那样的传闻嗯,但是,呃",
+          "language": "zh-Hans",
+          "characters": 20.5,
+          "cps": 6.25,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "I've heard a lot of the rumors like Mark Wayne has. Uh but",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 17.68,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.68
+    },
+    {
+      "index": 3,
+      "start": 5.7,
+      "end": 7.46,
+      "duration": 1.76,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们有一个令人难以置信",
+          "language": "zh-Hans",
+          "characters": 11.0,
+          "cps": 6.25,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "uh what we have is an incredibly",
+          "language": "en",
+          "characters": 32.0,
+          "cps": 18.18,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.18
+    },
+    {
+      "index": 4,
+      "start": 7.6,
+      "end": 9.16,
+      "duration": 1.56,
+      "lines": [
+        {
+          "index": 0,
+          "text": "的老空中交通控制系统。",
+          "language": "zh-Hans",
+          "characters": 11.0,
+          "cps": 7.05,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "old air traffic control system.",
+          "language": "en",
+          "characters": 31.0,
+          "cps": 19.87,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.87
+    },
+    {
+      "index": 5,
+      "start": 9.2,
+      "end": 13.4,
+      "duration": 4.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我想每个你的网络总统",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 2.38,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "I think every single one of your networks have covered",
+          "language": "en",
+          "characters": 54.0,
+          "cps": 12.86,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 12.86
+    },
+    {
+      "index": 6,
+      "start": 13.5,
+      "end": 16.86,
+      "duration": 3.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "和我谈这个过去",
+          "language": "zh-Hans",
+          "characters": 7.0,
+          "cps": 2.08,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "the president and myself talking about this for the last",
+          "language": "en",
+          "characters": 56.0,
+          "cps": 16.67,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.67
+    },
+    {
+      "index": 7,
+      "start": 16.9,
+      "end": 20.24,
+      "duration": 3.34,
+      "lines": [
+        {
+          "index": 0,
+          "text": "两年去年的总统一直要",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 2.99,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "two years. The president for the last year has been asking",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 17.37,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.37
+    },
+    {
+      "index": 8,
+      "start": 20.3,
+      "end": 22.96,
+      "duration": 2.66,
+      "lines": [
+        {
+          "index": 0,
+          "text": "求国会全额资助呃,一个完",
+          "language": "zh-Hans",
+          "characters": 11.5,
+          "cps": 4.32,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Congress to fully fund uh a",
+          "language": "en",
+          "characters": 27.0,
+          "cps": 10.15,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.15
+    },
+    {
+      "index": 9,
+      "start": 23.0,
+      "end": 26.36,
+      "duration": 3.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "整的建筑全新的空中交通管制系",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 4.17,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "统所以,我们有TDMuh电信。",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 3.57,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 2,
+          "text": "full build of a brand new air traffic control system.",
+          "language": "en",
+          "characters": 53.0,
+          "cps": 15.77,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 15.77
+    },
+    {
+      "index": 10,
+      "start": 26.4,
+      "end": 31.26,
+      "duration": 4.86,
+      "lines": [
+        {
+          "index": 0,
+          "text": "所以,这是模拟电信。",
+          "language": "zh-Hans",
+          "characters": 9.5,
+          "cps": 1.95,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "So, we have TDM uh telecom. So, this is analog telecom.",
+          "language": "en",
+          "characters": 55.0,
+          "cps": 11.32,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 11.32
+    },
+    {
+      "index": 11,
+      "start": 31.3,
+      "end": 34.05,
+      "duration": 2.75,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们的开关,呃...我们的路",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 4.36,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Our switches, uh our routers",
+          "language": "en",
+          "characters": 28.0,
+          "cps": 10.18,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.18
+    },
+    {
+      "index": 12,
+      "start": 34.2,
+      "end": 37.36,
+      "duration": 3.16,
+      "lines": [
+        {
+          "index": 0,
+          "text": "由器被超载了数据和它们都消失了。",
+          "language": "zh-Hans",
+          "characters": 16.0,
+          "cps": 5.06,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "actually got overloaded with data and they went down.",
+          "language": "en",
+          "characters": 53.0,
+          "cps": 16.77,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.77
+    },
+    {
+      "index": 13,
+      "start": 37.4,
+      "end": 39.26,
+      "duration": 1.86,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我不应该说他们倒下了。",
+          "language": "zh-Hans",
+          "characters": 11.0,
+          "cps": 5.91,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "And uh I shouldn't say they went down.",
+          "language": "en",
+          "characters": 38.0,
+          "cps": 20.43,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.43
+    },
+    {
+      "index": 14,
+      "start": 39.3,
+      "end": 42.76,
+      "duration": 3.46,
+      "lines": [
+        {
+          "index": 0,
+          "text": "他们开始让我们数据不一致,呃,从",
+          "language": "zh-Hans",
+          "characters": 15.0,
+          "cps": 4.34,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "They started to give us inconsistency in the data uh from",
+          "language": "en",
+          "characters": 57.0,
+          "cps": 16.47,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.47
+    },
+    {
+      "index": 15,
+      "start": 42.8,
+      "end": 45.16,
+      "duration": 2.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "那些路由器里的东西因",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 4.24,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "those uh from those routers. And",
+          "language": "en",
+          "characters": 32.0,
+          "cps": 13.56,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.56
+    },
+    {
+      "index": 16,
+      "start": 45.2,
+      "end": 47.46,
+      "duration": 2.26,
+      "lines": [
+        {
+          "index": 0,
+          "text": "此,我们关闭了系统。",
+          "language": "zh-Hans",
+          "characters": 9.5,
+          "cps": 4.2,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "because of that, we shut the system down.",
+          "language": "en",
+          "characters": 41.0,
+          "cps": 18.14,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.14
+    },
+    {
+      "index": 17,
+      "start": 47.5,
+      "end": 50.36,
+      "duration": 2.86,
+      "lines": [
+        {
+          "index": 0,
+          "text": "现在,我已经更换了一些开关",
+          "language": "zh-Hans",
+          "characters": 12.5,
+          "cps": 4.37,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Now, I have already replaced some of those switches with",
+          "language": "en",
+          "characters": 56.0,
+          "cps": 19.58,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.58
+    },
+    {
+      "index": 18,
+      "start": 50.4,
+      "end": 51.65,
+      "duration": 1.25,
+      "lines": [
+        {
+          "index": 0,
+          "text": "川普总统.",
+          "language": "zh-Hans",
+          "characters": 4.5,
+          "cps": 3.6,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "President Trump. And our new IP switches did not go down.",
+          "language": "en",
+          "characters": 57.0,
+          "cps": 45.6,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 45.6
+    },
+    {
+      "index": 19,
+      "start": 54.5,
+      "end": 57.86,
+      "duration": 3.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们的新IP开关没有掉下去是旧的硬件坏了我认",
+          "language": "zh-Hans",
+          "characters": 21.0,
+          "cps": 6.25,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "It's the old hardware uh that went down. And I think the",
+          "language": "en",
+          "characters": 56.0,
+          "cps": 16.67,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.67
+    },
+    {
+      "index": 20,
+      "start": 57.9,
+      "end": 60.78,
+      "duration": 2.88,
+      "lines": [
+        {
+          "index": 0,
+          "text": "为美国人民的问题",
+          "language": "zh-Hans",
+          "characters": 8.0,
+          "cps": 2.78,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "question for the American people is",
+          "language": "en",
+          "characters": 35.0,
+          "cps": 12.15,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 12.15
+    },
+    {
+      "index": 21,
+      "start": 61.2,
+      "end": 63.36,
+      "duration": 2.16,
+      "lines": [
+        {
+          "index": 0,
+          "text": "是你要国会资助吗?",
+          "language": "zh-Hans",
+          "characters": 8.5,
+          "cps": 3.94,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "do you want your Congress to fund this?",
+          "language": "en",
+          "characters": 39.0,
+          "cps": 18.06,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.06
+    },
+    {
+      "index": 22,
+      "start": 63.4,
+      "end": 66.06,
+      "duration": 2.66,
+      "lines": [
+        {
+          "index": 0,
+          "text": "川普总统要求钱。",
+          "language": "zh-Hans",
+          "characters": 8.0,
+          "cps": 3.01,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "President Trump has asked for the money.",
+          "language": "en",
+          "characters": 40.0,
+          "cps": 15.04,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 15.04
+    },
+    {
+      "index": 23,
+      "start": 66.1,
+      "end": 70.06,
+      "duration": 3.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "他要求国会采取两党制的方法",
+          "language": "zh-Hans",
+          "characters": 13.0,
+          "cps": 3.28,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Uh he's asked the Congress on a bipartisan uh uh approach",
           "language": "en",
           "characters": 57.0,
           "cps": 14.39,
@@ -173,187 +1788,925 @@
       "max_cps": 14.39
     },
     {
-      "index": 2,
-      "start": 9.5,
-      "end": 13.13,
-      "duration": 3.63,
+      "index": 24,
+      "start": 70.1,
+      "end": 72.56,
+      "duration": 2.46,
       "lines": [
         {
           "index": 0,
-          "text": "宣布這裡很快",
+          "text": "说给我们资源建立一",
           "language": "zh-Hans",
-          "characters": 6.0,
-          "cps": 1.65,
+          "characters": 9.0,
+          "cps": 3.66,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "announce that this very site will soon be the premiere venue",
+          "text": "to say give us the resources to",
           "language": "en",
-          "characters": 60.0,
-          "cps": 16.53,
+          "characters": 31.0,
+          "cps": 12.6,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 16.53
+      "max_cps": 12.6
     },
     {
-      "index": 3,
-      "start": 13.3,
-      "end": 17.75,
-      "duration": 4.45,
+      "index": 25,
+      "start": 72.6,
+      "end": 75.16,
+      "duration": 2.56,
       "lines": [
         {
           "index": 0,
-          "text": "將成為川普政",
+          "text": "个先进的空中交通管制系统.",
           "language": "zh-Hans",
-          "characters": 6.0,
-          "cps": 1.35,
-          "limit_cps": 9.0,
-          "limit_chars": 28
-        },
-        {
-          "index": 1,
-          "text": "for the air and space demonstrations from",
-          "language": "en",
-          "characters": 41.0,
-          "cps": 9.21,
-          "limit_cps": 20.0,
-          "limit_chars": 60
-        }
-      ],
-      "max_cps": 9.21
-    },
-    {
-      "index": 4,
-      "start": 17.8,
-      "end": 21.36,
-      "duration": 3.56,
-      "lines": [
-        {
-          "index": 0,
-          "text": "府領導下，世界各地航空航天演示的首要場地。",
-          "language": "zh-Hans",
-          "characters": 21.0,
-          "cps": 5.9,
-          "limit_cps": 9.0,
-          "limit_chars": 28
-        },
-        {
-          "index": 1,
-          "text": "all over the world under the Trump [music] administration.",
-          "language": "en",
-          "characters": 58.0,
-          "cps": 16.29,
-          "limit_cps": 20.0,
-          "limit_chars": 60
-        }
-      ],
-      "max_cps": 16.29
-    },
-    {
-      "index": 5,
-      "start": 21.4,
-      "end": 25.09,
-      "duration": 3.69,
-      "lines": [
-        {
-          "index": 0,
-          "text": "我們的雄心壯志回來了，我們的勢頭回來",
-          "language": "zh-Hans",
-          "characters": 18.0,
+          "characters": 12.5,
           "cps": 4.88,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "Our ambition is back, our momentum is back, our leadership",
+          "text": "build a state-of-the-art air traffic control system.",
           "language": "en",
-          "characters": 58.0,
-          "cps": 15.72,
+          "characters": 52.0,
+          "cps": 20.31,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 15.72
+      "max_cps": 20.31
     },
     {
-      "index": 6,
-      "start": 25.2,
-      "end": 28.66,
-      "duration": 3.46,
+      "index": 26,
+      "start": 75.2,
+      "end": 80.06,
+      "duration": 4.86,
       "lines": [
         {
           "index": 0,
-          "text": "了，我們的領導力回來了，[音樂]美國宇航局回來了，最重",
+          "text": "让我们不要做一个补丁嗯修复一个对每个家庭",
           "language": "zh-Hans",
-          "characters": 26.0,
-          "cps": 7.51,
+          "characters": 20.0,
+          "cps": 4.12,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "is back, [music] NASA is back, and above all, most",
+          "text": "Let's not do a patchwork uh uh uh fix to a system that's",
           "language": "en",
-          "characters": 50.0,
-          "cps": 14.45,
+          "characters": 56.0,
+          "cps": 11.52,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 14.45
+      "max_cps": 11.52
     },
     {
-      "index": 7,
-      "start": 28.7,
-      "end": 32.82,
-      "duration": 4.12,
+      "index": 27,
+      "start": 80.1,
+      "end": 82.46,
+      "duration": 2.36,
       "lines": [
         {
           "index": 0,
-          "text": "要的是，美利堅合眾國回來了。",
+          "text": "都至关重要的系统非红非",
           "language": "zh-Hans",
+          "characters": 11.0,
+          "cps": 4.66,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "critical for every single family. It's not red, it's",
+          "language": "en",
+          "characters": 52.0,
+          "cps": 22.03,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 22.03
+    },
+    {
+      "index": 28,
+      "start": 82.5,
+      "end": 83.76,
+      "duration": 1.26,
+      "lines": [
+        {
+          "index": 0,
+          "text": "蓝非民主.",
+          "language": "zh-Hans",
+          "characters": 4.5,
+          "cps": 3.57,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "not blue, it's not Democrat, it's not Republican.",
+          "language": "en",
+          "characters": 49.0,
+          "cps": 38.89,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 38.89
+    },
+    {
+      "index": 29,
+      "start": 84.8,
+      "end": 85.2,
+      "duration": 0.4,
+      "lines": [
+        {
+          "index": 0,
+          "text": "共和党人.",
+          "language": "zh-Hans",
+          "characters": 4.5,
+          "cps": 11.25,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "It's American.",
+          "language": "en",
           "characters": 14.0,
-          "cps": 3.4,
+          "cps": 35.0,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 35.0
+    },
+    {
+      "index": 30,
+      "start": 86.2,
+      "end": 87.96,
+      "duration": 1.76,
+      "lines": [
+        {
+          "index": 0,
+          "text": "是美国人给我们钱修好它。",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 6.82,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "importantly, the United [music] States of America is back.",
+          "text": "Give us the money to fix it.",
           "language": "en",
-          "characters": 58.0,
-          "cps": 14.08,
+          "characters": 28.0,
+          "cps": 15.91,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 14.08
+      "max_cps": 15.91
     },
     {
-      "index": 8,
-      "start": 32.9,
-      "end": 36.56,
+      "index": 31,
+      "start": 88.0,
+      "end": 90.86,
+      "duration": 2.86,
+      "lines": [
+        {
+          "index": 0,
+          "text": "现在,如果你看看过去的政府,返回25",
+          "language": "zh-Hans",
+          "characters": 16.0,
+          "cps": 5.59,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Now, if you look to the past administrations, going back 25",
+          "language": "en",
+          "characters": 59.0,
+          "cps": 20.63,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.63
+    },
+    {
+      "index": 32,
+      "start": 90.9,
+      "end": 95.26,
+      "duration": 4.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "已经给了联邦航空局150亿元用来修复这个",
+          "language": "zh-Hans",
+          "characters": 18.5,
+          "cps": 4.24,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "years, uh $15 billion has been given to the",
+          "language": "en",
+          "characters": 43.0,
+          "cps": 9.86,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 9.86
+    },
+    {
+      "index": 33,
+      "start": 95.3,
+      "end": 98.66,
+      "duration": 3.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "空中交通管制系统.",
+          "language": "zh-Hans",
+          "characters": 8.5,
+          "cps": 2.53,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "FAA to fix this air traffic control system. And guess what?",
+          "language": "en",
+          "characters": 59.0,
+          "cps": 17.56,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.56
+    },
+    {
+      "index": 34,
+      "start": 99.8,
+      "end": 100.26,
+      "duration": 0.46,
+      "lines": [
+        {
+          "index": 0,
+          "text": "你猜怎么着?",
+          "language": "zh-Hans",
+          "characters": 5.5,
+          "cps": 11.96,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Barely anything was done. We had a down payment.",
+          "language": "en",
+          "characters": 48.0,
+          "cps": 104.35,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 104.35
+    },
+    {
+      "index": 35,
+      "start": 103.4,
+      "end": 106.2,
+      "duration": 2.8,
+      "lines": [
+        {
+          "index": 0,
+          "text": "几乎什么",
+          "language": "zh-Hans",
+          "characters": 4.0,
+          "cps": 1.43,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Uh President Trump asked for it in the uh one big beautiful",
+          "language": "en",
+          "characters": 59.0,
+          "cps": 21.07,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 21.07
+    },
+    {
+      "index": 36,
+      "start": 106.2,
+      "end": 110.8,
+      "duration": 4.6,
+      "lines": [
+        {
+          "index": 0,
+          "text": "都没做",
+          "language": "zh-Hans",
+          "characters": 3.0,
+          "cps": 0.65,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "bill of $12.5 billion. We are building in that $12.5",
+          "language": "en",
+          "characters": 52.0,
+          "cps": 11.3,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 11.3
+    },
+    {
+      "index": 37,
+      "start": 110.8,
+      "end": 113.0,
+      "duration": 2.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们有一",
+          "language": "zh-Hans",
+          "characters": 4.0,
+          "cps": 1.82,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "billion, that portion of the build will be",
+          "language": "en",
+          "characters": 42.0,
+          "cps": 19.09,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 19.09
+    },
+    {
+      "index": 38,
+      "start": 113.0,
+      "end": 115.2,
+      "duration": 2.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "个定金。",
+          "language": "zh-Hans",
+          "characters": 4.0,
+          "cps": 1.82,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "done by the time President Trump leaves office.",
+          "language": "en",
+          "characters": 47.0,
+          "cps": 21.36,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 21.36
+    },
+    {
+      "index": 39,
+      "start": 115.2,
+      "end": 116.7,
+      "duration": 1.5,
+      "lines": [
+        {
+          "index": 0,
+          "text": "特朗普总统要求的在呃一个大美丽",
+          "language": "zh-Hans",
+          "characters": 15.0,
+          "cps": 10.0,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "的125亿美元我们正用这125",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 8.0,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 2,
+          "text": "We are moving at a speed",
+          "language": "en",
+          "characters": 24.0,
+          "cps": 16.0,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.0
+    },
+    {
+      "index": 40,
+      "start": 116.7,
+      "end": 118.2,
+      "duration": 1.5,
+      "lines": [
+        {
+          "index": 0,
+          "text": "亿美元建造其中一部分特朗普总统离开后建筑工程将会完成办公",
+          "language": "zh-Hans",
+          "characters": 28.0,
+          "cps": 18.67,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "that has never uh been",
+          "language": "en",
+          "characters": 22.0,
+          "cps": 14.67,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.67
+    },
+    {
+      "index": 41,
+      "start": 118.2,
+      "end": 121.05,
+      "duration": 2.85,
+      "lines": [
+        {
+          "index": 0,
+          "text": "室我们以从未有过的速度前进之前关于联邦航空局的情况但这是",
+          "language": "zh-Hans",
+          "characters": 28.0,
+          "cps": 9.82,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "seen before with regard to FAA.",
+          "language": "en",
+          "characters": 31.0,
+          "cps": 10.88,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.88
+    },
+    {
+      "index": 42,
+      "start": 121.09,
+      "end": 123.85,
+      "duration": 2.76,
+      "lines": [
+        {
+          "index": 0,
+          "text": "部分资金我认为美国要求国会给予完成法案的资源。",
+          "language": "zh-Hans",
+          "characters": 23.0,
+          "cps": 8.33,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "But uh that's a partial funding.",
+          "language": "en",
+          "characters": 32.0,
+          "cps": 11.59,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 11.59
+    },
+    {
+      "index": 43,
+      "start": 123.89,
+      "end": 126.95,
+      "duration": 3.06,
+      "lines": [
+        {
+          "index": 0,
+          "text": "嗯,我认为国",
+          "language": "zh-Hans",
+          "characters": 5.5,
+          "cps": 1.8,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "I think America demands that the Congress give the rest of",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 18.95,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.95
+    },
+    {
+      "index": 44,
+      "start": 126.99,
+      "end": 132.55,
+      "duration": 5.56,
+      "lines": [
+        {
+          "index": 0,
+          "text": "会在一个点看FAA",
+          "language": "zh-Hans",
+          "characters": 7.5,
+          "cps": 1.35,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "the resources to finish the bill. Um and I think",
+          "language": "en",
+          "characters": 48.0,
+          "cps": 8.63,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 8.63
+    },
+    {
+      "index": 45,
+      "start": 132.59,
+      "end": 135.17,
+      "duration": 2.58,
+      "lines": [
+        {
+          "index": 0,
+          "text": "的历史,并说",
+          "language": "zh-Hans",
+          "characters": 5.5,
+          "cps": 2.13,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "the Congress at a point looked to the history of",
+          "language": "en",
+          "characters": 48.0,
+          "cps": 18.6,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.6
+    },
+    {
+      "index": 46,
+      "start": 135.21,
+      "end": 137.75,
+      "duration": 2.54,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们不信任你。",
+          "language": "zh-Hans",
+          "characters": 7.0,
+          "cps": 2.76,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "the FAA and said we don't trust you.",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 14.17,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 14.17
+    },
+    {
+      "index": 47,
+      "start": 137.79,
+      "end": 140.95,
+      "duration": 3.16,
+      "lines": [
+        {
+          "index": 0,
+          "text": "嗯,与特朗普总统我们所做的,我认为他",
+          "language": "zh-Hans",
+          "characters": 17.0,
+          "cps": 5.38,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Well, with President Trump and what we've done, I think they",
+          "language": "en",
+          "characters": 60.0,
+          "cps": 18.99,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.99
+    },
+    {
+      "index": 48,
+      "start": 140.99,
+      "end": 144.65,
       "duration": 3.66,
       "lines": [
         {
           "index": 0,
-          "text": "致所有為實現這一願景而努力​​的NASA團隊，",
+          "text": "们信任我们,因为我们先做的一",
           "language": "zh-Hans",
-          "characters": 20.0,
-          "cps": 5.46,
+          "characters": 13.5,
+          "cps": 3.69,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "To the entire team at NASA who have worked to make this",
+          "text": "do trust because what we've done with that first tranche of",
           "language": "en",
-          "characters": 55.0,
+          "characters": 59.0,
+          "cps": 16.12,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.12
+    },
+    {
+      "index": 49,
+      "start": 144.69,
+      "end": 147.45,
+      "duration": 2.76,
+      "lines": [
+        {
+          "index": 0,
+          "text": "笔钱所以有了全新的最",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 3.62,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "money. And so uh with a brand",
+          "language": "en",
+          "characters": 29.0,
+          "cps": 10.51,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.51
+    },
+    {
+      "index": 50,
+      "start": 147.59,
+      "end": 150.45,
+      "duration": 2.86,
+      "lines": [
+        {
+          "index": 0,
+          "text": "先进的系统你不会有这些停电。",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 4.9,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "new state-of-the-art system, you won't have these outages.",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 20.28,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.28
+    },
+    {
+      "index": 51,
+      "start": 150.49,
+      "end": 151.61,
+      "duration": 1.12,
+      "lines": [
+        {
+          "index": 0,
+          "text": "所以,你今天的经历,",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 8.04,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "So what you experienced today, but you can think back, many",
+          "language": "en",
+          "characters": 59.0,
+          "cps": 52.68,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 52.68
+    },
+    {
+      "index": 52,
+      "start": 152.59,
+      "end": 152.81,
+      "duration": 0.22,
+      "lines": [
+        {
+          "index": 0,
+          "text": "但你可以回想,很多从",
+          "language": "zh-Hans",
+          "characters": 9.5,
+          "cps": 43.18,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "of you covered the story from a year and a half",
+          "language": "en",
+          "characters": 47.0,
+          "cps": 213.64,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 213.64
+    },
+    {
+      "index": 53,
+      "start": 155.9,
+      "end": 157.69,
+      "duration": 1.79,
+      "lines": [
+        {
+          "index": 0,
+          "text": "一年半前开始,我们...",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 5.59,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "ago, we had outages in Newark, multiple outages in Newark.",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 32.4,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 32.4
+    },
+    {
+      "index": 54,
+      "start": 158.09,
+      "end": 160.45,
+      "duration": 2.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "纽瓦克断电纽瓦克断电这是一个持续的问题,我",
+          "language": "zh-Hans",
+          "characters": 20.5,
+          "cps": 8.69,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "This is a continual problem that we",
+          "language": "en",
+          "characters": 35.0,
+          "cps": 14.83,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 14.83
+    },
+    {
+      "index": 55,
+      "start": 160.49,
+      "end": 163.25,
+      "duration": 2.76,
+      "lines": [
+        {
+          "index": 0,
+          "text": "们有嗯,它应该修复。",
+          "language": "zh-Hans",
+          "characters": 9.5,
+          "cps": 3.44,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "have um and it should be fixed.",
+          "language": "en",
+          "characters": 31.0,
+          "cps": 11.23,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 11.23
+    },
+    {
+      "index": 56,
+      "start": 163.29,
+      "end": 166.43,
+      "duration": 3.14,
+      "lines": [
+        {
+          "index": 0,
+          "text": "嗯,所以我们想做什么,嗯",
+          "language": "zh-Hans",
+          "characters": 11.0,
+          "cps": 3.5,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Um and so what we want to do um",
+          "language": "en",
+          "characters": 31.0,
+          "cps": 9.87,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 9.87
+    },
+    {
+      "index": 57,
+      "start": 166.59,
+      "end": 169.85,
+      "duration": 3.26,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我问总统要求300亿美元。",
+          "language": "zh-Hans",
+          "characters": 11.5,
+          "cps": 3.53,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "I've asked the president's asked for $30 billion.",
+          "language": "en",
+          "characters": 49.0,
           "cps": 15.03,
           "limit_cps": 20.0,
           "limit_chars": 60
@@ -362,193 +2715,1057 @@
       "max_cps": 15.03
     },
     {
-      "index": 9,
-      "start": 36.6,
-      "end": 40.0,
-      "duration": 3.4,
+      "index": 58,
+      "start": 169.89,
+      "end": 172.25,
+      "duration": 2.36,
       "lines": [
         {
           "index": 0,
-          "text": "一個美麗、輝煌的現實",
+          "text": "我要500亿顺便说一句,如果你看",
           "language": "zh-Hans",
-          "characters": 10.0,
-          "cps": 2.94,
+          "characters": 14.0,
+          "cps": 5.93,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "vision a [music] real reality, a beautiful, a gorgeous",
+          "text": "I want $50 billion. And by the way, if you look at how much",
+          "language": "en",
+          "characters": 59.0,
+          "cps": 25.0,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 25.0
+    },
+    {
+      "index": 59,
+      "start": 172.29,
+      "end": 174.65,
+      "duration": 2.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "看国会多少钱花费,彼得,你覆盖",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 5.93,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "money Congress spends, Peter, you've covered Congress,",
           "language": "en",
           "characters": 54.0,
-          "cps": 15.88,
+          "cps": 22.88,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 15.88
+      "max_cps": 22.88
     },
     {
-      "index": 10,
-      "start": 40.2,
-      "end": 42.96,
-      "duration": 2.76,
+      "index": 60,
+      "start": 174.69,
+      "end": 177.25,
+      "duration": 2.56,
       "lines": [
         {
           "index": 0,
-          "text": "祝賀你們取得這一",
+          "text": "国会,他们浪费了很多钱还有什么比空中交通更重要的?",
           "language": "zh-Hans",
-          "characters": 8.0,
-          "cps": 2.9,
+          "characters": 24.0,
+          "cps": 9.37,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "reality, congratulations [music] on this",
+          "text": "they waste a lot of money.",
           "language": "en",
-          "characters": 40.0,
-          "cps": 14.49,
+          "characters": 26.0,
+          "cps": 10.16,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 14.49
+      "max_cps": 10.16
     },
     {
-      "index": 11,
-      "start": 43.0,
-      "end": 45.16,
-      "duration": 2.16,
+      "index": 61,
+      "start": 177.29,
+      "end": 179.48,
+      "duration": 2.19,
       "lines": [
         {
           "index": 0,
-          "text": "歷史性成就。",
+          "text": "实",
+          "language": "zh-Hans",
+          "characters": 1.0,
+          "cps": 0.46,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "What's more important than having an air traffic control",
+          "language": "en",
+          "characters": 56.0,
+          "cps": 25.57,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 25.57
+    },
+    {
+      "index": 62,
+      "start": 179.59,
+      "end": 181.55,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "际有效的控制系统?",
+          "language": "zh-Hans",
+          "characters": 8.5,
+          "cps": 4.34,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "system that actually works?",
+          "language": "en",
+          "characters": 27.0,
+          "cps": 13.78,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.78
+    },
+    {
+      "index": 63,
+      "start": 181.59,
+      "end": 183.45,
+      "duration": 1.86,
+      "lines": [
+        {
+          "index": 0,
+          "text": "于是总统说,你知道吗?",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 5.38,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "And so the president said, you know what?",
+          "language": "en",
+          "characters": 41.0,
+          "cps": 22.04,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 22.04
+    },
+    {
+      "index": 64,
+      "start": 183.49,
+      "end": 185.45,
+      "duration": 1.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "让我们完成这项工作。",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 5.1,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Let's finish this job.",
+          "language": "en",
+          "characters": 22.0,
+          "cps": 11.22,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 11.22
+    },
+    {
+      "index": 65,
+      "start": 185.49,
+      "end": 190.05,
+      "duration": 4.56,
+      "lines": [
+        {
+          "index": 0,
+          "text": "新硬件,新软件,新电信.",
+          "language": "zh-Hans",
+          "characters": 10.5,
+          "cps": 2.3,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "New hardware, new software, new telecommunication.",
+          "language": "en",
+          "characters": 50.0,
+          "cps": 10.96,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.96
+    },
+    {
+      "index": 66,
+      "start": 190.09,
+      "end": 194.25,
+      "duration": 4.16,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们的很多塔都将近100年了我们的空中交",
+          "language": "zh-Hans",
+          "characters": 18.5,
+          "cps": 4.45,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Uh many of our towers are almost 100 years old. Uh our air",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 13.94,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 13.94
+    },
+    {
+      "index": 67,
+      "start": 194.29,
+      "end": 195.87,
+      "duration": 1.58,
+      "lines": [
+        {
+          "index": 0,
+          "text": "通管制员有漏气的屋顶和",
+          "language": "zh-Hans",
+          "characters": 11.0,
+          "cps": 6.96,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "traffic controllers have leaky roofs,",
+          "language": "en",
+          "characters": 37.0,
+          "cps": 23.42,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 23.42
+    },
+    {
+      "index": 68,
+      "start": 195.99,
+      "end": 197.65,
+      "duration": 1.66,
+      "lines": [
+        {
+          "index": 0,
+          "text": "空气条件不起作用。",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 5.42,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "air conditioning that doesn't work.",
+          "language": "en",
+          "characters": 35.0,
+          "cps": 21.08,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 21.08
+    },
+    {
+      "index": 69,
+      "start": 197.69,
+      "end": 198.59,
+      "duration": 0.9,
+      "lines": [
+        {
+          "index": 0,
+          "text": "气势高,",
+          "language": "zh-Hans",
+          "characters": 3.5,
+          "cps": 3.89,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "They're high in the air, their elevators don't",
+          "language": "en",
+          "characters": 46.0,
+          "cps": 51.11,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 51.11
+    },
+    {
+      "index": 70,
+      "start": 199.29,
+      "end": 199.75,
+      "duration": 0.46,
+      "lines": [
+        {
+          "index": 0,
+          "text": "电梯不通.",
+          "language": "zh-Hans",
+          "characters": 4.5,
+          "cps": 9.78,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "work. Their roofs leak.",
+          "language": "en",
+          "characters": 23.0,
+          "cps": 50.0,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 50.0
+    },
+    {
+      "index": 71,
+      "start": 200.99,
+      "end": 204.89,
+      "duration": 3.9,
+      "lines": [
+        {
+          "index": 0,
+          "text": "他们的屋顶漏",
           "language": "zh-Hans",
           "characters": 6.0,
-          "cps": 2.78,
+          "cps": 1.54,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "historic achievement.",
-          "language": "en",
-          "characters": 21.0,
-          "cps": 9.72,
-          "limit_cps": 20.0,
-          "limit_chars": 60
-        }
-      ],
-      "max_cps": 9.72
-    },
-    {
-      "index": 12,
-      "start": 45.2,
-      "end": 47.28,
-      "duration": 2.08,
-      "lines": [
-        {
-          "index": 0,
-          "text": "對於美國音樂而言",
-          "language": "zh-Hans",
-          "characters": 8.0,
-          "cps": 3.85,
-          "limit_cps": 9.0,
-          "limit_chars": 28
-        },
-        {
-          "index": 1,
-          "text": "There could be no better place to [music] launch the next",
+          "text": "Um I want new towers. Uh we should also invest in many of",
           "language": "en",
           "characters": 57.0,
-          "cps": 27.4,
+          "cps": 14.62,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 27.4
+      "max_cps": 14.62
     },
     {
-      "index": 13,
-      "start": 47.4,
-      "end": 50.87,
-      "duration": 3.47,
+      "index": 72,
+      "start": 204.89,
+      "end": 206.99,
+      "duration": 2.1,
       "lines": [
         {
           "index": 0,
-          "text": "沒有比卡納維爾角和甘迺迪太空中心更",
+          "text": "水了嗯,我想",
+          "language": "zh-Hans",
+          "characters": 5.5,
+          "cps": 2.62,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "the airports around the country uh",
+          "language": "en",
+          "characters": 34.0,
+          "cps": 16.19,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.19
+    },
+    {
+      "index": 73,
+      "start": 206.99,
+      "end": 209.49,
+      "duration": 2.5,
+      "lines": [
+        {
+          "index": 0,
+          "text": "要新的塔楼。",
+          "language": "zh-Hans",
+          "characters": 6.0,
+          "cps": 2.4,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "that frankly many of them are embarrassing.",
+          "language": "en",
+          "characters": 43.0,
+          "cps": 17.2,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.2
+    },
+    {
+      "index": 74,
+      "start": 209.49,
+      "end": 213.29,
+      "duration": 3.8,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们也应该投资在很多机场周围老实",
+          "language": "zh-Hans",
+          "characters": 16.0,
+          "cps": 4.21,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Let's get the money. Let's invest so we never have to come",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 15.26,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 15.26
+    },
+    {
+      "index": 75,
+      "start": 213.29,
+      "end": 217.49,
+      "duration": 4.2,
+      "lines": [
+        {
+          "index": 0,
+          "text": "说,他们中很多人都很尴尬收钱吧我们",
+          "language": "zh-Hans",
+          "characters": 16.5,
+          "cps": 3.93,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "at 8:30 at night and have a press conference on why",
+          "language": "en",
+          "characters": 51.0,
+          "cps": 12.14,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 12.14
+    },
+    {
+      "index": 76,
+      "start": 217.49,
+      "end": 220.99,
+      "duration": 3.5,
+      "lines": [
+        {
+          "index": 0,
+          "text": "投资吧这样我们就不用来了晚上8:30,",
+          "language": "zh-Hans",
+          "characters": 16.5,
+          "cps": 4.71,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "air travel was shut down, why we have tens of thousands of",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 16.57,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.57
+    },
+    {
+      "index": 77,
+      "start": 220.99,
+      "end": 224.09,
+      "duration": 3.1,
+      "lines": [
+        {
+          "index": 0,
+          "text": "并举行记者招待会关于为什么播出旅行",
           "language": "zh-Hans",
           "characters": 17.0,
+          "cps": 5.48,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "people in airports uh separated from their families",
+          "language": "en",
+          "characters": 51.0,
+          "cps": 16.45,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 16.45
+    },
+    {
+      "index": 78,
+      "start": 224.09,
+      "end": 226.49,
+      "duration": 2.4,
+      "lines": [
+        {
+          "index": 0,
+          "text": "被关闭,为什么我们有数万机场里的",
+          "language": "zh-Hans",
+          "characters": 15.5,
+          "cps": 6.46,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "uh without um with without uh",
+          "language": "en",
+          "characters": 29.0,
+          "cps": 12.08,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 12.08
+    },
+    {
+      "index": 79,
+      "start": 226.49,
+      "end": 228.79,
+      "duration": 2.3,
+      "lines": [
+        {
+          "index": 0,
+          "text": "人和家人分居了没有,嗯,没有,嗯...",
+          "language": "zh-Hans",
+          "characters": 16.0,
+          "cps": 6.96,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "any knowledge of where they're going to sleep tonight.",
+          "language": "en",
+          "characters": 54.0,
+          "cps": 23.48,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 23.48
+    },
+    {
+      "index": 80,
+      "start": 228.79,
+      "end": 229.3,
+      "duration": 0.51,
+      "lines": [
+        {
+          "index": 0,
+          "text": "不知道他们在哪里今晚要睡觉了现在,你",
+          "language": "zh-Hans",
+          "characters": 17.5,
+          "cps": 34.31,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Now you probably",
+          "language": "en",
+          "characters": 16.0,
+          "cps": 31.37,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 34.31
+    },
+    {
+      "index": 81,
+      "start": 229.49,
+      "end": 233.15,
+      "duration": 3.66,
+      "lines": [
+        {
+          "index": 0,
+          "text": "可能捡起来,呃,我们如何我们已经发现了问题。",
+          "language": "zh-Hans",
+          "characters": 21.0,
+          "cps": 5.74,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "picked up that uh we how we've I identified the problem.",
+          "language": "en",
+          "characters": 56.0,
+          "cps": 15.3,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 15.3
+    },
+    {
+      "index": 82,
+      "start": 233.19,
+      "end": 236.14,
+      "duration": 2.95,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们有我们的中心和我们的TRACONs运行的权利现在",
+          "language": "zh-Hans",
+          "characters": 22.5,
+          "cps": 7.63,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "We've got our centers and our TRACONs operational right now.",
+          "language": "en",
+          "characters": 60.0,
+          "cps": 20.34,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.34
+    },
+    {
+      "index": 83,
+      "start": 236.59,
+      "end": 239.05,
+      "duration": 2.46,
+      "lines": [
+        {
+          "index": 0,
+          "text": "所以今晚8点15分东部时间",
+          "language": "zh-Hans",
+          "characters": 11.5,
+          "cps": 4.67,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "And so at 8:15 tonight uh",
+          "language": "en",
+          "characters": 25.0,
+          "cps": 10.16,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 10.16
+    },
+    {
+      "index": 84,
+      "start": 239.09,
+      "end": 241.18,
+      "duration": 2.09,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们已经开了在空气空间。",
+          "language": "zh-Hans",
+          "characters": 12.0,
+          "cps": 5.74,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Eastern time, we've opened up the airspace.",
+          "language": "en",
+          "characters": 43.0,
+          "cps": 20.57,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.57
+    },
+    {
+      "index": 85,
+      "start": 241.69,
+      "end": 244.95,
+      "duration": 3.26,
+      "lines": [
+        {
+          "index": 0,
+          "text": "这是否意味着每一次飞行都要进行现在飞?",
+          "language": "zh-Hans",
+          "characters": 18.5,
+          "cps": 5.67,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Now does that mean every flight is going to fly right now?",
+          "language": "en",
+          "characters": 58.0,
+          "cps": 17.79,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 17.79
+    },
+    {
+      "index": 86,
+      "start": 244.99,
+      "end": 246.65,
+      "duration": 1.66,
+      "lines": [
+        {
+          "index": 0,
+          "text": "它会是缓慢的,对不对?",
+          "language": "zh-Hans",
+          "characters": 10.0,
+          "cps": 6.02,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "It's It's going to be slow, right?",
+          "language": "en",
+          "characters": 34.0,
+          "cps": 20.48,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 20.48
+    },
+    {
+      "index": 87,
+      "start": 246.69,
+      "end": 249.65,
+      "duration": 2.96,
+      "lines": [
+        {
+          "index": 0,
+          "text": "所以,如果你在看,你在机场,嗯检",
+          "language": "zh-Hans",
+          "characters": 14.5,
           "cps": 4.9,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "generation of American breakthroughs than Cape Canaveral",
+          "text": "So, if if you're watching, you're at an airport, um",
           "language": "en",
-          "characters": 56.0,
-          "cps": 16.14,
+          "characters": 51.0,
+          "cps": 17.23,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 16.14
+      "max_cps": 17.23
     },
     {
-      "index": 14,
-      "start": 51.1,
-      "end": 54.25,
-      "duration": 3.15,
+      "index": 88,
+      "start": 249.69,
+      "end": 251.55,
+      "duration": 1.86,
       "lines": [
         {
           "index": 0,
-          "text": "適合開啟下一代美國音樂突破的地方了，美國的未來音樂",
+          "text": "查还有你的航空公司要看",
           "language": "zh-Hans",
-          "characters": 25.0,
-          "cps": 7.94,
+          "characters": 11.0,
+          "cps": 5.91,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "and the Kennedy Space Center where America's future [music]",
+          "text": "check with your airline. Uh it",
           "language": "en",
-          "characters": 59.0,
-          "cps": 18.73,
+          "characters": 30.0,
+          "cps": 16.13,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 18.73
+      "max_cps": 16.13
     },
     {
-      "index": 15,
-      "start": 54.5,
-      "end": 57.4,
-      "duration": 2.9,
+      "index": 89,
+      "start": 251.59,
+      "end": 253.55,
+      "duration": 1.96,
       "lines": [
         {
           "index": 0,
-          "text": "將在這裡起飛。",
+          "text": "我们有没有船员可以吗?",
           "language": "zh-Hans",
-          "characters": 7.0,
-          "cps": 2.41,
+          "characters": 10.5,
+          "cps": 5.36,
           "limit_cps": 9.0,
           "limit_chars": 28
         },
         {
           "index": 1,
-          "text": "will take flight.",
+          "text": "depends on do we have crews available?",
           "language": "en",
-          "characters": 17.0,
-          "cps": 5.86,
+          "characters": 38.0,
+          "cps": 19.39,
           "limit_cps": 20.0,
           "limit_chars": 60
         }
       ],
-      "max_cps": 5.86
+      "max_cps": 19.39
+    },
+    {
+      "index": 90,
+      "start": 253.59,
+      "end": 255.25,
+      "duration": 1.66,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们有没有飞行员和",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 5.42,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "Uh do we have pilots and flight",
+          "language": "en",
+          "characters": 31.0,
+          "cps": 18.67,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 18.67
+    },
+    {
+      "index": 91,
+      "start": 255.29,
+      "end": 257.0,
+      "duration": 1.71,
+      "lines": [
+        {
+          "index": 0,
+          "text": "空姐可以飞你的飞机吗?",
+          "language": "zh-Hans",
+          "characters": 10.5,
+          "cps": 6.14,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "attendants available to fly your flight?",
+          "language": "en",
+          "characters": 40.0,
+          "cps": 23.39,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 23.39
+    },
+    {
+      "index": 92,
+      "start": 257.09,
+      "end": 258.95,
+      "duration": 1.86,
+      "lines": [
+        {
+          "index": 0,
+          "text": "我们要试着像我们今晚能做的很",
+          "language": "zh-Hans",
+          "characters": 14.0,
+          "cps": 7.53,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "We're going to try to move as many of those as we can",
+          "language": "en",
+          "characters": 53.0,
+          "cps": 28.49,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 28.49
+    },
+    {
+      "index": 93,
+      "start": 258.99,
+      "end": 261.07,
+      "duration": 2.08,
+      "lines": [
+        {
+          "index": 0,
+          "text": "多如果我们有能力的",
+          "language": "zh-Hans",
+          "characters": 9.0,
+          "cps": 4.33,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "tonight if we have the capacity",
+          "language": "en",
+          "characters": 31.0,
+          "cps": 14.9,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 14.9
+    },
+    {
+      "index": 94,
+      "start": 261.29,
+      "end": 263.65,
+      "duration": 2.36,
+      "lines": [
+        {
+          "index": 0,
+          "text": "话与机组人员移动这些航班。",
+          "language": "zh-Hans",
+          "characters": 13.0,
+          "cps": 5.51,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "with crews to to move those flights.",
+          "language": "en",
+          "characters": 36.0,
+          "cps": 15.25,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 15.25
+    },
+    {
+      "index": 95,
+      "start": 263.69,
+      "end": 266.25,
+      "duration": 2.56,
+      "lines": [
+        {
+          "index": 0,
+          "text": "如果不行,我们明天早上开始",
+          "language": "zh-Hans",
+          "characters": 12.5,
+          "cps": 4.88,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "If not, we're going to uh start tomorrow morning with our",
+          "language": "en",
+          "characters": 57.0,
+          "cps": 22.27,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 22.27
+    },
+    {
+      "index": 96,
+      "start": 266.29,
+      "end": 271.29,
+      "duration": 5.0,
+      "lines": [
+        {
+          "index": 0,
+          "text": "航空公司合伙人,嗯移动那些飞机。",
+          "language": "zh-Hans",
+          "characters": 15.5,
+          "cps": 3.1,
+          "limit_cps": 9.0,
+          "limit_chars": 28
+        },
+        {
+          "index": 1,
+          "text": "airline partners um moving those aircraft.",
+          "language": "en",
+          "characters": 42.0,
+          "cps": 8.4,
+          "limit_cps": 20.0,
+          "limit_chars": 60
+        }
+      ],
+      "max_cps": 8.4
     }
   ],
   "source": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",

@@ -1,0 +1,508 @@
+1
+00:00:00,400 --> 00:00:04,800
+Uh so, what happened? Right? I've heard
+
+2
+00:00:02,400 --> 00:00:07,600
+a lot of the rumors like Mark Wayne has.
+
+3
+00:00:04,800 --> 00:00:09,600
+Uh but uh what we have is an incredibly
+
+4
+00:00:07,600 --> 00:00:12,600
+old air traffic control system. I think
+
+5
+00:00:09,600 --> 00:00:15,300
+every single one of your networks have
+
+6
+00:00:12,600 --> 00:00:17,500
+covered the president and myself talking
+
+7
+00:00:15,300 --> 00:00:19,800
+about this for the last two years. The
+
+8
+00:00:17,500 --> 00:00:22,600
+president for the last year has been
+
+9
+00:00:19,800 --> 00:00:24,700
+asking Congress to fully fund
+
+10
+00:00:22,600 --> 00:00:26,400
+uh a full build of a brand new air
+
+11
+00:00:24,700 --> 00:00:29,600
+traffic control system.
+
+12
+00:00:26,400 --> 00:00:33,100
+So, we have TDM uh telecom. So, this is
+
+13
+00:00:29,600 --> 00:00:35,200
+analog telecom. Our switches, uh our
+
+14
+00:00:33,100 --> 00:00:36,100
+routers actually got overloaded with
+
+15
+00:00:35,200 --> 00:00:37,400
+data
+
+16
+00:00:36,100 --> 00:00:39,300
+and they went down.
+
+17
+00:00:37,400 --> 00:00:41,300
+And uh I shouldn't say they went down.
+
+18
+00:00:39,300 --> 00:00:42,400
+They started to give us inconsistency in
+
+19
+00:00:41,300 --> 00:00:45,200
+the data
+
+20
+00:00:42,400 --> 00:00:46,600
+uh from those uh from those routers. And
+
+21
+00:00:45,200 --> 00:00:47,500
+because of that, we shut the system
+
+22
+00:00:46,600 --> 00:00:49,700
+down.
+
+23
+00:00:47,500 --> 00:00:51,800
+Now, I I have already replaced some of
+
+24
+00:00:49,700 --> 00:00:54,500
+those switches with President Trump. And
+
+25
+00:00:51,800 --> 00:00:57,400
+our new IP switches did not go down.
+
+26
+00:00:54,500 --> 00:00:58,500
+It's the old hardware uh that went down.
+
+27
+00:00:57,400 --> 00:01:01,200
+And I think the question for the
+
+28
+00:00:58,500 --> 00:01:03,400
+American people is
+
+29
+00:01:01,200 --> 00:01:06,100
+do you want your Congress to fund this?
+
+30
+00:01:03,400 --> 00:01:07,600
+President Trump has asked for the money.
+
+31
+00:01:06,100 --> 00:01:11,200
+Uh he's asked the Congress on a
+
+32
+00:01:07,600 --> 00:01:13,000
+bipartisan uh uh approach to say give us
+
+33
+00:01:11,200 --> 00:01:14,600
+the resources to build a
+
+34
+00:01:13,000 --> 00:01:18,200
+state-of-the-art air traffic control
+
+35
+00:01:14,600 --> 00:01:20,900
+system. Let's not do a patchwork uh uh
+
+36
+00:01:18,200 --> 00:01:22,500
+uh fix to a system that's critical for
+
+37
+00:01:20,900 --> 00:01:23,800
+every single family. It's not red, it's
+
+38
+00:01:22,500 --> 00:01:26,700
+not blue, it's not Democrat, it's not
+
+39
+00:01:23,800 --> 00:01:28,800
+Republican. It's American. Give us the
+
+40
+00:01:26,700 --> 00:01:30,900
+money to fix it. Now, if you look to the
+
+41
+00:01:28,800 --> 00:01:34,400
+past administrations, going back 25
+
+42
+00:01:30,900 --> 00:01:37,000
+years, uh $15 billion
+
+43
+00:01:34,400 --> 00:01:39,100
+has been given to the FAA to fix this
+
+44
+00:01:37,000 --> 00:01:41,900
+air traffic control system. And guess
+
+45
+00:01:39,100 --> 00:01:44,000
+what? Barely anything was done.
+
+46
+00:01:41,900 --> 00:01:45,800
+We had a down payment. Uh President
+
+47
+00:01:44,000 --> 00:01:48,600
+Trump asked for it in the uh one big
+
+48
+00:01:45,800 --> 00:01:51,200
+beautiful bill of $12.5 billion.
+
+49
+00:01:48,600 --> 00:01:53,500
+We are building in that $12.5 billion,
+
+50
+00:01:51,200 --> 00:01:54,800
+that portion of the build will be done
+
+51
+00:01:53,500 --> 00:01:56,800
+by the time President Trump leaves
+
+52
+00:01:54,800 --> 00:01:59,000
+office. We are moving at a speed that
+
+53
+00:01:56,800 --> 00:02:01,092
+has never uh been seen before with
+
+54
+00:01:59,000 --> 00:02:03,892
+regard to FAA.
+
+55
+00:02:01,092 --> 00:02:05,292
+But uh that's a partial funding.
+
+56
+00:02:03,892 --> 00:02:07,992
+I think America demands that the
+
+57
+00:02:05,292 --> 00:02:12,292
+Congress give the rest of the resources
+
+58
+00:02:07,992 --> 00:02:14,292
+to finish the bill. Um and
+
+59
+00:02:12,292 --> 00:02:15,692
+I think the Congress at a point
+
+60
+00:02:14,292 --> 00:02:17,792
+looked to the history of the FAA and
+
+61
+00:02:15,692 --> 00:02:19,692
+said we don't trust you.
+
+62
+00:02:17,792 --> 00:02:22,192
+Well, with President Trump and what
+
+63
+00:02:19,692 --> 00:02:24,292
+we've done, I think they do trust
+
+64
+00:02:22,192 --> 00:02:25,892
+because what we've done with that first
+
+65
+00:02:24,292 --> 00:02:27,792
+tranche of money.
+
+66
+00:02:25,892 --> 00:02:29,292
+And so uh with a brand new
+
+67
+00:02:27,792 --> 00:02:31,392
+state-of-the-art system, you won't have
+
+68
+00:02:29,292 --> 00:02:32,692
+these outages. So what you experienced
+
+69
+00:02:31,392 --> 00:02:34,392
+today, but you can think back, many of
+
+70
+00:02:32,692 --> 00:02:36,192
+you covered the story from a year and a
+
+71
+00:02:34,392 --> 00:02:38,092
+half ago, we had outages in Newark,
+
+72
+00:02:36,192 --> 00:02:41,392
+multiple outages in Newark.
+
+73
+00:02:38,092 --> 00:02:44,592
+This is a continual problem that we have
+
+74
+00:02:41,392 --> 00:02:47,592
+um and it should be fixed. Um and so
+
+75
+00:02:44,592 --> 00:02:49,892
+what we want to do um I've asked the
+
+76
+00:02:47,592 --> 00:02:51,392
+president's asked for $30 billion.
+
+77
+00:02:49,892 --> 00:02:52,292
+I want $50 billion.
+
+78
+00:02:51,392 --> 00:02:54,092
+And by the way, if you look at how much
+
+79
+00:02:52,292 --> 00:02:56,392
+money Congress spends, Peter, you've
+
+80
+00:02:54,092 --> 00:02:58,392
+covered Congress, they they waste a lot
+
+81
+00:02:56,392 --> 00:02:59,892
+of money. What's more important than
+
+82
+00:02:58,392 --> 00:03:01,592
+having an air traffic control system
+
+83
+00:02:59,892 --> 00:03:02,692
+that actually works?
+
+84
+00:03:01,592 --> 00:03:05,892
+And so the president said, you know
+
+85
+00:03:02,692 --> 00:03:08,492
+what? Let's finish this job. New
+
+86
+00:03:05,892 --> 00:03:10,092
+hardware, new software, new
+
+87
+00:03:08,492 --> 00:03:12,292
+telecommunication.
+
+88
+00:03:10,092 --> 00:03:13,492
+Uh many of our towers are almost 100
+
+89
+00:03:12,292 --> 00:03:15,292
+years old.
+
+90
+00:03:13,492 --> 00:03:16,692
+Uh our our air traffic controllers have
+
+91
+00:03:15,292 --> 00:03:18,292
+leaky roofs, air conditioning that
+
+92
+00:03:16,692 --> 00:03:20,292
+doesn't work. They're high in the air,
+
+93
+00:03:18,292 --> 00:03:23,392
+their elevators don't work. Their roofs
+
+94
+00:03:20,292 --> 00:03:25,692
+leak. Um I want new towers. Uh we should
+
+95
+00:03:23,392 --> 00:03:28,192
+also invest in many of the airports
+
+96
+00:03:25,692 --> 00:03:30,092
+around the country uh that frankly many
+
+97
+00:03:28,192 --> 00:03:32,592
+of them are embarrassing. Let's get the
+
+98
+00:03:30,092 --> 00:03:34,392
+money. Let's invest so we never have to
+
+99
+00:03:32,592 --> 00:03:36,292
+come at
+
+100
+00:03:34,392 --> 00:03:38,592
+8:30 at night and have a press
+
+101
+00:03:36,292 --> 00:03:40,092
+conference on why air travel was shut
+
+102
+00:03:38,592 --> 00:03:42,292
+down, why we have
+
+103
+00:03:40,092 --> 00:03:44,392
+tens of thousands of people in airports
+
+104
+00:03:42,292 --> 00:03:47,092
+uh separated from their families uh
+
+105
+00:03:44,392 --> 00:03:48,792
+without um with without uh any knowledge
+
+106
+00:03:47,092 --> 00:03:50,692
+of where they're going to sleep tonight.
+
+107
+00:03:48,792 --> 00:03:53,192
+Now you probably picked up that uh we
+
+108
+00:03:50,692 --> 00:03:54,692
+how we've I identified the problem.
+
+109
+00:03:53,192 --> 00:03:56,592
+We've got our centers and our TRACONs
+
+110
+00:03:54,692 --> 00:03:59,692
+operational right now.
+
+111
+00:03:56,592 --> 00:04:01,992
+And so at 8:15 tonight uh Eastern time,
+
+112
+00:03:59,692 --> 00:04:03,894
+we've opened up the airspace. Now does
+
+113
+00:04:01,992 --> 00:04:04,994
+that mean every flight is going to fly
+
+114
+00:04:03,894 --> 00:04:06,994
+right now?
+
+115
+00:04:04,994 --> 00:04:08,494
+It's It's going to be slow, right? So,
+
+116
+00:04:06,994 --> 00:04:11,394
+if if you're watching, you're at an
+
+117
+00:04:08,494 --> 00:04:12,694
+airport, um check with your airline. Uh
+
+118
+00:04:11,394 --> 00:04:15,094
+it depends on do we have crews
+
+119
+00:04:12,694 --> 00:04:16,894
+available? Uh do we have pilots and
+
+120
+00:04:15,094 --> 00:04:17,794
+flight attendants available to fly your
+
+121
+00:04:16,894 --> 00:04:20,394
+flight? We're going to try to move as
+
+122
+00:04:17,794 --> 00:04:22,494
+many of those as we can tonight if we
+
+123
+00:04:20,394 --> 00:04:24,494
+have the capacity with crews to to to
+
+124
+00:04:22,494 --> 00:04:26,294
+move those flights. If not, we're going
+
+125
+00:04:24,494 --> 00:04:28,894
+to uh start tomorrow morning with our
+
+126
+00:04:26,294 --> 00:04:31,294
+airline partners um moving those
+
+127
+00:04:28,894 --> 00:04:31,294
+aircraft.
+

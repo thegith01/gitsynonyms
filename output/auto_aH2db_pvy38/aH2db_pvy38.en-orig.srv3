@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8" ?><timedtext format="3">
+<head>
+<ws id="0"/>
+<ws id="1" mh="2" ju="0" sd="3"/>
+<wp id="0"/>
+<wp id="1" ap="6" ah="20" av="100" rc="2" cc="40"/>
+</head>
+<body>
+<w t="0" id="1" wp="1" ws="1"/>
+<p t="400" d="4400" w="1"><s>Uh</s><s t="100"> so,</s><s t="400"> what</s><s t="700"> happened?</s><s t="1600"> Right?</s><s t="1800"> I&#39;ve</s><s t="1900"> heard</s></p>
+<p t="2390" d="2410" w="1" a="1">
+</p>
+<p t="2400" d="5200" w="1"><s>a</s><s t="100"> lot</s><s t="400"> of the</s><s t="500"> rumors</s><s t="800"> like</s><s t="1000"> Mark</s><s t="1200"> Wayne</s><s t="1400"> has.</s></p>
+<p t="4790" d="2810" w="1" a="1">
+</p>
+<p t="4800" d="4800" w="1"><s>Uh</s><s t="300"> but</s><s t="900"> uh</s><s t="1100"> what</s><s t="1200"> we</s><s t="1300"> have</s><s t="1600"> is</s><s t="1800"> an</s><s t="2000"> incredibly</s></p>
+<p t="7590" d="2010" w="1" a="1">
+</p>
+<p t="7600" d="5000" w="1"><s>old</s><s t="400"> air</s><s t="500"> traffic</s><s t="900"> control</s><s t="1200"> system.</s><s t="1600"> I</s><s t="1700"> think</s></p>
+<p t="9590" d="3010" w="1" a="1">
+</p>
+<p t="9600" d="5700" w="1"><s>every</s><s t="400"> single</s><s t="1300"> one</s><s t="1500"> of</s><s t="1600"> your</s><s t="1800"> networks</s><s t="2700"> have</s></p>
+<p t="12590" d="2710" w="1" a="1">
+</p>
+<p t="12600" d="4900" w="1"><s>covered</s><s t="900"> the</s><s t="1000"> president</s><s t="1600"> and</s><s t="1800"> myself</s><s t="2200"> talking</s></p>
+<p t="15290" d="2210" w="1" a="1">
+</p>
+<p t="15300" d="4500" w="1"><s>about</s><s t="200"> this</s><s t="999"> for</s><s t="1100"> the</s><s t="1200"> last</s><s t="1600"> two</s><s t="1800"> years.</s><s t="2100"> The</s></p>
+<p t="17490" d="2310" w="1" a="1">
+</p>
+<p t="17500" d="5100" w="1"><s>president</s><s t="500"> for</s><s t="600"> the</s><s t="700"> last</s><s t="1100"> year</s><s t="1900"> has</s><s t="2100"> been</s></p>
+<p t="19790" d="2810" w="1" a="1">
+</p>
+<p t="19800" d="4900" w="1"><s>asking</s><s t="500"> Congress</s><s t="1000"> to</s><s t="1100"> fully</s><s t="1600"> fund</s></p>
+<p t="22590" d="2110" w="1" a="1">
+</p>
+<p t="22600" d="3800" w="1"><s>uh</s><s t="300"> a</s><s t="400"> full</s><s t="1000"> build</s><s t="1300"> of</s><s t="1400"> a</s><s t="1500"> brand</s><s t="1800"> new</s><s t="1900"> air</s></p>
+<p t="24690" d="1710" w="1" a="1">
+</p>
+<p t="24700" d="4900" w="1"><s>traffic</s><s t="300"> control</s><s t="600"> system.</s></p>
+<p t="26390" d="3210" w="1" a="1">
+</p>
+<p t="26400" d="6700" w="1"><s>So,</s><s t="500"> we</s><s t="600"> have</s><s t="900"> TDM</s><s t="1800"> uh</s><s t="2200"> telecom.</s><s t="2700"> So,</s><s t="2800"> this</s><s t="3000"> is</s></p>
+<p t="29590" d="3510" w="1" a="1">
+</p>
+<p t="29600" d="5600" w="1"><s>analog</s><s t="600"> telecom.</s><s t="1700"> Our</s><s t="2100"> switches,</s><s t="3100"> uh</s><s t="3300"> our</s></p>
+<p t="33090" d="2110" w="1" a="1">
+</p>
+<p t="33100" d="3000" w="1"><s>routers</s><s t="1100"> actually</s><s t="1500"> got</s><s t="1600"> overloaded</s><s t="2000"> with</s></p>
+<p t="35190" d="910" w="1" a="1">
+</p>
+<p t="35200" d="2200" w="1">data</p>
+<p t="36090" d="1310" w="1" a="1">
+</p>
+<p t="36100" d="3200" w="1"><s>and</s><s t="100"> they</s><s t="200"> went</s><s t="400"> down.</s></p>
+<p t="37390" d="1910" w="1" a="1">
+</p>
+<p t="37400" d="3900" w="1"><s>And</s><s t="500"> uh</s><s t="1000"> I</s><s t="1100"> shouldn&#39;t</s><s t="1300"> say</s><s t="1400"> they</s><s t="1500"> went</s><s t="1600"> down.</s></p>
+<p t="39290" d="2010" w="1" a="1">
+</p>
+<p t="39300" d="3100" w="1"><s>They</s><s t="200"> started</s><s t="500"> to</s><s t="800"> give</s><s t="1000"> us</s><s t="1100"> inconsistency</s><s t="1900"> in</s></p>
+<p t="41290" d="1110" w="1" a="1">
+</p>
+<p t="41300" d="3900" w="1"><s>the</s><s t="100"> data</s></p>
+<p t="42390" d="2810" w="1" a="1">
+</p>
+<p t="42400" d="4200" w="1"><s>uh</s><s t="100"> from</s><s t="400"> those</s><s t="1000"> uh</s><s t="1300"> from</s><s t="1600"> those</s><s t="1800"> routers.</s><s t="2600"> And</s></p>
+<p t="45190" d="1410" w="1" a="1">
+</p>
+<p t="45200" d="2300" w="1"><s>because</s><s t="200"> of</s><s t="300"> that,</s><s t="600"> we</s><s t="800"> shut</s><s t="1000"> the</s><s t="1100"> system</s></p>
+<p t="46590" d="910" w="1" a="1">
+</p>
+<p t="46600" d="3100" w="1">down.</p>
+<p t="47490" d="2210" w="1" a="1">
+</p>
+<p t="47500" d="4300" w="1"><s>Now,</s><s t="200"> I</s><s t="500"> I</s><s t="600"> have</s><s t="1100"> already</s><s t="1400"> replaced</s><s t="1900"> some</s><s t="2100"> of</s></p>
+<p t="49690" d="2110" w="1" a="1">
+</p>
+<p t="49700" d="4800" w="1"><s>those</s><s t="100"> switches</s><s t="600"> with</s><s t="700"> President</s><s t="1100"> Trump.</s><s t="1900"> And</s></p>
+<p t="51790" d="2710" w="1" a="1">
+</p>
+<p t="51800" d="5600" w="1"><s>our</s><s t="200"> new</s><s t="600"> IP</s><s t="1000"> switches</s><s t="1600"> did</s><s t="1800"> not</s><s t="2000"> go</s><s t="2100"> down.</s></p>
+<p t="54490" d="2910" w="1" a="1">
+</p>
+<p t="54500" d="4000" w="1"><s>It&#39;s</s><s t="200"> the</s><s t="400"> old</s><s t="700"> hardware</s><s t="1800"> uh</s><s t="2100"> that</s><s t="2300"> went</s><s t="2500"> down.</s></p>
+<p t="57390" d="1110" w="1" a="1">
+</p>
+<p t="57400" d="3800" w="1"><s>And</s><s t="200"> I think</s><s t="400"> the</s><s t="500"> question</s><s t="900"> for</s><s t="1000"> the</s></p>
+<p t="58490" d="2710" w="1" a="1">
+</p>
+<p t="58500" d="4900" w="1"><s>American</s><s t="400"> people</s><s t="1300"> is</s></p>
+<p t="61190" d="2210" w="1" a="1">
+</p>
+<p t="61200" d="4900" w="1"><s>do</s><s t="100"> you</s><s t="300"> want</s><s t="500"> your</s><s t="600"> Congress</s><s t="1100"> to</s><s t="1200"> fund</s><s t="1400"> this?</s></p>
+<p t="63390" d="2710" w="1" a="1">
+</p>
+<p t="63400" d="4200" w="1"><s>President</s><s t="500"> Trump</s><s t="799"> has</s><s t="1100"> asked</s><s t="1600"> for</s><s t="1700"> the</s><s t="1799"> money.</s></p>
+<p t="66090" d="1510" w="1" a="1">
+</p>
+<p t="66100" d="5100" w="1"><s>Uh</s><s t="200"> he&#39;s</s><s t="500"> asked</s><s t="800"> the</s><s t="900"> Congress</s><s t="1300"> on</s><s t="1400"> a</s></p>
+<p t="67590" d="3610" w="1" a="1">
+</p>
+<p t="67600" d="5400" w="1"><s>bipartisan</s><s t="1200"> uh</s><s t="1500"> uh</s><s t="2000"> approach</s><s t="2500"> to</s><s t="2600"> say</s><s t="3200"> give</s><s t="3400"> us</s></p>
+<p t="71190" d="1810" w="1" a="1">
+</p>
+<p t="71200" d="3400" w="1"><s>the</s><s t="100"> resources</s><s t="1200"> to</s><s t="1400"> build</s><s t="1700"> a</s></p>
+<p t="72990" d="1610" w="1" a="1">
+</p>
+<p t="73000" d="5200" w="1"><s>state-of-the-art</s><s t="800"> air</s><s t="900"> traffic</s><s t="1300"> control</s></p>
+<p t="74590" d="3610" w="1" a="1">
+</p>
+<p t="74600" d="6300" w="1"><s>system.</s><s t="600"> Let&#39;s</s><s t="800"> not</s><s t="1100"> do</s><s t="1300"> a</s><s t="1400"> patchwork</s><s t="2800"> uh</s><s t="3200"> uh</s></p>
+<p t="78190" d="2710" w="1" a="1">
+</p>
+<p t="78200" d="4300" w="1"><s>uh fix</s><s t="800"> to</s><s t="900"> a</s><s t="1000"> system</s><s t="1600"> that&#39;s</s><s t="1900"> critical</s><s t="2400"> for</s></p>
+<p t="80890" d="1610" w="1" a="1">
+</p>
+<p t="80900" d="2900" w="1"><s>every</s><s t="200"> single</s><s t="500"> family.</s><s t="900"> It&#39;s</s><s t="1000"> not</s><s t="1200"> red,</s><s t="1400"> it&#39;s</s></p>
+<p t="82490" d="1310" w="1" a="1">
+</p>
+<p t="82500" d="4200" w="1"><s>not</s><s t="200"> blue,</s><s t="400"> it&#39;s</s><s t="500"> not</s><s t="700"> Democrat,</s><s t="1100"> it&#39;s</s><s t="1200"> not</s></p>
+<p t="83790" d="2910" w="1" a="1">
+</p>
+<p t="83800" d="5000" w="1"><s>Republican.</s><s t="1000"> It&#39;s</s><s t="1200"> American.</s><s t="2400"> Give</s><s t="2700"> us</s><s t="2800"> the</s></p>
+<p t="86690" d="2110" w="1" a="1">
+</p>
+<p t="86700" d="4200" w="1"><s>money</s><s t="300"> to</s><s t="400"> fix</s><s t="700"> it.</s><s t="1300"> Now,</s><s t="1500"> if</s><s t="1700"> you look</s><s t="1900"> to</s><s t="2000"> the</s></p>
+<p t="88790" d="2110" w="1" a="1">
+</p>
+<p t="88800" d="5600" w="1"><s>past</s><s t="300"> administrations,</s><s t="1200"> going</s><s t="1400"> back</s><s t="1600"> 25</s></p>
+<p t="90890" d="3510" w="1" a="1">
+</p>
+<p t="90900" d="6100" w="1"><s>years,</s><s t="1000"> uh</s><s t="1500"> $15</s><s t="2200"> billion</s></p>
+<p t="94390" d="2610" w="1" a="1">
+</p>
+<p t="94400" d="4700" w="1"><s>has</s><s t="200"> been</s><s t="300"> given</s><s t="600"> to</s><s t="800"> the</s><s t="900"> FAA</s><s t="1900"> to</s><s t="2000"> fix</s><s t="2400"> this</s></p>
+<p t="96990" d="2110" w="1" a="1">
+</p>
+<p t="97000" d="4900" w="1"><s>air</s><s t="200"> traffic</s><s t="500"> control</s><s t="800"> system.</s><s t="1700"> And</s><s t="1900"> guess</s></p>
+<p t="99090" d="2810" w="1" a="1">
+</p>
+<p t="99100" d="4900" w="1"><s>what?</s><s t="700"> Barely</s><s t="1200"> anything</s><s t="1700"> was</s><s t="1900"> done.</s></p>
+<p t="101890" d="2110" w="1" a="1">
+</p>
+<p t="101900" d="3900" w="1"><s>We</s><s t="200"> had</s><s t="400"> a down</s><s t="700"> payment.</s><s t="1500"> Uh</s><s t="1600"> President</s></p>
+<p t="103990" d="1810" w="1" a="1">
+</p>
+<p t="104000" d="4600" w="1"><s>Trump</s><s t="200"> asked</s><s t="500"> for</s><s t="700"> it</s><s t="800"> in</s><s t="900"> the</s><s t="1300"> uh</s><s t="1400"> one</s><s t="1600"> big</s></p>
+<p t="105790" d="2810" w="1" a="1">
+</p>
+<p t="105800" d="5400" w="1"><s>beautiful</s><s t="400"> bill</s><s t="600"> of</s><s t="700"> $12.5</s><s t="1300"> billion.</s></p>
+<p t="108590" d="2610" w="1" a="1">
+</p>
+<p t="108600" d="4900" w="1"><s>We</s><s t="200"> are</s><s t="300"> building</s><s t="1200"> in</s><s t="1400"> that</s><s t="1600"> $12.5</s><s t="2200"> billion,</s></p>
+<p t="111190" d="2310" w="1" a="1">
+</p>
+<p t="111200" d="3600" w="1"><s>that</s><s t="600"> portion</s><s t="1100"> of</s><s t="1200"> the</s><s t="1300"> build</s><s t="1600"> will</s><s t="1700"> be</s><s t="1800"> done</s></p>
+<p t="113490" d="1310" w="1" a="1">
+</p>
+<p t="113500" d="3300" w="1"><s>by</s><s t="200"> the</s><s t="300"> time</s><s t="500"> President</s><s t="900"> Trump</s><s t="1100"> leaves</s></p>
+<p t="114790" d="2010" w="1" a="1">
+</p>
+<p t="114800" d="4200" w="1"><s>office.</s><s t="400"> We</s><s t="600"> are moving</s><s t="900"> at</s><s t="1000"> a</s><s t="1100"> speed</s><s t="1900"> that</s></p>
+<p t="116790" d="2210" w="1" a="1">
+</p>
+<p t="116800" d="4292" w="1"><s>has</s><s t="200"> never</s><s t="1000"> uh</s><s t="1200"> been</s><s t="1400"> seen</s><s t="1600"> before</s><s t="2000"> with</s></p>
+<p t="118990" d="2102" w="1" a="1">
+</p>
+<p t="119000" d="4892" w="1"><s>regard</s><s t="400"> to</s><s t="692"> FAA.</s></p>
+<p t="121082" d="2810" w="1" a="1">
+</p>
+<p t="121092" d="4200" w="1"><s>But</s><s t="400"> uh</s><s t="600"> that&#39;s</s><s t="1000"> a partial</s><s t="1400"> funding.</s></p>
+<p t="123882" d="1410" w="1" a="1">
+</p>
+<p t="123892" d="4100" w="1"><s>I</s><s t="100"> think</s><s t="300"> America</s><s t="700"> demands</s><s t="1200"> that</s><s t="1300"> the</s></p>
+<p t="125282" d="2710" w="1" a="1">
+</p>
+<p t="125292" d="7000" w="1"><s>Congress</s><s t="900"> give</s><s t="1200"> the</s><s t="1300"> rest</s><s t="1600"> of</s><s t="1700"> the</s><s t="1800"> resources</s></p>
+<p t="127982" d="4310" w="1" a="1">
+</p>
+<p t="127992" d="6300" w="1"><s>to</s><s t="100"> finish</s><s t="400"> the</s><s t="500"> bill.</s><s t="1400"> Um</s><s t="2200"> and</s></p>
+<p t="132282" d="2010" w="1" a="1">
+</p>
+<p t="132292" d="3400" w="1"><s>I</s><s t="100"> think</s><s t="300"> the</s><s t="400"> Congress</s><s t="700"> at</s><s t="800"> a</s><s t="900"> point</s></p>
+<p t="134282" d="1410" w="1" a="1">
+</p>
+<p t="134292" d="3500" w="1"><s>looked</s><s t="200"> to</s><s t="300"> the</s><s t="400"> history</s><s t="800"> of the</s><s t="1000"> FAA</s><s t="1300"> and</s></p>
+<p t="135682" d="2110" w="1" a="1">
+</p>
+<p t="135692" d="4000" w="1"><s>said</s><s t="200"> we</s><s t="400"> don&#39;t</s><s t="700"> trust</s><s t="1000"> you.</s></p>
+<p t="137782" d="1910" w="1" a="1">
+</p>
+<p t="137792" d="4400" w="1"><s>Well,</s><s t="200"> with</s><s t="400"> President</s><s t="800"> Trump</s><s t="1600"> and</s><s t="1700"> what</s></p>
+<p t="139682" d="2510" w="1" a="1">
+</p>
+<p t="139692" d="4600" w="1"><s>we&#39;ve</s><s t="200"> done,</s><s t="700"> I</s><s t="900"> think</s><s t="1100"> they</s><s t="1300"> do</s><s t="1500"> trust</s></p>
+<p t="142182" d="2110" w="1" a="1">
+</p>
+<p t="142192" d="3700" w="1"><s>because</s><s t="400"> what</s><s t="600"> we&#39;ve</s><s t="800"> done</s><s t="1300"> with</s><s t="1500"> that</s><s t="1700"> first</s></p>
+<p t="144282" d="1610" w="1" a="1">
+</p>
+<p t="144292" d="3500" w="1"><s>tranche</s><s t="300"> of</s><s t="400"> money.</s></p>
+<p t="145882" d="1910" w="1" a="1">
+</p>
+<p t="145892" d="3400" w="1"><s>And</s><s t="100"> so</s><s t="600"> uh</s><s t="1000"> with</s><s t="1200"> a</s><s t="1400"> brand</s><s t="1700"> new</s></p>
+<p t="147782" d="1510" w="1" a="1">
+</p>
+<p t="147792" d="3600" w="1"><s>state-of-the-art</s><s t="500"> system,</s><s t="1000"> you</s><s t="1100"> won&#39;t</s><s t="1400"> have</s></p>
+<p t="149282" d="2110" w="1" a="1">
+</p>
+<p t="149292" d="3400" w="1"><s>these</s><s t="200"> outages.</s><s t="1200"> So</s><s t="1400"> what</s><s t="1600"> you</s><s t="1700"> experienced</s></p>
+<p t="151382" d="1310" w="1" a="1">
+</p>
+<p t="151392" d="3000" w="1"><s>today,</s><s t="300"> but</s><s t="400"> you</s><s t="500"> can</s><s t="600"> think</s><s t="700"> back,</s><s t="1000"> many</s><s t="1200"> of</s></p>
+<p t="152682" d="1710" w="1" a="1">
+</p>
+<p t="152692" d="3500" w="1"><s>you covered</s><s t="200"> the</s><s t="300"> story</s><s t="1200"> from</s><s t="1400"> a year</s><s t="1600"> and a</s></p>
+<p t="154382" d="1810" w="1" a="1">
+</p>
+<p t="154392" d="3700" w="1"><s>half</s><s t="200"> ago,</s><s t="500"> we</s><s t="600"> had</s><s t="700"> outages</s><s t="1100"> in</s><s t="1300"> Newark,</s></p>
+<p t="156182" d="1910" w="1" a="1">
+</p>
+<p t="156192" d="5200" w="1"><s>multiple</s><s t="400"> outages</s><s t="900"> in</s><s t="1000"> Newark.</s></p>
+<p t="158082" d="3310" w="1" a="1">
+</p>
+<p t="158092" d="6500" w="1"><s>This</s><s t="200"> is</s><s t="300"> a</s><s t="400"> continual</s><s t="1100"> problem</s><s t="2100"> that</s><s t="2300"> we</s><s t="2400"> have</s></p>
+<p t="161382" d="3210" w="1" a="1">
+</p>
+<p t="161392" d="6200" w="1"><s>um</s><s t="300"> and</s><s t="500"> it</s><s t="600"> should</s><s t="800"> be</s><s t="900"> fixed.</s><s t="1900"> Um</s><s t="2200"> and</s><s t="2400"> so</s></p>
+<p t="164582" d="3010" w="1" a="1">
+</p>
+<p t="164592" d="5300" w="1"><s>what</s><s t="200"> we</s><s t="300"> want</s><s t="500"> to do</s><s t="1400"> um</s><s t="2000"> I&#39;ve</s><s t="2200"> asked</s><s t="2900"> the</s></p>
+<p t="167582" d="2310" w="1" a="1">
+</p>
+<p t="167592" d="3800" w="1"><s>president&#39;s</s><s t="400"> asked</s><s t="800"> for</s><s t="900"> $30</s><s t="1200"> billion.</s></p>
+<p t="169882" d="1510" w="1" a="1">
+</p>
+<p t="169892" d="2400" w="1"><s>I want</s><s t="200"> $50</s><s t="600"> billion.</s></p>
+<p t="171382" d="910" w="1" a="1">
+</p>
+<p t="171392" d="2700" w="1"><s>And</s><s t="100"> by</s><s t="200"> the</s><s t="300"> way,</s><s t="400"> if you</s><s t="500"> look</s><s t="600"> at</s><s t="700"> how</s><s t="800"> much</s></p>
+<p t="172282" d="1810" w="1" a="1">
+</p>
+<p t="172292" d="4100" w="1"><s>money</s><s t="200"> Congress</s><s t="600"> spends,</s><s t="1100"> Peter,</s><s t="1400"> you&#39;ve</s></p>
+<p t="174082" d="2310" w="1" a="1">
+</p>
+<p t="174092" d="4300" w="1"><s>covered</s><s t="300"> Congress,</s><s t="600"> they</s><s t="800"> they</s><s t="1000"> waste</s><s t="2000"> a</s><s t="2100"> lot</s></p>
+<p t="176382" d="2010" w="1" a="1">
+</p>
+<p t="176392" d="3500" w="1"><s>of money.</s><s t="900"> What&#39;s</s><s t="1200"> more</s><s t="1400"> important</s><s t="1900"> than</s></p>
+<p t="178382" d="1510" w="1" a="1">
+</p>
+<p t="178392" d="3200" w="1"><s>having</s><s t="200"> an</s><s t="400"> air</s><s t="500"> traffic</s><s t="900"> control</s><s t="1200"> system</s></p>
+<p t="179882" d="1710" w="1" a="1">
+</p>
+<p t="179892" d="2800" w="1"><s>that</s><s t="200"> actually</s><s t="600"> works?</s></p>
+<p t="181582" d="1110" w="1" a="1">
+</p>
+<p t="181592" d="4300" w="1"><s>And</s><s t="100"> so</s><s t="200"> the</s><s t="300"> president</s><s t="700"> said,</s><s t="900"> you</s><s t="1000"> know</s></p>
+<p t="182682" d="3210" w="1" a="1">
+</p>
+<p t="182692" d="5800" w="1"><s>what?</s><s t="800"> Let&#39;s</s><s t="1200"> finish</s><s t="1600"> this</s><s t="1800"> job.</s><s t="2800"> New</s></p>
+<p t="185882" d="2610" w="1" a="1">
+</p>
+<p t="185892" d="4200" w="1"><s>hardware,</s><s t="1000"> new</s><s t="1200"> software,</s><s t="2400"> new</s></p>
+<p t="188482" d="1610" w="1" a="1">
+</p>
+<p t="188492" d="3800" w="1">telecommunication.</p>
+<p t="190082" d="2210" w="1" a="1">
+</p>
+<p t="190092" d="3400" w="1"><s>Uh</s><s t="300"> many</s><s t="500"> of</s><s t="600"> our</s><s t="700"> towers</s><s t="1300"> are</s><s t="1500"> almost</s><s t="1900"> 100</s></p>
+<p t="192282" d="1210" w="1" a="1">
+</p>
+<p t="192292" d="3000" w="1"><s>years</s><s t="300"> old.</s></p>
+<p t="193482" d="1810" w="1" a="1">
+</p>
+<p t="193492" d="3200" w="1"><s>Uh</s><s t="100"> our</s><s t="500"> our</s><s t="700"> air</s><s t="800"> traffic</s><s t="1200"> controllers</s><s t="1600"> have</s></p>
+<p t="195282" d="1410" w="1" a="1">
+</p>
+<p t="195292" d="3000" w="1"><s>leaky</s><s t="300"> roofs,</s><s t="700"> air</s><s t="900"> conditioning</s><s t="1300"> that</s></p>
+<p t="196682" d="1610" w="1" a="1">
+</p>
+<p t="196692" d="3600" w="1"><s>doesn&#39;t</s><s t="300"> work.</s><s t="1000"> They&#39;re</s><s t="1100"> high</s><s t="1300"> in</s><s t="1400"> the</s><s t="1500"> air,</s></p>
+<p t="198282" d="2010" w="1" a="1">
+</p>
+<p t="198292" d="5100" w="1"><s>their</s><s t="200"> elevators</s><s t="700"> don&#39;t</s><s t="1000"> work.</s><s t="1500"> Their</s><s t="1600"> roofs</s></p>
+<p t="200282" d="3110" w="1" a="1">
+</p>
+<p t="200292" d="5400" w="1"><s>leak.</s><s t="700"> Um</s><s t="1300"> I</s><s t="1400"> want</s><s t="1600"> new</s><s t="1700"> towers.</s><s t="2600"> Uh</s><s t="2800"> we</s><s t="2900"> should</s></p>
+<p t="203382" d="2310" w="1" a="1">
+</p>
+<p t="203392" d="4800" w="1"><s>also</s><s t="300"> invest</s><s t="900"> in</s><s t="1200"> many</s><s t="1400"> of</s><s t="1500"> the</s><s t="1700"> airports</s></p>
+<p t="205682" d="2510" w="1" a="1">
+</p>
+<p t="205692" d="4400" w="1"><s>around</s><s t="200"> the</s><s t="300"> country</s><s t="1200"> uh</s><s t="1300"> that</s><s t="2000"> frankly</s><s t="2300"> many</s></p>
+<p t="208182" d="1910" w="1" a="1">
+</p>
+<p t="208192" d="4400" w="1"><s>of them</s><s t="200"> are</s><s t="300"> embarrassing.</s><s t="1300"> Let&#39;s</s><s t="1600"> get</s><s t="1700"> the</s></p>
+<p t="210082" d="2510" w="1" a="1">
+</p>
+<p t="210092" d="4300" w="1"><s>money.</s><s t="300"> Let&#39;s</s><s t="500"> invest</s><s t="1200"> so</s><s t="1600"> we</s><s t="1800"> never</s><s t="2200"> have</s><s t="2400"> to</s></p>
+<p t="212582" d="1810" w="1" a="1">
+</p>
+<p t="212592" d="3700" w="1"><s>come</s><s t="700"> at</s></p>
+<p t="214382" d="1910" w="1" a="1">
+</p>
+<p t="214392" d="4200" w="1"><s>8:30</s><s t="900"> at</s><s t="1000"> night</s><s t="1400"> and</s><s t="1500"> have</s><s t="1600"> a press</s></p>
+<p t="216282" d="2310" w="1" a="1">
+</p>
+<p t="216292" d="3800" w="1"><s>conference</s><s t="600"> on</s><s t="800"> why</s><s t="1200"> air</s><s t="1500"> travel</s><s t="1900"> was</s><s t="2100"> shut</s></p>
+<p t="218582" d="1510" w="1" a="1">
+</p>
+<p t="218592" d="3700" w="1"><s>down,</s><s t="300"> why</s><s t="500"> we</s><s t="600"> have</s></p>
+<p t="220082" d="2210" w="1" a="1">
+</p>
+<p t="220092" d="4300" w="1"><s>tens</s><s t="300"> of</s><s t="400"> thousands</s><s t="800"> of</s><s t="900"> people</s><s t="1200"> in</s><s t="1300"> airports</s></p>
+<p t="222282" d="2110" w="1" a="1">
+</p>
+<p t="222292" d="4800" w="1"><s>uh</s><s t="100"> separated</s><s t="600"> from</s><s t="700"> their</s><s t="800"> families</s><s t="1800"> uh</s></p>
+<p t="224382" d="2710" w="1" a="1">
+</p>
+<p t="224392" d="4400" w="1"><s>without</s><s t="700"> um</s><s t="1000"> with</s><s t="1200"> without</s><s t="1800"> uh</s><s t="2100"> any</s><s t="2300"> knowledge</s></p>
+<p t="227082" d="1710" w="1" a="1">
+</p>
+<p t="227092" d="3600" w="1"><s>of where</s><s t="100"> they&#39;re</s><s t="200"> going</s><s t="300"> to</s><s t="400"> sleep</s><s t="600"> tonight.</s></p>
+<p t="228782" d="1910" w="1" a="1">
+</p>
+<p t="228792" d="4400" w="1"><s>Now</s><s t="200"> you</s><s t="400"> probably</s><s t="700"> picked</s><s t="1000"> up</s><s t="1200"> that</s><s t="1600"> uh</s><s t="1700"> we</s></p>
+<p t="230682" d="2510" w="1" a="1">
+</p>
+<p t="230692" d="4000" w="1"><s>how</s><s t="400"> we&#39;ve</s><s t="900"> I</s><s t="1000"> identified</s><s t="1500"> the</s><s t="1600"> problem.</s></p>
+<p t="233182" d="1510" w="1" a="1">
+</p>
+<p t="233192" d="3400" w="1"><s>We&#39;ve</s><s t="100"> got</s><s t="300"> our</s><s t="400"> centers</s><s t="700"> and</s><s t="800"> our</s><s t="900"> TRACONs</s></p>
+<p t="234682" d="1910" w="1" a="1">
+</p>
+<p t="234692" d="5000" w="1"><s>operational</s><s t="700"> right</s><s t="900"> now.</s></p>
+<p t="236582" d="3110" w="1" a="1">
+</p>
+<p t="236592" d="5400" w="1"><s>And</s><s t="200"> so</s><s t="500"> at</s><s t="800"> 8:15</s><s t="1500"> tonight</s><s t="2200"> uh</s><s t="2500"> Eastern</s><s t="2800"> time,</s></p>
+<p t="239682" d="2310" w="1" a="1">
+</p>
+<p t="239692" d="4202" w="1"><s>we&#39;ve</s><s t="300"> opened</s><s t="600"> up</s><s t="700"> the</s><s t="900"> airspace.</s><s t="2000"> Now</s><s t="2200"> does</s></p>
+<p t="241982" d="1912" w="1" a="1">
+</p>
+<p t="241992" d="3002" w="1"><s>that</s><s t="200"> mean</s><s t="402"> every</s><s t="702"> flight</s><s t="1002"> is</s><s t="1102"> going</s><s t="1202"> to</s><s t="1302"> fly</s></p>
+<p t="243884" d="1110" w="1" a="1">
+</p>
+<p t="243894" d="3100" w="1"><s>right</s><s t="200"> now?</s></p>
+<p t="244984" d="2010" w="1" a="1">
+</p>
+<p t="244994" d="3500" w="1"><s>It&#39;s</s><s t="300"> It&#39;s</s><s t="400"> going</s><s t="500"> to</s><s t="600"> be</s><s t="700"> slow,</s><s t="1500"> right?</s><s t="1700"> So,</s></p>
+<p t="246984" d="1510" w="1" a="1">
+</p>
+<p t="246994" d="4400" w="1"><s>if</s><s t="500"> if</s><s t="700"> you&#39;re</s><s t="800"> watching,</s><s t="1200"> you&#39;re</s><s t="1300"> at</s><s t="1400"> an</s></p>
+<p t="248484" d="2910" w="1" a="1">
+</p>
+<p t="248494" d="4200" w="1"><s>airport,</s><s t="1000"> um</s><s t="1200"> check</s><s t="1500"> with</s><s t="1600"> your</s><s t="1800"> airline.</s><s t="2800"> Uh</s></p>
+<p t="251384" d="1310" w="1" a="1">
+</p>
+<p t="251394" d="3700" w="1"><s>it</s><s t="200"> depends</s><s t="500"> on</s><s t="700"> do</s><s t="800"> we</s><s t="900"> have</s><s t="1000"> crews</s></p>
+<p t="252684" d="2410" w="1" a="1">
+</p>
+<p t="252694" d="4200" w="1"><s>available?</s><s t="900"> Uh</s><s t="1000"> do</s><s t="1100"> we have</s><s t="1200"> pilots</s><s t="2100"> and</s></p>
+<p t="255084" d="1810" w="1" a="1">
+</p>
+<p t="255094" d="2700" w="1"><s>flight</s><s t="200"> attendants</s><s t="700"> available</s><s t="1200"> to</s><s t="1400"> fly</s><s t="1600"> your</s></p>
+<p t="256884" d="910" w="1" a="1">
+</p>
+<p t="256894" d="3500" w="1"><s>flight?</s><s t="200"> We&#39;re</s><s t="300"> going</s><s t="400"> to try</s><s t="600"> to move</s><s t="800"> as</s></p>
+<p t="257784" d="2610" w="1" a="1">
+</p>
+<p t="257794" d="4700" w="1"><s>many</s><s t="300"> of</s><s t="400"> those</s><s t="700"> as</s><s t="800"> we</s><s t="900"> can</s><s t="1200"> tonight</s><s t="2300"> if</s><s t="2500"> we</s></p>
+<p t="260384" d="2110" w="1" a="1">
+</p>
+<p t="260394" d="4100" w="1"><s>have</s><s t="200"> the</s><s t="300"> capacity</s><s t="900"> with</s><s t="1100"> crews</s><s t="1400"> to</s><s t="1700"> to</s><s t="1900"> to</s></p>
+<p t="262484" d="2010" w="1" a="1">
+</p>
+<p t="262494" d="3800" w="1"><s>move</s><s t="200"> those</s><s t="400"> flights.</s><s t="1200"> If</s><s t="1400"> not,</s><s t="1700"> we&#39;re</s><s t="1800"> going</s></p>
+<p t="264484" d="1810" w="1" a="1">
+</p>
+<p t="264494" d="4400" w="1"><s>to</s><s t="300"> uh</s><s t="500"> start</s><s t="800"> tomorrow</s><s t="1100"> morning</s><s t="1500"> with</s><s t="1700"> our</s></p>
+<p t="266284" d="2610" w="1" a="1">
+</p>
+<p t="266294" d="5000" w="1"><s>airline</s><s t="400"> partners</s><s t="1500"> um</s><s t="1800"> moving</s><s t="2300"> those</s></p>
+<p t="268884" d="2410" w="1" a="1">
+</p>
+<p t="268894" d="2400" w="1">aircraft.</p>
+</body>
+</timedtext>

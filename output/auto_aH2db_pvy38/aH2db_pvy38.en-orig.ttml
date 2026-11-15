@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:00.400" end="00:00:04.800" style="s2">Uh so, what happened? Right? I&#39;ve heard</p>
+<p begin="00:00:02.400" end="00:00:07.600" style="s2">a lot of the rumors like Mark Wayne has.</p>
+<p begin="00:00:04.800" end="00:00:09.600" style="s2">Uh but uh what we have is an incredibly</p>
+<p begin="00:00:07.600" end="00:00:12.600" style="s2">old air traffic control system. I think</p>
+<p begin="00:00:09.600" end="00:00:15.300" style="s2">every single one of your networks have</p>
+<p begin="00:00:12.600" end="00:00:17.500" style="s2">covered the president and myself talking</p>
+<p begin="00:00:15.300" end="00:00:19.800" style="s2">about this for the last two years. The</p>
+<p begin="00:00:17.500" end="00:00:22.600" style="s2">president for the last year has been</p>
+<p begin="00:00:19.800" end="00:00:24.700" style="s2">asking Congress to fully fund</p>
+<p begin="00:00:22.600" end="00:00:26.400" style="s2">uh a full build of a brand new air</p>
+<p begin="00:00:24.700" end="00:00:29.600" style="s2">traffic control system.</p>
+<p begin="00:00:26.400" end="00:00:33.100" style="s2">So, we have TDM uh telecom. So, this is</p>
+<p begin="00:00:29.600" end="00:00:35.200" style="s2">analog telecom. Our switches, uh our</p>
+<p begin="00:00:33.100" end="00:00:36.100" style="s2">routers actually got overloaded with</p>
+<p begin="00:00:35.200" end="00:00:37.400" style="s2">data</p>
+<p begin="00:00:36.100" end="00:00:39.300" style="s2">and they went down.</p>
+<p begin="00:00:37.400" end="00:00:41.300" style="s2">And uh I shouldn&#39;t say they went down.</p>
+<p begin="00:00:39.300" end="00:00:42.400" style="s2">They started to give us inconsistency in</p>
+<p begin="00:00:41.300" end="00:00:45.200" style="s2">the data</p>
+<p begin="00:00:42.400" end="00:00:46.600" style="s2">uh from those uh from those routers. And</p>
+<p begin="00:00:45.200" end="00:00:47.500" style="s2">because of that, we shut the system</p>
+<p begin="00:00:46.600" end="00:00:49.700" style="s2">down.</p>
+<p begin="00:00:47.500" end="00:00:51.800" style="s2">Now, I I have already replaced some of</p>
+<p begin="00:00:49.700" end="00:00:54.500" style="s2">those switches with President Trump. And</p>
+<p begin="00:00:51.800" end="00:00:57.400" style="s2">our new IP switches did not go down.</p>
+<p begin="00:00:54.500" end="00:00:58.500" style="s2">It&#39;s the old hardware uh that went down.</p>
+<p begin="00:00:57.400" end="00:01:01.200" style="s2">And I think the question for the</p>
+<p begin="00:00:58.500" end="00:01:03.400" style="s2">American people is</p>
+<p begin="00:01:01.200" end="00:01:06.100" style="s2">do you want your Congress to fund this?</p>
+<p begin="00:01:03.400" end="00:01:07.600" style="s2">President Trump has asked for the money.</p>
+<p begin="00:01:06.100" end="00:01:11.200" style="s2">Uh he&#39;s asked the Congress on a</p>
+<p begin="00:01:07.600" end="00:01:13.000" style="s2">bipartisan uh uh approach to say give us</p>
+<p begin="00:01:11.200" end="00:01:14.600" style="s2">the resources to build a</p>
+<p begin="00:01:13.000" end="00:01:18.200" style="s2">state-of-the-art air traffic control</p>
+<p begin="00:01:14.600" end="00:01:20.900" style="s2">system. Let&#39;s not do a patchwork uh uh</p>
+<p begin="00:01:18.200" end="00:01:22.500" style="s2">uh fix to a system that&#39;s critical for</p>
+<p begin="00:01:20.900" end="00:01:23.800" style="s2">every single family. It&#39;s not red, it&#39;s</p>
+<p begin="00:01:22.500" end="00:01:26.700" style="s2">not blue, it&#39;s not Democrat, it&#39;s not</p>
+<p begin="00:01:23.800" end="00:01:28.800" style="s2">Republican. It&#39;s American. Give us the</p>
+<p begin="00:01:26.700" end="00:01:30.900" style="s2">money to fix it. Now, if you look to the</p>
+<p begin="00:01:28.800" end="00:01:34.400" style="s2">past administrations, going back 25</p>
+<p begin="00:01:30.900" end="00:01:37.000" style="s2">years, uh $15 billion</p>
+<p begin="00:01:34.400" end="00:01:39.100" style="s2">has been given to the FAA to fix this</p>
+<p begin="00:01:37.000" end="00:01:41.900" style="s2">air traffic control system. And guess</p>
+<p begin="00:01:39.100" end="00:01:44.000" style="s2">what? Barely anything was done.</p>
+<p begin="00:01:41.900" end="00:01:45.800" style="s2">We had a down payment. Uh President</p>
+<p begin="00:01:44.000" end="00:01:48.600" style="s2">Trump asked for it in the uh one big</p>
+<p begin="00:01:45.800" end="00:01:51.200" style="s2">beautiful bill of $12.5 billion.</p>
+<p begin="00:01:48.600" end="00:01:53.500" style="s2">We are building in that $12.5 billion,</p>
+<p begin="00:01:51.200" end="00:01:54.800" style="s2">that portion of the build will be done</p>
+<p begin="00:01:53.500" end="00:01:56.800" style="s2">by the time President Trump leaves</p>
+<p begin="00:01:54.800" end="00:01:59.000" style="s2">office. We are moving at a speed that</p>
+<p begin="00:01:56.800" end="00:02:01.092" style="s2">has never uh been seen before with</p>
+<p begin="00:01:59.000" end="00:02:03.892" style="s2">regard to FAA.</p>
+<p begin="00:02:01.092" end="00:02:05.292" style="s2">But uh that&#39;s a partial funding.</p>
+<p begin="00:02:03.892" end="00:02:07.992" style="s2">I think America demands that the</p>
+<p begin="00:02:05.292" end="00:02:12.292" style="s2">Congress give the rest of the resources</p>
+<p begin="00:02:07.992" end="00:02:14.292" style="s2">to finish the bill. Um and</p>
+<p begin="00:02:12.292" end="00:02:15.692" style="s2">I think the Congress at a point</p>
+<p begin="00:02:14.292" end="00:02:17.792" style="s2">looked to the history of the FAA and</p>
+<p begin="00:02:15.692" end="00:02:19.692" style="s2">said we don&#39;t trust you.</p>
+<p begin="00:02:17.792" end="00:02:22.192" style="s2">Well, with President Trump and what</p>
+<p begin="00:02:19.692" end="00:02:24.292" style="s2">we&#39;ve done, I think they do trust</p>
+<p begin="00:02:22.192" end="00:02:25.892" style="s2">because what we&#39;ve done with that first</p>
+<p begin="00:02:24.292" end="00:02:27.792" style="s2">tranche of money.</p>
+<p begin="00:02:25.892" end="00:02:29.292" style="s2">And so uh with a brand new</p>
+<p begin="00:02:27.792" end="00:02:31.392" style="s2">state-of-the-art system, you won&#39;t have</p>
+<p begin="00:02:29.292" end="00:02:32.692" style="s2">these outages. So what you experienced</p>
+<p begin="00:02:31.392" end="00:02:34.392" style="s2">today, but you can think back, many of</p>
+<p begin="00:02:32.692" end="00:02:36.192" style="s2">you covered the story from a year and a</p>
+<p begin="00:02:34.392" end="00:02:38.092" style="s2">half ago, we had outages in Newark,</p>
+<p begin="00:02:36.192" end="00:02:41.392" style="s2">multiple outages in Newark.</p>
+<p begin="00:02:38.092" end="00:02:44.592" style="s2">This is a continual problem that we have</p>
+<p begin="00:02:41.392" end="00:02:47.592" style="s2">um and it should be fixed. Um and so</p>
+<p begin="00:02:44.592" end="00:02:49.892" style="s2">what we want to do um I&#39;ve asked the</p>
+<p begin="00:02:47.592" end="00:02:51.392" style="s2">president&#39;s asked for $30 billion.</p>
+<p begin="00:02:49.892" end="00:02:52.292" style="s2">I want $50 billion.</p>
+<p begin="00:02:51.392" end="00:02:54.092" style="s2">And by the way, if you look at how much</p>
+<p begin="00:02:52.292" end="00:02:56.392" style="s2">money Congress spends, Peter, you&#39;ve</p>
+<p begin="00:02:54.092" end="00:02:58.392" style="s2">covered Congress, they they waste a lot</p>
+<p begin="00:02:56.392" end="00:02:59.892" style="s2">of money. What&#39;s more important than</p>
+<p begin="00:02:58.392" end="00:03:01.592" style="s2">having an air traffic control system</p>
+<p begin="00:02:59.892" end="00:03:02.692" style="s2">that actually works?</p>
+<p begin="00:03:01.592" end="00:03:05.892" style="s2">And so the president said, you know</p>
+<p begin="00:03:02.692" end="00:03:08.492" style="s2">what? Let&#39;s finish this job. New</p>
+<p begin="00:03:05.892" end="00:03:10.092" style="s2">hardware, new software, new</p>
+<p begin="00:03:08.492" end="00:03:12.292" style="s2">telecommunication.</p>
+<p begin="00:03:10.092" end="00:03:13.492" style="s2">Uh many of our towers are almost 100</p>
+<p begin="00:03:12.292" end="00:03:15.292" style="s2">years old.</p>
+<p begin="00:03:13.492" end="00:03:16.692" style="s2">Uh our our air traffic controllers have</p>
+<p begin="00:03:15.292" end="00:03:18.292" style="s2">leaky roofs, air conditioning that</p>
+<p begin="00:03:16.692" end="00:03:20.292" style="s2">doesn&#39;t work. They&#39;re high in the air,</p>
+<p begin="00:03:18.292" end="00:03:23.392" style="s2">their elevators don&#39;t work. Their roofs</p>
+<p begin="00:03:20.292" end="00:03:25.692" style="s2">leak. Um I want new towers. Uh we should</p>
+<p begin="00:03:23.392" end="00:03:28.192" style="s2">also invest in many of the airports</p>
+<p begin="00:03:25.692" end="00:03:30.092" style="s2">around the country uh that frankly many</p>
+<p begin="00:03:28.192" end="00:03:32.592" style="s2">of them are embarrassing. Let&#39;s get the</p>
+<p begin="00:03:30.092" end="00:03:34.392" style="s2">money. Let&#39;s invest so we never have to</p>
+<p begin="00:03:32.592" end="00:03:36.292" style="s2">come at</p>
+<p begin="00:03:34.392" end="00:03:38.592" style="s2">8:30 at night and have a press</p>
+<p begin="00:03:36.292" end="00:03:40.092" style="s2">conference on why air travel was shut</p>
+<p begin="00:03:38.592" end="00:03:42.292" style="s2">down, why we have</p>
+<p begin="00:03:40.092" end="00:03:44.392" style="s2">tens of thousands of people in airports</p>
+<p begin="00:03:42.292" end="00:03:47.092" style="s2">uh separated from their families uh</p>
+<p begin="00:03:44.392" end="00:03:48.792" style="s2">without um with without uh any knowledge</p>
+<p begin="00:03:47.092" end="00:03:50.692" style="s2">of where they&#39;re going to sleep tonight.</p>
+<p begin="00:03:48.792" end="00:03:53.192" style="s2">Now you probably picked up that uh we</p>
+<p begin="00:03:50.692" end="00:03:54.692" style="s2">how we&#39;ve I identified the problem.</p>
+<p begin="00:03:53.192" end="00:03:56.592" style="s2">We&#39;ve got our centers and our TRACONs</p>
+<p begin="00:03:54.692" end="00:03:59.692" style="s2">operational right now.</p>
+<p begin="00:03:56.592" end="00:04:01.992" style="s2">And so at 8:15 tonight uh Eastern time,</p>
+<p begin="00:03:59.692" end="00:04:03.894" style="s2">we&#39;ve opened up the airspace. Now does</p>
+<p begin="00:04:01.992" end="00:04:04.994" style="s2">that mean every flight is going to fly</p>
+<p begin="00:04:03.894" end="00:04:06.994" style="s2">right now?</p>
+<p begin="00:04:04.994" end="00:04:08.494" style="s2">It&#39;s It&#39;s going to be slow, right? So,</p>
+<p begin="00:04:06.994" end="00:04:11.394" style="s2">if if you&#39;re watching, you&#39;re at an</p>
+<p begin="00:04:08.494" end="00:04:12.694" style="s2">airport, um check with your airline. Uh</p>
+<p begin="00:04:11.394" end="00:04:15.094" style="s2">it depends on do we have crews</p>
+<p begin="00:04:12.694" end="00:04:16.894" style="s2">available? Uh do we have pilots and</p>
+<p begin="00:04:15.094" end="00:04:17.794" style="s2">flight attendants available to fly your</p>
+<p begin="00:04:16.894" end="00:04:20.394" style="s2">flight? We&#39;re going to try to move as</p>
+<p begin="00:04:17.794" end="00:04:22.494" style="s2">many of those as we can tonight if we</p>
+<p begin="00:04:20.394" end="00:04:24.494" style="s2">have the capacity with crews to to to</p>
+<p begin="00:04:22.494" end="00:04:26.294" style="s2">move those flights. If not, we&#39;re going</p>
+<p begin="00:04:24.494" end="00:04:28.894" style="s2">to uh start tomorrow morning with our</p>
+<p begin="00:04:26.294" end="00:04:31.294" style="s2">airline partners um moving those</p>
+<p begin="00:04:28.894" end="00:04:31.294" style="s2">aircraft.</p>
+</div>
+</body>
+</tt>
