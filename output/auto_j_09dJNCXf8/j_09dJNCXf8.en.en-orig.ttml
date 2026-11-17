@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:00.560" end="00:00:06.000" style="s2">I would uh I have prepared just a few</p>
+<p begin="00:00:02.560" end="00:00:07.680" style="s2">remarks to welcome our honored guest and</p>
+<p begin="00:00:06.000" end="00:00:10.719" style="s2">I&#39;d like to greet of course the</p>
+<p begin="00:00:07.680" end="00:00:14.480" style="s2">honorable Donald J. Trump, the president</p>
+<p begin="00:00:10.719" end="00:00:17.119" style="s2">of the United States, your majesty, your</p>
+<p begin="00:00:14.480" end="00:00:20.000" style="s2">excellencies. Good evening to you all at</p>
+<p begin="00:00:17.119" end="00:00:23.920" style="s2">this extremely important night.</p>
+<p begin="00:00:20.000" end="00:00:27.840" style="s2">Well, uh to we just had the closing</p>
+<p begin="00:00:23.920" end="00:00:29.920" style="s2">ceremonies of Azan 49 and it has been a</p>
+<p begin="00:00:27.840" end="00:00:32.559" style="s2">full and very rewarding week here in</p>
+<p begin="00:00:29.920" end="00:00:34.559" style="s2">Manila. We convened with our friends and</p>
+<p begin="00:00:32.559" end="00:00:37.120" style="s2">partners from across the world and spent</p>
+<p begin="00:00:34.559" end="00:00:40.399" style="s2">the days listening to one another and</p>
+<p begin="00:00:37.120" end="00:00:42.640" style="s2">finding new ways to work together. And</p>
+<p begin="00:00:40.399" end="00:00:44.800" style="s2">uh as I have said this afternoon, our</p>
+<p begin="00:00:42.640" end="00:00:48.719" style="s2">partners have become a very important</p>
+<p begin="00:00:44.800" end="00:00:51.280" style="s2">part of the wider Azan family and it is</p>
+<p begin="00:00:48.719" end="00:00:56.480" style="s2">a pleasure to close the year in good</p>
+<p begin="00:00:51.280" end="00:00:59.280" style="s2">company and in a special summit that we</p>
+<p begin="00:00:56.480" end="00:01:02.320" style="s2">have put together in honor of the the</p>
+<p begin="00:00:59.280" end="00:01:05.119" style="s2">arrival of President Trump. So President</p>
+<p begin="00:01:02.320" end="00:01:07.600" style="s2">Trump, once again on behalf of Azan, it</p>
+<p begin="00:01:05.119" end="00:01:10.799" style="s2">is our great pleasure to welcome you to</p>
+<p begin="00:01:07.600" end="00:01:13.040" style="s2">Manila. Your presence confirms what we</p>
+<p begin="00:01:10.799" end="00:01:15.680" style="s2">already know that Azan and the United</p>
+<p begin="00:01:13.040" end="00:01:18.080" style="s2">States are partners in shaping the</p>
+<p begin="00:01:15.680" end="00:01:20.159" style="s2">region&#39;s future.</p>
+<p begin="00:01:18.080" end="00:01:23.600" style="s2">We in the Philippines know this</p>
+<p begin="00:01:20.159" end="00:01:25.840" style="s2">friendship well. This year we mark 80</p>
+<p begin="00:01:23.600" end="00:01:28.799" style="s2">years of diplomatic relations between</p>
+<p begin="00:01:25.840" end="00:01:31.680" style="s2">our two countries. Our relations have</p>
+<p begin="00:01:28.799" end="00:01:34.320" style="s2">have rested on shared history, shared</p>
+<p begin="00:01:31.680" end="00:01:36.400" style="s2">values, and the ties that continue to</p>
+<p begin="00:01:34.320" end="00:01:39.600" style="s2">bind our peoples, including the millions</p>
+<p begin="00:01:36.400" end="00:01:44.479" style="s2">of Filipinos and Filipino Americans who</p>
+<p begin="00:01:39.600" end="00:01:47.200" style="s2">live in it every single day. For Azan,</p>
+<p begin="00:01:44.479" end="00:01:50.720" style="s2">the partnership reaches even further,</p>
+<p begin="00:01:47.200" end="00:01:53.680" style="s2">spanning trade, investment, technology,</p>
+<p begin="00:01:50.720" end="00:01:55.680" style="s2">security, and in the case certainly of</p>
+<p begin="00:01:53.680" end="00:01:57.520" style="s2">the Philippines. When I&#39;m asked, &quot;What</p>
+<p begin="00:01:55.680" end="00:02:00.320" style="s2">is the most important part of your</p>
+<p begin="00:01:57.520" end="00:02:03.360" style="s2">relationship with the United States?&quot; I</p>
+<p begin="00:02:00.320" end="00:02:05.759" style="s2">cannot answer the question because there</p>
+<p begin="00:02:03.360" end="00:02:08.560" style="s2">is no part of our lives in the</p>
+<p begin="00:02:05.759" end="00:02:11.680" style="s2">Philippines that is not involved with</p>
+<p begin="00:02:08.560" end="00:02:14.239" style="s2">the United States in some way in some</p>
+<p begin="00:02:11.680" end="00:02:16.800" style="s2">shape or form or another. And that is</p>
+<p begin="00:02:14.239" end="00:02:19.440" style="s2">how deep that partnership has gone and</p>
+<p begin="00:02:16.800" end="00:02:23.920" style="s2">that is how deep the partnership will</p>
+<p begin="00:02:19.440" end="00:02:26.319" style="s2">continue to go. And uh next year, Azan</p>
+<p begin="00:02:23.920" end="00:02:29.280" style="s2">and the United States mark 50 years of</p>
+<p begin="00:02:26.319" end="00:02:32.160" style="s2">dialogue relations and 5 years of</p>
+<p begin="00:02:29.280" end="00:02:34.480" style="s2">comprehensive strategic partnership.</p>
+<p begin="00:02:32.160" end="00:02:37.120" style="s2">And before I finish, I would just like</p>
+<p begin="00:02:34.480" end="00:02:39.599" style="s2">to make a very simple announcement in</p>
+<p begin="00:02:37.120" end="00:02:44.319" style="s2">anticipation of your arrival, Mr.</p>
+<p begin="00:02:39.599" end="00:02:47.360" style="s2">president and we knowing your your</p>
+<p begin="00:02:44.319" end="00:02:51.920" style="s2">desire for results</p>
+<p begin="00:02:47.360" end="00:02:54.560" style="s2">uh and not uh just talk we uh our staffs</p>
+<p begin="00:02:51.920" end="00:02:56.959" style="s2">have been working together asan and uh</p>
+<p begin="00:02:54.560" end="00:03:00.879" style="s2">your staffs have been working together</p>
+<p begin="00:02:56.959" end="00:03:03.599" style="s2">and uh we have come to uh uh to been</p>
+<p begin="00:03:00.879" end="00:03:06.800" style="s2">able to finalize and have adop adopted</p>
+<p begin="00:03:03.599" end="00:03:10.800" style="s2">the principles to tackle online scams</p>
+<p begin="00:03:06.800" end="00:03:13.680" style="s2">and also we have We have adopted the</p>
+<p begin="00:03:10.800" end="00:03:15.680" style="s2">statement on 10 public private</p>
+<p begin="00:03:13.680" end="00:03:18.319" style="s2">partnerships principles on tackling</p>
+<p begin="00:03:15.680" end="00:03:21.440" style="s2">online scams and the comprehensive work</p>
+<p begin="00:03:18.319" end="00:03:25.120" style="s2">plan. And so that is an immediate result</p>
+<p begin="00:03:21.440" end="00:03:27.840" style="s2">of this special summit between Azan and</p>
+<p begin="00:03:25.120" end="00:03:29.599" style="s2">the United States. And we look forward</p>
+<p begin="00:03:27.840" end="00:03:32.319" style="s2">to celebrating all the milestones</p>
+<p begin="00:03:29.599" end="00:03:34.720" style="s2">between Azan and the United States and</p>
+<p begin="00:03:32.319" end="00:03:37.519" style="s2">the Philippines and the United States.</p>
+<p begin="00:03:34.720" end="00:03:40.159" style="s2">and we look forward to continuing to</p>
+<p begin="00:03:37.519" end="00:03:43.360" style="s2">have you as our friend and as our</p>
+<p begin="00:03:40.159" end="00:03:47.480" style="s2">partner. Thank you and welcome again,</p>
+<p begin="00:03:43.360" end="00:03:47.480" style="s2">President Trump to Manila.</p>
+<p begin="00:04:04.239" end="00:04:09.120" style="s2">Well, thank you very much. It&#39;s an honor</p>
+<p begin="00:04:06.319" end="00:04:11.040" style="s2">to be here and so many friends that I&#39;ve</p>
+<p begin="00:04:09.120" end="00:04:13.439" style="s2">known for now a long time. I&#39;ve been</p>
+<p begin="00:04:11.040" end="00:04:16.160" style="s2">doing this for all of a sudden it seems</p>
+<p begin="00:04:13.439" end="00:04:19.199" style="s2">like a long time, but I&#39;ve gotten to</p>
+<p begin="00:04:16.160" end="00:04:22.079" style="s2">know most of you and you&#39;ve done a</p>
+<p begin="00:04:19.199" end="00:04:25.280" style="s2">fantastic job running your countries,</p>
+<p begin="00:04:22.079" end="00:04:27.199" style="s2">your levels of popularity, and it isn&#39;t</p>
+<p begin="00:04:25.280" end="00:04:28.720" style="s2">easy, but you&#39;ve done a great job. So,</p>
+<p begin="00:04:27.199" end="00:04:32.880" style="s2">it&#39;s an honor to be with you. And I want</p>
+<p begin="00:04:28.720" end="00:04:37.360" style="s2">to thank President Marcus for his</p>
+<p begin="00:04:32.880" end="00:04:40.479" style="s2">beautiful welcome to Manila and ASEAN</p>
+<p begin="00:04:37.360" end="00:04:42.000" style="s2">summit. It&#39;s uh become very important</p>
+<p begin="00:04:40.479" end="00:04:43.520" style="s2">all over the world right now. They&#39;re</p>
+<p begin="00:04:42.000" end="00:04:47.759" style="s2">talking about your country. You know</p>
+<p begin="00:04:43.520" end="00:04:49.680" style="s2">that. And they&#39;re talking about uh ASEAN</p>
+<p begin="00:04:47.759" end="00:04:53.120" style="s2">and for his excellent leadership as</p>
+<p begin="00:04:49.680" end="00:04:56.000" style="s2">chair of ASEAN. This year has been a</p>
+<p begin="00:04:53.120" end="00:04:57.759" style="s2">record year. It&#39;s a true pleasure to be</p>
+<p begin="00:04:56.000" end="00:05:01.600" style="s2">back in the Philippines. I&#39;ve been here</p>
+<p begin="00:04:57.759" end="00:05:03.360" style="s2">numerous times and uh I just don&#39;t want</p>
+<p begin="00:05:01.600" end="00:05:06.960" style="s2">to date myself but I knew your parents</p>
+<p begin="00:05:03.360" end="00:05:09.280" style="s2">very well and uh they were great. I</p>
+<p begin="00:05:06.960" end="00:05:11.440" style="s2">believe in genetics and they did a good</p>
+<p begin="00:05:09.280" end="00:05:13.680" style="s2">job. You have very good genetics. I can</p>
+<p begin="00:05:11.440" end="00:05:16.960" style="s2">tell you that. But one of America&#39;s</p>
+<p begin="00:05:13.680" end="00:05:20.160" style="s2">oldest and most important allies of of</p>
+<p begin="00:05:16.960" end="00:05:23.919" style="s2">uh our country and frankly of the world.</p>
+<p begin="00:05:20.160" end="00:05:27.120" style="s2">The United States is a Pacific nation in</p>
+<p begin="00:05:23.919" end="00:05:29.919" style="s2">a true sense and we have been engaged in</p>
+<p begin="00:05:27.120" end="00:05:33.919" style="s2">trade and commerce and diplomacy across</p>
+<p begin="00:05:29.919" end="00:05:36.080" style="s2">Southeast Asia for hundreds of years.</p>
+<p begin="00:05:33.919" end="00:05:37.919" style="s2">I&#39;m here today because America is deeply</p>
+<p begin="00:05:36.080" end="00:05:40.000" style="s2">committed to the success, sovereignty,</p>
+<p begin="00:05:37.919" end="00:05:43.120" style="s2">and prosperity of our many friends and</p>
+<p begin="00:05:40.000" end="00:05:46.320" style="s2">partners, many of whom are at this table</p>
+<p begin="00:05:43.120" end="00:05:48.479" style="s2">right now. But partners in this region,</p>
+<p begin="00:05:46.320" end="00:05:49.919" style="s2">and we always will be. We&#39;re with you</p>
+<p begin="00:05:48.479" end="00:05:52.560" style="s2">always.</p>
+<p begin="00:05:49.919" end="00:05:55.759" style="s2">As you know, at last year&#39;s ASEAN</p>
+<p begin="00:05:52.560" end="00:05:57.840" style="s2">meeting in Malaysia,</p>
+<p begin="00:05:55.759" end="00:05:59.840" style="s2">Prime Minister Anoir and I brokered a</p>
+<p begin="00:05:57.840" end="00:06:03.039" style="s2">historic peace agreement between</p>
+<p begin="00:05:59.840" end="00:06:04.560" style="s2">Cambodia and Thailand known as the Koala</p>
+<p begin="00:06:03.039" end="00:06:07.600" style="s2">Lumper</p>
+<p begin="00:06:04.560" end="00:06:10.080" style="s2">Peace Accord. And we secured a ceasefire</p>
+<p begin="00:06:07.600" end="00:06:13.120" style="s2">that saved thousands and thousands of</p>
+<p begin="00:06:10.080" end="00:06:15.759" style="s2">lives and maybe much more than that. And</p>
+<p begin="00:06:13.120" end="00:06:18.479" style="s2">as a result, countless displaced</p>
+<p begin="00:06:15.759" end="00:06:21.759" style="s2">civilians have been able to return to</p>
+<p begin="00:06:18.479" end="00:06:25.039" style="s2">their homes. And I was given a big thank</p>
+<p begin="00:06:21.759" end="00:06:27.280" style="s2">you from Cambodia. And I was given a big</p>
+<p begin="00:06:25.039" end="00:06:29.440" style="s2">thank you from everybody at this table</p>
+<p begin="00:06:27.280" end="00:06:31.759" style="s2">for that. That was a great thing. A</p>
+<p begin="00:06:29.440" end="00:06:33.600" style="s2">great thing that we did together. We</p>
+<p begin="00:06:31.759" end="00:06:36.240" style="s2">remain committed to upholding that</p>
+<p begin="00:06:33.600" end="00:06:38.639" style="s2">ceasefire and ensuring full faithful</p>
+<p begin="00:06:36.240" end="00:06:40.479" style="s2">implementation of the accord as was</p>
+<p begin="00:06:38.639" end="00:06:44.080" style="s2">agreed to one year ago. And I think it</p>
+<p begin="00:06:40.479" end="00:06:45.600" style="s2">will hold. getting along quite well. I</p>
+<p begin="00:06:44.080" end="00:06:47.759" style="s2">understand</p>
+<p begin="00:06:45.600" end="00:06:50.240" style="s2">over the past two years, we have also</p>
+<p begin="00:06:47.759" end="00:06:52.000" style="s2">been working closely with many nations</p>
+<p begin="00:06:50.240" end="00:06:55.039" style="s2">here tonight to strengthen and deepen</p>
+<p begin="00:06:52.000" end="00:06:58.160" style="s2">our economic relationships with you. The</p>
+<p begin="00:06:55.039" end="00:07:00.479" style="s2">United States is setting records. 22.2</p>
+<p begin="00:06:58.160" end="00:07:04.400" style="s2">trillion dollars being invested in the</p>
+<p begin="00:07:00.479" end="00:07:07.440" style="s2">United States since I took office uh</p>
+<p begin="00:07:04.400" end="00:07:10.880" style="s2">less than two years ago. So uh think of</p>
+<p begin="00:07:07.440" end="00:07:13.759" style="s2">that 22.2 trillion. That&#39;s many times</p>
+<p begin="00:07:10.880" end="00:07:15.919" style="s2">more than any nation has ever had.</p>
+<p begin="00:07:13.759" end="00:07:18.639" style="s2">Southeast Asia is one of the busiest</p>
+<p begin="00:07:15.919" end="00:07:20.319" style="s2">commercial crossroads on the planet. One</p>
+<p begin="00:07:18.639" end="00:07:24.400" style="s2">quarter of the world shipping flows</p>
+<p begin="00:07:20.319" end="00:07:26.880" style="s2">through the straight of Mala. And since</p>
+<p begin="00:07:24.400" end="00:07:29.680" style="s2">I returned to office, we&#39;ve made major</p>
+<p begin="00:07:26.880" end="00:07:32.800" style="s2">trade deals with Malaysia, Cambodia,</p>
+<p begin="00:07:29.680" end="00:07:34.800" style="s2">Indonesia, as well as Japan, South</p>
+<p begin="00:07:32.800" end="00:07:37.680" style="s2">Korea, and almost everybody, frankly, at</p>
+<p begin="00:07:34.800" end="00:07:41.120" style="s2">the table. Just moments ago, I signed a</p>
+<p begin="00:07:37.680" end="00:07:43.759" style="s2">new deal with Prime Minister</p>
+<p begin="00:07:41.120" end="00:07:45.520" style="s2">Alan Newton of Thailand. Could you stand</p>
+<p begin="00:07:43.759" end="00:07:48.880" style="s2">up, Mr. Prime Minister, because that was</p>
+<p begin="00:07:45.520" end="00:07:50.479" style="s2">a wonderful thing. He made a much better</p>
+<p begin="00:07:48.880" end="00:07:52.319" style="s2">deal than I did, but these are minor</p>
+<p begin="00:07:50.479" end="00:07:55.199" style="s2">details.</p>
+<p begin="00:07:52.319" end="00:07:56.879" style="s2">Thank you very much. And we&#39;ve made many</p>
+<p begin="00:07:55.199" end="00:07:59.440" style="s2">other vital agreements across the</p>
+<p begin="00:07:56.879" end="00:08:01.360" style="s2">region, spanning energy, critical</p>
+<p begin="00:07:59.440" end="00:08:03.440" style="s2">minerals, and technology. And I hope</p>
+<p begin="00:08:01.360" end="00:08:06.080" style="s2">you&#39;re going to be uh working very hard</p>
+<p begin="00:08:03.440" end="00:08:08.639" style="s2">on critical minerals, rare earth, and</p>
+<p begin="00:08:06.080" end="00:08:09.840" style="s2">magnets. If you don&#39;t mind, get magnets.</p>
+<p begin="00:08:08.639" end="00:08:11.120" style="s2">Somebody at the table is going to say,</p>
+<p begin="00:08:09.840" end="00:08:13.120" style="s2">&quot;I&#39;m going to listen to him, and you&#39;re</p>
+<p begin="00:08:11.120" end="00:08:14.800" style="s2">going to make a lot of money. We want</p>
+<p begin="00:08:13.120" end="00:08:17.280" style="s2">magnets.&quot;</p>
+<p begin="00:08:14.800" end="00:08:20.400" style="s2">Thanks to a historic investment from</p>
+<p begin="00:08:17.280" end="00:08:22.800" style="s2">South Korea. We also just approved a</p>
+<p begin="00:08:20.400" end="00:08:25.840" style="s2">colossal liqufied natural gas pipeline</p>
+<p begin="00:08:22.800" end="00:08:28.240" style="s2">in Alaska to facilitate the export of</p>
+<p begin="00:08:25.840" end="00:08:31.120" style="s2">record amounts of abundant affordable</p>
+<p begin="00:08:28.240" end="00:08:34.080" style="s2">American energy to partners all across</p>
+<p begin="00:08:31.120" end="00:08:36.399" style="s2">the Pacific. As you&#39;ve known uh I&#39;ve</p>
+<p begin="00:08:34.080" end="00:08:38.560" style="s2">been very strong on that and now we are</p>
+<p begin="00:08:36.399" end="00:08:41.599" style="s2">double the size of you add Russia and</p>
+<p begin="00:08:38.560" end="00:08:43.680" style="s2">Saudi Arabia together we are much more</p>
+<p begin="00:08:41.599" end="00:08:47.279" style="s2">than that. So we are but number one by a</p>
+<p begin="00:08:43.680" end="00:08:50.320" style="s2">lot in terms of energy. This historic</p>
+<p begin="00:08:47.279" end="00:08:52.399" style="s2">infrastructure project will be something</p>
+<p begin="00:08:50.320" end="00:08:54.640" style="s2">very special. It&#39;ll lower energy costs</p>
+<p begin="00:08:52.399" end="00:08:56.240" style="s2">and increase energy security for nations</p>
+<p begin="00:08:54.640" end="00:08:58.800" style="s2">throughout the region and throughout the</p>
+<p begin="00:08:56.240" end="00:09:02.720" style="s2">world. The United States is also leading</p>
+<p begin="00:08:58.800" end="00:09:05.120" style="s2">the world in super intelligence SI and</p>
+<p begin="00:09:02.720" end="00:09:07.600" style="s2">we have the world&#39;s most powerful SI</p>
+<p begin="00:09:05.120" end="00:09:10.240" style="s2">ecosystem. We&#39;re leading everybody by a</p>
+<p begin="00:09:07.600" end="00:09:12.720" style="s2">lot and we hope to keep it that way and</p>
+<p begin="00:09:10.240" end="00:09:14.720" style="s2">we will keep it that way. And we&#39;re</p>
+<p begin="00:09:12.720" end="00:09:17.200" style="s2">excited to work with every country</p>
+<p begin="00:09:14.720" end="00:09:20.399" style="s2">represented here today who want to build</p>
+<p begin="00:09:17.200" end="00:09:23.279" style="s2">a future for technology and unleash</p>
+<p begin="00:09:20.399" end="00:09:24.959" style="s2">enormous economic growth that it brings</p>
+<p begin="00:09:23.279" end="00:09:27.839" style="s2">with it.</p>
+<p begin="00:09:24.959" end="00:09:30.240" style="s2">They say that uh as an example that</p>
+<p begin="00:09:27.839" end="00:09:32.080" style="s2">super intelligence is going to be bigger</p>
+<p begin="00:09:30.240" end="00:09:34.320" style="s2">than the industrial revolution. We&#39;ll</p>
+<p begin="00:09:32.080" end="00:09:36.240" style="s2">see. But so far it seems to be looking</p>
+<p begin="00:09:34.320" end="00:09:38.320" style="s2">like that far bigger than the internet</p>
+<p begin="00:09:36.240" end="00:09:39.920" style="s2">and bigger than the industrial</p>
+<p begin="00:09:38.320" end="00:09:42.959" style="s2">revolution. And so it&#39;s enormous</p>
+<p begin="00:09:39.920" end="00:09:45.120" style="s2">economic growth creates jobs, unlocks</p>
+<p begin="00:09:42.959" end="00:09:48.240" style="s2">the mysteries of science and medicine</p>
+<p begin="00:09:45.120" end="00:09:49.760" style="s2">and protects our people, our security,</p>
+<p begin="00:09:48.240" end="00:09:52.080" style="s2">and our values. And we have to be</p>
+<p begin="00:09:49.760" end="00:09:54.560" style="s2">careful with it like everything else.</p>
+<p begin="00:09:52.080" end="00:09:57.279" style="s2">But it&#39;s amazing. And we&#39;ve seen some</p>
+<p begin="00:09:54.560" end="00:09:59.120" style="s2">medical cures and medical</p>
+<p begin="00:09:57.279" end="00:10:01.600" style="s2">solutions that have been worked on for</p>
+<p begin="00:09:59.120" end="00:10:05.519" style="s2">50 years and it&#39;s done in a matter of</p>
+<p begin="00:10:01.600" end="00:10:08.240" style="s2">minutes. It&#39;s pretty amazing.</p>
+<p begin="00:10:05.519" end="00:10:09.839" style="s2">From energy to technology to security</p>
+<p begin="00:10:08.240" end="00:10:12.720" style="s2">and far beyond, there&#39;s no better</p>
+<p begin="00:10:09.839" end="00:10:15.600" style="s2">partner on earth than the United States</p>
+<p begin="00:10:12.720" end="00:10:17.360" style="s2">of America. Just over two years ago, our</p>
+<p begin="00:10:15.600" end="00:10:19.519" style="s2">country was not doing great. We were a</p>
+<p begin="00:10:17.360" end="00:10:21.040" style="s2">dead country, frankly. Now, we&#39;re the</p>
+<p begin="00:10:19.519" end="00:10:22.720" style="s2">hottest country anywhere in the world.</p>
+<p begin="00:10:21.040" end="00:10:24.880" style="s2">And that was said by most of you</p>
+<p begin="00:10:22.720" end="00:10:27.600" style="s2">tonight. Didn&#39;t shake you, sir. You&#39;re</p>
+<p begin="00:10:24.880" end="00:10:28.880" style="s2">doing great. Your country is hot. But I</p>
+<p begin="00:10:27.600" end="00:10:30.720" style="s2">will tell you, under the past</p>
+<p begin="00:10:28.880" end="00:10:32.160" style="s2">administration, we were a dead country.</p>
+<p begin="00:10:30.720" end="00:10:34.959" style="s2">We would have been a dead country if</p>
+<p begin="00:10:32.160" end="00:10:38.399" style="s2">they won. Under our leadership, American</p>
+<p begin="00:10:34.959" end="00:10:41.200" style="s2">exports are at the all-time highest.</p>
+<p begin="00:10:38.399" end="00:10:42.959" style="s2">We&#39;ve never had, you know, uh, it&#39;s</p>
+<p begin="00:10:41.200" end="00:10:44.880" style="s2">pretty amazing because people thought we</p>
+<p begin="00:10:42.959" end="00:10:47.519" style="s2">weren&#39;t a manufacturing country anymore.</p>
+<p begin="00:10:44.880" end="00:10:51.279" style="s2">And yet, we just set a record by a lot</p>
+<p begin="00:10:47.519" end="00:10:53.839" style="s2">on the all-time high on exports. That</p>
+<p begin="00:10:51.279" end="00:10:55.920" style="s2">means manufacturing. US energy</p>
+<p begin="00:10:53.839" end="00:10:58.079" style="s2">production is at an all-time high.</p>
+<p begin="00:10:55.920" end="00:11:00.720" style="s2">Personal incomes are at the highest</p>
+<p begin="00:10:58.079" end="00:11:02.560" style="s2">level ever recorded. And we have more</p>
+<p begin="00:11:00.720" end="00:11:04.320" style="s2">people working in America today than</p>
+<p begin="00:11:02.560" end="00:11:06.959" style="s2">ever before. We have a record number of</p>
+<p begin="00:11:04.320" end="00:11:08.959" style="s2">people working in America.</p>
+<p begin="00:11:06.959" end="00:11:12.079" style="s2">And a lot of that&#39;s because of our great</p>
+<p begin="00:11:08.959" end="00:11:14.399" style="s2">economic policy. So thanks to our</p>
+<p begin="00:11:12.079" end="00:11:16.480" style="s2">unprecedented investments in the United</p>
+<p begin="00:11:14.399" end="00:11:19.120" style="s2">States armed forces, America also has</p>
+<p begin="00:11:16.480" end="00:11:23.360" style="s2">the strongest and most capable military</p>
+<p begin="00:11:19.120" end="00:11:25.680" style="s2">on the planet by far. And we value the</p>
+<p begin="00:11:23.360" end="00:11:28.320" style="s2">robust defense partnerships. So we have</p>
+<p begin="00:11:25.680" end="00:11:30.560" style="s2">with you and also the equipment we have.</p>
+<p begin="00:11:28.320" end="00:11:33.360" style="s2">We make the greatest equipment. You saw</p>
+<p begin="00:11:30.560" end="00:11:34.959" style="s2">that in Venezuela. You see it in Iran.</p>
+<p begin="00:11:33.360" end="00:11:36.399" style="s2">You see it everywhere. Everybody&#39;s</p>
+<p begin="00:11:34.959" end="00:11:38.640" style="s2">buying it. It&#39;s the best equipment</p>
+<p begin="00:11:36.399" end="00:11:40.880" style="s2">anywhere in the world. We&#39;re actually uh</p>
+<p begin="00:11:38.640" end="00:11:42.959" style="s2">because you have to wait too long. So</p>
+<p begin="00:11:40.880" end="00:11:45.040" style="s2">what we&#39;re doing is uh the defense</p>
+<p begin="00:11:42.959" end="00:11:48.000" style="s2">companies are now building more than 22</p>
+<p begin="00:11:45.040" end="00:11:50.720" style="s2">plants to make Patriots that systems,</p>
+<p begin="00:11:48.000" end="00:11:52.720" style="s2">tomahawks, and everything else. So it&#39;s</p>
+<p begin="00:11:50.720" end="00:11:54.560" style="s2">pretty amazing what&#39;s happening. But we</p>
+<p begin="00:11:52.720" end="00:11:56.640" style="s2">have the best equipment anywhere in the</p>
+<p begin="00:11:54.560" end="00:11:59.040" style="s2">world. Earlier this year, we announced a</p>
+<p begin="00:11:56.640" end="00:12:02.079" style="s2">major defense cooperation partnership</p>
+<p begin="00:11:59.040" end="00:12:04.399" style="s2">with Indonesia to expand our joint.</p>
+<p begin="00:12:02.079" end="00:12:06.240" style="s2">Would you Where is Indonesia? I saw my</p>
+<p begin="00:12:04.399" end="00:12:09.600" style="s2">friend here someplace. Would you please</p>
+<p begin="00:12:06.240" end="00:12:11.519" style="s2">stand up? He&#39;s such a shy person.</p>
+<p begin="00:12:09.600" end="00:12:14.560" style="s2">He&#39;s doing a great job. Thank you very</p>
+<p begin="00:12:11.519" end="00:12:17.200" style="s2">much. Congratulations, too.</p>
+<p begin="00:12:14.560" end="00:12:19.200" style="s2">Great leader to expand our joint special</p>
+<p begin="00:12:17.200" end="00:12:21.839" style="s2">forces training and work together on</p>
+<p begin="00:12:19.200" end="00:12:24.800" style="s2">defense modernization.</p>
+<p begin="00:12:21.839" end="00:12:26.399" style="s2">We&#39;ve also significantly increased our</p>
+<p begin="00:12:24.800" end="00:12:28.800" style="s2">defense cooperation with the</p>
+<p begin="00:12:26.399" end="00:12:31.200" style="s2">Philippines, which has historically been</p>
+<p begin="00:12:28.800" end="00:12:33.440" style="s2">a key US ally. But I don&#39;t think we&#39;ve</p>
+<p begin="00:12:31.200" end="00:12:36.160" style="s2">ever been closer than we are right now</p>
+<p begin="00:12:33.440" end="00:12:38.079" style="s2">because of our personal relationship.</p>
+<p begin="00:12:36.160" end="00:12:40.560" style="s2">And we support our partners and our</p>
+<p begin="00:12:38.079" end="00:12:43.360" style="s2">allies 100%. And when there&#39;s a problem,</p>
+<p begin="00:12:40.560" end="00:12:45.920" style="s2">you&#39;ll call me. You&#39;ll call Marco.</p>
+<p begin="00:12:43.360" end="00:12:48.560" style="s2">You&#39;ll call others. And if they don&#39;t</p>
+<p begin="00:12:45.920" end="00:12:50.399" style="s2">respond, call me. I&#39;ll take your call.</p>
+<p begin="00:12:48.560" end="00:12:52.560" style="s2">I&#39;ll say, &quot;Marco, you&#39;re fired. You</p>
+<p begin="00:12:50.399" end="00:12:54.800" style="s2">didn&#39;t you didn&#39;t respond fast enough.</p>
+<p begin="00:12:52.560" end="00:12:57.760" style="s2">How hot is Marco? Right. Is Marco doing</p>
+<p begin="00:12:54.800" end="00:13:00.240" style="s2">a great job. He&#39;s been fantastic. And</p>
+<p begin="00:12:57.760" end="00:13:03.519" style="s2">Scott and Howard, we have a great team</p>
+<p begin="00:13:00.240" end="00:13:05.279" style="s2">of people. Jameson, thank you very much.</p>
+<p begin="00:13:03.519" end="00:13:07.760" style="s2">They have been really amazing. And the</p>
+<p begin="00:13:05.279" end="00:13:10.240" style="s2">trade has been amazing. We&#39;re setting</p>
+<p begin="00:13:07.760" end="00:13:12.240" style="s2">every record. So from right here in the</p>
+<p begin="00:13:10.240" end="00:13:14.959" style="s2">Philippines to nations across Southeast</p>
+<p begin="00:13:12.240" end="00:13:16.639" style="s2">Asia and throughout the Indo-Pacific,</p>
+<p begin="00:13:14.959" end="00:13:18.880" style="s2">this is one of the world&#39;s most vibrant</p>
+<p begin="00:13:16.639" end="00:13:21.200" style="s2">and productive regions filled with the</p>
+<p begin="00:13:18.880" end="00:13:22.800" style="s2">tremendous potential and great friends</p>
+<p begin="00:13:21.200" end="00:13:25.760" style="s2">of the United States. You&#39;re great</p>
+<p begin="00:13:22.800" end="00:13:28.320" style="s2">friends. I mean, it&#39;s it&#39;s really so</p>
+<p begin="00:13:25.760" end="00:13:30.800" style="s2">much better when you know people. I know</p>
+<p begin="00:13:28.320" end="00:13:32.720" style="s2">almost all the people at the table and</p>
+<p begin="00:13:30.800" end="00:13:35.040" style="s2">it just works so much easier, so much</p>
+<p begin="00:13:32.720" end="00:13:37.839" style="s2">better. You know, the good ones, the bad</p>
+<p begin="00:13:35.040" end="00:13:39.519" style="s2">ones, the bad ones, too, by the way. but</p>
+<p begin="00:13:37.839" end="00:13:41.040" style="s2">you know the the people that you want to</p>
+<p begin="00:13:39.519" end="00:13:43.200" style="s2">do business with and it&#39;s so much easier</p>
+<p begin="00:13:41.040" end="00:13:44.800" style="s2">and it goes so fast. That&#39;s why we&#39;re</p>
+<p begin="00:13:43.200" end="00:13:46.800" style="s2">able to do what we&#39;re doing right now</p>
+<p begin="00:13:44.800" end="00:13:49.279" style="s2">and why your area is doing so well. I</p>
+<p begin="00:13:46.800" end="00:13:51.440" style="s2">look forward to speaking with many of</p>
+<p begin="00:13:49.279" end="00:13:53.360" style="s2">you tonight as we strengthen those bonds</p>
+<p begin="00:13:51.440" end="00:13:55.200" style="s2">even further and work to build an</p>
+<p begin="00:13:53.360" end="00:13:59.120" style="s2">incredible future for our people and for</p>
+<p begin="00:13:55.200" end="00:14:00.959" style="s2">your people, the entire world actually.</p>
+<p begin="00:13:59.120" end="00:14:03.440" style="s2">And President Marcos, I want to thank</p>
+<p begin="00:14:00.959" end="00:14:06.000" style="s2">you very much. Your family is amazing.</p>
+<p begin="00:14:03.440" end="00:14:08.399" style="s2">You&#39;re amazing. And I just met your son</p>
+<p begin="00:14:06.000" end="00:14:10.639" style="s2">who&#39;s a beautiful young man. He&#39;s got a</p>
+<p begin="00:14:08.399" end="00:14:13.199" style="s2">great future and it&#39;s an honor to meet</p>
+<p begin="00:14:10.639" end="00:14:14.560" style="s2">you, especially to meet you. Okay?</p>
+<p begin="00:14:13.199" end="00:14:16.240" style="s2">You&#39;ve done a good job. Your parents</p>
+<p begin="00:14:14.560" end="00:14:17.600" style="s2">have done a very good job. So, it&#39;s a</p>
+<p begin="00:14:16.240" end="00:14:20.720" style="s2">great honor and thank you very much</p>
+<p begin="00:14:17.600" end="00:14:22.644" style="s2">everybody. It&#39;s a real uh special group.</p>
+<p begin="00:14:20.720" end="00:14:24.664" style="s2">Thank you.</p>
+<p begin="00:14:22.644" end="00:14:24.664" style="s2">[applause]</p>
+</div>
+</body>
+</tt>
