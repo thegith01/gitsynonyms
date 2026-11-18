@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:04.799" end="00:00:09.120" style="s2">announcing [music] the arrival of His</p>
+<p begin="00:00:06.240" end="00:00:10.719" style="s2">Excellency Ferdinand R. Marcos Jr.,</p>
+<p begin="00:00:09.120" end="00:00:13.679" style="s2">President of the Republic of the [music]</p>
+<p begin="00:00:10.719" end="00:00:15.679" style="s2">Philippines, and Honorable Donald J.</p>
+<p begin="00:00:13.679" end="00:00:18.320" style="s2">Trump, President of [music] the United</p>
+<p begin="00:00:15.679" end="00:00:23.000" style="s2">States of America, together with First</p>
+<p begin="00:00:18.320" end="00:00:23.000" style="s2">Lady Louise Aronetta Marcos.</p>
+<p begin="00:00:25.119" end="00:00:28.119" style="s2">Heat. Heat.</p>
+<p begin="00:00:54.365" end="00:00:56.385" style="s2">&gt;&gt; [music]</p>
+<p begin="00:01:08.240" end="00:01:12.920" style="s2">&gt;&gt; Ladies and [music] gentlemen, please be</p>
+<p begin="00:01:09.920" end="00:01:12.920" style="s2">seated.</p>
+<p begin="00:01:27.280" end="00:01:34.640" style="s2">May we invite his excellency Ferdinand</p>
+<p begin="00:01:30.000" end="00:01:36.640" style="s2">R. Marcos Jr. to deliver his remarks.</p>
+<p begin="00:01:34.640" end="00:01:38.880" style="s2">&gt;&gt; Mr. President, distinguished guests,</p>
+<p begin="00:01:36.640" end="00:01:41.439" style="s2">ladies and gentlemen, it is a great</p>
+<p begin="00:01:38.880" end="00:01:43.920" style="s2">pleasure to welcome President Donald J.</p>
+<p begin="00:01:41.439" end="00:01:46.560" style="s2">Trump back to the Philippines to host a</p>
+<p begin="00:01:43.920" end="00:01:48.159" style="s2">state lunchon in his honor. Mr.</p>
+<p begin="00:01:46.560" end="00:01:51.040" style="s2">President, we are very pleased to have</p>
+<p begin="00:01:48.159" end="00:01:53.360" style="s2">you with us once again. Your visit comes</p>
+<p begin="00:01:51.040" end="00:01:54.880" style="s2">at a particularly meaningful time as the</p>
+<p begin="00:01:53.360" end="00:01:57.119" style="s2">Philippines and the United States</p>
+<p begin="00:01:54.880" end="00:02:00.000" style="s2">commemorate 80 years of diplomatic</p>
+<p begin="00:01:57.119" end="00:02:03.280" style="s2">relations and 75 years of our alliance</p>
+<p begin="00:02:00.000" end="00:02:05.040" style="s2">under the mutual defense treaty. These</p>
+<p begin="00:02:03.280" end="00:02:07.040" style="s2">anniversaries remind us that the</p>
+<p begin="00:02:05.040" end="00:02:09.280" style="s2">relationship between our two countries</p>
+<p begin="00:02:07.040" end="00:02:12.160" style="s2">is not only one of governments and</p>
+<p begin="00:02:09.280" end="00:02:16.000" style="s2">institutions. It is also a relationship</p>
+<p begin="00:02:12.160" end="00:02:18.319" style="s2">between peoples built over generations.</p>
+<p begin="00:02:16.000" end="00:02:21.520" style="s2">Strengthened by shared sacrifice,</p>
+<p begin="00:02:18.319" end="00:02:24.879" style="s2">enduring friendships, family ties, and a</p>
+<p begin="00:02:21.520" end="00:02:27.120" style="s2">deep sense of familiarity and trust,</p>
+<p begin="00:02:24.879" end="00:02:28.959" style="s2">Filipinos and Americans have stood side</p>
+<p begin="00:02:27.120" end="00:02:31.040" style="s2">by side through some of the most</p>
+<p begin="00:02:28.959" end="00:02:34.160" style="s2">consequential moments in our shared</p>
+<p begin="00:02:31.040" end="00:02:36.879" style="s2">history. That bond has endured because</p>
+<p begin="00:02:34.160" end="00:02:38.959" style="s2">it has continued to grow and adapt with</p>
+<p begin="00:02:36.879" end="00:02:41.599" style="s2">each generation.</p>
+<p begin="00:02:38.959" end="00:02:44.400" style="s2">Today, we celebrate that history, but we</p>
+<p begin="00:02:41.599" end="00:02:46.800" style="s2">also look ahead with optimism. Our</p>
+<p begin="00:02:44.400" end="00:02:49.440" style="s2">partnership today extends well beyond</p>
+<p begin="00:02:46.800" end="00:02:52.560" style="s2">defense and security. We are building</p>
+<p begin="00:02:49.440" end="00:02:54.720" style="s2">stronger ties in trade, investment, in</p>
+<p begin="00:02:52.560" end="00:02:57.440" style="s2">energy, in technology, resilient supply</p>
+<p begin="00:02:54.720" end="00:02:59.360" style="s2">chains, education, many other areas that</p>
+<p begin="00:02:57.440" end="00:03:02.800" style="s2">directly affect the lives and the</p>
+<p begin="00:02:59.360" end="00:03:05.120" style="s2">aspirations of both our peoples. Mr.</p>
+<p begin="00:03:02.800" end="00:03:08.560" style="s2">President, the Philippines deeply values</p>
+<p begin="00:03:05.120" end="00:03:12.400" style="s2">the United States as a trusted friend, a</p>
+<p begin="00:03:08.560" end="00:03:14.560" style="s2">steadfast partner, and an enduring ally.</p>
+<p begin="00:03:12.400" end="00:03:16.239" style="s2">We also value the personal engagement</p>
+<p begin="00:03:14.560" end="00:03:18.480" style="s2">and commitment that you have brought to</p>
+<p begin="00:03:16.239" end="00:03:21.440" style="s2">our relationship, ensuring that both our</p>
+<p begin="00:03:18.480" end="00:03:23.360" style="s2">peoples are safer, stronger, and more</p>
+<p begin="00:03:21.440" end="00:03:25.760" style="s2">prosperous.</p>
+<p begin="00:03:23.360" end="00:03:27.840" style="s2">I&#39;m confident that your visit will give</p>
+<p begin="00:03:25.760" end="00:03:29.760" style="s2">fresh momentum to our partnership and</p>
+<p begin="00:03:27.840" end="00:03:32.080" style="s2">open new opportunities for our two</p>
+<p begin="00:03:29.760" end="00:03:34.720" style="s2">countries to work even more closely</p>
+<p begin="00:03:32.080" end="00:03:37.200" style="s2">together for our peoples, for our</p>
+<p begin="00:03:34.720" end="00:03:41.120" style="s2">region, for the peace and prosperity</p>
+<p begin="00:03:37.200" end="00:03:43.760" style="s2">that we all seek. Mr. President, on</p>
+<p begin="00:03:41.120" end="00:03:46.239" style="s2">behalf of the people of the Philippines,</p>
+<p begin="00:03:43.760" end="00:03:48.720" style="s2">I extend to you once again our warmest</p>
+<p begin="00:03:46.239" end="00:03:51.440" style="s2">welcome. We hope you feel very much at</p>
+<p begin="00:03:48.720" end="00:03:53.680" style="s2">home here in the Philippines. May I now</p>
+<p begin="00:03:51.440" end="00:03:55.680" style="s2">invite everyone to raise their glasses</p>
+<p begin="00:03:53.680" end="00:03:58.080" style="s2">to the good health and success of</p>
+<p begin="00:03:55.680" end="00:04:00.799" style="s2">President Trump, to the enduring</p>
+<p begin="00:03:58.080" end="00:04:05.200" style="s2">friendship between Filipino and American</p>
+<p begin="00:04:00.799" end="00:04:07.680" style="s2">peoples, to an even stronger and dynamic</p>
+<p begin="00:04:05.200" end="00:04:09.599" style="s2">Philippines United alliance in the years</p>
+<p begin="00:04:07.680" end="00:04:12.599" style="s2">ahead.</p>
+<p begin="00:04:09.599" end="00:04:12.599" style="s2">Filipinos.</p>
+<p begin="00:04:13.439" end="00:04:17.159" style="s2">Cheers, sir.</p>
+<p begin="00:04:26.240" end="00:04:32.080" style="s2">&gt;&gt; May we now invite the Honorable Donald</p>
+<p begin="00:04:28.560" end="00:04:33.840" style="s2">J. Trump to deliver his remarks.</p>
+<p begin="00:04:32.080" end="00:04:37.120" style="s2">&gt;&gt; Well, thank you very much. It&#39;s a great</p>
+<p begin="00:04:33.840" end="00:04:39.440" style="s2">honor to be here. President Marcus,</p>
+<p begin="00:04:37.120" end="00:04:41.360" style="s2">Madame First Lady, thank you for your</p>
+<p begin="00:04:39.440" end="00:04:42.880" style="s2">magnificent welcome back to this</p>
+<p begin="00:04:41.360" end="00:04:44.720" style="s2">exceptionally</p>
+<p begin="00:04:42.880" end="00:04:47.919" style="s2">beautiful country. It really is. It&#39;s a</p>
+<p begin="00:04:44.720" end="00:04:49.280" style="s2">beautiful place and a lot of people are</p>
+<p begin="00:04:47.919" end="00:04:51.040" style="s2">watching what&#39;s happening today and</p>
+<p begin="00:04:49.280" end="00:04:54.000" style="s2">they&#39;ll be coming here. This is a place</p>
+<p begin="00:04:51.040" end="00:04:55.919" style="s2">of great opportunity and potential.</p>
+<p begin="00:04:54.000" end="00:04:58.560" style="s2">It&#39;s a special honor to visit you here</p>
+<p begin="00:04:55.919" end="00:05:00.960" style="s2">within the walls of this storied palace</p>
+<p begin="00:04:58.560" end="00:05:03.600" style="s2">where some of the greatest Filipino and</p>
+<p begin="00:05:00.960" end="00:05:05.280" style="s2">American heroes before us have walked</p>
+<p begin="00:05:03.600" end="00:05:07.280" style="s2">and worked together to defend the</p>
+<p begin="00:05:05.280" end="00:05:10.639" style="s2">freedom and glory of both of our</p>
+<p begin="00:05:07.280" end="00:05:13.840" style="s2">countries. It&#39;s got tremendous history</p>
+<p begin="00:05:10.639" end="00:05:16.160" style="s2">behind it. I got a tour by the president</p>
+<p begin="00:05:13.840" end="00:05:17.759" style="s2">and it was quite something. The bond</p>
+<p begin="00:05:16.160" end="00:05:20.800" style="s2">between the United States and the</p>
+<p begin="00:05:17.759" end="00:05:24.240" style="s2">Philippines is cherished and unique. And</p>
+<p begin="00:05:20.800" end="00:05:26.880" style="s2">the alliance that we have, and it&#39;s born</p>
+<p begin="00:05:24.240" end="00:05:28.960" style="s2">out of a shared love of liberty was</p>
+<p begin="00:05:26.880" end="00:05:32.400" style="s2">proven across the generations, tempered</p>
+<p begin="00:05:28.960" end="00:05:34.960" style="s2">in the fine battle and sustained by a</p>
+<p begin="00:05:32.400" end="00:05:37.840" style="s2">mutual commitment to prosperity and</p>
+<p begin="00:05:34.960" end="00:05:39.360" style="s2">peace for all of our people. And we&#39;ve</p>
+<p begin="00:05:37.840" end="00:05:41.199" style="s2">worked together beautifully. And we&#39;re</p>
+<p begin="00:05:39.360" end="00:05:43.759" style="s2">working together better now than ever</p>
+<p begin="00:05:41.199" end="00:05:45.280" style="s2">before. And we&#39;ve just consummated a</p>
+<p begin="00:05:43.759" end="00:05:48.880" style="s2">very big trade deal, the biggest trade</p>
+<p begin="00:05:45.280" end="00:05:50.639" style="s2">deal we&#39;ve ever made by far. And it&#39;s a</p>
+<p begin="00:05:48.880" end="00:05:54.320" style="s2">fair deal for both countries. And we&#39;re</p>
+<p begin="00:05:50.639" end="00:05:55.520" style="s2">very happy with it. And uh we didn&#39;t</p>
+<p begin="00:05:54.320" end="00:05:57.919" style="s2">know that that was going to take place,</p>
+<p begin="00:05:55.520" end="00:06:00.960" style="s2">but it took place very quickly. And it&#39;s</p>
+<p begin="00:05:57.919" end="00:06:03.039" style="s2">a magnificent deal for both. So today,</p>
+<p begin="00:06:00.960" end="00:06:05.759" style="s2">under the leadership of President Marcus</p>
+<p begin="00:06:03.039" end="00:06:07.840" style="s2">and myself, I&#39;m proud to say that we&#39;re</p>
+<p begin="00:06:05.759" end="00:06:09.919" style="s2">making the alliance between the United</p>
+<p begin="00:06:07.840" end="00:06:12.319" style="s2">States and the Philippines much stronger</p>
+<p begin="00:06:09.919" end="00:06:14.639" style="s2">than it&#39;s ever been before, especially</p>
+<p begin="00:06:12.319" end="00:06:16.800" style="s2">with the consummation of this deal.</p>
+<p begin="00:06:14.639" end="00:06:18.800" style="s2">Generations ago, America ended the</p>
+<p begin="00:06:16.800" end="00:06:21.360" style="s2">Spanish tyranny and domination of these</p>
+<p begin="00:06:18.800" end="00:06:23.039" style="s2">islands and quickly laid the foundations</p>
+<p begin="00:06:21.360" end="00:06:26.000" style="s2">for a modern and independent</p>
+<p begin="00:06:23.039" end="00:06:27.840" style="s2">Philippines. From William Howard Taft to</p>
+<p begin="00:06:26.000" end="00:06:30.800" style="s2">Dwight D. Eisenhower, some of the best</p>
+<p begin="00:06:27.840" end="00:06:34.319" style="s2">minds and foremost leaders of our nation</p>
+<p begin="00:06:30.800" end="00:06:36.000" style="s2">and that our nation has ever produced</p>
+<p begin="00:06:34.319" end="00:06:38.319" style="s2">have just poured their hearts and their</p>
+<p begin="00:06:36.000" end="00:06:40.800" style="s2">souls. They always knew that this was a</p>
+<p begin="00:06:38.319" end="00:06:42.720" style="s2">place of great potential. We&#39;ve had a</p>
+<p begin="00:06:40.800" end="00:06:43.919" style="s2">lot of presidents look upon it, but I</p>
+<p begin="00:06:42.720" end="00:06:46.479" style="s2">don&#39;t think there&#39;s ever been a time</p>
+<p begin="00:06:43.919" end="00:06:49.600" style="s2">like this, frankly. And of course, it</p>
+<p begin="00:06:46.479" end="00:06:52.240" style="s2">was right here, this very palace that</p>
+<p begin="00:06:49.600" end="00:06:55.759" style="s2">President Quaison bestowed General</p>
+<p begin="00:06:52.240" end="00:06:58.000" style="s2">Douglas MacArthur with a gold baton and</p>
+<p begin="00:06:55.759" end="00:06:59.759" style="s2">the rank of field marshal in the</p>
+<p begin="00:06:58.000" end="00:07:02.319" style="s2">Philippine Army. I&#39;d like to have you do</p>
+<p begin="00:06:59.759" end="00:07:04.000" style="s2">that to me if you don&#39;t mind. I love</p>
+<p begin="00:07:02.319" end="00:07:07.280" style="s2">that. I mean, why the hell shouldn&#39;t I</p>
+<p begin="00:07:04.000" end="00:07:10.720" style="s2">get that? But to help prepare the proud</p>
+<p begin="00:07:07.280" end="00:07:13.039" style="s2">nation to defend the land and really the</p>
+<p begin="00:07:10.720" end="00:07:15.120" style="s2">land of their fathers. And when the</p>
+<p begin="00:07:13.039" end="00:07:20.080" style="s2">battle came from the streets of Manila</p>
+<p begin="00:07:15.120" end="00:07:23.440" style="s2">to the steep cliffs of Corridor to the</p>
+<p begin="00:07:20.080" end="00:07:25.840" style="s2">immortal heroes of Baton, brave American</p>
+<p begin="00:07:23.440" end="00:07:28.560" style="s2">and Filipino sons shed their blood into</p>
+<p begin="00:07:25.840" end="00:07:31.680" style="s2">the same sand, rock and mud to defend</p>
+<p begin="00:07:28.560" end="00:07:34.880" style="s2">this land and the land of our brothers</p>
+<p begin="00:07:31.680" end="00:07:36.479" style="s2">and our sisters and our mothers, our</p>
+<p begin="00:07:34.880" end="00:07:40.319" style="s2">fathers.</p>
+<p begin="00:07:36.479" end="00:07:42.560" style="s2">260,000 Philippine heroes fought beneath</p>
+<p begin="00:07:40.319" end="00:07:44.639" style="s2">the stars and stripes of World War II</p>
+<p begin="00:07:42.560" end="00:07:47.360" style="s2">and countless American service members</p>
+<p begin="00:07:44.639" end="00:07:50.960" style="s2">gave their lives to fulfill that famous</p>
+<p begin="00:07:47.360" end="00:07:54.080" style="s2">pledge of MacArthur. I shall return. He</p>
+<p begin="00:07:50.960" end="00:07:56.000" style="s2">said, I shall return. because of the</p>
+<p begin="00:07:54.080" end="00:07:59.520" style="s2">sacrifice of those who gave everything</p>
+<p begin="00:07:56.000" end="00:08:02.080" style="s2">to keep that vow. Today, the Philippines</p>
+<p begin="00:07:59.520" end="00:08:04.560" style="s2">are free and Manila is home to the</p>
+<p begin="00:08:02.080" end="00:08:06.479" style="s2">largest overseas American military</p>
+<p begin="00:08:04.560" end="00:08:09.039" style="s2">cemetery anywhere in the world. Many</p>
+<p begin="00:08:06.479" end="00:08:10.720" style="s2">people died defending the Philippines</p>
+<p begin="00:08:09.039" end="00:08:13.599" style="s2">and that&#39;s why I&#39;m so happy that we were</p>
+<p begin="00:08:10.720" end="00:08:16.240" style="s2">able to do a deal today. This is the</p>
+<p begin="00:08:13.599" end="00:08:19.759" style="s2">kind of history that binds nations</p>
+<p begin="00:08:16.240" end="00:08:22.560" style="s2">forever. And today we really uh we look</p>
+<p begin="00:08:19.759" end="00:08:25.440" style="s2">to those before us. President Marcos and</p>
+<p begin="00:08:22.560" end="00:08:28.240" style="s2">I continue to work to defend the peace</p>
+<p begin="00:08:25.440" end="00:08:31.919" style="s2">our ancestors won and they so bravely</p>
+<p begin="00:08:28.240" end="00:08:37.360" style="s2">won. The the level of hardship, the lab</p>
+<p begin="00:08:31.919" end="00:08:40.000" style="s2">level of terror and the level of love in</p>
+<p begin="00:08:37.360" end="00:08:42.240" style="s2">this country has been extraordinary. And</p>
+<p begin="00:08:40.000" end="00:08:43.839" style="s2">the freedom our children will inherit</p>
+<p begin="00:08:42.240" end="00:08:46.480" style="s2">for generations to come. and they&#39;ll</p>
+<p begin="00:08:43.839" end="00:08:48.320" style="s2">look to the Philippines as just a very</p>
+<p begin="00:08:46.480" end="00:08:51.600" style="s2">important place even in American</p>
+<p begin="00:08:48.320" end="00:08:54.800" style="s2">history. And now it becomes with today&#39;s</p>
+<p begin="00:08:51.600" end="00:08:57.839" style="s2">deal, it becomes more important and more</p>
+<p begin="00:08:54.800" end="00:09:00.160" style="s2">united. Our two nations along with Japan</p>
+<p begin="00:08:57.839" end="00:09:02.959" style="s2">recently launched the Luzon Economic</p>
+<p begin="00:09:00.160" end="00:09:05.760" style="s2">Guard to facilitate critically needed</p>
+<p begin="00:09:02.959" end="00:09:08.080" style="s2">infrastructure in the central crossroads</p>
+<p begin="00:09:05.760" end="00:09:10.480" style="s2">of the world. And this year we&#39;re</p>
+<p begin="00:09:08.080" end="00:09:13.519" style="s2">celebrating the 75th anniversary of our</p>
+<p begin="00:09:10.480" end="00:09:15.600" style="s2">mutual defense agreement which we marked</p>
+<p begin="00:09:13.519" end="00:09:17.760" style="s2">by conducting our largest ever joint</p>
+<p begin="00:09:15.600" end="00:09:21.440" style="s2">exercise bringing together all of our</p>
+<p begin="00:09:17.760" end="00:09:23.120" style="s2">forces across air, land, sea, cyber, and</p>
+<p begin="00:09:21.440" end="00:09:25.519" style="s2">space.</p>
+<p begin="00:09:23.120" end="00:09:28.640" style="s2">Although we are separated by thousands</p>
+<p begin="00:09:25.519" end="00:09:31.120" style="s2">of miles, and when I say thousands, it&#39;s</p>
+<p begin="00:09:28.640" end="00:09:33.760" style="s2">thousands and thousands of miles far</p>
+<p begin="00:09:31.120" end="00:09:35.600" style="s2">away, but it really seems close to me</p>
+<p begin="00:09:33.760" end="00:09:37.440" style="s2">because of the relationship. It doesn&#39;t</p>
+<p begin="00:09:35.600" end="00:09:40.800" style="s2">seem far away, but our countries are</p>
+<p begin="00:09:37.440" end="00:09:43.680" style="s2">still united by common interests and by</p>
+<p begin="00:09:40.800" end="00:09:45.760" style="s2">the even more enduring ties of culture</p>
+<p begin="00:09:43.680" end="00:09:48.959" style="s2">and commerce and the values that first</p>
+<p begin="00:09:45.760" end="00:09:51.600" style="s2">brought us together so long ago. And as</p>
+<p begin="00:09:48.959" end="00:09:53.760" style="s2">we can see in the beautiful Christmas</p>
+<p begin="00:09:51.600" end="00:09:56.080" style="s2">decorations and Christmas is such a big</p>
+<p begin="00:09:53.760" end="00:09:58.800" style="s2">part of the Philippines. I came and I</p>
+<p begin="00:09:56.080" end="00:10:00.399" style="s2">said, &quot;Wow, that&#39;s really something.&quot;</p>
+<p begin="00:09:58.800" end="00:10:01.839" style="s2">They didn&#39;t talk about taking Christmas</p>
+<p begin="00:10:00.399" end="00:10:04.399" style="s2">away. You know, in our country, they</p>
+<p begin="00:10:01.839" end="00:10:08.320" style="s2">said, &quot;Let&#39;s not use Christmas anymore.&quot;</p>
+<p begin="00:10:04.399" end="00:10:10.320" style="s2">In 2016, we ended that. That was ended.</p>
+<p begin="00:10:08.320" end="00:10:12.000" style="s2">But they treat they treat Christmas with</p>
+<p begin="00:10:10.320" end="00:10:13.920" style="s2">great love and respect in the</p>
+<p begin="00:10:12.000" end="00:10:16.880" style="s2">Philippines. Decorations displayed</p>
+<p begin="00:10:13.920" end="00:10:21.760" style="s2">throughout this palace and all of Manila</p>
+<p begin="00:10:16.880" end="00:10:26.000" style="s2">show that our people are also united by</p>
+<p begin="00:10:21.760" end="00:10:28.560" style="s2">faith in God and uh the Filipinos are</p>
+<p begin="00:10:26.000" end="00:10:30.880" style="s2">with us all the way. Religion, religion</p>
+<p begin="00:10:28.560" end="00:10:33.200" style="s2">is a very big part of the Philippines.</p>
+<p begin="00:10:30.880" end="00:10:36.000" style="s2">So, President Marcos and Madame First</p>
+<p begin="00:10:33.200" end="00:10:38.079" style="s2">Lady, two incredible people. Thank you</p>
+<p begin="00:10:36.000" end="00:10:40.640" style="s2">again for your extraordinary welcome and</p>
+<p begin="00:10:38.079" end="00:10:44.000" style="s2">continued friendship. And I ask everyone</p>
+<p begin="00:10:40.640" end="00:10:47.760" style="s2">to please join me in raising a toast.</p>
+<p begin="00:10:44.000" end="00:10:49.839" style="s2">May our alliance stand as strong as the</p>
+<p begin="00:10:47.760" end="00:10:51.760" style="s2">heroes who forged it. And together, may</p>
+<p begin="00:10:49.839" end="00:10:54.399" style="s2">we lead the United States and the</p>
+<p begin="00:10:51.760" end="00:10:56.800" style="s2">Philippines toward a future of even</p>
+<p begin="00:10:54.399" end="00:10:58.720" style="s2">greater safety, prosperity, and peace.</p>
+<p begin="00:10:56.800" end="00:11:00.399" style="s2">These are wonderful people. This is a</p>
+<p begin="00:10:58.720" end="00:11:01.920" style="s2">wonderful place and it&#39;s an honor to be</p>
+<p begin="00:11:00.399" end="00:11:02.560" style="s2">here. Thank you very much.</p>
+<p begin="00:11:01.920" end="00:11:03.680" style="s2">&gt;&gt; Thank you very much.</p>
+<p begin="00:11:02.560" end="00:11:07.320" style="s2">&gt;&gt; Thank you very much.</p>
+<p begin="00:11:03.680" end="00:11:07.320" style="s2">&gt;&gt; Thank you. Cheers, sir.</p>
+<p begin="00:11:08.399" end="00:11:12.680" style="s2">&gt;&gt; Thank you. Thank you very much.</p>
+<p begin="00:11:19.839" end="00:11:23.920" style="s2">Thank you, your excellencies,</p>
+<p begin="00:11:22.240" end="00:11:25.680" style="s2">distinguished guests, ladies and</p>
+<p begin="00:11:23.920" end="00:11:28.680" style="s2">gentlemen, we shall now begin the</p>
+<p begin="00:11:25.680" end="00:11:28.680" style="s2">lunchon.</p>
+</div>
+</body>
+</tt>
