@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:02.320" end="00:00:09.000" style="s2">United States of America and the Prime</p>
+<p begin="00:00:04.560" end="00:00:09.000" style="s2">Minister of the Kingdom of Thailand.</p>
+<p begin="00:00:18.720" end="00:00:22.359" style="s2">&gt;&gt; Thank you very much.</p>
+<p begin="00:00:27.599" end="00:00:31.920" style="s2">&gt;&gt; Well, thank you very much. This is a</p>
+<p begin="00:00:29.519" end="00:00:34.320" style="s2">great honor. We&#39;ve been working on this</p>
+<p begin="00:00:31.920" end="00:00:36.480" style="s2">deal for a long time</p>
+<p begin="00:00:34.320" end="00:00:39.360" style="s2">and uh it&#39;s going to be a wonderful deal</p>
+<p begin="00:00:36.480" end="00:00:42.800" style="s2">for both parties I believe. But I&#39;m</p>
+<p begin="00:00:39.360" end="00:00:45.600" style="s2">thrilled to join Prime Minister</p>
+<p begin="00:00:42.800" end="00:00:47.920" style="s2">Anutton of Thailand as we sign a</p>
+<p begin="00:00:45.600" end="00:00:50.000" style="s2">historic trade deal between our two</p>
+<p begin="00:00:47.920" end="00:00:52.239" style="s2">countries. We do a lot of trade with</p>
+<p begin="00:00:50.000" end="00:00:55.360" style="s2">Thailand actually.</p>
+<p begin="00:00:52.239" end="00:00:57.920" style="s2">It&#39;s been a cherished ally of the United</p>
+<p begin="00:00:55.360" end="00:01:00.239" style="s2">States for more than 70 years and our</p>
+<p begin="00:00:57.920" end="00:01:02.559" style="s2">friendship goes back more than 200 years</p>
+<p begin="00:01:00.239" end="00:01:05.840" style="s2">and the prime minister is doing a</p>
+<p begin="00:01:02.559" end="00:01:08.799" style="s2">fantastic job. Not an easy one, but he&#39;s</p>
+<p begin="00:01:05.840" end="00:01:10.400" style="s2">getting it really in shape and he&#39;s done</p>
+<p begin="00:01:08.799" end="00:01:12.080" style="s2">it&#39;s being talked about all over the</p>
+<p begin="00:01:10.400" end="00:01:12.240" style="s2">world, the job you&#39;re doing. So, thank</p>
+<p begin="00:01:12.080" end="00:01:14.640" style="s2">you.</p>
+<p begin="00:01:12.240" end="00:01:16.640" style="s2">&gt;&gt; I want to congratulate you.</p>
+<p begin="00:01:14.640" end="00:01:18.479" style="s2">&gt;&gt; But he goes back more than 200 years in</p>
+<p begin="00:01:16.640" end="00:01:22.000" style="s2">what has always been one of America&#39;s</p>
+<p begin="00:01:18.479" end="00:01:25.520" style="s2">closest partnerships anywhere in Asia.</p>
+<p begin="00:01:22.000" end="00:01:27.680" style="s2">Last year at the ASEAN summit, it was my</p>
+<p begin="00:01:25.520" end="00:01:29.600" style="s2">honor to work with the prime minister to</p>
+<p begin="00:01:27.680" end="00:01:34.320" style="s2">forge peace between Thailand and</p>
+<p begin="00:01:29.600" end="00:01:36.000" style="s2">Cambodia. We uh solved a really violent</p>
+<p begin="00:01:34.320" end="00:01:39.600" style="s2">situation</p>
+<p begin="00:01:36.000" end="00:01:42.720" style="s2">and uh I think I did that. I don&#39;t think</p>
+<p begin="00:01:39.600" end="00:01:45.280" style="s2">I got any credit for it. So, just</p>
+<p begin="00:01:42.720" end="00:01:48.079" style="s2">another war that I saved, but I get no</p>
+<p begin="00:01:45.280" end="00:01:51.280" style="s2">credit. But that&#39;s okay. I don&#39;t mind. I</p>
+<p begin="00:01:48.079" end="00:01:52.880" style="s2">want to save lives. It&#39;s 99.9%.</p>
+<p begin="00:01:51.280" end="00:01:55.520" style="s2">But it was it was an honor and you were</p>
+<p begin="00:01:52.880" end="00:01:58.960" style="s2">a total professional. Now we&#39;re making</p>
+<p begin="00:01:55.520" end="00:02:00.880" style="s2">history once again. Today today&#39;s deal</p>
+<p begin="00:01:58.960" end="00:02:02.640" style="s2">lays the foundation for much stronger</p>
+<p begin="00:02:00.880" end="00:02:04.880" style="s2">trading relationship that will bring the</p>
+<p begin="00:02:02.640" end="00:02:06.399" style="s2">United States and Thailand closer than</p>
+<p begin="00:02:04.880" end="00:02:08.080" style="s2">ever before. And I think we are because</p>
+<p begin="00:02:06.399" end="00:02:10.399" style="s2">of the relationship that we have. I</p>
+<p begin="00:02:08.080" end="00:02:11.760" style="s2">think we probably are the closest we&#39;ve</p>
+<p begin="00:02:10.399" end="00:02:15.360" style="s2">ever been. We&#39;re going to do a lot of</p>
+<p begin="00:02:11.760" end="00:02:18.080" style="s2">trade. Uh Thailand will eliminate all</p>
+<p begin="00:02:15.360" end="00:02:19.760" style="s2">tariffs on US exports, which is</p>
+<p begin="00:02:18.080" end="00:02:22.080" style="s2">something that we&#39;ve been after for a</p>
+<p begin="00:02:19.760" end="00:02:24.000" style="s2">long time, and remove substantial</p>
+<p begin="00:02:22.080" end="00:02:25.920" style="s2">non-tariff barriers on American</p>
+<p begin="00:02:24.000" end="00:02:28.640" style="s2">vehicles, medical devices,</p>
+<p begin="00:02:25.920" end="00:02:30.959" style="s2">pharmaceuticals, ethanol, and poultry.</p>
+<p begin="00:02:28.640" end="00:02:33.920" style="s2">Thailand will also be buying an</p>
+<p begin="00:02:30.959" end="00:02:36.400" style="s2">estimated $2.6 billion in additional US</p>
+<p begin="00:02:33.920" end="00:02:38.560" style="s2">agricultural products. That makes our</p>
+<p begin="00:02:36.400" end="00:02:41.280" style="s2">farmers very happy. We&#39;re doing a lot of</p>
+<p begin="00:02:38.560" end="00:02:43.120" style="s2">great deals for our farmers. This is an</p>
+<p begin="00:02:41.280" end="00:02:44.800" style="s2">incredible victory for both countries,</p>
+<p begin="00:02:43.120" end="00:02:46.959" style="s2">both the people of Thailand and the</p>
+<p begin="00:02:44.800" end="00:02:49.120" style="s2">American people, and I look forward to</p>
+<p begin="00:02:46.959" end="00:02:51.599" style="s2">finalizing the details of our formal</p>
+<p begin="00:02:49.120" end="00:02:54.319" style="s2">agreement in the coming weeks. Our staff</p>
+<p begin="00:02:51.599" end="00:02:56.319" style="s2">is working on it very diligently, and</p>
+<p begin="00:02:54.319" end="00:02:59.280" style="s2">it&#39;ll be done, but the concept of what</p>
+<p begin="00:02:56.319" end="00:03:01.840" style="s2">we have will be really, very permanent,</p>
+<p begin="00:02:59.280" end="00:03:03.840" style="s2">and we&#39;re just about there. And we&#39;re</p>
+<p begin="00:03:01.840" end="00:03:06.080" style="s2">going to actually sign a document right</p>
+<p begin="00:03:03.840" end="00:03:08.159" style="s2">now. So, I&#39;d like to invite the prime</p>
+<p begin="00:03:06.080" end="00:03:11.200" style="s2">minister say to say a few words and then</p>
+<p begin="00:03:08.159" end="00:03:13.440" style="s2">we&#39;ll sign a joint statement talking</p>
+<p begin="00:03:11.200" end="00:03:16.000" style="s2">about the deal and uh then they&#39;re going</p>
+<p begin="00:03:13.440" end="00:03:17.680" style="s2">to finalize it and they this is the more</p>
+<p begin="00:03:16.000" end="00:03:20.000" style="s2">difficult part because it took us a</p>
+<p begin="00:03:17.680" end="00:03:23.120" style="s2">while to get to this point. So, Mr.</p>
+<p begin="00:03:20.000" end="00:03:25.519" style="s2">Prime Minister, please.</p>
+<p begin="00:03:23.120" end="00:03:27.040" style="s2">&gt;&gt; Thank you, Mr. President, Mr.</p>
+<p begin="00:03:25.519" end="00:03:29.760" style="s2">Secretaries,</p>
+<p begin="00:03:27.040" end="00:03:32.560" style="s2">distinguished guests, it is a pleasure</p>
+<p begin="00:03:29.760" end="00:03:34.640" style="s2">for me to meet you again and I have to</p>
+<p begin="00:03:32.560" end="00:03:37.840" style="s2">thank you for bringing us here to this</p>
+<p begin="00:03:34.640" end="00:03:40.400" style="s2">point. I&#39;m pleased that we have reached</p>
+<p begin="00:03:37.840" end="00:03:42.959" style="s2">a substantial conclusion in our</p>
+<p begin="00:03:40.400" end="00:03:45.920" style="s2">negotiations on the agreement on</p>
+<p begin="00:03:42.959" end="00:03:48.640" style="s2">reciprocal trade between the United</p>
+<p begin="00:03:45.920" end="00:03:51.200" style="s2">States and Thailand. And I believe the</p>
+<p begin="00:03:48.640" end="00:03:54.000" style="s2">agreement will bring greater dynamics to</p>
+<p begin="00:03:51.200" end="00:03:56.879" style="s2">our trade relations and open new</p>
+<p begin="00:03:54.000" end="00:03:58.959" style="s2">opportunities for all stakeholders.</p>
+<p begin="00:03:56.879" end="00:04:01.519" style="s2">Mr. President, your leadership in</p>
+<p begin="00:03:58.959" end="00:04:04.319" style="s2">bringing this negotiation to a nice</p>
+<p begin="00:04:01.519" end="00:04:06.879" style="s2">conclusion like this is greatly greatly</p>
+<p begin="00:04:04.319" end="00:04:09.200" style="s2">appreciated and yet there is still a</p>
+<p begin="00:04:06.879" end="00:04:11.920" style="s2">little more to do. I&#39;m confident that</p>
+<p begin="00:04:09.200" end="00:04:15.360" style="s2">the agreement will be ready for us to</p>
+<p begin="00:04:11.920" end="00:04:17.440" style="s2">sign real soon. Thailand attaches great</p>
+<p begin="00:04:15.360" end="00:04:19.759" style="s2">importance to its long-standing</p>
+<p begin="00:04:17.440" end="00:04:22.880" style="s2">relationship with the United with the</p>
+<p begin="00:04:19.759" end="00:04:25.199" style="s2">United States. Our partnership is beyond</p>
+<p begin="00:04:22.880" end="00:04:26.960" style="s2">trade and investment. We remain</p>
+<p begin="00:04:25.199" end="00:04:29.680" style="s2">committed to strengthening our</p>
+<p begin="00:04:26.960" end="00:04:32.080" style="s2">cooperation across areas of mutual</p>
+<p begin="00:04:29.680" end="00:04:35.040" style="s2">interest. Today&#39;s achievement</p>
+<p begin="00:04:32.080" end="00:04:37.520" style="s2">demonstrates what our two countries can</p>
+<p begin="00:04:35.040" end="00:04:39.759" style="s2">accomplish by working together. I&#39;m</p>
+<p begin="00:04:37.520" end="00:04:43.120" style="s2">confident that it will provide a strong</p>
+<p begin="00:04:39.759" end="00:04:45.520" style="s2">foundation for an for an even closer and</p>
+<p begin="00:04:43.120" end="00:04:47.040" style="s2">more productive partnership in the years</p>
+<p begin="00:04:45.520" end="00:04:49.513" style="s2">ahead. Thank you, Mr. President.</p>
+<p begin="00:04:47.040" end="00:04:51.533" style="s2">&gt;&gt; Thank you very much.</p>
+<p begin="00:04:49.513" end="00:04:51.533" style="s2">[applause]</p>
+<p begin="00:05:29.120" end="00:05:36.520" style="s2">Thank you. Thank you.</p>
+<p begin="00:05:32.240" end="00:05:36.520" style="s2">Okay, we will hold that up.</p>
+<p begin="00:05:37.328" end="00:05:41.160" style="s2">[applause]</p>
+<p begin="00:05:38.160" end="00:05:41.160" style="s2">CONGRATULATIONS.</p>
+<p begin="00:05:41.913" end="00:05:43.933" style="s2">[applause]</p>
+<p begin="00:05:44.000" end="00:05:46.639" style="s2">Here we go. Here&#39;s some pens for you</p>
+<p begin="00:05:45.680" end="00:05:48.320" style="s2">people. My colleagues.</p>
+<p begin="00:05:46.639" end="00:05:50.160" style="s2">&gt;&gt; Yes, please. [laughter] Come on. Come on</p>
+<p begin="00:05:48.320" end="00:05:52.720" style="s2">over.</p>
+<p begin="00:05:50.160" end="00:05:54.960" style="s2">Come on over.</p>
+<p begin="00:05:52.720" end="00:05:57.280" style="s2">My guys, they don&#39;t. They have enough.</p>
+<p begin="00:05:54.960" end="00:05:59.199" style="s2">They have enough of these.</p>
+<p begin="00:05:57.280" end="00:06:02.639" style="s2">Please take them.</p>
+<p begin="00:05:59.199" end="00:06:06.280" style="s2">&gt;&gt; Do you have any questions, please?</p>
+<p begin="00:06:02.639" end="00:06:06.280" style="s2">Do you have any questions?</p>
+<p begin="00:06:09.120" end="00:06:13.360" style="s2">&gt;&gt; It&#39;s a joint statement agreement between</p>
+<p begin="00:06:11.280" end="00:06:17.280" style="s2">United States of America, the Kingdom of</p>
+<p begin="00:06:13.360" end="00:06:19.360" style="s2">Thailand uh on reciprocal trade. It&#39;s a</p>
+<p begin="00:06:17.280" end="00:06:21.759" style="s2">very big actually it&#39;s a very big trade</p>
+<p begin="00:06:19.360" end="00:06:23.520" style="s2">deal.</p>
+<p begin="00:06:21.759" end="00:06:27.319" style="s2">Okay.</p>
+<p begin="00:06:23.520" end="00:06:27.319" style="s2">Thank you very much everybody.</p>
+<p begin="00:06:28.720" end="00:06:34.080" style="s2">Thank you once again very much. Thank</p>
+<p begin="00:06:30.479" end="00:06:35.120" style="s2">you so much. Any let me know.</p>
+<p begin="00:06:34.080" end="00:06:35.759" style="s2">&gt;&gt; Thank you. Okay.</p>
+<p begin="00:06:35.120" end="00:06:39.720" style="s2">&gt;&gt; Congratulations.</p>
+<p begin="00:06:35.759" end="00:06:39.720" style="s2">&gt;&gt; No problem. You&#39;re not</p>
+<p begin="00:06:42.800" end="00:06:46.280" style="s2">Thank you very much.</p>
+</div>
+</body>
+</tt>
