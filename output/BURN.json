@@ -2,104 +2,104 @@
   "module": "module2-video-processing",
   "version": "1.0",
   "status": "burned",
-  "created_at": "2026-11-18T11:09:45Z",
+  "created_at": "2026-11-19T01:26:13Z",
   "selection": {
-    "video_id": "pKFjYxpuGBI",
-    "title": "President Trump Participates in a Bilateral Lunch, Nov. 17, 2026",
+    "video_id": "ZVSJCD1h3Ak",
+    "title": "President Trump Participates in a Bilateral Meeting, Nov. 17, 2026",
     "event_date": "",
     "manifest": null
   },
   "inputs": {
     "video": {
-      "path": "/home/runner/work/gitsynonyms/gitsynonyms/work/pKFjYxpuGBI.source.mp4",
-      "size_bytes": 354682114,
-      "sha256": "e600cc5822e5dde4ef966d9ed6051d8a683b637cd2622a37b9edebd1d4208538",
-      "modified_at": "2026-11-18T11:04:18Z"
+      "path": "/home/runner/work/gitsynonyms/gitsynonyms/work/ZVSJCD1h3Ak.source.mp4",
+      "size_bytes": 320447011,
+      "sha256": "5eeff9afac160d9c181dc4ca85e61c9986a3ec2921aa78d250ece64936f847d9",
+      "modified_at": "2026-11-19T01:20:39Z"
     },
     "subtitle": {
       "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",
-      "size_bytes": 53822,
-      "sha256": "013f8484225053056d03731dac2db089f871fc35ee4d27d3e2626e25ca7f28ce",
-      "modified_at": "2026-11-18T11:10:33Z"
+      "size_bytes": 53569,
+      "sha256": "e97a0e8df0e639172a6e42aa096263b36272c3a7121f51a5ca8f88f7394af284",
+      "modified_at": "2026-11-19T01:27:02Z"
     },
     "captions": [
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.json3",
-        "size_bytes": 164273,
-        "sha256": "400ced4c1b5edecaecdf0cc7e44ddaa54e503f46ef785318b768904ff4eb5f7d",
-        "modified_at": "2026-11-18T11:08:56Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.json3",
+        "size_bytes": 161002,
+        "sha256": "85be7812df4a10c45c04c6442c2babefcf7ca4b6a38612257488cf6323e1fed3",
+        "modified_at": "2026-11-19T01:25:31Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.srt",
-        "size_bytes": 17027,
-        "sha256": "a7c1135152a622e18b029b951bdbfa47be7de1ebce59bf1cb1c9519bda3461bf",
-        "modified_at": "2026-11-18T11:08:02Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.srt",
+        "size_bytes": 15920,
+        "sha256": "884292f7c9e6c78e318af74a02c1a8a7a473d9f44ed26ae2423c962caf51d3a1",
+        "modified_at": "2026-11-19T01:25:06Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.srv1",
-        "size_bytes": 18390,
-        "sha256": "fb70e9de53bb511694c0726d193cc3845b5fdaf6efeedc16375f9866cd24ea37",
-        "modified_at": "2026-11-18T11:08:46Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.srv1",
+        "size_bytes": 17296,
+        "sha256": "7f84e98e313f222d689f8d1494cf026a8bde6b283d851378391c7725935cb4ab",
+        "modified_at": "2026-11-19T01:25:27Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.srv2",
-        "size_bytes": 96166,
-        "sha256": "c722b18f8d3066dc1eea42d218fe3cff391cecc3f4d1c0a9e8a44124d340933d",
-        "modified_at": "2026-11-18T11:08:39Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.srv2",
+        "size_bytes": 94740,
+        "sha256": "be59eab7f6647fd67648ef16bddf8b63cdb16693301f71ce01ba665a03ee9f58",
+        "modified_at": "2026-11-19T01:25:23Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.srv3",
-        "size_bytes": 58363,
-        "sha256": "9799c495152535ebab4ccf0146076fb47d64cecc9fc8dcceca163464aeb3047b",
-        "modified_at": "2026-11-18T11:08:26Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.srv3",
+        "size_bytes": 56822,
+        "sha256": "46c13c33f97913694b86ceddd6b1e9eecebfb5d3a8b1f15b269fc73a8096a872",
+        "modified_at": "2026-11-19T01:25:19Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.ttml",
-        "size_bytes": 23465,
-        "sha256": "6dabaf93e2921439fa4fd32fd665f6c4075af2549cc6aba641a792c9363e2cba",
-        "modified_at": "2026-11-18T11:08:14Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.ttml",
+        "size_bytes": 22012,
+        "sha256": "7431e31f65183fed4555f020775bd09ae27000a2040fd3a6e9e04240fc32c0d7",
+        "modified_at": "2026-11-19T01:25:14Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.vtt",
-        "size_bytes": 79220,
-        "sha256": "9c172217f543eb95722097ce9e25a3c246ebafec0d7b595ca8ca32d8f119485f",
-        "modified_at": "2026-11-18T11:07:51Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.vtt",
+        "size_bytes": 76375,
+        "sha256": "917231eda5d5a5316794082806d9e3543bbe51cedcf657aa0c92500d798041d2",
+        "modified_at": "2026-11-19T01:25:01Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.zh-Hans.json3",
-        "size_bytes": 21351,
-        "sha256": "ce1d7674331ef7f1c4634e155b4e03d8cd3d4eaf0a9ba62e7768e63c51a2c349",
-        "modified_at": "2026-11-18T11:09:44Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.zh-Hans.json3",
+        "size_bytes": 21467,
+        "sha256": "95debb80bdb08622daaabf6491f09b6c442259a3ca1095cd3919b7f8f0716fe1",
+        "modified_at": "2026-11-19T01:26:12Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.zh-Hans.srt",
-        "size_bytes": 12929,
-        "sha256": "23c32dbf02b60bd3d1a335dbb9cd2840fcff264845fa8de8377d3bb218d6c166",
-        "modified_at": "2026-11-18T11:09:44Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.zh-Hans.srt",
+        "size_bytes": 13250,
+        "sha256": "3adf749ca63ce4ab26ed970047fb806f2bd7ab02ef6991d5e8a00781bb4787df",
+        "modified_at": "2026-11-19T01:26:12Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.zh-Hans.ttml",
-        "size_bytes": 16330,
-        "sha256": "11daf439b0af4d0eda7b027cd32e451ea151d9c4b7406513f7df5201db2ed4e8",
-        "modified_at": "2026-11-18T11:09:44Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.zh-Hans.ttml",
+        "size_bytes": 16579,
+        "sha256": "b0c86cc3842f3817b0b67b7238fb77dc6f9745228af401b454205e628495a0d9",
+        "modified_at": "2026-11-19T01:26:12Z"
       },
       {
-        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.zh-Hans.vtt",
-        "size_bytes": 12341,
-        "sha256": "51621e842e092848b4b53905e5b0cb8c50e54946bb88ecd4c5863752873b4aa5",
-        "modified_at": "2026-11-18T11:09:44Z"
+        "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.zh-Hans.vtt",
+        "size_bytes": 12678,
+        "sha256": "d370295901400b42270df8aacf37f91e27476dcd9c4220adac47c61dbf944457",
+        "modified_at": "2026-11-19T01:26:12Z"
       }
     ]
   },
   "video": {
-    "duration_seconds": 689.789,
-    "size_bytes": 354682114,
+    "duration_seconds": 581.021,
+    "size_bytes": 320447011,
     "container": "mov,mp4,m4a,3gp,3g2,mj2",
     "video": {
       "codec": "vp9",
       "width": 1920,
       "height": 1080,
-      "frame_rate": "20673000/689789",
+      "frame_rate": "17413000/581013",
       "pixel_format": "yuv420p"
     },
     "audio": {
@@ -111,14 +111,14 @@
   "subtitles": {
     "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass",
     "format": "ass",
-    "size_bytes": 53822,
-    "sha256": "013f8484225053056d03731dac2db089f871fc35ee4d27d3e2626e25ca7f28ce",
+    "size_bytes": 53569,
+    "sha256": "e97a0e8df0e639172a6e42aa096263b36272c3a7121f51a5ca8f88f7394af284",
     "cues": 188,
     "drawing_cues": 1,
-    "first_cue_seconds": 4.8,
-    "last_cue_seconds": 688.68,
-    "caption_coverage_seconds": 627.49,
-    "caption_coverage_percent": 91.0,
+    "first_cue_seconds": 8.32,
+    "last_cue_seconds": 575.68,
+    "caption_coverage_seconds": 527.74,
+    "caption_coverage_percent": 90.8,
     "overrun_seconds": 0.0,
     "fonts": [
       "Microsoft YaHei",
@@ -152,16 +152,16 @@
       "source": "auto",
       "metrics": {
         "detected": true,
-        "score": 17.735,
+        "score": 14.544,
         "samples": 120,
         "caption": {
-          "static_edge_ratio": 0.212821,
-          "edge_density": 0.330985,
-          "static_ratio": 0.449149
+          "static_edge_ratio": 0.174526,
+          "edge_density": 0.331124,
+          "static_ratio": 0.400251
         },
         "control": {
           "static_edge_ratio": 0.0,
-          "edge_density": 0.0,
+          "edge_density": 0.001325,
           "static_ratio": 0.0
         },
         "thresholds": {
@@ -198,20 +198,20 @@
         "language": "zh-Hans",
         "format": "WebVTT",
         "resolution": "1 ms",
-        "cues": 176,
-        "size_bytes": 12341,
-        "sha256": "51621e842e092848b4b53905e5b0cb8c50e54946bb88ecd4c5863752873b4aa5",
-        "modified_at": "2026-11-18T11:10:33Z"
+        "cues": 172,
+        "size_bytes": 12678,
+        "sha256": "d370295901400b42270df8aacf37f91e27476dcd9c4220adac47c61dbf944457",
+        "modified_at": "2026-11-19T01:27:02Z"
       },
       "en-orig": {
         "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.en-orig.precision.vtt",
         "language": "en-orig",
         "format": "WebVTT",
         "resolution": "1 ms",
-        "cues": 239,
-        "size_bytes": 16186,
-        "sha256": "7cb3ca6956baf5be48b0d66b661ae52dcfb9483af0ed8198cf430698c0be88e4",
-        "modified_at": "2026-11-18T11:10:33Z"
+        "cues": 223,
+        "size_bytes": 15143,
+        "sha256": "3f7b14ffb25699564c8a89096cd3e2a90a53d6b802b993a759e43cdc2a3d9edd",
+        "modified_at": "2026-11-19T01:27:02Z"
       }
     },
     "statistics": {
@@ -219,9 +219,9 @@
       "ass_resolution": "centisecond",
       "ass_max_quantization_error_ms": 5.0,
       "measured_max_quantization_error_ms": 5.0,
-      "measured_mean_quantization_error_ms": 1.139959,
-      "timestamps": 4434,
-      "word_timings": 3604,
+      "measured_mean_quantization_error_ms": 1.170243,
+      "timestamps": 4549,
+      "word_timings": 3759,
       "source_resolution": [
         "1 ms",
         "10 ms"
@@ -236,13 +236,13 @@
           "srt"
         ],
         "primary_format": "json3",
-        "cue_count": 176,
+        "cue_count": 172,
         "conflicts": 0,
         "source_files": {
-          "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.zh-Hans.json3",
-          "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.zh-Hans.vtt",
-          "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.zh-Hans.ttml",
-          "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.zh-Hans.srt"
+          "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.zh-Hans.json3",
+          "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.zh-Hans.vtt",
+          "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.zh-Hans.ttml",
+          "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.zh-Hans.srt"
         }
       },
       "en-orig": {
@@ -256,16 +256,16 @@
           "srt"
         ],
         "primary_format": "json3",
-        "cue_count": 239,
+        "cue_count": 223,
         "conflicts": 50,
         "source_files": {
-          "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.json3",
-          "srv3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.srv3",
-          "srv2": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.srv2",
-          "srv1": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.srv1",
-          "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.vtt",
-          "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.ttml",
-          "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_pKFjYxpuGBI/pKFjYxpuGBI.en.en-orig.srt"
+          "json3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.json3",
+          "srv3": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.srv3",
+          "srv2": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.srv2",
+          "srv1": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.srv1",
+          "vtt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.vtt",
+          "ttml": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.ttml",
+          "srt": "/home/runner/work/gitsynonyms/gitsynonyms/output/auto_ZVSJCD1h3Ak/ZVSJCD1h3Ak.en.en-orig.srt"
         }
       }
     }
@@ -275,9 +275,9 @@
     "ass_resolution": "centisecond",
     "ass_max_quantization_error_ms": 5.0,
     "measured_max_quantization_error_ms": 5.0,
-    "measured_mean_quantization_error_ms": 1.139959,
-    "timestamps": 4434,
-    "word_timings": 3604,
+    "measured_mean_quantization_error_ms": 1.170243,
+    "timestamps": 4549,
+    "word_timings": 3759,
     "source_resolution": [
       "1 ms",
       "10 ms"
@@ -290,18 +290,16 @@
     "children": false,
     "summary": {
       "cues": 188,
-      "max_cps": 196.3,
-      "p95_cps": 22.5,
-      "mean_cps": 10.91,
-      "violations": 159,
-      "errors": 30,
-      "warnings": 129,
+      "max_cps": 116.67,
+      "p95_cps": 23.81,
+      "mean_cps": 11.61,
+      "violations": 176,
+      "errors": 34,
+      "warnings": 142,
       "by_code": {
-        "reading_speed": 42,
-        "duration_long": 3,
-        "line_count": 2,
-        "duration_short": 5,
-        "gap_short": 107
+        "reading_speed": 53,
+        "duration_short": 7,
+        "gap_short": 116
       }
     },
     "rules": {
@@ -313,7 +311,7 @@
       "max_duration": 7.0,
       "min_gap": 0.067,
       "children": false,
-      "fps": 29.970034314841204
+      "fps": 29.97006951651684
     }
   },
   "render": {
@@ -330,7 +328,7 @@
       "-hide_banner",
       "-y",
       "-i",
-      "/home/runner/work/gitsynonyms/gitsynonyms/work/pKFjYxpuGBI.source.mp4",
+      "/home/runner/work/gitsynonyms/gitsynonyms/work/ZVSJCD1h3Ak.source.mp4",
       "-vf",
       "subtitles=filename='/home/runner/work/gitsynonyms/gitsynonyms/output/bilingual_precise_Chinese-English.ass'",
       "-c:v",
@@ -347,17 +345,17 @@
       "192k",
       "-movflags",
       "+faststart",
-      "/home/runner/work/gitsynonyms/gitsynonyms/output/.Burned_Bilingual_pKFjYxpuGBI.part.mp4"
+      "/home/runner/work/gitsynonyms/gitsynonyms/output/.Burned_Bilingual_ZVSJCD1h3Ak.part.mp4"
     ],
-    "output": "/home/runner/work/gitsynonyms/gitsynonyms/output/Burned_Bilingual_pKFjYxpuGBI.mp4"
+    "output": "/home/runner/work/gitsynonyms/gitsynonyms/output/Burned_Bilingual_ZVSJCD1h3Ak.mp4"
   },
   "outputs": {
     "video": {
-      "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/Burned_Bilingual_pKFjYxpuGBI.mp4",
-      "size_bytes": 78430790,
-      "sha256": "f61c94124cd0672f6ccaacb923d2e72ee8a49e10a2e2ed803af1e9ca37e893f4",
-      "modified_at": "2026-11-18T11:13:56Z",
-      "duration_seconds": 689.789,
+      "path": "/home/runner/work/gitsynonyms/gitsynonyms/output/Burned_Bilingual_ZVSJCD1h3Ak.mp4",
+      "size_bytes": 53502423,
+      "sha256": "1eed1430cb7f5b09242513e77a40f765adfaf24a64c989874902574ac0f84bbf",
+      "modified_at": "2026-11-19T01:30:13Z",
+      "duration_seconds": 581.021,
       "width": 1920,
       "height": 1080,
       "video_codec": "h264",
@@ -366,7 +364,7 @@
     }
   },
   "warnings": [
-    "Subtitle ergonomics: 30 errors and 129 warnings; see ERGONOMICS.json.",
+    "Subtitle ergonomics: 34 errors and 142 warnings; see ERGONOMICS.json.",
     "Font 'Microsoft YaHei' resolves to 'DejaVu Sans'; the render uses the substituted family.",
     "Font 'Arial' resolves to 'Liberation Sans'; the render uses the substituted family.",
     "Using font provider fontconfig",
@@ -375,5 +373,5 @@
     "fontselect: (Microsoft YaHei, 700, 0) -> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc, 0, WenQuanYiZenHei",
     "Rendering could not find glyphs for 1 characters; the fonts named by the ASS file are missing on this machine, so that text is not drawn."
   ],
-  "finished_at": "2026-11-18T11:13:56Z"
+  "finished_at": "2026-11-19T01:30:13Z"
 }
