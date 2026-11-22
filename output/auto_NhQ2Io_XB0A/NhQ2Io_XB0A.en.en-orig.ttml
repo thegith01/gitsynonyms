@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:12.100" end="00:00:17.000" style="s2">Ladies and gentlemen, the president of</p>
+<p begin="00:00:14.200" end="00:00:20.000" style="s2">the United States, Donald J. Trump,</p>
+<p begin="00:00:17.000" end="00:00:23.700" style="s2">accompanied by the president and CEO of</p>
+<p begin="00:00:20.000" end="00:00:23.700" style="s2">UFC, Dana White.</p>
+<p begin="00:01:05.600" end="00:01:09.600" style="s2">&gt;&gt; Well, thank you very much and</p>
+<p begin="00:01:07.500" end="00:01:11.800" style="s2">please be seated and enjoy yourselves.</p>
+<p begin="00:01:09.600" end="00:01:14.300" style="s2">This is to me great enjoyment because</p>
+<p begin="00:01:11.800" end="00:01:15.700" style="s2">we&#39;re celebrating greatness</p>
+<p begin="00:01:14.300" end="00:01:17.900" style="s2">and these people and the people that</p>
+<p begin="00:01:15.700" end="00:01:19.600" style="s2">work with them.</p>
+<p begin="00:01:17.900" end="00:01:22.500" style="s2">Today is my</p>
+<p begin="00:01:19.600" end="00:01:25.400" style="s2">honor to welcome you all to our first</p>
+<p begin="00:01:22.500" end="00:01:28.700" style="s2">official event on the new</p>
+<p begin="00:01:25.400" end="00:01:30.200" style="s2">White House helipad. This is a big one.</p>
+<p begin="00:01:28.700" end="00:01:31.600" style="s2">I said, give me a helipad. I didn&#39;t know</p>
+<p begin="00:01:30.200" end="00:01:33.100" style="s2">it was going to be this big, but people</p>
+<p begin="00:01:31.600" end="00:01:36.100" style="s2">love it. In fact, it&#39;s so good I didn&#39;t</p>
+<p begin="00:01:33.100" end="00:01:37.600" style="s2">even get sued when I built it.</p>
+<p begin="00:01:36.100" end="00:01:39.100" style="s2">That&#39;s they wanted to sue. They had it</p>
+<p begin="00:01:37.600" end="00:01:41.400" style="s2">already. Then they saw it and they said,</p>
+<p begin="00:01:39.100" end="00:01:42.800" style="s2">bad, this thing is amazing.</p>
+<p begin="00:01:41.400" end="00:01:44.300" style="s2">And it&#39;s all going to be amazing and</p>
+<p begin="00:01:42.800" end="00:01:46.000" style="s2">that&#39;s going to be the most amazing of</p>
+<p begin="00:01:44.300" end="00:01:48.000" style="s2">all what we&#39;re building for the White</p>
+<p begin="00:01:46.000" end="00:01:50.700" style="s2">House. They&#39;ve been looking for that for</p>
+<p begin="00:01:48.000" end="00:01:53.900" style="s2">150 years, the ballroom</p>
+<p begin="00:01:50.700" end="00:01:55.200" style="s2">and the great military complex inside.</p>
+<p begin="00:01:53.900" end="00:01:57.100" style="s2">But this afternoon, I&#39;m pleased to</p>
+<p begin="00:01:55.200" end="00:02:00.492" style="s2">announce that my good friend Dana White,</p>
+<p begin="00:01:57.100" end="00:02:02.392" style="s2">a legend, true a legend, what a man he</p>
+<p begin="00:02:00.492" end="00:02:04.792" style="s2">And I am personally presenting the</p>
+<p begin="00:02:02.392" end="00:02:05.992" style="s2">president&#39;s own United States Marine</p>
+<p begin="00:02:04.792" end="00:02:08.592" style="s2">band</p>
+<p begin="00:02:05.992" end="00:02:10.492" style="s2">with a donation. Now it started off at</p>
+<p begin="00:02:08.592" end="00:02:11.992" style="s2">200,000</p>
+<p begin="00:02:10.492" end="00:02:13.892" style="s2">and I said how many people are there? I</p>
+<p begin="00:02:11.992" end="00:02:15.892" style="s2">thought there were 70</p>
+<p begin="00:02:13.892" end="00:02:17.692" style="s2">but it&#39;s about 170. I don&#39;t know a lot</p>
+<p begin="00:02:15.892" end="00:02:19.792" style="s2">of people joined.</p>
+<p begin="00:02:17.692" end="00:02:20.992" style="s2">So we decided to increase it, right</p>
+<p begin="00:02:19.792" end="00:02:22.892" style="s2">Dana?</p>
+<p begin="00:02:20.992" end="00:02:25.392" style="s2">So we were going to give 200,000 we&#39;re</p>
+<p begin="00:02:22.892" end="00:02:27.392" style="s2">now making it 500,000. Now everyone&#39;s</p>
+<p begin="00:02:25.392" end="00:02:29.192" style="s2">going to get a lot of money.</p>
+<p begin="00:02:27.392" end="00:02:31.092" style="s2">All right? That would</p>
+<p begin="00:02:29.192" end="00:02:32.492" style="s2">It took me about 1 second to get that</p>
+<p begin="00:02:31.092" end="00:02:33.992" style="s2">from Dana. I said do you want to go and</p>
+<p begin="00:02:32.492" end="00:02:36.992" style="s2">double up?</p>
+<p begin="00:02:33.992" end="00:02:39.692" style="s2">And it&#39;s our honor because it&#39;s</p>
+<p begin="00:02:36.992" end="00:02:42.292" style="s2">that&#39;s a good little amount of money and</p>
+<p begin="00:02:39.692" end="00:02:44.192" style="s2">it&#39;s on really fantastic. And this</p>
+<p begin="00:02:42.292" end="00:02:46.492" style="s2">really began because</p>
+<p begin="00:02:44.192" end="00:02:49.692" style="s2">Dana and I at the fight it&#39;s the highest</p>
+<p begin="00:02:46.492" end="00:02:51.092" style="s2">rated fight in the history of this whole</p>
+<p begin="00:02:49.692" end="00:02:52.192" style="s2">world</p>
+<p begin="00:02:51.092" end="00:02:54.192" style="s2">but</p>
+<p begin="00:02:52.192" end="00:02:55.592" style="s2">the music was so good.</p>
+<p begin="00:02:54.192" end="00:02:57.192" style="s2">Now the fights were great and they were</p>
+<p begin="00:02:55.592" end="00:02:58.892" style="s2">among the best fights anyone&#39;s ever</p>
+<p begin="00:02:57.192" end="00:03:00.992" style="s2">seen. That last fight</p>
+<p begin="00:02:58.892" end="00:03:04.292" style="s2">was the last two fights but you could</p>
+<p begin="00:03:00.992" end="00:03:06.192" style="s2">really see every single fight was ended</p>
+<p begin="00:03:04.292" end="00:03:07.892" style="s2">in knockouts all</p>
+<p begin="00:03:06.192" end="00:03:09.092" style="s2">and great champions. Everyone was a</p>
+<p begin="00:03:07.892" end="00:03:10.592" style="s2">champion</p>
+<p begin="00:03:09.092" end="00:03:12.692" style="s2">and it was the best night and it was</p>
+<p begin="00:03:10.592" end="00:03:14.092" style="s2">supposed to be a horrible horrible</p>
+<p begin="00:03:12.692" end="00:03:15.092" style="s2">weather. We didn&#39;t know what was going</p>
+<p begin="00:03:14.092" end="00:03:16.992" style="s2">to happen.</p>
+<p begin="00:03:15.092" end="00:03:18.992" style="s2">In fact we delayed it because we thought</p>
+<p begin="00:03:16.992" end="00:03:20.692" style="s2">and if you lived a mile that way or a</p>
+<p begin="00:03:18.992" end="00:03:22.192" style="s2">mile that way</p>
+<p begin="00:03:20.692" end="00:03:24.092" style="s2">friends called me up they said how can</p>
+<p begin="00:03:22.192" end="00:03:26.492" style="s2">you be having a fight?</p>
+<p begin="00:03:24.092" end="00:03:28.792" style="s2">The clouds came and as soon as it got to</p>
+<p begin="00:03:26.492" end="00:03:30.192" style="s2">the White House right over there</p>
+<p begin="00:03:28.792" end="00:03:31.692" style="s2">they opened up</p>
+<p begin="00:03:30.192" end="00:03:33.392" style="s2">and everything was drenched. We didn&#39;t</p>
+<p begin="00:03:31.692" end="00:03:35.192" style="s2">have one drop.</p>
+<p begin="00:03:33.392" end="00:03:36.992" style="s2">We were waiting. This was not good. We</p>
+<p begin="00:03:35.192" end="00:03:39.892" style="s2">said we&#39;re in big trouble</p>
+<p begin="00:03:36.992" end="00:03:41.492" style="s2">but it was sort of a miracle evening and</p>
+<p begin="00:03:39.892" end="00:03:43.792" style="s2">with the White House in the background</p>
+<p begin="00:03:41.492" end="00:03:44.892" style="s2">and the ring was exactly here where this</p>
+<p begin="00:03:43.792" end="00:03:46.492" style="s2">was and</p>
+<p begin="00:03:44.892" end="00:03:48.192" style="s2">I started construction of this the</p>
+<p begin="00:03:46.492" end="00:03:51.217" style="s2">following day</p>
+<p begin="00:03:48.192" end="00:03:52.692" style="s2">and it&#39;s exactly the size of the entire</p>
+<p begin="00:03:51.217" end="00:03:55.392" style="s2">[snorts] the entire ring and that was</p>
+<p begin="00:03:52.692" end="00:03:56.892" style="s2">some some fight. We had 100,000 people</p>
+<p begin="00:03:55.392" end="00:03:59.792" style="s2">in the park</p>
+<p begin="00:03:56.892" end="00:04:01.392" style="s2">and we had probably 6,000 7,000 people</p>
+<p begin="00:03:59.792" end="00:04:02.392" style="s2">here in front in the backdrop of the</p>
+<p begin="00:04:01.392" end="00:04:03.794" style="s2">White House.</p>
+<p begin="00:04:02.392" end="00:04:05.594" style="s2">I don&#39;t think it&#39;ll ever happen again,</p>
+<p begin="00:04:03.794" end="00:04:07.894" style="s2">Dana. I don&#39;t think. And on top of it,</p>
+<p begin="00:04:05.594" end="00:04:09.494" style="s2">they were the best fights. Justin</p>
+<p begin="00:04:07.894" end="00:04:12.194" style="s2">Gaethje won.</p>
+<p begin="00:04:09.494" end="00:04:13.794" style="s2">And he was not favored.</p>
+<p begin="00:04:12.194" end="00:04:15.494" style="s2">And he fought the fight of his life and</p>
+<p begin="00:04:13.794" end="00:04:17.794" style="s2">he won.</p>
+<p begin="00:04:15.494" end="00:04:19.094" style="s2">Did a lot of damage. He won give a lot</p>
+<p begin="00:04:17.794" end="00:04:20.394" style="s2">of damage.</p>
+<p begin="00:04:19.094" end="00:04:22.094" style="s2">But people said it was among the</p>
+<p begin="00:04:20.394" end="00:04:23.994" style="s2">greatest events they&#39;ve ever seen and it</p>
+<p begin="00:04:22.094" end="00:04:26.294" style="s2">was an honor to be there.</p>
+<p begin="00:04:23.994" end="00:04:28.294" style="s2">But the thing that was</p>
+<p begin="00:04:26.294" end="00:04:30.494" style="s2">equal to was the music, the quality of</p>
+<p begin="00:04:28.294" end="00:04:31.594" style="s2">the music. And Dana and I were walking</p>
+<p begin="00:04:30.494" end="00:04:33.294" style="s2">out</p>
+<p begin="00:04:31.594" end="00:04:34.494" style="s2">and</p>
+<p begin="00:04:33.294" end="00:04:37.094" style="s2">we heard</p>
+<p begin="00:04:34.494" end="00:04:39.994" style="s2">the cucaracha and we heard that was for</p>
+<p begin="00:04:37.094" end="00:04:41.994" style="s2">the Mexican champion who also won.</p>
+<p begin="00:04:39.994" end="00:04:43.794" style="s2">And we heard all these different songs,</p>
+<p begin="00:04:41.994" end="00:04:45.794" style="s2">most of which we knew, but it was better</p>
+<p begin="00:04:43.794" end="00:04:47.494" style="s2">than the original.</p>
+<p begin="00:04:45.794" end="00:04:49.694" style="s2">We thought it was a</p>
+<p begin="00:04:47.494" end="00:04:52.094" style="s2">recording. We said nobody could play</p>
+<p begin="00:04:49.694" end="00:04:53.894" style="s2">that well. And it turned out it was</p>
+<p begin="00:04:52.094" end="00:04:55.294" style="s2">these incredibly talented people that</p>
+<p begin="00:04:53.894" end="00:04:56.794" style="s2">are with us.</p>
+<p begin="00:04:55.294" end="00:04:59.494" style="s2">And I said, Dana, we got to give them a</p>
+<p begin="00:04:56.794" end="00:05:01.694" style="s2">big bonus here for the job they did.</p>
+<p begin="00:04:59.494" end="00:05:03.894" style="s2">And I mean, I will tell you, this wasn&#39;t</p>
+<p begin="00:05:01.694" end="00:05:06.194" style="s2">doesn&#39;t involve Dana as much, but they</p>
+<p begin="00:05:03.894" end="00:05:08.094" style="s2">also played for the</p>
+<p begin="00:05:06.194" end="00:05:11.394" style="s2">President of China who came here a few</p>
+<p begin="00:05:08.094" end="00:05:12.894" style="s2">weeks ago and for King Charles.</p>
+<p begin="00:05:11.394" end="00:05:14.794" style="s2">And they were unbelievable. They&#39;re just</p>
+<p begin="00:05:12.894" end="00:05:15.794" style="s2">amazingly talented. Many of them could</p>
+<p begin="00:05:14.794" end="00:05:17.694" style="s2">be in</p>
+<p begin="00:05:15.794" end="00:05:19.394" style="s2">any of the greatest orchestras in the</p>
+<p begin="00:05:17.694" end="00:05:20.594" style="s2">world, Carnegie Hall. They could be</p>
+<p begin="00:05:19.394" end="00:05:21.794" style="s2">anywhere.</p>
+<p begin="00:05:20.594" end="00:05:23.194" style="s2">Many of them.</p>
+<p begin="00:05:21.794" end="00:05:24.594" style="s2">But they love the military. They love</p>
+<p begin="00:05:23.194" end="00:05:27.494" style="s2">our country.</p>
+<p begin="00:05:24.594" end="00:05:30.094" style="s2">So Dana and I are contributing</p>
+<p begin="00:05:27.494" end="00:05:32.394" style="s2">the $500,000</p>
+<p begin="00:05:30.094" end="00:05:35.594" style="s2">to express our immense appreciation for</p>
+<p begin="00:05:32.394" end="00:05:37.694" style="s2">your spectacular talent, unwavering</p>
+<p begin="00:05:35.594" end="00:05:39.794" style="s2">professionalism which it is, and total</p>
+<p begin="00:05:37.694" end="00:05:41.894" style="s2">commitment to excellence</p>
+<p begin="00:05:39.794" end="00:05:43.494" style="s2">in everything that you&#39;ve done. And that</p>
+<p begin="00:05:41.894" end="00:05:46.394" style="s2">includes those people that make it</p>
+<p begin="00:05:43.494" end="00:05:47.994" style="s2">possible for you to play so well.</p>
+<p begin="00:05:46.394" end="00:05:50.594" style="s2">So as president,</p>
+<p begin="00:05:47.994" end="00:05:52.494" style="s2">I&#39;ve admired you from the very first day</p>
+<p begin="00:05:50.594" end="00:05:54.094" style="s2">of my first term.</p>
+<p begin="00:05:52.494" end="00:05:55.794" style="s2">We&#39;d have little events and you&#39;d play</p>
+<p begin="00:05:54.094" end="00:05:57.594" style="s2">and I say, wow, they&#39;re great. You I</p>
+<p begin="00:05:55.794" end="00:05:59.094" style="s2">mean, the bad part is you usually blew</p>
+<p begin="00:05:57.594" end="00:06:01.594" style="s2">away the artist. You know, we bring in</p>
+<p begin="00:05:59.094" end="00:06:03.294" style="s2">these big artists, Dana. Big names, but</p>
+<p begin="00:06:01.594" end="00:06:04.594" style="s2">they blow them away.</p>
+<p begin="00:06:03.294" end="00:06:06.494" style="s2">They they don&#39;t even like going out</p>
+<p begin="00:06:04.594" end="00:06:08.769" style="s2">after watching you. You have more talent</p>
+<p begin="00:06:06.494" end="00:06:10.789" style="s2">than they do. I hate to tell you.</p>
+<p begin="00:06:08.769" end="00:06:10.789" style="s2">&gt;&gt; [snorts]</p>
+<p begin="00:06:48.069" end="00:06:50.089" style="s2">[snorts]</p>
+<p begin="00:07:23.895" end="00:07:29.195" style="s2">&gt;&gt; Really great job.</p>
+<p begin="00:07:26.295" end="00:07:29.195" style="s2">I&#39;m so proud of you.</p>
+<p begin="00:07:29.495" end="00:07:35.395" style="s2">And we&#39;re also pleased to be joined by</p>
+<p begin="00:07:31.595" end="00:07:37.495" style="s2">three people who I know you are very</p>
+<p begin="00:07:35.395" end="00:07:39.095" style="s2">familiar with and share my great</p>
+<p begin="00:07:37.495" end="00:07:40.995" style="s2">appreciation for this group&#39;s</p>
+<p begin="00:07:39.095" end="00:07:43.895" style="s2">outstanding skill.</p>
+<p begin="00:07:40.995" end="00:07:44.995" style="s2">A man who is absolutely admired by most,</p>
+<p begin="00:07:43.895" end="00:07:47.395" style="s2">but</p>
+<p begin="00:07:44.995" end="00:07:49.395" style="s2">he does so well that they&#39;re jealous.</p>
+<p begin="00:07:47.395" end="00:07:51.195" style="s2">And they want to get him, but they don&#39;t</p>
+<p begin="00:07:49.395" end="00:07:53.595" style="s2">take him. They like you. They don&#39;t take</p>
+<p begin="00:07:51.195" end="00:07:55.595" style="s2">him down very easily. He&#39;s been actually</p>
+<p begin="00:07:53.595" end="00:07:57.295" style="s2">outstanding. So we won in Venezuela in</p>
+<p begin="00:07:55.595" end="00:07:59.395" style="s2">48 minutes.</p>
+<p begin="00:07:57.295" end="00:08:01.395" style="s2">And we&#39;re knocking the hell out of him</p>
+<p begin="00:07:59.395" end="00:08:03.295" style="s2">in a And we&#39;re being nice. We&#39;re being</p>
+<p begin="00:08:01.395" end="00:08:06.795" style="s2">very nice, but they&#39;re</p>
+<p begin="00:08:03.295" end="00:08:09.097" style="s2">Navy&#39;s gone. Their Air Force is gone.</p>
+<p begin="00:08:06.795" end="00:08:10.597" style="s2">Frankly, their leaders are gone.</p>
+<p begin="00:08:09.097" end="00:08:12.997" style="s2">Everything&#39;s gone.</p>
+<p begin="00:08:10.597" end="00:08:14.497" style="s2">And we&#39;ll see how that</p>
+<p begin="00:08:12.997" end="00:08:17.097" style="s2">We&#39;re being very nice. We&#39;re being</p>
+<p begin="00:08:14.497" end="00:08:18.597" style="s2">patient. We&#39;re being very patient.</p>
+<p begin="00:08:17.097" end="00:08:20.997" style="s2">But it&#39;s been</p>
+<p begin="00:08:18.597" end="00:08:22.997" style="s2">amazing to watch him and</p>
+<p begin="00:08:20.997" end="00:08:24.697" style="s2">General Kane and all of the others. But</p>
+<p begin="00:08:22.997" end="00:08:25.697" style="s2">I want to just introduce Secretary of</p>
+<p begin="00:08:24.697" end="00:08:28.097" style="s2">War</p>
+<p begin="00:08:25.697" end="00:08:31.897" style="s2">Pete Hegseth, who has been a star. Thank</p>
+<p begin="00:08:28.097" end="00:08:31.897" style="s2">you, Pete. Thank you very much.</p>
+<p begin="00:08:32.997" end="00:08:35.797" style="s2">And he goes and he works out with the</p>
+<p begin="00:08:34.297" end="00:08:37.097" style="s2">guys, but I don&#39;t know. He&#39;s really in</p>
+<p begin="00:08:35.797" end="00:08:39.097" style="s2">good shape, but some of those guys are</p>
+<p begin="00:08:37.097" end="00:08:40.075" style="s2">tough, right? They&#39;re tough to work out</p>
+<p begin="00:08:39.097" end="00:08:43.397" style="s2">with.</p>
+<p begin="00:08:40.075" end="00:08:47.897" style="s2">[snorts] Acting Secretary of the Navy</p>
+<p begin="00:08:43.397" end="00:08:47.897" style="s2">Hung Cao. Thank you. Thank you, Hung.</p>
+<p begin="00:08:48.897" end="00:08:54.297" style="s2">And the Commandant of the Marine Corps,</p>
+<p begin="00:08:50.997" end="00:08:56.297" style="s2">General Eric Smith. Thank you very much.</p>
+<p begin="00:08:54.297" end="00:08:58.097" style="s2">Thank you. Thank you, General. Central</p>
+<p begin="00:08:56.297" end="00:08:59.897" style="s2">Castle.</p>
+<p begin="00:08:58.097" end="00:09:01.497" style="s2">Looks like</p>
+<p begin="00:08:59.897" end="00:09:03.697" style="s2">He looks great.</p>
+<p begin="00:09:01.497" end="00:09:05.697" style="s2">And thanks as well to the Commanding</p>
+<p begin="00:09:03.697" end="00:09:07.497" style="s2">Officer of the Marine Barracks here in</p>
+<p begin="00:09:05.697" end="00:09:10.097" style="s2">Washington, Jason Copeland, and the</p>
+<p begin="00:09:07.497" end="00:09:11.897" style="s2">Marine Barracks Sergeant Major Juan</p>
+<p begin="00:09:10.097" end="00:09:13.197" style="s2">Segura. Thank you very much, fellas.</p>
+<p begin="00:09:11.897" end="00:09:15.997" style="s2">Thank you.</p>
+<p begin="00:09:13.197" end="00:09:18.097" style="s2">Thank you very much.</p>
+<p begin="00:09:15.997" end="00:09:20.497" style="s2">So each member of this elite military</p>
+<p begin="00:09:18.097" end="00:09:22.997" style="s2">band continued a</p>
+<p begin="00:09:20.497" end="00:09:24.697" style="s2">cherished part of the American musical</p>
+<p begin="00:09:22.997" end="00:09:26.497" style="s2">tradition, which is such a big deal</p>
+<p begin="00:09:24.697" end="00:09:28.897" style="s2">dating back</p>
+<p begin="00:09:26.497" end="00:09:30.097" style="s2">more than two centuries.</p>
+<p begin="00:09:28.897" end="00:09:34.597" style="s2">Incredible.</p>
+<p begin="00:09:30.097" end="00:09:37.097" style="s2">Founded in 1798. Now this is 1792, the</p>
+<p begin="00:09:34.597" end="00:09:39.097" style="s2">White House. So not so far back.</p>
+<p begin="00:09:37.097" end="00:09:42.497" style="s2">Think of that. 17 This was built in</p>
+<p begin="00:09:39.097" end="00:09:44.297" style="s2">1792, so you&#39;re 1798.</p>
+<p begin="00:09:42.497" end="00:09:46.797" style="s2">By an act of Congress, the US Marine</p>
+<p begin="00:09:44.297" end="00:09:48.197" style="s2">Band has served every president except</p>
+<p begin="00:09:46.797" end="00:09:49.997" style="s2">George Washington. I don&#39;t know what</p>
+<p begin="00:09:48.197" end="00:09:51.997" style="s2">happened there. A little bit You were a</p>
+<p begin="00:09:49.997" end="00:09:54.897" style="s2">little bit late for that one.</p>
+<p begin="00:09:51.997" end="00:09:56.597" style="s2">At state dinners and inaugurations</p>
+<p begin="00:09:54.897" end="00:09:59.097" style="s2">through great halls and</p>
+<p begin="00:09:56.597" end="00:10:00.697" style="s2">grand parades, the greatest parades</p>
+<p begin="00:09:59.097" end="00:10:02.897" style="s2">anyone&#39;s ever seen.</p>
+<p begin="00:10:00.697" end="00:10:04.797" style="s2">You provided the soundtrack for American</p>
+<p begin="00:10:02.897" end="00:10:06.597" style="s2">history itself, and Dana has something</p>
+<p begin="00:10:04.797" end="00:10:09.097" style="s2">to tell you about that</p>
+<p begin="00:10:06.597" end="00:10:11.298" style="s2">because your performance during the UFC</p>
+<p begin="00:10:09.097" end="00:10:13.598" style="s2">fight has gotten tremendous</p>
+<p begin="00:10:11.298" end="00:10:15.298" style="s2">You&#39;ll be talking about that, Dana.</p>
+<p begin="00:10:13.598" end="00:10:17.298" style="s2">The band was given its nickname, The</p>
+<p begin="00:10:15.298" end="00:10:19.398" style="s2">President&#39;s Own,</p>
+<p begin="00:10:17.298" end="00:10:21.498" style="s2">by none other than Thomas Jefferson. I</p>
+<p begin="00:10:19.398" end="00:10:23.498" style="s2">wanted to say that cuz otherwise, when I</p>
+<p begin="00:10:21.498" end="00:10:25.898" style="s2">say The President&#39;s Own, you&#39;d say Trump</p>
+<p begin="00:10:23.498" end="00:10:27.898" style="s2">has an ego. This guy&#39;s terrible. He&#39;s</p>
+<p begin="00:10:25.898" end="00:10:29.398" style="s2">claiming the band now.</p>
+<p begin="00:10:27.898" end="00:10:31.098" style="s2">So this was long before me, The</p>
+<p begin="00:10:29.398" end="00:10:32.698" style="s2">President&#39;s Own, but it&#39;s called The</p>
+<p begin="00:10:31.098" end="00:10:34.498" style="s2">President&#39;s Own.</p>
+<p begin="00:10:32.698" end="00:10:36.498" style="s2">It traveled with President Abraham</p>
+<p begin="00:10:34.498" end="00:10:37.498" style="s2">Lincoln to Gettysburg and</p>
+<p begin="00:10:36.498" end="00:10:39.798" style="s2">played</p>
+<p begin="00:10:37.498" end="00:10:41.898" style="s2">under the direction of the legendary</p>
+<p begin="00:10:39.798" end="00:10:43.898" style="s2">composer John</p>
+<p begin="00:10:41.898" end="00:10:46.298" style="s2">Philip Sousa. That&#39;s a big deal and</p>
+<p begin="00:10:43.898" end="00:10:49.298" style="s2">you&#39;re a national treasure. You really</p>
+<p begin="00:10:46.298" end="00:10:51.098" style="s2">are. You&#39;re amazing, talented people.</p>
+<p begin="00:10:49.298" end="00:10:53.098" style="s2">Talent, you know? I have a friend Gary</p>
+<p begin="00:10:51.098" end="00:10:54.798" style="s2">Player is a great golfer. He says</p>
+<p begin="00:10:53.098" end="00:10:56.198" style="s2">talent, it&#39;s all about talent. Well, you</p>
+<p begin="00:10:54.798" end="00:10:58.398" style="s2">have talent.</p>
+<p begin="00:10:56.198" end="00:10:59.198" style="s2">And today, The President&#39;s Own is better</p>
+<p begin="00:10:58.398" end="00:11:01.098" style="s2">and</p>
+<p begin="00:10:59.198" end="00:11:03.198" style="s2">more talented, I believe, than ever</p>
+<p begin="00:11:01.098" end="00:11:04.798" style="s2">before. We very</p>
+<p begin="00:11:03.198" end="00:11:06.398" style="s2">very much</p>
+<p begin="00:11:04.798" end="00:11:08.398" style="s2">love and respect you. And by the way,</p>
+<p begin="00:11:06.398" end="00:11:10.298" style="s2">for everybody here, there are many, many</p>
+<p begin="00:11:08.398" end="00:11:12.598" style="s2">people that could turn down</p>
+<p begin="00:11:10.298" end="00:11:15.198" style="s2">either just can&#39;t do it for some reason.</p>
+<p begin="00:11:12.598" end="00:11:17.698" style="s2">Mostly it is because of the talent. We</p>
+<p begin="00:11:15.198" end="00:11:19.498" style="s2">want the most talented people.</p>
+<p begin="00:11:17.698" end="00:11:21.698" style="s2">But in very exciting news, I want to</p>
+<p begin="00:11:19.498" end="00:11:23.698" style="s2">congratulate you on an unprecedented</p>
+<p begin="00:11:21.698" end="00:11:25.298" style="s2">accomplishment this week.</p>
+<p begin="00:11:23.698" end="00:11:27.898" style="s2">For the first time ever, the US Marine</p>
+<p begin="00:11:25.298" end="00:11:30.498" style="s2">Band has officially been nominated</p>
+<p begin="00:11:27.898" end="00:11:31.898" style="s2">for a Grammy Award and you&#39;re going to</p>
+<p begin="00:11:30.498" end="00:11:33.698" style="s2">talk about that and you&#39;re going to get</p>
+<p begin="00:11:31.898" end="00:11:36.498" style="s2">people to call in and vote cuz they</p>
+<p begin="00:11:33.698" end="00:11:37.798" style="s2">should win cuz I know a lot about music</p>
+<p begin="00:11:36.498" end="00:11:39.298" style="s2">and they&#39;re better than the people that</p>
+<p begin="00:11:37.798" end="00:11:41.198" style="s2">are up.</p>
+<p begin="00:11:39.298" end="00:11:43.898" style="s2">But you&#39;re in the nomination for best</p>
+<p begin="00:11:41.198" end="00:11:45.698" style="s2">orchestra performance for your recent</p>
+<p begin="00:11:43.898" end="00:11:47.698" style="s2">album</p>
+<p begin="00:11:45.698" end="00:11:50.198" style="s2">titled John Williams and The President&#39;s</p>
+<p begin="00:11:47.698" end="00:11:52.498" style="s2">Own Volume Three. That&#39;s a big That&#39;s a</p>
+<p begin="00:11:50.198" end="00:11:54.698" style="s2">big deal. One of the many reasons I</p>
+<p begin="00:11:52.498" end="00:11:57.998" style="s2">wanted to give you this</p>
+<p begin="00:11:54.698" end="00:11:59.498" style="s2">special gift today is because I know how</p>
+<p begin="00:11:57.998" end="00:12:01.598" style="s2">hard you&#39;ve been working and how hard</p>
+<p begin="00:11:59.498" end="00:12:03.298" style="s2">you work. I see it. I see it probably</p>
+<p begin="00:12:01.598" end="00:12:05.698" style="s2">more than anybody.</p>
+<p begin="00:12:03.298" end="00:12:07.498" style="s2">Over the past two years, you were a</p>
+<p begin="00:12:05.698" end="00:12:09.098" style="s2">memorable highlight</p>
+<p begin="00:12:07.498" end="00:12:10.898" style="s2">of my inauguration. You played</p>
+<p begin="00:12:09.098" end="00:12:12.498" style="s2">unbelievably. In fact, I wanted the</p>
+<p begin="00:12:10.898" end="00:12:14.599" style="s2">inauguration to go on for another hour.</p>
+<p begin="00:12:12.498" end="00:12:15.999" style="s2">I wanted to listen to your music, but</p>
+<p begin="00:12:14.599" end="00:12:18.399" style="s2">didn&#39;t work out.</p>
+<p begin="00:12:15.999" end="00:12:20.799" style="s2">And you&#39;ve performed God Save the King</p>
+<p begin="00:12:18.399" end="00:12:24.499" style="s2">for King Charles the Third. You sang</p>
+<p begin="00:12:20.799" end="00:12:26.599" style="s2">music from Les Mis for President</p>
+<p begin="00:12:24.499" end="00:12:28.399" style="s2">Xi of China. He still talked about it.</p>
+<p begin="00:12:26.599" end="00:12:29.999" style="s2">He talked about it yesterday when I was</p>
+<p begin="00:12:28.399" end="00:12:32.299" style="s2">with him. He said that band was</p>
+<p begin="00:12:29.999" end="00:12:34.899" style="s2">phenomenal cuz they also they had very</p>
+<p begin="00:12:32.299" end="00:12:36.599" style="s2">brilliant musicians. They gave us a</p>
+<p begin="00:12:34.899" end="00:12:38.699" style="s2">concert. They gave us a show that was</p>
+<p begin="00:12:36.599" end="00:12:40.499" style="s2">incredible also.</p>
+<p begin="00:12:38.699" end="00:12:43.699" style="s2">You headlined the celebration of</p>
+<p begin="00:12:40.499" end="00:12:46.499" style="s2">America&#39;s 250th anniversary.</p>
+<p begin="00:12:43.699" end="00:12:49.499" style="s2">And you even mastered some new material</p>
+<p begin="00:12:46.499" end="00:12:50.699" style="s2">such as the one and only YMCA. You do it</p>
+<p begin="00:12:49.499" end="00:12:52.299" style="s2">very well.</p>
+<p begin="00:12:50.699" end="00:12:53.499" style="s2">That&#39;s become quite successful. You</p>
+<p begin="00:12:52.299" end="00:12:55.499" style="s2">know, that was</p>
+<p begin="00:12:53.499" end="00:12:56.999" style="s2">32 years ago. That was number five.</p>
+<p begin="00:12:55.499" end="00:12:58.999" style="s2">Didn&#39;t hit number one.</p>
+<p begin="00:12:56.999" end="00:13:01.099" style="s2">But for many months it was number one.</p>
+<p begin="00:12:58.999" end="00:13:03.199" style="s2">So it was 32. The difference was they</p>
+<p begin="00:13:01.099" end="00:13:04.999" style="s2">got a little bit heavier</p>
+<p begin="00:13:03.199" end="00:13:06.899" style="s2">as a band. The band it looked a little</p>
+<p begin="00:13:04.999" end="00:13:08.399" style="s2">bit different, not totally recognizable,</p>
+<p begin="00:13:06.899" end="00:13:10.799" style="s2">but they&#39;re great guys and they loved</p>
+<p begin="00:13:08.399" end="00:13:12.099" style="s2">it. They weigh a couple of pounds more</p>
+<p begin="00:13:10.799" end="00:13:14.899" style="s2">than they did.</p>
+<p begin="00:13:12.099" end="00:13:16.499" style="s2">But uh it went from number five, which</p>
+<p begin="00:13:14.899" end="00:13:18.099" style="s2">was a big hit, but it was number five.</p>
+<p begin="00:13:16.499" end="00:13:19.699" style="s2">Didn&#39;t hit number one.</p>
+<p begin="00:13:18.099" end="00:13:21.899" style="s2">But it hit number one for a long time</p>
+<p begin="00:13:19.699" end="00:13:23.499" style="s2">with us. So when you think of it, it&#39;s</p>
+<p begin="00:13:21.899" end="00:13:25.499" style="s2">pretty amazing, right? That a song you&#39;d</p>
+<p begin="00:13:23.499" end="00:13:27.399" style="s2">bring it back and it became</p>
+<p begin="00:13:25.499" end="00:13:29.299" style="s2">a smash, which tells you the power of</p>
+<p begin="00:13:27.399" end="00:13:30.999" style="s2">politics, doesn&#39;t it?</p>
+<p begin="00:13:29.299" end="00:13:33.099" style="s2">And next month we&#39;re looking forward to</p>
+<p begin="00:13:30.999" end="00:13:35.699" style="s2">having the President&#39;s own perform for</p>
+<p begin="00:13:33.099" end="00:13:39.099" style="s2">dozens of top world leaders when they</p>
+<p begin="00:13:35.699" end="00:13:40.499" style="s2">host the G20 conference in Florida in</p>
+<p begin="00:13:39.099" end="00:13:41.999" style="s2">Doral.</p>
+<p begin="00:13:40.499" end="00:13:44.699" style="s2">And it&#39;s going to be great. We have all</p>
+<p begin="00:13:41.999" end="00:13:46.199" style="s2">the the top 20 leaders in the world</p>
+<p begin="00:13:44.699" end="00:13:49.899" style="s2">going to be there.</p>
+<p begin="00:13:46.199" end="00:13:52.499" style="s2">So it&#39;s a true honor to have you perform</p>
+<p begin="00:13:49.899" end="00:13:54.099" style="s2">for us. You know, when I when I said the</p>
+<p begin="00:13:52.499" end="00:13:55.299" style="s2">money we didn&#39;t think about this. I only</p>
+<p begin="00:13:54.099" end="00:13:56.099" style="s2">said it this morning. I said, what are</p>
+<p begin="00:13:55.299" end="00:13:58.099" style="s2">we going to do? Well, you&#39;re just going</p>
+<p begin="00:13:56.099" end="00:13:59.199" style="s2">to have a minor ceremony.</p>
+<p begin="00:13:58.099" end="00:14:01.099" style="s2">And I want to thank Chamberlain,</p>
+<p begin="00:13:59.199" end="00:14:03.099" style="s2">wherever she may be, cuz she put this</p>
+<p begin="00:14:01.099" end="00:14:04.499" style="s2">all together very quickly.</p>
+<p begin="00:14:03.099" end="00:14:06.399" style="s2">And I said, well, are they going to</p>
+<p begin="00:14:04.499" end="00:14:07.599" style="s2">play? No, they weren&#39;t. I said, wait a</p>
+<p begin="00:14:06.399" end="00:14:09.699" style="s2">minute, I&#39;m giving them a lot of money.</p>
+<p begin="00:14:07.599" end="00:14:11.599" style="s2">We&#39;re going to up it to 500,000. Let</p>
+<p begin="00:14:09.699" end="00:14:13.499" style="s2">them make like let them play a little</p>
+<p begin="00:14:11.599" end="00:14:14.699" style="s2">music. Do you agree?</p>
+<p begin="00:14:13.499" end="00:14:16.301" style="s2">So uh</p>
+<p begin="00:14:14.699" end="00:14:18.601" style="s2">this was all sort of put together. Then</p>
+<p begin="00:14:16.301" end="00:14:20.801" style="s2">I said, let&#39;s invite the press. So we</p>
+<p begin="00:14:18.601" end="00:14:23.401" style="s2">actually invited the press. Often times</p>
+<p begin="00:14:20.801" end="00:14:26.101" style="s2">not my favorite people, but that&#39;s okay.</p>
+<p begin="00:14:23.401" end="00:14:29.501" style="s2">And they were all excited and we have</p>
+<p begin="00:14:26.101" end="00:14:32.401" style="s2">really very some good stuff done by your</p>
+<p begin="00:14:29.501" end="00:14:34.801" style="s2">your commissary, by people that love you</p>
+<p begin="00:14:32.401" end="00:14:36.801" style="s2">and they love making good food for you.</p>
+<p begin="00:14:34.801" end="00:14:38.801" style="s2">So I want you to know that we&#39;re very</p>
+<p begin="00:14:36.801" end="00:14:41.801" style="s2">grateful and that</p>
+<p begin="00:14:38.801" end="00:14:44.001" style="s2">John Philip Sousa famously said</p>
+<p begin="00:14:41.801" end="00:14:47.201" style="s2">and wanted his own orchestra to be as</p>
+<p begin="00:14:44.001" end="00:14:48.701" style="s2">great among bands as any there are in</p>
+<p begin="00:14:47.201" end="00:14:50.301" style="s2">America.</p>
+<p begin="00:14:48.701" end="00:14:52.001" style="s2">And he said it and you know what that&#39;s</p>
+<p begin="00:14:50.301" end="00:14:54.201" style="s2">turned out to be true because friends of</p>
+<p begin="00:14:52.001" end="00:14:56.001" style="s2">mine that are in the music business said</p>
+<p begin="00:14:54.201" end="00:14:57.901" style="s2">that were here that night,</p>
+<p begin="00:14:56.001" end="00:15:00.201" style="s2">but at other times also they said they</p>
+<p begin="00:14:57.901" end="00:15:03.001" style="s2">are as good as it gets. So it&#39;s a big</p>
+<p begin="00:15:00.201" end="00:15:04.501" style="s2">deal. So we put this together and I said</p>
+<p begin="00:15:03.001" end="00:15:05.801" style="s2">to Dana, we got to make them work a</p>
+<p begin="00:15:04.501" end="00:15:07.501" style="s2">little bit. So they&#39;re going to play a</p>
+<p begin="00:15:05.801" end="00:15:09.001" style="s2">few songs for us.</p>
+<p begin="00:15:07.501" end="00:15:11.201" style="s2">And</p>
+<p begin="00:15:09.001" end="00:15:12.901" style="s2">it&#39;s something that everybody here, we</p>
+<p begin="00:15:11.201" end="00:15:14.401" style="s2">have the cabinet here.</p>
+<p begin="00:15:12.901" end="00:15:16.601" style="s2">We have the leaders here. We have a lot</p>
+<p begin="00:15:14.401" end="00:15:18.101" style="s2">of generals here, a lot of great</p>
+<p begin="00:15:16.601" end="00:15:20.701" style="s2">We have two great admirals here that I</p>
+<p begin="00:15:18.101" end="00:15:22.701" style="s2">know and respect and we&#39;re doing so</p>
+<p begin="00:15:20.701" end="00:15:24.201" style="s2">well. They&#39;ve got that great talent for</p>
+<p begin="00:15:22.701" end="00:15:26.001" style="s2">something else. It&#39;s called warfare,</p>
+<p begin="00:15:24.201" end="00:15:27.901" style="s2">which is what we want.</p>
+<p begin="00:15:26.001" end="00:15:29.601" style="s2">So now I&#39;d like to ask my friend Dana</p>
+<p begin="00:15:27.901" end="00:15:31.201" style="s2">White, one of the true legends, the most</p>
+<p begin="00:15:29.601" end="00:15:33.601" style="s2">successful</p>
+<p begin="00:15:31.201" end="00:15:35.201" style="s2">promoter of fights, but really I think I</p>
+<p begin="00:15:33.601" end="00:15:37.301" style="s2">could say the most successful promoter</p>
+<p begin="00:15:35.201" end="00:15:39.301" style="s2">of anything, frankly.</p>
+<p begin="00:15:37.301" end="00:15:41.301" style="s2">What he&#39;s been able to do is really</p>
+<p begin="00:15:39.301" end="00:15:42.601" style="s2">incredible and then I&#39;m going to hand</p>
+<p begin="00:15:41.301" end="00:15:45.501" style="s2">out the</p>
+<p begin="00:15:42.601" end="00:15:46.701" style="s2">check along with Dana to director Ryan</p>
+<p begin="00:15:45.501" end="00:15:48.801" style="s2">Nolen.</p>
+<p begin="00:15:46.701" end="00:15:50.801" style="s2">And Dana, if you could</p>
+<p begin="00:15:48.801" end="00:15:52.401" style="s2">come forward and say a few words, I&#39;d</p>
+<p begin="00:15:50.801" end="00:15:55.301" style="s2">love to listen. I could listen to this</p>
+<p begin="00:15:52.401" end="00:15:57.301" style="s2">guy all day because he&#39;s an inspiration.</p>
+<p begin="00:15:55.301" end="00:15:58.601" style="s2">He&#39;s an inspiration, respected by</p>
+<p begin="00:15:57.301" end="00:16:00.601" style="s2">everybody,</p>
+<p begin="00:15:58.601" end="00:16:01.901" style="s2">respected by the toughest people in the</p>
+<p begin="00:16:00.601" end="00:16:03.601" style="s2">world because I think they might be the</p>
+<p begin="00:16:01.901" end="00:16:05.501" style="s2">toughest. You don&#39;t get any tougher than</p>
+<p begin="00:16:03.601" end="00:16:07.701" style="s2">them. But</p>
+<p begin="00:16:05.501" end="00:16:10.301" style="s2">everybody loves and respects Dana White.</p>
+<p begin="00:16:07.701" end="00:16:10.301" style="s2">Thank you, Dana.</p>
+<p begin="00:16:11.376" end="00:16:13.396" style="s2">&gt;&gt; [applause]</p>
+<p begin="00:16:15.801" end="00:16:21.002" style="s2">&gt;&gt; Thank you, Mr. President.</p>
+<p begin="00:16:18.202" end="00:16:23.902" style="s2">This band prepared for Freedom</p>
+<p begin="00:16:21.002" end="00:16:26.602" style="s2">250 like it was a military operation.</p>
+<p begin="00:16:23.902" end="00:16:29.602" style="s2">Eight weeks of planning, 39 songs from</p>
+<p begin="00:16:26.602" end="00:16:31.302" style="s2">32 different artists, many with custom</p>
+<p begin="00:16:29.602" end="00:16:33.902" style="s2">arrangements, and</p>
+<p begin="00:16:31.302" end="00:16:36.102" style="s2">in the days before the event, they spent</p>
+<p begin="00:16:33.902" end="00:16:38.402" style="s2">four full days rehearsing with our</p>
+<p begin="00:16:36.102" end="00:16:40.602" style="s2">production in the blazing sun and</p>
+<p begin="00:16:38.402" end="00:16:42.602" style="s2">humidity here in DC.</p>
+<p begin="00:16:40.602" end="00:16:43.602" style="s2">My head of production Craig Borsari said</p>
+<p begin="00:16:42.602" end="00:16:45.402" style="s2">that</p>
+<p begin="00:16:43.602" end="00:16:47.902" style="s2">when they would take breaks, these guys</p>
+<p begin="00:16:45.402" end="00:16:50.002" style="s2">were in full military dress rehearsing</p>
+<p begin="00:16:47.902" end="00:16:51.702" style="s2">in the sun. When they would get up, the</p>
+<p begin="00:16:50.002" end="00:16:53.402" style="s2">seats were soaked.</p>
+<p begin="00:16:51.702" end="00:16:54.902" style="s2">No complaints, not one complaint the</p>
+<p begin="00:16:53.402" end="00:16:56.102" style="s2">entire time.</p>
+<p begin="00:16:54.902" end="00:16:57.902" style="s2">Now, I&#39;ve worked with a lot of great</p>
+<p begin="00:16:56.102" end="00:17:00.102" style="s2">teams, and I know what it looks like</p>
+<p begin="00:16:57.902" end="00:17:01.802" style="s2">when people take pride in their work. I</p>
+<p begin="00:17:00.102" end="00:17:03.302" style="s2">saw it in the way the Marines handled</p>
+<p begin="00:17:01.802" end="00:17:05.302" style="s2">every rehearsal,</p>
+<p begin="00:17:03.302" end="00:17:08.102" style="s2">and I heard it in every song that was</p>
+<p begin="00:17:05.302" end="00:17:09.702" style="s2">played at Freedom 250.</p>
+<p begin="00:17:08.102" end="00:17:11.502" style="s2">There were times, like the President</p>
+<p begin="00:17:09.702" end="00:17:14.002" style="s2">said,</p>
+<p begin="00:17:11.502" end="00:17:16.102" style="s2">a song would be playing, and I would go,</p>
+<p begin="00:17:14.002" end="00:17:17.602" style="s2">is that the DJ? Is the DJ playing? And</p>
+<p begin="00:17:16.102" end="00:17:19.502" style="s2">you look over,</p>
+<p begin="00:17:17.602" end="00:17:22.402" style="s2">and it was the band. And it sounded</p>
+<p begin="00:17:19.502" end="00:17:24.102" style="s2">exactly like the artist.</p>
+<p begin="00:17:22.402" end="00:17:25.302" style="s2">Uh it was it was really amazing. And I</p>
+<p begin="00:17:24.102" end="00:17:27.502" style="s2">want to thank</p>
+<p begin="00:17:25.302" end="00:17:30.302" style="s2">uh [snorts] Lieutenant Colonel Ryan</p>
+<p begin="00:17:27.502" end="00:17:33.202" style="s2">Nalen. I want to thank Lieutenant</p>
+<p begin="00:17:30.302" end="00:17:35.802" style="s2">Colonel Douglas Beryan,</p>
+<p begin="00:17:33.202" end="00:17:38.002" style="s2">Gunnery Sergeant Scott Nimner, and every</p>
+<p begin="00:17:35.802" end="00:17:40.802" style="s2">musician and crew member who helped pull</p>
+<p begin="00:17:38.002" end="00:17:44.302" style="s2">this off, including those who joined us</p>
+<p begin="00:17:40.802" end="00:17:46.002" style="s2">from Army, Navy, and Air Force.</p>
+<p begin="00:17:44.302" end="00:17:47.002" style="s2">Now, a couple things I want to point out</p>
+<p begin="00:17:46.002" end="00:17:48.502" style="s2">that are</p>
+<p begin="00:17:47.002" end="00:17:51.002" style="s2">truly incredible.</p>
+<p begin="00:17:48.502" end="00:17:53.802" style="s2">The album is available. The UFC Freedom</p>
+<p begin="00:17:51.002" end="00:17:57.302" style="s2">250 album is available worldwide, and it</p>
+<p begin="00:17:53.802" end="00:17:59.452" style="s2">has 4 million streams right now.</p>
+<p begin="00:17:57.302" end="00:18:01.202" style="s2">Now, we have a big music department</p>
+<p begin="00:17:59.452" end="00:18:04.302" style="s2">[snorts] at TKR our company. We have the</p>
+<p begin="00:18:01.202" end="00:18:05.902" style="s2">WWE and the UFC, and we use a lot of</p>
+<p begin="00:18:04.302" end="00:18:08.502" style="s2">music.</p>
+<p begin="00:18:05.902" end="00:18:11.802" style="s2">And my music guys are telling me the</p>
+<p begin="00:18:08.502" end="00:18:14.202" style="s2">fact that UFC Freedom 250 music made it</p>
+<p begin="00:18:11.802" end="00:18:15.502" style="s2">to the first round of voting in the</p>
+<p begin="00:18:14.202" end="00:18:18.202" style="s2">Grammys</p>
+<p begin="00:18:15.502" end="00:18:20.203" style="s2">for album of the year is absolutely</p>
+<p begin="00:18:18.202" end="00:18:22.003" style="s2">unbelievable and incredible. So,</p>
+<p begin="00:18:20.203" end="00:18:24.403" style="s2">congratulations</p>
+<p begin="00:18:22.003" end="00:18:25.403" style="s2">to you Marines. And like the President</p>
+<p begin="00:18:24.403" end="00:18:27.103" style="s2">said,</p>
+<p begin="00:18:25.403" end="00:18:29.303" style="s2">I hope you guys win. It would be</p>
+<p begin="00:18:27.103" end="00:18:31.603" style="s2">absolutely incredible.</p>
+<p begin="00:18:29.303" end="00:18:33.303" style="s2">Um, so on behalf of everybody at the</p>
+<p begin="00:18:31.603" end="00:18:35.503" style="s2">UFC,</p>
+<p begin="00:18:33.303" end="00:18:37.603" style="s2">thank you for the hours you put in.</p>
+<p begin="00:18:35.503" end="00:18:40.503" style="s2">Thank you for your service and thank you</p>
+<p begin="00:18:37.603" end="00:18:42.703" style="s2">for giving UFC Freedom 250 a sound of</p>
+<p begin="00:18:40.503" end="00:18:44.903" style="s2">its own. It&#39;s been an absolute honor to</p>
+<p begin="00:18:42.703" end="00:18:48.203" style="s2">work with you.</p>
+<p begin="00:18:44.903" end="00:18:48.203" style="s2">Now I would like Thank you.</p>
+<p begin="00:18:50.703" end="00:18:55.803" style="s2">Now I&#39;d like to introduce Lieutenant</p>
+<p begin="00:18:52.403" end="00:18:55.803" style="s2">Colonel Ryan Nalen.</p>
+<p begin="00:18:57.748" end="00:18:59.768" style="s2">&gt;&gt; [applause]</p>
+<p begin="00:19:04.953" end="00:19:06.973" style="s2">[applause]</p>
+<p begin="00:19:09.003" end="00:19:13.003" style="s2">&gt;&gt; Good afternoon, ladies and gentlemen.</p>
+<p begin="00:19:10.403" end="00:19:15.203" style="s2">Mr. President, Mr. White, thank you very</p>
+<p begin="00:19:13.003" end="00:19:17.703" style="s2">much for your generosity and for your</p>
+<p begin="00:19:15.203" end="00:19:20.003" style="s2">continued support of this incredible</p>
+<p begin="00:19:17.703" end="00:19:21.403" style="s2">organization. Commandant, thank you for</p>
+<p begin="00:19:20.003" end="00:19:23.003" style="s2">your support and being here. Speaker</p>
+<p begin="00:19:21.403" end="00:19:24.303" style="s2">Johnson, you honor us with your</p>
+<p begin="00:19:23.003" end="00:19:26.703" style="s2">presence.</p>
+<p begin="00:19:24.303" end="00:19:29.803" style="s2">Mr. Secretary, appreciate your support</p>
+<p begin="00:19:26.703" end="00:19:31.903" style="s2">as well. And uh Secretary uh Cao, thank</p>
+<p begin="00:19:29.803" end="00:19:35.103" style="s2">you for being here. Friends, Marine</p>
+<p begin="00:19:31.903" end="00:19:37.903" style="s2">Band, this party is for you.</p>
+<p begin="00:19:35.103" end="00:19:40.303" style="s2">We are so grateful for the opportunity</p>
+<p begin="00:19:37.903" end="00:19:42.503" style="s2">to perform for you today, Mr. President.</p>
+<p begin="00:19:40.303" end="00:19:45.603" style="s2">We&#39;re so grateful for your continued</p>
+<p begin="00:19:42.503" end="00:19:47.303" style="s2">support of music, the arts, and the</p>
+<p begin="00:19:45.603" end="00:19:49.503" style="s2">United States Marine Band. We have a</p>
+<p begin="00:19:47.303" end="00:19:50.903" style="s2">special program that we&#39;ve put together</p>
+<p begin="00:19:49.503" end="00:19:54.103" style="s2">for you.</p>
+<p begin="00:19:50.903" end="00:19:55.803" style="s2">This organization dates back to 1798,</p>
+<p begin="00:19:54.103" end="00:19:57.803" style="s2">the beginnings of our country, as the</p>
+<p begin="00:19:55.803" end="00:19:59.303" style="s2">President said. And the thing that I</p>
+<p begin="00:19:57.803" end="00:20:01.203" style="s2">love most, if I had to pick something I</p>
+<p begin="00:19:59.303" end="00:20:03.503" style="s2">love most about the United States Marine</p>
+<p begin="00:20:01.203" end="00:20:06.203" style="s2">Band, is when I hear them play,</p>
+<p begin="00:20:03.503" end="00:20:08.103" style="s2">it&#39;s an unbroken lineage. The people</p>
+<p begin="00:20:06.203" end="00:20:10.303" style="s2">that you hear playing have played with</p>
+<p begin="00:20:08.103" end="00:20:12.503" style="s2">people who have played with people who</p>
+<p begin="00:20:10.303" end="00:20:14.303" style="s2">have played for John Philip Sousa, who</p>
+<p begin="00:20:12.503" end="00:20:15.603" style="s2">played to the founding of our country.</p>
+<p begin="00:20:14.303" end="00:20:17.303" style="s2">And if you think about how you learn</p>
+<p begin="00:20:15.603" end="00:20:20.103" style="s2">music</p>
+<p begin="00:20:17.303" end="00:20:22.303" style="s2">and play in an ensemble, you sit and you</p>
+<p begin="00:20:20.103" end="00:20:25.005" style="s2">have the music printed in front of you,</p>
+<p begin="00:20:22.303" end="00:20:27.305" style="s2">but you feed off of your musicians, you</p>
+<p begin="00:20:25.005" end="00:20:30.205" style="s2">feed the musicians, and it&#39;s passed down</p>
+<p begin="00:20:27.305" end="00:20:33.005" style="s2">generation to generation, hand to hand,</p>
+<p begin="00:20:30.205" end="00:20:35.505" style="s2">heart to heart, and it is the living</p>
+<p begin="00:20:33.005" end="00:20:37.905" style="s2">embodiment of American history and</p>
+<p begin="00:20:35.505" end="00:20:40.305" style="s2">American musical history in these</p>
+<p begin="00:20:37.905" end="00:20:42.205" style="s2">musicians. It&#39;s an American treasure,</p>
+<p begin="00:20:40.305" end="00:20:44.505" style="s2">and Mr. President, you recognized that,</p>
+<p begin="00:20:42.205" end="00:20:46.505" style="s2">you recognized that today. Mr. White,</p>
+<p begin="00:20:44.505" end="00:20:48.305" style="s2">you heard that at the UFC fight and all</p>
+<p begin="00:20:46.505" end="00:20:50.505" style="s2">of these other events, and it is our</p>
+<p begin="00:20:48.305" end="00:20:52.105" style="s2">honor to serve in this incredibly</p>
+<p begin="00:20:50.505" end="00:20:54.205" style="s2">special way.</p>
+<p begin="00:20:52.105" end="00:20:55.705" style="s2">This is America&#39;s band.</p>
+<p begin="00:20:54.205" end="00:20:57.205" style="s2">We want to bring it to every home, to</p>
+<p begin="00:20:55.705" end="00:20:59.805" style="s2">every heart. The Marine Band can do</p>
+<p begin="00:20:57.205" end="00:21:01.705" style="s2">something for everyone in our country,</p>
+<p begin="00:20:59.805" end="00:21:03.805" style="s2">for every veteran, for every grieving</p>
+<p begin="00:21:01.705" end="00:21:05.605" style="s2">family, for every music enthusiast, for</p>
+<p begin="00:21:03.805" end="00:21:07.805" style="s2">every music student, for every music</p>
+<p begin="00:21:05.605" end="00:21:09.505" style="s2">teacher. The Marine Band is there for</p>
+<p begin="00:21:07.805" end="00:21:11.505" style="s2">you, just as we are for you, Mr.</p>
+<p begin="00:21:09.505" end="00:21:14.705" style="s2">President. It is an honor to serve in</p>
+<p begin="00:21:11.505" end="00:21:17.705" style="s2">this way, and we cannot thank you enough</p>
+<p begin="00:21:14.705" end="00:21:21.194" style="s2">uh for this unbelievable reception here</p>
+<p begin="00:21:17.705" end="00:21:23.214" style="s2">today. Thank you, Mr. President.</p>
+<p begin="00:21:21.194" end="00:21:23.214" style="s2">&gt;&gt; [applause]</p>
+<p begin="00:21:30.364" end="00:21:32.384" style="s2">[applause]</p>
+<p begin="00:21:34.949" end="00:21:36.969" style="s2">[applause]</p>
+<p begin="00:21:44.119" end="00:21:46.139" style="s2">[applause]</p>
+<p begin="00:22:22.765" end="00:22:24.785" style="s2">[applause]</p>
+<p begin="00:22:31.935" end="00:22:33.955" style="s2">[applause]</p>
+<p begin="00:22:41.105" end="00:22:43.125" style="s2">[applause]</p>
+<p begin="00:22:46.345" end="00:22:48.365" style="s2">[applause]</p>
+<p begin="00:22:54.860" end="00:22:56.880" style="s2">[applause]</p>
+<p begin="00:22:59.445" end="00:23:01.465" style="s2">[applause]</p>
+<p begin="00:23:10.006" end="00:23:14.306" style="s2">&gt;&gt; So thank you very much. I was just</p>
+<p begin="00:23:11.806" end="00:23:16.206" style="s2">noticing as I sat and I&#39;m staring at</p>
+<p begin="00:23:14.306" end="00:23:18.006" style="s2">that beautiful building.</p>
+<p begin="00:23:16.206" end="00:23:20.406" style="s2">If you would have seen that building two</p>
+<p begin="00:23:18.006" end="00:23:22.506" style="s2">years ago, it wasn&#39;t looking so good.</p>
+<p begin="00:23:20.406" end="00:23:24.006" style="s2">But through a lot of talent within all</p>
+<p begin="00:23:22.506" end="00:23:24.906" style="s2">within the</p>
+<p begin="00:23:24.006" end="00:23:26.006" style="s2">uh</p>
+<p begin="00:23:24.906" end="00:23:28.606" style="s2">I guess you could say the great</p>
+<p begin="00:23:26.006" end="00:23:30.706" style="s2">professionals here, the Department of</p>
+<p begin="00:23:28.606" end="00:23:33.306" style="s2">Interior. Thank you very much Greg and</p>
+<p begin="00:23:30.706" end="00:23:35.406" style="s2">everybody and Doug, Doug Burgum.</p>
+<p begin="00:23:33.306" end="00:23:36.906" style="s2">Uh but we worked very hard on bringing</p>
+<p begin="00:23:35.406" end="00:23:38.506" style="s2">the White House back</p>
+<p begin="00:23:36.906" end="00:23:40.206" style="s2">and it&#39;s now more beautiful in better</p>
+<p begin="00:23:38.506" end="00:23:43.206" style="s2">shape. A lot of the moldings were</p>
+<p begin="00:23:40.206" end="00:23:45.106" style="s2">missing. Windows were broken. We had 17</p>
+<p begin="00:23:43.206" end="00:23:46.606" style="s2">windows that were broken.</p>
+<p begin="00:23:45.106" end="00:23:48.006" style="s2">And we took a little heat because they</p>
+<p begin="00:23:46.606" end="00:23:49.406" style="s2">said, oh he&#39;s devoting time. I didn&#39;t</p>
+<p begin="00:23:48.006" end="00:23:51.306" style="s2">devote much time, but I know how to do</p>
+<p begin="00:23:49.406" end="00:23:52.906" style="s2">this. But I&#39;m sitting there looking at</p>
+<p begin="00:23:51.306" end="00:23:55.806" style="s2">how gorgeous that building is. And</p>
+<p begin="00:23:52.906" end="00:23:57.606" style="s2">remember, the White House is maybe the</p>
+<p begin="00:23:55.806" end="00:23:59.806" style="s2">number one just about the number one</p>
+<p begin="00:23:57.606" end="00:24:01.306" style="s2">symbol of our country. And now when you</p>
+<p begin="00:23:59.806" end="00:24:04.506" style="s2">look at it, it&#39;s pristine, more</p>
+<p begin="00:24:01.306" end="00:24:06.506" style="s2">beautiful than it was in 1792 and better</p>
+<p begin="00:24:04.506" end="00:24:08.406" style="s2">shape. So it&#39;s an honor to have done</p>
+<p begin="00:24:06.506" end="00:24:10.106" style="s2">that. And now what we&#39;d like to do is</p>
+<p begin="00:24:08.406" end="00:24:12.806" style="s2">hear some great music. Thank you very</p>
+<p begin="00:24:10.106" end="00:24:14.826" style="s2">much everybody. Thank you.</p>
+<p begin="00:24:12.806" end="00:24:14.826" style="s2">&gt;&gt; [applause]</p>
+<p begin="00:24:46.867" end="00:24:48.887" style="s2">[music]</p>
+<p begin="00:24:58.002" end="00:25:00.022" style="s2">[music]</p>
+<p begin="00:25:09.792" end="00:25:11.812" style="s2">[music]</p>
+<p begin="00:25:28.132" end="00:25:30.152" style="s2">[music]</p>
+<p begin="00:25:41.887" end="00:25:43.907" style="s2">[music]</p>
+<p begin="00:25:50.402" end="00:25:52.422" style="s2">[music]</p>
+<p begin="00:25:57.607" end="00:25:59.627" style="s2">[music]</p>
+<p begin="00:26:06.122" end="00:26:08.143" style="s2">[music]</p>
+<p begin="00:26:17.258" end="00:26:19.278" style="s2">[music]</p>
+<p begin="00:26:34.943" end="00:26:36.963" style="s2">[music]</p>
+<p begin="00:26:46.078" end="00:26:48.098" style="s2">[music]</p>
+<p begin="00:26:50.663" end="00:26:52.683" style="s2">[music]</p>
+<p begin="00:27:06.383" end="00:27:08.403" style="s2">[music]</p>
+<p begin="00:27:14.243" end="00:27:16.263" style="s2">[music]</p>
+<p begin="00:27:27.998" end="00:27:30.018" style="s2">[music]</p>
+<p begin="00:27:37.824" end="00:27:39.844" style="s2">[music]</p>
+<p begin="00:27:46.994" end="00:27:49.014" style="s2">[applause]</p>
+<p begin="00:27:53.409" end="00:27:57.109" style="s2">&gt;&gt; Thank you very much. That was John</p>
+<p begin="00:27:54.909" end="00:27:59.409" style="s2">Philip Sousa&#39;s most famous march and our</p>
+<p begin="00:27:57.109" end="00:28:01.709" style="s2">national march, The Stars and Stripes</p>
+<p begin="00:27:59.409" end="00:28:03.409" style="s2">Forever. We&#39;ll move on now to a piece</p>
+<p begin="00:28:01.709" end="00:28:05.509" style="s2">that was written for the Marine Band in</p>
+<p begin="00:28:03.409" end="00:28:09.809" style="s2">honor of the United States Marine Corps.</p>
+<p begin="00:28:05.509" end="00:28:09.809" style="s2">This is Robert Jager&#39;s Esprit de Corps.</p>
+<p begin="00:28:40.704" end="00:28:42.724" style="s2">&gt;&gt; [music]</p>
+<p begin="00:28:47.254" end="00:28:49.274" style="s2">[music]</p>
+<p begin="00:28:51.839" end="00:28:53.859" style="s2">[music]</p>
+<p begin="00:28:59.044" end="00:29:01.065" style="s2">[music]</p>
+<p begin="00:29:06.905" end="00:29:08.925" style="s2">[music]</p>
+<p begin="00:29:12.800" end="00:29:14.820" style="s2">[music]</p>
+<p begin="00:29:22.625" end="00:29:24.645" style="s2">[music]</p>
+<p begin="00:29:31.140" end="00:29:33.160" style="s2">[music]</p>
+<p begin="00:29:43.585" end="00:29:45.605" style="s2">[music]</p>
+<p begin="00:29:50.135" end="00:29:52.155" style="s2">[music]</p>
+<p begin="00:30:03.890" end="00:30:05.910" style="s2">[music]</p>
+<p begin="00:30:45.156" end="00:30:47.176" style="s2">[music]</p>
+<p begin="00:30:48.112" end="00:30:50.112" style="s2">&gt;&gt; Oh</p>
+<p begin="00:30:56.946" end="00:30:58.966" style="s2">&gt;&gt; [music]</p>
+<p begin="00:31:07.426" end="00:31:09.446" style="s2">[music]</p>
+<p begin="00:31:13.976" end="00:31:15.996" style="s2">[music]</p>
+<p begin="00:31:26.421" end="00:31:28.441" style="s2">[music]</p>
+<p begin="00:31:32.316" end="00:31:34.336" style="s2">[music]</p>
+<p begin="00:31:40.831" end="00:31:42.851" style="s2">[music]</p>
+<p begin="00:31:48.036" end="00:31:50.056" style="s2">[music]</p>
+<p begin="00:32:35.197" end="00:32:37.217" style="s2">[music]</p>
+<p begin="00:32:39.782" end="00:32:41.802" style="s2">[music]</p>
+<p begin="00:32:48.297" end="00:32:50.317" style="s2">[music]</p>
+<p begin="00:32:55.502" end="00:32:57.522" style="s2">[music]</p>
+<p begin="00:33:12.532" end="00:33:14.552" style="s2">[applause]</p>
+<p begin="00:33:18.513" end="00:33:22.313" style="s2">&gt;&gt; We&#39;re so proud to</p>
+<p begin="00:33:20.013" end="00:33:25.713" style="s2">serve in our country in this way through</p>
+<p begin="00:33:22.313" end="00:33:28.313" style="s2">our music as are so many so many around</p>
+<p begin="00:33:25.713" end="00:33:30.613" style="s2">the world. Our next piece honors</p>
+<p begin="00:33:28.313" end="00:33:32.613" style="s2">all service members, anyone who has</p>
+<p begin="00:33:30.613" end="00:33:36.313" style="s2">served, all of those who have been</p>
+<p begin="00:33:32.613" end="00:33:38.413" style="s2">impacted by service now or back in their</p>
+<p begin="00:33:36.313" end="00:33:40.913" style="s2">families generations. This piece is</p>
+<p begin="00:33:38.413" end="00:33:43.313" style="s2">called Let Freedom Ring and is a piece I</p>
+<p begin="00:33:40.913" end="00:33:45.013" style="s2">composed based on the famous melody My</p>
+<p begin="00:33:43.313" end="00:33:46.713" style="s2">Country, &#39;Tis of Thee.</p>
+<p begin="00:33:45.013" end="00:33:49.113" style="s2">I focused on the lyric Land Where My</p>
+<p begin="00:33:46.713" end="00:33:50.613" style="s2">Fathers Died because not a day goes by</p>
+<p begin="00:33:49.113" end="00:33:53.513" style="s2">that we don&#39;t think of those who have</p>
+<p begin="00:33:50.613" end="00:33:55.413" style="s2">sacrificed for us to be able to have the</p>
+<p begin="00:33:53.513" end="00:33:58.913" style="s2">freedoms that we have today.</p>
+<p begin="00:33:55.413" end="00:33:58.913" style="s2">This is Let Freedom Ring.</p>
+<p begin="00:34:13.448" end="00:34:15.468" style="s2">&gt;&gt; [music]</p>
+<p begin="00:34:23.273" end="00:34:25.293" style="s2">[music]</p>
+<p begin="00:34:33.753" end="00:34:35.773" style="s2">[music]</p>
+<p begin="00:34:39.648" end="00:34:41.669" style="s2">[music]</p>
+<p begin="00:34:50.128" end="00:34:52.148" style="s2">[music]</p>
+<p begin="00:34:58.644" end="00:35:00.664" style="s2">[music]</p>
+<p begin="00:35:09.124" end="00:35:11.144" style="s2">[music]</p>
+<p begin="00:35:43.184" end="00:35:45.204" style="s2">[music]</p>
+<p begin="00:35:51.699" end="00:35:53.719" style="s2">[music]</p>
+<p begin="00:35:56.939" end="00:35:58.959" style="s2">[music]</p>
+<p begin="00:36:02.834" end="00:36:04.854" style="s2">[music]</p>
+<p begin="00:36:08.075" end="00:36:10.095" style="s2">[music]</p>
+<p begin="00:36:21.175" end="00:36:23.195" style="s2">[music]</p>
+<p begin="00:36:30.345" end="00:36:32.365" style="s2">[music]</p>
+<p begin="00:36:45.410" end="00:36:47.430" style="s2">[music]</p>
+<p begin="00:37:10.300" end="00:37:12.320" style="s2">[music]</p>
+<p begin="00:37:15.540" end="00:37:17.560" style="s2">[music]</p>
+<p begin="00:37:24.710" end="00:37:26.730" style="s2">[music]</p>
+<p begin="00:37:31.915" end="00:37:33.935" style="s2">[music]</p>
+<p begin="00:37:44.361" end="00:37:46.381" style="s2">[music]</p>
+<p begin="00:37:58.116" end="00:38:00.136" style="s2">[applause]</p>
+<p begin="00:38:09.416" end="00:38:12.616" style="s2">&gt;&gt; Thank you ladies and gentlemen. Going to</p>
+<p begin="00:38:11.216" end="00:38:15.116" style="s2">move to something a little different</p>
+<p begin="00:38:12.616" end="00:38:17.816" style="s2">now. I&#39;d like to welcome up one of our</p>
+<p begin="00:38:15.116" end="00:38:20.016" style="s2">vocalists to the stage.</p>
+<p begin="00:38:17.816" end="00:38:23.616" style="s2">This next piece is a setting of Amazing</p>
+<p begin="00:38:20.016" end="00:38:25.516" style="s2">Grace. This Amazing Grace is for our</p>
+<p begin="00:38:23.616" end="00:38:26.916" style="s2">everyone, but it is also in honor of our</p>
+<p begin="00:38:25.516" end="00:38:29.116" style="s2">beloved Marine Corps. And if you listen</p>
+<p begin="00:38:26.916" end="00:38:31.616" style="s2">closely, you&#39;ll hear us slowly</p>
+<p begin="00:38:29.116" end="00:38:33.116" style="s2">insert elements of the Marines hymn</p>
+<p begin="00:38:31.616" end="00:38:34.116" style="s2">throughout the course of this Amazing</p>
+<p begin="00:38:33.116" end="00:38:36.516" style="s2">Grace.</p>
+<p begin="00:38:34.116" end="00:38:38.816" style="s2">And it&#39;s my pleasure to welcome to sing</p>
+<p begin="00:38:36.516" end="00:38:41.316" style="s2">this rendition arranged of Amazing</p>
+<p begin="00:38:38.816" end="00:38:43.516" style="s2">Grace, our very own Mr. White, you know</p>
+<p begin="00:38:41.316" end="00:38:46.116" style="s2">her very well, Staff Sergeant Hannah</p>
+<p begin="00:38:43.516" end="00:38:46.116" style="s2">Davis.</p>
+<p begin="00:38:47.241" end="00:38:49.261" style="s2">&gt;&gt; [applause]</p>
+<p begin="00:39:12.787" end="00:39:14.807" style="s2">[music]</p>
+<p begin="00:39:18.682" end="00:39:20.702" style="s2">[music]</p>
+<p begin="00:39:25.232" end="00:39:29.217" style="s2">[music]</p>
+<p begin="00:39:26.517" end="00:39:29.217" style="s2">&gt;&gt; Amazing [singing]</p>
+<p begin="00:39:29.317" end="00:39:33.747" style="s2">grace,</p>
+<p begin="00:39:31.127" end="00:39:36.617" style="s2">[music] how sweet</p>
+<p begin="00:39:33.747" end="00:39:39.217" style="s2">[singing] the sound</p>
+<p begin="00:39:36.617" end="00:39:41.617" style="s2">that saved</p>
+<p begin="00:39:39.217" end="00:39:45.417" style="s2">a wretch</p>
+<p begin="00:39:41.617" end="00:39:45.417" style="s2">like me.</p>
+<p begin="00:39:47.117" end="00:39:52.017" style="s2">I once</p>
+<p begin="00:39:49.417" end="00:39:54.707" style="s2">was lost,</p>
+<p begin="00:39:52.017" end="00:39:57.117" style="s2">but now</p>
+<p begin="00:39:54.707" end="00:39:59.817" style="s2">[singing] I&#39;m found.</p>
+<p begin="00:39:57.117" end="00:40:02.517" style="s2">Was blind,</p>
+<p begin="00:39:59.817" end="00:40:06.317" style="s2">but [singing] now</p>
+<p begin="00:40:02.517" end="00:40:06.317" style="s2">I see.</p>
+<p begin="00:40:07.152" end="00:40:10.482" style="s2">[singing]</p>
+<p begin="00:40:08.462" end="00:40:10.482" style="s2">[music]</p>
+<p begin="00:40:22.872" end="00:40:24.892" style="s2">[music]</p>
+<p begin="00:40:28.417" end="00:40:33.517" style="s2">&#39;Twas grace [singing]</p>
+<p begin="00:40:31.217" end="00:40:35.817" style="s2">that taught</p>
+<p begin="00:40:33.517" end="00:40:38.217" style="s2">my heart</p>
+<p begin="00:40:35.817" end="00:40:40.617" style="s2">to fear, [singing]</p>
+<p begin="00:40:38.217" end="00:40:45.798" style="s2">and grace</p>
+<p begin="00:40:40.617" end="00:40:47.818" style="s2">my fears relieved.</p>
+<p begin="00:40:45.798" end="00:40:47.818" style="s2">[music]</p>
+<p begin="00:40:47.917" end="00:40:53.018" style="s2">How precious [screaming]</p>
+<p begin="00:40:51.038" end="00:40:55.623" style="s2">[singing] did</p>
+<p begin="00:40:53.018" end="00:40:57.918" style="s2">that grace</p>
+<p begin="00:40:55.623" end="00:41:02.918" style="s2">[singing] appear [music]</p>
+<p begin="00:40:57.918" end="00:41:05.503" style="s2">the hour I first</p>
+<p begin="00:41:02.918" end="00:41:05.503" style="s2">believed. [singing]</p>
+<p begin="00:41:15.273" end="00:41:17.293" style="s2">[music]</p>
+<p begin="00:41:24.443" end="00:41:26.463" style="s2">[music]</p>
+<p begin="00:41:27.518" end="00:41:32.918" style="s2">Through many [singing]</p>
+<p begin="00:41:30.993" end="00:41:36.818" style="s2">[screaming]</p>
+<p begin="00:41:32.918" end="00:41:39.718" style="s2">dangers, toils and [singing] snares,</p>
+<p begin="00:41:36.818" end="00:41:39.718" style="s2">I have</p>
+<p begin="00:41:39.818" end="00:41:44.418" style="s2">already</p>
+<p begin="00:41:42.318" end="00:41:44.418" style="s2">come.</p>
+<p begin="00:41:49.118" end="00:41:51.918" style="s2">&#39;Twas</p>
+<p begin="00:41:49.988" end="00:41:53.718" style="s2">[screaming] grace</p>
+<p begin="00:41:51.918" end="00:41:57.918" style="s2">that brought</p>
+<p begin="00:41:53.718" end="00:42:00.218" style="s2">me [singing] safe thus far,</p>
+<p begin="00:41:57.918" end="00:42:03.118" style="s2">and grace</p>
+<p begin="00:42:00.218" end="00:42:05.218" style="s2">will lead me</p>
+<p begin="00:42:03.118" end="00:42:05.218" style="s2">home.</p>
+<p begin="00:42:12.318" end="00:42:18.118" style="s2">And grace</p>
+<p begin="00:42:15.018" end="00:42:21.118" style="s2">will [singing] lead</p>
+<p begin="00:42:18.118" end="00:42:21.118" style="s2">me</p>
+<p begin="00:42:21.518" end="00:42:24.104" style="s2">home. [singing]</p>
+<p begin="00:42:26.014" end="00:42:28.034" style="s2">[music]</p>
+<p begin="00:42:30.599" end="00:42:32.619" style="s2">&gt;&gt; [music]</p>
+<p begin="00:42:46.974" end="00:42:48.994" style="s2">[applause]</p>
+<p begin="00:42:56.820" end="00:43:01.020" style="s2">&gt;&gt; Thank you. Thank you all very much.</p>
+<p begin="00:42:59.220" end="00:43:03.520" style="s2">Staff Sergeant Hannah Davis, ladies and</p>
+<p begin="00:43:01.020" end="00:43:03.520" style="s2">gentlemen.</p>
+<p begin="00:43:09.720" end="00:43:12.920" style="s2">We&#39;re going to keep Hannah here singing</p>
+<p begin="00:43:11.220" end="00:43:14.720" style="s2">for you just for two our final two</p>
+<p begin="00:43:12.920" end="00:43:17.120" style="s2">selections. First, Mr. President, your</p>
+<p begin="00:43:14.720" end="00:43:19.520" style="s2">request for Miss Davis and for you, this</p>
+<p begin="00:43:17.120" end="00:43:23.220" style="s2">is America the Beautiful. And we&#39;ll</p>
+<p begin="00:43:19.520" end="00:43:25.420" style="s2">follow that with uh God Bless America,</p>
+<p begin="00:43:23.220" end="00:43:28.020" style="s2">which will invite you all to join us in</p>
+<p begin="00:43:25.420" end="00:43:29.920" style="s2">singing along. Mr. President, Mr. White,</p>
+<p begin="00:43:28.020" end="00:43:32.220" style="s2">everybody, thank you very much for this</p>
+<p begin="00:43:29.920" end="00:43:34.620" style="s2">opportunity to be here today for</p>
+<p begin="00:43:32.220" end="00:43:37.920" style="s2">receiving us so kindly and acknowledging</p>
+<p begin="00:43:34.620" end="00:43:40.220" style="s2">these incredible musicians that I have</p>
+<p begin="00:43:37.920" end="00:43:41.920" style="s2">just the blessed opportunity to lead.</p>
+<p begin="00:43:40.220" end="00:43:43.420" style="s2">It&#39;s a stewardship. Take care of the</p>
+<p begin="00:43:41.920" end="00:43:45.020" style="s2">organization as long as it&#39;s been</p>
+<p begin="00:43:43.420" end="00:43:47.320" style="s2">entrusted to me and I&#39;m very grateful</p>
+<p begin="00:43:45.020" end="00:43:49.320" style="s2">for that opportunity. So thank you very</p>
+<p begin="00:43:47.320" end="00:43:51.920" style="s2">very much. This is America the</p>
+<p begin="00:43:49.320" end="00:43:51.920" style="s2">Beautiful.</p>
+<p begin="00:44:16.055" end="00:44:18.075" style="s2">&gt;&gt; [music]</p>
+<p begin="00:44:21.295" end="00:44:23.315" style="s2">[music]</p>
+<p begin="00:44:26.620" end="00:44:32.820" style="s2">&gt;&gt; Oh beautiful [singing]</p>
+<p begin="00:44:30.220" end="00:44:33.920" style="s2">for spacious</p>
+<p begin="00:44:32.820" end="00:44:41.120" style="s2">skies, [music]</p>
+<p begin="00:44:33.920" end="00:44:43.565" style="s2">for amber waves [singing] of grain,</p>
+<p begin="00:44:41.120" end="00:44:45.520" style="s2">for purple</p>
+<p begin="00:44:43.565" end="00:44:47.495" style="s2">[singing] mountain</p>
+<p begin="00:44:45.520" end="00:44:48.320" style="s2">majesties</p>
+<p begin="00:44:47.495" end="00:44:50.420" style="s2">[music]</p>
+<p begin="00:44:48.320" end="00:44:50.420" style="s2">above</p>
+<p begin="00:44:50.820" end="00:44:54.761" style="s2">the fruit</p>
+<p begin="00:44:52.620" end="00:44:54.761" style="s2">and plain. [singing]</p>
+<p begin="00:44:55.721" end="00:44:58.221" style="s2">America,</p>
+<p begin="00:44:59.941" end="00:45:09.421" style="s2">[singing] America,</p>
+<p begin="00:45:02.921" end="00:45:09.421" style="s2">God shed his grace on [singing] thee,</p>
+<p begin="00:45:10.321" end="00:45:17.921" style="s2">and crown</p>
+<p begin="00:45:12.821" end="00:45:17.921" style="s2">thy [singing] good with brotherhood</p>
+<p begin="00:45:18.321" end="00:45:24.176" style="s2">from sea to</p>
+<p begin="00:45:22.921" end="00:45:26.196" style="s2">sea.</p>
+<p begin="00:45:24.176" end="00:45:26.196" style="s2">[singing]</p>
+<p begin="00:45:31.381" end="00:45:33.401" style="s2">[music]</p>
+<p begin="00:45:38.586" end="00:45:40.606" style="s2">[music]</p>
+<p begin="00:45:47.421" end="00:45:51.521" style="s2">Oh,</p>
+<p begin="00:45:48.921" end="00:45:52.621" style="s2">beautiful</p>
+<p begin="00:45:51.521" end="00:45:56.821" style="s2">for</p>
+<p begin="00:45:52.621" end="00:45:59.321" style="s2">heroes proved in</p>
+<p begin="00:45:56.821" end="00:45:59.321" style="s2">liberating</p>
+<p begin="00:45:59.521" end="00:46:01.721" style="s2">strife,</p>
+<p begin="00:46:02.321" end="00:46:04.421" style="s2">who</p>
+<p begin="00:46:04.521" end="00:46:11.821" style="s2">more than self their country loved,</p>
+<p begin="00:46:09.521" end="00:46:11.821" style="s2">and mercy</p>
+<p begin="00:46:13.221" end="00:46:16.221" style="s2">more than</p>
+<p begin="00:46:14.121" end="00:46:16.221" style="s2">life.</p>
+<p begin="00:46:16.721" end="00:46:18.921" style="s2">America,</p>
+<p begin="00:46:20.921" end="00:46:23.221" style="s2">America,</p>
+<p begin="00:46:23.821" end="00:46:28.121" style="s2">God shed</p>
+<p begin="00:46:25.921" end="00:46:30.387" style="s2">his grace</p>
+<p begin="00:46:28.121" end="00:46:30.387" style="s2">on thee, [singing]</p>
+<p begin="00:46:31.421" end="00:46:33.607" style="s2">and</p>
+<p begin="00:46:32.321" end="00:46:34.321" style="s2">crown</p>
+<p begin="00:46:33.607" end="00:46:35.921" style="s2">[screaming]</p>
+<p begin="00:46:34.321" end="00:46:36.921" style="s2">thy good</p>
+<p begin="00:46:35.921" end="00:46:39.121" style="s2">with</p>
+<p begin="00:46:36.921" end="00:46:39.121" style="s2">brotherhood</p>
+<p begin="00:46:42.121" end="00:46:46.721" style="s2">from sea to</p>
+<p begin="00:46:44.821" end="00:46:48.821" style="s2">shining</p>
+<p begin="00:46:46.721" end="00:46:48.821" style="s2">sea.</p>
+<p begin="00:46:49.321" end="00:46:51.521" style="s2">America,</p>
+<p begin="00:46:52.121" end="00:46:54.622" style="s2">America.</p>
+<p begin="00:46:52.602" end="00:46:54.622" style="s2">&gt;&gt; [screaming]</p>
+<p begin="00:47:26.007" end="00:47:28.027" style="s2">[music]</p>
+<p begin="00:47:28.922" end="00:47:32.612" style="s2">&gt;&gt; God bless America, [singing]</p>
+<p begin="00:47:32.723" end="00:47:41.523" style="s2">land that I love. Stand beside her and</p>
+<p begin="00:47:38.223" end="00:47:45.622" style="s2">guide her through the night with a light</p>
+<p begin="00:47:41.523" end="00:47:49.323" style="s2">from above. From the mountains to the</p>
+<p begin="00:47:45.622" end="00:47:51.422" style="s2">prairies, [singing] to the oceans white</p>
+<p begin="00:47:49.323" end="00:47:54.622" style="s2">with foam,</p>
+<p begin="00:47:51.422" end="00:47:58.922" style="s2">God bless America,</p>
+<p begin="00:47:54.622" end="00:48:02.223" style="s2">my home sweet home.</p>
+<p begin="00:47:58.922" end="00:48:07.273" style="s2">God bless America,</p>
+<p begin="00:48:02.223" end="00:48:07.928" style="s2">my home sweet home.</p>
+<p begin="00:48:07.273" end="00:48:09.948" style="s2">[music]</p>
+<p begin="00:48:07.928" end="00:48:09.948" style="s2">[singing]</p>
+<p begin="00:48:29.023" end="00:48:36.523" style="s2">God bless America,</p>
+<p begin="00:48:32.223" end="00:48:40.422" style="s2">my home sweet home.</p>
+<p begin="00:48:36.523" end="00:48:45.122" style="s2">God bless America,</p>
+<p begin="00:48:40.422" end="00:48:47.223" style="s2">my home sweet</p>
+<p begin="00:48:45.122" end="00:48:47.223" style="s2">home.</p>
+<p begin="00:49:31.224" end="00:49:33.524" style="s2">&gt;&gt; Take your time.</p>
+</div>
+</body>
+</tt>
