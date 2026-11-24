@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:00.160" end="00:00:04.400" style="s2">Please welcome to the stage the Attorney</p>
+<p begin="00:00:02.240" end="00:00:07.400" style="s2">General of the United States, Todd</p>
+<p begin="00:00:04.400" end="00:00:07.400" style="s2">Blanch.</p>
+<p begin="00:00:10.480" end="00:00:12.500" style="s2">[music]</p>
+<p begin="00:00:15.839" end="00:00:19.080" style="s2">Thank you.</p>
+<p begin="00:00:19.119" end="00:00:23.199" style="s2">Thank you. Good afternoon.</p>
+<p begin="00:00:21.680" end="00:00:25.920" style="s2">Welcome to the Department of Justice.</p>
+<p begin="00:00:23.199" end="00:00:28.240" style="s2">And I want to be the first to welcome uh</p>
+<p begin="00:00:25.920" end="00:00:30.240" style="s2">President Trump to his second trip back</p>
+<p begin="00:00:28.240" end="00:00:32.079" style="s2">to the Department of Justice as a 47th</p>
+<p begin="00:00:30.240" end="00:00:34.800" style="s2">President of the United States. We are</p>
+<p begin="00:00:32.079" end="00:00:37.040" style="s2">honored, humbled, and thrilled to have</p>
+<p begin="00:00:34.800" end="00:00:39.200" style="s2">you join us today, Mr. President. And on</p>
+<p begin="00:00:37.040" end="00:00:41.440" style="s2">behalf of the prosecutors in the room,</p>
+<p begin="00:00:39.200" end="00:00:44.399" style="s2">the law enforcement members in the room,</p>
+<p begin="00:00:41.440" end="00:00:46.399" style="s2">and everybody that&#39;s here today, let me</p>
+<p begin="00:00:44.399" end="00:00:48.960" style="s2">just tell you that we are here. We are</p>
+<p begin="00:00:46.399" end="00:00:50.800" style="s2">so appreciative that President Trump</p>
+<p begin="00:00:48.960" end="00:00:53.360" style="s2">delivered on his promise to the American</p>
+<p begin="00:00:50.800" end="00:00:55.120" style="s2">people that when he took office again</p>
+<p begin="00:00:53.360" end="00:00:58.000" style="s2">that he would do everything in his power</p>
+<p begin="00:00:55.120" end="00:01:01.520" style="s2">to unleash law enforcement to do their</p>
+<p begin="00:00:58.000" end="00:01:03.199" style="s2">jobs to keep this country safe again,</p>
+<p begin="00:01:01.520" end="00:01:05.920" style="s2">which is exactly what he&#39;s done. So,</p>
+<p begin="00:01:03.199" end="00:01:09.240" style="s2">thank you, Mr. President. We&#39;re also on</p>
+<p begin="00:01:05.920" end="00:01:09.240" style="s2">Thank you.</p>
+<p begin="00:01:09.280" end="00:01:15.200" style="s2">We&#39;re also honored to welcome some of</p>
+<p begin="00:01:12.479" end="00:01:17.119" style="s2">the families of the victims whose lives</p>
+<p begin="00:01:15.200" end="00:01:20.880" style="s2">were forever changed by the vicious</p>
+<p begin="00:01:17.119" end="00:01:23.520" style="s2">behavior of the death row inmates whose</p>
+<p begin="00:01:20.880" end="00:01:26.240" style="s2">sentences have now been commuted by</p>
+<p begin="00:01:23.520" end="00:01:29.040" style="s2">Governor Nuome. Thank you very much for</p>
+<p begin="00:01:26.240" end="00:01:33.840" style="s2">being here today and thank you for</p>
+<p begin="00:01:29.040" end="00:01:36.079" style="s2">speaking up. Mr. President, on day one,</p>
+<p begin="00:01:33.840" end="00:01:38.240" style="s2">on day one of your presidency, you</p>
+<p begin="00:01:36.079" end="00:01:40.400" style="s2">issued an executive order that directed</p>
+<p begin="00:01:38.240" end="00:01:43.840" style="s2">the Department of Justice to seek the</p>
+<p begin="00:01:40.400" end="00:01:46.640" style="s2">death penalty wherever appropriate.</p>
+<p begin="00:01:43.840" end="00:01:49.920" style="s2">Since January 20th of last year, the</p>
+<p begin="00:01:46.640" end="00:01:53.280" style="s2">Department of Justice has done so 49</p>
+<p begin="00:01:49.920" end="00:01:55.520" style="s2">times. Now, when you compare that to the</p>
+<p begin="00:01:53.280" end="00:01:57.680" style="s2">last administration, during the last</p>
+<p begin="00:01:55.520" end="00:02:00.240" style="s2">administration, the Department of</p>
+<p begin="00:01:57.680" end="00:02:02.079" style="s2">Justice sought the death penalty one</p>
+<p begin="00:02:00.240" end="00:02:05.600" style="s2">time.</p>
+<p begin="00:02:02.079" end="00:02:07.680" style="s2">One time. That is not justice. That is</p>
+<p begin="00:02:05.600" end="00:02:09.599" style="s2">not what the American people deserve.</p>
+<p begin="00:02:07.680" end="00:02:12.239" style="s2">That is not what the families of victims</p>
+<p begin="00:02:09.599" end="00:02:14.080" style="s2">of horrific murders deserve. And so, Mr.</p>
+<p begin="00:02:12.239" end="00:02:15.599" style="s2">President, I assure you that this</p>
+<p begin="00:02:14.080" end="00:02:18.400" style="s2">Department of Justice is seeking the</p>
+<p begin="00:02:15.599" end="00:02:21.280" style="s2">death penalty whenever appropriate for</p>
+<p begin="00:02:18.400" end="00:02:23.520" style="s2">crimes get committed in this country.</p>
+<p begin="00:02:21.280" end="00:02:26.239" style="s2">So,</p>
+<p begin="00:02:23.520" end="00:02:28.160" style="s2">I want to take just a moment</p>
+<p begin="00:02:26.239" end="00:02:30.720" style="s2">and tell every law enforcement member</p>
+<p begin="00:02:28.160" end="00:02:32.879" style="s2">watching or here in this room that we</p>
+<p begin="00:02:30.720" end="00:02:34.879" style="s2">have your back, that President Trump has</p>
+<p begin="00:02:32.879" end="00:02:38.640" style="s2">your back, and he will always have your</p>
+<p begin="00:02:34.879" end="00:02:40.400" style="s2">back. to the families</p>
+<p begin="00:02:38.640" end="00:02:43.440" style="s2">to the families of the victims of the</p>
+<p begin="00:02:40.400" end="00:02:45.280" style="s2">horrible crimes that have been committed</p>
+<p begin="00:02:43.440" end="00:02:48.080" style="s2">not only in California but around this</p>
+<p begin="00:02:45.280" end="00:02:50.560" style="s2">country. Make no mistake about it that</p>
+<p begin="00:02:48.080" end="00:02:52.480" style="s2">this Department of Justice every single</p>
+<p begin="00:02:50.560" end="00:02:55.599" style="s2">day that our prosecutors that our</p>
+<p begin="00:02:52.480" end="00:02:58.800" style="s2">federal agents will do everything we can</p>
+<p begin="00:02:55.599" end="00:03:01.360" style="s2">to impose the harshest penalty possible</p>
+<p begin="00:02:58.800" end="00:03:03.200" style="s2">under the facts of the case consistent</p>
+<p begin="00:03:01.360" end="00:03:05.360" style="s2">with the president&#39;s agenda. That&#39;s what</p>
+<p begin="00:03:03.200" end="00:03:07.840" style="s2">we have done since January 20th. of what</p>
+<p begin="00:03:05.360" end="00:03:12.239" style="s2">we will continue to do from this day</p>
+<p begin="00:03:07.840" end="00:03:14.640" style="s2">going forward. So with that, let me be</p>
+<p begin="00:03:12.239" end="00:03:18.400" style="s2">um let me just ask everybody to get on</p>
+<p begin="00:03:14.640" end="00:03:20.080" style="s2">their feet and welcome the 45th and 47th</p>
+<p begin="00:03:18.400" end="00:03:23.052" style="s2">president of the United States,</p>
+<p begin="00:03:20.080" end="00:03:25.072" style="s2">President Donald J. Trump.</p>
+<p begin="00:03:23.052" end="00:03:25.072" style="s2">[music]</p>
+<p begin="00:03:31.567" end="00:03:33.587" style="s2">&gt;&gt; [music]</p>
+<p begin="00:03:39.440" end="00:03:42.519" style="s2">&gt;&gt; Heat. Heat.</p>
+<p begin="00:03:51.872" end="00:03:53.892" style="s2">&gt;&gt; [music]</p>
+<p begin="00:03:57.112" end="00:03:59.132" style="s2">[music]</p>
+<p begin="00:04:01.697" end="00:04:03.717" style="s2">[music]</p>
+<p begin="00:04:06.319" end="00:04:12.640" style="s2">&gt;&gt; Thank you very much. Please. Thank you.</p>
+<p begin="00:04:09.519" end="00:04:16.639" style="s2">It&#39;s a great honor.</p>
+<p begin="00:04:12.640" end="00:04:20.320" style="s2">I want to just welcome all of you to a</p>
+<p begin="00:04:16.639" end="00:04:23.199" style="s2">very safe Washington DC. You know, the</p>
+<p begin="00:04:20.320" end="00:04:24.960" style="s2">crime rates gone down 84%</p>
+<p begin="00:04:23.199" end="00:04:27.840" style="s2">and a lot of the people in this room are</p>
+<p begin="00:04:24.960" end="00:04:31.520" style="s2">responsible for that. And I want to</p>
+<p begin="00:04:27.840" end="00:04:33.440" style="s2">thank you to a very special thanks to an</p>
+<p begin="00:04:31.520" end="00:04:34.880" style="s2">outstanding attorney general. It&#39;s going</p>
+<p begin="00:04:33.440" end="00:04:36.400" style="s2">to be one of the greats. I think he&#39;ll</p>
+<p begin="00:04:34.880" end="00:04:38.320" style="s2">go down as one of the greats when we&#39;re</p>
+<p begin="00:04:36.400" end="00:04:41.720" style="s2">finished. Todd Blanch. Thank you, Todd.</p>
+<p begin="00:04:38.320" end="00:04:41.720" style="s2">Appreciate it.</p>
+<p begin="00:04:43.840" end="00:04:49.520" style="s2">Where is he? What happened? He&#39;s around.</p>
+<p begin="00:04:46.880" end="00:04:51.840" style="s2">He&#39;s around here someplace. I can&#39;t I</p>
+<p begin="00:04:49.520" end="00:04:55.040" style="s2">want to say hello to Todd. He&#39;s special.</p>
+<p begin="00:04:51.840" end="00:04:57.120" style="s2">He works all the time. We&#39;re here today</p>
+<p begin="00:04:55.040" end="00:05:00.240" style="s2">to talk about one of the most shocking</p>
+<p begin="00:04:57.120" end="00:05:01.919" style="s2">acts of injustice our country has ever</p>
+<p begin="00:05:00.240" end="00:05:03.600" style="s2">seen. I couldn&#39;t believe it. I witnessed</p>
+<p begin="00:05:01.919" end="00:05:06.080" style="s2">it a couple of weeks ago. I couldn&#39;t</p>
+<p begin="00:05:03.600" end="00:05:09.199" style="s2">believe it. Just days ago, the governor</p>
+<p begin="00:05:06.080" end="00:05:12.800" style="s2">of California, Gavin Nuome, granted</p>
+<p begin="00:05:09.199" end="00:05:16.479" style="s2">clemency and mercy to 548 of the most</p>
+<p begin="00:05:12.800" end="00:05:19.520" style="s2">evil monsters on the face of the earth.</p>
+<p begin="00:05:16.479" end="00:05:22.080" style="s2">You&#39;d have to read their biographies to</p>
+<p begin="00:05:19.520" end="00:05:23.440" style="s2">see how bad they were. Some of them you</p>
+<p begin="00:05:22.080" end="00:05:27.360" style="s2">wouldn&#39;t even believe it. All of them,</p>
+<p begin="00:05:23.440" end="00:05:30.560" style="s2">but some of them you would levels of</p>
+<p begin="00:05:27.360" end="00:05:32.080" style="s2">craziness, sickness that I&#39;ve never seen</p>
+<p begin="00:05:30.560" end="00:05:35.120" style="s2">before.</p>
+<p begin="00:05:32.080" end="00:05:38.800" style="s2">Among those death row inmates he granted</p>
+<p begin="00:05:35.120" end="00:05:41.280" style="s2">clemency were more than 110 child</p>
+<p begin="00:05:38.800" end="00:05:43.759" style="s2">killers, more than 100 rapists who</p>
+<p begin="00:05:41.280" end="00:05:45.440" style="s2">murdered their victims, and numerous</p>
+<p begin="00:05:43.759" end="00:05:48.560" style="s2">serial killers who tortured and</p>
+<p begin="00:05:45.440" end="00:05:50.400" style="s2">slaughtered dozens of innocent people</p>
+<p begin="00:05:48.560" end="00:05:52.000" style="s2">at levels that nobody&#39;s ever seen</p>
+<p begin="00:05:50.400" end="00:05:55.759" style="s2">before.</p>
+<p begin="00:05:52.000" end="00:05:58.800" style="s2">Among the serial killers he spared is</p>
+<p begin="00:05:55.759" end="00:06:01.039" style="s2">Charles Ing, who tortured, enslaved, and</p>
+<p begin="00:05:58.800" end="00:06:03.600" style="s2">slaughtered at least 11 people,</p>
+<p begin="00:06:01.039" end="00:06:06.960" style="s2">including babies, in a torture chamber</p>
+<p begin="00:06:03.600" end="00:06:10.319" style="s2">in a remote cabin, as well as the</p>
+<p begin="00:06:06.960" end="00:06:13.680" style="s2">Southside Slayer who killed 14 women and</p>
+<p begin="00:06:10.319" end="00:06:17.280" style="s2">enjoyed every moment of it in an unborn</p>
+<p begin="00:06:13.680" end="00:06:19.440" style="s2">child in South Los Angeles.</p>
+<p begin="00:06:17.280" end="00:06:23.600" style="s2">and the scorecard killer. They call him</p>
+<p begin="00:06:19.440" end="00:06:26.080" style="s2">the scorecard killer who kept a tally in</p>
+<p begin="00:06:23.600" end="00:06:29.039" style="s2">his car of at least 16 young men he</p>
+<p begin="00:06:26.080" end="00:06:31.759" style="s2">abducted, raped and murdered. And the</p>
+<p begin="00:06:29.039" end="00:06:34.560" style="s2">alphabet killer was that name, alphabet</p>
+<p begin="00:06:31.759" end="00:06:37.520" style="s2">killer, who raped and murdered innocent</p>
+<p begin="00:06:34.560" end="00:06:40.240" style="s2">young girls whose first and last name</p>
+<p begin="00:06:37.520" end="00:06:43.759" style="s2">started with the same letter. He needed</p>
+<p begin="00:06:40.240" end="00:06:45.759" style="s2">that same letter. These are sick people.</p>
+<p begin="00:06:43.759" end="00:06:48.800" style="s2">This afternoon, we come together to</p>
+<p begin="00:06:45.759" end="00:06:50.880" style="s2">stand against the travesty and to wrap</p>
+<p begin="00:06:48.800" end="00:06:53.440" style="s2">our arms around the families of victims</p>
+<p begin="00:06:50.880" end="00:06:57.199" style="s2">who were so cruy betrayed by bad</p>
+<p begin="00:06:53.440" end="00:06:59.520" style="s2">government and our political system. To</p>
+<p begin="00:06:57.199" end="00:07:02.880" style="s2">every parent, son, daughter, sibling, or</p>
+<p begin="00:06:59.520" end="00:07:06.880" style="s2">spouse here today whose loved one was</p>
+<p begin="00:07:02.880" end="00:07:09.440" style="s2">brutally killed by those monsters, we</p>
+<p begin="00:07:06.880" end="00:07:13.520" style="s2">love you. We support you and we are with</p>
+<p begin="00:07:09.440" end="00:07:16.319" style="s2">you and your quest for un really the the</p>
+<p begin="00:07:13.520" end="00:07:18.319" style="s2">ultimate of final justice. We have to do</p>
+<p begin="00:07:16.319" end="00:07:20.000" style="s2">this. We can&#39;t let this happen. What</p>
+<p begin="00:07:18.319" end="00:07:24.240" style="s2">happened to you, what happened to all of</p>
+<p begin="00:07:20.000" end="00:07:27.440" style="s2">us should not be allowed to stand. What</p>
+<p begin="00:07:24.240" end="00:07:30.319" style="s2">these families have endured is beyond</p>
+<p begin="00:07:27.440" end="00:07:33.199" style="s2">imagination.</p>
+<p begin="00:07:30.319" end="00:07:35.599" style="s2">One day their lives were shattered into</p>
+<p begin="00:07:33.199" end="00:07:38.080" style="s2">pieces when they learned that someone</p>
+<p begin="00:07:35.599" end="00:07:39.919" style="s2">they had loved most in the entire world</p>
+<p begin="00:07:38.080" end="00:07:43.039" style="s2">they loved more than anybody in the</p>
+<p begin="00:07:39.919" end="00:07:45.840" style="s2">world had spent their final moments in</p>
+<p begin="00:07:43.039" end="00:07:50.000" style="s2">excruciating pain and bone chilling</p>
+<p begin="00:07:45.840" end="00:07:53.120" style="s2">terror and those families lives will</p>
+<p begin="00:07:50.000" end="00:07:55.520" style="s2">never ever be the same. Then after the</p>
+<p begin="00:07:53.120" end="00:07:57.840" style="s2">juries delivered their verdicts and the</p>
+<p begin="00:07:55.520" end="00:08:00.560" style="s2">justice system returned a muchdeserved</p>
+<p begin="00:07:57.840" end="00:08:02.400" style="s2">sentence of death,</p>
+<p begin="00:08:00.560" end="00:08:04.400" style="s2">Nuome,</p>
+<p begin="00:08:02.400" end="00:08:07.440" style="s2">a terrible governor in so many other</p>
+<p begin="00:08:04.400" end="00:08:10.080" style="s2">ways, came along and stole away the only</p>
+<p begin="00:08:07.440" end="00:08:12.160" style="s2">closure those families</p>
+<p begin="00:08:10.080" end="00:08:14.319" style="s2">might ever have.</p>
+<p begin="00:08:12.160" end="00:08:17.360" style="s2">He stood with the murderers and the</p>
+<p begin="00:08:14.319" end="00:08:20.240" style="s2">child slayers. But today, we say, the</p>
+<p begin="00:08:17.360" end="00:08:21.680" style="s2">American people, stand with you. We</p>
+<p begin="00:08:20.240" end="00:08:24.960" style="s2">stand with you. We&#39;re not going to let</p>
+<p begin="00:08:21.680" end="00:08:30.000" style="s2">this happen.</p>
+<p begin="00:08:24.960" end="00:08:33.360" style="s2">In May 1996, 8-year-old Michael Lions</p>
+<p begin="00:08:30.000" end="00:08:36.399" style="s2">was walking home from elementary school</p>
+<p begin="00:08:33.360" end="00:08:39.519" style="s2">in Yuba City, California,</p>
+<p begin="00:08:36.399" end="00:08:43.440" style="s2">when he was abducted by convicted sex</p>
+<p begin="00:08:39.519" end="00:08:45.760" style="s2">offender Robert Boyd Rhodess, who forced</p>
+<p begin="00:08:43.440" end="00:08:49.959" style="s2">young Michael into a secluded area,</p>
+<p begin="00:08:45.760" end="00:08:49.959" style="s2">raped and tortured him</p>
+<p begin="00:08:50.320" end="00:08:55.519" style="s2">for extended periods of time. The</p>
+<p begin="00:08:53.519" end="00:08:59.120" style="s2">predators slashed Michael more than a</p>
+<p begin="00:08:55.519" end="00:09:02.080" style="s2">hundred times with a knife and left his</p>
+<p begin="00:08:59.120" end="00:09:05.839" style="s2">body on a river bank for others to pick</p>
+<p begin="00:09:02.080" end="00:09:08.640" style="s2">up. Roads was captured and sentenced to</p>
+<p begin="00:09:05.839" end="00:09:11.040" style="s2">death. But Gavin Newsome thought that</p>
+<p begin="00:09:08.640" end="00:09:13.920" style="s2">child killer was owed the mercy that he</p>
+<p begin="00:09:11.040" end="00:09:16.320" style="s2">never showed to 8-year-old</p>
+<p begin="00:09:13.920" end="00:09:19.200" style="s2">Michael. We&#39;re joined by Michael&#39;s</p>
+<p begin="00:09:16.320" end="00:09:22.000" style="s2">family, including his mother, Sandy. And</p>
+<p begin="00:09:19.200" end="00:09:25.399" style="s2">Sandy, I&#39;d like to have you say a few</p>
+<p begin="00:09:22.000" end="00:09:25.399" style="s2">words, please.</p>
+<p begin="00:09:26.560" end="00:09:32.040" style="s2">&gt;&gt; Thank you.</p>
+<p begin="00:09:28.720" end="00:09:32.040" style="s2">Thank you, darling.</p>
+<p begin="00:09:32.240" end="00:09:38.560" style="s2">Hi, my name is Sandy Friend. I am the</p>
+<p begin="00:09:35.600" end="00:09:41.200" style="s2">mother of Michael Lions.</p>
+<p begin="00:09:38.560" end="00:09:46.000" style="s2">Michael was eight years old. He loved</p>
+<p begin="00:09:41.200" end="00:09:48.959" style="s2">his sisters, fishing ninja turtles,</p>
+<p begin="00:09:46.000" end="00:09:52.240" style="s2">telling campfire stories,</p>
+<p begin="00:09:48.959" end="00:09:55.360" style="s2">and bringing me flowers.</p>
+<p begin="00:09:52.240" end="00:09:57.440" style="s2">Michael was afraid of the dark. He</p>
+<p begin="00:09:55.360" end="00:09:59.120" style="s2">believed the boogeyman was going to get</p>
+<p begin="00:09:57.440" end="00:10:03.440" style="s2">him.</p>
+<p begin="00:09:59.120" end="00:10:06.399" style="s2">On May 16th, 1996, Robert Boyd Rhodess,</p>
+<p begin="00:10:03.440" end="00:10:09.839" style="s2">a twice convicted sex offender and</p>
+<p begin="00:10:06.399" end="00:10:12.640" style="s2">serial killer, kidnapped Michael.</p>
+<p begin="00:10:09.839" end="00:10:16.399" style="s2">Walking home from school, he took my</p>
+<p begin="00:10:12.640" end="00:10:20.079" style="s2">little boy into the darkness. His most</p>
+<p begin="00:10:16.399" end="00:10:22.000" style="s2">feared thing was the dark. That night,</p>
+<p begin="00:10:20.079" end="00:10:25.000" style="s2">Michael learned that the boogeyman was</p>
+<p begin="00:10:22.000" end="00:10:25.000" style="s2">real.</p>
+<p begin="00:10:26.880" end="00:10:34.720" style="s2">Mikey was raped, sodomized, and tortured</p>
+<p begin="00:10:30.720" end="00:10:38.000" style="s2">from 10 for 10 hours. From the very</p>
+<p begin="00:10:34.720" end="00:10:40.240" style="s2">first inflicted stabin</p>
+<p begin="00:10:38.000" end="00:10:43.560" style="s2">to the last,</p>
+<p begin="00:10:40.240" end="00:10:43.560" style="s2">he only</p>
+<p begin="00:10:46.640" end="00:10:51.200" style="s2">that is why the killer was convicted of</p>
+<p begin="00:10:49.440" end="00:10:54.240" style="s2">torture.</p>
+<p begin="00:10:51.200" end="00:10:58.160" style="s2">A jury sentenced him to die and in</p>
+<p begin="00:10:54.240" end="00:11:03.522" style="s2">December 2025 a judge reaffirmed that</p>
+<p begin="00:10:58.160" end="00:11:04.560" style="s2">sentence. The go the governor then sorry</p>
+<p begin="00:11:03.522" end="00:11:08.320" style="s2">[sighs]</p>
+<p begin="00:11:04.560" end="00:11:11.519" style="s2">this is so very hard. [gasps]</p>
+<p begin="00:11:08.320" end="00:11:14.000" style="s2">Then Governor Nome erased that with the</p>
+<p begin="00:11:11.519" end="00:11:18.440" style="s2">swipe of a pen</p>
+<p begin="00:11:14.000" end="00:11:18.440" style="s2">without notifying the families.</p>
+<p begin="00:11:18.800" end="00:11:25.040" style="s2">Governor Nuome,</p>
+<p begin="00:11:21.600" end="00:11:29.200" style="s2">we deserve to be heard.</p>
+<p begin="00:11:25.040" end="00:11:32.000" style="s2">You never heard what my child endured or</p>
+<p begin="00:11:29.200" end="00:11:34.959" style="s2">lived with the emptiness of having an</p>
+<p begin="00:11:32.000" end="00:11:36.480" style="s2">empty chair at every holiday and</p>
+<p begin="00:11:34.959" end="00:11:40.000" style="s2">milestone.</p>
+<p begin="00:11:36.480" end="00:11:42.399" style="s2">Yet you took the only justice we had and</p>
+<p begin="00:11:40.000" end="00:11:45.200" style="s2">left families feeling abandoned by the</p>
+<p begin="00:11:42.399" end="00:11:48.079" style="s2">state that promised to protect us.</p>
+<p begin="00:11:45.200" end="00:11:50.480" style="s2">You&#39;ll never understand the unimaginable</p>
+<p begin="00:11:48.079" end="00:11:54.640" style="s2">pain that you&#39;re putting these families</p>
+<p begin="00:11:50.480" end="00:11:56.640" style="s2">through. Face me, Governor Nuome. Tell</p>
+<p begin="00:11:54.640" end="00:12:00.399" style="s2">me, Michael&#39;s</p>
+<p begin="00:11:56.640" end="00:12:02.959" style="s2">Michael&#39;s life doesn&#39;t matter.</p>
+<p begin="00:12:00.399" end="00:12:05.600" style="s2">Michael deserved a governor who who</p>
+<p begin="00:12:02.959" end="00:12:08.399" style="s2">would stand with the victims, honor</p>
+<p begin="00:12:05.600" end="00:12:11.279" style="s2">their justice, and respect the will of</p>
+<p begin="00:12:08.399" end="00:12:14.000" style="s2">the people. You may have taken our</p>
+<p begin="00:12:11.279" end="00:12:16.880" style="s2">justice, but we will never you will</p>
+<p begin="00:12:14.000" end="00:12:19.040" style="s2">never take Michael&#39;s voice.</p>
+<p begin="00:12:16.880" end="00:12:22.560" style="s2">Mr. President, thank you for standing</p>
+<p begin="00:12:19.040" end="00:12:25.600" style="s2">with the victims and giving us a voice.</p>
+<p begin="00:12:22.560" end="00:12:30.000" style="s2">I will never stop speaking Michael&#39;s</p>
+<p begin="00:12:25.600" end="00:12:34.480" style="s2">name. Every victim matters. Look at his</p>
+<p begin="00:12:30.000" end="00:12:37.720" style="s2">face. He was only eight years old.</p>
+<p begin="00:12:34.480" end="00:12:37.720" style="s2">Thank you.</p>
+<p begin="00:12:56.320" end="00:13:01.680" style="s2">Sandy, we will always be with you. And</p>
+<p begin="00:12:59.440" end="00:13:04.160" style="s2">you&#39;re beautiful, Michael. And thank you</p>
+<p begin="00:13:01.680" end="00:13:06.800" style="s2">very much. It&#39;s great bravery even to be</p>
+<p begin="00:13:04.160" end="00:13:09.600" style="s2">here because Todd and the whole group, a</p>
+<p begin="00:13:06.800" end="00:13:11.839" style="s2">lot of people in this room are working</p>
+<p begin="00:13:09.600" end="00:13:14.880" style="s2">as hard as they can to get this travesty</p>
+<p begin="00:13:11.839" end="00:13:18.560" style="s2">overturned in some form. Very unusual</p>
+<p begin="00:13:14.880" end="00:13:21.920" style="s2">situation. state. We&#39;re we&#39;re very</p>
+<p begin="00:13:18.560" end="00:13:26.399" style="s2">active doing everything we can. In</p>
+<p begin="00:13:21.920" end="00:13:30.079" style="s2">October 1993, 12-year-old Polyclass was</p>
+<p begin="00:13:26.399" end="00:13:32.800" style="s2">having a slumber party at her home in</p>
+<p begin="00:13:30.079" end="00:13:36.639" style="s2">Paluma, California, when a violent</p>
+<p begin="00:13:32.800" end="00:13:41.680" style="s2">repeat offender out of parole slipped</p>
+<p begin="00:13:36.639" end="00:13:44.959" style="s2">into her home carrying a large violent</p>
+<p begin="00:13:41.680" end="00:13:47.839" style="s2">knife. He bound and gagged Pauliey&#39;s two</p>
+<p begin="00:13:44.959" end="00:13:50.160" style="s2">friends and abducted Polly. Two months</p>
+<p begin="00:13:47.839" end="00:13:52.639" style="s2">later, she was found buried in a very</p>
+<p begin="00:13:50.160" end="00:13:56.399" style="s2">shallow grave over 50 miles from her</p>
+<p begin="00:13:52.639" end="00:13:59.279" style="s2">home. Nuome gave Paulie&#39;s savage killer</p>
+<p begin="00:13:56.399" end="00:14:02.880" style="s2">clemency, too. And we&#39;re honored to be</p>
+<p begin="00:13:59.279" end="00:14:04.560" style="s2">joined by Pauliey&#39;s father, Mark. And</p>
+<p begin="00:14:02.880" end="00:14:07.199" style="s2">Mark, if you would please come up and</p>
+<p begin="00:14:04.560" end="00:14:10.279" style="s2">say a few words. Thank you.</p>
+<p begin="00:14:07.199" end="00:14:10.279" style="s2">Thank you,</p>
+<p begin="00:14:14.959" end="00:14:20.480" style="s2">Mr. President, thank you for seeing us.</p>
+<p begin="00:14:18.560" end="00:14:23.279" style="s2">30 years ago, my daughter Paulie was</p>
+<p begin="00:14:20.480" end="00:14:25.279" style="s2">brutally taken from our family. A jury</p>
+<p begin="00:14:23.279" end="00:14:27.519" style="s2">heard the evidence, convicted her</p>
+<p begin="00:14:25.279" end="00:14:30.639" style="s2">killer, and imposed the strongest</p>
+<p begin="00:14:27.519" end="00:14:32.639" style="s2">sentence allowed under California law.</p>
+<p begin="00:14:30.639" end="00:14:34.720" style="s2">For three decades, our family lived with</p>
+<p begin="00:14:32.639" end="00:14:38.000" style="s2">the understanding that the justice</p>
+<p begin="00:14:34.720" end="00:14:42.000" style="s2">system&#39;s decision would stand.</p>
+<p begin="00:14:38.000" end="00:14:45.040" style="s2">Today I stand before you outraged,</p>
+<p begin="00:14:42.000" end="00:14:48.000" style="s2">outraged that Governor Gavin Nuome</p>
+<p begin="00:14:45.040" end="00:14:51.760" style="s2">unilaterally erased that sentence and</p>
+<p begin="00:14:48.000" end="00:14:54.160" style="s2">547 more and commuted them to life</p>
+<p begin="00:14:51.760" end="00:14:57.360" style="s2">without parole without the consent of</p>
+<p begin="00:14:54.160" end="00:14:59.440" style="s2">victim&#39;s families or the people of</p>
+<p begin="00:14:57.360" end="00:15:02.320" style="s2">California.</p>
+<p begin="00:14:59.440" end="00:15:04.959" style="s2">This decision was not made by a jury. It</p>
+<p begin="00:15:02.320" end="00:15:08.399" style="s2">was not approved by the voters.</p>
+<p begin="00:15:04.959" end="00:15:10.000" style="s2">It was made by one politician acting</p>
+<p begin="00:15:08.399" end="00:15:12.000" style="s2">alone.</p>
+<p begin="00:15:10.000" end="00:15:14.959" style="s2">While nothing can bring Polly back, her</p>
+<p begin="00:15:12.000" end="00:15:17.360" style="s2">life mattered. The pain inflicted on our</p>
+<p begin="00:15:14.959" end="00:15:19.839" style="s2">family was real and the pursuit of</p>
+<p begin="00:15:17.360" end="00:15:22.880" style="s2">justice should not become a political</p>
+<p begin="00:15:19.839" end="00:15:25.680" style="s2">exercise. I am here today to stand for</p>
+<p begin="00:15:22.880" end="00:15:28.639" style="s2">Paulie, for victim&#39;s families across</p>
+<p begin="00:15:25.680" end="00:15:31.600" style="s2">California and for accountability in our</p>
+<p begin="00:15:28.639" end="00:15:34.480" style="s2">justice system. This is about more than</p>
+<p begin="00:15:31.600" end="00:15:37.440" style="s2">my family. This is about whether the</p>
+<p begin="00:15:34.480" end="00:15:39.519" style="s2">voices of crime victims matter. It&#39;s</p>
+<p begin="00:15:37.440" end="00:15:41.519" style="s2">about whether one politician should have</p>
+<p begin="00:15:39.519" end="00:15:44.480" style="s2">the power to nullify the decisions of</p>
+<p begin="00:15:41.519" end="00:15:47.360" style="s2">judges, juries, and the citizens who</p>
+<p begin="00:15:44.480" end="00:15:50.800" style="s2">enacted these laws.</p>
+<p begin="00:15:47.360" end="00:15:53.199" style="s2">All to advance a political agenda. Mr.</p>
+<p begin="00:15:50.800" end="00:15:55.680" style="s2">President, thank you for hearing us.</p>
+<p begin="00:15:53.199" end="00:15:58.680" style="s2">Thank you for seeing us. Thank you very</p>
+<p begin="00:15:55.680" end="00:15:58.680" style="s2">much.</p>
+<p begin="00:16:10.240" end="00:16:17.360" style="s2">Mark went through, as you just heard, 30</p>
+<p begin="00:16:13.440" end="00:16:21.120" style="s2">years. 30 years. At the end of all of</p>
+<p begin="00:16:17.360" end="00:16:24.399" style="s2">that drama, it was just wiped out. It&#39;s</p>
+<p begin="00:16:21.120" end="00:16:26.800" style="s2">probably just a political moment. So, I</p>
+<p begin="00:16:24.399" end="00:16:29.360" style="s2">want to thank you, Mark, and</p>
+<p begin="00:16:26.800" end="00:16:31.360" style="s2">uh just incredible what you&#39;ve had to</p>
+<p begin="00:16:29.360" end="00:16:33.519" style="s2">endure. I saw your case. I watched it. I</p>
+<p begin="00:16:31.360" end="00:16:35.279" style="s2">watched you very closely the other day</p>
+<p begin="00:16:33.519" end="00:16:38.720" style="s2">in an interview. I said, &quot;Boy, that&#39;s</p>
+<p begin="00:16:35.279" end="00:16:40.800" style="s2">tough. That&#39;s tough.&quot;</p>
+<p begin="00:16:38.720" end="00:16:44.320" style="s2">The murders of these precious children</p>
+<p begin="00:16:40.800" end="00:16:47.839" style="s2">are the worst nightmare of every mom and</p>
+<p begin="00:16:44.320" end="00:16:50.000" style="s2">dad in America. Yet Gavin Newsome and</p>
+<p begin="00:16:47.839" end="00:16:52.720" style="s2">the radical left look at these heinous</p>
+<p begin="00:16:50.000" end="00:16:54.399" style="s2">acts and their sympathy is not for the</p>
+<p begin="00:16:52.720" end="00:16:57.120" style="s2">children and their parents, but for the</p>
+<p begin="00:16:54.399" end="00:17:00.800" style="s2">monsters who extinguished innocent young</p>
+<p begin="00:16:57.120" end="00:17:02.560" style="s2">lives. Don&#39;t understand it. Never did.</p>
+<p begin="00:17:00.800" end="00:17:05.919" style="s2">I&#39;ve seen it so much and I never</p>
+<p begin="00:17:02.560" end="00:17:09.360" style="s2">understood it. And a lot of the media is</p>
+<p begin="00:17:05.919" end="00:17:11.039" style="s2">with them for whatever reason. It&#39;s not</p>
+<p begin="00:17:09.360" end="00:17:13.039" style="s2">understandable.</p>
+<p begin="00:17:11.039" end="00:17:15.120" style="s2">Under the Trump administration, we will</p>
+<p begin="00:17:13.039" end="00:17:18.240" style="s2">never stop fighting to protect our</p>
+<p begin="00:17:15.120" end="00:17:19.919" style="s2">nation&#39;s children. And we will</p>
+<p begin="00:17:18.240" end="00:17:22.959" style="s2">always take care. We&#39;re just going to</p>
+<p begin="00:17:19.919" end="00:17:24.079" style="s2">take care of our beautiful system of</p>
+<p begin="00:17:22.959" end="00:17:25.919" style="s2">justice. We&#39;re going to make it</p>
+<p begin="00:17:24.079" end="00:17:29.280" style="s2">beautiful again. We&#39;re going to bring</p>
+<p begin="00:17:25.919" end="00:17:32.160" style="s2">justice for American families. There is</p>
+<p begin="00:17:29.280" end="00:17:34.480" style="s2">no other choice. Also with us are the</p>
+<p begin="00:17:32.160" end="00:17:37.840" style="s2">families of Detective Michael Davis and</p>
+<p begin="00:17:34.480" end="00:17:41.600" style="s2">Deputy Sheriff Denny Oliver from the</p>
+<p begin="00:17:37.840" end="00:17:45.120" style="s2">Plaster County Sheriff&#39;s Office. In</p>
+<p begin="00:17:41.600" end="00:17:47.760" style="s2">2014, we were involved. They were just</p>
+<p begin="00:17:45.120" end="00:17:49.679" style="s2">involved in some it was a big a big</p>
+<p begin="00:17:47.760" end="00:17:53.280" style="s2">thing happening</p>
+<p begin="00:17:49.679" end="00:17:55.120" style="s2">in involved in a manhunt for an illegal</p>
+<p begin="00:17:53.280" end="00:17:57.120" style="s2">alien criminal. A rough one that they</p>
+<p begin="00:17:55.120" end="00:18:00.320" style="s2">were after for a long time. Rough rough</p>
+<p begin="00:17:57.120" end="00:18:03.360" style="s2">rough. When they bravely approached the</p>
+<p begin="00:18:00.320" end="00:18:06.720" style="s2">suspect&#39;s vehicle, that illegal alien</p>
+<p begin="00:18:03.360" end="00:18:10.240" style="s2">opened fire with a rifle and shot them</p>
+<p begin="00:18:06.720" end="00:18:13.440" style="s2">both dead. Immediately dead. This is yet</p>
+<p begin="00:18:10.240" end="00:18:16.320" style="s2">another monster Newsome spared. For what</p>
+<p begin="00:18:13.440" end="00:18:17.840" style="s2">reason? I guess we know. I guess it&#39;s</p>
+<p begin="00:18:16.320" end="00:18:19.280" style="s2">politics. I don&#39;t know how it&#39;s good</p>
+<p begin="00:18:17.840" end="00:18:22.400" style="s2">politics. I think it&#39;s terrible</p>
+<p begin="00:18:19.280" end="00:18:24.720" style="s2">politics. But that doesn&#39;t matter.</p>
+<p begin="00:18:22.400" end="00:18:26.880" style="s2">Should never have been done. I want to</p>
+<p begin="00:18:24.720" end="00:18:29.520" style="s2">ask Detective Davis&#39;s brother,</p>
+<p begin="00:18:26.880" end="00:18:31.760" style="s2">Lieutenant Jason Davis, to come up and</p>
+<p begin="00:18:29.520" end="00:18:35.400" style="s2">say a few words if you would. Thank you</p>
+<p begin="00:18:31.760" end="00:18:35.400" style="s2">very much, please.</p>
+<p begin="00:18:43.200" end="00:18:47.600" style="s2">Mr. President, on behalf of our family,</p>
+<p begin="00:18:45.679" end="00:18:49.360" style="s2">I want to thank you and the Attorney</p>
+<p begin="00:18:47.600" end="00:18:51.679" style="s2">General Blanch for your commitment to</p>
+<p begin="00:18:49.360" end="00:18:54.080" style="s2">law and order. You have stood up for us</p>
+<p begin="00:18:51.679" end="00:18:55.840" style="s2">victims from the beginning and uh we</p>
+<p begin="00:18:54.080" end="00:18:59.200" style="s2">stand with you as well. Thank you very</p>
+<p begin="00:18:55.840" end="00:19:00.400" style="s2">much, sir. My name is Jason Davis and as</p>
+<p begin="00:18:59.200" end="00:19:01.520" style="s2">the president said, I&#39;ve been a</p>
+<p begin="00:19:00.400" end="00:19:03.039" style="s2">lieutenant with the Plaster County</p>
+<p begin="00:19:01.520" end="00:19:05.760" style="s2">Sheriff&#39;s Office where I&#39;ve served as a</p>
+<p begin="00:19:03.039" end="00:19:07.520" style="s2">law enforcement officer for 28 years. My</p>
+<p begin="00:19:05.760" end="00:19:09.039" style="s2">family has a history of law enforcement</p>
+<p begin="00:19:07.520" end="00:19:10.960" style="s2">service in the state of California,</p>
+<p begin="00:19:09.039" end="00:19:12.720" style="s2">starting with my father who fulfilled</p>
+<p begin="00:19:10.960" end="00:19:15.919" style="s2">his lifelong dream when he became a</p>
+<p begin="00:19:12.720" end="00:19:17.440" style="s2">deputy sheriff in the early 80s.</p>
+<p begin="00:19:15.919" end="00:19:20.080" style="s2">He was killed in the line of duty on</p>
+<p begin="00:19:17.440" end="00:19:21.919" style="s2">October 24th, 1988, stopping drugs</p>
+<p begin="00:19:20.080" end="00:19:24.080" style="s2">coming over the border of Mexico on a</p>
+<p begin="00:19:21.919" end="00:19:26.720" style="s2">task force. Their helicopter went down</p>
+<p begin="00:19:24.080" end="00:19:28.960" style="s2">when it hit power lines. He was killed</p>
+<p begin="00:19:26.720" end="00:19:31.039" style="s2">instantly.</p>
+<p begin="00:19:28.960" end="00:19:34.240" style="s2">My brother Michael and I followed in our</p>
+<p begin="00:19:31.039" end="00:19:37.039" style="s2">f our father&#39;s footsteps. I moved 500</p>
+<p begin="00:19:34.240" end="00:19:38.799" style="s2">miles away from where I had grown up to</p>
+<p begin="00:19:37.039" end="00:19:41.200" style="s2">Northern California to be with him,</p>
+<p begin="00:19:38.799" end="00:19:42.480" style="s2">where we both served as deputy sheriffs</p>
+<p begin="00:19:41.200" end="00:19:44.799" style="s2">with the Plaster County Sheriff&#39;s</p>
+<p begin="00:19:42.480" end="00:19:46.960" style="s2">Office. The greatest honor of my life</p>
+<p begin="00:19:44.799" end="00:19:50.600" style="s2">was working patrol with my brother. He</p>
+<p begin="00:19:46.960" end="00:19:50.600" style="s2">was my beat partner.</p>
+<p begin="00:19:52.559" end="00:19:57.520" style="s2">26 years to the day after my dad had</p>
+<p begin="00:19:55.039" end="00:19:59.120" style="s2">been killed, Michael was killed by Luis</p>
+<p begin="00:19:57.520" end="00:20:01.760" style="s2">Brockamontis,</p>
+<p begin="00:19:59.120" end="00:20:03.760" style="s2">who was in the United States illegally,</p>
+<p begin="00:20:01.760" end="00:20:06.480" style="s2">went on a crime</p>
+<p begin="00:20:03.760" end="00:20:08.559" style="s2">where he shot and killed Danny Oliver,</p>
+<p begin="00:20:06.480" end="00:20:11.280" style="s2">uh, who contacted him in a hotel parking</p>
+<p begin="00:20:08.559" end="00:20:14.640" style="s2">lot. His widow and daughter are here,</p>
+<p begin="00:20:11.280" end="00:20:16.559" style="s2">Susan and Melissa. Thank you for coming.</p>
+<p begin="00:20:14.640" end="00:20:18.400" style="s2">After he shot and killed Danny, he</p>
+<p begin="00:20:16.559" end="00:20:22.000" style="s2">proceeded to carjack or attempt to</p>
+<p begin="00:20:18.400" end="00:20:24.400" style="s2">carjack a hardcore street person who</p>
+<p begin="00:20:22.000" end="00:20:26.160" style="s2">fought back. Brokammani shot him five</p>
+<p begin="00:20:24.400" end="00:20:29.440" style="s2">times in the face. Miraculously, he</p>
+<p begin="00:20:26.160" end="00:20:31.360" style="s2">survived. He then went on to carjack an</p>
+<p begin="00:20:29.440" end="00:20:33.039" style="s2">innocent lady.</p>
+<p begin="00:20:31.360" end="00:20:34.640" style="s2">After carjacking the innocent lady in</p>
+<p begin="00:20:33.039" end="00:20:36.400" style="s2">Sacramento, he proceeded into the</p>
+<p begin="00:20:34.640" end="00:20:38.960" style="s2">Plaster County territory where Michael</p>
+<p begin="00:20:36.400" end="00:20:40.720" style="s2">got the call. Michael was a detective</p>
+<p begin="00:20:38.960" end="00:20:42.559" style="s2">and had no business responding as a</p>
+<p begin="00:20:40.720" end="00:20:45.120" style="s2">first responder or no obligation. He had</p>
+<p begin="00:20:42.559" end="00:20:47.120" style="s2">business and he knew that Michael was a</p>
+<p begin="00:20:45.120" end="00:20:50.880" style="s2">protector.</p>
+<p begin="00:20:47.120" end="00:20:52.240" style="s2">Michael responded as a detective and was</p>
+<p begin="00:20:50.880" end="00:20:55.120" style="s2">one of the first ones to encounter</p>
+<p begin="00:20:52.240" end="00:20:58.640" style="s2">Brockam Montis. Circumstances played</p>
+<p begin="00:20:55.120" end="00:21:01.039" style="s2">out. He was shot and killed instantly.</p>
+<p begin="00:20:58.640" end="00:21:02.960" style="s2">Brokamontis went on the run where he was</p>
+<p begin="00:21:01.039" end="00:21:05.360" style="s2">later captured by law enforcement. My</p>
+<p begin="00:21:02.960" end="00:21:10.039" style="s2">agency as well as Sack County. Law</p>
+<p begin="00:21:05.360" end="00:21:10.039" style="s2">enforcement wins. We have to.</p>
+<p begin="00:21:10.799" end="00:21:14.559" style="s2">The man who murdered Michael was</p>
+<p begin="00:21:12.880" end="00:21:17.120" style="s2">convicted by a jury of his peers and</p>
+<p begin="00:21:14.559" end="00:21:20.159" style="s2">sentenced to death after receiving a</p>
+<p begin="00:21:17.120" end="00:21:21.919" style="s2">full and fair fair trial,</p>
+<p begin="00:21:20.159" end="00:21:24.240" style="s2">one that would be given to every citizen</p>
+<p begin="00:21:21.919" end="00:21:27.440" style="s2">in this country.</p>
+<p begin="00:21:24.240" end="00:21:31.039" style="s2">Yet, Governor Nuome chose to commute his</p>
+<p begin="00:21:27.440" end="00:21:33.840" style="s2">sentence along with those 47 547 other</p>
+<p begin="00:21:31.039" end="00:21:35.679" style="s2">inmates on death row, disregarding the</p>
+<p begin="00:21:33.840" end="00:21:37.919" style="s2">victims or families and the will of the</p>
+<p begin="00:21:35.679" end="00:21:40.240" style="s2">California voters.</p>
+<p begin="00:21:37.919" end="00:21:42.960" style="s2">We had started to get closure. I had</p>
+<p begin="00:21:40.240" end="00:21:45.840" style="s2">moved on. I could remember Michael</p>
+<p begin="00:21:42.960" end="00:21:48.320" style="s2">outside of that incident. And Governor</p>
+<p begin="00:21:45.840" end="00:21:50.000" style="s2">Newsome single-handedly ripped that</p>
+<p begin="00:21:48.320" end="00:21:52.480" style="s2">band-aid off and opened that wound</p>
+<p begin="00:21:50.000" end="00:21:54.720" style="s2">again. I have met with these families</p>
+<p begin="00:21:52.480" end="00:21:57.440" style="s2">throughout the past two days and the</p>
+<p begin="00:21:54.720" end="00:21:59.200" style="s2">past week. Their hearts are broken and</p>
+<p begin="00:21:57.440" end="00:22:00.720" style="s2">mine breaks for theirs and Michael&#39;s</p>
+<p begin="00:21:59.200" end="00:22:03.120" style="s2">breaks for theirs because those were the</p>
+<p begin="00:22:00.720" end="00:22:04.320" style="s2">people that Michael protected. Those</p>
+<p begin="00:22:03.120" end="00:22:05.919" style="s2">were the people that Michael</p>
+<p begin="00:22:04.320" end="00:22:07.679" style="s2">investigated</p>
+<p begin="00:22:05.919" end="00:22:09.760" style="s2">so that our communities could be safe.</p>
+<p begin="00:22:07.679" end="00:22:12.000" style="s2">And Governor Nuome under the cloak of</p>
+<p begin="00:22:09.760" end="00:22:14.799" style="s2">darkness</p>
+<p begin="00:22:12.000" end="00:22:16.320" style="s2">unilaterally makes a decision to commute</p>
+<p begin="00:22:14.799" end="00:22:18.880" style="s2">the sentences of the most heinous</p>
+<p begin="00:22:16.320" end="00:22:21.120" style="s2">criminals in our society.</p>
+<p begin="00:22:18.880" end="00:22:24.000" style="s2">I am disgusted</p>
+<p begin="00:22:21.120" end="00:22:28.520" style="s2">and frustrated.</p>
+<p begin="00:22:24.000" end="00:22:28.520" style="s2">My brother did not die in vain.</p>
+<p begin="00:22:31.679" end="00:22:36.720" style="s2">Mothers, there is nothing like a</p>
+<p begin="00:22:33.520" end="00:22:38.640" style="s2">mother&#39;s cry when she loses a child.</p>
+<p begin="00:22:36.720" end="00:22:41.919" style="s2">As a law enforcement officer, I have</p>
+<p begin="00:22:38.640" end="00:22:46.000" style="s2">delivered news many times to parents to</p>
+<p begin="00:22:41.919" end="00:22:47.600" style="s2">a mom that your child is dead.</p>
+<p begin="00:22:46.000" end="00:22:49.679" style="s2">usually</p>
+<p begin="00:22:47.600" end="00:22:53.280" style="s2">through an accident or some other</p>
+<p begin="00:22:49.679" end="00:22:57.039" style="s2">circumstance. I cannot fathom being told</p>
+<p begin="00:22:53.280" end="00:23:00.559" style="s2">that my child was tortured, raped, duct</p>
+<p begin="00:22:57.039" end="00:23:03.760" style="s2">taped for 10 hours by these animals. And</p>
+<p begin="00:23:00.559" end="00:23:06.400" style="s2">then Gavin Newsome says, &quot;Guess what? I</p>
+<p begin="00:23:03.760" end="00:23:08.960" style="s2">got your back, inmates.</p>
+<p begin="00:23:06.400" end="00:23:11.760" style="s2">I got your back.&quot;</p>
+<p begin="00:23:08.960" end="00:23:14.320" style="s2">You know what? Trump&#39;s got our back. Our</p>
+<p begin="00:23:11.760" end="00:23:15.919" style="s2">DOJ today has our back back. It is an</p>
+<p begin="00:23:14.320" end="00:23:18.080" style="s2">honor to be here today. Even though I</p>
+<p begin="00:23:15.919" end="00:23:20.000" style="s2">had zero desire to be here, I wanted to</p>
+<p begin="00:23:18.080" end="00:23:22.480" style="s2">go and live a quiet life and raise my</p>
+<p begin="00:23:20.000" end="00:23:24.159" style="s2">family.</p>
+<p begin="00:23:22.480" end="00:23:26.320" style="s2">As a Christian, I&#39;m called to forgive</p>
+<p begin="00:23:24.159" end="00:23:28.559" style="s2">and I have forgiven the man who murdered</p>
+<p begin="00:23:26.320" end="00:23:30.640" style="s2">my brother. But forgiveness does not</p>
+<p begin="00:23:28.559" end="00:23:32.559" style="s2">eliminate accountability or erase</p>
+<p begin="00:23:30.640" end="00:23:34.400" style="s2">consequences. Governor Nuomo</p>
+<p begin="00:23:32.559" end="00:23:35.760" style="s2">unilaterally decided that Brock Lanis</p>
+<p begin="00:23:34.400" end="00:23:38.080" style="s2">and these other inmates did not deserve</p>
+<p begin="00:23:35.760" end="00:23:41.919" style="s2">the penalty that was imposed by their</p>
+<p begin="00:23:38.080" end="00:23:43.360" style="s2">jurors by their jury by their peers.</p>
+<p begin="00:23:41.919" end="00:23:46.880" style="s2">Nor does he believe the California</p>
+<p begin="00:23:43.360" end="00:23:49.600" style="s2">voters who have twice California</p>
+<p begin="00:23:46.880" end="00:23:53.919" style="s2">twice voted to impose a death penalty</p>
+<p begin="00:23:49.600" end="00:23:56.640" style="s2">and had further uh on another measure</p>
+<p begin="00:23:53.919" end="00:23:59.280" style="s2">voted to increase the expedit the</p>
+<p begin="00:23:56.640" end="00:24:02.000" style="s2">quickness in which it happens</p>
+<p begin="00:23:59.280" end="00:24:04.640" style="s2">and Governor N Governor Nuome in his</p>
+<p begin="00:24:02.000" end="00:24:06.159" style="s2">morality clause decided ah you guys</p>
+<p begin="00:24:04.640" end="00:24:09.320" style="s2">don&#39;t know what you&#39;re talking about I</p>
+<p begin="00:24:06.159" end="00:24:09.320" style="s2">got this</p>
+<p begin="00:24:10.080" end="00:24:14.799" style="s2">Michael lived his life protecting those</p>
+<p begin="00:24:12.000" end="00:24:17.120" style="s2">who could not protect themselves. I ask</p>
+<p begin="00:24:14.799" end="00:24:19.520" style="s2">that we never forget Michael or the</p>
+<p begin="00:24:17.120" end="00:24:21.679" style="s2">victims or the families. Those were the</p>
+<p begin="00:24:19.520" end="00:24:24.640" style="s2">people that Mike protected. I want to</p>
+<p begin="00:24:21.679" end="00:24:27.840" style="s2">leave with a verse from Isaiah 5:20.</p>
+<p begin="00:24:24.640" end="00:24:29.679" style="s2">Woe to those who call evil good and good</p>
+<p begin="00:24:27.840" end="00:24:31.840" style="s2">evil.</p>
+<p begin="00:24:29.679" end="00:24:34.400" style="s2">Who replace light for dark and dark for</p>
+<p begin="00:24:31.840" end="00:24:36.240" style="s2">light. Governor Nuome, you made this</p>
+<p begin="00:24:34.400" end="00:24:38.000" style="s2">move in the darkness because it was a</p>
+<p begin="00:24:36.240" end="00:24:40.960" style="s2">political move that you thought would</p>
+<p begin="00:24:38.000" end="00:24:42.240" style="s2">benefit yourself. But guess what? I</p>
+<p begin="00:24:40.960" end="00:24:47.320" style="s2">don&#39;t think it&#39;s going to play out that</p>
+<p begin="00:24:42.240" end="00:24:47.320" style="s2">way. Thank you very much and God bless.</p>
+<p begin="00:24:57.279" end="00:25:02.000" style="s2">&gt;&gt; Thank you, Jason.</p>
+<p begin="00:24:59.279" end="00:25:03.679" style="s2">It&#39;s not easy to do for</p>
+<p begin="00:25:02.000" end="00:25:06.000" style="s2">these people. This is very tough. I</p>
+<p begin="00:25:03.679" end="00:25:09.279" style="s2">watch and it&#39;s very tough. I&#39;ve met so</p>
+<p begin="00:25:06.000" end="00:25:13.360" style="s2">many others. Toughest thing. their whole</p>
+<p begin="00:25:09.279" end="00:25:16.240" style="s2">lives have been turned around. We&#39;re all</p>
+<p begin="00:25:13.360" end="00:25:19.039" style="s2">also joined by the family of officer Gil</p>
+<p begin="00:25:16.240" end="00:25:21.279" style="s2">Vega, 35-year-old veteran of Palm</p>
+<p begin="00:25:19.039" end="00:25:24.960" style="s2">Springs Police Department and a father</p>
+<p begin="00:25:21.279" end="00:25:27.440" style="s2">of eight. In 2016, Gil was two months</p>
+<p begin="00:25:24.960" end="00:25:30.640" style="s2">away from retirement when he received a</p>
+<p begin="00:25:27.440" end="00:25:34.320" style="s2">domestic disturbance call. Arriving at</p>
+<p begin="00:25:30.640" end="00:25:38.080" style="s2">the scene, he was attacked by an armed</p>
+<p begin="00:25:34.320" end="00:25:40.720" style="s2">gunman, a very vicious one with an AR-15</p>
+<p begin="00:25:38.080" end="00:25:43.679" style="s2">who murdered Gil instantly and a fellow</p>
+<p begin="00:25:40.720" end="00:25:46.480" style="s2">officer. I&#39;d like to have his daughter,</p>
+<p begin="00:25:43.679" end="00:25:50.480" style="s2">Gloria, come up say a few words about</p>
+<p begin="00:25:46.480" end="00:25:52.720" style="s2">her great father, her hero, Officer Gil</p>
+<p begin="00:25:50.480" end="00:25:55.720" style="s2">Vega. Thank you very much, Gloria. Thank</p>
+<p begin="00:25:52.720" end="00:25:55.720" style="s2">you.</p>
+<p begin="00:26:03.440" end="00:26:09.039" style="s2">Thank you for inviting us and letting me</p>
+<p begin="00:26:06.240" end="00:26:11.679" style="s2">talk about my father. My father, Officer</p>
+<p begin="00:26:09.039" end="00:26:14.400" style="s2">Jose Gil Vega, was a hardworking,</p>
+<p begin="00:26:11.679" end="00:26:16.480" style="s2">loving, funny, and protective man. His</p>
+<p begin="00:26:14.400" end="00:26:18.960" style="s2">smile could light up a room, and his</p>
+<p begin="00:26:16.480" end="00:26:21.440" style="s2">laughter was contagious. He taught me</p>
+<p begin="00:26:18.960" end="00:26:23.760" style="s2">that life would not always be easy, but</p>
+<p begin="00:26:21.440" end="00:26:26.080" style="s2">no matter what challenges came my way, I</p>
+<p begin="00:26:23.760" end="00:26:28.480" style="s2">should always make the best of them.</p>
+<p begin="00:26:26.080" end="00:26:29.919" style="s2">For nearly 35 years, my dad proudly</p>
+<p begin="00:26:28.480" end="00:26:32.240" style="s2">served the Palm Springs Police</p>
+<p begin="00:26:29.919" end="00:26:35.120" style="s2">Department, the halls that I grew up in</p>
+<p begin="00:26:32.240" end="00:26:37.600" style="s2">as well. Dedicating his life to protect</p>
+<p begin="00:26:35.120" end="00:26:40.400" style="s2">others, he was twice recognized as</p>
+<p begin="00:26:37.600" end="00:26:42.159" style="s2">officer of the year. But what truly made</p>
+<p begin="00:26:40.400" end="00:26:45.200" style="s2">him special is the way he treated</p>
+<p begin="00:26:42.159" end="00:26:47.919" style="s2">people. He can make someone laugh even</p>
+<p begin="00:26:45.200" end="00:26:50.240" style="s2">while placing them under arrest. He</p>
+<p begin="00:26:47.919" end="00:26:52.159" style="s2">treated everyone with dignity and</p>
+<p begin="00:26:50.240" end="00:26:54.000" style="s2">respect regardless of their</p>
+<p begin="00:26:52.159" end="00:26:58.159" style="s2">circumstances.</p>
+<p begin="00:26:54.000" end="00:27:00.960" style="s2">On October 8th, 2016, just months before</p>
+<p begin="00:26:58.159" end="00:27:03.279" style="s2">his retirement, my father was tragically</p>
+<p begin="00:27:00.960" end="00:27:06.559" style="s2">killed in the line of duty while working</p>
+<p begin="00:27:03.279" end="00:27:08.320" style="s2">overtime shift.</p>
+<p begin="00:27:06.559" end="00:27:10.880" style="s2">After a large time of serving his</p>
+<p begin="00:27:08.320" end="00:27:13.679" style="s2">community, he never got to enjoy his</p>
+<p begin="00:27:10.880" end="00:27:16.480" style="s2">retirement he worked so hard to earn.</p>
+<p begin="00:27:13.679" end="00:27:19.760" style="s2">And his partner Leslie Zerbney never was</p>
+<p begin="00:27:16.480" end="00:27:22.000" style="s2">able to go home to her newborn daughter.</p>
+<p begin="00:27:19.760" end="00:27:25.279" style="s2">My dad was more than a police officer.</p>
+<p begin="00:27:22.000" end="00:27:27.600" style="s2">He was a loving father, a grandfather, a</p>
+<p begin="00:27:25.279" end="00:27:30.320" style="s2">devoted public servant and a friend of</p>
+<p begin="00:27:27.600" end="00:27:33.440" style="s2">many. I am incredibly proud to be his</p>
+<p begin="00:27:30.320" end="00:27:36.320" style="s2">daughter and his love, sacrifice and</p>
+<p begin="00:27:33.440" end="00:27:40.279" style="s2">legacy will stay with me forever. You</p>
+<p begin="00:27:36.320" end="00:27:40.279" style="s2">know their lives mattered.</p>
+<p begin="00:27:41.520" end="00:27:45.159" style="s2">Just thank you.</p>
+<p begin="00:27:56.640" end="00:28:02.240" style="s2">Thank you, Gloria, very much.</p>
+<p begin="00:27:59.679" end="00:28:04.720" style="s2">And in Officer Vega&#39;s honor, I&#39;m</p>
+<p begin="00:28:02.240" end="00:28:06.960" style="s2">announcing today that I&#39;ll contribute</p>
+<p begin="00:28:04.720" end="00:28:09.279" style="s2">$5,000 to Trump account. That&#39;s the</p>
+<p begin="00:28:06.960" end="00:28:12.080" style="s2">maximum I&#39;m allowed to give. Otherwise,</p>
+<p begin="00:28:09.279" end="00:28:13.600" style="s2">Todd will have to come and arrest me.</p>
+<p begin="00:28:12.080" end="00:28:17.679" style="s2">And I don&#39;t like that. I wouldn&#39;t like</p>
+<p begin="00:28:13.600" end="00:28:21.360" style="s2">him for that. But uh I&#39;m giving $5,000</p>
+<p begin="00:28:17.679" end="00:28:24.320" style="s2">to his 17-year-old granddaughter,</p>
+<p begin="00:28:21.360" end="00:28:26.480" style="s2">Angelina, who is also with us. Where&#39;s</p>
+<p begin="00:28:24.320" end="00:28:29.480" style="s2">Angelina? Hi, Angelina. Well,</p>
+<p begin="00:28:26.480" end="00:28:29.480" style="s2">congratulations.</p>
+<p begin="00:28:33.120" end="00:28:36.960" style="s2">Thank you, Barry.</p>
+<p begin="00:28:35.039" end="00:28:39.840" style="s2">And Angelini, your grandfather is</p>
+<p begin="00:28:36.960" end="00:28:42.799" style="s2">looking down right now on you both with</p>
+<p begin="00:28:39.840" end="00:28:45.600" style="s2">great pride. Great pride.</p>
+<p begin="00:28:42.799" end="00:28:48.320" style="s2">Thank you. Great job. Our nation</p>
+<p begin="00:28:45.600" end="00:28:51.840" style="s2">grieavves for every law enforcement</p>
+<p begin="00:28:48.320" end="00:28:54.159" style="s2">officer slain in the line of duty. That</p>
+<p begin="00:28:51.840" end="00:28:56.399" style="s2">is why on day one of my administration,</p>
+<p begin="00:28:54.159" end="00:28:58.880" style="s2">I signed an executive order directing</p>
+<p begin="00:28:56.399" end="00:29:00.799" style="s2">Department of Justice to ensure that</p>
+<p begin="00:28:58.880" end="00:29:03.840" style="s2">anyone who murders a member of law</p>
+<p begin="00:29:00.799" end="00:29:05.760" style="s2">enforcement receives the death penalty.</p>
+<p begin="00:29:03.840" end="00:29:08.240" style="s2">And I&#39;m pleased to say that last year,</p>
+<p begin="00:29:05.760" end="00:29:11.520" style="s2">police officer deaths in the line of</p>
+<p begin="00:29:08.240" end="00:29:13.679" style="s2">duty plummeted to the lowest level in</p>
+<p begin="00:29:11.520" end="00:29:16.000" style="s2">the history of our country.</p>
+<p begin="00:29:13.679" end="00:29:18.559" style="s2">So, let me also recognize the other</p>
+<p begin="00:29:16.000" end="00:29:20.480" style="s2">families with us whose loved ones were</p>
+<p begin="00:29:18.559" end="00:29:24.000" style="s2">murdered by Newsome&#39;s monsters,</p>
+<p begin="00:29:20.480" end="00:29:26.240" style="s2">including the parents of Ball Bailey, an</p>
+<p begin="00:29:24.000" end="00:29:28.640" style="s2">eight-year-old boy who was kidnapped by</p>
+<p begin="00:29:26.240" end="00:29:32.000" style="s2">a former daycare employee, raped,</p>
+<p begin="00:29:28.640" end="00:29:34.559" style="s2">strangled to death, and set on fire. The</p>
+<p begin="00:29:32.000" end="00:29:38.240" style="s2">family of 26-year-old US Army veteran</p>
+<p begin="00:29:34.559" end="00:29:41.919" style="s2">Sam her, who was shot twice in the head,</p>
+<p begin="00:29:38.240" end="00:29:43.919" style="s2">and brutally dismembered.</p>
+<p begin="00:29:41.919" end="00:29:47.760" style="s2">Hard to believe.</p>
+<p begin="00:29:43.919" end="00:29:50.559" style="s2">The family of Daniel Hoover Nahara, a</p>
+<p begin="00:29:47.760" end="00:29:52.480" style="s2">20- yearear-old firefighter with the US</p>
+<p begin="00:29:50.559" end="00:29:54.880" style="s2">Forest Service who was killed by an</p>
+<p begin="00:29:52.480" end="00:29:57.279" style="s2">arsonist. The family of Gabriel</p>
+<p begin="00:29:54.880" end="00:29:59.760" style="s2">Fernandez, an 8-year-old boy, eight</p>
+<p begin="00:29:57.279" end="00:30:03.520" style="s2">years old, think of that. Killed after</p>
+<p begin="00:29:59.760" end="00:30:07.440" style="s2">months of severe abuse and torture.</p>
+<p begin="00:30:03.520" end="00:30:10.720" style="s2">the family of officer Larry Lacier,</p>
+<p begin="00:30:07.440" end="00:30:13.039" style="s2">35-year-old Marine veteran murdered by</p>
+<p begin="00:30:10.720" end="00:30:16.080" style="s2">two armed robbery suspects, leaving</p>
+<p begin="00:30:13.039" end="00:30:19.919" style="s2">behind a pregnant wife. I want to thank</p>
+<p begin="00:30:16.080" end="00:30:22.399" style="s2">all of you and deepest sympathies to our</p>
+<p begin="00:30:19.919" end="00:30:25.840" style="s2">entire nation and from our entire</p>
+<p begin="00:30:22.399" end="00:30:28.559" style="s2">nation. In the Trump administration, we</p>
+<p begin="00:30:25.840" end="00:30:30.960" style="s2">can find common ground with Democrats on</p>
+<p begin="00:30:28.559" end="00:30:33.039" style="s2">many issues such as</p>
+<p begin="00:30:30.960" end="00:30:35.679" style="s2">lowering the price of drugs where we&#39;ve</p>
+<p begin="00:30:33.039" end="00:30:37.760" style="s2">done that at a record level, improving</p>
+<p begin="00:30:35.679" end="00:30:40.159" style="s2">health care, and protecting the American</p>
+<p begin="00:30:37.760" end="00:30:43.760" style="s2">worker. But when it comes to defending</p>
+<p begin="00:30:40.159" end="00:30:45.600" style="s2">the lives and safety of American people,</p>
+<p begin="00:30:43.760" end="00:30:47.120" style="s2">there can be no compromise. We&#39;re not</p>
+<p begin="00:30:45.600" end="00:30:49.840" style="s2">going to compromise. We&#39;re going to take</p>
+<p begin="00:30:47.120" end="00:30:52.159" style="s2">this right to the end. Law enforcement</p>
+<p begin="00:30:49.840" end="00:30:54.720" style="s2">is not the enemy. the enemy are those</p>
+<p begin="00:30:52.159" end="00:30:58.240" style="s2">who rape and murder our citizens and</p>
+<p begin="00:30:54.720" end="00:31:00.399" style="s2">they deserve no mercy. For years now, we</p>
+<p begin="00:30:58.240" end="00:31:03.440" style="s2">have watched the radical left commit one</p>
+<p begin="00:31:00.399" end="00:31:06.240" style="s2">betrayal of justice and safety after</p>
+<p begin="00:31:03.440" end="00:31:08.880" style="s2">another. Just days ago, a deranged</p>
+<p begin="00:31:06.240" end="00:31:11.039" style="s2">homeless man with over 60 prior arrests.</p>
+<p begin="00:31:08.880" end="00:31:13.200" style="s2">Think of that, 60 prior arrests, was</p>
+<p begin="00:31:11.039" end="00:31:15.840" style="s2">charged with murdering a 62year-old</p>
+<p begin="00:31:13.200" end="00:31:19.440" style="s2">woman in New York after radical left</p>
+<p begin="00:31:15.840" end="00:31:22.159" style="s2">judges released him for custody.</p>
+<p begin="00:31:19.440" end="00:31:26.720" style="s2">And uh this is like incredible. We</p>
+<p begin="00:31:22.159" end="00:31:29.600" style="s2">released him to be uh his own guardian</p>
+<p begin="00:31:26.720" end="00:31:32.320" style="s2">twice in the same month. Our opponents</p>
+<p begin="00:31:29.600" end="00:31:34.640" style="s2">seek an America that empowers the most</p>
+<p begin="00:31:32.320" end="00:31:36.159" style="s2">violent and dangerous elements and</p>
+<p begin="00:31:34.640" end="00:31:39.120" style="s2">celebrates</p>
+<p begin="00:31:36.159" end="00:31:42.559" style="s2">deviency and enables dysfunction and</p>
+<p begin="00:31:39.120" end="00:31:44.880" style="s2">demands empathy for serial killers and</p>
+<p begin="00:31:42.559" end="00:31:47.120" style="s2">criminals while hardworking citizens are</p>
+<p begin="00:31:44.880" end="00:31:50.000" style="s2">treated with hatred and scorn and</p>
+<p begin="00:31:47.120" end="00:31:52.240" style="s2">contempt. and nobody gets it. In the</p>
+<p begin="00:31:50.000" end="00:31:54.720" style="s2">Trump administration, we believe in the</p>
+<p begin="00:31:52.240" end="00:31:57.519" style="s2">exact opposite. We&#39;re fighting to uplift</p>
+<p begin="00:31:54.720" end="00:31:59.919" style="s2">the law-abiding and protect the most</p>
+<p begin="00:31:57.519" end="00:32:02.640" style="s2">vulnerable, to reward hard work and</p>
+<p begin="00:31:59.919" end="00:32:04.720" style="s2">decency, to defend the innocent, and to</p>
+<p begin="00:32:02.640" end="00:32:06.000" style="s2">punish the guilty.</p>
+<p begin="00:32:04.720" end="00:32:07.440" style="s2">You would think that would be just</p>
+<p begin="00:32:06.000" end="00:32:09.840" style="s2">common sense, wouldn&#39;t you? You would</p>
+<p begin="00:32:07.440" end="00:32:13.120" style="s2">think everybody would be with us on</p>
+<p begin="00:32:09.840" end="00:32:16.720" style="s2">that. But most people are. Every single</p>
+<p begin="00:32:13.120" end="00:32:18.399" style="s2">day I&#39;ve had the honor to serve as your</p>
+<p begin="00:32:16.720" end="00:32:21.519" style="s2">president. It&#39;s a great honor. There can</p>
+<p begin="00:32:18.399" end="00:32:24.559" style="s2">be no greater honor. I&#39;ll work to defeat</p>
+<p begin="00:32:21.519" end="00:32:26.799" style="s2">those who would destroy everything you</p>
+<p begin="00:32:24.559" end="00:32:28.720" style="s2">hold dear. And I&#39;ll fight for your</p>
+<p begin="00:32:26.799" end="00:32:31.519" style="s2">lives, your family, your safety, your</p>
+<p begin="00:32:28.720" end="00:32:33.919" style="s2">dignity, and your freedom. Since I took</p>
+<p begin="00:32:31.519" end="00:32:35.840" style="s2">office, we&#39;ve achieved an unprecedented</p>
+<p begin="00:32:33.919" end="00:32:38.799" style="s2">reduction in violent crime, including</p>
+<p begin="00:32:35.840" end="00:32:42.720" style="s2">the largest drop ever the history of our</p>
+<p begin="00:32:38.799" end="00:32:45.200" style="s2">country in the murder rate. And the</p>
+<p begin="00:32:42.720" end="00:32:48.960" style="s2">lowest level in</p>
+<p begin="00:32:45.200" end="00:32:51.760" style="s2">125 years is 1900. The year 1900. We had</p>
+<p begin="00:32:48.960" end="00:32:53.919" style="s2">the best year. And I see cash in the</p>
+<p begin="00:32:51.760" end="00:32:57.679" style="s2">audience. And I see you have a lot of</p>
+<p begin="00:32:53.919" end="00:33:01.600" style="s2">talent sitting in that first row. And uh</p>
+<p begin="00:32:57.679" end="00:33:04.320" style="s2">especially the wife of Todd Blanch,</p>
+<p begin="00:33:01.600" end="00:33:06.559" style="s2">who&#39;s a very special woman. He he&#39;s not</p>
+<p begin="00:33:04.320" end="00:33:08.960" style="s2">too easy to be with. I say he probably</p>
+<p begin="00:33:06.559" end="00:33:11.519" style="s2">is. He&#39;s a great man. He&#39;s going to be</p>
+<p begin="00:33:08.960" end="00:33:14.000" style="s2">He&#39;s going to go down as a great man.</p>
+<p begin="00:33:11.519" end="00:33:16.320" style="s2">Last year, there were more than 3,000</p>
+<p begin="00:33:14.000" end="00:33:17.919" style="s2">fewer murders than before I took office.</p>
+<p begin="00:33:16.320" end="00:33:19.600" style="s2">That&#39;s a big statement. Federal law</p>
+<p begin="00:33:17.919" end="00:33:22.080" style="s2">enforcement</p>
+<p begin="00:33:19.600" end="00:33:24.080" style="s2">has arrested more than 1.2 million</p>
+<p begin="00:33:22.080" end="00:33:28.000" style="s2">criminals under my administration.</p>
+<p begin="00:33:24.080" end="00:33:30.000" style="s2">Violent crime arrests are up 90%.</p>
+<p begin="00:33:28.000" end="00:33:32.640" style="s2">And we deployed the National Guard to</p>
+<p begin="00:33:30.000" end="00:33:35.120" style="s2">restore law and order to Memphis, New</p>
+<p begin="00:33:32.640" end="00:33:37.840" style="s2">Orleans, Washington DC, and crime is</p>
+<p begin="00:33:35.120" end="00:33:40.880" style="s2">down more than 80%.</p>
+<p begin="00:33:37.840" end="00:33:42.720" style="s2">Think of it in Washington DC. Every day</p>
+<p begin="00:33:40.880" end="00:33:44.720" style="s2">I come to the office, somebody thanking</p>
+<p begin="00:33:42.720" end="00:33:47.120" style="s2">me. It&#39;s so because I remember two years</p>
+<p begin="00:33:44.720" end="00:33:50.640" style="s2">ago it was a disaster.</p>
+<p begin="00:33:47.120" end="00:33:53.760" style="s2">We average three murders a week, 150</p>
+<p begin="00:33:50.640" end="00:33:55.679" style="s2">murders. And now you it&#39;s very rare that</p>
+<p begin="00:33:53.760" end="00:33:59.600" style="s2">we have anything like that happening.</p>
+<p begin="00:33:55.679" end="00:34:01.679" style="s2">Crimes down some people say by 88%.</p>
+<p begin="00:33:59.600" end="00:34:03.440" style="s2">It&#39;s a safe city again. It&#39;s a thriving</p>
+<p begin="00:34:01.679" end="00:34:05.039" style="s2">city. Restaurants are opening. People</p>
+<p begin="00:34:03.440" end="00:34:06.320" style="s2">are going out to dinner without any</p>
+<p begin="00:34:05.039" end="00:34:08.480" style="s2">fear.</p>
+<p begin="00:34:06.320" end="00:34:10.480" style="s2">What a difference it makes. I want to</p>
+<p begin="00:34:08.480" end="00:34:12.960" style="s2">thank the many members of the police and</p>
+<p begin="00:34:10.480" end="00:34:15.599" style="s2">law enforcement here today who have</p>
+<p begin="00:34:12.960" end="00:34:18.159" style="s2">helped achieve those extraordinary gains</p>
+<p begin="00:34:15.599" end="00:34:19.760" style="s2">in public safety. I see one of them</p>
+<p begin="00:34:18.159" end="00:34:22.399" style="s2">right over there. Paul, would you please</p>
+<p begin="00:34:19.760" end="00:34:25.560" style="s2">stand up? Border Patrol, my friend for a</p>
+<p begin="00:34:22.399" end="00:34:25.560" style="s2">long time.</p>
+<p begin="00:34:25.760" end="00:34:31.359" style="s2">Great job.</p>
+<p begin="00:34:28.960" end="00:34:35.839" style="s2">Thanks as well to FBI Director Cash</p>
+<p begin="00:34:31.359" end="00:34:38.320" style="s2">Patel, DEA Administrator Terry Cole,</p>
+<p begin="00:34:35.839" end="00:34:41.760" style="s2">Dire Stand up fellows, will you please?</p>
+<p begin="00:34:38.320" end="00:34:45.720" style="s2">You know, you deserve to stand up.</p>
+<p begin="00:34:41.760" end="00:34:45.720" style="s2">Good. Hi, Terry.</p>
+<p begin="00:34:47.760" end="00:34:54.720" style="s2">Director of the Bureau of Prisons, Billy</p>
+<p begin="00:34:50.720" end="00:34:57.200" style="s2">Marshall. Billy, thank you, Billy.</p>
+<p begin="00:34:54.720" end="00:34:59.280" style="s2">Thank you.</p>
+<p begin="00:34:57.200" end="00:35:03.320" style="s2">US Attorney for the District of</p>
+<p begin="00:34:59.280" end="00:35:03.320" style="s2">Columbia, Janine Piro.</p>
+<p begin="00:35:04.640" end="00:35:11.599" style="s2">Thank you, Janine.</p>
+<p begin="00:35:08.000" end="00:35:13.760" style="s2">Congressman Brandon Gil, a future star,</p>
+<p begin="00:35:11.599" end="00:35:16.760" style="s2">I predict,</p>
+<p begin="00:35:13.760" end="00:35:16.760" style="s2">right?</p>
+<p begin="00:35:18.000" end="00:35:24.400" style="s2">the national president of the Fraternal</p>
+<p begin="00:35:21.119" end="00:35:27.440" style="s2">Order of Police and a big supporter of</p>
+<p begin="00:35:24.400" end="00:35:29.680" style="s2">me and people that really uh believe in</p>
+<p begin="00:35:27.440" end="00:35:31.839" style="s2">you, the people in this room, Patrick</p>
+<p begin="00:35:29.680" end="00:35:35.079" style="s2">Yo. Patrick, thank you. Thank you very</p>
+<p begin="00:35:31.839" end="00:35:35.079" style="s2">much, Patrick.</p>
+<p begin="00:35:35.119" end="00:35:40.960" style="s2">President of the California Fraternal</p>
+<p begin="00:35:37.280" end="00:35:45.640" style="s2">Order of Police, Roger Hilton. Roger,</p>
+<p begin="00:35:40.960" end="00:35:45.640" style="s2">thank you. Thank you.</p>
+<p begin="00:35:45.839" end="00:35:52.320" style="s2">President of the Federal Law Enforcement</p>
+<p begin="00:35:48.480" end="00:35:56.280" style="s2">Officers Association, Matthew Silverman.</p>
+<p begin="00:35:52.320" end="00:35:56.280" style="s2">Matthew, thank you.</p>
+<p begin="00:35:58.320" end="00:36:04.400" style="s2">And the former president of Crime</p>
+<p begin="00:36:00.720" end="00:36:07.599" style="s2">Victims United, Nina Salerno. Nina,</p>
+<p begin="00:36:04.400" end="00:36:10.839" style="s2">thank you very much.</p>
+<p begin="00:36:07.599" end="00:36:10.839" style="s2">Thank you.</p>
+<p begin="00:36:11.200" end="00:36:15.920" style="s2">Today, I&#39;m announcing several major new</p>
+<p begin="00:36:14.000" end="00:36:17.920" style="s2">actions to continue our progress</p>
+<p begin="00:36:15.920" end="00:36:20.240" style="s2">combating violent crime and to ensure</p>
+<p begin="00:36:17.920" end="00:36:22.960" style="s2">that the worst of the worst criminals</p>
+<p begin="00:36:20.240" end="00:36:24.800" style="s2">are met with the retribution and</p>
+<p begin="00:36:22.960" end="00:36:27.680" style="s2">punishment they deserve. You know, we&#39;ve</p>
+<p begin="00:36:24.800" end="00:36:29.760" style="s2">gone 18 months now without one, it&#39;s</p>
+<p begin="00:36:27.680" end="00:36:31.520" style="s2">hard to believe actually, it almost I&#39;d</p>
+<p begin="00:36:29.760" end="00:36:33.280" style="s2">rather say a few got in because it</p>
+<p begin="00:36:31.520" end="00:36:35.599" style="s2">sounds more believable, but this is a</p>
+<p begin="00:36:33.280" end="00:36:38.320" style="s2">fact made by not us, but by other</p>
+<p begin="00:36:35.599" end="00:36:41.040" style="s2">people. Not one person came through our</p>
+<p begin="00:36:38.320" end="00:36:43.599" style="s2">southern border. Paul, not one for 18</p>
+<p begin="00:36:41.040" end="00:36:46.000" style="s2">months, but one illegal alien, as we</p>
+<p begin="00:36:43.599" end="00:36:47.760" style="s2">say, and that&#39;s a record that probably</p>
+<p begin="00:36:46.000" end="00:36:50.480" style="s2">will never be broken, but we&#39;ll keep it</p>
+<p begin="00:36:47.760" end="00:36:52.240" style="s2">going as long as we can. Already, the</p>
+<p begin="00:36:50.480" end="00:36:54.800" style="s2">caravans have started, but we&#39;re not</p>
+<p begin="00:36:52.240" end="00:36:57.040" style="s2">letting them up, and Mexico better not</p>
+<p begin="00:36:54.800" end="00:36:59.680" style="s2">let them up either. First, in a few</p>
+<p begin="00:36:57.040" end="00:37:01.760" style="s2">moments, I will sign a presidential</p>
+<p begin="00:36:59.680" end="00:37:03.839" style="s2">directive ordering the Department of</p>
+<p begin="00:37:01.760" end="00:37:06.800" style="s2">Justice to seek the death penalty for</p>
+<p begin="00:37:03.839" end="00:37:08.480" style="s2">child murderers as well as rapists and</p>
+<p begin="00:37:06.800" end="00:37:11.119" style="s2">human traffickers who kill their</p>
+<p begin="00:37:08.480" end="00:37:13.040" style="s2">victims. My order also directs the</p>
+<p begin="00:37:11.119" end="00:37:15.760" style="s2">attorney general to expedite the</p>
+<p begin="00:37:13.040" end="00:37:17.680" style="s2">execution of federal death sentences.</p>
+<p begin="00:37:15.760" end="00:37:21.359" style="s2">Once juries have spoken, capital</p>
+<p begin="00:37:17.680" end="00:37:23.280" style="s2">punishment will be swift and certain.</p>
+<p begin="00:37:21.359" end="00:37:25.440" style="s2">I&#39;m also directing the Department of</p>
+<p begin="00:37:23.280" end="00:37:27.839" style="s2">Housing and Urban Development to compel</p>
+<p begin="00:37:25.440" end="00:37:30.480" style="s2">public housing authorities to strengthen</p>
+<p begin="00:37:27.839" end="00:37:33.119" style="s2">tenant screenings and make it easier to</p>
+<p begin="00:37:30.480" end="00:37:35.520" style="s2">remove problematic tenants, of which</p>
+<p begin="00:37:33.119" end="00:37:37.680" style="s2">people know who they are. Law-ab-bing</p>
+<p begin="00:37:35.520" end="00:37:40.400" style="s2">families in need should not be forced to</p>
+<p begin="00:37:37.680" end="00:37:42.800" style="s2">live beside dangerous criminals turning</p>
+<p begin="00:37:40.400" end="00:37:46.160" style="s2">affordable housing into dens of violence</p>
+<p begin="00:37:42.800" end="00:37:48.560" style="s2">and crime and horrible, horrible way to</p>
+<p begin="00:37:46.160" end="00:37:50.320" style="s2">live. In addition, today I&#39;m announcing</p>
+<p begin="00:37:48.560" end="00:37:54.560" style="s2">that the Department of Justice will</p>
+<p begin="00:37:50.320" end="00:37:56.800" style="s2">award nearly $150 million to new public</p>
+<p begin="00:37:54.560" end="00:37:59.280" style="s2">safety grants to help hire more than</p>
+<p begin="00:37:56.800" end="00:38:03.040" style="s2">1,000 additional sworn law enforcement</p>
+<p begin="00:37:59.280" end="00:38:05.440" style="s2">officers and speed up response times to</p>
+<p begin="00:38:03.040" end="00:38:08.079" style="s2">reports of domestic violence and sexual</p>
+<p begin="00:38:05.440" end="00:38:11.320" style="s2">assault nationwide.</p>
+<p begin="00:38:08.079" end="00:38:11.320" style="s2">Thank you.</p>
+<p begin="00:38:12.960" end="00:38:17.920" style="s2">Thank you very much.</p>
+<p begin="00:38:15.599" end="00:38:20.400" style="s2">And finally, at my request, Congressman</p>
+<p begin="00:38:17.920" end="00:38:22.720" style="s2">Brandon Gil has just introduced a new</p>
+<p begin="00:38:20.400" end="00:38:24.880" style="s2">bill to strengthen the death penalty in</p>
+<p begin="00:38:22.720" end="00:38:27.440" style="s2">America. And it&#39;s going to be much</p>
+<p begin="00:38:24.880" end="00:38:29.280" style="s2">different than it was in the past. Uh</p>
+<p begin="00:38:27.440" end="00:38:33.119" style="s2">it&#39;s going to be strong. It&#39;s going to</p>
+<p begin="00:38:29.280" end="00:38:36.960" style="s2">be swift. The Just Punishment for Murder</p>
+<p begin="00:38:33.119" end="00:38:39.200" style="s2">Act will codify many aspects of today&#39;s</p>
+<p begin="00:38:36.960" end="00:38:41.599" style="s2">directive along with my executive order</p>
+<p begin="00:38:39.200" end="00:38:43.760" style="s2">on capital punishment for killers of law</p>
+<p begin="00:38:41.599" end="00:38:45.920" style="s2">enforcement. and it will expand the</p>
+<p begin="00:38:43.760" end="00:38:48.320" style="s2">policy to ensure that illegal alien</p>
+<p begin="00:38:45.920" end="00:38:50.880" style="s2">murderers are likewise sentenced to</p>
+<p begin="00:38:48.320" end="00:38:52.880" style="s2">death. And I&#39;m calling on Congress to</p>
+<p begin="00:38:50.880" end="00:38:54.400" style="s2">send me that bill without delay. And I</p>
+<p begin="00:38:52.880" end="00:38:59.079" style="s2">will sign it, Brandon, very, very</p>
+<p begin="00:38:54.400" end="00:38:59.079" style="s2">quickly. Okay. Thank you very much.</p>
+<p begin="00:39:00.160" end="00:39:05.119" style="s2">And the ultimate</p>
+<p begin="00:39:02.160" end="00:39:08.160" style="s2">crimes deserve the ultimate punishment.</p>
+<p begin="00:39:05.119" end="00:39:11.119" style="s2">This age-old wisdom has been a principle</p>
+<p begin="00:39:08.160" end="00:39:13.200" style="s2">of virtually every society throughout</p>
+<p begin="00:39:11.119" end="00:39:15.440" style="s2">history. at least every successful</p>
+<p begin="00:39:13.200" end="00:39:17.440" style="s2">society. And under the Trump</p>
+<p begin="00:39:15.440" end="00:39:20.400" style="s2">administration, we are bringing it back.</p>
+<p begin="00:39:17.440" end="00:39:23.200" style="s2">And we will not stop in our pursuit of</p>
+<p begin="00:39:20.400" end="00:39:25.280" style="s2">justice. We will not yield. And we just</p>
+<p begin="00:39:23.200" end="00:39:28.079" style="s2">won&#39;t yield to the communists, to</p>
+<p begin="00:39:25.280" end="00:39:29.920" style="s2">criminals, to horrible people, people</p>
+<p begin="00:39:28.079" end="00:39:32.720" style="s2">that want to destroy our country. People</p>
+<p begin="00:39:29.920" end="00:39:34.400" style="s2">that really desire to just destroy our</p>
+<p begin="00:39:32.720" end="00:39:36.960" style="s2">country.</p>
+<p begin="00:39:34.400" end="00:39:38.640" style="s2">And I guess they know it. Many of them</p>
+<p begin="00:39:36.960" end="00:39:41.040" style="s2">do. We&#39;re not going to let it happen.</p>
+<p begin="00:39:38.640" end="00:39:43.040" style="s2">will not waver in our commitment to</p>
+<p begin="00:39:41.040" end="00:39:45.760" style="s2">these families and we will fight, fight,</p>
+<p begin="00:39:43.040" end="00:39:48.560" style="s2">fight and we will make America safer and</p>
+<p begin="00:39:45.760" end="00:39:50.160" style="s2">stronger and greater than ever before.</p>
+<p begin="00:39:48.560" end="00:39:53.359" style="s2">And I want to just thank everybody in</p>
+<p begin="00:39:50.160" end="00:39:55.359" style="s2">this audience. You have so many I know</p>
+<p begin="00:39:53.359" end="00:39:57.040" style="s2">so many are incredible. These are</p>
+<p begin="00:39:55.359" end="00:39:59.520" style="s2">incredible people. You&#39;re the people</p>
+<p begin="00:39:57.040" end="00:40:02.160" style="s2">that keep us all safe. You&#39;re</p>
+<p begin="00:39:59.520" end="00:40:03.839" style="s2">incredible, beautiful people. And I want</p>
+<p begin="00:40:02.160" end="00:40:05.680" style="s2">to thank you very much. It&#39;s an honor to</p>
+<p begin="00:40:03.839" end="00:40:09.680" style="s2">be your president. Thank you everybody.</p>
+<p begin="00:40:05.680" end="00:40:09.680" style="s2">God bless you all. Thank you.</p>
+<p begin="00:40:22.217" end="00:40:24.237" style="s2">&gt;&gt; [applause]</p>
+</div>
+</body>
+</tt>

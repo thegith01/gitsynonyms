@@ -1,0 +1,3541 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 160,
+    "dDurationMs": 7240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Please welcome to the stage the Attorney\nGeneral of the United States, Todd",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 4400,
+    "dDurationMs": 3000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Blanch.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 10480,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[music]"
+    } ]
+  }, {
+    "tStartMs": 15839,
+    "dDurationMs": 3241,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 19119,
+    "dDurationMs": 6801,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you. Good afternoon.\nWelcome to the Department of Justice.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 23199,
+    "dDurationMs": 7041,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And I want to be the first to welcome uh\nPresident Trump to his second trip back",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 28240,
+    "dDurationMs": 6560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to the Department of Justice as a 47th\nPresident of the United States. We are",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 32079,
+    "dDurationMs": 7121,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "honored, humbled, and thrilled to have\nyou join us today, Mr. President. And on",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 37040,
+    "dDurationMs": 7359,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "behalf of the prosecutors in the room,\nthe law enforcement members in the room,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 41440,
+    "dDurationMs": 7520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and everybody that's here today, let me\njust tell you that we are here. We are",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 46399,
+    "dDurationMs": 6961,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "so appreciative that President Trump\ndelivered on his promise to the American",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 50800,
+    "dDurationMs": 7200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "people that when he took office again\nthat he would do everything in his power",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 55120,
+    "dDurationMs": 8079,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to unleash law enforcement to do their\njobs to keep this country safe again,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 61520,
+    "dDurationMs": 7720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "which is exactly what he's done. So,\nthank you, Mr. President. We're also on",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 65920,
+    "dDurationMs": 3320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 69280,
+    "dDurationMs": 7839,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "We're also honored to welcome some of\nthe families of the victims whose lives",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 75200,
+    "dDurationMs": 8320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "were forever changed by the vicious\nbehavior of the death row inmates whose",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 80880,
+    "dDurationMs": 8160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "sentences have now been commuted by\nGovernor Nuome. Thank you very much for",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 86240,
+    "dDurationMs": 9839,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "being here today and thank you for\nspeaking up. Mr. President, on day one,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 93840,
+    "dDurationMs": 6560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "on day one of your presidency, you\nissued an executive order that directed",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 98240,
+    "dDurationMs": 8400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the Department of Justice to seek the\ndeath penalty wherever appropriate.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 103840,
+    "dDurationMs": 9440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Since January 20th of last year, the\nDepartment of Justice has done so 49",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 109920,
+    "dDurationMs": 7760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "times. Now, when you compare that to the\nlast administration, during the last",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 115520,
+    "dDurationMs": 6559,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "administration, the Department of\nJustice sought the death penalty one",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 120240,
+    "dDurationMs": 7440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "time.\nOne time. That is not justice. That is",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 125600,
+    "dDurationMs": 6639,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "not what the American people deserve.\nThat is not what the families of victims",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 129599,
+    "dDurationMs": 6000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "of horrific murders deserve. And so, Mr.\nPresident, I assure you that this",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 134080,
+    "dDurationMs": 7200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Department of Justice is seeking the\ndeath penalty whenever appropriate for",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 138400,
+    "dDurationMs": 7839,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "crimes get committed in this country.\nSo,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 143520,
+    "dDurationMs": 7200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I want to take just a moment\nand tell every law enforcement member",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 148160,
+    "dDurationMs": 6719,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "watching or here in this room that we\nhave your back, that President Trump has",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 152879,
+    "dDurationMs": 7521,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "your back, and he will always have your\nback. to the families",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 158640,
+    "dDurationMs": 6640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to the families of the victims of the\nhorrible crimes that have been committed",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 163440,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "not only in California but around this\ncountry. Make no mistake about it that",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 168080,
+    "dDurationMs": 7519,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "this Department of Justice every single\nday that our prosecutors that our",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 172480,
+    "dDurationMs": 8880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "federal agents will do everything we can\nto impose the harshest penalty possible",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 178800,
+    "dDurationMs": 6560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "under the facts of the case consistent\nwith the president's agenda. That's what",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 183200,
+    "dDurationMs": 9039,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "we have done since January 20th. of what\nwe will continue to do from this day",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 187840,
+    "dDurationMs": 10560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "going forward. So with that, let me be\num let me just ask everybody to get on",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 194640,
+    "dDurationMs": 8412,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "their feet and welcome the 45th and 47th\npresident of the United States,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 200080,
+    "dDurationMs": 4992,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "President Donald J. Trump.\n[music]",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 211567,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [music]",
+      "isSpeakerChange": 1
+    } ]
+  }, {
+    "tStartMs": 219440,
+    "dDurationMs": 3079,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Heat. Heat.",
+      "acAsrConf": 0,
+      "isSpeakerChange": 1
+    } ]
+  }, {
+    "tStartMs": 231872,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [music]",
+      "isSpeakerChange": 1
+    } ]
+  }, {
+    "tStartMs": 237112,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[music]"
+    } ]
+  }, {
+    "tStartMs": 241697,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[music]"
+    } ]
+  }, {
+    "tStartMs": 246319,
+    "dDurationMs": 10320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Thank you very much. Please. Thank you.\nIt's a great honor.",
+      "acAsrConf": 0,
+      "isSpeakerChange": 1
+    } ]
+  }, {
+    "tStartMs": 252640,
+    "dDurationMs": 10559,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I want to just welcome all of you to a\nvery safe Washington DC. You know, the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 260320,
+    "dDurationMs": 7520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "crime rates gone down 84%\nand a lot of the people in this room are",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 264960,
+    "dDurationMs": 8480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "responsible for that. And I want to\nthank you to a very special thanks to an",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 271520,
+    "dDurationMs": 4880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "outstanding attorney general. It's going\nto be one of the greats. I think he'll",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 274880,
+    "dDurationMs": 6840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "go down as one of the greats when we're\nfinished. Todd Blanch. Thank you, Todd.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 278320,
+    "dDurationMs": 3400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Appreciate it.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 283840,
+    "dDurationMs": 8000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Where is he? What happened? He's around.\nHe's around here someplace. I can't I",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 289520,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "want to say hello to Todd. He's special.\nHe works all the time. We're here today",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 295040,
+    "dDurationMs": 6879,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to talk about one of the most shocking\nacts of injustice our country has ever",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 300240,
+    "dDurationMs": 5840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "seen. I couldn't believe it. I witnessed\nit a couple of weeks ago. I couldn't",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 303600,
+    "dDurationMs": 9200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "believe it. Just days ago, the governor\nof California, Gavin Nuome, granted",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 309199,
+    "dDurationMs": 10321,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "clemency and mercy to 548 of the most\nevil monsters on the face of the earth.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 316479,
+    "dDurationMs": 6961,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "You'd have to read their biographies to\nsee how bad they were. Some of them you",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 322080,
+    "dDurationMs": 8480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "wouldn't even believe it. All of them,\nbut some of them you would levels of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 327360,
+    "dDurationMs": 7760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "craziness, sickness that I've never seen\nbefore.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 332080,
+    "dDurationMs": 9200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Among those death row inmates he granted\nclemency were more than 110 child",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 338800,
+    "dDurationMs": 6640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "killers, more than 100 rapists who\nmurdered their victims, and numerous",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 343759,
+    "dDurationMs": 6641,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "serial killers who tortured and\nslaughtered dozens of innocent people",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 348560,
+    "dDurationMs": 7199,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "at levels that nobody's ever seen\nbefore.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 352000,
+    "dDurationMs": 9039,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Among the serial killers he spared is\nCharles Ing, who tortured, enslaved, and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 358800,
+    "dDurationMs": 8160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "slaughtered at least 11 people,\nincluding babies, in a torture chamber",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 363600,
+    "dDurationMs": 10080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in a remote cabin, as well as the\nSouthside Slayer who killed 14 women and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 370319,
+    "dDurationMs": 9121,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "enjoyed every moment of it in an unborn\nchild in South Los Angeles.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 377280,
+    "dDurationMs": 8800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and the scorecard killer. They call him\nthe scorecard killer who kept a tally in",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 383600,
+    "dDurationMs": 8159,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "his car of at least 16 young men he\nabducted, raped and murdered. And the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 389039,
+    "dDurationMs": 8481,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "alphabet killer was that name, alphabet\nkiller, who raped and murdered innocent",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 394560,
+    "dDurationMs": 9199,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "young girls whose first and last name\nstarted with the same letter. He needed",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 400240,
+    "dDurationMs": 8560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that same letter. These are sick people.\nThis afternoon, we come together to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 405759,
+    "dDurationMs": 7681,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "stand against the travesty and to wrap\nour arms around the families of victims",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 410880,
+    "dDurationMs": 8640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "who were so cruy betrayed by bad\ngovernment and our political system. To",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 417199,
+    "dDurationMs": 9681,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "every parent, son, daughter, sibling, or\nspouse here today whose loved one was",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 422880,
+    "dDurationMs": 10640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "brutally killed by those monsters, we\nlove you. We support you and we are with",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 429440,
+    "dDurationMs": 8879,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "you and your quest for un really the the\nultimate of final justice. We have to do",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 436319,
+    "dDurationMs": 7921,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "this. We can't let this happen. What\nhappened to you, what happened to all of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 440000,
+    "dDurationMs": 10319,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "us should not be allowed to stand. What\nthese families have endured is beyond",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 447440,
+    "dDurationMs": 8159,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "imagination.\nOne day their lives were shattered into",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 453199,
+    "dDurationMs": 6720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "pieces when they learned that someone\nthey had loved most in the entire world",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 458080,
+    "dDurationMs": 7760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "they loved more than anybody in the\nworld had spent their final moments in",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 463039,
+    "dDurationMs": 10081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "excruciating pain and bone chilling\nterror and those families lives will",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 470000,
+    "dDurationMs": 7840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "never ever be the same. Then after the\njuries delivered their verdicts and the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 475520,
+    "dDurationMs": 6880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "justice system returned a muchdeserved\nsentence of death,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 480560,
+    "dDurationMs": 6880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Nuome,\na terrible governor in so many other",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 484400,
+    "dDurationMs": 7760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "ways, came along and stole away the only\nclosure those families",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 490080,
+    "dDurationMs": 7280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "might ever have.\nHe stood with the murderers and the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 494319,
+    "dDurationMs": 7361,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "child slayers. But today, we say, the\nAmerican people, stand with you. We",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 500240,
+    "dDurationMs": 9760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "stand with you. We're not going to let\nthis happen.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 504960,
+    "dDurationMs": 11439,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "In May 1996, 8-year-old Michael Lions\nwas walking home from elementary school",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 513360,
+    "dDurationMs": 10080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in Yuba City, California,\nwhen he was abducted by convicted sex",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 519519,
+    "dDurationMs": 10440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "offender Robert Boyd Rhodess, who forced\nyoung Michael into a secluded area,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 525760,
+    "dDurationMs": 4199,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "raped and tortured him",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 530320,
+    "dDurationMs": 8800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "for extended periods of time. The\npredators slashed Michael more than a",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 535519,
+    "dDurationMs": 10320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "hundred times with a knife and left his\nbody on a river bank for others to pick",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 542080,
+    "dDurationMs": 8960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "up. Roads was captured and sentenced to\ndeath. But Gavin Newsome thought that",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 548640,
+    "dDurationMs": 7680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "child killer was owed the mercy that he\nnever showed to 8-year-old",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 553920,
+    "dDurationMs": 8080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Michael. We're joined by Michael's\nfamily, including his mother, Sandy. And",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 559200,
+    "dDurationMs": 6199,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Sandy, I'd like to have you say a few\nwords, please.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 566560,
+    "dDurationMs": 5480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Thank you.\nThank you, darling.",
+      "acAsrConf": 0,
+      "isSpeakerChange": 1
+    } ]
+  }, {
+    "tStartMs": 572240,
+    "dDurationMs": 8960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Hi, my name is Sandy Friend. I am the\nmother of Michael Lions.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 578560,
+    "dDurationMs": 10399,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Michael was eight years old. He loved\nhis sisters, fishing ninja turtles,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 586000,
+    "dDurationMs": 9360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "telling campfire stories,\nand bringing me flowers.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 592240,
+    "dDurationMs": 6880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Michael was afraid of the dark. He\nbelieved the boogeyman was going to get",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 597440,
+    "dDurationMs": 8959,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "him.\nOn May 16th, 1996, Robert Boyd Rhodess,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 603440,
+    "dDurationMs": 9200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "a twice convicted sex offender and\nserial killer, kidnapped Michael.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 609839,
+    "dDurationMs": 10240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Walking home from school, he took my\nlittle boy into the darkness. His most",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 616399,
+    "dDurationMs": 8601,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "feared thing was the dark. That night,\nMichael learned that the boogeyman was",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 622000,
+    "dDurationMs": 3000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "real.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 626880,
+    "dDurationMs": 11120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Mikey was raped, sodomized, and tortured\nfrom 10 for 10 hours. From the very",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 634720,
+    "dDurationMs": 8840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "first inflicted stabin\nto the last,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 640240,
+    "dDurationMs": 3320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "he only",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 646640,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that is why the killer was convicted of\ntorture.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 651200,
+    "dDurationMs": 12322,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "A jury sentenced him to die and in\nDecember 2025 a judge reaffirmed that",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 658160,
+    "dDurationMs": 10160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "sentence. The go the governor then sorry\n[sighs]",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 664560,
+    "dDurationMs": 9440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "this is so very hard. [gasps]\nThen Governor Nome erased that with the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 671519,
+    "dDurationMs": 6921,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "swipe of a pen\nwithout notifying the families.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 678800,
+    "dDurationMs": 10400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Governor Nuome,\nwe deserve to be heard.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 685040,
+    "dDurationMs": 9919,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "You never heard what my child endured or\nlived with the emptiness of having an",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 692000,
+    "dDurationMs": 8000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "empty chair at every holiday and\nmilestone.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 696480,
+    "dDurationMs": 8720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Yet you took the only justice we had and\nleft families feeling abandoned by the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 702399,
+    "dDurationMs": 8081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "state that promised to protect us.\nYou'll never understand the unimaginable",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 708079,
+    "dDurationMs": 8561,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "pain that you're putting these families\nthrough. Face me, Governor Nuome. Tell",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 714640,
+    "dDurationMs": 8319,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "me, Michael's\nMichael's life doesn't matter.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 720399,
+    "dDurationMs": 8000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Michael deserved a governor who who\nwould stand with the victims, honor",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 725600,
+    "dDurationMs": 8400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "their justice, and respect the will of\nthe people. You may have taken our",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 731279,
+    "dDurationMs": 7761,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "justice, but we will never you will\nnever take Michael's voice.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 736880,
+    "dDurationMs": 8720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Mr. President, thank you for standing\nwith the victims and giving us a voice.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 742560,
+    "dDurationMs": 11920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I will never stop speaking Michael's\nname. Every victim matters. Look at his",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 750000,
+    "dDurationMs": 7720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "face. He was only eight years old.\nThank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 776320,
+    "dDurationMs": 7840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Sandy, we will always be with you. And\nyou're beautiful, Michael. And thank you",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 781680,
+    "dDurationMs": 7920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "very much. It's great bravery even to be\nhere because Todd and the whole group, a",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 786800,
+    "dDurationMs": 8080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "lot of people in this room are working\nas hard as they can to get this travesty",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 791839,
+    "dDurationMs": 10081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "overturned in some form. Very unusual\nsituation. state. We're we're very",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 798560,
+    "dDurationMs": 11519,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "active doing everything we can. In\nOctober 1993, 12-year-old Polyclass was",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 806399,
+    "dDurationMs": 10240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "having a slumber party at her home in\nPaluma, California, when a violent",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 812800,
+    "dDurationMs": 12159,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "repeat offender out of parole slipped\ninto her home carrying a large violent",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 821680,
+    "dDurationMs": 8480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "knife. He bound and gagged Pauliey's two\nfriends and abducted Polly. Two months",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 827839,
+    "dDurationMs": 8560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "later, she was found buried in a very\nshallow grave over 50 miles from her",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 832639,
+    "dDurationMs": 10241,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "home. Nuome gave Paulie's savage killer\nclemency, too. And we're honored to be",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 839279,
+    "dDurationMs": 7920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "joined by Pauliey's father, Mark. And\nMark, if you would please come up and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 844560,
+    "dDurationMs": 5719,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "say a few words. Thank you.\nThank you,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 854959,
+    "dDurationMs": 8320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Mr. President, thank you for seeing us.\n30 years ago, my daughter Paulie was",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 860480,
+    "dDurationMs": 7039,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "brutally taken from our family. A jury\nheard the evidence, convicted her",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 865279,
+    "dDurationMs": 7360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "killer, and imposed the strongest\nsentence allowed under California law.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 870639,
+    "dDurationMs": 7361,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "For three decades, our family lived with\nthe understanding that the justice",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 874720,
+    "dDurationMs": 10320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "system's decision would stand.\nToday I stand before you outraged,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 882000,
+    "dDurationMs": 9760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "outraged that Governor Gavin Nuome\nunilaterally erased that sentence and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 888000,
+    "dDurationMs": 9360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "547 more and commuted them to life\nwithout parole without the consent of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 894160,
+    "dDurationMs": 8160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "victim's families or the people of\nCalifornia.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 899440,
+    "dDurationMs": 8959,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "This decision was not made by a jury. It\nwas not approved by the voters.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 904959,
+    "dDurationMs": 7041,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "It was made by one politician acting\nalone.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 910000,
+    "dDurationMs": 7360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "While nothing can bring Polly back, her\nlife mattered. The pain inflicted on our",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 914959,
+    "dDurationMs": 7921,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "family was real and the pursuit of\njustice should not become a political",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 919839,
+    "dDurationMs": 8800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "exercise. I am here today to stand for\nPaulie, for victim's families across",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 925680,
+    "dDurationMs": 8800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "California and for accountability in our\njustice system. This is about more than",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 931600,
+    "dDurationMs": 7919,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "my family. This is about whether the\nvoices of crime victims matter. It's",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 937440,
+    "dDurationMs": 7040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "about whether one politician should have\nthe power to nullify the decisions of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 941519,
+    "dDurationMs": 9281,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "judges, juries, and the citizens who\nenacted these laws.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 947360,
+    "dDurationMs": 8320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "All to advance a political agenda. Mr.\nPresident, thank you for hearing us.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 953199,
+    "dDurationMs": 5481,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you for seeing us. Thank you very\nmuch.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 970240,
+    "dDurationMs": 10880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Mark went through, as you just heard, 30\nyears. 30 years. At the end of all of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 977360,
+    "dDurationMs": 9440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that drama, it was just wiped out. It's\nprobably just a political moment. So, I",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 984399,
+    "dDurationMs": 6961,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "want to thank you, Mark, and\nuh just incredible what you've had to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 989360,
+    "dDurationMs": 5919,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "endure. I saw your case. I watched it. I\nwatched you very closely the other day",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 993519,
+    "dDurationMs": 7281,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in an interview. I said, \"Boy, that's\ntough. That's tough.\"",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 998720,
+    "dDurationMs": 9119,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "The murders of these precious children\nare the worst nightmare of every mom and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1004320,
+    "dDurationMs": 8400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "dad in America. Yet Gavin Newsome and\nthe radical left look at these heinous",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1010000,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "acts and their sympathy is not for the\nchildren and their parents, but for the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1014399,
+    "dDurationMs": 8161,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "monsters who extinguished innocent young\nlives. Don't understand it. Never did.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1020800,
+    "dDurationMs": 8560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I've seen it so much and I never\nunderstood it. And a lot of the media is",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1025919,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "with them for whatever reason. It's not\nunderstandable.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1031039,
+    "dDurationMs": 7201,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Under the Trump administration, we will\nnever stop fighting to protect our",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1035120,
+    "dDurationMs": 7839,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "nation's children. And we will\nalways take care. We're just going to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1039919,
+    "dDurationMs": 6000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "take care of our beautiful system of\njustice. We're going to make it",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1044079,
+    "dDurationMs": 8081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "beautiful again. We're going to bring\njustice for American families. There is",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1049280,
+    "dDurationMs": 8560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "no other choice. Also with us are the\nfamilies of Detective Michael Davis and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1054480,
+    "dDurationMs": 10640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Deputy Sheriff Denny Oliver from the\nPlaster County Sheriff's Office. In",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1061600,
+    "dDurationMs": 8079,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "2014, we were involved. They were just\ninvolved in some it was a big a big",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1067760,
+    "dDurationMs": 7360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "thing happening\nin involved in a manhunt for an illegal",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1073280,
+    "dDurationMs": 7040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "alien criminal. A rough one that they\nwere after for a long time. Rough rough",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1077120,
+    "dDurationMs": 9600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "rough. When they bravely approached the\nsuspect's vehicle, that illegal alien",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1083360,
+    "dDurationMs": 10080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "opened fire with a rifle and shot them\nboth dead. Immediately dead. This is yet",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1090240,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "another monster Newsome spared. For what\nreason? I guess we know. I guess it's",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1096320,
+    "dDurationMs": 6080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "politics. I don't know how it's good\npolitics. I think it's terrible",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1099280,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "politics. But that doesn't matter.\nShould never have been done. I want to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1104720,
+    "dDurationMs": 7040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "ask Detective Davis's brother,\nLieutenant Jason Davis, to come up and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1109520,
+    "dDurationMs": 5880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "say a few words if you would. Thank you\nvery much, please.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1123200,
+    "dDurationMs": 6160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Mr. President, on behalf of our family,\nI want to thank you and the Attorney",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1127600,
+    "dDurationMs": 6480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "General Blanch for your commitment to\nlaw and order. You have stood up for us",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1131679,
+    "dDurationMs": 7521,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "victims from the beginning and uh we\nstand with you as well. Thank you very",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1135840,
+    "dDurationMs": 5680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "much, sir. My name is Jason Davis and as\nthe president said, I've been a",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1140400,
+    "dDurationMs": 5360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "lieutenant with the Plaster County\nSheriff's Office where I've served as a",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1143039,
+    "dDurationMs": 6000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "law enforcement officer for 28 years. My\nfamily has a history of law enforcement",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1147520,
+    "dDurationMs": 5200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "service in the state of California,\nstarting with my father who fulfilled",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1150960,
+    "dDurationMs": 6480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "his lifelong dream when he became a\ndeputy sheriff in the early 80s.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1155919,
+    "dDurationMs": 6000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "He was killed in the line of duty on\nOctober 24th, 1988, stopping drugs",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1160080,
+    "dDurationMs": 6640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "coming over the border of Mexico on a\ntask force. Their helicopter went down",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1164080,
+    "dDurationMs": 6959,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "when it hit power lines. He was killed\ninstantly.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1168960,
+    "dDurationMs": 8079,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "My brother Michael and I followed in our\nf our father's footsteps. I moved 500",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1174240,
+    "dDurationMs": 6960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "miles away from where I had grown up to\nNorthern California to be with him,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1178799,
+    "dDurationMs": 6000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "where we both served as deputy sheriffs\nwith the Plaster County Sheriff's",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1182480,
+    "dDurationMs": 8120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Office. The greatest honor of my life\nwas working patrol with my brother. He",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1186960,
+    "dDurationMs": 3640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "was my beat partner.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1192559,
+    "dDurationMs": 6561,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "26 years to the day after my dad had\nbeen killed, Michael was killed by Luis",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1197520,
+    "dDurationMs": 6240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Brockamontis,\nwho was in the United States illegally,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1201760,
+    "dDurationMs": 6799,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "went on a crime\nwhere he shot and killed Danny Oliver,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1206480,
+    "dDurationMs": 8160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "uh, who contacted him in a hotel parking\nlot. His widow and daughter are here,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1211280,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Susan and Melissa. Thank you for coming.\nAfter he shot and killed Danny, he",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1216559,
+    "dDurationMs": 7841,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "proceeded to carjack or attempt to\ncarjack a hardcore street person who",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1222000,
+    "dDurationMs": 7440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "fought back. Brokammani shot him five\ntimes in the face. Miraculously, he",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1226160,
+    "dDurationMs": 6879,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "survived. He then went on to carjack an\ninnocent lady.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1231360,
+    "dDurationMs": 5040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "After carjacking the innocent lady in\nSacramento, he proceeded into the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1234640,
+    "dDurationMs": 6080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Plaster County territory where Michael\ngot the call. Michael was a detective",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1238960,
+    "dDurationMs": 6160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and had no business responding as a\nfirst responder or no obligation. He had",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1242559,
+    "dDurationMs": 8321,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "business and he knew that Michael was a\nprotector.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1247120,
+    "dDurationMs": 8000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Michael responded as a detective and was\none of the first ones to encounter",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1252240,
+    "dDurationMs": 8799,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Brockam Montis. Circumstances played\nout. He was shot and killed instantly.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1258640,
+    "dDurationMs": 6720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Brokamontis went on the run where he was\nlater captured by law enforcement. My",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1262960,
+    "dDurationMs": 7079,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "agency as well as Sack County. Law\nenforcement wins. We have to.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1270799,
+    "dDurationMs": 6321,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "The man who murdered Michael was\nconvicted by a jury of his peers and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1274559,
+    "dDurationMs": 7360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "sentenced to death after receiving a\nfull and fair fair trial,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1280159,
+    "dDurationMs": 7281,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "one that would be given to every citizen\nin this country.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1284240,
+    "dDurationMs": 9600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Yet, Governor Nuome chose to commute his\nsentence along with those 47 547 other",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1291039,
+    "dDurationMs": 6880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "inmates on death row, disregarding the\nvictims or families and the will of the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1295679,
+    "dDurationMs": 7281,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "California voters.\nWe had started to get closure. I had",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1300240,
+    "dDurationMs": 8080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "moved on. I could remember Michael\noutside of that incident. And Governor",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1305840,
+    "dDurationMs": 6640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Newsome single-handedly ripped that\nband-aid off and opened that wound",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1310000,
+    "dDurationMs": 7440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "again. I have met with these families\nthroughout the past two days and the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1314720,
+    "dDurationMs": 6000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "past week. Their hearts are broken and\nmine breaks for theirs and Michael's",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1319200,
+    "dDurationMs": 5120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "breaks for theirs because those were the\npeople that Michael protected. Those",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1323120,
+    "dDurationMs": 4559,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "were the people that Michael\ninvestigated",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1325919,
+    "dDurationMs": 6081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "so that our communities could be safe.\nAnd Governor Nuome under the cloak of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1329760,
+    "dDurationMs": 6560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "darkness\nunilaterally makes a decision to commute",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1334799,
+    "dDurationMs": 6321,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the sentences of the most heinous\ncriminals in our society.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1338880,
+    "dDurationMs": 9640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I am disgusted\nand frustrated.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1344000,
+    "dDurationMs": 4520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "My brother did not die in vain.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1351679,
+    "dDurationMs": 6961,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Mothers, there is nothing like a\nmother's cry when she loses a child.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1356720,
+    "dDurationMs": 9280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "As a law enforcement officer, I have\ndelivered news many times to parents to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1361919,
+    "dDurationMs": 7760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "a mom that your child is dead.\nusually",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1367600,
+    "dDurationMs": 9439,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "through an accident or some other\ncircumstance. I cannot fathom being told",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1373280,
+    "dDurationMs": 10480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that my child was tortured, raped, duct\ntaped for 10 hours by these animals. And",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1380559,
+    "dDurationMs": 8401,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "then Gavin Newsome says, \"Guess what? I\ngot your back, inmates.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1386400,
+    "dDurationMs": 7920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I got your back.\"\nYou know what? Trump's got our back. Our",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1391760,
+    "dDurationMs": 6320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "DOJ today has our back back. It is an\nhonor to be here today. Even though I",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1395919,
+    "dDurationMs": 6561,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "had zero desire to be here, I wanted to\ngo and live a quiet life and raise my",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1400000,
+    "dDurationMs": 6320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "family.\nAs a Christian, I'm called to forgive",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1404159,
+    "dDurationMs": 6481,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and I have forgiven the man who murdered\nmy brother. But forgiveness does not",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1408559,
+    "dDurationMs": 5841,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "eliminate accountability or erase\nconsequences. Governor Nuomo",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1412559,
+    "dDurationMs": 5521,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "unilaterally decided that Brock Lanis\nand these other inmates did not deserve",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1415760,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the penalty that was imposed by their\njurors by their jury by their peers.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1421919,
+    "dDurationMs": 7681,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Nor does he believe the California\nvoters who have twice California",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1426880,
+    "dDurationMs": 9760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "twice voted to impose a death penalty\nand had further uh on another measure",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1433919,
+    "dDurationMs": 8081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "voted to increase the expedit the\nquickness in which it happens",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1439280,
+    "dDurationMs": 6879,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and Governor N Governor Nuome in his\nmorality clause decided ah you guys",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1444640,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "don't know what you're talking about I\ngot this",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1450080,
+    "dDurationMs": 7040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Michael lived his life protecting those\nwho could not protect themselves. I ask",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1454799,
+    "dDurationMs": 6880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that we never forget Michael or the\nvictims or the families. Those were the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1459520,
+    "dDurationMs": 8320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "people that Mike protected. I want to\nleave with a verse from Isaiah 5:20.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1464640,
+    "dDurationMs": 7200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Woe to those who call evil good and good\nevil.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1469679,
+    "dDurationMs": 6561,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Who replace light for dark and dark for\nlight. Governor Nuome, you made this",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1474400,
+    "dDurationMs": 6560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "move in the darkness because it was a\npolitical move that you thought would",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1478000,
+    "dDurationMs": 9320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "benefit yourself. But guess what? I\ndon't think it's going to play out that",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1482240,
+    "dDurationMs": 5080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "way. Thank you very much and God bless.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1497279,
+    "dDurationMs": 6400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Thank you, Jason.\nIt's not easy to do for",
+      "acAsrConf": 0,
+      "isSpeakerChange": 1
+    } ]
+  }, {
+    "tStartMs": 1502000,
+    "dDurationMs": 7279,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "these people. This is very tough. I\nwatch and it's very tough. I've met so",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1506000,
+    "dDurationMs": 10240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "many others. Toughest thing. their whole\nlives have been turned around. We're all",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1513360,
+    "dDurationMs": 7919,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "also joined by the family of officer Gil\nVega, 35-year-old veteran of Palm",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1519039,
+    "dDurationMs": 8401,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Springs Police Department and a father\nof eight. In 2016, Gil was two months",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1524960,
+    "dDurationMs": 9360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "away from retirement when he received a\ndomestic disturbance call. Arriving at",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1530640,
+    "dDurationMs": 10080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the scene, he was attacked by an armed\ngunman, a very vicious one with an AR-15",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1538080,
+    "dDurationMs": 8400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "who murdered Gil instantly and a fellow\nofficer. I'd like to have his daughter,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1543679,
+    "dDurationMs": 9041,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Gloria, come up say a few words about\nher great father, her hero, Officer Gil",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1550480,
+    "dDurationMs": 5240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Vega. Thank you very much, Gloria. Thank\nyou.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1563440,
+    "dDurationMs": 8239,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you for inviting us and letting me\ntalk about my father. My father, Officer",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1569039,
+    "dDurationMs": 7441,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Jose Gil Vega, was a hardworking,\nloving, funny, and protective man. His",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1574400,
+    "dDurationMs": 7040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "smile could light up a room, and his\nlaughter was contagious. He taught me",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1578960,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that life would not always be easy, but\nno matter what challenges came my way, I",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1583760,
+    "dDurationMs": 6159,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "should always make the best of them.\nFor nearly 35 years, my dad proudly",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1588480,
+    "dDurationMs": 6640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "served the Palm Springs Police\nDepartment, the halls that I grew up in",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1592240,
+    "dDurationMs": 8160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "as well. Dedicating his life to protect\nothers, he was twice recognized as",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1597600,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "officer of the year. But what truly made\nhim special is the way he treated",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1602159,
+    "dDurationMs": 8081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "people. He can make someone laugh even\nwhile placing them under arrest. He",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1607919,
+    "dDurationMs": 6081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "treated everyone with dignity and\nrespect regardless of their",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1612159,
+    "dDurationMs": 8801,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "circumstances.\nOn October 8th, 2016, just months before",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1618159,
+    "dDurationMs": 8400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "his retirement, my father was tragically\nkilled in the line of duty while working",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1623279,
+    "dDurationMs": 7601,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "overtime shift.\nAfter a large time of serving his",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1628320,
+    "dDurationMs": 8160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "community, he never got to enjoy his\nretirement he worked so hard to earn.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1633679,
+    "dDurationMs": 8321,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And his partner Leslie Zerbney never was\nable to go home to her newborn daughter.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1639760,
+    "dDurationMs": 7840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "My dad was more than a police officer.\nHe was a loving father, a grandfather, a",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1645279,
+    "dDurationMs": 8161,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "devoted public servant and a friend of\nmany. I am incredibly proud to be his",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1650320,
+    "dDurationMs": 9959,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "daughter and his love, sacrifice and\nlegacy will stay with me forever. You",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1656320,
+    "dDurationMs": 3959,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "know their lives mattered.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1661520,
+    "dDurationMs": 3639,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Just thank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1676640,
+    "dDurationMs": 8080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you, Gloria, very much.\nAnd in Officer Vega's honor, I'm",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1682240,
+    "dDurationMs": 7039,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "announcing today that I'll contribute\n$5,000 to Trump account. That's the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1686960,
+    "dDurationMs": 6640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "maximum I'm allowed to give. Otherwise,\nTodd will have to come and arrest me.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1692080,
+    "dDurationMs": 9280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And I don't like that. I wouldn't like\nhim for that. But uh I'm giving $5,000",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1697679,
+    "dDurationMs": 8801,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to his 17-year-old granddaughter,\nAngelina, who is also with us. Where's",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1704320,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Angelina? Hi, Angelina. Well,\ncongratulations.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1713120,
+    "dDurationMs": 6720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you, Barry.\nAnd Angelini, your grandfather is",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1716960,
+    "dDurationMs": 8640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "looking down right now on you both with\ngreat pride. Great pride.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1722799,
+    "dDurationMs": 9041,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you. Great job. Our nation\ngrieavves for every law enforcement",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1728320,
+    "dDurationMs": 8079,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "officer slain in the line of duty. That\nis why on day one of my administration,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1734159,
+    "dDurationMs": 6640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I signed an executive order directing\nDepartment of Justice to ensure that",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1738880,
+    "dDurationMs": 6880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "anyone who murders a member of law\nenforcement receives the death penalty.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1743840,
+    "dDurationMs": 7680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And I'm pleased to say that last year,\npolice officer deaths in the line of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1748240,
+    "dDurationMs": 7760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "duty plummeted to the lowest level in\nthe history of our country.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1753679,
+    "dDurationMs": 6801,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "So, let me also recognize the other\nfamilies with us whose loved ones were",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1758559,
+    "dDurationMs": 7681,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "murdered by Newsome's monsters,\nincluding the parents of Ball Bailey, an",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1764000,
+    "dDurationMs": 8000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "eight-year-old boy who was kidnapped by\na former daycare employee, raped,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1768640,
+    "dDurationMs": 9600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "strangled to death, and set on fire. The\nfamily of 26-year-old US Army veteran",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1774559,
+    "dDurationMs": 9360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Sam her, who was shot twice in the head,\nand brutally dismembered.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1781919,
+    "dDurationMs": 8640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Hard to believe.\nThe family of Daniel Hoover Nahara, a",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1787760,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "20- yearear-old firefighter with the US\nForest Service who was killed by an",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1792480,
+    "dDurationMs": 7280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "arsonist. The family of Gabriel\nFernandez, an 8-year-old boy, eight",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1797279,
+    "dDurationMs": 10161,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "years old, think of that. Killed after\nmonths of severe abuse and torture.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1803520,
+    "dDurationMs": 9519,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the family of officer Larry Lacier,\n35-year-old Marine veteran murdered by",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1810720,
+    "dDurationMs": 9199,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "two armed robbery suspects, leaving\nbehind a pregnant wife. I want to thank",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1816080,
+    "dDurationMs": 9760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "all of you and deepest sympathies to our\nentire nation and from our entire",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1822399,
+    "dDurationMs": 8561,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "nation. In the Trump administration, we\ncan find common ground with Democrats on",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1828559,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "many issues such as\nlowering the price of drugs where we've",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1833039,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "done that at a record level, improving\nhealth care, and protecting the American",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1837760,
+    "dDurationMs": 7840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "worker. But when it comes to defending\nthe lives and safety of American people,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1843760,
+    "dDurationMs": 6080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "there can be no compromise. We're not\ngoing to compromise. We're going to take",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1847120,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "this right to the end. Law enforcement\nis not the enemy. the enemy are those",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1852159,
+    "dDurationMs": 8240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "who rape and murder our citizens and\nthey deserve no mercy. For years now, we",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1858240,
+    "dDurationMs": 8000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "have watched the radical left commit one\nbetrayal of justice and safety after",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1863440,
+    "dDurationMs": 7599,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "another. Just days ago, a deranged\nhomeless man with over 60 prior arrests.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1868880,
+    "dDurationMs": 6960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Think of that, 60 prior arrests, was\ncharged with murdering a 62year-old",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1873200,
+    "dDurationMs": 8959,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "woman in New York after radical left\njudges released him for custody.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1879440,
+    "dDurationMs": 10160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And uh this is like incredible. We\nreleased him to be uh his own guardian",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1886720,
+    "dDurationMs": 7920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "twice in the same month. Our opponents\nseek an America that empowers the most",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1892320,
+    "dDurationMs": 6800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "violent and dangerous elements and\ncelebrates",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1896159,
+    "dDurationMs": 8721,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "deviency and enables dysfunction and\ndemands empathy for serial killers and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1902559,
+    "dDurationMs": 7441,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "criminals while hardworking citizens are\ntreated with hatred and scorn and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1907120,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "contempt. and nobody gets it. In the\nTrump administration, we believe in the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1912240,
+    "dDurationMs": 7679,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "exact opposite. We're fighting to uplift\nthe law-abiding and protect the most",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1917519,
+    "dDurationMs": 7201,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "vulnerable, to reward hard work and\ndecency, to defend the innocent, and to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1922640,
+    "dDurationMs": 4800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "punish the guilty.\nYou would think that would be just",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1926000,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "common sense, wouldn't you? You would\nthink everybody would be with us on",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1929840,
+    "dDurationMs": 8559,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that. But most people are. Every single\nday I've had the honor to serve as your",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1936720,
+    "dDurationMs": 7839,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "president. It's a great honor. There can\nbe no greater honor. I'll work to defeat",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1941519,
+    "dDurationMs": 7201,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "those who would destroy everything you\nhold dear. And I'll fight for your",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1946799,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "lives, your family, your safety, your\ndignity, and your freedom. Since I took",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1951519,
+    "dDurationMs": 7280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "office, we've achieved an unprecedented\nreduction in violent crime, including",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1955840,
+    "dDurationMs": 9360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the largest drop ever the history of our\ncountry in the murder rate. And the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1962720,
+    "dDurationMs": 9040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "lowest level in\n125 years is 1900. The year 1900. We had",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1968960,
+    "dDurationMs": 8719,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the best year. And I see cash in the\naudience. And I see you have a lot of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1973919,
+    "dDurationMs": 10401,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "talent sitting in that first row. And uh\nespecially the wife of Todd Blanch,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1981600,
+    "dDurationMs": 7360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "who's a very special woman. He he's not\ntoo easy to be with. I say he probably",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1986559,
+    "dDurationMs": 7441,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "is. He's a great man. He's going to be\nHe's going to go down as a great man.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1991519,
+    "dDurationMs": 6400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Last year, there were more than 3,000\nfewer murders than before I took office.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1996320,
+    "dDurationMs": 5760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "That's a big statement. Federal law\nenforcement",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1999600,
+    "dDurationMs": 8400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "has arrested more than 1.2 million\ncriminals under my administration.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2004080,
+    "dDurationMs": 8560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Violent crime arrests are up 90%.\nAnd we deployed the National Guard to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2010000,
+    "dDurationMs": 7840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "restore law and order to Memphis, New\nOrleans, Washington DC, and crime is",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2015120,
+    "dDurationMs": 7600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "down more than 80%.\nThink of it in Washington DC. Every day",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2020880,
+    "dDurationMs": 6240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I come to the office, somebody thanking\nme. It's so because I remember two years",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2024720,
+    "dDurationMs": 9040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "ago it was a disaster.\nWe average three murders a week, 150",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2030640,
+    "dDurationMs": 8960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "murders. And now you it's very rare that\nwe have anything like that happening.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2035679,
+    "dDurationMs": 7761,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Crimes down some people say by 88%.\nIt's a safe city again. It's a thriving",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2041679,
+    "dDurationMs": 4641,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "city. Restaurants are opening. People\nare going out to dinner without any",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2045039,
+    "dDurationMs": 5441,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "fear.\nWhat a difference it makes. I want to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2048480,
+    "dDurationMs": 7119,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "thank the many members of the police and\nlaw enforcement here today who have",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2052960,
+    "dDurationMs": 6800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "helped achieve those extraordinary gains\nin public safety. I see one of them",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2058159,
+    "dDurationMs": 7401,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "right over there. Paul, would you please\nstand up? Border Patrol, my friend for a",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2062399,
+    "dDurationMs": 3161,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "long time.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2065760,
+    "dDurationMs": 10079,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Great job.\nThanks as well to FBI Director Cash",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2071359,
+    "dDurationMs": 10401,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Patel, DEA Administrator Terry Cole,\nDire Stand up fellows, will you please?",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2078320,
+    "dDurationMs": 7400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "You know, you deserve to stand up.\nGood. Hi, Terry.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2087760,
+    "dDurationMs": 9440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Director of the Bureau of Prisons, Billy\nMarshall. Billy, thank you, Billy.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2094720,
+    "dDurationMs": 8600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you.\nUS Attorney for the District of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2099280,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Columbia, Janine Piro.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2104640,
+    "dDurationMs": 9120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you, Janine.\nCongressman Brandon Gil, a future star,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2111599,
+    "dDurationMs": 5161,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I predict,\nright?",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2118000,
+    "dDurationMs": 9440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the national president of the Fraternal\nOrder of Police and a big supporter of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2124400,
+    "dDurationMs": 7439,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "me and people that really uh believe in\nyou, the people in this room, Patrick",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2129680,
+    "dDurationMs": 5399,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Yo. Patrick, thank you. Thank you very\nmuch, Patrick.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2135119,
+    "dDurationMs": 10521,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "President of the California Fraternal\nOrder of Police, Roger Hilton. Roger,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2140960,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "thank you. Thank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2145839,
+    "dDurationMs": 10441,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "President of the Federal Law Enforcement\nOfficers Association, Matthew Silverman.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2152320,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Matthew, thank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2158320,
+    "dDurationMs": 9279,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And the former president of Crime\nVictims United, Nina Salerno. Nina,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2164400,
+    "dDurationMs": 6439,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "thank you very much.\nThank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2171200,
+    "dDurationMs": 6720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Today, I'm announcing several major new\nactions to continue our progress",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2175920,
+    "dDurationMs": 7040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "combating violent crime and to ensure\nthat the worst of the worst criminals",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2180240,
+    "dDurationMs": 7440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "are met with the retribution and\npunishment they deserve. You know, we've",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2184800,
+    "dDurationMs": 6720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "gone 18 months now without one, it's\nhard to believe actually, it almost I'd",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2189760,
+    "dDurationMs": 5839,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "rather say a few got in because it\nsounds more believable, but this is a",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2193280,
+    "dDurationMs": 7760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "fact made by not us, but by other\npeople. Not one person came through our",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2198320,
+    "dDurationMs": 7680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "southern border. Paul, not one for 18\nmonths, but one illegal alien, as we",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2203599,
+    "dDurationMs": 6881,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "say, and that's a record that probably\nwill never be broken, but we'll keep it",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2207760,
+    "dDurationMs": 7040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "going as long as we can. Already, the\ncaravans have started, but we're not",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2212240,
+    "dDurationMs": 7440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "letting them up, and Mexico better not\nlet them up either. First, in a few",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2217040,
+    "dDurationMs": 6799,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "moments, I will sign a presidential\ndirective ordering the Department of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2221760,
+    "dDurationMs": 6720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Justice to seek the death penalty for\nchild murderers as well as rapists and",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2226800,
+    "dDurationMs": 6240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "human traffickers who kill their\nvictims. My order also directs the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2231119,
+    "dDurationMs": 6561,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "attorney general to expedite the\nexecution of federal death sentences.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2235760,
+    "dDurationMs": 7520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Once juries have spoken, capital\npunishment will be swift and certain.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2241359,
+    "dDurationMs": 6480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I'm also directing the Department of\nHousing and Urban Development to compel",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2245440,
+    "dDurationMs": 7679,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "public housing authorities to strengthen\ntenant screenings and make it easier to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2250480,
+    "dDurationMs": 7200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "remove problematic tenants, of which\npeople know who they are. Law-ab-bing",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2255520,
+    "dDurationMs": 7280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "families in need should not be forced to\nlive beside dangerous criminals turning",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2260400,
+    "dDurationMs": 8160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "affordable housing into dens of violence\nand crime and horrible, horrible way to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2266160,
+    "dDurationMs": 8400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "live. In addition, today I'm announcing\nthat the Department of Justice will",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2270320,
+    "dDurationMs": 8960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "award nearly $150 million to new public\nsafety grants to help hire more than",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2276800,
+    "dDurationMs": 8640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "1,000 additional sworn law enforcement\nofficers and speed up response times to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2283040,
+    "dDurationMs": 8280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "reports of domestic violence and sexual\nassault nationwide.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2288079,
+    "dDurationMs": 3241,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2292960,
+    "dDurationMs": 7440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Thank you very much.\nAnd finally, at my request, Congressman",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2297920,
+    "dDurationMs": 6960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Brandon Gil has just introduced a new\nbill to strengthen the death penalty in",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2302720,
+    "dDurationMs": 6560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "America. And it's going to be much\ndifferent than it was in the past. Uh",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2307440,
+    "dDurationMs": 9520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "it's going to be strong. It's going to\nbe swift. The Just Punishment for Murder",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2313119,
+    "dDurationMs": 8480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Act will codify many aspects of today's\ndirective along with my executive order",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2319200,
+    "dDurationMs": 6720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "on capital punishment for killers of law\nenforcement. and it will expand the",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2323760,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "policy to ensure that illegal alien\nmurderers are likewise sentenced to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2328320,
+    "dDurationMs": 6080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "death. And I'm calling on Congress to\nsend me that bill without delay. And I",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2332880,
+    "dDurationMs": 6199,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "will sign it, Brandon, very, very\nquickly. Okay. Thank you very much.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2340160,
+    "dDurationMs": 8000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And the ultimate\ncrimes deserve the ultimate punishment.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2345119,
+    "dDurationMs": 8081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "This age-old wisdom has been a principle\nof virtually every society throughout",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2351119,
+    "dDurationMs": 6321,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "history. at least every successful\nsociety. And under the Trump",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2355440,
+    "dDurationMs": 7760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "administration, we are bringing it back.\nAnd we will not stop in our pursuit of",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2360400,
+    "dDurationMs": 7679,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "justice. We will not yield. And we just\nwon't yield to the communists, to",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2365280,
+    "dDurationMs": 7440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "criminals, to horrible people, people\nthat want to destroy our country. People",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2369920,
+    "dDurationMs": 7040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that really desire to just destroy our\ncountry.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2374400,
+    "dDurationMs": 6640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And I guess they know it. Many of them\ndo. We're not going to let it happen.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2378640,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "will not waver in our commitment to\nthese families and we will fight, fight,",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2383040,
+    "dDurationMs": 7120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "fight and we will make America safer and\nstronger and greater than ever before.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2388560,
+    "dDurationMs": 6799,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And I want to just thank everybody in\nthis audience. You have so many I know",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2393359,
+    "dDurationMs": 6161,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "so many are incredible. These are\nincredible people. You're the people",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2397040,
+    "dDurationMs": 6799,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that keep us all safe. You're\nincredible, beautiful people. And I want",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2402160,
+    "dDurationMs": 7520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to thank you very much. It's an honor to\nbe your president. Thank you everybody.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2405680,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "God bless you all. Thank you.",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2422217,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [applause]",
+      "isSpeakerChange": 1
+    } ]
+  } ]
+}
