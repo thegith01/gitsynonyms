@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:05.000" end="00:00:09.500" style="s2">services, Mr. Trevor Reagan.</p>
+<p begin="00:00:20.305" end="00:00:22.325" style="s2">&gt;&gt; [music]</p>
+<p begin="00:00:22.700" end="00:00:25.400" style="s2">&gt;&gt; Good afternoon.</p>
+<p begin="00:00:25.800" end="00:00:29.200" style="s2">I&#39;m Trevor Reagan, and I lead</p>
+<p begin="00:00:27.600" end="00:00:31.200" style="s2">humanitarian services for the American</p>
+<p begin="00:00:29.200" end="00:00:32.900" style="s2">Red Cross. But before I get started</p>
+<p begin="00:00:31.200" end="00:00:34.800" style="s2">today, I want to say a special thank you</p>
+<p begin="00:00:32.900" end="00:00:36.100" style="s2">to First Lady Melania Trump</p>
+<p begin="00:00:34.800" end="00:00:38.400" style="s2">and Second Lady Usha Vance for their</p>
+<p begin="00:00:36.100" end="00:00:40.400" style="s2">presence here today. Being here creates</p>
+<p begin="00:00:38.400" end="00:00:41.300" style="s2">so much attention on our service members</p>
+<p begin="00:00:40.400" end="00:00:42.800" style="s2">and their families that are so</p>
+<p begin="00:00:41.300" end="00:00:45.400" style="s2">desperately needed.</p>
+<p begin="00:00:42.800" end="00:00:47.700" style="s2">And also to our base and wing commanders</p>
+<p begin="00:00:45.400" end="00:00:49.400" style="s2">at Joint Joint Base Andrews,</p>
+<p begin="00:00:47.700" end="00:00:51.700" style="s2">we thank you for your presence and for</p>
+<p begin="00:00:49.400" end="00:00:53.800" style="s2">your leadership.</p>
+<p begin="00:00:51.700" end="00:00:56.300" style="s2">For more than 145 years, the American</p>
+<p begin="00:00:53.800" end="00:00:57.400" style="s2">Red Cross has stood beside the military</p>
+<p begin="00:00:56.300" end="00:01:00.100" style="s2">community.</p>
+<p begin="00:00:57.400" end="00:01:02.800" style="s2">But today really isn&#39;t about history.</p>
+<p begin="00:01:00.100" end="00:01:04.400" style="s2">Today is about people, people who serve,</p>
+<p begin="00:01:02.800" end="00:01:06.300" style="s2">people who wait at home,</p>
+<p begin="00:01:04.400" end="00:01:07.900" style="s2">and people who step forward when help is</p>
+<p begin="00:01:06.300" end="00:01:10.200" style="s2">needed.</p>
+<p begin="00:01:07.900" end="00:01:11.500" style="s2">For our service members here today,</p>
+<p begin="00:01:10.200" end="00:01:13.700" style="s2">we know some of you may not get home for</p>
+<p begin="00:01:11.500" end="00:01:15.800" style="s2">the holidays. Some are just coming off a</p>
+<p begin="00:01:13.700" end="00:01:18.000" style="s2">deployment, some heading to deployment,</p>
+<p begin="00:01:15.800" end="00:01:20.200" style="s2">and many are balancing the pressures of</p>
+<p begin="00:01:18.000" end="00:01:21.600" style="s2">family life with military service</p>
+<p begin="00:01:20.200" end="00:01:23.400" style="s2">in a way most of us will never</p>
+<p begin="00:01:21.600" end="00:01:27.600" style="s2">understand.</p>
+<p begin="00:01:23.400" end="00:01:27.600" style="s2">We see you and we are grateful.</p>
+<p begin="00:01:27.900" end="00:01:32.400" style="s2">Now today, this special event we&#39;re here</p>
+<p begin="00:01:30.300" end="00:01:34.500" style="s2">to do together, in a few moments we&#39;ll</p>
+<p begin="00:01:32.400" end="00:01:36.800" style="s2">start putting together comfort kits and</p>
+<p begin="00:01:34.500" end="00:01:39.200" style="s2">sign holiday cards, and really it&#39;s all</p>
+<p begin="00:01:36.800" end="00:01:40.700" style="s2">about one very simple message.</p>
+<p begin="00:01:39.200" end="00:01:42.300" style="s2">To those troops overseas, these cards</p>
+<p begin="00:01:40.700" end="00:01:44.400" style="s2">will go to</p>
+<p begin="00:01:42.300" end="00:01:47.100" style="s2">you&#39;re not alone, and we are thinking of</p>
+<p begin="00:01:44.400" end="00:01:48.400" style="s2">you throughout this holiday season.</p>
+<p begin="00:01:47.100" end="00:01:50.200" style="s2">Now in my time with the Red Cross, I&#39;ve</p>
+<p begin="00:01:48.400" end="00:01:51.800" style="s2">realized that service is not just an</p>
+<p begin="00:01:50.200" end="00:01:54.000" style="s2">individual commitment,</p>
+<p begin="00:01:51.800" end="00:01:55.100" style="s2">it&#39;s also a family commitment.</p>
+<p begin="00:01:54.000" end="00:01:56.200" style="s2">And as the wife of a Marine Corps</p>
+<p begin="00:01:55.100" end="00:01:58.400" style="s2">veteran,</p>
+<p begin="00:01:56.200" end="00:02:00.892" style="s2">Mrs. Vance understands the personal</p>
+<p begin="00:01:58.400" end="00:02:02.692" style="s2">connections in that tradition, but also</p>
+<p begin="00:02:00.892" end="00:02:04.592" style="s2">appreciates the service of our military</p>
+<p begin="00:02:02.692" end="00:02:05.892" style="s2">members and the sacrifice</p>
+<p begin="00:02:04.592" end="00:02:07.192" style="s2">that their family makes every single</p>
+<p begin="00:02:05.892" end="00:02:09.092" style="s2">day.</p>
+<p begin="00:02:07.192" end="00:02:13.092" style="s2">So please join me in welcoming our</p>
+<p begin="00:02:09.092" end="00:02:13.092" style="s2">nation&#39;s second lady, Usha Vance.</p>
+<p begin="00:02:16.896" end="00:02:18.916" style="s2">&gt;&gt; [music]</p>
+<p begin="00:02:22.136" end="00:02:24.156" style="s2">[music]</p>
+<p begin="00:02:26.721" end="00:02:28.741" style="s2">[music]</p>
+<p begin="00:02:30.192" end="00:02:33.992" style="s2">&gt;&gt; Hello everyone. It&#39;s my pleasure to be</p>
+<p begin="00:02:32.392" end="00:02:35.292" style="s2">here with you today.</p>
+<p begin="00:02:33.992" end="00:02:37.292" style="s2">I&#39;m so delighted that we have the</p>
+<p begin="00:02:35.292" end="00:02:39.192" style="s2">opportunity to reconvene this holiday</p>
+<p begin="00:02:37.292" end="00:02:41.292" style="s2">season and give back to our men and</p>
+<p begin="00:02:39.192" end="00:02:43.792" style="s2">women in uniform.</p>
+<p begin="00:02:41.292" end="00:02:45.292" style="s2">I want to start by thanking Trevor Regan</p>
+<p begin="00:02:43.792" end="00:02:47.592" style="s2">and the rest of the team at the American</p>
+<p begin="00:02:45.292" end="00:02:50.292" style="s2">Red Cross for all their work in keeping</p>
+<p begin="00:02:47.592" end="00:02:51.892" style="s2">our nation healthy and safe.</p>
+<p begin="00:02:50.292" end="00:02:53.792" style="s2">And I&#39;d like to offer my gratitude</p>
+<p begin="00:02:51.892" end="00:02:57.192" style="s2">specifically to the Americans serving</p>
+<p begin="00:02:53.792" end="00:02:59.192" style="s2">right here at Joint Base Andrews.</p>
+<p begin="00:02:57.192" end="00:03:01.392" style="s2">Over the last two years, JD and I have</p>
+<p begin="00:02:59.192" end="00:03:03.592" style="s2">come to know the base very well.</p>
+<p begin="00:03:01.392" end="00:03:05.792" style="s2">And I can&#39;t overstate how incredibly</p>
+<p begin="00:03:03.592" end="00:03:07.992" style="s2">kind and helpful everyone stationed here</p>
+<p begin="00:03:05.792" end="00:03:09.892" style="s2">has been to our family, as well as to</p>
+<p begin="00:03:07.992" end="00:03:11.992" style="s2">all the staff members and guests who</p>
+<p begin="00:03:09.892" end="00:03:13.592" style="s2">pass through its gates.</p>
+<p begin="00:03:11.992" end="00:03:15.592" style="s2">We always look forward to our visits to</p>
+<p begin="00:03:13.592" end="00:03:17.792" style="s2">America&#39;s airfield, and today is no</p>
+<p begin="00:03:15.592" end="00:03:19.192" style="s2">exception.</p>
+<p begin="00:03:17.792" end="00:03:20.492" style="s2">And with just three days until</p>
+<p begin="00:03:19.192" end="00:03:21.992" style="s2">Thanksgiving,</p>
+<p begin="00:03:20.492" end="00:03:23.892" style="s2">the first lady and I are particularly</p>
+<p begin="00:03:21.992" end="00:03:26.192" style="s2">grateful to be here and to take part in</p>
+<p begin="00:03:23.892" end="00:03:27.892" style="s2">a tradition that dates back well over a</p>
+<p begin="00:03:26.192" end="00:03:29.492" style="s2">century.</p>
+<p begin="00:03:27.892" end="00:03:31.092" style="s2">This morning, we&#39;re joining with</p>
+<p begin="00:03:29.492" end="00:03:32.992" style="s2">military spouses from the base to</p>
+<p begin="00:03:31.092" end="00:03:35.192" style="s2">assemble care packages for members of</p>
+<p begin="00:03:32.992" end="00:03:38.392" style="s2">our armed forces currently serving</p>
+<p begin="00:03:35.192" end="00:03:40.292" style="s2">deployments away from their loved ones.</p>
+<p begin="00:03:38.392" end="00:03:41.892" style="s2">Each year, the Red Cross spearheads this</p>
+<p begin="00:03:40.292" end="00:03:44.092" style="s2">effort.</p>
+<p begin="00:03:41.892" end="00:03:45.892" style="s2">It&#39;s a simple, elegant way of expressing</p>
+<p begin="00:03:44.092" end="00:03:47.892" style="s2">gratitude to the Americans who put their</p>
+<p begin="00:03:45.892" end="00:03:49.792" style="s2">nation before themselves</p>
+<p begin="00:03:47.892" end="00:03:51.392" style="s2">and reminding them that even when</p>
+<p begin="00:03:49.792" end="00:03:54.492" style="s2">they&#39;re far from home,</p>
+<p begin="00:03:51.392" end="00:03:55.892" style="s2">their country has not forgotten them.</p>
+<p begin="00:03:54.492" end="00:03:57.692" style="s2">I hope these packages serve as a</p>
+<p begin="00:03:55.892" end="00:04:00.792" style="s2">reminder that their sacrifices are</p>
+<p begin="00:03:57.692" end="00:04:02.594" style="s2">deeply appreciated and that their nation</p>
+<p begin="00:04:00.792" end="00:04:04.694" style="s2">and our family looks forward to them</p>
+<p begin="00:04:02.594" end="00:04:06.594" style="s2">back home.</p>
+<p begin="00:04:04.694" end="00:04:08.694" style="s2">But before I step away,</p>
+<p begin="00:04:06.594" end="00:04:10.294" style="s2">I&#39;d like to thank someone who is deeply</p>
+<p begin="00:04:08.694" end="00:04:13.194" style="s2">committed to the well-being of our</p>
+<p begin="00:04:10.294" end="00:04:15.094" style="s2">service members and their loved ones.</p>
+<p begin="00:04:13.194" end="00:04:17.194" style="s2">Our First Lady has made supporting</p>
+<p begin="00:04:15.094" end="00:04:19.194" style="s2">America&#39;s children and families,</p>
+<p begin="00:04:17.194" end="00:04:21.594" style="s2">including and especially those who serve</p>
+<p begin="00:04:19.194" end="00:04:23.594" style="s2">in our military, a central part of her</p>
+<p begin="00:04:21.594" end="00:04:25.494" style="s2">leadership.</p>
+<p begin="00:04:23.594" end="00:04:27.794" style="s2">It&#39;s a great privilege to join her in</p>
+<p begin="00:04:25.494" end="00:04:29.694" style="s2">this tradition once again. So, ladies</p>
+<p begin="00:04:27.794" end="00:04:31.294" style="s2">and gentlemen, please join me in</p>
+<p begin="00:04:29.694" end="00:04:34.894" style="s2">welcoming the First Lady of the United</p>
+<p begin="00:04:31.294" end="00:04:34.894" style="s2">States, Melania Trump.</p>
+<p begin="00:04:35.103" end="00:04:37.123" style="s2">&gt;&gt; [music]</p>
+<p begin="00:04:44.273" end="00:04:46.293" style="s2">[music]</p>
+<p begin="00:04:50.168" end="00:04:52.188" style="s2">[music]</p>
+<p begin="00:04:57.373" end="00:04:59.393" style="s2">[music]</p>
+<p begin="00:05:01.594" end="00:05:06.294" style="s2">&gt;&gt; Good afternoon.</p>
+<p begin="00:05:03.394" end="00:05:09.194" style="s2">Thank you, Usha, for your kind words and</p>
+<p begin="00:05:06.294" end="00:05:11.194" style="s2">for the dedication and service that you</p>
+<p begin="00:05:09.194" end="00:05:14.094" style="s2">and the Vice President,</p>
+<p begin="00:05:11.194" end="00:05:17.694" style="s2">a proud United States Marine veteran,</p>
+<p begin="00:05:14.094" end="00:05:20.894" style="s2">have provided to our nation.</p>
+<p begin="00:05:17.694" end="00:05:23.394" style="s2">It is an honor to be welcomed by all of</p>
+<p begin="00:05:20.894" end="00:05:25.794" style="s2">the members of our armed forces and</p>
+<p begin="00:05:23.394" end="00:05:28.894" style="s2">their beautiful families here</p>
+<p begin="00:05:25.794" end="00:05:30.994" style="s2">at Joint Base Andrews.</p>
+<p begin="00:05:28.894" end="00:05:33.494" style="s2">I&#39;m delighted to share this special</p>
+<p begin="00:05:30.994" end="00:05:36.794" style="s2">afternoon with you.</p>
+<p begin="00:05:33.494" end="00:05:40.094" style="s2">And thank you to the spouses of our</p>
+<p begin="00:05:36.794" end="00:05:44.194" style="s2">cabinet members who have joined me today</p>
+<p begin="00:05:40.094" end="00:05:44.194" style="s2">to support America&#39;s military.</p>
+<p begin="00:05:44.394" end="00:05:52.694" style="s2">Perfect precision is not an accident.</p>
+<p begin="00:05:49.194" end="00:05:53.894" style="s2">It is the result of repetition, measured</p>
+<p begin="00:05:52.694" end="00:05:56.894" style="s2">pacing,</p>
+<p begin="00:05:53.894" end="00:05:59.494" style="s2">and flawless execution.</p>
+<p begin="00:05:56.894" end="00:06:01.794" style="s2">The US military is the most powerful</p>
+<p begin="00:05:59.494" end="00:06:03.394" style="s2">military in the world because of its</p>
+<p begin="00:06:01.794" end="00:06:06.595" style="s2">people.</p>
+<p begin="00:06:03.394" end="00:06:09.295" style="s2">Our warriors train</p>
+<p begin="00:06:06.595" end="00:06:11.795" style="s2">pushing the boundaries of physical and</p>
+<p begin="00:06:09.295" end="00:06:15.095" style="s2">mental strength.</p>
+<p begin="00:06:11.795" end="00:06:17.295" style="s2">Every moment is deliberate. Everything</p>
+<p begin="00:06:15.095" end="00:06:19.595" style="s2">is designed to achieve overpowering</p>
+<p begin="00:06:17.295" end="00:06:22.095" style="s2">military superiority</p>
+<p begin="00:06:19.595" end="00:06:25.195" style="s2">through relentless training, technical</p>
+<p begin="00:06:22.095" end="00:06:28.395" style="s2">mastery, and a very measured approach to</p>
+<p begin="00:06:25.195" end="00:06:32.695" style="s2">everything they do. Our warriors make</p>
+<p begin="00:06:28.395" end="00:06:35.795" style="s2">the very complex look effortless.</p>
+<p begin="00:06:32.695" end="00:06:37.695" style="s2">But I know our military is not a</p>
+<p begin="00:06:35.795" end="00:06:39.895" style="s2">machine.</p>
+<p begin="00:06:37.695" end="00:06:42.895" style="s2">It&#39;s made up of human</p>
+<p begin="00:06:39.895" end="00:06:45.695" style="s2">beings, sons and daughters</p>
+<p begin="00:06:42.895" end="00:06:47.095" style="s2">who are taking on this inherently big</p>
+<p begin="00:06:45.695" end="00:06:49.995" style="s2">risk.</p>
+<p begin="00:06:47.095" end="00:06:52.995" style="s2">Our brave men and women have families</p>
+<p begin="00:06:49.995" end="00:06:54.395" style="s2">who are praying for their safety every</p>
+<p begin="00:06:52.995" end="00:06:56.795" style="s2">day.</p>
+<p begin="00:06:54.395" end="00:06:58.095" style="s2">Those families know that absolute</p>
+<p begin="00:06:56.795" end="00:07:01.095" style="s2">precision</p>
+<p begin="00:06:58.095" end="00:07:03.295" style="s2">and coordination are vital to protecting</p>
+<p begin="00:07:01.095" end="00:07:07.595" style="s2">the people they love.</p>
+<p begin="00:07:03.295" end="00:07:10.695" style="s2">There is no room for mistakes.</p>
+<p begin="00:07:07.595" end="00:07:13.295" style="s2">Our warriors are united by a vision</p>
+<p begin="00:07:10.695" end="00:07:16.395" style="s2">greater than themselves.</p>
+<p begin="00:07:13.295" end="00:07:20.095" style="s2">Each individual contributes to a larger</p>
+<p begin="00:07:16.395" end="00:07:22.595" style="s2">plan with their fellow warriors.</p>
+<p begin="00:07:20.095" end="00:07:24.295" style="s2">They have unwavering trust in each</p>
+<p begin="00:07:22.595" end="00:07:29.295" style="s2">other.</p>
+<p begin="00:07:24.295" end="00:07:31.795" style="s2">There cannot be any accidents.</p>
+<p begin="00:07:29.295" end="00:07:33.995" style="s2">We must always remember that their</p>
+<p begin="00:07:31.795" end="00:07:37.195" style="s2">service is not just about the</p>
+<p begin="00:07:33.995" end="00:07:39.495" style="s2">transaction of a single mission.</p>
+<p begin="00:07:37.195" end="00:07:41.195" style="s2">It is about the future of our children</p>
+<p begin="00:07:39.495" end="00:07:43.595" style="s2">and grandchildren.</p>
+<p begin="00:07:41.195" end="00:07:44.895" style="s2">It is about maintaining America&#39;s lead</p>
+<p begin="00:07:43.595" end="00:07:47.895" style="s2">position</p>
+<p begin="00:07:44.895" end="00:07:51.295" style="s2">in the world, creating opportunities for</p>
+<p begin="00:07:47.895" end="00:07:54.795" style="s2">American ingenuity and innovation,</p>
+<p begin="00:07:51.295" end="00:07:57.495" style="s2">and preserving the safety and freedom of</p>
+<p begin="00:07:54.795" end="00:07:59.895" style="s2">future generations.</p>
+<p begin="00:07:57.495" end="00:08:01.195" style="s2">Our leaders do not always talk about</p>
+<p begin="00:07:59.895" end="00:08:03.995" style="s2">this,</p>
+<p begin="00:08:01.195" end="00:08:09.197" style="s2">but we must always remember this is the</p>
+<p begin="00:08:03.995" end="00:08:09.197" style="s2">end result of our military action.</p>
+<p begin="00:08:09.597" end="00:08:15.797" style="s2">The American Red Cross assists member of</p>
+<p begin="00:08:12.997" end="00:08:18.497" style="s2">the military and their families.</p>
+<p begin="00:08:15.797" end="00:08:20.497" style="s2">And for this I&#39;m grateful.</p>
+<p begin="00:08:18.497" end="00:08:23.297" style="s2">They serve troops and their families</p>
+<p begin="00:08:20.497" end="00:08:25.297" style="s2">worldwide. And today&#39;s tradition will</p>
+<p begin="00:08:23.297" end="00:08:27.697" style="s2">deliver packages filled with warm</p>
+<p begin="00:08:25.297" end="00:08:30.297" style="s2">holiday season wishes</p>
+<p begin="00:08:27.697" end="00:08:32.697" style="s2">made with love which will be well</p>
+<p begin="00:08:30.297" end="00:08:35.997" style="s2">received.</p>
+<p begin="00:08:32.697" end="00:08:37.697" style="s2">The strength of our military helps us</p>
+<p begin="00:08:35.997" end="00:08:40.297" style="s2">prevent wars.</p>
+<p begin="00:08:37.697" end="00:08:43.597" style="s2">We perfect our capabilities</p>
+<p begin="00:08:40.297" end="00:08:46.897" style="s2">to protect human life, preserve peace,</p>
+<p begin="00:08:43.597" end="00:08:49.297" style="s2">and secure our nation&#39;s future.</p>
+<p begin="00:08:46.897" end="00:08:52.197" style="s2">This high level of precision</p>
+<p begin="00:08:49.297" end="00:08:55.097" style="s2">of our armed forces sends an</p>
+<p begin="00:08:52.197" end="00:08:56.397" style="s2">unmistakable message to the rest of the</p>
+<p begin="00:08:55.097" end="00:09:01.897" style="s2">world.</p>
+<p begin="00:08:56.397" end="00:09:01.897" style="s2">America&#39;s children must inherit peace.</p>
+<p begin="00:09:02.197" end="00:09:06.097" style="s2">I wish America a very happy</p>
+<p begin="00:09:04.497" end="00:09:09.197" style="s2">Thanksgiving,</p>
+<p begin="00:09:06.097" end="00:09:10.797" style="s2">safety and peace during this upcoming</p>
+<p begin="00:09:09.197" end="00:09:12.826" style="s2">holiday season.</p>
+<p begin="00:09:10.797" end="00:09:14.846" style="s2">Thank you.</p>
+<p begin="00:09:12.826" end="00:09:14.846" style="s2">&gt;&gt; [applause]</p>
+<p begin="00:12:10.699" end="00:12:12.699" style="s2">&gt;&gt; I</p>
+<p begin="00:14:23.701" end="00:14:25.801" style="s2">&gt;&gt; Hello.</p>
+<p begin="00:18:28.903" end="00:18:31.003" style="s2">&gt;&gt; It</p>
+<p begin="00:20:30.905" end="00:20:33.005" style="s2">&gt;&gt; I</p>
+<p begin="00:24:36.707" end="00:24:38.908" style="s2">&gt;&gt; This is</p>
+<p begin="00:26:39.309" end="00:26:41.409" style="s2">&gt;&gt; Hello.</p>
+<p begin="00:35:29.714" end="00:35:31.814" style="s2">&gt;&gt; Okay.</p>
+<p begin="00:38:44.717" end="00:38:46.717" style="s2">&gt;&gt; I</p>
+<p begin="00:45:42.721" end="00:45:44.821" style="s2">&gt;&gt; I</p>
+</div>
+</body>
+</tt>
